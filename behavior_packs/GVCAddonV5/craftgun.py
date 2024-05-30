@@ -6,7 +6,7 @@ csv_path = open("gunData.csv","r")
 csv_reader = csv.reader(csv_path)
 
 row_count = 0
-
+#aasdasd
 for row in csv_reader:
 
     if( row_count >= 1 ):
