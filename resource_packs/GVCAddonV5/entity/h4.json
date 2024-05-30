@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:h4",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/h4"
+      },
+      "geometry": {
+        "default": "geometry.f4"
+      },
+		"animations": {
+		  "fly": "animation.wing",
+		  "land": "animation.land"
+		},
+		"animation_controllers": [
+		  { "move": "controller.animation.fly" }
+		],
+	  "spawn_egg":{
+	  "texture":"h4",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

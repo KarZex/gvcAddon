@@ -1,0 +1,37 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "作者:Kar Zex\nfunction autoreactでコマンドブロックに近づくことで自動で基地生成。\n二次配布を禁ずる",
+    "name": "§l§gGVC Addon V5.0 BetaV0",
+    "min_engine_version": [1, 20, 30 ],
+    "uuid": "3e1e91f8-030c-4bdf-9ecc-57db781babcb",
+    "version": [1, 20, 80]
+  },
+  "modules": [
+    {
+      "description": "Data Module",
+      "type": "data",
+      "uuid": "ed6f27f7-956b-4afe-ba24-452b054e85b4",
+      "version": [1, 0, 0]
+    },
+    {
+      "description": "Script API Module",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "aca7cd81-5d92-4518-a9b1-1248f93dcc1e",
+      "version": [1, 0, 0],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "capabilities": ["script_eval"],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.11.0-beta"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.2.0-beta"
+    }
+  ]
+}

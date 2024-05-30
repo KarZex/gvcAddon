@@ -1,0 +1,146 @@
+{
+  "format_version": [
+    1,
+    1,
+    0
+  ],
+  "block:ds1": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:ds2": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:ds3": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:ds4": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:ds5": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:ds6": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:da1": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:dm1": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:dm2": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:dm3": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:dl1": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:dl2": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:dl3": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:dl4": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:dl5": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+  "block:dl6": {
+    "textures": {
+	  "up": "miss",
+	  "side": "miss",
+	  "down": "miss"
+	}
+  },
+
+   "hkz:firstitem" : {
+      "sound" : "cloth"
+   },
+   "zex:good1" : {
+      "sound" : "cloth"
+   },
+    "zex:good5" : {
+      "sound" : "cloth"
+   },
+   "zex:good2" : {
+      "sound" : "cloth"
+  },
+   "zex:good3" : {
+      "sound" : "cloth"
+  },
+    "zex:good4" : {
+      "sound" : "cloth"
+  },
+    "zex:gas" : {
+      "sound" : "cloth"
+  },
+   "zex:in_bricks" : {
+      "brightness_gamma" : 0.80,
+      "sound" : "nether_brick",
+      "textures" : "in_bricks"
+   }
+}

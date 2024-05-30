@@ -1,0 +1,180 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "addon:merg08b",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "D": {
+      "minecraft:behavior.summon_entity": {
+        "priority": 2,
+
+        "summon_choices": [
+          {
+            "weight": 1,
+            "cooldown_time": 2.0,
+            "cast_duration": 0.1,
+            "particle_color": "#FFB3B3CC",
+            "sequence": [
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 0.1,
+                "num_entities_spawned": 6,
+                "entity_type": "zex:iceblaze",
+                "summon_cap": 64,
+                "summon_cap_radius": 10.0,
+                "size": 7,
+                "sound_event": "prepare.summon"
+              }
+            ]
+          }
+        ]
+      },
+	  "minecraft:timer": {
+	    "time": 2,
+		"time_down_event": { "event": "S" }
+	  }
+      },
+      "S": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 20,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 60.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:iceball"
+        },
+	  "minecraft:timer": {
+	    "time": 10,
+		"time_down_event": { "event": "D" }
+	  }
+      }
+	},
+    "components": {
+     "minecraft:boss": {
+        "name": "BOSS MER08SN",
+        "should_darken_sky": true,
+        "hud_range": 60
+      },     
+      "minecraft:nameable": {},
+      "minecraft:type_family": {
+        "family": [
+          "mob",
+          "monster"
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/merg08b.json"
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 32.0,
+        
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "player" },
+                { "test": "is_family", "subject": "other", "value": "irongolem" },
+                { "test": "is_family", "subject": "other", "value": "snowgolem" },
+                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+              ]
+            },
+            "max_dist": 32
+          },
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "villager" },
+                { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+              ]
+            },
+            "max_dist": 32
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:collision_box": {
+        "width": 3.0,
+        "height": 8.0
+      },
+      "minecraft:health": {
+        "value": 200,
+        "max": 200
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:scale": {
+        "value": 0.3
+      },
+      "minecraft:movement": {
+        "value": 0.4
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:physics": {},
+     
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:behavior.random_look_around": {
+        "priority": 4
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 10,
+        "speed_multiplier": 0.9
+      },
+      "minecraft:follow_range": {
+        "value": 64
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "D"
+          ]
+        }
+      },
+	   "S": {
+        "remove": {
+          "component_groups": [
+			"D"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "S"
+          ]
+        }
+      },
+      "D": {
+        "remove": {
+          "component_groups": [
+			"S"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "D"
+          ]
+        }
+      }
+    }
+  }
+}

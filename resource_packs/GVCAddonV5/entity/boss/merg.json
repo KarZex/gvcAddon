@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:merg08",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/merg"
+      },
+      "geometry": {
+        "default": "geometry.merg08"
+      },
+	  "spawn_egg":{
+	  "texture":"merg",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "fire:g21",
+        "materials": {
+          "default": "spider"
+        },
+        "textures": {
+          "default": "textures/entity/missile"
+        },
+        "geometry": {
+          "default": "geometry.missie"
+        },
+        "render_controllers": [ 
+          "controller.render.default" 
+        ]
+      }
+    }
+}

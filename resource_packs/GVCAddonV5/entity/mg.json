@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:mg1",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/models/mg"
+      },
+      "geometry": {
+        "default": "geometry.machinegun"
+      },
+	  "spawn_egg":{
+	  "texture":"mg",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

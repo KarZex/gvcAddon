@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.hke1": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/summon addon:a1 ~~2~",
+			      "/event entity @s A"
+          ]
+        }
+      }
+    }
+  }
+}

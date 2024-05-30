@@ -1,0 +1,9 @@
+title @s[tag=!reload,scores={p38=8}] actionbar §99mmHG§r 8/8
+title @s[tag=!reload,scores={p38=7}] actionbar §99mmHG§r 7/8
+title @s[tag=!reload,scores={p38=6}] actionbar §99mmHG§r 6/8
+title @s[tag=!reload,scores={p38=5}] actionbar §99mmHG§r 5/8
+title @s[tag=!reload,scores={p38=4}] actionbar §99mmHG§r 4/8
+title @s[tag=!reload,scores={p38=3}] actionbar §99mmHG§r §g3/8
+title @s[tag=!reload,scores={p38=2}] actionbar §99mmHG§r §g2/8
+title @s[tag=!reload,scores={p38=1}] actionbar §99mmHG§r §g1/8
+title @s[tag=!reload,scores={p38=0}] actionbar §99mmHG§r §40/8

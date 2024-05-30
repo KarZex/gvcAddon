@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "zex:stand",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+				"default": "textures/mob/stand",
+				"empty": "textures/models/ak47",
+				"ak47": "textures/models/ak47"
+			},
+			"geometry": {
+				"default": "geometry.stand",
+				"empty": "geometry.stand",
+				"ak47": "geometry.ak47"
+			},
+			"spawn_egg": {
+				"texture": "stand",
+				"texture_index": 0
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

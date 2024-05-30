@@ -1,0 +1,29 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "gun:m16a4",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "gun:m4",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "gun:famas",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "gun:m110",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

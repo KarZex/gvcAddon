@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:pt76",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/pt76"
+      },
+      "geometry": {
+        "default": "geometry.pt76"
+      },
+	  "spawn_egg":{
+	  "texture":"pt76",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

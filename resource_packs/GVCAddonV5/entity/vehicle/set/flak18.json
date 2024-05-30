@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mg:flak18",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/models/mg"
+			},
+			"geometry": {
+        "default": "geometry.Flak18"
+			},
+	  "spawn_egg":{
+	  "texture":"mk",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

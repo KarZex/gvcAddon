@@ -1,0 +1,52 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:lewis",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "bullet",
+          "mgbullet"
+        ]
+      },
+      "minecraft:explode": {
+        "fuseLength": 5,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 0,
+            "knockback": true
+          },
+          "stick_in_ground": {}
+        },
+        "power": 8,
+        "gravity": 0.1,
+        "inertia": 1.5,
+        "uncertaintyBase": 8,
+        "uncertaintyMultiplier": 0,
+        "anchor": 1,
+        "offset": [
+          0,
+          0.5,
+          0
+        ],
+        "catchFire": false
+      },
+      "minecraft:physics": {}
+    }
+  }
+}

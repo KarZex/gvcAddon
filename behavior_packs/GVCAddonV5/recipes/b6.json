@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "GVC_B6"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CCC",
+      "CBC",
+      "AAA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:cobblestone",
+        "data": 0
+      },
+      "B": {
+      "item": "addon:b2_spawn_egg",
+       "data": 0
+      },
+      "C": {
+        "item": "minecraft:emerald",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "addon:b6_spawn_egg",
+      "count": 1
+    }
+  }
+  
+}

@@ -1,0 +1,61 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.vehicle": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "max": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/tag @s remove has.rider"
+          ]
+        },
+        "max": {
+          "transitions": [
+            { "default": "!query.has_rider" }
+          ],
+          "on_entry": [
+            "/tag @s add has.rider"
+          ]
+        }
+      }
+    },
+    "controller.animation.sss": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "max": "(1.0)" }
+          ]
+        },
+        "max": {
+          "on_entry": [
+            "/effect @s levitation 1 4"
+          ]
+        }
+      }
+    },
+    "controller.animation.missile": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/tp @s ^ ^ ^0.7 facing @e[family=plate,type=!vehicle:lav25,c=1,r=20]",
+			"/particle minecraft:basic_flame_particle ~~~"
+          ],
+          "transitions": [
+            { "max": "(1.0)" }
+          ]
+        },
+        "max": {
+          "on_entry": [
+            "/tp @s ^ ^ ^0.7 facing @e[family=plate,type=!vehicle:lav25,c=1,r=20]",
+			"/particle minecraft:basic_flame_particle ~~~"
+          ],
+          "transitions": [
+            { "default": "(1.0)" }
+          ]
+        }
+      }
+    }
+  }
+}

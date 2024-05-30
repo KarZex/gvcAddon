@@ -1,0 +1,15 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.stand.ak": {
+			"loop": true,
+			"bones": {
+				"gun": {
+					"rotation": [180, 0, 0],
+					"position": [6, 66, 5],
+					"scale": 0.3
+				}
+			}
+		}
+	}
+}

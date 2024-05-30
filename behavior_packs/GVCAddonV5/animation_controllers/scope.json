@@ -1,0 +1,65 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.ads": {
+        "states": {
+          "default": {
+            "transitions": [
+				{ "x3": "(query.get_equipped_item_name('main_hand') == 'an94' ||  query.get_equipped_item_name('main_hand') == 't89' ||	query.get_equipped_item_name('main_hand') == 'dp28' ||  query.get_equipped_item_name('main_hand') == 'ak12' ||	query.get_equipped_item_name('main_hand') == 'famas' ||  query.get_equipped_item_name('main_hand') == 't95' ||	query.get_equipped_item_name('main_hand') == 'fire' ||  query.get_equipped_item_name('main_hand') == '416' ||	query.get_equipped_item_name('main_hand') == 'glock17' ||  query.get_equipped_item_name('main_hand') == 'ump9' ||	query.get_equipped_item_name('main_hand') == 'glock18' ||  query.get_equipped_item_name('main_hand') == 'mp7' ||  query.get_equipped_item_name('main_hand') == 't100' ||	query.get_equipped_item_name('main_hand') == 'm9' ||  query.get_equipped_item_name('main_hand') == 'p226' ||	query.get_equipped_item_name('main_hand') == 'm10' ||  query.get_equipped_item_name('main_hand') == 'p38' ||	query.get_equipped_item_name('main_hand') == 'mg42' ||	query.get_equipped_item_name('main_hand') == 'mp40' ||	query.get_equipped_item_name('main_hand') == 'ppsh' ||  query.get_equipped_item_name('main_hand') == 'ppshe' ||	query.get_equipped_item_name('main_hand') == 'rpk' ||	query.get_equipped_item_name('main_hand') == 'sar' ||	query.get_equipped_item_name('main_hand') == 'thom' ||	query.get_equipped_item_name('main_hand') == 'uzi' ||  query.get_equipped_item_name('main_hand') == 'uzie' ||	query.get_equipped_item_name('main_hand') == 'vz61' ||		query.get_equipped_item_name('main_hand') == 'xm8' ||	query.get_equipped_item_name('main_hand') == 'l86' ||  query.get_equipped_item_name('main_hand') == 'l86e' ||	query.get_equipped_item_name('main_hand') == 'rpg' ||  query.get_equipped_item_name('main_hand') == 'rpge' ||	query.get_equipped_item_name('main_hand') == 'tt33' ||	query.get_equipped_item_name('main_hand') == 'm1911' ||	query.get_equipped_item_name('main_hand') == 'mp5' ||  query.get_equipped_item_name('main_hand') == 'mp5e' ||	query.get_equipped_item_name('main_hand') == 'p90' ||	query.get_equipped_item_name('main_hand') == 'm249' ||  query.get_equipped_item_name('main_hand') == 'm249e' ||	query.get_equipped_item_name('main_hand') == 'hk416' ||	query.get_equipped_item_name('main_hand') == 'scarh' || query.get_equipped_item_name('main_hand') == 'g36' ||	query.get_equipped_item_name('main_hand') == 'bar' ||	query.get_equipped_item_name('main_hand') == 'scar' ||  query.get_equipped_item_name('main_hand') == 'scare' ||	query.get_equipped_item_name('main_hand') == 'm16a4' || query.get_equipped_item_name('main_hand') == 'aug' || query.get_equipped_item_name('main_hand') == 'lazer' || query.get_equipped_item_name('main_hand') == 'm4' || query.get_equipped_item_name('main_hand') == 'ak47') && query.get_equipped_item_name('off_hand') == 'x3' && query.is_sneaking" },
+				{ "x1": "(query.get_equipped_item_name('main_hand') == 'an94' ||  query.get_equipped_item_name('main_hand') == 't89' ||	query.get_equipped_item_name('main_hand') == 'dp28' ||  query.get_equipped_item_name('main_hand') == 'ak12' ||	query.get_equipped_item_name('main_hand') == 'famas' ||  query.get_equipped_item_name('main_hand') == 't95' ||	query.get_equipped_item_name('main_hand') == 'fire' ||  query.get_equipped_item_name('main_hand') == '416' ||	query.get_equipped_item_name('main_hand') == 'glock17' ||  query.get_equipped_item_name('main_hand') == 'ump9' ||	query.get_equipped_item_name('main_hand') == 'glock18' ||  query.get_equipped_item_name('main_hand') == 'mp7' ||  query.get_equipped_item_name('main_hand') == 't100' ||	query.get_equipped_item_name('main_hand') == 'm9' ||  query.get_equipped_item_name('main_hand') == 'p226' ||	query.get_equipped_item_name('main_hand') == 'm10' ||  query.get_equipped_item_name('main_hand') == 'p38' ||	query.get_equipped_item_name('main_hand') == 'mg42' ||	query.get_equipped_item_name('main_hand') == 'mp40' ||	query.get_equipped_item_name('main_hand') == 'ppsh' ||  query.get_equipped_item_name('main_hand') == 'ppshe' ||	query.get_equipped_item_name('main_hand') == 'rpk' ||	query.get_equipped_item_name('main_hand') == 'sar' ||	query.get_equipped_item_name('main_hand') == 'thom' ||	query.get_equipped_item_name('main_hand') == 'uzi' ||  query.get_equipped_item_name('main_hand') == 'uzie' ||	query.get_equipped_item_name('main_hand') == 'vz61' ||		query.get_equipped_item_name('main_hand') == 'xm8' ||	query.get_equipped_item_name('main_hand') == 'l86' ||  query.get_equipped_item_name('main_hand') == 'l86e' ||	query.get_equipped_item_name('main_hand') == 'rpg' ||  query.get_equipped_item_name('main_hand') == 'rpge' ||	query.get_equipped_item_name('main_hand') == 'tt33' ||	query.get_equipped_item_name('main_hand') == 'm1911' ||	query.get_equipped_item_name('main_hand') == 'mp5' ||  query.get_equipped_item_name('main_hand') == 'mp5e' ||	query.get_equipped_item_name('main_hand') == 'p90' ||	query.get_equipped_item_name('main_hand') == 'm249' ||  query.get_equipped_item_name('main_hand') == 'm249e' ||	query.get_equipped_item_name('main_hand') == 'hk416' ||	query.get_equipped_item_name('main_hand') == 'scarh' || query.get_equipped_item_name('main_hand') == 'g36' ||	query.get_equipped_item_name('main_hand') == 'bar' ||	query.get_equipped_item_name('main_hand') == 'scar' ||  query.get_equipped_item_name('main_hand') == 'scare' ||	query.get_equipped_item_name('main_hand') == 'm16a4' || query.get_equipped_item_name('main_hand') == 'aug' || query.get_equipped_item_name('main_hand') == 'lazer' || query.get_equipped_item_name('main_hand') == 'm4' || query.get_equipped_item_name('main_hand') == 'ak47') && query.get_equipped_item_name('off_hand') == 'x1' && query.is_sneaking" },
+				{ "x6": "(query.get_equipped_item_name('main_hand') == 'mosin' ||  query.get_equipped_item_name('main_hand') == 'k98' ||	query.get_equipped_item_name('main_hand') == 'awm' ||  query.get_equipped_item_name('main_hand') == 'm82' ||	query.get_equipped_item_name('main_hand') == 'm110' ||  query.get_equipped_item_name('main_hand') == 'svd') && query.is_sneaking" },
+				{ "scopeing": "query.is_sneaking" }
+            ]
+          },
+          "x6": {
+            "transitions": [
+                {"default":"!query.is_sneaking"}
+            ],
+            "on_entry": [
+              "/effect @s[tag=!reload] slowness 1000 255 true",
+              "/tag @s[tag=!reload] add scope"
+            ],
+            "on_exit": [
+              "/effect @s slowness 0 0 true",
+              "/tag @s remove scope"
+            ]
+          },
+          "x3": {
+            "transitions": [
+                {"default":"!query.is_sneaking"}
+            ],
+            "on_entry": [
+              "/effect @s[tag=!reload] slowness 1000 6 true",
+              "/tag @s[tag=!reload] add scope"
+            ],
+            "on_exit": [
+              "/effect @s slowness 0 0 true",
+              "/tag @s remove scope"
+            ]
+          },
+          "x1": {
+            "transitions": [
+                {"default":" !query.is_sneaking"}
+            ],
+            "on_entry": [
+              "/tag @s[tag=!reload] add scope"
+            ],
+            "on_exit": [
+              "/tag @s remove scope"
+            ]
+          },
+          "scopeing": {
+            "transitions": [
+                {"default":"!query.is_sneaking"}
+            ],
+            "on_entry": [
+              "/tag @s[tag=!reload] add scope"
+            ],
+            "on_exit": [
+              "/tag @s remove scope"
+            ]
+          }
+        }
+      }
+   }
+}

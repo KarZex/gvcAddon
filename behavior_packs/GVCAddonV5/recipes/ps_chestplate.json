@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "GVC_PSchestplate"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AXA",
+	  "AAA",
+	  "AAA"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:ps",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:book",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 15
+      }
+    },
+    "result": {
+      "item": "zex:ps_chestplate",
+      "count": 1
+    }
+  }
+  
+}

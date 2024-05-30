@@ -1,0 +1,390 @@
+{
+  "tiers": [
+    {
+      "groups": [
+        {
+          "trades": [
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m1911",
+                  "quantity": 1
+                }
+              ]
+            },
+           {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:mm9",
+                  "quantity": 8
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:m1911a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m9",
+                  "quantity": 1
+                }
+              ]
+            },
+           {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:mm9",
+                  "quantity": 15
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:m9a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m10",
+                  "quantity": 1
+                }
+              ]
+            },
+           {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:mm9",
+                  "quantity": 30
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:m10a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:mp5",
+                  "quantity": 1
+                }
+              ]
+            },
+           {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:mm9",
+                  "quantity": 40
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:mp5a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:uzi",
+                  "quantity": 1
+                }
+              ]
+            },
+           {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:mm9",
+                  "quantity": 30
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:uzia",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:ak47",
+                  "quantity": 1
+                }
+              ]
+            },
+           {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:556m",
+                  "quantity": 30
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:ak47a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m4",
+                  "quantity": 1
+                }
+              ]
+            },
+           {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:556m",
+                  "quantity": 30
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:m4a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:xm8",
+                  "quantity": 1
+                }
+              ]
+            },
+           {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:556m",
+                  "quantity": 30
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:xm8a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 6
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:rpk",
+                  "quantity": 1
+                }
+              ]
+            },
+           {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:556m",
+                  "quantity": 64
+                },
+                {
+                  "item": "zex:556m",
+                  "quantity": 36
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:rpka",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 6
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:k98",
+                  "quantity": 1
+                }
+              ]
+            },
+           {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:762m",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:k98a",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 7
+                },
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 10
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:rpg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:rocketm",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:rpga",
+                  "quantity": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

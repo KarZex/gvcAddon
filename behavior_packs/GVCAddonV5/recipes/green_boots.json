@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "GVC_Gboots"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AAA",
+      "ABA",
+      "AAA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:leaves",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:leather_boots",
+        "data": 0
+      },
+      "C": {
+        "item": "gun:ak47",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 1
+      }
+    },
+    "result": {
+      "item": "zex:green_boots",
+      "count": 1
+    }
+  }
+  
+}

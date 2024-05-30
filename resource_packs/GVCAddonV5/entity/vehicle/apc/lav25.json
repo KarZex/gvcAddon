@@ -1,0 +1,20 @@
+{
+	"format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:lav25",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/lav25"
+      },
+      "geometry": {
+        "default": "geometry.lav25"
+      },
+	  "spawn_egg":{
+	  "texture":"lav25",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

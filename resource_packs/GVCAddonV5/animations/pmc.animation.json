@@ -1,0 +1,37 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.pmc.sit": {
+			"loop": true,
+			"animation_length": 0.04,
+			"bones": {
+				"root": {
+					"position": [0, 2, 0]
+				},
+				"waist": {
+					"position": [0, 0, 0]
+				},
+				"rightLegA": {
+					"rotation": [-90, 27.5, 0],
+					"position": [-5, 0, -11]
+				},
+				"leftLegA": {
+					"rotation": [-90, -27.5, 0],
+					"position": [5, 0, -11]
+				},
+				"body": {
+					"position": [0, -12, 0]
+				},
+				"rightArmA": {
+					"position": [0, 12, 0]
+				},
+				"rightArm": {
+					"position": [0, -12, 0]
+				},
+				"gun": {
+					"position": [0, 0, 12]
+				}
+			}
+		}
+	}
+}

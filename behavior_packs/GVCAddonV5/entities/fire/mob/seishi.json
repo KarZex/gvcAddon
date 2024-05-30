@@ -1,0 +1,46 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:seishi",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+				"onHit": {
+					"impact_damage": {
+						"damage": 2,
+						"knockback": true
+					},
+			 "mob_effect": {
+            "effect": "weakness",
+            "durationeasy": 0,
+            "durationnormal": 200,
+            "durationhard": 200,
+            "amplifier": 4
+          },
+					"remove_on_hit": {}
+				},
+				"power": 6,
+				"gravity": 0.07,
+				"inertia": 1.5,
+				"uncertaintyBase": 1,
+				"uncertaintyMultiplier": 3,
+				"offset": [
+					0,
+					0,
+					0
+				],
+				"catchFire": false
+			},
+			"minecraft:physics": {}
+		}
+	}
+}

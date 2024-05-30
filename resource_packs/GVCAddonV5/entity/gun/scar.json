@@ -1,0 +1,20 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "fire:scar",
+        "materials": {
+          "default": "spider"
+        },
+        "textures": {
+          "default": "textures/bullet"
+        },
+        "geometry": {
+          "default": "geometry.bullet"
+        },
+        "render_controllers": [ 
+          "controller.render.default" 
+        ]
+      }
+    }
+}

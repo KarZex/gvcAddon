@@ -1,0 +1,19 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:km"
+    },
+    
+    "components": {
+      "minecraft:hand_equipped": false,
+      "minecraft:stacked_by_data": true,
+      "minecraft:use_duration": 32,
+      "minecraft:food": {
+        "nutrition": 8,
+        "saturation_modifier": "low",
+        "can_always_eat": false
+      }
+    }
+  }
+}

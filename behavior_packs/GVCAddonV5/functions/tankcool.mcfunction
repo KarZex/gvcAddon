@@ -1,0 +1,10 @@
+execute if entity @e[r=2,type=vehicle:t34] run scoreboard players set @s[tag=!reload,scores={cooldown=0}] cooldown 70
+execute if entity @e[r=2,type=vehicle:m41] run scoreboard players set @s[tag=!reload,scores={cooldown=0}] cooldown 40
+execute if entity @e[r=2,type=vehicle:m1a2] run scoreboard players set @s[tag=!reload,scores={cooldown=0}] cooldown 60
+execute if entity @e[r=2,type=vehicle:t72] run scoreboard players set @s[tag=!reload,scores={cooldown=0}] cooldown 60
+execute if entity @e[r=2,type=vehicle:t55] run scoreboard players set @s[tag=!reload,scores={cooldown=0}] cooldown 60
+execute if entity @e[r=2,type=vehicle:m60] run scoreboard players set @s[tag=!reload,scores={cooldown=0}] cooldown 60
+execute if entity @e[r=2,type=vehicle:pt76] run scoreboard players set @s[tag=!reload,scores={cooldown=0}] cooldown 50 
+execute if entity @e[r=3,type=vehicle:kv2] run scoreboard players set @s[tag=!reload,scores={cooldown=0}] cooldown 200
+execute if entity @e[r=3,type=vehicle:m1128] run scoreboard players set @s[tag=!reload,scores={cooldown=0}] cooldown 80
+execute if entity @e[r=2,type=mg:flak18] run scoreboard players set @s[tag=!reload,scores={cooldown=0}] cooldown 80

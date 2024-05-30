@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.st1r": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "riding": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/ride @s[family=monster] summon_rider addon:ga ST1",
+			"/ride @s[family=player] summon_rider addon:ca ST1"
+          ]
+        },
+        "riding": {
+          "transitions": [
+            { "nriding": "!query.has_rider" }
+          ],
+          "on_entry": [
+            "/effect @s[tag=!tank] resistance 99999 1 true",
+			"/execute as @s[tag=!tank] run effect @e[type=addon:ga,c=1] resistance 99999 255 true",
+			"/tag @s add tank"
+          ]
+        },
+        "nriding": {
+          "transitions": [
+            { "riding": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/event entity @s players",
+			 "/kill @e[type=addon:ga,c=1]"
+          ]
+        }
+      }
+    }
+  }
+}

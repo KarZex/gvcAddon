@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:health",
+      "category": "gun"
+    },
+    "components": {
+      "minecraft:icon": "health",
+      "minecraft:render_offsets": "bow"
+    }
+  }
+}

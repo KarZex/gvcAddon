@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mgdp28.main": {
+			"loop": true,
+			"bones": {
+				"bone10": {
+					"position": [-2, -1, -4]
+				},
+				"root": {
+					"position": [2, 55, -158],
+					"scale": 0.3
+				}
+			}
+		}
+	}
+}

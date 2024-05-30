@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:ah1s",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/entity/ah1s"
+			},
+			"geometry": {
+        "default": "geometry.ah1s"
+			},
+	  "spawn_egg":{
+	  "texture":"ah1s",
+	  "texture_index":0
+	  },
+			"scripts": {
+				"animate": [ 
+			{ "fly": "query.has_rider" }
+				]
+			},
+			"animations": {
+				"fly": "animation.ah1s.main"
+			},
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

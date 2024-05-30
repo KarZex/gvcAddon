@@ -1,0 +1,20 @@
+{
+	"format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:m113_s",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/m113_s"
+      },
+      "geometry": {
+        "default": "geometry.m113_s"
+      },
+	  "spawn_egg":{
+	  "texture":"m113_s",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

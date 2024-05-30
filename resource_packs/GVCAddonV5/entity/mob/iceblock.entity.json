@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "zex:ice_block",
+      "materials": {
+        "default": "shulker_bullet"
+      },
+      "textures": {
+        "default": "textures/mob/block"
+      },
+      "geometry": {
+        "default": "geometry.shulker_bullet"
+      },
+      "animations": {
+        "move": "animation.shulker_bullet.move"
+      },
+      "scripts": {
+        "animate": [
+          "move"
+        ]
+      },
+      "render_controllers": [ "controller.render.shulker_bullet" ]
+    }
+  }
+}

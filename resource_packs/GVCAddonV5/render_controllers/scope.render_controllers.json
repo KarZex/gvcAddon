@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+   "controller.render.player.x1": {
+      "geometry": "Geometry.x1",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.x3": {
+      "geometry": "Geometry.x3",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.x6": {
+      "geometry": "Geometry.x6",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+	"controller.render.player.x0": {
+      "geometry": "Geometry.x0",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    }
+  }
+}

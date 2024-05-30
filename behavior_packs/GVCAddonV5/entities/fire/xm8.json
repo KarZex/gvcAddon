@@ -1,0 +1,78 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:xm8",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "bullet",
+          "arbullet"
+        ]
+      },
+      "minecraft:explode": {
+        "fuseLength": 5,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 0,
+            "knockback": true
+          },
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "stick_in_ground": {}
+        },
+        "power": 1.8,
+        "gravity": 0,
+        "inertia": 1.5,
+        "uncertaintyBase": 20.0,
+        "uncertaintyMultiplier": 0,
+        "anchor": 1,
+        "offset": [
+          0,
+          0.5,
+          0
+        ],
+        "catchFire": false
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "minecraft:explode": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding"
+          ]
+        }
+      }
+    },
+    "component_groups": {
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 2,
+          "breaks_blocks": true
+        }
+      }
+    }
+  }
+}

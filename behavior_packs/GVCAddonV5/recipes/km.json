@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "GVC_km"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AAA",
+	  "BBB",
+	  "AAA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:paper",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:apple",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:book",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 2
+      }
+    },
+    "result": {
+      "item": "zex:km",
+      "count": 2
+    }
+  }
+  
+}

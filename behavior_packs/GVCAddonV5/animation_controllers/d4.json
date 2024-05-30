@@ -1,0 +1,31 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.d4": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "walking": "(1.0)"
+                        }
+                    ],
+          "on_entry": [
+	"/execute as @a[c=1] ~~5~ summon zex:ice",
+   "/kill @e[type=zex:ib]"
+          ]
+                },
+                "walking": {
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ],
+          "on_entry": [
+	"/execute as @a[c=1] ~~5~ summon zex:ice",
+   "/kill @e[type=zex:ib]"
+          ]
+                }
+            }
+        }
+    }
+}

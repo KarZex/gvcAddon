@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:gmgdp28r2",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/craft/gdp28g"
+      },
+      "geometry": {
+        "default": "geometry.allblock"
+      },
+	  "spawn_egg":{
+	  "texture":"gdp28g",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

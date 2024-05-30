@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "GVC_B0"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AAA",
+      "ABA",
+      "AAA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:planks",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:crafting_table",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "addon:b0_spawn_egg",
+      "count": 1
+    }
+  }
+  
+}

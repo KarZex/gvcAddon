@@ -1,0 +1,92 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "zex:nmb_helmet",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0
+            }
+          ],
+          "pools": [
+            {
+              "conditions": [
+                {
+                  "condition": "random_difficulty_chance",
+                  "default_chance": 1
+				}
+              ],
+              "rolls": 1,
+              "entries": [
+                {
+                  "type": "item",
+                  "name": "zex:nmb_chestplate",
+                  "weight": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_random_gear",
+                      "chance": 0
+                    }
+                  ],
+                  "pools": [
+                    {
+                      "conditions": [
+                        {
+                          "condition": "random_difficulty_chance",
+                          "default_chance": 1
+                        }
+                      ],
+                      "rolls": 1,
+                      "entries": [
+                        {
+                          "type": "item",
+                          "name": "zex:nmb_leggings",
+                          "weight": 1,
+                          "functions": [
+                            {
+                              "function": "enchant_random_gear",
+                              "chance": 0
+                            }
+                          ],
+                          "pools": [
+                            {
+                              "conditions": [
+                                {
+                                  "condition": "random_difficulty_chance",
+                                  "default_chance": 1
+                                }
+                              ],
+                              "rolls": 1,
+                              "entries": [
+                                {
+                                  "type": "item",
+                                  "name": "zex:nmb_boots",
+                                  "weight": 1,
+                                  "functions": [
+                                    {
+                                      "function": "enchant_random_gear",
+                                      "chance": 0
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

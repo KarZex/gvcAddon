@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "作者:Kar Zex\nfunction autoreactでコマンドブロックに近づくことで自動で基地生成。\n二次配布を禁ずる",
+    "name": "§l§gGVC Addon V5.0 BetaV0",
+    "min_engine_version": [1, 20, 30 ],
+    "uuid": "bcac57d4-5bd7-43e8-8525-dd4b34c03199",
+    "version": [0, 0, 1]
+  },
+  "modules": [
+    {
+      "description": "resources Module",
+      "type": "resources",
+      "uuid": "440e2a18-28ad-4768-be1a-f5b764c1247d",
+      "version": [0, 0, 1]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "3D",
+      "name": "3D",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "2D",
+      "name": "2D",
+      "memory_tier": 2
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:famas",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 2,
+          "breaks_blocks": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "bullet",
+          "gbullet"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:scale": {
+        "value": 4
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "stick_in_ground": {}
+        },
+        "power": 1.6,
+        "gravity": 0,
+        "angleoffset": 0.5,
+        "uncertaintyBase": 20.0
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "minecraft:explode": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding"
+          ]
+        }
+      }
+    }
+  }
+}

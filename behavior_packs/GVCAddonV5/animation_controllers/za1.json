@@ -1,0 +1,35 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.za1": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "walking": "(1.0)"
+                        }
+                    ],
+          "on_entry": [
+   "/fill ~-2~-2~-2 ~2~2~2 blue_ice",
+   "/effect @p[r=3] slowness 10 155",
+   "/effect @p[r=3] mining_fatigue 10 155",
+   "/kill @e[type=event:za1]"
+          ]
+                },
+                "walking": {
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ],
+          "on_entry": [
+   "/fill ~-2~-2~-2 ~2~2~2 blue_ice",
+   "/effect @p[r=3] slowness 10 155",
+   "/effect @p[r=3] mining_fatigue 10 155",
+   "/kill @e[type=event:za1]"
+          ]
+                }
+            }
+        }
+    }
+}

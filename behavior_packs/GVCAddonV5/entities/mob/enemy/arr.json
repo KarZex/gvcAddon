@@ -1,0 +1,128 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "addon:arr",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+	
+    "components": {
+        "minecraft:behavior.ranged_attack": {
+         "priority": 4,
+        "attack_interval_min": 4,
+        "attack_interval_max": 6,
+        "attack_radius": 50.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:arr"
+        },
+        "minecraft:behavior.charge_held_item": {
+          "priority": 3,
+          "items": [
+            "minecraft:arrow"
+          ]
+        },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 10 : 0"
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/germany.json"
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 3.6
+      },
+      "minecraft:attack": {
+        "damage": 6
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "fall",
+          "deals_damage": false
+        }
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks":  true
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:health": {
+        "value": 100,
+        "max": 100
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": [
+		{
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "germany"
+          },
+          "max_dist": 64
+		}
+        ]
+      },
+      "minecraft:follow_range": {
+        "value": 48,
+        "max": 48
+      },
+      "minecraft:nameable": {
+
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+        "within_radius": 25.0,
+        "must_see_forget_duration": 17.0,
+        "entity_types": [
+        {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "villager" },
+                { "test": "is_family", "subject": "other", "value": "irongolem" },
+				{ "test": "is_family", "subject": "other", "value": "player" }
+              ]
+            },
+		     "max_dist": 50
+		}
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1.0
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      },
+      "minecraft:type_family": {
+        "family": [ "monster", "germany", "mob" ]
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:scale": {
+        "value": 1.7
+      }
+    }
+  }
+}

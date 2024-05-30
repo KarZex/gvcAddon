@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mgrpk.main": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [2, 57, -159],
+					"scale": 0.3
+				},
+				"bone10": {
+					"position": [0, 28, -15]
+				}
+			}
+		}
+	}
+}

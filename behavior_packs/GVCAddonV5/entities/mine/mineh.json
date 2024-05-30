@@ -1,0 +1,56 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "addon:mineh",  
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "inanimate", "spawns" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1.975
+      },
+      "minecraft:explode": {
+        "fuse_length": 0,
+        "fuse_lit": true,
+        "power": 2,
+        "causes_fire": true,
+        "max_resistance": 4.0,
+		"fire_affected_by_griefing": true,
+		"destroy_affected_by_griefing": true,
+		"breaks_blocks": false
+      },
+      "minecraft:health": {
+        "value": 6,
+        "max": 6
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/empty.json"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:persistent": {
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    }
+  }
+}

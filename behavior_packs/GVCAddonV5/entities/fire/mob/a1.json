@@ -1,0 +1,64 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "zex:ice",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+        "minecraft:transformation": {
+          "into": "event:a1",
+          "delay": 0.0
+        }
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 2.0,
+				"height": 2.0
+			},
+			"minecraft:scale": {
+				"value": 1
+			},
+			"minecraft:projectile": {
+				"onHit": {
+          "mob_effect": {
+            "effect": "slowness",
+            "durationeasy": 20,
+            "durationnormal": 20,
+            "durationhard": 80,
+            "amplifier": 10
+          },
+          "particle_on_hit": {
+            "particle_type": "smoke",
+            "num_particles": 50,
+            "on_entity_hit": false,
+            "on_other_hit": true
+          },
+					"impact_damage": {
+						"damage": 10,
+						"knockback": true
+					},
+					"remove_on_hit": {}
+				},
+				"power": 1,
+				"gravity": 0.05,
+				"angleoffset": 0.5
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"minecraft:explode": {
+				"add": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				}
+			}
+		}
+	}
+}

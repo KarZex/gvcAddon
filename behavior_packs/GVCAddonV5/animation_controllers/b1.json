@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.riderb1": {
+      "states": {
+        "default": {
+          "transitions": [
+			{ "riding": "query.is_riding" }
+          ]
+        },
+        "riding": {
+          "on_entry": [
+		  "/tag @s[tag=!ride] add HKE",
+			"/execute as @s[tag=!ride] run function b1",
+			"/tag @s[tag=!ride] add ride"
+          ],
+            "transitions": [
+                {"default":"!query.is_riding"}
+            ],
+            "on_exit": [
+              "/tag @s remove ride",
+			  "/tag @s remove HKE",
+			  "/event entity @s minecraft:entity_spawned",
+			  "/effect @s clear"
+            ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.att": {
+        "states": {
+          "default": {
+            "transitions": [
+				{ "x6": "query.is_sneaking" }
+            ]
+          },
+          "x6": {
+            "transitions": [
+                {"default":"!query.is_sneaking"}
+            ],
+            "on_entry": [
+              "/effect @s[tag=!reload] slowness 1000 255 true",
+              "/tag @s[tag=!reload] add scope"
+            ],
+            "on_exit": [
+              "/effect @s slowness 0 0 true",
+              "/tag @s remove scope"
+            ]
+          }
+        }
+      }
+   }
+}

@@ -1,0 +1,250 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+   "controller.render.player.m4": {
+      "geometry": "Geometry.m4",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.aug": {
+      "geometry": "Geometry.aug",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.m249" ]
+    },
+   "controller.render.player.ak47": {
+      "geometry": "Geometry.ak47",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+	"controller.render.player.an94": {
+      "geometry": "Geometry.an94",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.dp28": {
+      "geometry": "Geometry.dp28",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.famas": {
+      "geometry": "Geometry.famas",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.fire": {
+      "geometry": "Geometry.fire",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.glock17": {
+      "geometry": "Geometry.glock17",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.glock18": {
+      "geometry": "Geometry.glock18",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.k98": {
+      "geometry": "Geometry.k98",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.lewis": {
+      "geometry": "Geometry.lewis",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.lewis" ]
+    },
+      "controller.render.player.m9": {
+      "geometry": "Geometry.m9",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.m10": {
+      "geometry": "Geometry.m10",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.m82": {
+      "geometry": "Geometry.m82",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.m110": {
+      "geometry": "Geometry.m110",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.mg42": {
+      "geometry": "Geometry.mg42",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.mp40": {
+      "geometry": "Geometry.mp40",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.ppsh": {
+      "geometry": "Geometry.ppsh",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.rpk": {
+      "geometry": "Geometry.rpk",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.sar": {
+      "geometry": "Geometry.m4",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.NHK4" ]
+    },
+      "controller.render.player.svd": {
+      "geometry": "Geometry.svd",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.thom": {
+      "geometry": "Geometry.thom",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.uzi": {
+      "geometry": "Geometry.uzi",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.vz61": {
+      "geometry": "Geometry.vz61",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.xm8": {
+      "geometry": "Geometry.xm8",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.awm": {
+      "geometry": "Geometry.awm",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.m249" ]
+    },
+   "controller.render.player.l86": {
+      "geometry": "Geometry.l86",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.lazer": {
+      "geometry": "Geometry.lazer",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.scar": {
+      "geometry": "Geometry.scar",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.bar": {
+      "geometry": "Geometry.bar",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.g36": {
+      "geometry": "Geometry.g36",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.m249": {
+      "geometry": "Geometry.m249",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.m249" ]
+    },
+   "controller.render.player.tt33": {
+      "geometry": "Geometry.tt33",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.m1911": {
+      "geometry": "Geometry.m1911",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.hk416": {
+      "geometry": "Geometry.hk416",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.p90": {
+      "geometry": "Geometry.p90",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.mp5": {
+      "geometry": "Geometry.mp5",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.rpg": {
+      "geometry": "Geometry.rpg",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.mosin": {
+      "geometry": "Geometry.mosin",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+   "controller.render.player.m16a4": {
+      "geometry": "Geometry.m16a4",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ak47" ]
+    },
+      "controller.render.player.p38": {
+      "geometry": "Geometry.p38",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.p226": {
+      "geometry": "Geometry.p226",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.t100": {
+      "geometry": "Geometry.t100",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.ump9": {
+      "geometry": "Geometry.ump9",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.mp7": {
+      "geometry": "Geometry.mp7",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.t95": {
+      "geometry": "Geometry.t95",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.t89": {
+      "geometry": "Geometry.t89",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.ak12": {
+      "geometry": "Geometry.ak12",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+      "controller.render.player.m416": {
+      "geometry": "Geometry.m416",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    }
+  }
+}

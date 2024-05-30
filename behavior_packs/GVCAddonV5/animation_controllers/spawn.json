@@ -1,0 +1,74 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.spawn": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/effect @s resistance 99999 255 true",
+		    "/effect @s regeneration 99999 255 true",
+            "/execute as @e[type=player,r=32] run tag @e[family=spawns,c=1] add spawns"
+          ]
+        }
+      }
+    },
+    "controller.animation.smoke": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @s run particle minecraft:huge_explosion_emitter ~~~"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/execute as @s run particle minecraft:huge_explosion_emitter ~~~"
+          ]
+        }
+      }
+    },
+    "controller.animation.dronespawn": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+		    "/summon addon:gb6_drone ~~7~",
+		    "/event entity @s A"
+          ]
+        }
+      }
+    }
+  }
+}

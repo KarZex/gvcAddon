@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:f4r",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/f4"
+      },
+      "geometry": {
+        "default": "geometry.f4"
+      },
+		"scripts": {
+			"animate": [ 
+				"fly"
+			]
+		},
+		"animations": {
+			"fly": "animation.wing"
+		},
+	  "spawn_egg":{
+	  "texture":"f4",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

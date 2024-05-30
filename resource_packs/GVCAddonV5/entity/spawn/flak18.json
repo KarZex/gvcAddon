@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:gmgflak18r1",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/craft/gflak18"
+      },
+      "geometry": {
+        "default": "geometry.allblock"
+      },
+	  "spawn_egg":{
+	  "texture":"gflak18",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

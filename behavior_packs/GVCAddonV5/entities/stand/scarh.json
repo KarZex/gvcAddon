@@ -1,0 +1,70 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:entity": {
+		"description": {
+
+			"identifier": "stand:scarh",
+			"runtime_identifier": "minecraft:shulker",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+			
+		},
+	"component_groups": {
+      "A": {
+        "minecraft:transformation": {
+          "into": "zex:stand"
+        }
+      }
+    },
+		"components": {
+			"minecraft:behavior.trade_with_player": {},
+      "minecraft:experience_reward": {
+        "on_death": "0"
+      },
+      "minecraft:interact": [
+          {
+            "cooldown": 2.5,
+            "use_item": true,
+            "transform_to_item": "gun:scarh",
+            "play_sounds": "mob.armor_stand.place",
+            "interact_text": "action.interact.gunstand",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "set:defalt",
+              "target": "self"
+            }
+          }
+        ],
+	 "minecraft:collision_box": {
+				"width": 0.5,
+				"height": 1.8
+			},
+      "minecraft:loot": {
+        "table": "loot_tables/entities/stand.json"
+      },
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+
+            "minecraft:push_through": {
+                "value": 0
+            },
+			"minecraft:physics": {}
+		},
+    "events": {
+      "set:defalt": {
+        "add": {
+          "component_groups": [
+            "A"
+          ]
+        }
+      }
+    }
+  }
+}

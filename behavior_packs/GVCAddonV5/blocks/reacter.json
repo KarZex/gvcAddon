@@ -1,0 +1,40 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "zex:reacter",
+            "register_to_creative_menu": true,
+            "category": "Construction"
+        },
+        "components": {
+	"minecraft:creative_category": {
+    "group": "itemGroup.name.kar_zex",
+    "category": "items"
+	},
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "miss",
+                    "render_method": "opaque"
+                }
+            },
+           "minecraft:unit_cube": {},
+      "minecraft:loot": "loot_tables/blocks/tnt2.json",
+      "minecraft:destroy_time": 99999,
+      "minecraft:explosion_resistance": 99999,
+	  "minecraft:on_interact": {
+		"event": "minecraft:ignite"
+	  },
+      "minecraft:map_color": "#000000"
+        },
+    "events": {
+	  "minecraft:ignite": {
+		"run_command": {
+	      "command": [
+	        "fill ~~~ ~~~ redstone_block"
+          ],
+	      "target": "self"
+	    }
+	  }
+    }
+    }
+}

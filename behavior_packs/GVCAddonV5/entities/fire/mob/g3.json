@@ -1,0 +1,52 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:g3",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "exploding": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "power": 6,
+          "fuseLit": true,
+          "causesFire": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.3
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 5,
+            "knockback": true,
+            "semi_random_diff_damage": false,
+            "destroy_on_hit": true
+          },
+          "stick_in_ground": {
+            "shake_time": 0.35
+          },
+          "arrow_effect": {}
+        },
+        "power": 0,
+        "gravity": 1.0,
+        "angleoffset": 0.0
+      },
+      "minecraft:physics": {},
+      "minecraft:explode": {
+        "fuseLength": 1,
+        "power": 10,
+        "fuseLit": true,
+        "causesFire": true
+      }
+    }
+  }
+}

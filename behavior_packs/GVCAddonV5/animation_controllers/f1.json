@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.f1": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "riding": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/ride @s[family=monster] summon_rider addon:ga mg",
+			"/ride @s[family=player] summon_rider addon:ca mg"
+          ]
+        },
+        "riding": {
+          "transitions": [
+            { "nriding": "!query.has_rider" }
+          ],
+          "on_entry": [
+            "/ride @s[family=monster] summon_rider addon:ga mg",
+			"/ride @s[family=player] summon_rider addon:ca mg"
+          ]
+        },
+        "nriding": {
+          "transitions": [
+            { "riding": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/event entity @s players"
+          ]
+        }
+      }
+    }
+  }
+}

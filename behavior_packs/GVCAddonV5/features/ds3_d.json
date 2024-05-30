@@ -1,0 +1,14 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:structure_template_feature": {
+        "description": {
+            "identifier": "feature:ds3_d"
+        },
+        "structure_name": "mystructure:fs3_d",
+        "adjustment_radius": 8,
+        "facing_direction": "random",
+        "constraints": {
+            "grounded": {}
+        }
+    }
+}

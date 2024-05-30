@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mg:m249",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/models/m249"
+			},
+			"geometry": {
+        "default": "geometry.mgm249"
+			},
+	  "spawn_egg":{
+	  "texture":"m2",
+	  "texture_index":0
+	  },
+			"scripts": {
+				"animate": [ 
+					"float"
+				]
+			},
+			"animations": {
+				"float": "animation.mg.main"
+			},
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

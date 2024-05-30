@@ -1,0 +1,53 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "zex:snowballu",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+				"onHit": {
+          "mob_effect": {
+            "effect": "slowness",
+            "durationeasy": 20,
+            "durationnormal": 20,
+            "durationhard": 20,
+            "amplifier": 10
+          },
+          "particle_on_hit": {
+            "particle_type": "snowballpoof",
+            "num_particles": 50,
+            "on_entity_hit": false,
+            "on_other_hit": true
+          },
+					"impact_damage": {
+						"damage": 3,
+						"knockback": true
+					},
+					"remove_on_hit": {}
+				},
+				"power": 1.5,
+				"gravity": 0.03,
+				"inertia": 1.5,
+				"hitSound": "glass",
+				"uncertaintyBase": 5,
+				"uncertaintyMultiplier": 3,
+				"offset": [
+					0,
+					0,
+					0
+				],
+				"catchFire": false
+			},
+			"minecraft:physics": {}
+		}
+	}
+}

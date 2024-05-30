@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:health"
+    },
+    
+    "components": {
+      "minecraft:hand_equipped": false,
+      "minecraft:stacked_by_data": true,
+      "minecraft:use_duration": 32,
+      "minecraft:food": {
+        "nutrition": 0,
+        "saturation_modifier": "supernatural",
+        "can_always_eat": true,
+        "effects": [
+          {
+            "name": "instant_health",
+            "chance": 1.0,
+            "amplifier": 1
+          }
+        ]
+      }
+    }
+  }
+}

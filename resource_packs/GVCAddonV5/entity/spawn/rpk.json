@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:gmgrpkr1",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/craft/grpk"
+      },
+      "geometry": {
+        "default": "geometry.allblock"
+      },
+	  "spawn_egg":{
+	  "texture":"grpk",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

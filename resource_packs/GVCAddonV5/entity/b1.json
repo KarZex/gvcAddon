@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:b0",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/craft/b1"
+      },
+      "geometry": {
+        "default": "geometry.block"
+      },
+	  "spawn_egg":{
+	  "texture":"b1",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

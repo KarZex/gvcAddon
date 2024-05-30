@@ -1,0 +1,60 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fire:g1",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:egg"
+		},
+		"components": {
+				"minecraft:explode": {
+				"fuseLength": 1,
+				"fuseLit": true,
+				"power": 0,
+				"causesFire": false
+			},
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+						},
+			"minecraft:break_blocks": {
+				"breakable_blocks": [
+					"glass",
+					"glass_pane",
+					"stained_glass",
+					"stained_glass_pane"
+				]
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": [
+							5,
+							5
+						],
+						"knockback": true
+					},
+					"stick_in_ground": {
+						"shake_time": 0
+					}
+				},
+				"power": 17,
+				"gravity": 0,
+				"inertia": 1,
+				"uncertaintyBase": 4,
+				"uncertaintyMultiplier": 3,
+				"anchor": 1,
+				"offset": [
+					0,
+					0,
+					0
+				],
+				"reflectOnHurt": false,
+				"catch_fire": false
+			},
+			"minecraft:physics": {}
+		}
+	}
+}

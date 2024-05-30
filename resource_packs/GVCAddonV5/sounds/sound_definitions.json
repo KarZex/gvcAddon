@@ -1,0 +1,396 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+ 		"reload.c": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload_cannon"
+			]
+		},
+ 		"fire.r1": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/r1"
+			]
+		},
+ 		"fire.r2": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/r2"
+			]
+		},
+ 		"fire.r3": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/r3"
+			]
+		},
+ 		"fire.r4": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/r4"
+			]
+		},
+ 		"fire.r5": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/r5"
+			]
+		},
+ 		"fire.sg": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/sg"
+			]
+		},
+ 		"fire.mg1": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/mg1"
+			]
+		},
+ 		"fire.mg2": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/mg2"
+			]
+		},
+ 		"fire.lmg": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/lmg"
+			]
+		},
+ 		"fire.hg": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/hg"
+			]
+		},
+ 		"fire.hg2": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/sound/hg2"
+			]
+		},
+ 		"fire.smg": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/smg"
+			]
+		},
+ 		"fire.an94": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/an94"
+			]
+		},
+"fire.boss": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/spain_super"
+			]
+		},
+"fire.nhk": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/fire"
+			]
+		},
+"fire.tank": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/fire_cannon2"
+			]
+		},
+ 		"fire.dp28": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/dp28"
+			]
+		},
+ 		"fire.famas": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/famas"
+			]
+		},
+ 		"fire.flameth": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/flame"
+			]
+		},
+ 		"fire.glock17": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/glock17"
+			]
+		},
+ 		"fire.glock18": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/glock18"
+			]
+		},
+ 		"fire.k98": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/k98"
+			]
+		},
+ 		"fire.lewis": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/lewis"
+			]
+		},
+ 		"fire.m9": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/m9"
+			]
+		},
+ 		"fire.m10": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/m10"
+			]
+		},
+ 		"fire.m82": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/m82"
+			]
+		},
+ 		"fire.m110": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/m110"
+			]
+		},
+ 		"fire.mp40": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/mp40"
+			]
+		},
+ 		"fire.ppsh": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/ppsh"
+			]
+		},
+ 		"fire.rpk": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/rpk"
+			]
+		},
+ 		"fire.sar": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/sar"
+			]
+		},
+ 		"fire.thom": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/thom"
+			]
+		},
+ 		"fire.uzi": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/uzi"
+			]
+		},
+ 		"fire.vz61": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/vz61"
+			]
+		},
+ 		"fire.xm8": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/xm8"
+			]
+		},
+ 		"fire.mg42": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/mg42"
+			]
+		},
+  "mob.iceologer.idle": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/mob/iceologer/idle1",
+      "sounds/mob/iceologer/idle2",
+      "sounds/mob/iceologer/idle3"
+      
+    ]
+  },
+  "mob.iceologer.attack": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/mob/iceologer/attack1",
+      "sounds/mob/iceologer/attack2",
+      "sounds/mob/iceologer/attack3"
+      
+    ]
+  },
+  "mob.iceologer.hurt": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/mob/iceologer/hurt1",
+      "sounds/mob/iceologer/hurt2",
+      "sounds/mob/iceologer/hurt3"
+      
+    ]
+  },
+  "mob.iceologer.death": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/mob/iceologer/death1",
+      "sounds/mob/iceologer/death2",
+      "sounds/mob/iceologer/death3"
+      
+    ]
+  },
+
+ 		"fire.l86": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/l86"
+			]
+		},
+ 		"fire.mg": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/hg"
+			]
+		},
+		"empty.a1": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/empty"
+			]
+		},
+		"reload.ak47": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/reload/ak47"
+			]
+		},
+		"fire.ak47": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/ak47"
+			]
+		},
+		"fire.mosin": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/mosin"
+			]
+		},
+		"fire.m249": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/m249"
+			]
+		},
+		"fire.tt33": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/tt33"
+			]
+		},
+		"fire.hk416": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/hk416"
+			]
+		},
+		"fire.aug": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/aug"
+			]
+		},
+		"fire.g36": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/g36"
+			]
+		},
+		"fire.awm": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/awm"
+			]
+		},
+		"fire.lazer": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/lazer"
+			]
+		},
+		"fire.m4": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/m4"
+			]
+		},
+		"fire.m500": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/m500"
+			]
+		},
+		"fire.m1911": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/m1911"
+			]
+		},
+		"fire.bar": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/bar"
+			]
+		},
+		"fire.mp5": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/mp5"
+			]
+		},
+		"fire.p90": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/p90"
+			]
+		},
+		"fire.rpg": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/rpg"
+			]
+		},
+		"fire.scar": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/scar"
+			]
+		},
+		"fire.svd": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/gun/svd"
+			]
+		}
+  	}
+}

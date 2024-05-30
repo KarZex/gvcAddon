@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "GVC_PS"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ABA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:glass",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      },
+      "C": {
+        "item": "minecraft:book",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 15
+      }
+    },
+    "result": {
+      "item": "zex:ps",
+      "count": 2
+    }
+  }
+  
+}

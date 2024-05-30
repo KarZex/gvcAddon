@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.e6.new": {
+			"loop": true,
+			"bones": {
+				"bone26": {
+					"scale": [0.8, 1, 1]
+				},
+				"root": {
+					"position": [3, -4, 46],
+					"scale": 0.3
+				}
+			}
+		}
+	}
+}

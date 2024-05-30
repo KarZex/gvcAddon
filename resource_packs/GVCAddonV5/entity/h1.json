@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:h1",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/h1"
+      },
+      "geometry": {
+        "default": "geometry.f1"
+      },
+		"animations": {
+		  "fly": "animation.wing"
+		},
+		"animation_controllers": [
+		  { "move": "controller.animation.fly" }
+		],
+	  "spawn_egg":{
+	  "texture":"h1",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}
