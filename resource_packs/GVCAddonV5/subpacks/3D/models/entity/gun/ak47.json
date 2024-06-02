@@ -21,18 +21,18 @@
 					"pivot": [0, 0, 0]
 				},
 				{
-					"name": "gunArmA",
+					"name": "rightArmA",
 					"parent": "root",
 					"pivot": [0, 0, 0]
 				},
 				{
-					"name": "gunArm",
-					"parent": "gunArmA",
+					"name": "rightArm",
+					"parent": "rightArmA",
 					"pivot": [-5, 22, 0]
 				},
 				{
 					"name": "gun",
-					"parent": "gunArm",
+					"parent": "rightArm",
 					"pivot": [-6, -19, -2],
 					"rotation": [0, 0, -180]
 				},

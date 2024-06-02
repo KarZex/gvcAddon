@@ -11,10 +11,10 @@
       "materials": [ { "*": "Material.default" } ],
       "textures": [ "Texture.ak47" ]
     },
-   "controller.render.player.x6": {
-      "geometry": "Geometry.x6",
+   "controller.render.scope": {
+      "geometry": "Geometry.scope",
       "materials": [ { "*": "Material.default" } ],
-      "textures": [ "Texture.ak47" ]
+      "textures": [ "Texture.scope" ]
     },
 	"controller.render.player.x0": {
       "geometry": "Geometry.x0",

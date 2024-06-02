@@ -22,7 +22,7 @@ for file_name in os.listdir(current_directory):
                     if i < len(bones) and bones[i]["name"] == "zgun":
                         del data["minecraft:geometry"][0]["bones"][i]
                     if i < len(bones) and bones[i]["name"] == "gun":
-                        data["minecraft:geometry"][0]["bones"][i]["parent"] = "gunArm"
+                        data["minecraft:geometry"][0]["bones"][i]["parent"] = "rightArm"
             else:
                 continue
         

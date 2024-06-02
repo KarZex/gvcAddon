@@ -104,7 +104,6 @@ for row in csv_reader:
 
         with open("functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
             f.write("titleraw @s actionbar {{\"rawtext\":[{{\"text\":\"{1}\"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}}]}}\n".format(gun_id,gun_ammo))
-            f.write("playanimation @s[tag=!running] animation.player.first\n")
-            f.write("playanimation @s[tag=running] animation.item.running\n")
+            
     
     row_count += 1

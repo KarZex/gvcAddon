@@ -1,3 +1,1 @@
 titleraw @s actionbar {"rawtext":[{"text":"zex:rocketm"},{"score":{"name":"@s","objective":"p90"}}]}
-playanimation @s[tag=!running] animation.player.first
-playanimation @s[tag=running] animation.item.running
