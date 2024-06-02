@@ -98,8 +98,13 @@ for row in csv_reader:
                 if not "component_groups" in gun_entity["minecraft:entity"]: gun_entity["minecraft:entity"]["component_groups"] = {}
                 gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
 
-        
+
         with open("entities/fire/scoped/{}.json".format(gun_id),"w") as f:
             json.dump(gun_entity,f,indent=2)
+
+        with open("functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
+            f.write("titleraw @s actionbar {{\"rawtext\":[{{\"text\":\"{1}\"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}}]}}\n".format(gun_id,gun_ammo))
+            f.write("playanimation @s[tag=!running] animation.player.first\n")
+            f.write("playanimation @s[tag=running] animation.item.running\n")
     
     row_count += 1

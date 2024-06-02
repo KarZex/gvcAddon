@@ -1,2 +1,3 @@
-title @s[tag=!reload,scores={p90=1}] actionbar §e76mmRocket§r 1/1
-title @s[tag=!reload,scores={p90=0}] actionbar §e76mmRocket§r §40/1
+titleraw @s actionbar {"rawtext":[{"text":"zex:rocketm"},{"score":{"name":"@s","objective":"p90"}}]}
+playanimation @s[tag=!running] animation.player.first
+playanimation @s[tag=running] animation.item.running

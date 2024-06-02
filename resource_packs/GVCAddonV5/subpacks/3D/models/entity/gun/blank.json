@@ -1,1 +1,74 @@
-{"format_version":"1.10.0","geometry.blank":{"texturewidth":256,"textureheight":256,"visible_bounds_width":10,"visible_bounds_height":11,"visible_bounds_offset":[0,4.5,0],"bones":[{"name":"root","pivot":[0,0,0]},{"name":"body","parent":"root","pivot":[0,0,0]},{"name":"rightArmA","parent":"root","pivot":[0,0,0]},{"name":"rightArm","parent":"rightArmA","pivot":[-5,22,0]},{"name":"leftArmA","parent":"root","pivot":[5,22,0]},{"name":"leftArm","parent":"leftArmA","pivot":[5,22,0]}]}}
+{
+    "format_version": "1.12.0",
+    "minecraft:geometry": [
+        {
+            "description": {
+                "identifier": "geometry.blank",
+                "texture_width": 16,
+                "texture_height": 16,
+                "visible_bounds_width": 16,
+                "visible_bounds_height": 23,
+                "visible_bounds_offset": [
+                    0,
+                    -2.5,
+                    0
+                ]
+            },
+            "bones": [
+                {
+                    "name": "root",
+                    "pivot": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "name": "body",
+                    "parent": "root",
+                    "pivot": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "name": "gunArmA",
+                    "parent": "root",
+                    "pivot": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "name": "gunArm",
+                    "parent": "gunArmA",
+                    "pivot": [
+                        -5,
+                        22,
+                        0
+                    ]
+                },
+                {
+                    "name": "leftArmA",
+                    "parent": "root",
+                    "pivot": [
+                        5,
+                        22,
+                        0
+                    ]
+                },
+                {
+                    "name": "leftArm",
+                    "parent": "leftArmA",
+                    "pivot": [
+                        5,
+                        22,
+                        0
+                    ]
+                }
+            ]
+        }
+    ]
+}

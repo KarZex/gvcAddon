@@ -45,8 +45,8 @@
         },
         "power": 1.6,
         "gravity": 0,
-        "angleoffset": 0.5,
-        "uncertaintyBase": 20.0
+        "uncertaintyBase": 20.0,
+        "anchor": 1
       },
       "minecraft:physics": {}
     },

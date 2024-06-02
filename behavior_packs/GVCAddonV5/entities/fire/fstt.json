@@ -41,7 +41,8 @@
           },
           "stick_in_ground": {}
         },
-        "power": 6
+        "power": 6,
+        "anchor": 1
       },
       "minecraft:physics": {}
     },

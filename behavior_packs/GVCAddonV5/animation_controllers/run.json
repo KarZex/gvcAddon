@@ -1,0 +1,25 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.run": {
+        "states": {
+          "default": {
+            "transitions": [
+              { "scopeing": "query.is_sprinting" }
+            ]
+          },
+          "running": {
+            "transitions": [
+                {"default":"!query.is_sprinting"}
+            ],
+            "on_entry": [
+              "/tag @s add running"
+            ],
+            "on_exit": [
+              "/tag @s remove running"
+            ]
+          }
+        }
+      }
+   }
+}

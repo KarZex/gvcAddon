@@ -13,6 +13,7 @@
         "animate": [
 			"guns",
 			"hold",
+			"run",
 			"reload",
 			"ads"
 		 ]
@@ -20,6 +21,7 @@
       "animations": {
         "guns": "controller.animation.guns",
         "hold": "controller.animation.hold",
+        "run": "controller.animation.run",
         "reload": "controller.animation.reload",
         "ads": "controller.animation.ads"
       }

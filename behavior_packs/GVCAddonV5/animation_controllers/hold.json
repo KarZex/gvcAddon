@@ -66,343 +66,343 @@
         },
 		"an94": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/an94h"
+            "/function hold/an94h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "dp28": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/dp28h"
+            "/function hold/dp28h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "famas": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/famash"
+            "/function hold/famash"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "fire": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/fireh"
+            "/function hold/fireh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "glock17": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/glock17h"
+            "/function hold/glock17h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "glock18": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/glock18h"
+            "/function hold/glock18h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "k98": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/k98h"
+            "/function hold/k98h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "lewis": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/lewish"
+            "/function hold/lewish"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "m9": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/m9h"
+            "/function hold/m9h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "m10": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/m10h"
+            "/function hold/m10h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "m82": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/m82h"
+            "/function hold/m82h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "m110": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/m110h"
+            "/function hold/m110h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "mg42": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/mg42h"
+            "/function hold/mg42h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "mp40": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/mp40h"
+            "/function hold/mp40h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "ppsh": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/ppshh"
+            "/function hold/ppshh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "rpk": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/rpkh"
+            "/function hold/rpkh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "sar": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/sarh"
+            "/function hold/sarh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "svd": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/svdh"
+            "/function hold/svdh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "thom": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/thomh"
+            "/function hold/thomh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "uzi": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/uzih"
+            "/function hold/uzih"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "vz61": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/vz61h"
+            "/function hold/vz61h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "xm8": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/xm8h"
+            "/function hold/xm8h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "bar": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/barh"
+            "/function hold/barh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "g36": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/g36h"
+            "/function hold/g36h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "hk416": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/hk416h"
+            "/function hold/hk416h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "mosin": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/mosinh"
+            "/function hold/mosinh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "tt33": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/tt33h"
+            "/function hold/tt33h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "p38": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/p38h"
+            "/function hold/p38h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "p226": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/p226h"
+            "/function hold/p226h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "t100": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/t100h"
+            "/function hold/t100h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "ump9": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/ump9h"
+            "/function hold/ump9h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "mp7": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/mp7h"
+            "/function hold/mp7h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "t95": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/t95h"
+            "/function hold/t95h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "416": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/416h"
+            "/function hold/416h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "t89": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/t89h"
+            "/function hold/t89h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "ak12": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/ak12h"
+            "/function hold/ak12h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "m24": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/m24h"
+            "/function hold/m24h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "sks": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/sksh"
+            "/function hold/sksh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "m14": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/m14h"
+            "/function hold/m14h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "pkm": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/pkmh"
+            "/function hold/pkmh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "t62": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/t62h"
+            "/function hold/t62h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "sv98": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/sv98h"
+            "/function hold/sv98h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "ak47": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/ak47h"
+            "/function hold/ak47h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "aug": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/augh"
+            "/function hold/augh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "l86": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/l86h"
+            "/function hold/l86h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "awm": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/awmh"
+            "/function hold/awmh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "m249": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/m249h"
+            "/function hold/m249h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "lazer": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/lazerh"
+            "/function hold/lazerh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "m4": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/m4h"
+            "/function hold/m4h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "m16a4": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/m16a4h"
+            "/function hold/m16a4h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "m1911": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/m1911h"
+            "/function hold/m1911h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "mp5": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/mp5h"
+            "/function hold/mp5h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "p90": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/p90h"
+            "/function hold/p90h"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "rpg": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/rpgh"
+            "/function hold/rpgh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "scar": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/scarh"
+            "/function hold/scarh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "scarh": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/scarhh"
+            "/function hold/scarhh"
           ],
           "transitions": [ { "default": "(1.0)"}]
         },
         "seishi": {
           "on_entry": [            
-            "/execute @s[scores={cooldown=0}] ~~~ function hold/seishih"
+            "/function hold/seishih"
           ],
           "transitions": [ { "default": "(1.0)"}]
         }

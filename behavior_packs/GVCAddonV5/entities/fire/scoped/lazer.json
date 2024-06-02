@@ -27,8 +27,8 @@
       "minecraft:projectile": {
         "onHit": {
           "impact_damage": {
-            "damage": 5,
-            "knockback": true
+            "damage": 0,
+            "knockback": false
           },
           "stick_in_ground": {}
         },
@@ -37,13 +37,8 @@
         "inertia": 1.5,
         "uncertaintyBase": 0,
         "uncertaintyMultiplier": 0,
-        "anchor": 1,
-        "offset": [
-          0,
-          0.5,
-          0
-        ],
-        "catchFire": false
+        "catchFire": false,
+        "anchor": 1
       },
       "minecraft:physics": {}
     }
