@@ -2,22 +2,20 @@
 	"format_version": "1.16.100",
 	"minecraft:attachable": {
 		"description": {
-			"identifier": "gun:mosin",
+			"identifier": "gun:scar",
 			"materials": {
 				"default": "entity_alphablend"
 			},
 			"textures": {
-				"default": "textures/models/mosin.png",
-				"scope": "textures/models/scope.png"
+				"default": "textures/models/scar.png"
 			},
 			"geometry": {
-				"default": "geometry.mosin",//create by KUROMU1019. thanks
-				"scope": "geometry.scope"
+				"default": "geometry.scar"//create by NervousMovie801. thanks
 			},
 			"animations": {
-				"first": "animation.mosin.first",
-				"ads": "animation.item.scope",
-				"third": "animation.mosin.third"
+				"first": "animation.scar.first",
+				"ads": "animation.scar.ads",
+				"third": "animation.scar.third"
 			},
 			"scripts": {
 				"pre_animation": [
@@ -36,8 +34,7 @@
 				]
 			},
 			"render_controllers": [
-				{ "controller.render.default": "!query.is_sneaking || !variable.is_first_person" },
-				{ "controller.render.scope": "query.is_sneaking && variable.is_first_person" }
+				"controller.render.default"
 			]
 		}
 	}

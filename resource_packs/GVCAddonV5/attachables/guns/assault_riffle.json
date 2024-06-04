@@ -1,0 +1,41 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "gun:ak12",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/ar.png"
+			},
+			"geometry": {
+				"default": "geometry.ar"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"animations": {
+				"first_person_main_hand": "animation.assault_rifle.first_person_main_hand",
+				"first_person_sneaking_main_hand": "animation.assault_rifle.first_person_sneaking_main_hand",
+				"third_person_main_hand": "animation.assault_rifle.third_person_main_hand"
+			},
+			"scripts": {
+				"pre_animation": [
+					"v.main_hand = c.item_slot == 'main_hand';"
+				],
+				"animate": [
+					{
+						"first_person_main_hand": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
+					},
+					{
+						"first_person_sneaking_main_hand": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+					},
+					{
+						"third_person_main_hand": "v.main_hand && !c.is_first_person"
+					}
+				]
+			}
+		}
+	}
+} 
