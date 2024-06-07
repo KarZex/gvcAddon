@@ -1,20 +1,6 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.item.third": {
-			"loop": true,
-			"bones": {
-				"leftarm" : {
-					"rotation" : [ "query.target_x_rotation - 90.0 - math.sin(query.life_time * 76.8) * 2.865 - this", "query.target_y_rotation + 28.65", "-(math.cos(query.life_time * 103.2) * 2.865) - 2.865" ]
-				},
-				"gunArm" : {
-					"rotation" : [ "query.target_x_rotation - 90.0 + math.sin(query.life_time * 76.8) * 2.865 - this", "query.target_y_rotation - 5.73", "(math.cos(query.life_time * 103.2) * 2.865) + 2.865" ]
-				},
-				"gun" : {
-					"scale" : 0.3
-				}
-			}
-		},
 		"animation.item.scope3": {
 			"loop": true,
 			"bones": {

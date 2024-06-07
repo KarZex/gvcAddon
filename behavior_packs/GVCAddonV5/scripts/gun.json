@@ -117,7 +117,7 @@
     "damage": 30,
     "maxGunAmmo": 10,
     "reloadTime": 100,
-    "bullet": "zex:127m"
+    "bullet": "zex:1270m"
   },
   "m110": {
     "damage": 12,

@@ -21,6 +21,17 @@ for row in csv_reader:
         gun_break_block = bool(row[10])
         gun_ammo = row[3]
 
+        if(gun_ammo == "zex:556m"):
+            ammo_name = "§6.22Cal§r"
+        elif(gun_ammo == "zex:762m"):
+            ammo_name = "§3.30Cal§r"
+        elif(gun_ammo == "zex:mm9"):
+            ammo_name = "§99mmHG§r"
+        elif(gun_ammo == "zex:btm"):
+            ammo_name = "§aBattery§r"
+        elif(gun_ammo == "zex:1270m"):
+            ammo_name = "§c.50Cal§r"
+
         with open("scripts/gun.json","r") as f:
             gundata = json.load(f)
             gundata["{}".format(gun_id)] = { "damage": gun_damage, "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo) }
@@ -103,7 +114,8 @@ for row in csv_reader:
             json.dump(gun_entity,f,indent=2)
 
         with open("functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
-            f.write("titleraw @s actionbar {{\"rawtext\":[{{\"text\":\"{1}\"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}}]}}\n".format(gun_id,gun_ammo))
+            f.write("titleraw @s actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
+            f.write("playanimation @s[tag=!scope] animation.item.first none 0.3 \"query.is_sneaking\"")
             
     
     row_count += 1

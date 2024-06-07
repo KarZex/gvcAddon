@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "gun:m16a4",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/guns/m16a1/m16a1_normal",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.m16a1"
+      },
+      "animations": {
+        "controller":"controller.animation.m16a1",
+        "m16a1have": "animation.item.m16a1have",
+        "m16a1ads": "animation.item.m16a1ads",
+        "m16a1shoot": "animation.item.m16a1.shoot",
+        "m16a1shoot_ads": "animation.item.m16a1.shoot_ads",
+        "m16a1reload": "animation.item.m16a1.reload",
+        "m16a1first":"animation.item.m16a1.first",
+        "m16a1third":"animation.item.m16a1.third"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.main_hand = c.item_slot == 'main_hand';"
+        ],
+        "animate": [
+          "controller",
+          {
+            "m16a1first": "c.is_first_person "
+          },
+          {
+            "m16a1third": "!c.is_first_person "
+          }
+        ]
+      },
+      "render_controllers": ["controller.render.item_default"]
+    }
+  }
+}

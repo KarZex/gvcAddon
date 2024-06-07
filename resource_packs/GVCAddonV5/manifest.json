@@ -14,17 +14,5 @@
       "uuid": "440e2a18-28ad-4768-be1a-f5b764c1247d",
       "version": [0, 0, 1]
     }
-  ],
-  "subpacks": [
-    {
-      "folder_name": "3D",
-      "name": "3D",
-      "memory_tier": 1
-    },
-    {
-      "folder_name": "2D",
-      "name": "2D",
-      "memory_tier": 2
-    }
   ]
 }

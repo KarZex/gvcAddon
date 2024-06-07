@@ -1,1 +1,2 @@
-titleraw @s actionbar {"rawtext":[{"text":"zex:mm9"},{"score":{"name":"@s","objective":"ppsh"}}]}
+titleraw @s actionbar {"rawtext":[{"text":"§99mmHG§r "},{"score":{"name":"@s","objective":"ppsh"}},{"text":"/72"}]}
+playanimation @s[tag=!scope] animation.item.first none 0.3 "query.is_sneaking"

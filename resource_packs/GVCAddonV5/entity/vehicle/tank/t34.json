@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "vehicle:t34",
@@ -9,6 +9,14 @@
       },
       "geometry": {
         "default": "geometry.t34"
+      },
+      "animations": {
+        "look_at_target": "animation.tank"
+      },
+      "scripts": {
+        "animate": [
+          "look_at_target"
+        ]
       },
 	  "spawn_egg":{
 	  "texture":"t34",
