@@ -1,2 +1,2 @@
-titleraw @s actionbar {"rawtext":[{"text":"§aBattery§r "},{"score":{"name":"@s","objective":"lazer"}},{"text":"/100"}]}
+titleraw @s[tag=!reload] actionbar {"rawtext":[{"text":"§aBattery§r "},{"score":{"name":"@s","objective":"lazer"}},{"text":"/100"}]}
 playanimation @s[tag=!scope] animation.item.first none 0.3 "query.is_sneaking"

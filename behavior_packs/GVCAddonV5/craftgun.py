@@ -114,7 +114,7 @@ for row in csv_reader:
             json.dump(gun_entity,f,indent=2)
 
         with open("functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
-            f.write("titleraw @s actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
+            f.write("titleraw @s[tag=!reload] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
             f.write("playanimation @s[tag=!scope] animation.item.first none 0.3 \"query.is_sneaking\"")
             
     

@@ -28,7 +28,10 @@
 				{
 					"name": "rightArm",
 					"parent": "rightArmA",
-					"pivot": [-5, 22, 0]
+					"pivot": [-5, 22, 0],
+					"cubes": [
+						{"origin": [-8, 12, -2], "size": [4, 12, 4], "uv": [56, 0]}
+					]
 				},
 				{
 					"name": "gun",
@@ -5570,7 +5573,10 @@
 				{
 					"name": "leftArm",
 					"parent": "leftArmA",
-					"pivot": [5, 22, 0]
+					"pivot": [5, 22, 0],
+					"cubes": [
+						{"origin": [4, 12, -2], "size": [4, 12, 4], "uv": [52, 28]}
+					]
 				}
 			]
 		}
