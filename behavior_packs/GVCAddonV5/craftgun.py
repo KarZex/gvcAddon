@@ -25,7 +25,12 @@ for row in csv_reader:
         else:
             gun_break_block = False
 
-            
+        if(row[12] == "T"):
+            gun_onehand = True
+        else:
+            gun_onehand = False
+
+
         if(gun_ammo == "zex:556m"):
             ammo_name = "§6.22Cal§r"
         elif(gun_ammo == "zex:762m"):
@@ -120,7 +125,8 @@ for row in csv_reader:
 
         with open("functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
             f.write("titleraw @s[tag=!reload] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
-            f.write("playanimation @s[tag=!scope] animation.item.first none 0.3 \"query.is_sneaking\"")
+            if(gun_onehand): f.write("playanimation @s[tag=!scope] animation.onehand.first none 0.3 \"query.is_sneaking\"")
+            else: f.write("playanimation @s[tag=!scope] animation.item.first none 0.3 \"query.is_sneaking\"")
             
     
     row_count += 1

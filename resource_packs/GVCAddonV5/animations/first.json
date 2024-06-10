@@ -58,7 +58,8 @@
 					"position": ["variable.is_first_person?-3:0", "variable.is_first_person?8:0", "variable.is_first_person?-9:0"]
 				},
 				"leftArm": {
-					"scale":0
+					"rotation": [-90, 50, 0],
+					"scale":"variable.is_first_person?0:1"
 				}
 			}
 		},

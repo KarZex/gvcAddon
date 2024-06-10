@@ -1,2 +1,2 @@
 titleraw @s[tag=!reload] actionbar {"rawtext":[{"text":"§99mmHG§r "},{"score":{"name":"@s","objective":"glock18"}},{"text":"/20"}]}
-playanimation @s[tag=!scope] animation.item.first none 0.3 "query.is_sneaking"
+playanimation @s[tag=!scope] animation.onehand.first none 0.3 "query.is_sneaking"
