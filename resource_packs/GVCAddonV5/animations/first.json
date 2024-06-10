@@ -50,6 +50,18 @@
 				}
 			}
 		},
+		"animation.onehand.first": {
+			"animation_length": 0.5,
+			"bones": {
+				"rightArm": {
+					"rotation": ["variable.is_first_person?-6.30085:-75", "variable.is_first_person?37.71023:0", "variable.is_first_person?64.81843:0"],
+					"position": ["variable.is_first_person?-3:0", "variable.is_first_person?8:0", "variable.is_first_person?-9:0"]
+				},
+				"leftArm": {
+					"scale":0
+				}
+			}
+		},
 		"animation.scar.first": {
 			"loop": true,
 			"bones": {

@@ -18,9 +18,14 @@ for row in csv_reader:
         gun_aim = float(row[6])
         gun_reload = int(row[7])
         gun_maxammo = int(row[2])
-        gun_break_block = bool(row[10])
         gun_ammo = row[3]
 
+        if(row[10] == "T"):
+            gun_break_block = True
+        else:
+            gun_break_block = False
+
+            
         if(gun_ammo == "zex:556m"):
             ammo_name = "§6.22Cal§r"
         elif(gun_ammo == "zex:762m"):
