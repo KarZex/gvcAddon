@@ -13,7 +13,7 @@
     },
    "controller.render.scope": {
       "geometry": "Geometry.scope",
-      "materials": [ { "*": "Material.default" } ],
+      "materials": [ { "*": "Material.scope" } ],
       "textures": [ "Texture.scope" ]
     },
 	"controller.render.player.x0": {

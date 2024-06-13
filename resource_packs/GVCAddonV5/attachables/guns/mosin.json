@@ -4,7 +4,8 @@
 		"description": {
 			"identifier": "gun:mosin",
 			"materials": {
-				"default": "entity_alphablend"
+				"default": "entity_alphablend",
+				"scope": "entity_alphablend"
 			},
 			"textures": {
 				"default": "textures/models/mosin.png",
@@ -16,7 +17,7 @@
 			},
 			"animations": {
 				"first": "animation.mosin.first",
-				"ads": "animation.item.scope",
+				"ads": "animation.mosin.ads",
 				"third": "animation.mosin.third"
 			},
 			"scripts": {
@@ -36,8 +37,8 @@
 				]
 			},
 			"render_controllers": [
-				{ "controller.render.default": "!query.is_sneaking || !variable.is_first_person" },
-				{ "controller.render.scope": "query.is_sneaking && variable.is_first_person" }
+				{"controller.render.default":"!query.is_sneaking || !c.is_first_person"},
+				{ "controller.render.scope": "query.is_sneaking && c.is_first_person" }
 			]
 		}
 	}

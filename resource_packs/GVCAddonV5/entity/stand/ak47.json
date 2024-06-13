@@ -8,7 +8,7 @@
 			},
 			"textures": {
 				"default": "textures/mob/stand",
-				"gun": "textures/models/NHK2"
+				"gun": "textures/models/ak47"
 			},
 			"geometry": {
 				"gun": "geometry.ak47",
