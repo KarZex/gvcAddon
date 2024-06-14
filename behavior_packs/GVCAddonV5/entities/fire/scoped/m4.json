@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "fire:sm4",
+      "identifier": "fire:ads_m4",
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,

@@ -78,9 +78,6 @@
               "vz61": "query.get_equipped_item_name == 'vz61' && query.item_remaining_use_duration > 0.10"
             },
             {
-              "m416": "query.get_equipped_item_name == '416' && query.item_remaining_use_duration > 0.10"
-            },
-            {
               "xm8": "query.get_equipped_item_name == 'xm8' && query.item_remaining_use_duration > 0.10"
             },
             {
@@ -106,24 +103,6 @@
             },
             {
               "ak12": "query.get_equipped_item_name == 'ak12' && query.item_remaining_use_duration > 0.10"
-            },
-            {
-              "m24": "query.get_equipped_item_name == 'm24' && query.item_remaining_use_duration > 0.10"
-            },
-            {
-              "sks": "query.get_equipped_item_name == 'sks' && query.item_remaining_use_duration > 0.10"
-            },
-            {
-              "m14": "query.get_equipped_item_name == 'm14' && query.item_remaining_use_duration > 0.10"
-            },
-            {
-              "pkm": "query.get_equipped_item_name == 'pkm' && query.item_remaining_use_duration > 0.10"
-            },
-            {
-              "t62": "query.get_equipped_item_name == 't62' && query.item_remaining_use_duration > 0.10"
-            },
-            {
-              "sv98": "query.get_equipped_item_name == 'sv98' && query.item_remaining_use_duration > 0.10"
             },
             {
               "ak47": "query.get_equipped_item_name == 'ak47' && query.item_remaining_use_duration > 0.10"
@@ -225,7 +204,7 @@
         "an94": {
           "on_entry": [
             "/event entity @s[scores={an94=1..}] fire:an94",
-            "/playsound empty.a1 @s[scores={an94=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={an94=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={an94=1..}] an94 1"
           ],
           "transitions": [
@@ -237,7 +216,7 @@
         "dp28": {
           "on_entry": [
             "/event entity @s[scores={dp28=1..}] fire:dp28",
-            "/playsound empty.a1 @s[scores={dp28=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={dp28=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={dp28=1..}] dp28 1"
           ],
           "transitions": [
@@ -249,7 +228,7 @@
         "famas": {
           "on_entry": [
             "/event entity @s[scores={famas=1..}] fire:famas",
-            "/playsound empty.a1 @s[scores={famas=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={famas=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={famas=1..}] famas 1"
           ],
           "transitions": [
@@ -261,7 +240,7 @@
         "fire": {
           "on_entry": [
             "/event entity @s[scores={fire=1..}] fire:fire",
-            "/playsound empty.a1 @s[scores={fire=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={fire=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={fire=1..}] fire 1"
           ],
           "transitions": [
@@ -273,7 +252,7 @@
         "glock17": {
           "on_entry": [
             "/event entity @s[scores={glock17=1..}] fire:glock17",
-            "/playsound empty.a1 @s[scores={glock17=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={glock17=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={glock17=1..}] glock17 1"
           ],
           "transitions": [
@@ -285,7 +264,7 @@
         "glock18": {
           "on_entry": [
             "/event entity @s[scores={glock18=1..}] fire:glock18",
-            "/playsound empty.a1 @s[scores={glock18=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={glock18=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={glock18=1..}] glock18 1"
           ],
           "transitions": [
@@ -299,7 +278,7 @@
         },
         "glock18ii": {
           "on_entry": [
-            "/event entity @s[scores={glock18=1..}] fire:glock18",
+            "/event entity @s[tag=!reload,scores={glock18=1..}] fire:glock18",
             "/playsound empty.a1 @s[scores={glock18=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={glock18=1..}] glock18 1"
           ],
@@ -315,7 +294,7 @@
         "k98": {
           "on_entry": [
             "/event entity @s[scores={k98=1..}] fire:k98",
-            "/playsound empty.a1 @s[scores={k98=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={k98=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={k98=1..}] k98 1"
           ],
           "transitions": [
@@ -339,7 +318,7 @@
         "m9": {
           "on_entry": [
             "/event entity @s[scores={m9=1..}] fire:m9",
-            "/playsound empty.a1 @s[scores={m9=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={m9=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={m9=1..}] m9 1"
           ],
           "transitions": [
@@ -351,7 +330,7 @@
         "m10": {
           "on_entry": [
             "/event entity @s[scores={m10=1..}] fire:m10",
-            "/playsound empty.a1 @s[scores={m10=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={m10=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={m10=1..}] m10 1"
           ],
           "transitions": [
@@ -365,7 +344,7 @@
         },
         "m10ii": {
           "on_entry": [
-            "/event entity @s[scores={m10=1..}] fire:m10",
+            "/event entity @s[tag=!reload,scores={m10=1..}] fire:m10",
             "/playsound empty.a1 @s[scores={m10=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={m10=1..}] m10 1"
           ],
@@ -381,7 +360,7 @@
         "m82": {
           "on_entry": [
             "/event entity @s[scores={m82=1..}] fire:m82",
-            "/playsound empty.a1 @s[scores={m82=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={m82=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={m82=1..}] m82 1"
           ],
           "transitions": [
@@ -393,7 +372,7 @@
         "m110": {
           "on_entry": [
             "/event entity @s[scores={m110=1..}] fire:m110",
-            "/playsound empty.a1 @s[scores={m110=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={m110=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={m110=1..}] m110 1"
           ],
           "transitions": [
@@ -405,7 +384,7 @@
         "mg42": {
           "on_entry": [
             "/event entity @s[scores={mg42=1..}] fire:mg42",
-            "/playsound empty.a1 @s[scores={mg42=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={mg42=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={mg42=1..}] mg42 1"
           ],
           "transitions": [
@@ -419,7 +398,7 @@
         },
         "mg42ii": {
           "on_entry": [
-            "/event entity @s[scores={mg42=1..}] fire:mg42",
+            "/event entity @s[tag=!reload,scores={mg42=1..}] fire:mg42",
             "/playsound empty.a1 @s[scores={mg42=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={mg42=1..}] mg42 1"
           ],
@@ -435,7 +414,7 @@
         "mp40": {
           "on_entry": [
             "/event entity @s[scores={mp40=1..}] fire:mp40",
-            "/playsound empty.a1 @s[scores={mp40=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={mp40=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={mp40=1..}] mp40 1"
           ],
           "transitions": [
@@ -449,7 +428,7 @@
         },
         "mp40ii": {
           "on_entry": [
-            "/event entity @s[scores={mp40=1..}] fire:mp40",
+            "/event entity @s[tag=!reload,scores={mp40=1..}] fire:mp40",
             "/playsound empty.a1 @s[scores={mp40=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={mp40=1..}] mp40 1"
           ],
@@ -465,7 +444,7 @@
         "ppsh": {
           "on_entry": [
             "/event entity @s[scores={ppsh=1..}] fire:ppsh",
-            "/playsound empty.a1 @s[scores={ppsh=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={ppsh=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={ppsh=1..}] ppsh 1"
           ],
           "transitions": [
@@ -518,7 +497,7 @@
         "svd": {
           "on_entry": [
             "/event entity @s[scores={svd=1..}] fire:svd",
-            "/playsound empty.a1 @s[scores={svd=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={svd=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={svd=1..}] svd 1"
           ],
           "transitions": [
@@ -530,7 +509,7 @@
         "thom": {
           "on_entry": [
             "/event entity @s[scores={thom=1..}] fire:thom",
-            "/playsound empty.a1 @s[scores={thom=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={thom=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={thom=1..}] thom 1"
           ],
           "transitions": [
@@ -542,7 +521,7 @@
         "uzi": {
           "on_entry": [
             "/event entity @s[scores={uzi=1..}] fire:uzi",
-            "/playsound empty.a1 @s[scores={uzi=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={uzi=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={uzi=1..}] uzi 1"
           ],
           "transitions": [
@@ -557,7 +536,7 @@
         "vz61": {
           "on_entry": [
             "/event entity @s[scores={vz61=1..}] fire:vz61",
-            "/playsound empty.a1 @s[scores={vz61=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={vz61=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={vz61=1..}] vz61 1"
           ],
           "transitions": [
@@ -572,7 +551,7 @@
         "xm8": {
           "on_entry": [
             "/event entity @s[scores={xm8=1..}] fire:xm8",
-            "/playsound empty.a1 @s[scores={xm8=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={xm8=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={xm8=1..}] xm8 1"
           ],
           "transitions": [
@@ -584,7 +563,7 @@
         "l86": {
           "on_entry": [
             "/event entity @s[scores={l86=1..}] fire:l86",
-            "/playsound empty.a1 @s[scores={l86=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={l86=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={l86=1..}] l86 1"
           ],
           "transitions": [
@@ -596,7 +575,7 @@
         "ak47": {
           "on_entry": [
             "/event entity @s[scores={ak47=1..}] fire:ak47",
-            "/playsound empty.a1 @s[scores={ak47=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={ak47=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={ak47=1..}] ak47 1"
           ],
           "transitions": [
@@ -634,7 +613,7 @@
         "t100": {
           "on_entry": [
             "/event entity @s[scores={t100=1..}] fire:t100",
-            "/playsound empty.a1 @s[scores={t100=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={t100=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={t100=1..}] t100 1"
           ],
           "transitions": [
@@ -649,7 +628,7 @@
         "ump9": {
           "on_entry": [
             "/event entity @s[scores={ump9=1..}] fire:ump9",
-            "/playsound empty.a1 @s[scores={ump9=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={ump9=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={ump9=1..}] ump9 1"
           ],
           "transitions": [
@@ -664,7 +643,7 @@
         "mp7": {
           "on_entry": [
             "/event entity @s[scores={mp7=1..}] fire:mp7",
-            "/playsound empty.a1 @s[scores={mp7=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={mp7=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={mp7=1..}] mp7 1"
           ],
           "transitions": [
@@ -678,7 +657,7 @@
         },
         "mp7ii": {
           "on_entry": [
-            "/event entity @s[scores={mp7=1..}] fire:mp7",
+            "/event entity @s[tag=!reload,scores={mp7=1..}] fire:mp7",
             "/playsound empty.a1 @s[scores={mp7=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={mp7=1..}] mp7 1"
           ],
@@ -694,7 +673,7 @@
         "t95": {
           "on_entry": [
             "/event entity @s[scores={t95=1..}] fire:t95",
-            "/playsound empty.a1 @s[scores={t95=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={t95=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={t95=1..}] t95 1"
           ],
           "transitions": [
@@ -706,7 +685,7 @@
         "t89": {
           "on_entry": [
             "/event entity @s[scores={t89=1..}] fire:t89",
-            "/playsound empty.a1 @s[scores={t89=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={t89=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={t89=1..}] t89 1"
           ],
           "transitions": [
@@ -721,7 +700,7 @@
         "ak12": {
           "on_entry": [
             "/event entity @s[scores={ak12=1..}] fire:ak12",
-            "/playsound empty.a1 @s[scores={ak12=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={ak12=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={ak12=1..}] ak12 1"
           ],
           "transitions": [
@@ -733,7 +712,7 @@
         "mosin": {
           "on_entry": [
             "/event entity @s[scores={mosin=1..}] fire:mosin",
-            "/playsound empty.a1 @s[scores={mosin=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={mosin=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={mosin=1..}] mosin 1"
           ],
           "transitions": [
@@ -745,7 +724,7 @@
         "m249": {
           "on_entry": [
             "/event entity @s[scores={m249=1..}] fire:m249",
-            "/playsound empty.a1 @s[scores={m249=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={m249=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={m249=1..}] m249 1"
           ],
           "transitions": [
@@ -757,7 +736,7 @@
         "tt33": {
           "on_entry": [
             "/event entity @s[scores={tt33=1..}] fire:tt33",
-            "/playsound empty.a1 @s[scores={tt33=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={tt33=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={tt33=1..}] tt33 1"
           ],
           "transitions": [
@@ -781,7 +760,7 @@
         "awm": {
           "on_entry": [
             "/event entity @s[scores={awm=1..}] fire:awm",
-            "/playsound empty.a1 @s[scores={awm=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={awm=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={awm=1..}] awm 1"
           ],
           "transitions": [
@@ -792,7 +771,7 @@
         },
         "lazerii": {
           "on_entry": [
-            "/event entity @s[scores={lazer=1..}] fire:lazer",
+            "/event entity @s[tag=!reload,scores={lazer=1..}] fire:lazer",
             "/playsound empty.a1 @s[scores={lazer=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={lazer=1..}] lazer 1"
           ],
@@ -808,7 +787,7 @@
         "lazer": {
           "on_entry": [
             "/event entity @s[scores={lazer=1..}] fire:lazer",
-            "/playsound empty.a1 @s[scores={lazer=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={lazer=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={lazer=1..}] lazer 1"
           ],
           "transitions": [
@@ -823,7 +802,7 @@
         "m4": {
           "on_entry": [
             "/event entity @s[scores={m4=1..}] fire:m4",
-            "/playsound empty.a1 @s[scores={m4=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={m4=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={m4=1..}] m4 1"
           ],
           "transitions": [
@@ -835,7 +814,7 @@
         "m16a4": {
           "on_entry": [
             "/event entity @s[scores={m16a4=1..}] fire:m16a4",
-            "/playsound empty.a1 @s[scores={m16a4=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={m16a4=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={m16a4=1..}] m16a4 1"
           ],
           "transitions": [
@@ -869,7 +848,7 @@
         "m1911": {
           "on_entry": [
             "/event entity @s[scores={m1911=1..}] fire:m1911",
-            "/playsound empty.a1 @s[scores={m1911=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={m1911=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={m1911=1..}] m1911 1"
           ],
           "transitions": [
@@ -881,7 +860,7 @@
         "mp5": {
           "on_entry": [
             "/event entity @s[scores={mp5=1..}] fire:mp5",
-            "/playsound empty.a1 @s[scores={mp5=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={mp5=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={mp5=1..}] mp5 1"
           ],
           "transitions": [
@@ -895,7 +874,7 @@
         },
         "mp5ii": {
           "on_entry": [
-            "/event entity @s[scores={mp5=1..}] fire:mp5",
+            "/event entity @s[tag=!reload,scores={mp5=1..}] fire:mp5",
             "/playsound empty.a1 @s[scores={mp5=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={mp5=1..}] mp5 1"
           ],
@@ -911,7 +890,7 @@
         "p90": {
           "on_entry": [
             "/event entity @s[scores={p90=1..}] fire:p90",
-            "/playsound empty.a1 @s[scores={p90=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={p90=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={p90=1..}] p90 1"
           ],
           "transitions": [
@@ -923,7 +902,7 @@
         "bar": {
           "on_entry": [
             "/event entity @s[scores={bar=1..}] fire:bar",
-            "/playsound empty.a1 @s[scores={bar=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={bar=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={bar=1..}] bar 1"
           ],
           "transitions": [
@@ -935,7 +914,7 @@
         "rpg": {
           "on_entry": [
             "/event entity @s[scores={rpg=1..}] fire:rpg",
-            "/playsound empty.a1 @s[scores={rpg=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={rpg=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={rpg=1..}] rpg 1"
           ],
           "transitions": [
@@ -947,12 +926,12 @@
         "scar": {
           "on_entry": [
             "/event entity @s[scores={scar=1..}] fire:scar",
-            "/playsound empty.a1 @s[scores={scar=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={scar=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={scar=1..}] scar 1"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 2 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -971,7 +950,7 @@
         "g36": {
           "on_entry": [
             "/event entity @s[scores={g36=1..}] fire:g36",
-            "/playsound empty.a1 @s[scores={g36=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={g36=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={g36=1..}] g36 1"
           ],
           "transitions": [
@@ -983,7 +962,7 @@
         "hk416": {
           "on_entry": [
             "/event entity @s[scores={hk416=1..}] fire:hk416",
-            "/playsound empty.a1 @s[scores={hk416=0}] ~~~",
+            "/playsound empty.a1 @s[tag=!reload,scores={hk416=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={hk416=1..}] hk416 1"
           ],
           "transitions": [
@@ -1004,7 +983,7 @@
         },
         "t89ii": {
           "on_entry": [
-            "/event entity @s[scores={t89=1..}] fire:t89",
+            "/event entity @s[tag=!reload,scores={t89=1..}] fire:t89",
             "/playsound empty.a1 @s[scores={t89=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={t89=1..}] t89 1"
           ],
@@ -1019,7 +998,7 @@
         },
         "t100ii": {
           "on_entry": [
-            "/event entity @s[scores={t100=1..}] fire:t100",
+            "/event entity @s[tag=!reload,scores={t100=1..}] fire:t100",
             "/playsound empty.a1 @s[scores={t100=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={t100=1..}] t100 1"
           ],
@@ -1034,7 +1013,7 @@
         },
         "ump9ii": {
           "on_entry": [
-            "/event entity @s[scores={ump9=1..}] fire:ump9",
+            "/event entity @s[tag=!reload,scores={ump9=1..}] fire:ump9",
             "/playsound empty.a1 @s[scores={ump9=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={ump9=1..}] ump9 1"
           ],
@@ -1049,7 +1028,7 @@
         },
         "uziii": {
           "on_entry": [
-            "/event entity @s[scores={uzi=1..}] fire:uzi",
+            "/event entity @s[tag=!reload,scores={uzi=1..}] fire:uzi",
             "/playsound empty.a1 @s[scores={uzi=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={uzi=1..}] uzi 1"
           ],
@@ -1064,7 +1043,7 @@
         },
         "vz61ii": {
           "on_entry": [
-            "/event entity @s[scores={vz61=1..}] fire:vz61",
+            "/event entity @s[tag=!reload,scores={vz61=1..}] fire:vz61",
             "/playsound empty.a1 @s[scores={vz61=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={vz61=1..}] vz61 1"
           ],

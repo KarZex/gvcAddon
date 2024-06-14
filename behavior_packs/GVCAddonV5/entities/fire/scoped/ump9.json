@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "fire:sump9",
+      "identifier": "fire:ads_ump9",
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,

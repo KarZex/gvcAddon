@@ -1,15 +1,16 @@
-import { world, system, EntityDamageCause, ItemComponentTypes  } from "@minecraft/server";
+import { world, system, EntityDamageCause, EquipmentSlot  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 
 //ブロックを叩くことで、リロード
 world.afterEvents.entityHitBlock.subscribe( e => {
 	let p = e.damagingEntity;
-	let g = p.getComponent("inventory").container.getItem(p.selectedSlot);
+	let g = p.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand).getItem();
 	if( p.typeId === "minecraft:player" && g.typeId.includes("gun") && p.getEffect("slowness") == undefined ){
 		let gunName = g.typeId.replace("gun:","");
         let maxGunAmmo = gunData[`${gunName}`]["maxGunAmmo"];
-		let d = Number(maxGunAmmo) - Number(world.scoreboard.getObjective(gunName).getScore(p)) ;
+		let s = Number(world.scoreboard.getObjective(gunName).getScore(p));
+		let d = Number(maxGunAmmo) - s;
 		let reloadTime = gunData[`${gunName}`]["reloadTime"];
 		let Ammo = gunData[`${gunName}`]["bullet"];
 		let c = 0;
@@ -27,8 +28,8 @@ world.afterEvents.entityHitBlock.subscribe( e => {
 					p.runCommand(`clear @s ${Ammo} 0 ${d}`);
 				}
 				else{
-					d = d + c;
-					world.scoreboard.getObjective(gunName).setScore(p,d);
+					s = s + c;
+					world.scoreboard.getObjective(gunName).setScore(p,s);
 					p.runCommand(`clear @s ${Ammo} 0 ${c}`);
 				}
 				p.addEffect("slowness", reloadTime);
@@ -45,7 +46,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 	if( e.projectile.typeId.includes("fire")){
 		let vict = e.getEntityHit().entity;
 		let gunName = e.projectile.typeId
-		if( gunName.includes("fire:s") ){ gunName = gunName.replace("fire:s",""); }
+		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
 		else if( gunName.includes("fire:") ){ gunName = gunName.replace("fire:",""); }
 		let damage = gunData[`${gunName}`]["damage"];
         if( vict.getEffect("resistance") == undefined && vict.hasTag("antiBullet") == false ){
@@ -55,4 +56,3 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		e.projectile.kill();
 	}
 })
-

@@ -15,10 +15,10 @@ execute as @a[tag=!nfeature] run function feature
 execute at @e[type=fire:sar] run particle zex:iceball_wire_dust_particle ~~~
 execute at @e[type=fire:iceboss] run particle zex:iceball_wire_dust_particle ~~~
 execute at @e[type=fire:lazer] run particle minecraft:redstone_wire_dust_particle ~~~
-execute at @e[type=fire:slazer] run particle minecraft:redstone_wire_dust_particle ~~~
+execute at @e[type=fire:ads_lazer] run particle minecraft:redstone_wire_dust_particle ~~~
 execute at @e[type=fire:fire] run particle minecraft:basic_flame_particle ~~~
 execute at @e[type=fire:famas] run particle minecraft:basic_smoke_particle ~~~
-execute at @e[type=fire:sfamas] run particle minecraft:basic_smoke_particle ~~~
+execute at @e[type=fire:ads_famas] run particle minecraft:basic_smoke_particle ~~~
 
 gamerule commandblockoutput false
 

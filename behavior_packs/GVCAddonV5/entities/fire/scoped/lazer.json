@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "fire:slazer",
+      "identifier": "fire:ads_lazer",
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,

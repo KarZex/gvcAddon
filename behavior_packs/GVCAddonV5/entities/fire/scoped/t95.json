@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "fire:st95",
+      "identifier": "fire:ads_t95",
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,

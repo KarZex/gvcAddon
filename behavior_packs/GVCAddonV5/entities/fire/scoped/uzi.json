@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "fire:suzi",
+      "identifier": "fire:ads_uzi",
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,

@@ -186,10 +186,10 @@ export const gunData = {
     "bullet": "zex:rocketm"
   },
   "scar": {
-    "damage": 6,
-    "maxGunAmmo": 30,
+    "damage": 8,
+    "maxGunAmmo": 20,
     "reloadTime": 60,
-    "bullet": "zex:556m"
+    "bullet": "zex:762m"
   },
   "scarh": {
     "damage": 8,

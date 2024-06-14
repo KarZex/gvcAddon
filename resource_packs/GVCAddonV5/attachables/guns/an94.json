@@ -7,14 +7,14 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/models/ak47.png"
+        "default": "textures/models/an94.png"
       },
       "geometry": {
         "default": "geometry.an94"
       },
       "animations": {
         "first": "animation.ak47.first",
-        "ads": "animation.item.ads",
+        "ads": "animation.ak47.ads2",
         "third": "animation.item.third"
       },
       "scripts": {

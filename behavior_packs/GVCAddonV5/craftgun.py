@@ -49,6 +49,47 @@ for row in csv_reader:
         with open("scripts/gun.json","w") as f:
             json.dump(gundata,f,indent=2)
 
+        with open("entities/player.json","r") as f:
+            player = json.load(f)
+            spawn_entity = { 
+                "minecraft:spawn_entity":{
+                    "entities": [
+                        {
+                            "filters": [
+                                {"test":"has_tag","operator":"!=","value":"scope"}
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                {"test":"has_tag","operator":"==","value":"scope"}
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:ads_{}".format(gun_id)
+                        }
+                    ]
+                }
+            }
+            event = {
+                "add": {
+                    "component_groups": [
+                        "fire:{}".format(gun_id)
+                    ]
+                }
+            }
+            player["minecraft:entity"]["component_groups"]["fire:{}".format(gun_id)] = spawn_entity
+            player["minecraft:entity"]["events"]["fire:{}".format(gun_id)] = event
+
+
+        with open("entities/player.json","w") as f:
+            json.dump(player,f,indent=2)
 
         with open("animation_controllers/guns.json","r") as f:
             gunshot = json.load(f)
@@ -62,11 +103,11 @@ for row in csv_reader:
                 gunshot["animation_controllers"]["controller.animation.guns"]["states"]["default"]["transitions"].append({ "{}".format(gun_id): "query.get_equipped_item_name == 'k98' && query.is_using_item" })
 
 
-            gunshot["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = { "on_entry": [ "/event entity @s[scores={{{0}=1..}}] fire:{0}".format(gun_id), "/playsound empty.a1 @s[scores={{{0}=0}}] ~~~".format(gun_id),"/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={{{0}=1..}}] {0} 1".format(gun_id)  ],"transitions": [  { "default": "!query.is_using_item" },{"{}ii".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id) } ] }
+            gunshot["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = { "on_entry": [ "/event entity @s[scores={{{0}=1..}}] fire:{0}".format(gun_id), "/playsound empty.a1 @s[tag=!reload,scores={{{0}=0}}] ~~~".format(gun_id),"/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={{{0}=1..}}] {0} 1".format(gun_id)  ],"transitions": [  { "default": "!query.is_using_item" },{"{}ii".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id) } ] }
 
             if gun_interval == 0:
                 gunshot["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = {}
-                gunshot["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = { "on_entry": [ "/event entity @s[scores={{{0}=1..}}] fire:{0}".format(gun_id), "/playsound empty.a1 @s[scores={{{0}=0}}] ~~~".format(gun_id),"/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={{{0}=1..}}] {0} 1".format(gun_id)  ],"transitions": [  { "default": "!query.is_using_item" },{"{}".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id) } ] }
+                gunshot["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = { "on_entry": [ "/event entity @s[tag=!reload,scores={{{0}=1..}}] fire:{0}".format(gun_id), "/playsound empty.a1 @s[scores={{{0}=0}}] ~~~".format(gun_id),"/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={{{0}=1..}}] {0} 1".format(gun_id)  ],"transitions": [  { "default": "!query.is_using_item" },{"{}".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id) } ] }
                 gunshot["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)]["transitions"][0] = {"default":"!query.is_using_item"}
                 if len(gunshot["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)]["transitions"]) > 1:
                     gunshot["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)]["transitions"][1] = { "{}ii".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id) }
@@ -75,7 +116,7 @@ for row in csv_reader:
 
                 
                 if not "{}ii".format(gun_id) in gunshot["animation_controllers"]["controller.animation.guns"]["states"]:
-                    gunshot["animation_controllers"]["controller.animation.guns"]["states"]["{}ii"] = { "on_entry": [ "/event entity @s[scores={{{0}=1..}}] fire:{0}".format(gun_id), "/playsound empty.a1 @s[scores={{{0}=0}}] ~~~".format(gun_id),"/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={{{0}=1..}}] {0} 1".format(gun_id)  ],"transitions": [  { "default": "!query.is_using_item" },{"{}".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id) } ] }
+                    gunshot["animation_controllers"]["controller.animation.guns"]["states"]["{}ii"] = { "on_entry": [ "/event entity @s[tag=!reload,scores={{{0}=1..}}] fire:{0}".format(gun_id), "/playsound empty.a1 @s[tag=!reload,scores={{{0}=0}}] ~~~".format(gun_id),"/scoreboard players remove @s[tag=!reload,tag=!noammo,scores={{{0}=1..}}] {0} 1".format(gun_id)  ],"transitions": [  { "default": "!query.is_using_item" },{"{}".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id) } ] }
 
                 else:
                     gunshot["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)]["transitions"][0] = {"default":"!query.is_using_item"}
@@ -125,8 +166,8 @@ for row in csv_reader:
 
         with open("functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
             f.write("titleraw @s[tag=!reload] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
-            if(gun_onehand): f.write("playanimation @s[tag=!scope] animation.onehand.first none 0.3 \"query.is_sneaking\"")
-            else: f.write("playanimation @s[tag=!scope] animation.item.first none 0.3 \"query.is_sneaking\"")
+            if(gun_onehand): f.write("playanimation @s[tag=!scope] animation.onehand.first none 0 \"query.is_sneaking\"")
+            else: f.write("playanimation @s[tag=!scope] animation.item.first none 0 \"query.is_sneaking\"")
             
     
     row_count += 1
