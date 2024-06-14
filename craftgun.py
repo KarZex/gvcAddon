@@ -178,7 +178,15 @@ for row in csv_reader:
                 gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][3]["leftArm"] = gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][3]["leftArm"].replace("| query.get_equipped_item_name(0, 1) == 'tt33' |","| query.get_equipped_item_name(0, 1) == '{}' || query.get_equipped_item_name(0, 1) == 'tt33' |".format(gun_id))
                 gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][4]["leftSleeve"] = gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][4]["leftSleeve"].replace("| query.get_equipped_item_name(0, 1) == 'tt33' |","| query.get_equipped_item_name(0, 1) == '{}' || query.get_equipped_item_name(0, 1) == 'tt33' |".format(gun_id))
 
-    
+
+        with open("behavior_packs/GVCAddonV5/items/gun/ak12.json".format(gun_id),"r") as f:
+            gun_entity = json.load(f)
+            gun_entity["minecraft:item"]["description"]["identifier"] = "gun:{}".format(gun_id)
+            gun_entity["minecraft:item"]["components"]["minecraft:icon"] = { "texture": "{}".format(gun_id) }
+        
+        with open("behavior_packs/GVCAddonV5/items/gun/{}.json".format(gun_id),"w") as f:
+            json.dump(gun_entity,f,indent=2)
+
         with open("resource_packs/GVCAddonV5/entity/gun/ak12.json","r") as f:
             gun_entity = json.load(f)
 
