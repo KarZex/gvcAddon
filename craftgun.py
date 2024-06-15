@@ -166,7 +166,7 @@ for row in csv_reader:
                 ],
                 "transitions": [
                     {
-                        "default".format(gun_id): "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval)
+                        "default".format(gun_id): "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval + 9)
                     }
                 ]
             }
