@@ -1,0 +1,55 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "gun:k98",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "conditions": [
+        {
+          "condition": "random_difficulty_chance",
+          "default_chance": 1.0,
+          "peaceful": 0,
+          "easy": 0
+        },
+        {
+          "condition": "random_regional_difficulty_chance",
+          "max_chance": 0.15
+        }
+      ],
+      "tiers": {
+        "initial_range": 2,
+        "bonus_rolls": 3,
+        "bonus_chance": 0.095
+      },
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/entities/armor_set_leather.json"
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/entities/armor_set_gold.json"
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/entities/armor_set_chain.json"
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/entities/armor_set_iron.json"
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/entities/armor_set_diamond.json"
+        }
+      ]
+    }
+  ]
+}

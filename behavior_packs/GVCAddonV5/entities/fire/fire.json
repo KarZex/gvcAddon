@@ -9,6 +9,11 @@
       "runtime_identifier": "minecraft:snowball"
     },
     "components": {
+      "minecraft:type_family": {
+        "family": [
+          "bullet"
+        ]
+      },
       "minecraft:explode": {
         "fuseLength": 5,
         "fuseLit": true,
@@ -21,12 +26,8 @@
       },
       "minecraft:projectile": {
         "onHit": {
-          "catch_fire": {
-            "fireAffectedByGriefing": true
-          },
           "impact_damage": {
             "damage": 0,
-            "catchFire": true,
             "knockback": false
           },
           "stick_in_ground": {}

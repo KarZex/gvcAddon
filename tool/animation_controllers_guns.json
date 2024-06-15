@@ -1,0 +1,67 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.guns": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "bomb": "query.get_equipped_item_name == 'bomb' && query.item_remaining_use_duration > 0.10"
+            },
+            {
+              "tank": "query.is_riding && (variable.attack_time > 0.0)"
+            },
+            {
+              "mgg": "query.is_riding && query.is_jumping"
+            },
+            {
+              "red": "query.get_equipped_item_name == 'red' && query.item_remaining_use_duration > 0.10"
+            }
+          ]
+        },
+        "bomb": {
+          "on_entry": [
+            "/event entity @s fire:bomb",
+            "/clear @s[tag=!reload] gun:bomb 0 1"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 10 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "tank": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,scores={cooldown=0}] run event entity @e[c=1,family=ww2vehicle] firet",
+            "/function tankcool"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "mgg": {
+          "on_entry": [
+            "/event entity @e[c=1,family=ww2vehicle] firem"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "red": {
+          "on_entry": [
+            "/function flag"
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_using_item"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

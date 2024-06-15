@@ -12,7 +12,7 @@
       "minecraft:type_family": {
         "family": [
           "bullet",
-          "mgbullet"
+          "lmgbullet"
         ]
       },
       "minecraft:explode": {

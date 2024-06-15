@@ -42,12 +42,12 @@
         "attack.rotations": "animation.humanoid.attack.rotations",
         "sneaking": "animation.humanoid.sneaking",
         "bob": "animation.humanoid.bob",
-		"third": "animation.humanoid.holding",
+		    "third": "animation.humanoid.holding",
         "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
         "one_arm": "animation.humanoid.one_arm",
         "swimming": "animation.humanoid.swimming",
         "use_item_progress": "animation.humanoid.use_item_progress",
-        "bow_and_arrow": "animation.humanoid.bow_and_arrow"
+        "bow_and_arrow": "animation.mob.third"
       },
       "animation_controllers": [
         {

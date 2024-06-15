@@ -31,6 +31,16 @@
 				}
 			}
 		},
+		"animation.item.third2": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"gun": {
+					"position": [0.5, 6.5, 0.25],
+					"scale": 0.2
+				}
+			}
+		},
 		"animation.ak47.first": {
 			"loop": true,
 			"bones": {
@@ -41,6 +51,20 @@
 				"gun": {
 					"rotation": [-1.60171, -0.46672, 0.14013],
 					"position": [0, -11.6, 2],
+					"scale": 0.33
+				}
+			}
+		},
+		"animation.ak47.first2": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"gun": {
+					"rotation": [-1.60171, -0.46672, 0.14013],
+					"position": [0, -8.6, 2],
 					"scale": 0.33
 				}
 			}
@@ -174,6 +198,26 @@
 						"variable.is_first_person?252.54624:(-(math.cos(query.life_time * 103.2) * 2.865) - 2.865)"
 					],
 					"position": ["variable.is_first_person?-5:0", "variable.is_first_person?-4:0", "variable.is_first_person?20:0"]
+				}
+			}
+		},
+		"animation.mob.third": {
+			"animation_length": 0.5,
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						"15 + (query.target_x_rotation - 90.0 + math.sin(query.life_time * 76.8) * 2.865 - this)",
+						"(query.target_y_rotation - 5.73)",
+						"((math.cos(query.life_time * 103.2) * 2.865) + 2.865)"
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						"15 + (query.target_x_rotation - 90.0 - math.sin(query.life_time * 76.8) * 2.865 - this)",
+						"(query.target_y_rotation + 28.65)",
+						"(-(math.cos(query.life_time * 103.2) * 2.865) - 2.865)"
+					]
 				}
 			}
 		},

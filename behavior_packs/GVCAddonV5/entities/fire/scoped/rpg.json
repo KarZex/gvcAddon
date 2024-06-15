@@ -1,5 +1,5 @@
 {
-  "format_version": "1.13.0",
+  "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
       "identifier": "fire:ads_rpg",
@@ -8,22 +8,6 @@
       "is_experimental": false,
       "runtime_identifier": "minecraft:snowball"
     },
-    "component_groups": {
-      "minecraft:type_family": {
-        "family": [
-          "bullet",
-          "rpgbullet"
-        ]
-      },
-      "minecraft:exploding": {
-        "minecraft:explode": {
-          "fuse_length": 0,
-          "fuse_lit": true,
-          "power": 5,
-          "breaks_blocks": true
-        }
-      }
-    },
     "components": {
       "minecraft:type_family": {
         "family": [
@@ -31,26 +15,37 @@
           "rpgbullet"
         ]
       },
+      "minecraft:explode": {
+        "fuseLength": 5,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
       "minecraft:collision_box": {
         "width": 0.25,
         "height": 0.25
       },
-      "minecraft:scale": {
-        "value": 4
-      },
       "minecraft:projectile": {
         "onHit": {
+          "impact_damage": {
+            "damage": 0,
+            "knockback": false
+          },
+          "stick_in_ground": {},
           "definition_event": {
             "affectProjectile": true,
             "eventTrigger": {
               "event": "minecraft:explode",
               "target": "self"
             }
-          },
-          "stick_in_ground": {}
+          }
         },
         "power": 1.8,
         "gravity": 0,
+        "inertia": 1.5,
+        "uncertaintyBase": 0,
+        "uncertaintyMultiplier": 0,
+        "catchFire": false,
         "anchor": 1
       },
       "minecraft:physics": {}
@@ -61,6 +56,16 @@
           "component_groups": [
             "minecraft:exploding"
           ]
+        }
+      }
+    },
+    "component_groups": {
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 5,
+          "breaks_blocks": true
         }
       }
     }

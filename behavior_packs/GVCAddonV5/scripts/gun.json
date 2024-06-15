@@ -1,12 +1,12 @@
 {
-  "ak47": {
-    "damage": 6,
+  "ak12": {
+    "damage": 7,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m"
   },
-  "ak12": {
-    "damage": 7,
+  "ak47": {
+    "damage": 6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m"
@@ -186,12 +186,6 @@
     "bullet": "zex:rocketm"
   },
   "scar": {
-    "damage": 8,
-    "maxGunAmmo": 20,
-    "reloadTime": 60,
-    "bullet": "zex:762m"
-  },
-  "scarh": {
     "damage": 8,
     "maxGunAmmo": 20,
     "reloadTime": 60,

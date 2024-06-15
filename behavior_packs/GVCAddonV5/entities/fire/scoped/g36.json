@@ -9,6 +9,12 @@
       "runtime_identifier": "minecraft:snowball"
     },
     "components": {
+      "minecraft:type_family": {
+        "family": [
+          "bullet",
+          "arbullet"
+        ]
+      },
       "minecraft:explode": {
         "fuseLength": 5,
         "fuseLit": true,
