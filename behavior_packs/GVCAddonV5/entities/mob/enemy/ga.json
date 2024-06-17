@@ -279,7 +279,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -297,7 +297,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -315,7 +315,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -333,7 +333,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -351,7 +351,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -369,7 +369,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -387,7 +387,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -405,7 +405,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -423,7 +423,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -441,7 +441,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -459,7 +459,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -477,7 +477,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -485,24 +485,6 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/hk416.json"
-        }
-      },
-      "k98": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 10,
-          "burst_interval": 0.5,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
-          "attack_radius": 24.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:k98"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/gun/k98.json"
         }
       },
       "l86": {
@@ -513,7 +495,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -531,7 +513,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -549,7 +531,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -567,7 +549,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -585,7 +567,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -598,12 +580,12 @@
       "m16a4": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 10,
+          "burst_shots": 3,
           "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_min": 0.55,
+          "attack_interval_max": 1.55,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -621,7 +603,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -639,7 +621,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -657,7 +639,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -665,6 +647,42 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/m249.json"
+        }
+      },
+      "m590": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 12,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 4.0,
+          "attack_radius": 24.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m590"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m590.json"
+        }
+      },
+      "m870": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 12,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 4.0,
+          "attack_radius": 24.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m870"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m870.json"
         }
       },
       "m1911": {
@@ -675,7 +693,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -693,7 +711,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -711,7 +729,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -729,7 +747,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -747,7 +765,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -765,7 +783,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -783,7 +801,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -801,7 +819,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -819,7 +837,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -837,7 +855,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -855,7 +873,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -873,7 +891,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -881,60 +899,6 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/t89.json"
-        }
-      },
-      "t95": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 10,
-          "burst_interval": 0.1,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
-          "attack_radius": 24.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:t95"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/gun/t95.json"
-        }
-      },
-      "t100": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 10,
-          "burst_interval": 0.05,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
-          "attack_radius": 24.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:t100"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/gun/t100.json"
-        }
-      },
-      "thom": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 10,
-          "burst_interval": 0.1,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
-          "attack_radius": 24.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:thom"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/gun/thom.json"
         }
       },
       "tt33": {
@@ -945,7 +909,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -953,24 +917,6 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/tt33.json"
-        }
-      },
-      "ump9": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 10,
-          "burst_interval": 0.05,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
-          "attack_radius": 24.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:ump9"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/gun/ump9.json"
         }
       },
       "uzi": {
@@ -981,7 +927,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -999,7 +945,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -1017,7 +963,7 @@
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_max": 4.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
@@ -1361,13 +1307,6 @@
           ]
         }
       },
-      "k98": {
-        "add": {
-          "component_groups": [
-            "k98"
-          ]
-        }
-      },
       "l86": {
         "add": {
           "component_groups": [
@@ -1428,6 +1367,20 @@
         "add": {
           "component_groups": [
             "m249"
+          ]
+        }
+      },
+      "m590": {
+        "add": {
+          "component_groups": [
+            "m590"
+          ]
+        }
+      },
+      "m870": {
+        "add": {
+          "component_groups": [
+            "m870"
           ]
         }
       },
@@ -1515,38 +1468,10 @@
           ]
         }
       },
-      "t95": {
-        "add": {
-          "component_groups": [
-            "t95"
-          ]
-        }
-      },
-      "t100": {
-        "add": {
-          "component_groups": [
-            "t100"
-          ]
-        }
-      },
-      "thom": {
-        "add": {
-          "component_groups": [
-            "thom"
-          ]
-        }
-      },
       "tt33": {
         "add": {
           "component_groups": [
             "tt33"
-          ]
-        }
-      },
-      "ump9": {
-        "add": {
-          "component_groups": [
-            "ump9"
           ]
         }
       },

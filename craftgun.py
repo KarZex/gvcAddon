@@ -10,8 +10,12 @@ row_count = 0
 gundata_json = json.load(open("tool/gundata.json","r"))
 player_json = json.load(open("tool/player.json","r"))
 BP_animation = json.load(open("tool/animation_controllers_guns.json","r"))
+BP_animation_hold = json.load(open("tool/animation_controllers_hold.json","r"))
 ga_json = json.load(open("tool/ga.json","r"))
 ca_json = json.load(open("tool/ca.json","r"))
+item_json = json.load(open("resource_packs/GVCAddonV5/textures/item_texture.json","r"))
+func = open("tool/gunstart.mcfunction","r")
+a_func = func.read()
 
 #aasdasd
 for row in csv_reader:
@@ -29,6 +33,7 @@ for row in csv_reader:
         gun_ammo = row[3]
         gun_burst = int(row[11])
         gun_sound = row[13]
+        gun_bullet_num = int(row[14])
 
         if(row[10] == "T"):
             gun_break_block = True
@@ -51,6 +56,10 @@ for row in csv_reader:
             ammo_name = "§aBattery§r"
         elif(gun_ammo == "zex:1270m"):
             ammo_name = "§c.50Cal§r"
+        elif(gun_ammo == "zex:rocketm"):
+            ammo_name = "§e.Rocket§r"
+        elif(gun_ammo == "zex:12m"):
+            ammo_name = "§412Gauge§r"
 
         #Gundata fot JS
         gundata_json["{}".format(gun_id)] = { "damage": gun_damage, "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo) }
@@ -65,7 +74,7 @@ for row in csv_reader:
                         ],
                         "max_wait_time": 0,
                         "min_wait_time": 0,
-                        "num_to_spawn": 1,
+                        "num_to_spawn": gun_bullet_num,
                         "single_use": True,
                         "spawn_entity": "fire:{}".format(gun_id)
                     },
@@ -75,7 +84,7 @@ for row in csv_reader:
                         ],
                         "max_wait_time": 0,
                         "min_wait_time": 0,
-                        "num_to_spawn": 1,
+                        "num_to_spawn": gun_bullet_num,
                         "single_use": True,
                         "spawn_entity": "fire:ads_{}".format(gun_id)
                     }
@@ -166,17 +175,25 @@ for row in csv_reader:
                 ],
                 "transitions": [
                     {
-                        "default".format(gun_id): "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval + 9)
+                        "default".format(gun_id): "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval * 3 + 1)
                     }
                 ]
             }
 
+        #hold Animation 
+        BP_animation_hold["animation_controllers"]["controller.animation.hold"]["states"]["default"]["transitions"].append( { "{}".format(gun_id): "query.get_equipped_item_name == '{}'".format(gun_id) } )
+        BP_animation_hold["animation_controllers"]["controller.animation.hold"]["states"]["{}".format(gun_id)] = {
+          "on_entry": [            
+            "/function hold/{}h".format(gun_id)
+          ],
+          "transitions": [ { "default": "(1.0)"}]
+        }
         #Bullet 
         with open("tool/fire.json".format(gun_id),"r") as f:
             gun_entity = json.load(f)
             gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
             gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertaintyBase"] = gun_aim * 10
+            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertaintyBase"] = gun_aim * 5
             gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
             if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
 
@@ -192,7 +209,8 @@ for row in csv_reader:
 
         with open("behavior_packs/GVCAddonV5/entities/fire/scoped/{}.json".format(gun_id),"w") as f:
             gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}".format(gun_id)
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertaintyBase"] = 0
+            if gun_bullet_num > 1: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertaintyBase"] = gun_aim * 2
+            else: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertaintyBase"] = 0
             json.dump(gun_entity,f,indent=2)
 
         #function
@@ -200,6 +218,11 @@ for row in csv_reader:
             f.write("titleraw @s[tag=!reload] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
             if(gun_onehand): f.write("playanimation @s[tag=!scope] animation.onehand.first none 0 \"query.is_sneaking\"")
             else: f.write("playanimation @s[tag=!scope] animation.item.first none 0 \"query.is_sneaking\"")
+
+
+        a_func += "scoreboard objectives add {} dummy\n".format(gun_id)
+        a_func += "execute as @a[tag=!startedv4] run scoreboard players set @s {} 0\n".format(gun_id)
+
 
         #item
         with open("tool/item.json","r") as f:
@@ -219,15 +242,26 @@ for row in csv_reader:
             json.dump(loot_table,f,indent=2)
 
         #enemy and allieds
+        attack_interval = 3.0
+        burst_shots = 10
+        if gun_burst > 1:
+            burst_shots = gun_burst
+            attack_interval = 0.5 + gun_interval * 0.05 
+
+        
+        burst_interval = 0.05 + gun_interval * 0.05
+        if gun_bullet_num > 1: 
+            burst_interval = 0
+            burst_shots = gun_bullet_num
         spawn_entity = {
             "minecraft:behavior.ranged_attack": {
                 "priority": 3,
-                "burst_shots": 10,
-                "burst_interval": 0.05 + gun_interval * 0.05,
+                "burst_shots": burst_shots,
+                "burst_interval": burst_interval,
                 "charge_charged_trigger": 0.0,
                 "charge_shoot_trigger": 0.0,
-                "attack_interval_min": 3.0,
-                "attack_interval_max": 3.0,
+                "attack_interval_min": attack_interval,
+                "attack_interval_max": attack_interval + 1,
                 "attack_radius": 24.0
             },
             "minecraft:shooter": {
@@ -272,6 +306,8 @@ for row in csv_reader:
         with open("resource_packs/GVCAddonV5/render_controllers/first_person.json","w") as f:
             json.dump(gun_entity,f,indent=2)
 
+        item_json["texture_data"]["{}".format(gun_id)] = { "textures": "textures/gun/{}".format(gun_id) }
+
         print("created {}".format(gun_id))
     row_count += 1
 
@@ -286,8 +322,28 @@ with open("behavior_packs/GVCAddonV5/entities/player.json","w") as f:
 with open("behavior_packs/GVCAddonV5/animation_controllers/guns.json","w") as f:
     json.dump(BP_animation,f,indent=2)
 
+with open("behavior_packs/GVCAddonV5/animation_controllers/hold.json","w") as f:
+    json.dump(BP_animation_hold,f,indent=2)
+
 with open("behavior_packs/GVCAddonV5/entities/mob/allied/ca.json","w") as f:
     json.dump(ca_json,f,indent=2)
 
 with open("behavior_packs/GVCAddonV5/entities/mob/enemy/ga.json","w") as f:
     json.dump(ga_json,f,indent=2)
+
+with open("resource_packs/GVCAddonV5/textures/item_texture.json","w") as f:
+    json.dump(item_json,f,indent=2)
+
+
+with open("behavior_packs/GVCAddonV5/scripts/gun.json","r") as f:
+    export = "export const gunData = " 
+    export += f.read()
+    export += ";"
+
+
+with open("behavior_packs/GVCAddonV5/scripts/guns.js","w") as f:
+    f.write(export)
+
+
+with open("behavior_packs/GVCAddonV5/functions/gunstart.mcfunction","w") as f:
+    f.write(a_func)

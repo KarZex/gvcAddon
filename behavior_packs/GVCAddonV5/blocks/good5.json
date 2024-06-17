@@ -3,7 +3,7 @@
     "minecraft:block": {
         "description": {
             "identifier": "zex:good5",
-            "register_to_creative_menu": true,
+            "register_to_creative_menu": false,
             "category": "Construction"
         },
         "components": {

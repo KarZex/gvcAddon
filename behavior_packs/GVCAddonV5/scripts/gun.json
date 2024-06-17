@@ -71,12 +71,6 @@
     "reloadTime": 60,
     "bullet": "zex:556m"
   },
-  "k98": {
-    "damage": 15,
-    "maxGunAmmo": 5,
-    "reloadTime": 60,
-    "bullet": "zex:762m"
-  },
   "l86": {
     "damage": 6,
     "maxGunAmmo": 30,
@@ -131,6 +125,18 @@
     "reloadTime": 100,
     "bullet": "zex:762m"
   },
+  "m590": {
+    "damage": 2,
+    "maxGunAmmo": 8,
+    "reloadTime": 80,
+    "bullet": "zex:12m"
+  },
+  "m870": {
+    "damage": 2,
+    "maxGunAmmo": 4,
+    "reloadTime": 80,
+    "bullet": "zex:12m"
+  },
   "m1911": {
     "damage": 5,
     "maxGunAmmo": 8,
@@ -156,7 +162,7 @@
     "bullet": "zex:mm9"
   },
   "mp7": {
-    "damage": 4,
+    "damage": 5,
     "maxGunAmmo": 40,
     "reloadTime": 45,
     "bullet": "zex:mm9"
@@ -203,35 +209,11 @@
     "reloadTime": 60,
     "bullet": "zex:556m"
   },
-  "t95": {
-    "damage": 7,
-    "maxGunAmmo": 30,
-    "reloadTime": 60,
-    "bullet": "zex:556m"
-  },
-  "t100": {
-    "damage": 3,
-    "maxGunAmmo": 30,
-    "reloadTime": 40,
-    "bullet": "zex:mm9"
-  },
-  "thom": {
-    "damage": 4,
-    "maxGunAmmo": 30,
-    "reloadTime": 45,
-    "bullet": "zex:mm9"
-  },
   "tt33": {
     "damage": 7,
     "maxGunAmmo": 6,
     "reloadTime": 50,
     "bullet": "zex:762m"
-  },
-  "ump9": {
-    "damage": 5,
-    "maxGunAmmo": 30,
-    "reloadTime": 50,
-    "bullet": "zex:mm9"
   },
   "uzi": {
     "damage": 3,

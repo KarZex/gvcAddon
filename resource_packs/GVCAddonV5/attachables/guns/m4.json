@@ -14,7 +14,7 @@
       },
       "animations": {
         "first": "animation.ak47.first2",
-        "ads": "animation.ak47.ads2",
+        "ads": "animation.m16a4.ads",
         "third": "animation.item.third2"
       },
       "scripts": {

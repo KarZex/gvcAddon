@@ -36,7 +36,7 @@
         "power": 1.2000000000000002,
         "gravity": 0,
         "inertia": 1.5,
-        "uncertaintyBase": 25.0,
+        "uncertaintyBase": 12.5,
         "uncertaintyMultiplier": 0,
         "catchFire": false,
         "anchor": 1

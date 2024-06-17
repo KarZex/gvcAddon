@@ -467,40 +467,6 @@
           ]
         }
       },
-      "fire:k98": {
-        "minecraft:spawn_entity": {
-          "entities": [
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:k98"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ads_k98"
-            }
-          ]
-        }
-      },
       "fire:l86": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -803,6 +769,74 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_m249"
+            }
+          ]
+        }
+      },
+      "fire:m590": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:m590"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m590"
+            }
+          ]
+        }
+      },
+      "fire:m870": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:m870"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m870"
             }
           ]
         }
@@ -1215,108 +1249,6 @@
           ]
         }
       },
-      "fire:t95": {
-        "minecraft:spawn_entity": {
-          "entities": [
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:t95"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ads_t95"
-            }
-          ]
-        }
-      },
-      "fire:t100": {
-        "minecraft:spawn_entity": {
-          "entities": [
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:t100"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ads_t100"
-            }
-          ]
-        }
-      },
-      "fire:thom": {
-        "minecraft:spawn_entity": {
-          "entities": [
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:thom"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ads_thom"
-            }
-          ]
-        }
-      },
       "fire:tt33": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -1347,40 +1279,6 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_tt33"
-            }
-          ]
-        }
-      },
-      "fire:ump9": {
-        "minecraft:spawn_entity": {
-          "entities": [
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ump9"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ads_ump9"
             }
           ]
         }
@@ -1742,13 +1640,6 @@
           ]
         }
       },
-      "fire:k98": {
-        "add": {
-          "component_groups": [
-            "fire:k98"
-          ]
-        }
-      },
       "fire:l86": {
         "add": {
           "component_groups": [
@@ -1809,6 +1700,20 @@
         "add": {
           "component_groups": [
             "fire:m249"
+          ]
+        }
+      },
+      "fire:m590": {
+        "add": {
+          "component_groups": [
+            "fire:m590"
+          ]
+        }
+      },
+      "fire:m870": {
+        "add": {
+          "component_groups": [
+            "fire:m870"
           ]
         }
       },
@@ -1896,38 +1801,10 @@
           ]
         }
       },
-      "fire:t95": {
-        "add": {
-          "component_groups": [
-            "fire:t95"
-          ]
-        }
-      },
-      "fire:t100": {
-        "add": {
-          "component_groups": [
-            "fire:t100"
-          ]
-        }
-      },
-      "fire:thom": {
-        "add": {
-          "component_groups": [
-            "fire:thom"
-          ]
-        }
-      },
       "fire:tt33": {
         "add": {
           "component_groups": [
             "fire:tt33"
-          ]
-        }
-      },
-      "fire:ump9": {
-        "add": {
-          "component_groups": [
-            "fire:ump9"
           ]
         }
       },

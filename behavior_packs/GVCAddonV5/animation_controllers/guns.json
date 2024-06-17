@@ -54,9 +54,6 @@
               "hk416": "query.get_equipped_item_name == 'hk416' && query.is_using_item"
             },
             {
-              "k98": "query.get_equipped_item_name == 'k98' && query.is_using_item"
-            },
-            {
               "l86": "query.get_equipped_item_name == 'l86' && query.is_using_item"
             },
             {
@@ -82,6 +79,12 @@
             },
             {
               "m249": "query.get_equipped_item_name == 'm249' && query.is_using_item"
+            },
+            {
+              "m590": "query.get_equipped_item_name == 'm590' && query.is_using_item"
+            },
+            {
+              "m870": "query.get_equipped_item_name == 'm870' && query.is_using_item"
             },
             {
               "m1911": "query.get_equipped_item_name == 'm1911' && query.is_using_item"
@@ -120,19 +123,7 @@
               "t89": "query.get_equipped_item_name == 't89' && query.is_using_item"
             },
             {
-              "t95": "query.get_equipped_item_name == 't95' && query.is_using_item"
-            },
-            {
-              "t100": "query.get_equipped_item_name == 't100' && query.is_using_item"
-            },
-            {
-              "thom": "query.get_equipped_item_name == 'thom' && query.is_using_item"
-            },
-            {
               "tt33": "query.get_equipped_item_name == 'tt33' && query.is_using_item"
-            },
-            {
-              "ump9": "query.get_equipped_item_name == 'ump9' && query.is_using_item"
             },
             {
               "uzi": "query.get_equipped_item_name == 'uzi' && query.is_using_item"
@@ -349,18 +340,6 @@
             }
           ]
         },
-        "k98": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={k98=1..}] fire:k98",
-            "/playsound empty.a1 @s[tag=!reload,scores={k98=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={k98=1..}] k98 1"
-          ],
-          "transitions": [
-            {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
-            }
-          ]
-        },
         "l86": {
           "on_entry": [
             "/event entity @s[tag=!reload,scores={l86=1..}] fire:l86",
@@ -489,7 +468,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 10 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 4 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -526,6 +505,30 @@
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "m590": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,scores={m590=1..}] fire:m590",
+            "/playsound empty.a1 @s[tag=!reload,scores={m590=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m590=1..}] m590 1"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 9 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "m870": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,scores={m870=1..}] fire:m870",
+            "/playsound empty.a1 @s[tag=!reload,scores={m870=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m870=1..}] m870 1"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 9 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -763,60 +766,6 @@
             }
           ]
         },
-        "t95": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={t95=1..}] fire:t95",
-            "/playsound empty.a1 @s[tag=!reload,scores={t95=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={t95=1..}] t95 1"
-          ],
-          "transitions": [
-            {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
-            }
-          ]
-        },
-        "t100": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={t100=1..}] fire:t100",
-            "/playsound empty.a1 @s[tag=!reload,scores={t100=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={t100=1..}] t100 1"
-          ],
-          "transitions": [
-            {
-              "default": "!query.is_using_item"
-            },
-            {
-              "t100ii": "query.get_equipped_item_name == 't100' && query.is_using_item"
-            }
-          ]
-        },
-        "t100ii": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={t100=1..}] fire:t100",
-            "/playsound empty.a1 @s[tag=!reload,scores={t100=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={t100=1..}] t100 1"
-          ],
-          "transitions": [
-            {
-              "default": "!query.is_using_item"
-            },
-            {
-              "t100": "query.get_equipped_item_name == 't100' && query.is_using_item"
-            }
-          ]
-        },
-        "thom": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={thom=1..}] fire:thom",
-            "/playsound empty.a1 @s[tag=!reload,scores={thom=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={thom=1..}] thom 1"
-          ],
-          "transitions": [
-            {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
-            }
-          ]
-        },
         "tt33": {
           "on_entry": [
             "/event entity @s[tag=!reload,scores={tt33=1..}] fire:tt33",
@@ -826,36 +775,6 @@
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 7 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
-            }
-          ]
-        },
-        "ump9": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={ump9=1..}] fire:ump9",
-            "/playsound empty.a1 @s[tag=!reload,scores={ump9=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={ump9=1..}] ump9 1"
-          ],
-          "transitions": [
-            {
-              "default": "!query.is_using_item"
-            },
-            {
-              "ump9ii": "query.get_equipped_item_name == 'ump9' && query.is_using_item"
-            }
-          ]
-        },
-        "ump9ii": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={ump9=1..}] fire:ump9",
-            "/playsound empty.a1 @s[tag=!reload,scores={ump9=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={ump9=1..}] ump9 1"
-          ],
-          "transitions": [
-            {
-              "default": "!query.is_using_item"
-            },
-            {
-              "ump9": "query.get_equipped_item_name == 'ump9' && query.is_using_item"
             }
           ]
         },

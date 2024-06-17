@@ -56,3 +56,14 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		e.projectile.kill();
 	}
 })
+
+system.afterEvents.scriptEventReceive.subscribe( e => {
+	if (e.id === "zex:recoil"){
+		let pos = e.sourceEntity.getRotation();
+		pos.x = pos.x - Number(e.message)
+		e.sourceEntity.setRotation(pos)
+		e.sourceEntity.sendMessage(`${e.message}`)
+		e.sourceEntity.sendMessage(`x:${pos.x} y:${pos.y}`)
+		e.sourceEntity.setRotation({x:0, y:0})
+	}
+},)
