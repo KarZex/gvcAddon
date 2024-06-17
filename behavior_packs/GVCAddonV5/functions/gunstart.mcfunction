@@ -8,7 +8,9 @@ execute as @a[tag=!startedv4] run scoreboard players set @s reloading 0
 
 fill ^^^2 ^^^2 hkz:firstitem
 tag @a[tag=!startedv4] add startedv4 
-#gunsscoreboard objectives add ak12 dummy
+#guns
+
+scoreboard objectives add ak12 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s ak12 0
 scoreboard objectives add ak47 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s ak47 0

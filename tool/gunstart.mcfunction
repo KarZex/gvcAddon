@@ -9,3 +9,4 @@ execute as @a[tag=!startedv4] run scoreboard players set @s reloading 0
 fill ^^^2 ^^^2 hkz:firstitem
 tag @a[tag=!startedv4] add startedv4 
 #guns
+
