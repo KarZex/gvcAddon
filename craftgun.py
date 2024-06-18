@@ -345,5 +345,6 @@ with open("behavior_packs/GVCAddonV5/scripts/guns.js","w") as f:
     f.write(export)
 
 
+a_func += "tag @a[tag=!startedv4] add startedv4\n"
 with open("behavior_packs/GVCAddonV5/functions/gunstart.mcfunction","w") as f:
     f.write(a_func)
