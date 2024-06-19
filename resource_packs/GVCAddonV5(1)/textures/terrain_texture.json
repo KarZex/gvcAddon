@@ -1,0 +1,158 @@
+{
+  "resource_pack_name": "GVC",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "miss": {
+      "textures": "textures/craft/ds"
+    },
+    "mine": {
+      "textures": "textures/blocks/spawng"
+    },
+    "firstitem": {
+      "textures": "textures/blocks/firstitem"
+    },
+    "l1": {
+      "textures": "textures/blocks/l1"
+    },
+    "l2": {
+      "textures": "textures/blocks/l2"
+    },
+    "l3": {
+      "textures": "textures/blocks/l3"
+    },
+    "l4": {
+      "textures": "textures/blocks/l4"
+    },
+    "l5": {
+      "textures": "textures/blocks/l5"
+    },
+    "spawn_ga": {
+      "textures": "textures/blocks/spawn/ga"
+    },
+    "spawn_ca": {
+      "textures": "textures/blocks/spawn/ca"
+    },
+    "spawn_gb1": {
+      "textures": "textures/blocks/spawn/gb1"
+    },
+    "spawn_gb2": {
+      "textures": "textures/blocks/spawn/gb2"
+    },
+    "spawn_gb3": {
+      "textures": "textures/blocks/spawn/gb3"
+    },
+    "spawn_gb4": {
+      "textures": "textures/blocks/spawn/gb4"
+    },
+    "spawn_gb5": {
+      "textures": "textures/blocks/spawn/gb5"
+    },
+    "spawn_gb6": {
+      "textures": "textures/blocks/spawn/gb6"
+    },
+    "spawn_gb": {
+      "textures": "textures/blocks/spawn/gb"
+    },
+    "spawn_gc1": {
+      "textures": "textures/blocks/spawn/gc1"
+    },
+    "spawn_gc2": {
+      "textures": "textures/blocks/spawn/gc2"
+    },
+    "spawn_gc3": {
+      "textures": "textures/blocks/spawn/gc3"
+    },
+    "spawn_gc4": {
+      "textures": "textures/blocks/spawn/gc4"
+    },
+    "spawn_gc5": {
+      "textures": "textures/blocks/spawn/gc5"
+    },
+    "spawn_gc6": {
+      "textures": "textures/blocks/spawn/gc6"
+    },
+    "spawn_b1": {
+      "textures": "textures/blocks/spawn/b1"
+    },
+    "spawn_b2": {
+      "textures": "textures/blocks/spawn/b2"
+    },
+    "spawn_b3": {
+      "textures": "textures/blocks/spawn/b3"
+    },
+    "spawn_b4": {
+      "textures": "textures/blocks/spawn/b4"
+    },
+    "spawn_b5": {
+      "textures": "textures/blocks/spawn/b5"
+    },
+    "spawn_b6": {
+      "textures": "textures/blocks/spawn/b6"
+    },
+    "spawn_e1": {
+      "textures": "textures/blocks/spawn/e1"
+    },
+    "spawn_e2": {
+      "textures": "textures/blocks/spawn/e2"
+    },
+    "spawn_e3": {
+      "textures": "textures/blocks/spawn/e3"
+    },
+    "spawn_e4": {
+      "textures": "textures/blocks/spawn/e4"
+    },
+    "spawn_e5": {
+      "textures": "textures/blocks/spawn/e5"
+    },
+    "spawn_e6": {
+      "textures": "textures/blocks/spawn/e6"
+    },
+    "spawn_g1": {
+      "textures": "textures/blocks/spawn/g1"
+    },
+    "spawn_g2": {
+      "textures": "textures/blocks/spawn/g2"
+    },
+    "spawn_g3": {
+      "textures": "textures/blocks/spawn/g3"
+    },
+    "spawn_g4": {
+      "textures": "textures/blocks/spawn/g4"
+    },
+    "spawn_a1": {
+      "textures": "textures/blocks/spawn/a1"
+    },
+    "spawn_a2": {
+      "textures": "textures/blocks/spawn/a2"
+    },
+    "spawn_a3": {
+      "textures": "textures/blocks/spawn/a3"
+    },
+    "spawn_a4": {
+      "textures": "textures/blocks/spawn/a4"
+    },
+    "good1": {
+      "textures": "textures/blocks/good1"
+    },
+    "good2": {
+      "textures": "textures/blocks/good2"
+    },
+    "good3": {
+      "textures": "textures/blocks/good3"
+    },
+    "good5": {
+      "textures": "textures/blocks/good5"
+    },
+    "bv2": {
+      "textures": "textures/blocks/bv2"
+    },
+    "good4": {
+      "textures": "textures/blocks/good4"
+    },
+    "gas": {
+      "textures": "textures/blocks/gas"
+    }
+  }
+}

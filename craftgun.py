@@ -216,8 +216,10 @@ for row in csv_reader:
         #function
         with open("behavior_packs/GVCAddonV5/functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
             f.write("titleraw @s[tag=!reload] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
-            if(gun_onehand): f.write("playanimation @s[tag=!scope] animation.onehand.first none 0 \"query.is_sneaking\"")
-            else: f.write("playanimation @s[tag=!scope] animation.item.first none 0 \"query.is_sneaking\"")
+            if(gun_onehand): f.write("playanimation @s[tag=!scope] animation.onehand.first none 0 \"query.is_sneaking\"\n")
+            else: f.write("playanimation @s[tag=!scope] animation.item.first none 0 \"query.is_sneaking\"\n")
+            f.write("hud @s[tag=scope] hide crosshair\n")
+            f.write("hud @s[tag=!scope] reset crosshair\n")
 
 
         a_func += "scoreboard objectives add {} dummy\n".format(gun_id)
