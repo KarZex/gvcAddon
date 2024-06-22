@@ -145,11 +145,32 @@
     "good5": {
       "textures": "textures/blocks/good5"
     },
-    "bv2": {
-      "textures": "textures/blocks/bv2"
+    "vc1": {
+      "textures": "textures/blocks/vc1"
+    },
+    "vc2": {
+      "textures": "textures/blocks/vc2"
+    },
+    "vc3": {
+      "textures": "textures/blocks/vc3"
     },
     "good4": {
       "textures": "textures/blocks/good4"
+    },
+    "beacon": {
+      "textures": "textures/blocks/beacon"
+    },
+    "beacon_so": {
+      "textures": "textures/blocks/beacon_so"
+    },
+    "radio": {
+      "textures": "textures/blocks/radio"
+    },
+    "radio_big": {
+      "textures": "textures/blocks/radio_big"
+    },
+    "mil_cont": {
+      "textures": "textures/blocks/mil_cont"
     },
     "gas": {
       "textures": "textures/blocks/gas"

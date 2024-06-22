@@ -1,4 +1,4 @@
-import { world, system, EntityDamageCause, EquipmentSlot  } from "@minecraft/server";
+import { world, system, EntityDamageCause, EquipmentSlot, Block  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 
@@ -41,6 +41,15 @@ world.afterEvents.entityHitBlock.subscribe( e => {
 	}
 })
 
+world.afterEvents.projectileHitBlock.subscribe( e => {
+	if ( e.getBlockHit().block.typeId != undefined && e.getBlockHit().block.typeId == `gvcv5:beacon`){
+		e.dimension.playSound("random.explode",e.location);
+		let loc = e.getBlockHit().block.location;
+		e.dimension.spawnParticle("minecraft:huge_explosion_emitter",e.location);
+		e.dimension.runCommand(`setblock ${loc.x} ${loc.y} ${loc.z} air`);
+		
+	}
+})
 
 world.afterEvents.projectileHitEntity.subscribe( e => {
 	if( e.projectile.typeId.includes("fire")){

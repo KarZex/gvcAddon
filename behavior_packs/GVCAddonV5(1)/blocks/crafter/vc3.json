@@ -1,0 +1,69 @@
+{
+    "format_version": "1.20.60",
+    "minecraft:block": {
+        "description": {
+            "identifier": "gvcv5:vc3",
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [ "minecraft:cardinal_direction" ]
+                }
+            },
+            "menu_category":{
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "vc3",
+                    "render_method": "alpha_test",
+					"ambient_occlusion": false
+                }
+            },
+            "minecraft:geometry": "geometry.vc3",
+            "minecraft:selection_box": {
+                "origin": [-8, 0, -8],
+                "size": [16, 10, 16]
+            },
+            "minecraft:loot": "loot_tables/blocks/good2.json",
+            "minecraft:light_dampening": 0,
+            "minecraft:map_color": "#00ff00"
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 0, 0]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 90, 0]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 180, 0]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 270, 0]
+                    }
+                }
+            }
+        ],
+        "events": {
+        }
+    }
+}
