@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:g_heri",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/entity/g_heri"
+			},
+			"geometry": {
+        "default": "geometry.g_heri"
+			},
+	  "spawn_egg":{
+	  "texture":"g_heri",
+	  "texture_index":0
+	  },
+			"scripts": {
+				"animate": [ 
+			{ "fly": "query.has_rider" }
+				]
+			},
+			"animations": {
+				"fly": "animation.heri.fly"
+			},
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

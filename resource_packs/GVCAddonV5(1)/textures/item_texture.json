@@ -802,6 +802,18 @@
     },
     "m590": {
       "textures": "textures/gun/m590"
+    },
+    "g_heri": {
+      "textures": "textures/items/g_heri"
+    },
+    "ah6": {
+      "textures": "textures/items/ah6"
+    },
+    "mi24d": {
+      "textures": "textures/items/mi24d"
+    },
+    "ka50": {
+      "textures": "textures/items/ka50"
     }
   }
 }

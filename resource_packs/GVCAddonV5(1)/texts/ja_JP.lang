@@ -102,8 +102,15 @@ entity.vehicle:kv2.name=KV-2
 entity.vehicle:pt76.name=PT-76
 entity.vehicle:t55.name=T-55
 
+entity.vehicle:ah6.name=AH-6
+entity.vehicle:mi24d.name=Mi-24D
+entity.vehicle:ka50.name=Ka-50
+
 item.spawn_egg.entity.vehicle:f18.name=F/A-18
 item.spawn_egg.entity.vehicle:ah1s.name=AH-1S
+item.spawn_egg.entity.vehicle:ah6.name=AH-6
+item.spawn_egg.entity.vehicle:mi24d.name=Mi-24D
+item.spawn_egg.entity.vehicle:ka50.name=Ka-50
 
 entity.vehicle:f18.name=F/A-18
 entity.vehicle:ah1s.name=AH-1S

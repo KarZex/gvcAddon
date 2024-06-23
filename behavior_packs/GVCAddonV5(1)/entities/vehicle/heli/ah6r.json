@@ -1,0 +1,205 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+
+    "description": {
+      "identifier": "vehicle:ah6r",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+	    "animate": [ "walk" ]
+	  },
+	  "animations": {
+	    "walk": "controller.animation.f1"
+	  }
+    },
+
+    "component_groups": {
+			"players": {
+        "minecraft:transformation": {
+          "into": "vehicle:ah1s"
+        }
+			},
+      "minecraft:monster": {
+      "minecraft:type_family": {
+        "family": [ "ww2vehicle","monster","plate" ]
+      },
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tank.json"
+        },
+        "minecraft:addrider": {
+          "entity_type": "vehicle:c4b"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "monster"
+          ],
+          "interact_text": "action.interact.ride.horse",
+          "seats": {
+            "position": [ 0.0, 0.15, 0.5 ]
+          }
+        },
+        "minecraft:behavior.player_ride_tamed": {
+  
+        }
+	},
+      "minecraft:player": {
+      "minecraft:type_family": {
+        "family": [ "ww2vehicle","player","plate" ]
+      },
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tank.json"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "player"
+          ],
+          "interact_text": "action.interact.ride.horse",
+          "seats": {
+            "position": [ 0.0, 0.15, 0.5 ]
+          }
+        },
+        "minecraft:behavior.player_ride_tamed": {
+  
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:is_hidden_when_invisible": {
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 5 : 0"
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/plane.json"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:health": {
+        "value": 200,
+        "max": 200
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+	   "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_air": true,
+        "breathes_water": false
+      },
+      "minecraft:movement": {
+        "value": 1.8
+      },
+      "minecraft:movement.glide": {
+        "start_speed": 0.1,
+        "speed_when_turning": 0.2
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:scale": {
+        "value": 2.6
+      },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "player"
+          ],
+          "interact_text": "action.interact.ride.horse",
+          "seats": {
+            "position": [ 0.0, 0.45, -0.2 ]
+          }
+        },
+      "minecraft:behavior.swoop_attack": {
+        "priority": 2,
+        "damage_reach": 0.2,
+        "speed_multiplier": 1.0,
+        "delay_range": [ 5.0, 5.0 ]
+      },
+      "minecraft:behavior.circle_around_anchor": {
+        "priority": 3,
+        "radius_change": 1.0,
+        "radius_adjustment_chance": 0.004,
+        "height_adjustment_chance": 0.002857,
+        "goal_radius": 1.0,
+        "angle_change": 15.0,
+        "radius_range": [ 5.0, 15.0 ],
+        "height_offset_range": [ -10, 10.0 ],
+        "height_above_target_range": [ 0.0, 10.0 ]
+      }
+    },
+    "events": {
+      "firet": {
+        "randomize": [
+          {
+            "weight": 10,
+            "add": {
+              "component_groups": [
+                "firet"
+              ]
+            }
+          }
+        ]
+      },
+      "players": {
+        "randomize": [
+          {
+            "weight": 10,
+            "add": {
+              "component_groups": [
+                "players"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:norider": {
+            "add": {
+              "component_groups": [
+                "minecraft:has_riderf"
+              ]
+         },
+            "remove": {
+              "component_groups": [
+                "minecraft:has_rider"
+              ]
+            }
+      }
+    }
+  }
+}
