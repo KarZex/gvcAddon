@@ -1,41 +1,118 @@
 {
-    "format_version": "1.16.0",
+    "format_version": "1.20.60",
     "minecraft:block": {
         "description": {
-            "identifier": "hkz:l1",
-            "register_to_creative_menu": true,
-            "category": "Construction"
+            "identifier": "gvcv5:l1",
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [ "minecraft:cardinal_direction" ]
+                }
+            },
+            "menu_category":{
+                "category": "construction"
+            }
         },
         "components": {
             "minecraft:material_instances": {
                 "*": {
                     "texture": "l1",
-                    "render_method": "opaque"
+                    "render_method": "alpha_test",
+					"ambient_occlusion": false
                 }
             },
-           "minecraft:unit_cube": {}, 
-	"minecraft:creative_category": {
-    "group": "itemGroup.name.kar_zex",
-    "category": "items"
-	},
-      "minecraft:loot": "loot_tables/blocks/tnt2.json",
-      "minecraft:destroy_time": 0.01,
-      "minecraft:explosion_resistance": 100,
-	  "minecraft:on_placed":{
-		"event": "minecraft:ignite"
-	  },
-      "minecraft:map_color": "#000000"
+            "minecraft:geometry": "geometry.loot",
+            "minecraft:selection_box": {
+                "origin": [-8, 0, -8],
+                "size": [16, 16, 16]
+            },
+            "minecraft:loot": "loot_tables/blocks/good2.json",
+            "minecraft:light_dampening": 0,
+            "minecraft:light_emission": 15,
+            "minecraft:map_color": "#00ff00"
         },
-    "events": {
-	  "minecraft:ignite": {
-		"run_command": {
-	      "command": [
-			"fill ~~~ ~~~ chest",
-	        "loot insert ~~~ loot l1"
-          ],
-	      "target": "self"
-	    }
-	  }
-    }
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:on_placed":{
+                      "event": "minecraft:south"
+                    },
+                    "minecraft:transformation": {
+                        "rotation": [0, 0, 0]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:on_placed":{
+                      "event": "minecraft:east"
+                    },
+                    "minecraft:transformation": {
+                        "rotation": [0, 90, 0]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:on_placed":{
+                      "event": "minecraft:north"
+                    },
+                    "minecraft:transformation": {
+                        "rotation": [0, 180, 0]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:on_placed":{
+                      "event": "minecraft:west"
+                    },
+                    "minecraft:transformation": {
+                        "rotation": [0, 270, 0]
+                    }
+                }
+            }
+        ],
+        "events": {
+          "minecraft:north": {
+            "run_command": {
+              "command": [
+                "setblock ~~~ chest [\"minecraft:cardinal_direction\"=\"south\"]",
+                "loot insert ~~~ loot l1"
+              ],
+              "target": "self"
+            }
+          },
+          "minecraft:west": {
+            "run_command": {
+              "command": [
+                "setblock ~~~ chest [\"minecraft:cardinal_direction\"=\"east\"]",
+                "loot insert ~~~ loot l1"
+              ],
+              "target": "self"
+            }
+          },
+          "minecraft:south": {
+            "run_command": {
+              "command": [
+                "setblock ~~~ chest [\"minecraft:cardinal_direction\"=\"north\"]",
+                "loot insert ~~~ loot l1"
+              ],
+              "target": "self"
+            }
+          },
+          "minecraft:east": {
+            "run_command": {
+              "command": [
+                "setblock ~~~ chest [\"minecraft:cardinal_direction\"=\"west\"]",
+                "loot insert ~~~ loot l1"
+              ],
+              "target": "self"
+            }
+          }
+        }
     }
 }

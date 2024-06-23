@@ -145,6 +145,18 @@
     "good5": {
       "textures": "textures/blocks/good5"
     },
+    "bc": {
+      "textures": "textures/blocks/bc"
+    },
+    "gc1": {
+      "textures": "textures/blocks/gc1"
+    },
+    "gc2": {
+      "textures": "textures/blocks/gc2"
+    },
+    "gc3": {
+      "textures": "textures/blocks/gc3"
+    },
     "vc1": {
       "textures": "textures/blocks/vc1"
     },
@@ -171,6 +183,33 @@
     },
     "mil_cont": {
       "textures": "textures/blocks/mil_cont"
+    },
+    "mil_cont2": {
+      "textures": "textures/blocks/mil_cont2_gc"
+    },
+    "monitor": {
+      "textures": "textures/blocks/monitor"
+    },
+    "odunit_gc": {
+      "textures": "textures/blocks/odunit_gc"
+    },
+    "toughbook": {
+      "textures": "textures/blocks/toughbook"
+    },
+    "laptop": {
+      "textures": "textures/blocks/laptop"
+    },
+    "t_wall": {
+      "textures": "textures/blocks/t_wall"
+    },
+    "t_wall2": {
+      "textures": "textures/blocks/t_wall2"
+    },
+    "fire_exti": {
+      "textures": "textures/blocks/fire_exti"
+    },
+    "fslight": {
+      "textures": "textures/blocks/fslight"
     },
     "gas": {
       "textures": "textures/blocks/gas"

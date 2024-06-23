@@ -1,0 +1,35 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:feature_rules": {
+        "description": {
+            "identifier": "feature_rules:radiobase",
+            "places_feature": "feature:radiobase"
+        },
+        "conditions": {
+            "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "plains"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "forest"
+            }
+          ]
+        }
+      ]
+        },
+        "distribution": {
+          "iterations":"Math.random(6,12)",
+          "scatter_chance":2,
+          "x":{"distribution":"uniform","extent":[0,128]},
+          "y":"query.heightmap(variable.worldx,variable.worldz)",
+          "z":{"distribution":"uniform","extent":[0,128]}
+        }
+    }
+}
