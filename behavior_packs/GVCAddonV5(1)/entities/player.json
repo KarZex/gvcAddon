@@ -195,40 +195,6 @@
           ]
         }
       },
-      "fire:bar": {
-        "minecraft:spawn_entity": {
-          "entities": [
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:bar"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ads_bar"
-            }
-          ]
-        }
-      },
       "fire:dp28": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -1215,40 +1181,6 @@
           ]
         }
       },
-      "fire:t89": {
-        "minecraft:spawn_entity": {
-          "entities": [
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:t89"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ads_t89"
-            }
-          ]
-        }
-      },
       "fire:tt33": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -1384,6 +1316,110 @@
             }
           ]
         }
+      },
+      "fire:mg": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:mg"
+            }
+          ]
+        }
+      },
+      "fire:76mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:76mm"
+            }
+          ]
+        }
+      },
+      "fire:85mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:85mm"
+            }
+          ]
+        }
+      },
+      "fire:100mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:100mm"
+            }
+          ]
+        }
+      },
+      "fire:105mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:105mm"
+            }
+          ]
+        }
+      },
+      "fire:120mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:120mm"
+            }
+          ]
+        }
+      },
+      "fire:125mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:125mm"
+            }
+          ]
+        }
+      },
+      "fire:152mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:152mm"
+            }
+          ]
+        }
       }
     },
     "components": {
@@ -1391,7 +1427,9 @@
         "on_death": "Math.Min(query.player_level * 7, 100)"
       },
       "minecraft:type_family": {
-        "family": [ "player","mod","playerfire"]
+        "family": [
+          "player"
+        ]
       },
       "minecraft:is_hidden_when_invisible": {},
       "minecraft:loot": {
@@ -1579,13 +1617,6 @@
         "add": {
           "component_groups": [
             "fire:awm"
-          ]
-        }
-      },
-      "fire:bar": {
-        "add": {
-          "component_groups": [
-            "fire:bar"
           ]
         }
       },
@@ -1792,13 +1823,6 @@
           ]
         }
       },
-      "fire:t89": {
-        "add": {
-          "component_groups": [
-            "fire:t89"
-          ]
-        }
-      },
       "fire:tt33": {
         "add": {
           "component_groups": [
@@ -1824,6 +1848,62 @@
         "add": {
           "component_groups": [
             "fire:xm8"
+          ]
+        }
+      },
+      "fire:mg": {
+        "add": {
+          "component_groups": [
+            "fire:mg"
+          ]
+        }
+      },
+      "fire:76mm": {
+        "add": {
+          "component_groups": [
+            "fire:76mm"
+          ]
+        }
+      },
+      "fire:85mm": {
+        "add": {
+          "component_groups": [
+            "fire:85mm"
+          ]
+        }
+      },
+      "fire:100mm": {
+        "add": {
+          "component_groups": [
+            "fire:100mm"
+          ]
+        }
+      },
+      "fire:105mm": {
+        "add": {
+          "component_groups": [
+            "fire:105mm"
+          ]
+        }
+      },
+      "fire:120mm": {
+        "add": {
+          "component_groups": [
+            "fire:120mm"
+          ]
+        }
+      },
+      "fire:125mm": {
+        "add": {
+          "component_groups": [
+            "fire:125mm"
+          ]
+        }
+      },
+      "fire:152mm": {
+        "add": {
+          "component_groups": [
+            "fire:152mm"
           ]
         }
       }

@@ -102,15 +102,12 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 0.2,
+          "burst_interval": 1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.1,
-          "attack_interval_max": 0.1,
-          "attack_radius": 124.0
-        },
-        "minecraft:skin_id": {
-          "value": 42
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 1.05,
+          "attack_radius": 24.0
         },
         "minecraft:shooter": {
           "def": "fire:mg"
@@ -312,24 +309,6 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/awm.json"
-        }
-      },
-      "bar": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 10,
-          "burst_interval": 0.25,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 4.0,
-          "attack_radius": 24.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:bar"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/gun/bar.json"
         }
       },
       "dp28": {
@@ -854,24 +833,6 @@
           "table": "loot_tables/gun/svd.json"
         }
       },
-      "t89": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 10,
-          "burst_interval": 0.05,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 4.0,
-          "attack_radius": 24.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:t89"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/gun/t89.json"
-        }
-      },
       "tt33": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -942,6 +903,111 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/xm8.json"
+        }
+      },
+      "76mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 4.0,
+          "attack_radius": 24.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:76mm"
+        }
+      },
+      "85mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 6.0,
+          "attack_radius": 24.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:85mm"
+        }
+      },
+      "100mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 6.0,
+          "attack_radius": 24.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:100mm"
+        }
+      },
+      "105mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 6.0,
+          "attack_radius": 24.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:105mm"
+        }
+      },
+      "120mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 6.0,
+          "attack_radius": 24.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:120mm"
+        }
+      },
+      "125mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 6.0,
+          "attack_radius": 24.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:125mm"
+        }
+      },
+      "152mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 9.0,
+          "attack_radius": 24.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:152mm"
         }
       }
     },
@@ -1215,13 +1281,6 @@
           ]
         }
       },
-      "bar": {
-        "add": {
-          "component_groups": [
-            "bar"
-          ]
-        }
-      },
       "dp28": {
         "add": {
           "component_groups": [
@@ -1425,13 +1484,6 @@
           ]
         }
       },
-      "t89": {
-        "add": {
-          "component_groups": [
-            "t89"
-          ]
-        }
-      },
       "tt33": {
         "add": {
           "component_groups": [
@@ -1457,6 +1509,55 @@
         "add": {
           "component_groups": [
             "xm8"
+          ]
+        }
+      },
+      "76mm": {
+        "add": {
+          "component_groups": [
+            "76mm"
+          ]
+        }
+      },
+      "85mm": {
+        "add": {
+          "component_groups": [
+            "85mm"
+          ]
+        }
+      },
+      "100mm": {
+        "add": {
+          "component_groups": [
+            "100mm"
+          ]
+        }
+      },
+      "105mm": {
+        "add": {
+          "component_groups": [
+            "105mm"
+          ]
+        }
+      },
+      "120mm": {
+        "add": {
+          "component_groups": [
+            "120mm"
+          ]
+        }
+      },
+      "125mm": {
+        "add": {
+          "component_groups": [
+            "125mm"
+          ]
+        }
+      },
+      "152mm": {
+        "add": {
+          "component_groups": [
+            "152mm"
           ]
         }
       }

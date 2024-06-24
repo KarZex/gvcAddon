@@ -8,12 +8,9 @@
             {
               "bomb": "query.get_equipped_item_name == 'bomb' && query.item_remaining_use_duration > 0.10"
             },
-            {
-              "tank": "query.is_riding && (variable.attack_time > 0.0)"
-            },
-            {
-              "mgg": "query.is_riding && query.is_jumping"
-            },
+            { "tank": "query.is_riding && (variable.attack_time > 0.0)" },
+            { "tank": "query.is_riding && query.get_equipped_item_name == 'tank' && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.get_equipped_item_name == 'mgg' && query.is_using_item" },
             {
               "red": "query.get_equipped_item_name == 'red' && query.item_remaining_use_duration > 0.10"
             }
@@ -32,23 +29,29 @@
         },
         "tank": {
           "on_entry": [
-            "/execute as @s[tag=!reload,scores={cooldown=0}] run event entity @e[c=1,family=ww2vehicle] firet",
-            "/function tankcool"
+            "/execute as @s[tag=!reload,scores={mcool=0}] run function vmain"
+
           ],
-          "transitions": [
-            {
-              "default": "(variable.attack_time <= 0.0)"
-            }
+          "transitions": [ {"default":"(variable.attack_time <= 0.0)"}]
+        },
+        "mgg_1": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,scores={scool=0}] run function vsub"
+
+          ],
+          "transitions": [ 
+            {"default":"!query.is_using_item"},
+            {"mgg_2":"query.is_using_item && query.get_equipped_item_name == 'mgg'"}
           ]
         },
-        "mgg": {
+        "mgg_2": {
           "on_entry": [
-            "/event entity @e[c=1,family=ww2vehicle] firem"
+            "/execute as @s[tag=!reload,scores={scool=0}] run function vsub"
+
           ],
-          "transitions": [
-            {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
-            }
+          "transitions": [ 
+            {"default":"!query.is_using_item"},
+            {"mgg_1":"query.is_using_item && query.get_equipped_item_name == 'mgg'"}
           ]
         },
         "red": {

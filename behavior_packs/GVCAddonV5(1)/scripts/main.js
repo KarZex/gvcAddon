@@ -62,7 +62,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
             vict.applyDamage(damage,{ cause: EntityDamageCause.override,damagingEntity: e.source });
             vict.applyKnockback(0, 0, 0, 0);
         }
-		e.projectile.kill();
+		e.projectile.triggerEvent("minecraft:explode");
 	}
 })
 

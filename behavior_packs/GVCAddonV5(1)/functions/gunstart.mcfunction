@@ -17,8 +17,6 @@ scoreboard objectives add an94 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s an94 0
 scoreboard objectives add awm dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s awm 0
-scoreboard objectives add bar dummy
-execute as @a[tag=!startedv4] run scoreboard players set @s bar 0
 scoreboard objectives add dp28 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s dp28 0
 scoreboard objectives add famas dummy
@@ -77,8 +75,6 @@ scoreboard objectives add scar dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s scar 0
 scoreboard objectives add svd dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s svd 0
-scoreboard objectives add t89 dummy
-execute as @a[tag=!startedv4] run scoreboard players set @s t89 0
 scoreboard objectives add tt33 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s tt33 0
 scoreboard objectives add uzi dummy

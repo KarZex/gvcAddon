@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.heri": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "mgg": "query.is_riding && query.is_jumping" }
+          ]
+        },
+        "mgg": {
+          "on_entry": [
+            "/effect @e[r=2,family=heri] levitation 9999 2 true"
+          ],
+          "on_exit": [
+            "/effect @e[r=2,family=heri] levitation 0 0 true"
+          ],
+          "transitions": [
+              {
+                  "default": "!query.is_riding || !query.is_jumping"
+              }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -18,9 +18,6 @@
               "awm": "query.get_equipped_item_name == 'awm'"
             },
             {
-              "bar": "query.get_equipped_item_name == 'bar'"
-            },
-            {
               "dp28": "query.get_equipped_item_name == 'dp28'"
             },
             {
@@ -108,9 +105,6 @@
               "svd": "query.get_equipped_item_name == 'svd'"
             },
             {
-              "t89": "query.get_equipped_item_name == 't89'"
-            },
-            {
               "tt33": "query.get_equipped_item_name == 'tt33'"
             },
             {
@@ -157,16 +151,6 @@
         "awm": {
           "on_entry": [
             "/function hold/awmh"
-          ],
-          "transitions": [
-            {
-              "default": "(1.0)"
-            }
-          ]
-        },
-        "bar": {
-          "on_entry": [
-            "/function hold/barh"
           ],
           "transitions": [
             {
@@ -457,16 +441,6 @@
         "svd": {
           "on_entry": [
             "/function hold/svdh"
-          ],
-          "transitions": [
-            {
-              "default": "(1.0)"
-            }
-          ]
-        },
-        "t89": {
-          "on_entry": [
-            "/function hold/t89h"
           ],
           "transitions": [
             {

@@ -12,7 +12,10 @@
               "tank": "query.is_riding && (variable.attack_time > 0.0)"
             },
             {
-              "mgg": "query.is_riding && query.is_jumping"
+              "tank": "query.is_riding && query.get_equipped_item_name == 'tank' && query.is_using_item"
+            },
+            {
+              "mgg_1": "query.is_riding && query.get_equipped_item_name == 'mgg' && query.is_using_item"
             },
             {
               "red": "query.get_equipped_item_name == 'red' && query.item_remaining_use_duration > 0.10"
@@ -28,9 +31,6 @@
             },
             {
               "awm": "query.get_equipped_item_name == 'awm' && query.is_using_item"
-            },
-            {
-              "bar": "query.get_equipped_item_name == 'bar' && query.is_using_item"
             },
             {
               "dp28": "query.get_equipped_item_name == 'dp28' && query.is_using_item"
@@ -120,9 +120,6 @@
               "svd": "query.get_equipped_item_name == 'svd' && query.is_using_item"
             },
             {
-              "t89": "query.get_equipped_item_name == 't89' && query.is_using_item"
-            },
-            {
               "tt33": "query.get_equipped_item_name == 'tt33' && query.is_using_item"
             },
             {
@@ -149,8 +146,7 @@
         },
         "tank": {
           "on_entry": [
-            "/execute as @s[tag=!reload,scores={cooldown=0}] run event entity @e[c=1,family=ww2vehicle] firet",
-            "/function tankcool"
+            "/execute as @s[tag=!reload,scores={mcool=0}] run function vmain"
           ],
           "transitions": [
             {
@@ -158,13 +154,29 @@
             }
           ]
         },
-        "mgg": {
+        "mgg_1": {
           "on_entry": [
-            "/event entity @e[c=1,family=ww2vehicle] firem"
+            "/execute as @s[tag=!reload,scores={scool=0}] run function vsub"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "!query.is_using_item"
+            },
+            {
+              "mgg_2": "query.is_using_item && query.get_equipped_item_name == 'mgg'"
+            }
+          ]
+        },
+        "mgg_2": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,scores={scool=0}] run function vsub"
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_using_item"
+            },
+            {
+              "mgg_1": "query.is_using_item && query.get_equipped_item_name == 'mgg'"
             }
           ]
         },
@@ -223,18 +235,6 @@
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
-            }
-          ]
-        },
-        "bar": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={bar=1..}] fire:bar",
-            "/playsound empty.a1 @s[tag=!reload,scores={bar=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={bar=1..}] bar 1"
-          ],
-          "transitions": [
-            {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -733,36 +733,6 @@
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 4 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
-            }
-          ]
-        },
-        "t89": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={t89=1..}] fire:t89",
-            "/playsound empty.a1 @s[tag=!reload,scores={t89=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={t89=1..}] t89 1"
-          ],
-          "transitions": [
-            {
-              "default": "!query.is_using_item"
-            },
-            {
-              "t89ii": "query.get_equipped_item_name == 't89' && query.is_using_item"
-            }
-          ]
-        },
-        "t89ii": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={t89=1..}] fire:t89",
-            "/playsound empty.a1 @s[tag=!reload,scores={t89=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={t89=1..}] t89 1"
-          ],
-          "transitions": [
-            {
-              "default": "!query.is_using_item"
-            },
-            {
-              "t89": "query.get_equipped_item_name == 't89' && query.is_using_item"
             }
           ]
         },

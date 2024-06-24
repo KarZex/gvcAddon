@@ -23,12 +23,6 @@
     "reloadTime": 80,
     "bullet": "zex:762m"
   },
-  "bar": {
-    "damage": 10,
-    "maxGunAmmo": 20,
-    "reloadTime": 70,
-    "bullet": "zex:762m"
-  },
   "dp28": {
     "damage": 8,
     "maxGunAmmo": 47,
@@ -203,12 +197,6 @@
     "reloadTime": 60,
     "bullet": "zex:762m"
   },
-  "t89": {
-    "damage": 6,
-    "maxGunAmmo": 30,
-    "reloadTime": 60,
-    "bullet": "zex:556m"
-  },
   "tt33": {
     "damage": 7,
     "maxGunAmmo": 6,
@@ -232,5 +220,29 @@
     "maxGunAmmo": 4,
     "reloadTime": 80,
     "bullet": "zex:rocketm"
+  },
+  "mg": {
+    "damage": 8
+  },
+  "76mm": {
+    "damage": 16
+  },
+  "85mm": {
+    "damage": 20
+  },
+  "100mm": {
+    "damage": 24
+  },
+  "105mm": {
+    "damage": 30
+  },
+  "120mm": {
+    "damage": 50
+  },
+  "125mm": {
+    "damage": 100
+  },
+  "152mm": {
+    "damage": 200
   }
 }
