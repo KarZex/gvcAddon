@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:pak40",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/entity/pak40"
+			},
+			"geometry": {
+        "default": "geometry.pak40"
+			},
+	  "spawn_egg":{
+	  "texture":"pak40",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

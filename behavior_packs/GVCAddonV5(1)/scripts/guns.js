@@ -221,7 +221,7 @@ export const gunData = {
     "reloadTime": 80,
     "bullet": "zex:rocketm"
   },
-  "mg": {
+  "vmg": {
     "damage": 8
   },
   "76mm": {
@@ -244,5 +244,11 @@ export const gunData = {
   },
   "152mm": {
     "damage": 200
+  },
+  "20mm": {
+    "damage": 8
+  },
+  "23mm": {
+    "damage": 12
   }
 };

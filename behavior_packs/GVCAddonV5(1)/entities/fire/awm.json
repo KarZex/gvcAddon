@@ -56,6 +56,7 @@
       "minecraft:exploding": {
         "minecraft:explode": {
           "fuse_length": 0,
+          "destroy_affected_by_griefing": true,
           "fuse_lit": true,
           "power": 0,
           "breaks_blocks": false

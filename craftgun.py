@@ -199,7 +199,7 @@ for row in csv_reader:
             gun_entity["minecraft:entity"]["events"] = {}
             gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
             gun_entity["minecraft:entity"]["component_groups"] = {}
-            gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
+            gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
 
             if gun_bomb > 0:
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["onHit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
@@ -372,7 +372,7 @@ for row in csv_reader2:
             gun_entity["minecraft:entity"]["events"] = {}
             gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
             gun_entity["minecraft:entity"]["component_groups"] = {}
-            gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
+            gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True,	 "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
 
             if gun_bomb > 0:
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["onHit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
@@ -387,11 +387,11 @@ for row in csv_reader2:
             "minecraft:behavior.ranged_attack": {
                 "priority": 3,
                 "burst_shots": 1,
-                "burst_interval": 1,
+                "burst_interval": 0,
                 "charge_charged_trigger": 0.0,
                 "charge_shoot_trigger": 0.0,
                 "attack_interval_min": attack_interval,
-                "attack_interval_max": attack_interval + 1,
+                "attack_interval_max": attack_interval,
                 "attack_radius": 24.0
             },
             "minecraft:shooter": {
@@ -419,6 +419,26 @@ for row in csv_reader2:
 
         print("created {}".format(gun_id))
     row_count += 1
+
+
+csv_path3 = open("vehicleData.csv","r")
+csv_reader3 = csv.reader(csv_path3)
+row_count = 0
+for row in csv_reader3:
+    if( row_count >= 1 ):
+        #from CSV
+        v_id = row[1]
+        v_type = row[2]
+        if v_type != "heri":
+            ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "run_command": { "command": [ "ride @s summon_ride vehicle:{}".format(v_id) ] } }
+            ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "run_command": { "command": [ "ride @s summon_ride vehicle:{}".format(v_id) ] } }
+        else:
+            ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "run_command": { "command": [ "ride @s summon_ride vehicle:{}r".format(v_id) ] } }
+            ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "run_command": { "command": [ "ride @s summon_ride vehicle:{}r".format(v_id) ] } }
+    
+    row_count += 1
+
+
 
 with open("behavior_packs/GVCAddonV5(1)/scripts/gun.json","w") as f:
     json.dump(gundata_json,f,indent=2)

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:20mmaa",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/entity/20mmaa"
+			},
+			"geometry": {
+        "default": "geometry.20mmaa"
+			},
+	  "spawn_egg":{
+	  "texture":"20mmaa",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:zu23",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/entity/zu23"
+			},
+			"geometry": {
+        "default": "geometry.zu23"
+			},
+	  "spawn_egg":{
+	  "texture":"zu23",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

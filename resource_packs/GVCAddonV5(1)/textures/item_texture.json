@@ -814,6 +814,21 @@
     },
     "ka50": {
       "textures": "textures/items/ka50"
+    },
+    "btr60": {
+      "textures": "textures/items/btr60"
+    },
+    "20mmaa": {
+      "textures": "textures/items/20mmaa"
+    },
+    "flak18": {
+      "textures": "textures/items/flak18"
+    },
+    "pak40": {
+      "textures": "textures/items/pak40"
+    },
+    "zu23": {
+      "textures": "textures/items/zu23"
     }
   }
 }

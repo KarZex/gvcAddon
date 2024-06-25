@@ -14,6 +14,7 @@
           "guns",
           "hold",
           "reload",
+          "heri",
           "ads"
         ]
       },
@@ -21,7 +22,8 @@
         "guns": "controller.animation.guns",
         "hold": "controller.animation.hold",
         "reload": "controller.animation.reload",
-        "ads": "controller.animation.ads"
+        "ads": "controller.animation.ads",
+        "heri": "controller.animation.heri"
       }
     },
     "component_groups": {
@@ -1317,7 +1319,7 @@
           ]
         }
       },
-      "fire:mg": {
+      "fire:vmg": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -1325,7 +1327,7 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:mg"
+              "spawn_entity": "fire:vmg"
             }
           ]
         }
@@ -1420,6 +1422,32 @@
             }
           ]
         }
+      },
+      "fire:20mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:20mm"
+            }
+          ]
+        }
+      },
+      "fire:23mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:23mm"
+            }
+          ]
+        }
       }
     },
     "components": {
@@ -1428,7 +1456,8 @@
       },
       "minecraft:type_family": {
         "family": [
-          "player"
+          "player",
+          "mod"
         ]
       },
       "minecraft:is_hidden_when_invisible": {},
@@ -1851,10 +1880,10 @@
           ]
         }
       },
-      "fire:mg": {
+      "fire:vmg": {
         "add": {
           "component_groups": [
-            "fire:mg"
+            "fire:vmg"
           ]
         }
       },
@@ -1904,6 +1933,20 @@
         "add": {
           "component_groups": [
             "fire:152mm"
+          ]
+        }
+      },
+      "fire:20mm": {
+        "add": {
+          "component_groups": [
+            "fire:20mm"
+          ]
+        }
+      },
+      "fire:23mm": {
+        "add": {
+          "component_groups": [
+            "fire:23mm"
           ]
         }
       }

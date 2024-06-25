@@ -5,6 +5,7 @@ import shutil
 csv_path = open("vehicleData.csv","r")
 csv_reader = csv.reader(csv_path)
 
+item_json = json.load(open("resource_packs/GVCAddonV5(1)/textures/item_texture.json","r"))
 row_count = 0
 
 m_func = ""
@@ -38,6 +39,7 @@ for row in csv_reader:
             if v_main == "":
                 b_func += "\nexecute as @s[tag=!ride] if entity @e[r=2,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_sub)
 
+        item_json["texture_data"]["{}".format(v_id)] = { "textures": "textures/items/{}".format(v_id) }
         print("created {}".format(v_id))
     row_count += 1
 
@@ -49,3 +51,7 @@ with open("behavior_packs/GVCAddonV5(1)/functions/vsub.mcfunction","w") as f:
 
 with open("behavior_packs/GVCAddonV5(1)/functions/b1.mcfunction","w") as f:
     f.write(b_func)
+
+
+with open("resource_packs/GVCAddonV5(1)/textures/item_texture.json","w") as f:
+    json.dump(item_json,f,indent=2)
