@@ -9,3 +9,6 @@
 ,152mm,200,4,0,160,5,T,tankbullet
 ,20mm,8,6,0,5,1,F,mgbullet
 ,23mm,12,6,0,6,1,F,mgbullet
+,ads_dp28,8,6,0,1,0,F,mgbullet
+,ads_m60,8,6,0,1,0,F,mgbullet
+,ads_pkm,8,6,0,1,0,F,mgbullet

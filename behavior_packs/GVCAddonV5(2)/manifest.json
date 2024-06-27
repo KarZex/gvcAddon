@@ -1,0 +1,37 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "作者:Kar Zex\n",
+    "name": "§l§gGVC Addon V5.0 BetaV0.2",
+    "min_engine_version": [1, 21, 0 ],
+    "uuid": "51f2043a-8b16-4997-b76a-6571b98a9363",
+    "version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "description": "Data Module",
+      "type": "data",
+      "uuid": "f75f2ff6-a79b-42dc-8a34-46f777944d2a",
+      "version": [1, 0, 0]
+    },
+    {
+      "description": "Script API Module",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "772a2807-3018-4ed2-9c97-a3180e07cdd7",
+      "version": [1, 0, 0],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "capabilities": ["script_eval"],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.11.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.2.0-beta"
+    }
+  ]
+}

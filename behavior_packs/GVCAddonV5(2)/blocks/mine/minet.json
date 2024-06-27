@@ -1,0 +1,82 @@
+{
+    "format_version": "1.20.60",
+    "minecraft:block": {
+        "description": {
+            "identifier": "gvcv5:minet",
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [ "minecraft:cardinal_direction" ]
+                }
+            },
+            "menu_category":{
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "mine",
+                    "render_method": "alpha_test",
+					"ambient_occlusion": false
+                }
+            },
+            "minecraft:on_step_on": {
+              "condition": "query.has_any_family('ww2vehicle')",
+              "event": "minecraft:ignite"
+            },
+            "minecraft:geometry": "geometry.minet",
+            "minecraft:selection_box": {
+                "origin": [-8, 0, -8],
+                "size": [16, 16, 16]
+            },
+            "minecraft:light_dampening": 0,
+            "minecraft:loot": "loot_tables/blocks/good1.json",
+            "minecraft:map_color": "#00ff00"
+        },
+        "events": {
+            "minecraft:ignite": {
+              "run_command": {
+                "command": [
+                  "fill ~~~ ~~~ air",
+                  "summon addon:minet"
+                ],
+                "target": "self"
+              }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 0, 0]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 90, 0]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 180, 0]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [0, 270, 0]
+                    }
+                }
+            }
+        ]
+    }
+}

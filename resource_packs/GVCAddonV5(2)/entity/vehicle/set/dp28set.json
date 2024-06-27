@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:dp28set",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/entity/dp28set"
+			},
+			"geometry": {
+        "default": "geometry.dp28set"
+			},
+	  "spawn_egg":{
+	  "texture":"dp28set",
+	  "texture_index":0
+	  },
+			"scripts": {
+				"animate": [ 
+					"float"
+				]
+			},
+			"animations": {
+				"float": "animation.dp28set.def"
+			},
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:m60set",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/entity/m60set"
+			},
+			"geometry": {
+        "default": "geometry.m60set"
+			},
+	  "spawn_egg":{
+	  "texture":"m60set",
+	  "texture_index":0
+	  },
+			"scripts": {
+				"animate": [ 
+					"float"
+				]
+			},
+			"animations": {
+				"float": "animation.m60set.def"
+			},
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

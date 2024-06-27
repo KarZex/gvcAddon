@@ -1,0 +1,50 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "gvcv5:structure_end",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "miss",
+          "render_method": "alpha_test",
+          "ambient_occlusion": false
+        }
+      },
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:selection_box": {
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          16,
+          16
+        ]
+      },
+      "minecraft:on_placed": {
+        "event": "gvcv5:spawn"
+      },
+      "minecraft:light_emission": 15,
+      "minecraft:light_dampening": 0,
+      "minecraft:map_color": "#00ff00"
+    },
+    "events": {
+      "gvcv5:spawn": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "tickingarea remove zexfeature",
+            "fill ~~~ ~~~ air"
+          ]
+        }
+      }
+    }
+  }
+}
