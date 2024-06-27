@@ -13,7 +13,7 @@ BP_animation = json.load(open("tool/animation_controllers_guns.json","r"))
 BP_animation_hold = json.load(open("tool/animation_controllers_hold.json","r"))
 ga_json = json.load(open("tool/ga.json","r"))
 ca_json = json.load(open("tool/ca.json","r"))
-item_json = json.load(open("resource_packs/GVCAddonV5(1)/textures/item_texture.json","r"))
+item_json = json.load(open("resource_packs/GVCAddonV5(2)/textures/item_texture.json","r"))
 func = open("tool/gunstart.mcfunction","r")
 a_func = func.read()
 
@@ -204,17 +204,17 @@ for row in csv_reader:
             if gun_bomb > 0:
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["onHit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
                 
-        with open("behavior_packs/GVCAddonV5(1)/entities/fire/{}.json".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCAddonV5(2)/entities/fire/{}.json".format(gun_id),"w") as f:
             json.dump(gun_entity,f,indent=2)
 
-        with open("behavior_packs/GVCAddonV5(1)/entities/fire/scoped/{}.json".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCAddonV5(2)/entities/fire/scoped/{}.json".format(gun_id),"w") as f:
             gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}".format(gun_id)
             if gun_bullet_num > 1: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertaintyBase"] = gun_aim * 2
             else: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertaintyBase"] = 0
             json.dump(gun_entity,f,indent=2)
 
         #function
-        with open("behavior_packs/GVCAddonV5(1)/functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCAddonV5(2)/functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
             f.write("titleraw @s[tag=!reload] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
             if(gun_onehand): f.write("playanimation @s[tag=!scope] animation.onehand.first none 0 \"query.is_sneaking\"\n")
             else: f.write("playanimation @s[tag=!scope] animation.item.first none 0 \"query.is_sneaking\"\n")
@@ -232,7 +232,7 @@ for row in csv_reader:
             gun_item["minecraft:item"]["description"]["identifier"] = "gun:{}".format(gun_id)
             gun_item["minecraft:item"]["components"]["minecraft:icon"] = { "texture": "{}".format(gun_id) }
         
-        with open("behavior_packs/GVCAddonV5(1)/items/gun/{}.json".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCAddonV5(2)/items/gun/{}.json".format(gun_id),"w") as f:
             json.dump(gun_item,f,indent=2)
 
         #loot_table (for mob)
@@ -240,7 +240,7 @@ for row in csv_reader:
             loot_table = json.load(f)
             loot_table["pools"][0]["entries"][0]["name"] = "gun:{}".format(gun_id)
         
-        with open("behavior_packs/GVCAddonV5(1)/loot_tables/gun/{}.json".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCAddonV5(2)/loot_tables/gun/{}.json".format(gun_id),"w") as f:
             json.dump(loot_table,f,indent=2)
 
         #enemy and allieds
@@ -285,18 +285,18 @@ for row in csv_reader:
         ca_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         ca_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
 
-        with open("resource_packs/GVCAddonV5(1)/entity/gun/ak12.json","r") as f:
+        with open("resource_packs/GVCAddonV5(2)/entity/gun/ak12.json","r") as f:
             gun_entity = json.load(f)
 
-        with open("resource_packs/GVCAddonV5(1)/entity/gun/{}.json".format(gun_id),"w") as f:
+        with open("resource_packs/GVCAddonV5(2)/entity/gun/{}.json".format(gun_id),"w") as f:
             gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
             json.dump(gun_entity,f,indent=2)
 
-        with open("resource_packs/GVCAddonV5(1)/entity/gun/s/{}.json".format(gun_id),"w") as f:
+        with open("resource_packs/GVCAddonV5(2)/entity/gun/s/{}.json".format(gun_id),"w") as f:
             gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:ads_{}".format(gun_id)
             json.dump(gun_entity,f,indent=2)
 
-        with open("resource_packs/GVCAddonV5(1)/render_controllers/first_person.json","r") as f:
+        with open("resource_packs/GVCAddonV5(2)/render_controllers/first_person.json","r") as f:
             gun_entity = json.load(f)
             if( not "| query.get_equipped_item_name(0, 1) == '{}' |".format(gun_id) in gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][1]["rightArm"] ):
                 gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][1]["rightArm"] = gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][1]["rightArm"].replace("| query.get_equipped_item_name(0, 1) == 'tt33' |","| query.get_equipped_item_name(0, 1) == '{}' || query.get_equipped_item_name(0, 1) == 'tt33' |".format(gun_id))
@@ -305,7 +305,7 @@ for row in csv_reader:
                 gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][4]["leftSleeve"] = gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][4]["leftSleeve"].replace("| query.get_equipped_item_name(0, 1) == 'tt33' |","| query.get_equipped_item_name(0, 1) == '{}' || query.get_equipped_item_name(0, 1) == 'tt33' |".format(gun_id))
 
     
-        with open("resource_packs/GVCAddonV5(1)/render_controllers/first_person.json","w") as f:
+        with open("resource_packs/GVCAddonV5(2)/render_controllers/first_person.json","w") as f:
             json.dump(gun_entity,f,indent=2)
 
         item_json["texture_data"]["{}".format(gun_id)] = { "textures": "textures/gun/{}".format(gun_id) }
@@ -377,7 +377,7 @@ for row in csv_reader2:
             if gun_bomb > 0:
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["onHit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
 
-        with open("behavior_packs/GVCAddonV5(1)/entities/fire/{}.json".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCAddonV5(2)/entities/fire/{}.json".format(gun_id),"w") as f:
             json.dump(gun_entity,f,indent=2)
 
         #enemy and allieds
@@ -410,10 +410,10 @@ for row in csv_reader2:
         ca_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         ca_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
 
-        with open("resource_packs/GVCAddonV5(1)/entity/gun/ak12.json","r") as f:
+        with open("resource_packs/GVCAddonV5(2)/entity/gun/ak12.json","r") as f:
             gun_entity = json.load(f)
 
-        with open("resource_packs/GVCAddonV5(1)/entity/gun/{}.json".format(gun_id),"w") as f:
+        with open("resource_packs/GVCAddonV5(2)/entity/gun/{}.json".format(gun_id),"w") as f:
             gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
             json.dump(gun_entity,f,indent=2)
 
@@ -440,38 +440,38 @@ for row in csv_reader3:
 
 
 
-with open("behavior_packs/GVCAddonV5(1)/scripts/gun.json","w") as f:
+with open("behavior_packs/GVCAddonV5(2)/scripts/gun.json","w") as f:
     json.dump(gundata_json,f,indent=2)
 
-with open("behavior_packs/GVCAddonV5(1)/entities/player.json","w") as f:
+with open("behavior_packs/GVCAddonV5(2)/entities/player.json","w") as f:
     json.dump(player_json,f,indent=2)
 
-with open("behavior_packs/GVCAddonV5(1)/animation_controllers/guns.json","w") as f:
+with open("behavior_packs/GVCAddonV5(2)/animation_controllers/guns.json","w") as f:
     json.dump(BP_animation,f,indent=2)
 
-with open("behavior_packs/GVCAddonV5(1)/animation_controllers/hold.json","w") as f:
+with open("behavior_packs/GVCAddonV5(2)/animation_controllers/hold.json","w") as f:
     json.dump(BP_animation_hold,f,indent=2)
 
-with open("behavior_packs/GVCAddonV5(1)/entities/mob/allied/ca.json","w") as f:
+with open("behavior_packs/GVCAddonV5(2)/entities/mob/allied/ca.json","w") as f:
     json.dump(ca_json,f,indent=2)
 
-with open("behavior_packs/GVCAddonV5(1)/entities/mob/enemy/ga.json","w") as f:
+with open("behavior_packs/GVCAddonV5(2)/entities/mob/enemy/ga.json","w") as f:
     json.dump(ga_json,f,indent=2)
 
-with open("resource_packs/GVCAddonV5(1)/textures/item_texture.json","w") as f:
+with open("resource_packs/GVCAddonV5(2)/textures/item_texture.json","w") as f:
     json.dump(item_json,f,indent=2)
 
 
-with open("behavior_packs/GVCAddonV5(1)/scripts/gun.json","r") as f:
+with open("behavior_packs/GVCAddonV5(2)/scripts/gun.json","r") as f:
     export = "export const gunData = " 
     export += f.read()
     export += ";"
 
 
-with open("behavior_packs/GVCAddonV5(1)/scripts/guns.js","w") as f:
+with open("behavior_packs/GVCAddonV5(2)/scripts/guns.js","w") as f:
     f.write(export)
 
 
 a_func += "tag @a[tag=!startedv4] add startedv4\n"
-with open("behavior_packs/GVCAddonV5(1)/functions/gunstart.mcfunction","w") as f:
+with open("behavior_packs/GVCAddonV5(2)/functions/gunstart.mcfunction","w") as f:
     f.write(a_func)
