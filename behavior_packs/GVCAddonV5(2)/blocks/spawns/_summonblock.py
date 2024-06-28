@@ -13,6 +13,8 @@ with open("_summon.txt","r") as f:
         block_json = json.load(open("_spawn.json","r"))
         block_json["minecraft:block"]["description"]["identifier"] = "gvcv5:spawn_{}".format(e_id.replace(":","_"))
         block_json["minecraft:block"]["components"]["minecraft:material_instances"]["*"]["texture"] = "spawn_{}".format(e_id.replace(":","_"))
+        block_json["minecraft:block"]["components"]["minecraft:material_instances"]["*"]["texture"] = "spawn_{}".format(e_id.replace(":","_"))
+        block_json["minecraft:block"]["components"]["minecraft:loot"] = "loot_tables/empty.json"
         block_json["minecraft:block"]["events"]["gvcv5:spawn"]["die"] = {  "target" : "self" }
         if mode == "r":
             block_json["minecraft:block"]["events"]["gvcv5:spawn"]["run_command"]["command"].append("kill @e[type={},r=1]".format(e_id))

@@ -33,7 +33,8 @@
       },
       "minecraft:light_emission": 15,
       "minecraft:light_dampening": 0,
-      "minecraft:map_color": "#00ff00"
+      "minecraft:map_color": "#00ff00",
+      "minecraft:loot": "loot_tables/empty.json"
     },
     "events": {
       "gvcv5:spawn": {
