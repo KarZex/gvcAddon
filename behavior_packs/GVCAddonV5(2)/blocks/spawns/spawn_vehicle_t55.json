@@ -40,6 +40,7 @@
         "run_command": {
           "target": "self",
           "command": [
+            "kill @e[type=vehicle:t55,r=1]",
             "execute if block ~ ~-1 ~ gvcv5:spawn_addon_ga run summon addon:ga ~~~ ~~ vehicle:t55",
             "execute if block ~ ~-1 ~ gvcv5:spawn_addon_ca run summon addon:ca ~~~ ~~ vehicle:t55",
             "execute unless block ~ ~-1 ~ gvcv5:spawn_addon_ga unless block ~ ~-1 ~ gvcv5:spawn_addon_ca run summon vehicle:t55",
@@ -47,6 +48,9 @@
             "execute if block ~ ~-1 ~ gvcv5:spawn_addon_ca run fill ~~~ ~~-1~ air",
             "execute unless block ~ ~-1 ~ gvcv5:spawn_addon_ga unless block ~ ~-1 ~ gvcv5:spawn_addon_ca run fill ~~~ ~~~ air"
           ]
+        },
+        "die": {
+          "target": "self"
         }
       }
     }

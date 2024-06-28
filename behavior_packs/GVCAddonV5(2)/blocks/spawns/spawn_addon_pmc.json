@@ -40,9 +40,12 @@
         "run_command": {
           "target": "self",
           "command": [
-            "execute if block ~ ~1 ~ air run summon addon:pmc",
-            "execute if block ~ ~1 ~ air run fill ~~~ ~~~ air"
+            "kill @e[type=addon:pmc,r=1]",
+            "execute if block ~ ~1 ~ air run summon addon:pmc"
           ]
+        },
+        "die": {
+          "target": "self"
         }
       }
     }

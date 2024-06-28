@@ -26,7 +26,7 @@
         "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:smosin"
+          "def": "fire:ads_mosin"
         },
         "minecraft:behavior.charge_held_item": {
           "priority": 3,

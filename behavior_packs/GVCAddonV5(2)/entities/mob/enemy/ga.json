@@ -1228,6 +1228,12 @@
         "max": 48
       },
       "minecraft:nameable": {},
+      "minecraft:behavior.find_mount": {
+        "priority": 1,
+        "within_radius": 16,
+        "start_delay": 15,
+        "max_failed_attempts": 20
+      },
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -1263,11 +1269,6 @@
     },
     "events": {
       "minecraft:entity_spawned": {
-        "add": {
-          "component_groups": [
-            "default"
-          ]
-        },
         "randomize": [
           {
             "weight": 20,
@@ -1752,185 +1753,133 @@
         }
       },
       "vehicle:aifv": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:aifv"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:aifv"
         }
       },
       "vehicle:lav25": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:lav25"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:lav25"
         }
       },
       "vehicle:m113": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:m113"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m113"
         }
       },
       "vehicle:m1126": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:m1126"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m1126"
         }
       },
       "vehicle:m1128": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:m1128"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m1128"
         }
       },
       "vehicle:btr60": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:btr60"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:btr60"
         }
       },
       "vehicle:ah1s": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:ah1sr"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ah1sr"
         }
       },
       "vehicle:ah6": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:ah6r"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ah6r"
         }
       },
       "vehicle:g_heri": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:g_herir"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:g_herir"
         }
       },
       "vehicle:ka50": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:ka50r"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ka50r"
         }
       },
       "vehicle:mi24d": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:mi24dr"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:mi24dr"
         }
       },
       "vehicle:kv2": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:kv2"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:kv2"
         }
       },
       "vehicle:m1a2": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:m1a2"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m1a2"
         }
       },
       "vehicle:m41": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:m41"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m41"
         }
       },
       "vehicle:m60a1": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:m60a1"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m60a1"
         }
       },
       "vehicle:pt76": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:pt76"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:pt76"
         }
       },
       "vehicle:t34": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:t34"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t34"
         }
       },
       "vehicle:t55": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:t55"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t55"
         }
       },
       "vehicle:t72": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:t72"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t72"
         }
       },
       "vehicle:20mmaa": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:20mmaa"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:20mmaa"
         }
       },
       "vehicle:flak18": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:flak18"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:flak18"
         }
       },
       "vehicle:pak40": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:pak40"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:pak40"
         }
       },
       "vehicle:zu23": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:zu23"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:zu23"
         }
       },
       "vehicle:dp28set": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:dp28set"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:dp28set"
         }
       },
       "vehicle:m60set": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:m60set"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m60set"
         }
       },
       "vehicle:pkmset": {
-        "run_command": {
-          "command": [
-            "ride @s summon_ride vehicle:pkmset"
-          ]
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:pkmset"
         }
       }
     }

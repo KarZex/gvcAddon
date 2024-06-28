@@ -430,11 +430,11 @@ for row in csv_reader3:
         v_id = row[1]
         v_type = row[2]
         if v_type != "heri":
-            ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "run_command": { "command": [ "ride @s summon_ride vehicle:{}".format(v_id) ] } }
-            ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "run_command": { "command": [ "ride @s summon_ride vehicle:{}".format(v_id) ] } }
+            ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}".format(v_id) } }
+            ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}".format(v_id) } }
         else:
-            ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "run_command": { "command": [ "ride @s summon_ride vehicle:{}r".format(v_id) ] } }
-            ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "run_command": { "command": [ "ride @s summon_ride vehicle:{}r".format(v_id) ] } }
+            ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}r".format(v_id) } }
+            ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}r".format(v_id) } }
     
     row_count += 1
 

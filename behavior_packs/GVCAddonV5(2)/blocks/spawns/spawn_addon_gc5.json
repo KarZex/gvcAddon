@@ -40,9 +40,12 @@
         "run_command": {
           "target": "self",
           "command": [
-            "summon addon:gc5",
-            "fill ~~~ ~~~ air"
+            "kill @e[type=addon:gc5,r=1]",
+            "summon addon:gc5"
           ]
+        },
+        "die": {
+          "target": "self"
         }
       }
     }

@@ -40,9 +40,12 @@
         "run_command": {
           "target": "self",
           "command": [
-            "summon addon:gc1",
-            "fill ~~~ ~~~ air"
+            "kill @e[type=addon:gc1,r=1]",
+            "summon addon:gc1"
           ]
+        },
+        "die": {
+          "target": "self"
         }
       }
     }

@@ -357,11 +357,6 @@
 
     "events": {
       "minecraft:entity_spawned": {
-        "add": {
-          "component_groups": [
-            "default"
-          ]
-        },
         "randomize": [
           {
             "weight": 20,

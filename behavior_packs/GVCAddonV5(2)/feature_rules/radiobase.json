@@ -1,12 +1,12 @@
 {
-    "format_version": "1.13.0",
-    "minecraft:feature_rules": {
-        "description": {
-            "identifier": "feature_rules:radiobase",
-            "places_feature": "feature:radiobase"
-        },
-        "conditions": {
-            "placement_pass": "surface_pass",
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "gvcv5:radiobase_rule",
+      "places_feature": "gvcv5:radiobase"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
       "minecraft:biome_filter": [
         {
           "any_of": [
@@ -23,13 +23,25 @@
           ]
         }
       ]
-        },
-        "distribution": {
-          "iterations":"Math.random(6,12)",
-          "scatter_chance":2,
-          "x":{"distribution":"uniform","extent":[0,128]},
-          "y":"query.heightmap(variable.worldx,variable.worldz)",
-          "z":{"distribution":"uniform","extent":[0,128]}
-        }
+    },
+    "distribution": {
+      "iterations": 1,
+      "scatter_chance": 0.25,
+      "x": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          16
+        ]
+      },
+      "y": "query.heightmap(variable.worldx,variable.worldz)",
+      "z": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          16
+        ]
+      }
     }
+  }
 }

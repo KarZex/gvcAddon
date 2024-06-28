@@ -18,15 +18,15 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 100,
-          "burst_interval": 0.2,
+          "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 1.0,
-          "attack_interval_max": 2.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
           "attack_radius": 24.0
         },
         "minecraft:shooter": {
-          "def": "fire:m249"
+          "def": "fire:pkm"
         },
         "minecraft:behavior.charge_held_item": {
           "priority": 3,
