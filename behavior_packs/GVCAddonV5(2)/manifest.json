@@ -1,24 +1,24 @@
 {
   "format_version": 2,
   "header": {
-    "description": "作者:Kar Zex\n",
-    "name": "§l§gGVC Addon V5.0 BetaV0.2",
+    "description": "作者:Kar Zex\nV4のGVC Libなどは使用しないでください",
+    "name": "§l§gGVC Addon V5.0 BetaV0.3",
     "min_engine_version": [1, 21, 0 ],
-    "uuid": "51f2043a-8b16-4997-b76a-6571b98a9363",
+    "uuid": "933937e2-c859-484e-9ab0-1c119de59577",
     "version": [1, 21, 0]
   },
   "modules": [
     {
       "description": "Data Module",
       "type": "data",
-      "uuid": "f75f2ff6-a79b-42dc-8a34-46f777944d2a",
+      "uuid": "09efbe05-e30e-4e05-a863-9cf1e1d884c4",
       "version": [1, 0, 0]
     },
     {
       "description": "Script API Module",
       "language": "javascript",
       "type": "script",
-      "uuid": "772a2807-3018-4ed2-9c97-a3180e07cdd7",
+      "uuid": "96fa5933-4791-49f9-86dc-b2ec5ab11b48",
       "version": [1, 0, 0],
       "entry": "scripts/main.js"
     }

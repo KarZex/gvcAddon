@@ -41,13 +41,7 @@
         "run_command": {
           "target": "self",
           "command": [
-            "kill @e[type=vehicle:g_heri,r=1]",
-            "execute if block ~ ~-1 ~ gvcv5:spawn_addon_ga run summon addon:ga ~~~ ~~ vehicle:g_heri",
-            "execute if block ~ ~-1 ~ gvcv5:spawn_addon_ca run summon addon:ca ~~~ ~~ vehicle:g_heri",
-            "execute unless block ~ ~-1 ~ gvcv5:spawn_addon_ga unless block ~ ~-1 ~ gvcv5:spawn_addon_ca run summon vehicle:g_heri",
-            "execute if block ~ ~-1 ~ gvcv5:spawn_addon_ga run fill ~~~ ~~-1~ air",
-            "execute if block ~ ~-1 ~ gvcv5:spawn_addon_ca run fill ~~~ ~~-1~ air",
-            "execute unless block ~ ~-1 ~ gvcv5:spawn_addon_ga unless block ~ ~-1 ~ gvcv5:spawn_addon_ca run fill ~~~ ~~~ air"
+            "summon vehicle:g_heri ~~~"
           ]
         },
         "die": {

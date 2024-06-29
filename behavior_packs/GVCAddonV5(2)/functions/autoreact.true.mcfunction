@@ -1,1 +1,0 @@
-tag @a add autoreact

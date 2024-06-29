@@ -1,2 +1,3 @@
 tickingarea add ~~~ ~25~63~25 zexfeature true
-structure load cannonplace_de ~~-0~
+structure load cannonplace_de ~~-5~
+fill ~~~ ~~~ minecraft:air

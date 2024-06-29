@@ -1,0 +1,16 @@
+item.spawn_egg.entity.gvcv5:flag_airfield_ca.name=同盟軍拠点_野戦飛行場
+item.spawn_egg.entity.gvcv5:flag_airfield_ga.name=ゲリラ拠点_野戦飛行場
+item.spawn_egg.entity.gvcv5:flag_cannon_position_ca.name=同盟軍拠点_旧砲台陣地
+item.spawn_egg.entity.gvcv5:flag_cannon_position_ga.name=ゲリラ拠点_旧砲台陣地
+item.spawn_egg.entity.gvcv5:flag_garrison_ca.name=同盟軍拠点_駐屯地
+item.spawn_egg.entity.gvcv5:flag_garrison_ga.name=ゲリラ拠点_駐屯地
+item.spawn_egg.entity.gvcv5:flag_garrison_de_ca.name=同盟軍拠点_砂漠駐屯地
+item.spawn_egg.entity.gvcv5:flag_garrison_de_ga.name=ゲリラ拠点_砂漠駐屯地
+item.spawn_egg.entity.gvcv5:flag_garrison_sn_ca.name=同盟軍拠点_雪原駐屯地
+item.spawn_egg.entity.gvcv5:flag_garrison_sn_ga.name=ゲリラ拠点_雪原駐屯地
+item.spawn_egg.entity.gvcv5:flag_garrison_ice_ca.name=同盟軍拠点_氷雪駐屯地
+item.spawn_egg.entity.gvcv5:flag_garrison_ice_ga.name=ゲリラ拠点_氷雪駐屯地
+item.spawn_egg.entity.gvcv5:flag_airbase_ca.name=同盟軍拠点_同盟軍飛行場
+item.spawn_egg.entity.gvcv5:flag_airbase_ga.name=ゲリラ拠点_同盟軍飛行場
+item.spawn_egg.entity.gvcv5:flag_city_ca.name=同盟軍拠点_街
+item.spawn_egg.entity.gvcv5:flag_city_ga.name=ゲリラ拠点_街

@@ -41,8 +41,7 @@
         "run_command": {
           "target": "self",
           "command": [
-            "kill @e[type=addon:pmc,r=1]",
-            "execute if block ~ ~1 ~ air run summon addon:pmc"
+            "summon addon:pmc ~~~"
           ]
         },
         "die": {

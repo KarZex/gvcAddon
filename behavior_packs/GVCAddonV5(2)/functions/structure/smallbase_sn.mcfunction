@@ -1,2 +1,3 @@
 tickingarea add ~~~ ~53~63~41 zexfeature true
 structure load smallbase_sn ~~-6~
+fill ~~~ ~~~ minecraft:air

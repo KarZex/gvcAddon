@@ -41,8 +41,7 @@
         "run_command": {
           "target": "self",
           "command": [
-            "kill @e[type=addon:ca,r=1]",
-            "execute if block ~ ~1 ~ air run summon addon:ca"
+            "summon addon:ca ~~~"
           ]
         },
         "die": {

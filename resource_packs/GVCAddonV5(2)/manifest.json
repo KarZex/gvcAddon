@@ -1,17 +1,17 @@
 {
   "format_version": 2,
   "header": {
-    "description": "作者:Kar Zex\nfunction autoreactでコマンドブロックに近づくことで自動で基地生成。\n",
+    "description": "作者:Kar Zex\nV4のGVC Libなどは使用しないでください\n",
     "name": "§l§gGVC Addon V5.0 BetaV0.2",
     "min_engine_version": [1, 21, 0 ],
-    "uuid": "1b87bcf3-7bf7-490a-b71d-da691733a507",
+    "uuid": "4ea63772-5a80-40f4-86b3-3c4a647c5496",
     "version": [0, 0, 1]
   },
   "modules": [
     {
       "description": "resources Module",
       "type": "resources",
-      "uuid": "ee66fcd1-3358-481b-8b2e-f514e71031ef",
+      "uuid": "d72b7404-94bd-4c76-8bed-7be75e930ae2",
       "version": [0, 0, 1]
     }
   ]

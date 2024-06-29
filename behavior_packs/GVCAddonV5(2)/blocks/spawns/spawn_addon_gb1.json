@@ -41,8 +41,7 @@
         "run_command": {
           "target": "self",
           "command": [
-            "kill @e[type=addon:gb1,r=1]",
-            "summon addon:gb1"
+            "summon addon:gb1 ~~~"
           ]
         },
         "die": {
