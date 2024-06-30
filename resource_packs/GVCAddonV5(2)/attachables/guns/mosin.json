@@ -16,9 +16,9 @@
 				"scope": "geometry.scope"
 			},
 			"animations": {
-				"first": "animation.mosin.first",
+				"first": "animation.ak47.first2",
 				"ads": "animation.mosin.ads",
-				"third": "animation.mosin.third"
+				"third": "animation.item.third2"
 			},
 			"scripts": {
 				"pre_animation": [

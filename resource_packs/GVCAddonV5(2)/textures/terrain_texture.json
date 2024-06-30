@@ -172,11 +172,11 @@
     "good4": {
       "textures": "textures/blocks/good4"
     },
-    "beacon": {
-      "textures": "textures/blocks/beacon"
+    "spawn_g": {
+      "textures": "textures/blocks/spawn_g"
     },
-    "beacon_so": {
-      "textures": "textures/blocks/beacon_so"
+    "spawn_c": {
+      "textures": "textures/blocks/spawn_c"
     },
     "radio": {
       "textures": "textures/blocks/radio"

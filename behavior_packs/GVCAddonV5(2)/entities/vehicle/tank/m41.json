@@ -180,7 +180,11 @@
 		{
           "cause": "fall",
           "deals_damage": false
-        }
+        },
+        {
+              "cause": "override",
+              "deals_damage": false
+            }
 	   ]
       },
       "minecraft:healable": {

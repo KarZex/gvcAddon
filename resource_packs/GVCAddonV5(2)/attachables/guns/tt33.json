@@ -13,9 +13,9 @@
 				"default": "geometry.tt33"//create by KUROMU1019. thanks
 			},
 			"animations": {
-				"first": "animation.tt33.first",
-				"ads": "animation.tt33.scope",
-				"third": "animation.tt33.third"
+				"first": "animation.pistol.first",
+				"ads": "animation.ak47.ads2",
+				"third": "animation.pistol.third"
 			},
 			"scripts": {
 				"pre_animation": [

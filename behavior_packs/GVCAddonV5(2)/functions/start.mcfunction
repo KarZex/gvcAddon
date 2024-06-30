@@ -14,5 +14,5 @@ execute at @e[type=fire:fire] run particle minecraft:basic_flame_particle ~~~
 execute at @e[type=fire:famas] run particle minecraft:basic_smoke_particle ~~~
 execute at @e[type=fire:ads_famas] run particle minecraft:basic_smoke_particle ~~~
 
-gamerule commandblockoutput true
+gamerule commandblockoutput false
 

@@ -1,4 +1,4 @@
-name,blockname(java),new_id,old_id,x,z,y,chance,flag_type,biome all or any,,,,,,,,,,,,,,,,max
+name,blockname(java),id,old_id,x方向の長さ,z方向の長さ,深さ,確率,旗,出現バイオーム,,,,,,,,,,,,,,,,max
 ダンジョン_キャンプ,gvcr2_block_building_camp,camp,ds1,7,7,0,1,,all,;overworld,F;ocean,F;river,,,,,,,,,,,,,
 ダンジョン_雪原キャンプ,gvcr2_block_building_camp_sn,camp_sn,,16,16,5,1,,any,;cold,;ice,,,,,,,,,,,,,,
 ダンジョン_ゲリラのアジト,gvcr2_block_building_hideout,hideout,ds2,16,16,5,0.5,,any,;plains,;forest,,,,,,,,,,,,,,

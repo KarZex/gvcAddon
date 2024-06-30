@@ -41,7 +41,7 @@
         "run_command": {
           "target": "self",
           "command": [
-            "summon vehicle:mi24d ~~~"
+            "summon vehicle:mi24d ~0.1~-1~0.1"
           ]
         },
         "die": {

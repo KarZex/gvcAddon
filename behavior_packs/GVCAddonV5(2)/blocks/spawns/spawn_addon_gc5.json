@@ -41,7 +41,7 @@
         "run_command": {
           "target": "self",
           "command": [
-            "summon addon:gc5 ~~~"
+            "summon addon:gc5 ~0.1~-1~0.1"
           ]
         },
         "die": {

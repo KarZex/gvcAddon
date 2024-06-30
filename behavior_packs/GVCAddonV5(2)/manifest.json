@@ -1,7 +1,7 @@
 {
   "format_version": 2,
   "header": {
-    "description": "作者:Kar Zex\nV4のGVC Libなどは使用しないでください",
+    "description": "作者:Kar Zex\nMosin-Nagant,TT33モデル:kusnek\nV4のGVC Libなどは使用しないでください\n",
     "name": "§l§gGVC Addon V5.0 BetaV0.3",
     "min_engine_version": [1, 21, 0 ],
     "uuid": "933937e2-c859-484e-9ab0-1c119de59577",

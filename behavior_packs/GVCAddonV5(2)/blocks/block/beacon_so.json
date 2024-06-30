@@ -15,7 +15,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "beacon_so",
+                    "texture": "spawn_c",
                     "render_method": "alpha_test",
 					"ambient_occlusion": false
                 }

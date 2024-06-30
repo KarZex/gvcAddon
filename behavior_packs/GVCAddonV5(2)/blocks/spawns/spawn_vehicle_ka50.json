@@ -41,7 +41,7 @@
         "run_command": {
           "target": "self",
           "command": [
-            "summon vehicle:ka50 ~~~"
+            "summon vehicle:ka50 ~0.1~-1~0.1"
           ]
         },
         "die": {
