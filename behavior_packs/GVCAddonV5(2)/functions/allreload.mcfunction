@@ -49,4 +49,4 @@ scoreboard players set @s ump9 30
 scoreboard players set @s mp7 30
 scoreboard players set @s ak12 30
 scoreboard players set @s t89 30
-execute @s[tag=!reload] ~~~ playsound reload.ak47 @s ~~~
+execute as @s[tag=!reload] run playsound reload.ak47 @s ~~~
