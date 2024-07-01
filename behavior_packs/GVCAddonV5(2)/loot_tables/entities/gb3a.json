@@ -5,7 +5,7 @@
       "entries": [
         {
           "type": "item",
-          "name": "zex:green_helmet",
+          "name": "gvcv5:ghilliesuit_helmet",
           "weight": 1,
           "functions": [
             {
@@ -25,7 +25,7 @@
               "entries": [
                 {
                   "type": "item",
-                  "name": "zex:green_chestplate",
+                  "name": "gvcv5:ghilliesuit_chestplate",
                   "weight": 1,
                   "functions": [
                     {
@@ -45,7 +45,7 @@
                       "entries": [
                         {
                           "type": "item",
-                          "name": "zex:green_leggings",
+                          "name": "gvcv5:ghilliesuit_leggings",
                           "weight": 1,
                           "functions": [
                             {
@@ -65,7 +65,7 @@
                               "entries": [
                                 {
                                   "type": "item",
-                                  "name": "zex:green_boots",
+                                  "name": "gvcv5:ghilliesuit_boots",
                                   "weight": 1,
                                   "functions": [
                                     {

@@ -5,7 +5,7 @@
       "entries": [
         {
           "type": "item",
-          "name": "zex:nmb_helmet",
+          "name": "gvcv5:trench_helmet",
           "weight": 1,
           "functions": [
             {
@@ -25,7 +25,7 @@
               "entries": [
                 {
                   "type": "item",
-                  "name": "zex:nmb_chestplate",
+                  "name": "gvcv5:trench_chestplate",
                   "weight": 1,
                   "functions": [
                     {
@@ -45,7 +45,7 @@
                       "entries": [
                         {
                           "type": "item",
-                          "name": "zex:nmb_leggings",
+                          "name": "gvcv5:trench_leggings",
                           "weight": 1,
                           "functions": [
                             {
@@ -65,7 +65,7 @@
                               "entries": [
                                 {
                                   "type": "item",
-                                  "name": "zex:nmb_boots",
+                                  "name": "gvcv5:trench_boots",
                                   "weight": 1,
                                   "functions": [
                                     {

@@ -4,7 +4,7 @@ AK-47,ak47,30,zex:556m,6,6,2,60,1,0,F,0,F,akbullet,1,完了
 AKS-74M,an94,30,zex:556m,6,8,1.5,60,1,0,F,0,F,akbullet,1,完了
 AWM,awm,5,zex:762m,16,16,0.75,80,19,0,F,0,F,srbullet,1,
 DP-28,dp28,47,zex:762m,8,6,4,80,1,0,F,0,F,lmgbullet,1,
-MGL140,famas,6,zex:rocketm,30,8,2,80,19,2,F,0,F,gbullet,1,
+MGL140,famas,6,zex:rocketm,1,8,2,80,19,2,F,0,F,gbullet,1,
 Flamethrower,fire,30,zex:556m,2,2,2,60,1,0,F,0,F,,1,
 H&K G36,g36,30,zex:556m,6,8,1.75,60,1,0,F,0,F,arbullet,1,
 Glock17,glock17,20,zex:mm9,4,3.4,0,30,4,0,F,0,T,psbullet,1,

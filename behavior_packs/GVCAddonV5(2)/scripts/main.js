@@ -5,15 +5,15 @@ import { gunData } from "./guns";
 function setArmorValue( itemName ){
 	if( itemName.includes("leather") ){ return 0.05 }
 	else if( itemName.includes("chainmail") ){ return 0.125 }
-	else if( itemName.includes("iron") ){ return 0.2 }
-	else if( itemName.includes("golden") ){ return 0.2 }
-	else if( itemName.includes("diamond") ){ return 0.24 }
-	else if( itemName.includes("plastic") ){ return 0.225 }
+	else if( itemName.includes("iron") ){ return 0.15 }
+	else if( itemName.includes("golden") ){ return 0.15 }
+	else if( itemName.includes("diamond") ){ return 0.225 }
+	else if( itemName.includes("plastic") ){ return 0.2 }
 	else if( itemName.includes("ghilliesuit") ){ return 0.05 }
-	else if( itemName.includes("trench") ){ return 0.2 }
-	else if( itemName.includes("mg") ){ return 0.2 }
+	else if( itemName.includes("trench") ){ return 0.15 }
+	else if( itemName.includes("mghelmet") ){ return 0.15 }
 	else if( itemName.includes("firemask") ){ return 0.05 }
-	else if( itemName.includes("droneguided") ){ return 0.2 }
+	else if( itemName.includes("droneguided") ){ return 0.15 }
 	else if( itemName.includes("netherite") ){ return 0.25 }
 	else { return 0 }
 }

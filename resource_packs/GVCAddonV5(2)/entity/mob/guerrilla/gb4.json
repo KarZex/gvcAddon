@@ -19,9 +19,9 @@
       },
       "animations": {
         "humanoid_base_pose": "animation.humanoid.base_pose.v1.0",
-        "look_at_target_default": "animation.humanoid.look_at_target.default.v1.0",
-        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding.v1.0",
-        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming.v1.0",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
         "move": "animation.humanoid.move.v1.0",
         "riding.arms": "animation.player.riding.arms",
         "riding.legs": "animation.player.riding.legs",

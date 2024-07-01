@@ -461,65 +461,53 @@
     "ps": {
       "textures": "textures/items/ps"
     },
-    "ps_boots": {
-      "textures": "textures/items/armor/psb"
+    "ghilliesuit_boots": {
+      "textures": "textures/items/armor/ghilliesuit_boots"
     },
-    "ps_chestplate": {
-      "textures": "textures/items/armor/psc"
+    "ghilliesuit_chestplate": {
+      "textures": "textures/items/armor/ghilliesuit_chestplate"
     },
-    "ps_leggings": {
-      "textures": "textures/items/armor/psl"
+    "ghilliesuit_leggings": {
+      "textures": "textures/items/armor/ghilliesuit_leggings"
     },
-    "ps_helmet": {
-      "textures": "textures/items/armor/psh"
+    "ghilliesuit_helmet": {
+      "textures": "textures/items/armor/ghilliesuit_helmet"
     },
-    "akb_boots": {
-      "textures": "textures/items/armor/akb/b"
+    "trench_boots": {
+      "textures": "textures/items/armor/trench_boots"
     },
-    "akb_chestplate": {
-      "textures": "textures/items/armor/akb/c"
+    "trench_chestplate": {
+      "textures": "textures/items/armor/trench_chestplate"
     },
-    "akb_leggings": {
-      "textures": "textures/items/armor/akb/l"
+    "trench_leggings": {
+      "textures": "textures/items/armor/trench_leggings"
     },
-    "akb_helmet": {
-      "textures": "textures/items/armor/akb/h"
+    "trench_helmet": {
+      "textures": "textures/items/armor/trench_helmet"
     },
-    "ske_boots": {
-      "textures": "textures/items/armor/ske/b"
+    "mghelmet": {
+      "textures": "textures/items/armor/mghelmet"
     },
-    "ske_chestplate": {
-      "textures": "textures/items/armor/ske/c"
+    "firemask": {
+      "textures": "textures/items/armor/firemask"
     },
-    "ske_leggings": {
-      "textures": "textures/items/armor/ske/l"
+    "droneguided_chestplate": {
+      "textures": "textures/items/armor/droneguided_chestplate"
     },
-    "ske_helmet": {
-      "textures": "textures/items/armor/ske/h"
+    "droneguided_helmet": {
+      "textures": "textures/items/armor/droneguided_helmet"
     },
-    "nmb_boots": {
-      "textures": "textures/items/armor/nmb/b"
+    "plastic_boots": {
+      "textures": "textures/items/armor/plastic_boots"
     },
-    "nmb_chestplate": {
-      "textures": "textures/items/armor/nmb/c"
+    "plastic_chestplate": {
+      "textures": "textures/items/armor/plastic_chestplate"
     },
-    "nmb_leggings": {
-      "textures": "textures/items/armor/nmb/l"
+    "plastic_leggings": {
+      "textures": "textures/items/armor/plastic_leggings"
     },
-    "nmb_helmet": {
-      "textures": "textures/items/armor/nmb/h"
-    },
-    "hkt_boots": {
-      "textures": "textures/items/armor/hkt/b"
-    },
-    "hkt_chestplate": {
-      "textures": "textures/items/armor/hkt/c"
-    },
-    "hkt_leggings": {
-      "textures": "textures/items/armor/hkt/l"
-    },
-    "hkt_helmet": {
-      "textures": "textures/items/armor/hkt/h"
+    "plastic_helmet": {
+      "textures": "textures/items/armor/plastic_helmet"
     },
     "health": {
       "textures": "textures/items/health"

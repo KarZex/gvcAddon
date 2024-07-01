@@ -25,23 +25,14 @@ item.spawn_egg.entity.gvcv5:gc4.name=エリートゲリラ_ククリ
 item.spawn_egg.entity.gvcv5:gc5.name=ゲリラ海軍士官
 
 entity.gvcv5:ca.name=同盟軍兵士
-entity.gvcv5:ca1.name=同盟軍兵士
-entity.gvcv5:ca2.name=同盟軍兵士
-entity.gvcv5:ca3.name=同盟軍兵士
-entity.gvcv5:ca4.name=同盟軍兵士
 
 entity.gvcv5:pmc.name=PMC兵士
-entity.gvcv5:pmc1.name=PMC兵士
-entity.gvcv5:pmc2.name=PMC兵士
-entity.gvcv5:pmc3.name=PMC兵士
-entity.gvcv5:pmc4.name=PMC兵士
 
 item.spawn_egg.entity.gvcv5:gb1.name=ベテランゲリラ-マシンガン
 item.spawn_egg.entity.gvcv5:gb2.name=ベテランゲリラ-強襲
 item.spawn_egg.entity.gvcv5:gb3.name=ベテランゲリラ-スナイパー
 item.spawn_egg.entity.gvcv5:gb4.name=ベテランゲリラ-火炎放射
-item.spawn_egg.entity.gvcv5:gb5.name=ベテランゲリラ-RPG
-item.spawn_egg.entity.gvcv5:gb6.name=ベテランゲリラ-ドローン誘導
+item.spawn_egg.entity.gvcv5:gb5.name=ベテランゲリラ-ドローン誘導
 
 item.spawn_egg.entity.zex:stand.name=スタンド
 
@@ -152,42 +143,32 @@ item.zex:health=応急処置キット
 item.gun:bomb=破片手榴弾
 item.zex:health.name=応急処置キット
 item.gun:bomb.name=破片手榴弾
-item.zex:ps_boots.name=プラスチックブーツ
-item.zex:ps_helmet.name=プラスチックヘルメット
-item.zex:ps_leggings.name=プラスチックレギンス
-item.zex:ps_chestplate.name=プラスチックプレート
 
-item.zex:akb_boots.name=プラスチックブーツ
-item.zex:akb_helmet.name=防火マスク
-item.zex:akb_leggings.name=プラスチックレギンス
-item.zex:akb_chestplate.name=プラスチックプレート
+item.gvcv5:plastic_boots=プラスチックブーツ
+item.gvcv5:plastic_helmet=プラスチックヘルメット
+item.gvcv5:plastic_leggings=プラスチックレギンス
+item.gvcv5:plastic_chestplate=プラスチックプレート
 
-item.zex:hkt_boots.name=プラスチックブーツ
-item.zex:hkt_helmet.name=ドローン誘導用ヘルメット
-item.zex:hkt_leggings.name=プラスチックレギンス
-item.zex:hkt_chestplate.name=ドローン誘導用アーマー
+item.gvcv5:firemask=防火マスク
 
-item.zex:ske_boots.name=プラスチックブーツ
-item.zex:ske_helmet.name=MGヘルメット
-item.zex:ske_leggings.name=プラスチックレギンス
-item.zex:ske_chestplate.name=プラスチックプレート
+item.gvcv5:droneguided_helmet=ドローン誘導用ヘルメット
+item.gvcv5:droneguided_chestplate=ドローン誘導用アーマー
 
-item.zex:nmb_boots.name=トレンチブーツ
-item.zex:nmb_helmet.name=塹壕マスク
-item.zex:nmb_leggings.name=トレンチレギンス
-item.zex:nmb_chestplate.name=トレンチアーマー
+item.gvcv5:mghelmet=MGヘルメット
+
+item.gvcv5:trench_boots=トレンチブーツ
+item.gvcv5:trench_helmet=塹壕マスク
+item.gvcv5:trench_leggings=トレンチレギンス
+item.gvcv5:trench_chestplate=トレンチアーマー
+
+item.gvcv5:ghilliesuit_boots=ギリースーツ_靴
+item.gvcv5:ghilliesuit_helmet=ギリースーツ_頭
+item.gvcv5:ghilliesuit_leggings=ギリースーツ_ズボン
+item.gvcv5:ghilliesuit_chestplate=ギリースーツ_体
 
 item.zex:icerod=フロストロッド
 item.zex:icepowder=フロストパウダー
 item.zex:icecharge=フロストチャージ
-
-item.zex:green_boots.name=ギリースーツ_靴
-item.zex:green_helmet.name=ギリースーツ_頭
-item.zex:green_leggings.name=ギリースーツ_ズボン
-item.zex:green_chestplate.name=ギリースーツ_体
-
-item.zex:dro_helmet.name=ドローン誘導用ヘルメット
-item.zex:dro_chestplate.name=ドローン誘導用アーマー
 
 item.item:blue=追従
 item.item:green=待機
