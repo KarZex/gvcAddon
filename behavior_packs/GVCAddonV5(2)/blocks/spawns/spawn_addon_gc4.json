@@ -41,7 +41,7 @@
         "run_command": {
           "target": "self",
           "command": [
-            "summon addon:gc4 ~0.1~-1~0.1"
+            "summon gvcv5:gc4 ~0.1~-1~0.1 ~~ minecraft:spawned_from_block"
           ]
         },
         "die": {

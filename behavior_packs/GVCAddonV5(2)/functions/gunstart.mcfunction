@@ -9,7 +9,7 @@ execute as @a[tag=!startedv4] run scoreboard players set @s scool 0
 execute as @a[tag=!startedv4] run scoreboard players set @s flag 0
 execute as @a run scoreboard players set @s reloading 0
 
-execute at @a[tag=!startedv4] run fill ^^^2 ^^^2 hkz:firstitem
+execute as @a[tag=!startedv4] run fill ^^^2 ^^^2 hkz:firstitem
 #guns
 
 scoreboard objectives add ak12 dummy

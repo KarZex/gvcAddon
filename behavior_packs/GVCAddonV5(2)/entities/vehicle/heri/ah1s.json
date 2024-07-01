@@ -20,28 +20,6 @@
         "minecraft:transformation": {
           "into": "addon:des"
         }
-      },
-      "firet": {
-        "minecraft:spawn_entity": {
-          "entities": {
-            "min_wait_time": 0,
-            "max_wait_time": 0,
-            "single_use": true,
-            "spawn_entity": "fire:t34",
-            "num_to_spawn": 1
-          }
-        }
-      },
-      "firem": {
-        "minecraft:spawn_entity": {
-          "entities": {
-            "min_wait_time": 0,
-            "max_wait_time": 0,
-            "single_use": true,
-            "spawn_entity": "fire:mgt",
-            "num_to_spawn": 1
-          }
-        }
       }
     },
     "components": {
@@ -70,16 +48,11 @@
       "minecraft:rideable": {
         "seat_count": 1,
         "family_types": [
-          "player",
-          "germany"
+          "player"
         ],
         "interact_text": "action.interact.ride.horse",
         "seats": {
-          "position": [
-            0.0,
-            1.7,
-            -0.1
-          ]
+          "position": [ 0.0, 0.45, 0.5 ]
         }
       },
       "minecraft:behavior.player_ride_tamed": {},
@@ -114,7 +87,7 @@
           {
             "hurt_item": 1,
             "spawn_items": {
-              "table": "loot_tables/entities/t34.json"
+              "table": "loot_tables/entities/ah1s.json"
             },
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",

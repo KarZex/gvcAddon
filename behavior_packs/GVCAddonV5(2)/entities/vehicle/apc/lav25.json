@@ -54,7 +54,7 @@
         "minecraft:rideable": {
           "seat_count": 5,
           "family_types": [
-            "mod","PMC"
+            "guerrilla","allied_soldier","player"
           ],
           "interact_text": "action.interact.ride.horse",
           "seats": [

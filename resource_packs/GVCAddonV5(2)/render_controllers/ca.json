@@ -1,7 +1,7 @@
 {
   "format_version": "1.8.0",
   "render_controllers": {
-    "controller.render.ca": {
+    "controller.render.allied_soldier": {
       "arrays": {
         "textures": {
           "Array.base": [ "Texture.army","Texture.navy" ]

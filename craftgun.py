@@ -13,6 +13,7 @@ BP_animation = json.load(open("tool/animation_controllers_guns.json","r"))
 BP_animation_hold = json.load(open("tool/animation_controllers_hold.json","r"))
 ga_json = json.load(open("tool/ga.json","r"))
 ca_json = json.load(open("tool/ca.json","r"))
+pmc_json = json.load(open("tool/pmc.json","r"))
 item_json = json.load(open("resource_packs/GVCAddonV5(2)/textures/item_texture.json","r"))
 func = open("tool/gunstart.mcfunction","r")
 a_func = func.read()
@@ -103,6 +104,18 @@ for row in csv_reader:
 
         #animation controllers data
         BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["default"]["transitions"].append({ "{}".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id) })
+        BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["default"]["transitions"].append({ "{}_reload".format(gun_id): "query.get_equipped_item_name == '{}' && (variable.attack_time > 0.0)".format(gun_id) })
+        
+        BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}_reload".format(gun_id)] = {
+            "on_entry": [
+                "/scriptevent gvcv5:reload {}".format(gun_id)
+            ],
+            "transitions": [
+                {
+                    "default": "(variable.attack_time <= 0.0)"
+                }
+            ]
+        }
 
         if gun_burst == 0:
             if gun_interval > 0:
@@ -263,8 +276,8 @@ for row in csv_reader:
                 "charge_charged_trigger": 0.0,
                 "charge_shoot_trigger": 0.0,
                 "attack_interval_min": attack_interval,
-                "attack_interval_max": attack_interval + 1,
-                "attack_radius": 24.0
+                "attack_interval_max": attack_interval,
+                "attack_radius": 20.0
             },
             "minecraft:shooter": {
                 "def": "fire:{}".format(gun_id)
@@ -284,6 +297,8 @@ for row in csv_reader:
         ga_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
         ca_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         ca_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
 
         with open("resource_packs/GVCAddonV5(2)/entity/gun/ak12.json","r") as f:
             gun_entity = json.load(f)
@@ -392,7 +407,7 @@ for row in csv_reader2:
                 "charge_shoot_trigger": 0.0,
                 "attack_interval_min": attack_interval,
                 "attack_interval_max": attack_interval,
-                "attack_radius": 24.0
+                "attack_radius": 20.0
             },
             "minecraft:shooter": {
                 "def": "fire:{}".format(gun_id)
@@ -409,6 +424,8 @@ for row in csv_reader2:
         ga_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
         ca_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         ca_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
 
         with open("resource_packs/GVCAddonV5(2)/entity/gun/ak12.json","r") as f:
             gun_entity = json.load(f)
@@ -432,9 +449,11 @@ for row in csv_reader3:
         if v_type != "heri":
             ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}".format(v_id) } }
             ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}".format(v_id) } }
+            pmc_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}".format(v_id) } }
         else:
             ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}r".format(v_id) } }
             ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}r".format(v_id) } }
+            pmc_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}r".format(v_id) } }
     
     row_count += 1
 
@@ -457,6 +476,9 @@ with open("behavior_packs/GVCAddonV5(2)/entities/mob/allied/ca.json","w") as f:
 
 with open("behavior_packs/GVCAddonV5(2)/entities/mob/enemy/ga.json","w") as f:
     json.dump(ga_json,f,indent=2)
+
+with open("behavior_packs/GVCAddonV5(2)/entities/mob/allied/pmc.json","w") as f:
+    json.dump(pmc_json,f,indent=2)
 
 with open("resource_packs/GVCAddonV5(2)/textures/item_texture.json","w") as f:
     json.dump(item_json,f,indent=2)

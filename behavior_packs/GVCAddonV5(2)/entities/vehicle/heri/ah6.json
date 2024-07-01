@@ -68,7 +68,7 @@
         "minecraft:rideable": {
           "seat_count": 1,
           "family_types": [
-				    "mod"
+            "player"
           ],
           "interact_text": "action.interact.ride.horse",
           "seats": {
@@ -103,7 +103,7 @@
 			{
 				"hurt_item": 1,
 				"spawn_items": {
-					"table": "loot_tables/entities/ah1s.json"
+					"table": "loot_tables/entities/ah6.json"
 				},
 				"play_sounds": "enderchest.open",
 				"interact_text": "action.gvc.item",

@@ -41,7 +41,7 @@
         "run_command": {
           "target": "self",
           "command": [
-            "summon vehicle:mi24d ~0.1~-1~0.1"
+            "summon vehicle:mi24d ~0.1~-1~0.1 ~~ minecraft:spawned_from_block"
           ]
         },
         "die": {

@@ -35,23 +35,23 @@
     "an94": {
       "textures": "textures/gun/an94"
     },
-    "an94m": {
-      "textures": "textures/ammo/an94"
+    "trenchclub": {
+      "textures": "textures/items/trenchclub"
     },
-    "p38": {
-      "textures": "textures/gun/p38"
+    "guerrilla_gb1": {
+      "textures": "textures/items/guerrilla_gb1"
     },
-    "ap38": {
-      "textures": "textures/ammo/p38"
+    "guerrilla_gb2": {
+      "textures": "textures/items/guerrilla_gb2"
     },
-    "p226": {
-      "textures": "textures/gun/p226"
+    "guerrilla_gb3": {
+      "textures": "textures/items/guerrilla_gb3"
     },
-    "ap226": {
-      "textures": "textures/ammo/p226"
+    "guerrilla_gb4": {
+      "textures": "textures/items/guerrilla_gb4"
     },
-    "t100": {
-      "textures": "textures/gun/t100"
+    "guerrilla_gb5": {
+      "textures": "textures/items/guerrilla_gb5"
     },
     "at100": {
       "textures": "textures/ammo/t100"
@@ -374,14 +374,14 @@
     "seishim": {
       "textures": "textures/ammo/seishi"
     },
-    "c1": {
-      "textures": "textures/items/c1"
+    "guerrilla": {
+      "textures": "textures/items/guerrilla"
     },
-    "c2": {
-      "textures": "textures/items/c2"
+    "allied_soldier": {
+      "textures": "textures/items/allied_soldier"
     },
-    "c3": {
-      "textures": "textures/items/c3"
+    "pmc": {
+      "textures": "textures/items/pmc"
     },
     "cb1": {
       "textures": "textures/items/cb1"

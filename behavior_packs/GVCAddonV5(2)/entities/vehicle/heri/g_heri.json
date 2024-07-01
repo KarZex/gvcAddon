@@ -70,8 +70,7 @@
       "minecraft:rideable": {
         "seat_count": 1,
         "family_types": [
-          "player",
-          "germany"
+          "player"
         ],
         "interact_text": "action.interact.ride.horse",
         "seats": {
@@ -114,7 +113,7 @@
           {
             "hurt_item": 1,
             "spawn_items": {
-              "table": "loot_tables/entities/t34.json"
+              "table": "loot_tables/entities/g_heri.json"
             },
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
