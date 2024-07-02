@@ -34,10 +34,18 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		let def = 0;
 		const equipmentComp = vict.getComponent(EntityComponentTypes.Equippable)
 		if( equipmentComp ){
-			if( equipmentComp.getEquipmentSlot(EquipmentSlot.Head).isValid ){ def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Head).typeId) }
-			if( equipmentComp.getEquipmentSlot(EquipmentSlot.Chest).isValid ){ def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Chest).typeId) }
-			if( equipmentComp.getEquipmentSlot(EquipmentSlot.Legs).isValid ){ def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Legs).typeId) }
-			if( equipmentComp.getEquipmentSlot(EquipmentSlot.Feet).isValid ){ def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Feet).typeId) }
+			if( equipmentComp.getEquipment(EquipmentSlot.Head) != undefined ){ 
+				def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Head).typeId) 
+			}
+			if( equipmentComp.getEquipment(EquipmentSlot.Chest) != undefined  ){ 
+				def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Chest).typeId) 
+			}
+			if( equipmentComp.getEquipment(EquipmentSlot.Legs) != undefined  ){
+				 def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Legs).typeId) 
+				}
+			if( equipmentComp.getEquipment(EquipmentSlot.Feet) != undefined  ){
+				 def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Feet).typeId) 
+			}
 		}
 		let gunName = e.projectile.typeId
 		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
