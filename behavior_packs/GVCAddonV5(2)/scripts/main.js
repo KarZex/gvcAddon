@@ -132,8 +132,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			let buyData = [{ text:`§l`},{ translate: `item.${buys[i]["give"]}`},{ text:`x${buys[i]["count"]}§r\nneed:`}];
 			for( let j = 0; j < sells.length; j++ ){
 				if( buys[i]["cost"][j] > 0 ){
-					buyData.push({ translate: `script.gvcv5.${sells[j]}.name` });// `script.gvcv5.${sells[j]}.namex${buys[i]["cost"][j]} `
-					buyData.push({ text: `x${buys[i]["cost"][j]}` });// `script.gvcv5.${sells[j]}.namex${buys[i]["cost"][j]} `
+					buyData.push({ translate: `script.gvcv5.${sells[j]}.name` });
+					buyData.push({ text: `x${buys[i]["cost"][j]}` });
 				}
 			}
 			form.button({ rawtext: buyData},buys[i]["texture"]);
