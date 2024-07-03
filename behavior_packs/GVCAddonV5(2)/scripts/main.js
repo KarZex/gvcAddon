@@ -127,7 +127,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			sellItemCounts.push(c)
 			sellItem += `${sells[i]}:${c}\n`
 		}
-		form.text(sellItem);
+		form.textField(sellItem);
 		for(let i = 0; i < buys.length; i++){
 			let buyData = `§l${buys[i]["give"]}x${buys[i]["count"]}§r\nneed:`;
 			for( let j = 0; j < sells.length; j++ ){
