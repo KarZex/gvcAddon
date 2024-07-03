@@ -20,6 +20,10 @@
 					"ambient_occlusion": false
                 }
             },
+            "minecraft:on_interact": {
+                "event": "gvcv5:usecrafter",
+                "target": "other"
+            },
             "minecraft:geometry": "geometry.bc",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],
@@ -64,6 +68,11 @@
             }
         ],
         "events": {
+            "gvcv5:usecrafter":{
+                "run_command":{
+                    "command": "scriptevent gvcv5:craft bc"
+                }
+            }
         }
     }
 }

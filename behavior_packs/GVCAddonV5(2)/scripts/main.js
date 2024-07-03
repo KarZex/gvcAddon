@@ -1,6 +1,7 @@
 import { world, system, EntityDamageCause, EquipmentSlot, Block, Entity, EntityComponentTypes  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
+import { craftData } from "./crafts";
 
 function setArmorValue( itemName ){
 	if( itemName.includes("leather") ){ return 0.05 }
@@ -17,6 +18,7 @@ function setArmorValue( itemName ){
 	else if( itemName.includes("netherite") ){ return 0.25 }
 	else { return 0 }
 }
+
 
 world.afterEvents.projectileHitBlock.subscribe( e => {
 	if ( e.getBlockHit().block.typeId != undefined && e.getBlockHit().block.typeId == `gvcv5:beacon`){
@@ -104,5 +106,42 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				p.runCommand("playsound gun.reload @s ~~~ ");
 			}
 		}
+	}
+	else if( e.id == "gvcv5:craft" ){
+		const craftType = e.message;
+		const player = e.sourceEntity
+		const form = new ActionFormData();
+		form.title("Crafter");
+		const sells = craftData[`${craftType}`][`sell`];
+		const buys = craftData[`${craftType}`][`buy`];
+		let sellItem = ``
+		let sellItemCounts = []
+		for( let i = 0; i < sells.length; i++ ){
+			let c = 0
+			for(let j = 0; j < 36; j++){
+				let Haditem = p.getComponent("inventory").container.getItem(j);
+				if( Haditem != undefined && Haditem.typeId == sells[i] ){
+					c += p.getComponent("inventory").container.getItem(j).amount;
+				}
+			}
+			sellItemCounts.push(c)
+			sellItem += `${sells[i]}:${c}\n`
+		}
+		form.text(sellItem);
+		for(let i = 0; i < buys.length; i++){
+			let buyData = `§l${buys[i]["give"]}x${buys[i]["count"]}§r\nneed:`;
+			for( let j = 0; j < sells.length; j++ ){
+				if( buys[i]["cost"][j] > 0 ) buyData += ` ${sells[j]}x${buys[i]["cost"][j]} `
+			}
+			form.button(buyData);
+		}
+		form.show(player).then( result => {
+			if( !result.cancelled ){
+				if( sellItemCounts.every( (value, index) => { value > buys[result]["cost"][index] }) ){
+					player.runCommand(`give @s ${buys["give"]}`);
+				}
+			}
+		} )
+		
 	}
 },)
