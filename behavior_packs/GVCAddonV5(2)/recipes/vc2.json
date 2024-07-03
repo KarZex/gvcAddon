@@ -2,34 +2,34 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_Ghelmet"
+    "identifier": "gvcv5:vc2_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "AAA",
-      "ABA",
+      "BBB",
+      "BDB",
       "AAA"
     ],
     "key": {
       "A": {
-        "item": "minecraft:leaves",
+        "item": "minecraft:emerald_block",
         "data": 0
       },
       "B": {
-        "item": "minecraft:leather_helmet",
+        "item": "minecraft:emerald",
         "data": 0
       },
       "C": {
-        "item": "gun:ak47",
+        "item": "minecraft:iron_ingot",
         "data": 0
       },
       "D": {
-        "item": "minecraft:dye",
-        "data": 1
+        "item": "gvcv5:vc1_item",
+        "data": 0
       }
     },
     "result": {
-      "item": "zex:green_helmet",
+      "item": "gvcv5:vc2_item",
       "count": 1
     }
   }

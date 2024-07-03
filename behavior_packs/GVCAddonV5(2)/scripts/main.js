@@ -19,7 +19,6 @@ function setArmorValue( itemName ){
 	else { return 0 }
 }
 
-
 world.afterEvents.projectileHitBlock.subscribe( e => {
 	if ( e.getBlockHit().block.typeId != undefined && e.getBlockHit().block.typeId == `gvcv5:beacon`){
 		e.dimension.playSound("random.explode",e.location);
@@ -109,37 +108,48 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 	}
 	else if( e.id == "gvcv5:craft" ){
 		const craftType = e.message;
-		const player = e.sourceEntity
+		const player = e.sourceEntity;
 		const form = new ActionFormData();
-		form.title("Crafter");
+		form.title(`tile.gvcv5:${craftType}.name`);
 		const sells = craftData[`${craftType}`][`sell`];
 		const buys = craftData[`${craftType}`][`buy`];
-		let sellItem = ``
+		let itemRawText = []
 		let sellItemCounts = []
 		for( let i = 0; i < sells.length; i++ ){
 			let c = 0
 			for(let j = 0; j < 36; j++){
-				let Haditem = p.getComponent("inventory").container.getItem(j);
+				let Haditem = player.getComponent("inventory").container.getItem(j);
 				if( Haditem != undefined && Haditem.typeId == sells[i] ){
-					c += p.getComponent("inventory").container.getItem(j).amount;
+					c += player.getComponent("inventory").container.getItem(j).amount;
 				}
 			}
-			sellItemCounts.push(c)
-			sellItem += `${sells[i]}:${c}\n`
+			itemRawText.push({ translate: `script.gvcv5.${sells[i]}.name` });
+			itemRawText.push({ text: `:${c}\n` });
+			sellItemCounts.push(c);
 		}
-		form.textField(sellItem);
+		form.body({ rawtext: itemRawText});
 		for(let i = 0; i < buys.length; i++){
-			let buyData = `§l${buys[i]["give"]}x${buys[i]["count"]}§r\nneed:`;
+			let buyData = [{ text:`§l`},{ translate: `item.${buys[i]["give"]}`},{ text:`x${buys[i]["count"]}§r\nneed:`}];
 			for( let j = 0; j < sells.length; j++ ){
-				if( buys[i]["cost"][j] > 0 ) buyData += ` ${sells[j]}x${buys[i]["cost"][j]} `
+				if( buys[i]["cost"][j] > 0 ){
+					buyData.push({ translate: `script.gvcv5.${sells[j]}.name` });// `script.gvcv5.${sells[j]}.namex${buys[i]["cost"][j]} `
+					buyData.push({ text: `x${buys[i]["cost"][j]}` });// `script.gvcv5.${sells[j]}.namex${buys[i]["cost"][j]} `
+				}
 			}
-			form.button(buyData);
+			form.button({ rawtext: buyData},buys[i]["texture"]);
 		}
 		form.show(player).then( result => {
-			if( !result.cancelled ){
-				if( sellItemCounts.every( (value, index) => { value > buys[result]["cost"][index] }) ){
-					player.runCommand(`give @s ${buys["give"]}`);
+			if ( !result.canceled ){
+				if( sellItemCounts.every( (value, index) => value >= buys[result.selection]["cost"][index] ) ){
+					for( let i = 0; i < sells.length; i++ ){
+						player.runCommand(`clear @s ${sells[i]} 0 ${buys[result.selection]["cost"][i]}`);
+					}
+					player.runCommand(`give @s ${buys[result.selection]["give"]} ${buys[result.selection]["count"]}`);
 				}
+				else{
+					player.sendMessage("§cNo material!");
+				}
+				player.runCommand(`scriptevent gvcv5:craft ${craftType}`);
 			}
 		} )
 		

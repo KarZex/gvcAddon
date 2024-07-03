@@ -9,7 +9,7 @@
                 }
             },
             "menu_category":{
-                "category": "construction"
+                "category": "command"
             }
         },
         "components": {
@@ -19,6 +19,10 @@
                     "render_method": "alpha_test",
 					"ambient_occlusion": false
                 }
+            },
+            "minecraft:on_interact": {
+                "event": "gvcv5:usecrafter",
+                "target": "player"
             },
             "minecraft:geometry": "geometry.vc1",
             "minecraft:selection_box": {
@@ -64,6 +68,12 @@
             }
         ],
         "events": {
+            "gvcv5:usecrafter":{
+                "run_command":{
+                    "command": "scriptevent gvcv5:craft vc1",
+                    "target":"player"
+                }
+            }
         }
     }
 }

@@ -2,34 +2,34 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_B3"
+    "identifier": "gvcv5:ghilliesuit_leggings"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "CCC",
-      "CBC",
+      "AAA",
+      "ABA",
       "AAA"
     ],
     "key": {
       "A": {
-        "item": "minecraft:iron_block",
+        "item": "minecraft:leaves",
         "data": 0
       },
       "B": {
-      "item": "addon:b2_spawn_egg",
-       "data": 0
+        "item": "minecraft:leather_leggings",
+        "data": 0
       },
       "C": {
-        "item": "minecraft:iron_ingot",
+        "item": "gun:ak47",
         "data": 0
       },
       "D": {
-        "item": "minecraft:book",
-        "data": 0
+        "item": "minecraft:dye",
+        "data": 1
       }
     },
     "result": {
-      "item": "addon:b3_spawn_egg",
+      "item": "gvcv5:ghilliesuit_leggings",
       "count": 1
     }
   }

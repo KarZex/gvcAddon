@@ -4,7 +4,7 @@
     "description": {
       "identifier": "gvcv5:structure_end_radiobase_sn",
       "menu_category": {
-        "category": "construction"
+        "category": "command"
       }
     },
     "components": {

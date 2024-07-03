@@ -832,6 +832,90 @@
     },
     "pkmset": {
       "textures": "textures/items/pkmset"
+    },
+    "beacon_item": {
+      "textures": "textures/items/block/beacon"
+    },
+    "beacon_so_item": {
+      "textures": "textures/items/block/beacon_so"
+    },
+    "fire_exti_item": {
+      "textures": "textures/items/block/fire_exti"
+    },
+    "fslight_item": {
+      "textures": "textures/items/block/fslight"
+    },
+    "laptop_item": {
+      "textures": "textures/items/block/laptop"
+    },
+    "mil_cont_item": {
+      "textures": "textures/items/block/mil_cont"
+    },
+    "mil_cont2_item": {
+      "textures": "textures/items/block/mil_cont2"
+    },
+    "monitor_item": {
+      "textures": "textures/items/block/monitor"
+    },
+    "odunit_gc_item": {
+      "textures": "textures/items/block/odunit_gc"
+    },
+    "radio_item": {
+      "textures": "textures/items/block/radio"
+    },
+    "radio_big_item": {
+      "textures": "textures/items/block/radio_big"
+    },
+    "t_wall_item": {
+      "textures": "textures/items/block/t_wall"
+    },
+    "t_wall2_item": {
+      "textures": "textures/items/block/t_wall2"
+    },
+    "toughbook_item": {
+      "textures": "textures/items/block/toughbook"
+    },
+    "gas_item": {
+      "textures": "textures/items/block/gas"
+    },
+    "good1_item": {
+      "textures": "textures/items/block/good1"
+    },
+    "good2_item": {
+      "textures": "textures/items/block/good2"
+    },
+    "good3_item": {
+      "textures": "textures/items/block/good3"
+    },
+    "mine_item": {
+      "textures": "textures/items/block/mine"
+    },
+    "minet_item": {
+      "textures": "textures/items/block/minet"
+    },
+    "bc_item": {
+      "textures": "textures/items/block/bc"
+    },
+    "gc1_item": {
+      "textures": "textures/items/block/gc1"
+    },
+    "gc2_item": {
+      "textures": "textures/items/block/gc2"
+    },
+    "gc3_item": {
+      "textures": "textures/items/block/gc3"
+    },
+    "vc1_item": {
+      "textures": "textures/items/block/vc1"
+    },
+    "vc2_item": {
+      "textures": "textures/items/block/vc2"
+    },
+    "vc3_item": {
+      "textures": "textures/items/block/vc3"
+    },
+    "supplies_item": {
+      "textures": "textures/items/block/supplies"
     }
   }
 }

@@ -2,34 +2,34 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_PSchestplate"
+    "identifier": "gvcv5:ghilliesuit_chestplate"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "AXA",
-	  "AAA",
-	  "AAA"
+      "AAA",
+      "ABA",
+      "AAA"
     ],
     "key": {
       "A": {
-        "item": "zex:ps",
+        "item": "minecraft:leaves",
         "data": 0
       },
       "B": {
-        "item": "minecraft:iron_ingot",
+        "item": "minecraft:leather_chestplate",
         "data": 0
       },
       "C": {
-        "item": "minecraft:book",
+        "item": "gun:ak47",
         "data": 0
       },
       "D": {
         "item": "minecraft:dye",
-        "data": 15
+        "data": 1
       }
     },
     "result": {
-      "item": "zex:ps_chestplate",
+      "item": "gvcv5:ghilliesuit_chestplate",
       "count": 1
     }
   }

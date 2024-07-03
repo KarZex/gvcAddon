@@ -2,34 +2,34 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_Gleggings"
+    "identifier": "gvcv5:plastic_chestplate_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "AAA",
-      "ABA",
-      "AAA"
+      "AXA",
+	  "AAA",
+	  "AAA"
     ],
     "key": {
       "A": {
-        "item": "minecraft:leaves",
+        "item": "zex:ps",
         "data": 0
       },
       "B": {
-        "item": "minecraft:leather_leggings",
+        "item": "minecraft:iron_ingot",
         "data": 0
       },
       "C": {
-        "item": "gun:ak47",
+        "item": "minecraft:book",
         "data": 0
       },
       "D": {
         "item": "minecraft:dye",
-        "data": 1
+        "data": 15
       }
     },
     "result": {
-      "item": "zex:green_leggings",
+      "item": "gvcv5:plastic_chestplate",
       "count": 1
     }
   }

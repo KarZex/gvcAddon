@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_Gboots"
+    "identifier": "gvcv5:ghilliesuit_boots"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
@@ -29,7 +29,7 @@
       }
     },
     "result": {
-      "item": "zex:green_boots",
+      "item": "gvcv5:ghilliesuit_boots",
       "count": 1
     }
   }

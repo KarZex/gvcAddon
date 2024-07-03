@@ -5,7 +5,7 @@
     0
   ],
 
-   "hkz:firstitem" : {
+   "gvcv5:supplies" : {
       "sound" : "cloth"
    },
    "gvcv5:good1" : {
@@ -15,9 +15,6 @@
       "sound" : "cloth"
   },
    "gvcv5:good3" : {
-      "sound" : "cloth"
-  },
-    "gvcv5:good4" : {
       "sound" : "cloth"
   },
     "gvcv5:gas" : {

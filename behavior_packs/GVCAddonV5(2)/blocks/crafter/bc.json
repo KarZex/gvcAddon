@@ -9,7 +9,7 @@
                 }
             },
             "menu_category":{
-                "category": "construction"
+                "category": "command"
             }
         },
         "components": {
@@ -22,7 +22,7 @@
             },
             "minecraft:on_interact": {
                 "event": "gvcv5:usecrafter",
-                "target": "other"
+                "target": "player"
             },
             "minecraft:geometry": "geometry.bc",
             "minecraft:selection_box": {
@@ -70,7 +70,8 @@
         "events": {
             "gvcv5:usecrafter":{
                 "run_command":{
-                    "command": "scriptevent gvcv5:craft bc"
+                    "command": "scriptevent gvcv5:craft bc",
+                    "target":"player"
                 }
             }
         }

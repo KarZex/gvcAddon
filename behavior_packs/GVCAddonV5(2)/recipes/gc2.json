@@ -2,34 +2,34 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_PSleggings"
+    "identifier": "gvcv5:gc2_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "AAA",
-	  "AXA",
-	  "AXA"
+      "CCC",
+      "CDC",
+      "BBB"
     ],
     "key": {
       "A": {
-        "item": "zex:ps",
+        "item": "minecraft:cobblestone",
         "data": 0
       },
       "B": {
-        "item": "minecraft:iron_ingot",
+        "item": "minecraft:iron_block",
         "data": 0
       },
       "C": {
-        "item": "minecraft:book",
+        "item": "minecraft:iron_ingot",
         "data": 0
       },
       "D": {
-        "item": "minecraft:dye",
-        "data": 15
+        "item": "gvcv5:gc1_item",
+        "data": 0
       }
     },
     "result": {
-      "item": "zex:ps_leggings",
+      "item": "gvcv5:gc2_item",
       "count": 1
     }
   }

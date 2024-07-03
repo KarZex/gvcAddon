@@ -2,12 +2,12 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_B2"
+    "identifier": "gvcv5:bc_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
       "XXX",
-      "ABC",
+      "ABB",
       "AAA"
     ],
     "key": {
@@ -29,7 +29,7 @@
       }
     },
     "result": {
-      "item": "addon:b2_spawn_egg",
+      "item": "gvcv5:bc_item",
       "count": 1
     }
   }

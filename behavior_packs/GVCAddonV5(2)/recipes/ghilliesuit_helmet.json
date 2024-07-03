@@ -2,34 +2,34 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_B4"
+    "identifier": "gvcv5:ghilliesuit_helmet"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "BBD",
-      "BAD",
-      "CCC"
+      "AAA",
+      "ABA",
+      "AAA"
     ],
     "key": {
       "A": {
-        "item": "addon:b3_spawn_egg",
+        "item": "minecraft:leaves",
         "data": 0
       },
       "B": {
-        "item": "zex:ps",
+        "item": "minecraft:leather_helmet",
         "data": 0
       },
       "C": {
-        "item": "minecraft:iron_ingot",
+        "item": "gun:ak47",
         "data": 0
       },
       "D": {
-        "item": "minecraft:quartz_block",
-        "data": 0
+        "item": "minecraft:dye",
+        "data": 1
       }
     },
     "result": {
-      "item": "addon:b4_spawn_egg",
+      "item": "gvcv5:ghilliesuit_helmet",
       "count": 1
     }
   }

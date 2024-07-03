@@ -2,11 +2,12 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_PShelmet"
+    "identifier": "gvcv5:plastic_leggings_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
       "AAA",
+	  "AXA",
 	  "AXA"
     ],
     "key": {
@@ -28,7 +29,7 @@
       }
     },
     "result": {
-      "item": "zex:ps_helmet",
+      "item": "gvcv5:plastic_leggings",
       "count": 1
     }
   }

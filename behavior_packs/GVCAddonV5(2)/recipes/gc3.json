@@ -2,34 +2,34 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_B6"
+    "identifier": "gvcv5:gc3_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "CCC",
-      "CBC",
-      "AAA"
+      "CCA",
+      "CDA",
+      "BBB"
     ],
     "key": {
       "A": {
-        "item": "minecraft:cobblestone",
+        "item": "minecraft:quartz_block",
         "data": 0
       },
       "B": {
-      "item": "addon:b2_spawn_egg",
-       "data": 0
+        "item": "minecraft:iron_ingot",
+        "data": 0
       },
       "C": {
-        "item": "minecraft:emerald",
+        "item": "zex:ps",
         "data": 0
       },
       "D": {
-        "item": "minecraft:book",
+        "item": "gvcv5:gc2_item",
         "data": 0
       }
     },
     "result": {
-      "item": "addon:b6_spawn_egg",
+      "item": "gvcv5:gc3_item",
       "count": 1
     }
   }

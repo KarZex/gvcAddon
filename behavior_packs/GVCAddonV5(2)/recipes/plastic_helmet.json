@@ -2,34 +2,33 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_B5"
+    "identifier": "gvcv5:plastic_helmet_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "CCC",
-      "CBC",
-      "AAA"
+      "AAA",
+	  "AXA"
     ],
     "key": {
       "A": {
-        "item": "minecraft:emerald_block",
+        "item": "zex:ps",
         "data": 0
       },
       "B": {
-      "item": "addon:b4_spawn_egg",
-       "data": 0
+        "item": "minecraft:iron_ingot",
+        "data": 0
       },
       "C": {
-        "item": "minecraft:emerald",
+        "item": "minecraft:book",
         "data": 0
       },
       "D": {
-        "item": "minecraft:book",
-        "data": 0
+        "item": "minecraft:dye",
+        "data": 15
       }
     },
     "result": {
-      "item": "addon:b5_spawn_egg",
+      "item": "gvcv5:plastic_helmet",
       "count": 1
     }
   }

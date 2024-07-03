@@ -2,34 +2,34 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_Gchestplate"
+    "identifier": "gvcv5:vc3_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "AAA",
-      "ABA",
+      "BBB",
+      "BDB",
       "AAA"
     ],
     "key": {
       "A": {
-        "item": "minecraft:leaves",
+        "item": "minecraft:diamond_block",
         "data": 0
       },
       "B": {
-        "item": "minecraft:leather_chestplate",
+        "item": "minecraft:diamond",
         "data": 0
       },
       "C": {
-        "item": "gun:ak47",
+        "item": "minecraft:iron_ingot",
         "data": 0
       },
       "D": {
-        "item": "minecraft:dye",
-        "data": 1
+        "item": "gvcv5:vc2_item",
+        "data": 0
       }
     },
     "result": {
-      "item": "zex:green_chestplate",
+      "item": "gvcv5:vc3_item",
       "count": 1
     }
   }

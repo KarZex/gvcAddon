@@ -13,6 +13,9 @@
     "firstitem": {
       "textures": "textures/blocks/firstitem"
     },
+    "supplies": {
+      "textures": "textures/blocks/supplies"
+    },
     "l0": {
       "textures": "textures/blocks/l0"
     },
