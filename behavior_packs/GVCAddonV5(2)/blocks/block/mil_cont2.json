@@ -9,7 +9,7 @@
                 }
             },
             "menu_category":{
-                "category": "command"
+                "category": "none"
             }
         },
         "components": {
@@ -20,6 +20,10 @@
 					"ambient_occlusion": false
                 }
             },
+			"minecraft:destructible_by_mining":{
+				"seconds_to_destroy": 5.0
+			},
+            "minecraft:loot": "loot_tables/blocks/mil_cont2.json",
             "minecraft:geometry": "geometry.mil_cont",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],

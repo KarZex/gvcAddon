@@ -1,0 +1,14 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "gvcv5:gc1_item",
+          "weight": 1
+        }
+	  ]
+	}
+  ]
+}

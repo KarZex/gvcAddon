@@ -20,6 +20,9 @@
 					"ambient_occlusion": false
                 }
             },
+			"minecraft:destructible_by_mining":{
+				"seconds_to_destroy": 5
+			},
             "minecraft:geometry": "geometry.good2",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],

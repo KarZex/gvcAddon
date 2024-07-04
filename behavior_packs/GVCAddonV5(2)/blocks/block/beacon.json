@@ -9,7 +9,7 @@
                 }
             },
             "menu_category":{
-                "category": "command"
+                "category": "none"
             }
         },
         "components": {
@@ -20,11 +20,15 @@
 					"ambient_occlusion": false
                 }
             },
+			"minecraft:destructible_by_mining":{
+				"seconds_to_destroy": 5.0
+			},
             "minecraft:geometry": "geometry.beacon",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],
                 "size": [16, 16, 16]
             },
+			"minecraft:loot": "loot_tables/empty.json",
             "minecraft:random_ticking": {
                 "on_tick": {
                     "condition": "1",

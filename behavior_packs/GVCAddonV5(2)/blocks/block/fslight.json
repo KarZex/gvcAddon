@@ -9,7 +9,7 @@
                 }
             },
             "menu_category":{
-                "category": "command"
+                "category": "none"
             }
         },
         "components": {
@@ -20,6 +20,7 @@
 					"ambient_occlusion": true
                 }
             },
+            "minecraft:loot": "loot_tables/blocks/fslight.json",
             "minecraft:geometry": "geometry.fslight",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],

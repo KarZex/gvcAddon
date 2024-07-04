@@ -20,6 +20,9 @@
 					"ambient_occlusion": false
                 }
             },
+			"minecraft:destructible_by_mining":{
+				"seconds_to_destroy": 5
+			},
             "minecraft:on_step_on": {
               "condition": "query.has_any_family('ww2vehicle')",
               "event": "minecraft:ignite"
@@ -30,7 +33,7 @@
                 "size": [16, 16, 16]
             },
             "minecraft:light_dampening": 0,
-            "minecraft:loot": "loot_tables/blocks/good1.json",
+			"minecraft:loot": "loot_tables/empty.json",
             "minecraft:map_color": "#00ff00"
         },
         "events": {

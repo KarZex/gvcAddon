@@ -9,7 +9,7 @@
                 }
             },
             "menu_category":{
-                "category": "command"
+                "category": "none"
             }
         },
         "components": {
@@ -20,6 +20,7 @@
 					"ambient_occlusion": true
                 }
             },
+            "minecraft:loot": "loot_tables/blocks/fire_exti.json",
             "minecraft:geometry": "geometry.fire_exti",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],
