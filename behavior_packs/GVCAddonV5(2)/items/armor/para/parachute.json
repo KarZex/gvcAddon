@@ -58,7 +58,6 @@
       "minecraft:wearable": {
         "slot": "slot.armor.chest"
       },
-		"minecraft:render_offsets": "chestplates",
 		"minecraft:display_name": {},
       "minecraft:creative_category": {
 		"parent": "itemGroup.name.chestplate"

@@ -7,7 +7,17 @@
       "is_spawnable": false,
       "is_summonable": true
     },
-    "component_groups": {    },
+    "component_groups": {  
+        "timer": {
+          "minecraft:timer": {
+            "time": 5,
+            "time_down_event": { "event": "despawn" }
+          }
+        },
+        "despawn": {
+          "minecraft:instant_despawn": {}
+        }
+      },
     "components": {
       "minecraft:is_hidden_when_invisible": {},
       "minecraft:experience_reward": {
@@ -81,11 +91,24 @@
     "events": {
       "flying": {
         "queue_command": {
-          "command":[ "effect @s levitation 5 8 true","replaceitem entity @s slot.armor.head 0 gvcv5:stars_fly" ]
+          "command":[ 
+            "effect @s levitation 5 8 true",
+            "replaceitem entity @s slot.armor.head 0 gvcv5:stars_fly" 
+          ]
         },
         "add":{
           "component_groups": [
             "timer"
+          ]
+        }
+      },
+      "despawn": {
+        "queue_command": {
+          "command":[ "say Hello World" ]
+        },
+        "add":{
+          "component_groups": [
+            "despawn"
           ]
         }
       }

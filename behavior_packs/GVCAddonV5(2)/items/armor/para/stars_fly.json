@@ -2,7 +2,8 @@
 	"format_version": "1.16.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "gvcv5:stars_fly"
+			"identifier": "gvcv5:stars_fly",
+			"category" : "none" 
 		},
 
 		"components": {
@@ -57,7 +58,6 @@
 			"minecraft:wearable": {
 				"slot": "slot.armor.head"
 			},
-			"minecraft:render_offsets": "helmets",
 			"minecraft:display_name": {},
 			"minecraft:creative_category": {
 				"parent": "itemGroup.name.helmet"

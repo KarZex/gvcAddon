@@ -21,7 +21,7 @@
                 }
             },
 			"minecraft:destructible_by_mining":{
-				"seconds_to_destroy": 5.0
+				"seconds_to_destroy": 1.0
 			},
 			"minecraft:loot": "loot_tables/empty.json",
             "minecraft:geometry": "geometry.beacon",
@@ -29,9 +29,10 @@
                 "origin": [-8, 0, -8],
                 "size": [16, 16, 16]
             },
-            "minecraft:random_ticking": {
+            "minecraft:queued_ticking": {
+                "looping": true,
+                "interval_range": [100, 160],
                 "on_tick": {
-                    "condition": "1",
                     "event": "gvcv5:spawn",
                     "target": "self"
                 }
@@ -78,9 +79,9 @@
                 "run_command": {
                     "target": "self",
                     "command":[ 
-                        "execute if entity @p[r=16,m=!c] run summon addon:ca ~1~~",
-                        "execute if entity @p[r=16,m=!c] run summon addon:ca ~-1~1~",
-                        "execute if entity @p[r=16,m=!c] run summon addon:ca ~-1~-1~"
+                        "execute if entity @p[r=16,m=!c] run summon gvcv5:ca ~1~~",
+                        "execute if entity @p[r=16,m=!c] run summon gvcv5:ca ~-1~1~",
+                        "execute if entity @p[r=16,m=!c] run summon gvcv5:ca ~-1~-1~"
                     ]
                 }
             }
