@@ -1,18 +1,40 @@
 {
-  "format_version": "1.10",
+  "format_version": "1.16.100",
   "minecraft:item": {
     "description": {
-      "identifier": "zex:km"
+      "identifier": "zex:km",
+	  "category" : "equipment" 
     },
-    
+
     "components": {
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:max_stack_size": 64,
       "minecraft:hand_equipped": false,
-      "minecraft:stacked_by_data": true,
-      "minecraft:use_duration": 32,
+      "minecraft:use_duration": 1.5,
+      "minecraft:icon": {
+        "texture": "km"
+      },
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.guns"
+      },
       "minecraft:food": {
-        "nutrition": 8,
-        "saturation_modifier": "low",
-        "can_always_eat": false
+        "saturation_modifier": "normal",
+        "nutrition": 4,
+        "can_always_eat": true,
+        "on_consume": {
+          "event": "gvcv5:on_consume_event",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "gvcv5:on_consume_event": {
+            "add_mob_effect": {
+              "effect": "regeneration",
+              "amplifier": 3,
+              "target": "holder",
+              "duration": 1
+            }
       }
     }
   }

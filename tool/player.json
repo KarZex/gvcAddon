@@ -13,7 +13,7 @@
         "animate": [
           "guns",
           "hold",
-          "reload",
+          "para",
           "heri",
           "ads"
         ]
@@ -21,7 +21,7 @@
       "animations": {
         "guns": "controller.animation.guns",
         "hold": "controller.animation.hold",
-        "reload": "controller.animation.reload",
+        "para": "controller.animation.para",
         "ads": "controller.animation.ads",
         "heri": "controller.animation.heri"
       }
@@ -67,7 +67,7 @@
         "on_death": "Math.Min(query.player_level * 7, 100)"
       },
       "minecraft:type_family": {
-        "family": [ "player","mod" ]
+        "family": [ "player","playerp","mod" ]
       },
       "minecraft:is_hidden_when_invisible": {
       },

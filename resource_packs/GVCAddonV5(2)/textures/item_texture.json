@@ -5,26 +5,26 @@
     "sp": {
       "textures": "textures/items/sp"
     },
-    "la": {
-      "textures": "textures/items/la"
+    "aidkit": {
+      "textures": "textures/items/aidkit"
     },
-    "mgar": {
-      "textures": "textures/items/mgar"
+    "fragment": {
+      "textures": "textures/items/fragment"
     },
-    "mgsmg": {
-      "textures": "textures/items/mgsmg"
+    "impact": {
+      "textures": "textures/items/impact"
     },
-    "val": {
-      "textures": "textures/items/val"
+    "flame": {
+      "textures": "textures/items/flame"
     },
-    "x1": {
-      "textures": "textures/items/x1"
+    "frostcharge": {
+      "textures": "textures/items/frostcharge"
     },
-    "x3": {
-      "textures": "textures/items/x3"
+    "stars": {
+      "textures": "textures/items/stars"
     },
-    "x6": {
-      "textures": "textures/items/x6"
+    "parachute": {
+      "textures": "textures/items/parachute"
     },
     "mgg": {
       "textures": "textures/items/mgg"
@@ -53,14 +53,14 @@
     "guerrilla_gb5": {
       "textures": "textures/items/guerrilla_gb5"
     },
-    "at100": {
-      "textures": "textures/ammo/t100"
+    "airborne1": {
+      "textures": "textures/items/airborne1"
     },
-    "ump9": {
-      "textures": "textures/gun/ump9"
+    "airborne2": {
+      "textures": "textures/items/airborne2"
     },
-    "aump9": {
-      "textures": "textures/ammo/ump9"
+    "airborne3": {
+      "textures": "textures/items/airborne3"
     },
     "mp7": {
       "textures": "textures/gun/mp7"
@@ -916,6 +916,9 @@
     },
     "supplies_item": {
       "textures": "textures/items/block/supplies"
+    },
+    "fv101": {
+      "textures": "textures/items/fv101"
     }
   }
 }

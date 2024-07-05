@@ -7,7 +7,9 @@
         "default": "skeleton"
       },
       "textures": {
-        "default": "textures/mob/guerrilla"
+        "army": "textures/mob/guerrilla",
+        "navy": "textures/mob/guerrilla_navy",
+        "freezed": "textures/mob/guerrilla_freezed"
       },
       "geometry": {
         "default": "geometry.gvc_humanoid"
@@ -85,7 +87,7 @@
         }
       ],
       "render_controllers": [
-        "controller.render.skeleton"
+        "controller.render.ga"
       ],
       "enable_attachables": true,
       "spawn_egg": {

@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "gvcv5:aidkit2_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BAB"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:stick"
+      },
+      "B": {
+        "item": "minecraft:string"
+      },
+      "C": {
+        "item": "minecraft:book",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 2
+      }
+    },
+    "result": {
+      "item": "zex:aidkit",
+      "count": 1
+    }
+  }
+  
+}

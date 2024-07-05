@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "gre:flame",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/models/fragment"
+      },
+      "geometry": {
+        "default": "geometry.fragment"
+      },
+      
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

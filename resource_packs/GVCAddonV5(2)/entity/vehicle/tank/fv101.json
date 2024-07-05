@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:fv101",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/fv101",
+        "para": "textures/entity/tankpara"
+      },
+      "geometry": {
+        "default": "geometry.fv101",
+        "para": "geometry.tankair"
+      },
+	  "spawn_egg":{
+	  "texture":"fv101",
+	  "texture_index":0
+	  },
+    "scripts": {
+      "animate": [ 
+        { "fly": "query.skin_id == 1" }
+      ]
+    },
+    "animations": {
+      "fly": "animation.fv101.para"
+    },
+      "render_controllers": [ 
+        "controller.render.iron_golem",
+        {"controller.render.tankpara":"query.skin_id == 1"}
+      ]
+    }
+  }
+}

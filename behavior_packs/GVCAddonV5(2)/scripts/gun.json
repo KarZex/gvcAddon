@@ -30,7 +30,7 @@
     "bullet": "zex:762m"
   },
   "famas": {
-    "damage": 30,
+    "damage": 1,
     "maxGunAmmo": 6,
     "reloadTime": 80,
     "bullet": "zex:rocketm"

@@ -50,7 +50,7 @@
           "on_damage": {
             "filters": {
         "any_of": [
-          {"test": "is_family", "subject": "other", "value": "player"}
+          {"test": "is_family", "subject": "other", "value": "playerp"}
         ],
         "all_of": [
           {"test": "has_damage", "value": "fatal"}
@@ -66,7 +66,7 @@
         "table": "loot_tables/entities/a1.json"
       },
       "minecraft:type_family": {
-        "family": [ "monsterflag","mob" ]
+        "family": [ "guerrilla","monster","mob" ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -122,8 +122,8 @@
                 "shape": "circle",
                 "target": "self",
                 "base_delay": 1.0,
-                "num_entities_spawned": 2,
-                "entity_type": "addon:ga",
+                "num_entities_spawned": 5,
+                "entity_type": "gvcv5:ga",
                 "summon_cap": 8,
                 "summon_cap_radius": 32.0,
                 "size": 1.0,
@@ -168,12 +168,44 @@
         "priority": 2,
         "entity_types": [
           {
-            "filters": {  
-                "any_of": [
-                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
-                ] 
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
             },
-            "max_dist": 5
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "allied_soldier"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "villager"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "wandering_trader"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "irongolem"
+            },
+            "max_dist": 42
           }
         ],
         "must_see": false

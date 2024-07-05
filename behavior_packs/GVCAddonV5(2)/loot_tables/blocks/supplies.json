@@ -81,7 +81,7 @@
       "entries": [
         {
           "type": "item",
-          "name": "zex:health",
+          "name": "zex:aidkit",
           "weight": 1,
           "functions": [
             {

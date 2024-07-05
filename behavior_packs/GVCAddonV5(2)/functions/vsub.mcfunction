@@ -34,6 +34,9 @@ execute if entity @e[r=4,type=vehicle:m1a2] run scoreboard players set @p scool 
 execute if entity @e[r=4,type=vehicle:m41] run event entity @s fire:vmg
 execute if entity @e[r=4,type=vehicle:m41] run scoreboard players set @p scool 2
 
+execute if entity @e[r=4,type=vehicle:fv101] run event entity @s fire:vmg
+execute if entity @e[r=4,type=vehicle:fv101] run scoreboard players set @p scool 2
+
 execute if entity @e[r=4,type=vehicle:m60a1] run event entity @s fire:vmg
 execute if entity @e[r=4,type=vehicle:m60a1] run scoreboard players set @p scool 2
 

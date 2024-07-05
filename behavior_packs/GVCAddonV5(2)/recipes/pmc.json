@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_pmc"
+    "identifier": "gvcv5:pmc_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
@@ -24,7 +24,7 @@
       }
     },
     "result": {
-      "item": "addon:pmc_spawn_egg",
+      "item": "gvcv5:pmc_spawn_egg",
       "count": 1
     }
   }

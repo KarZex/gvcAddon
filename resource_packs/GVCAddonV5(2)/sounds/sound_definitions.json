@@ -7,6 +7,18 @@
 				"sounds/reload_cannon"
 			]
 		},
+		"use.support": {
+		   "category": "hostile",
+		   "sounds": [
+			   "sounds/sound_call"
+		   ]
+	   },
+		"fire.gre": {
+		   "category": "hostile",
+		   "sounds": [
+			   "sounds/grenade"
+		   ]
+	   },
  		"fire.r1": {
 			"category": "hostile",
 			"sounds": [

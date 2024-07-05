@@ -58,7 +58,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "player"
+                    "value": "playerp"
                   }
                 ],
                 "all_of": [
@@ -78,7 +78,8 @@
       },
       "minecraft:type_family": {
         "family": [
-          "monsterflag",
+          "guerrilla",
+          "monster",
           "mob"
         ]
       },
@@ -139,8 +140,8 @@
                 "shape": "circle",
                 "target": "self",
                 "base_delay": 1.0,
-                "num_entities_spawned": 2,
-                "entity_type": "addon:ga",
+                "num_entities_spawned": 5,
+                "entity_type": "gvcv5:ga",
                 "summon_cap": 8,
                 "summon_cap_radius": 32.0,
                 "size": 1.0,
@@ -194,15 +195,43 @@
         "entity_types": [
           {
             "filters": {
-              "any_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "player"
-                }
-              ]
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
             },
-            "max_dist": 5
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "allied_soldier"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "villager"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "wandering_trader"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "irongolem"
+            },
+            "max_dist": 42
           }
         ],
         "must_see": false

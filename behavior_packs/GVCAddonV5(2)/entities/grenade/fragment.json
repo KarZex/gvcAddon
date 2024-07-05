@@ -1,0 +1,55 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "gre:fragment",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:scale": {
+				"value": 0.15
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:explode": {
+				"fuse_length": 4,
+				"fuse_lit": true,
+				"power": 3,
+				"breaks_blocks": false
+			},
+			"minecraft:physics": {},
+			"minecraft:projectile": {
+				"on_hit": {
+					"stick_in_ground": {},
+					"impact_damage": {
+						"damage": 2,
+						"knockback": false
+					}
+				},
+				"power": 1.1,
+				"gravity": 0.025,
+				"anchor": 1,
+				"offset": [
+					0,
+					-0.1,
+					0
+				]
+			}
+		},
+		"events": {}
+	}
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "gvcv5:ga_freezed",
+      "materials": {
+        "default": "skeleton"
+      },
+      "textures": {
+        "default": "textures/mob/guerrilla_freezed"
+      },
+      "geometry": {
+        "default": "geometry.gvc_humanoid"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "texture": "guerrilla"
+      }
+    }
+  }
+}

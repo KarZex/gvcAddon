@@ -4,7 +4,7 @@
     "description": {
       "identifier": "gvcv5:structure_end_triumphal_arch",
       "menu_category": {
-        "category": "command"
+        "category": "none"
       }
     },
     "components": {

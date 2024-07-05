@@ -1686,6 +1686,11 @@
           "command": "ride @s summon_ride vehicle:m41"
         }
       },
+      "vehicle:fv101": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:fv101"
+        }
+      },
       "vehicle:m60a1": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:m60a1"

@@ -1,0 +1,15 @@
+summon gvcv5:ca ~-15~60~-5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~-15~60~5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~-10~70~-5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~-10~70~5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~-5~80~-5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~-5~80~5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~0~90~-5 ~~ minecraft:spawned_from_air
+summon vehicle:fv101 ~0~90~0 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~0~90~5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~5~100~-5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~5~100~5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~10~110~-5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~10~110~5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~15~120~-5 ~~ minecraft:spawned_from_air
+summon gvcv5:ca ~15~120~5 ~~ minecraft:spawned_from_air

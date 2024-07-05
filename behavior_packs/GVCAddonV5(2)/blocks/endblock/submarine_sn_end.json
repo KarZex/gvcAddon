@@ -4,7 +4,7 @@
     "description": {
       "identifier": "gvcv5:structure_end_submarine_sn",
       "menu_category": {
-        "category": "command"
+        "category": "none"
       }
     },
     "components": {

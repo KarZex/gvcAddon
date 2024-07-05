@@ -102,7 +102,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				p.addEffect("slowness", reloadTime,{ amplifier: 2 });
 				p.addTag("reload")
 				world.scoreboard.getObjective("reloading").setScore(p,Number(reloadTime));
-				p.runCommand("playsound gun.reload @s ~~~ ");
+				p.runCommand("playsound reload.ak47 @s ~~~ ");
 			}
 		}
 	}

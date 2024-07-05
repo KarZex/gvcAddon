@@ -1,0 +1,94 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gvcv5:ga_freezed",
+      "spawn_category": "monster",
+      "is_spawnable": false,
+      "is_summonable": true
+    },
+    "component_groups": {    },
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 10 + (query.equipment_count * Math.Random(1,3)) : 0"
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1.8
+      },
+      "minecraft:type_family": {
+        "family": [
+          "mob"
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject" : "other", "value" :  "player"},
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "zex:stars"}
+                ]
+              },
+              "event": "flying",
+              "target": "self"
+            },
+            "use_item": true
+          }
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": false,
+        "avoid_sun": false,
+        "avoid_water": true
+      },
+      "minecraft:nameable": {},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    "events": {
+      "flying": {
+        "queue_command": {
+          "command":[ "effect @s levitation 5 8 true","replaceitem entity @s slot.armor.head 0 gvcv5:stars_fly" ]
+        },
+        "add":{
+          "component_groups": [
+            "timer"
+          ]
+        }
+      }
+    }
+  }
+}

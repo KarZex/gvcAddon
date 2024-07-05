@@ -13,7 +13,7 @@
         "animate": [
           "guns",
           "hold",
-          "reload",
+          "para",
           "heri",
           "ads"
         ]
@@ -21,7 +21,7 @@
       "animations": {
         "guns": "controller.animation.guns",
         "hold": "controller.animation.hold",
-        "reload": "controller.animation.reload",
+        "para": "controller.animation.para",
         "ads": "controller.animation.ads",
         "heri": "controller.animation.heri"
       }
@@ -1564,6 +1564,7 @@
       "minecraft:type_family": {
         "family": [
           "player",
+          "playerp",
           "mod"
         ]
       },

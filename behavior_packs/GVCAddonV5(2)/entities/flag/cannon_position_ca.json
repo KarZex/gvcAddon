@@ -58,7 +58,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "player"
+                    "value": "playerp"
                   }
                 ],
                 "all_of": [
@@ -78,8 +78,8 @@
       },
       "minecraft:type_family": {
         "family": [
-          "alliedflag",
-          "player",
+          "allied_soldier",
+          "playerp",
           "mob"
         ]
       },
@@ -126,8 +126,8 @@
                 "shape": "circle",
                 "target": "self",
                 "base_delay": 5.0,
-                "num_entities_spawned": 2,
-                "entity_type": "addon:ca",
+                "num_entities_spawned": 5,
+                "entity_type": "gvcv5:ca",
                 "summon_cap": 8,
                 "summon_cap_radius": 32.0,
                 "size": 1.0,

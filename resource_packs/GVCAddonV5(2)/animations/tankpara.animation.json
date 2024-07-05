@@ -1,0 +1,14 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.fv101.para": {
+			"loop": true,
+			"bones": {
+				"para": {
+					"position": [0, -4, 0],
+					"scale": 1.8
+				}
+			}
+		}
+	}
+}

@@ -27,6 +27,8 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1a2] run event entity @s
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m41] run event entity @s 76mm
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:fv101] run event entity @s 76mm
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m60a1] run event entity @s 105mm
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pt76] run event entity @s 76mm

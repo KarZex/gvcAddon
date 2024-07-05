@@ -8,11 +8,13 @@
       "is_summonable": true,
       "scripts": {
         "animate": [
-          "walk"
+          "walk",
+          "para"
         ]
       },
       "animations": {
-        "walk": "controller.animation.riderb1"
+        "walk": "controller.animation.riderb1",
+        "para": "controller.animation.para"
       }
     },
     "component_groups": {
@@ -1140,6 +1142,60 @@
           }
         ]
       },
+      "minecraft:spawned_from_air": {
+        "sequence": [
+          {
+            "queue_command": {
+              "command": [
+                "replaceitem entity @s slot.armor.chest 0 gvcv5:parachute"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "trigger": "m16a4"
+              },
+              {
+                "weight": 2,
+                "trigger": "m4"
+              },
+              {
+                "weight": 1,
+                "trigger": "famas"
+              },
+              {
+                "weight": 1,
+                "trigger": "m110"
+              },
+              {
+                "weight": 1,
+                "trigger": "mp5"
+              },
+              {
+                "weight": 1,
+                "trigger": "m249"
+              }
+            ]
+          }
+        ]
+      },
       "ak12": {
         "add": {
           "component_groups": [
@@ -1572,6 +1628,11 @@
       "vehicle:m41": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:m41"
+        }
+      },
+      "vehicle:fv101": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:fv101"
         }
       },
       "vehicle:m60a1": {

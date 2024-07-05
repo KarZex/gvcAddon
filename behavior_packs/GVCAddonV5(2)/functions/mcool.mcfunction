@@ -1,6 +1,6 @@
 scoreboard objectives add mcool dummy
 scoreboard players remove @s[scores={mcool=1..}] mcool 1
-playsound reload.c @s[scores={mcool=20}] ~~~
+playsound reload.c @s[scores={mcool=20}]
 title @s[tag=!reload,scores={mcool=181..200}] actionbar mcool..10
 title @s[tag=!reload,scores={mcool=161..180}] actionbar mcool..9
 title @s[tag=!reload,scores={mcool=141..160}] actionbar mcool..8
