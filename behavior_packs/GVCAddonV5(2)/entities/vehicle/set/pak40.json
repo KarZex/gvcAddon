@@ -64,7 +64,7 @@
 			{
 				"hurt_item": 1,
 				"spawn_items": {
-					"table": "loot_tables/entities/m2.json"
+					"table": "loot_tables/entities/pak40.json"
 				},
 				"play_sounds": "enderchest.open",
 				"interact_text": "action.gvc.item",

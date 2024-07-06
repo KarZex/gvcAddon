@@ -43,8 +43,6 @@
         },
         "minecraft:can_power_jump":{
 		},
-      "minecraft:input_ground_controlled": {
-      },
       "minecraft:horse.jump_strength": {
         "value": {
           "range_min": 0,

@@ -956,6 +956,25 @@
         "suffocate_time": 0,
         "breathes_water": true
       },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "allied_soldier"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
       "minecraft:health": {
         "value": 20,
         "max": 20
@@ -1041,6 +1060,60 @@
       "minecraft:conditional_bandwidth_optimization": {}
     },
     "events": {
+      "minecraft:entity_transformed": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "trigger": "m16a4"
+              },
+              {
+                "weight": 2,
+                "trigger": "m4"
+              },
+              {
+                "weight": 1,
+                "trigger": "famas"
+              },
+              {
+                "weight": 1,
+                "trigger": "m110"
+              },
+              {
+                "weight": 1,
+                "trigger": "mp5"
+              },
+              {
+                "weight": 1,
+                "trigger": "m249"
+              }
+            ]
+          }
+        ]
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {

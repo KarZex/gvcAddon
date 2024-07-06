@@ -38,8 +38,6 @@
         },
         "minecraft:can_power_jump":{
 		},
-		"minecraft:input_ground_controlled": {
-		},
 		"minecraft:horse.jump_strength": {
 			"value": {
 				"range_min": 0,
@@ -66,7 +64,7 @@
 			{
 				"hurt_item": 1,
 				"spawn_items": {
-					"table": "loot_tables/entities/m2.json"
+					"table": "loot_tables/entities/20mmaa.json"
 				},
 				"play_sounds": "enderchest.open",
 				"interact_text": "action.gvc.item",
@@ -98,19 +96,13 @@
             "position": [ 0, 0.5, -0.4 ]
           }
         },
-        "minecraft:behavior.player_ride_tamed": {
-  
-        },
       "minecraft:type_family": {
         "family": [ "ww2vehicle","playerfire","mob","plate"]
       },
       "minecraft:fire_immune": {
       },
       "minecraft:behavior.float": {
-        "priority": -0.2
-      },
-      "minecraft:loot": {
-        "table": "loot_tables/entities/seaplane.json"
+        "priority": 7
       },
       "minecraft:breathable": {
         "total_supply": 35,

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.18.0",
   "minecraft:entity": {
     "description": {
       "identifier": "addon:a2",
@@ -10,15 +10,8 @@
     },
 
 	"component_groups": {
-    "become_CA": {
-      "minecraft:transformation": {
-        "into": "gvcv5:flag_"
-      }
-    },
-    "become_GA": {
-      "minecraft:transformation": {
-        "into": "gvcv5:flag_"
-      }
+    "despawning": {
+      "minecraft:instant_despawn": {}
     }
     },
 
@@ -85,20 +78,6 @@
             "cause": "lava",
             "damage_per_tick": 4
           }
-        ]
-      },
-      "minecraft:behavior.hurt_by_target": {
-        "priority": 1,
-        "entity_types": [
-		{
-          "filters": {
-            "test": "is_family",
-            "subject": "other",
-            "operator": "!=",
-            "value": "monster"
-          },
-          "max_dist": 64
-		}
         ]
       },
       "minecraft:collision_box": {
@@ -227,21 +206,21 @@
     "become_CA": {
       "add": {
         "component_groups": [
-          "become_CA"
+          "despawning"
         ]
       },
       "queue_command": {
-        "command": "tp @s ~~3~"
+        "command":[ "summon gvcv5:flag_ ~~5~"]
       }
     },
     "become_GA": {
       "add": {
         "component_groups": [
-          "become_GA"
+          "despawning"
         ]
       },
       "queue_command": {
-        "command": "tp @s ~~3~"
+        "command":[ "summon gvcv5:flag_ ~~5~"]
       }
     }
 	}

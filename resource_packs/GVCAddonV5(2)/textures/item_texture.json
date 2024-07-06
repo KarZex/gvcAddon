@@ -752,6 +752,9 @@
     "aifv": {
       "textures": "textures/items/aifv"
     },
+    "ga_pow": {
+      "textures": "textures/items/ga_pow"
+    },
     "gc5": {
       "textures": "textures/items/gc5"
     },

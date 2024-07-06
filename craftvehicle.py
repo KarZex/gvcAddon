@@ -25,6 +25,14 @@ for row in csv_reader:
         v_sub = row[6]
         v_subcool = int(row[7])
         v_speed = float(row[8])
+        
+        #loot_table (for mob)
+        with open("tool/vloot.json","r") as f:
+            loot_table = json.load(f)
+            loot_table["pools"][0]["entries"][0]["functions"][0]["id"] = "vehicle:{}".format(v_id)
+        
+        with open("behavior_packs/GVCAddonV5(2)/loot_tables/entities/{}.json".format(v_id),"w") as f:
+            json.dump(loot_table,f,indent=2)
 
         if v_main != "":
             m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run event entity @s fire:{1}\n".format(v_id,v_main)

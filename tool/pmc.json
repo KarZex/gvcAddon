@@ -18,7 +18,7 @@
     "component_groups": {
       "attack": {
           "minecraft:movement": {
-            "value": 0.35
+            "value": 0.25
           },
           "minecraft:behavior.nearest_attackable_target": {	  
             "priority": 2,
@@ -68,7 +68,7 @@
        },
       "follow": {
           "minecraft:movement": {
-            "value": 0.35
+            "value": 0.25
           },
            "minecraft:behavior.tempt": {
               "priority": 0,
@@ -140,7 +140,7 @@
         "value": 0
       },
       "minecraft:type_family": {
-        "family": [ "pmc", "mob" ]
+        "family": [ "pmc","playerp", "mob" ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -192,6 +192,26 @@
         "attack_interval_max": 3.0,
         "attack_radius": 15.0
       },
+
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+                  "filters": {
+                      "all_of": [
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "allied_soldier"
+                        }
+                      ]
+                  }
+                }
+          }
+        ]
+      },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
         "entity_types": [
@@ -200,15 +220,7 @@
               "test": "is_family",
               "subject": "other",
               "operator": "!=",
-              "value": "player"
-            }
-          },
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "operator": "!=",
-              "value": "allied_soldier"
+              "value": "playerp"
             }
           }
         ]
@@ -249,58 +261,86 @@
     },
 
     "events": {
+      "minecraft:entity_transformed": {
+        "sequence": [
+		 {
+        "randomize": [
+          {
+            "weight": 1,
+            "trigger": "m16a4"
+          },
+          {
+            "weight": 2,
+            "trigger": "m4"
+          },
+          {
+            "weight": 1,
+            "trigger": "famas"
+          },
+          {
+            "weight": 1,
+            "trigger": "m110"
+          },
+          {
+            "weight": 1,
+            "trigger": "mp5"
+          },
+          {
+            "weight": 1,
+            "trigger": "m249"
+          }
+		 ]
+		}
+	   ]
+      },
       "attack": {
         "remove": {
           "component_groups": [
-            "minecraft:attack",
-            "minecraft:wait",
-            "minecraft:follow",
-			"default"
+            "wait",
+            "follow",
+			      "default"
           ]
         },
         "add": {
           "component_groups": [
-            "minecraft:attack"
+            "attack"
           ]
         }
       },
       "wait": {
         "remove": {
           "component_groups": [
-            "minecraft:attack",
-            "minecraft:wait",
-            "minecraft:follow",
-			"default"
+            "attack",
+            "follow",
+			      "default"
           ]
         },
         "add": {
           "component_groups": [
-            "minecraft:wait"
+            "wait"
           ]
         }
       },
       "follow": {
         "remove": {
           "component_groups": [
-            "minecraft:attack",
-            "minecraft:wait",
-            "minecraft:follow",
-			"default"
+            "attack",
+            "wait",
+			      "default"
           ]
         },
         "add": {
           "component_groups": [
-            "minecraft:follow"
+            "follow"
           ]
         }
       },
       "free": {
         "remove": {
           "component_groups": [
-            "minecraft:attack",
-            "minecraft:wait",
-            "minecraft:follow",
-			"default"
+            "attack",
+            "wait",
+            "follow"
           ]
         },
         "add": {

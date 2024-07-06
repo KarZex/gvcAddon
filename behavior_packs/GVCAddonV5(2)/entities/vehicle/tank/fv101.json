@@ -49,8 +49,6 @@
         },
         "minecraft:can_power_jump":{
 		},
-		"minecraft:input_ground_controlled": {
-		},
 		"minecraft:horse.jump_strength": {
 			"value": {
 				"range_min": 0,
@@ -66,9 +64,6 @@
           "seats": {
             "position": [ 0.0, 2.1, -1.2 ]
           }
-        },
-        "minecraft:behavior.player_ride_tamed": {
-  
         },
       "minecraft:interact": {
         "interactions": [
@@ -115,7 +110,7 @@
       "minecraft:fire_immune": {
       },
       "minecraft:behavior.float": {
-        "priority": -1.7
+        "priority": 7
       },
       "minecraft:breathable": {
         "total_supply": 35,

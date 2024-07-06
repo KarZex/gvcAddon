@@ -3,7 +3,7 @@
 	"minecraft:item": {
 		"description": {
 			"identifier": "gvcv5:stars_fly",
-			"category" : "none" 
+			"category" : "command" 
 		},
 
 		"components": {

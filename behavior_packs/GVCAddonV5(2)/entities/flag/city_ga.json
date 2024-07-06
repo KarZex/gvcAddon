@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.18.0",
   "minecraft:entity": {
     "description": {
       "identifier": "gvcv5:flag_city_ga",
@@ -9,15 +9,8 @@
       "runtime_identifier": "minecraft:bat"
     },
     "component_groups": {
-      "become_CA": {
-        "minecraft:transformation": {
-          "into": "gvcv5:flag_city_ca"
-        }
-      },
-      "become_GA": {
-        "minecraft:transformation": {
-          "into": "gvcv5:flag_city_ga"
-        }
+      "despawning": {
+        "minecraft:instant_despawn": {}
       }
     },
     "components": {
@@ -103,20 +96,6 @@
             },
             "cause": "lava",
             "damage_per_tick": 4
-          }
-        ]
-      },
-      "minecraft:behavior.hurt_by_target": {
-        "priority": 1,
-        "entity_types": [
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "operator": "!=",
-              "value": "monster"
-            },
-            "max_dist": 64
           }
         ]
       },
@@ -250,21 +229,25 @@
       "become_CA": {
         "add": {
           "component_groups": [
-            "become_CA"
+            "despawning"
           ]
         },
         "queue_command": {
-          "command": "tp @s ~~3~"
+          "command": [
+            "summon gvcv5:flag_city_ca ~~1~"
+          ]
         }
       },
       "become_GA": {
         "add": {
           "component_groups": [
-            "become_GA"
+            "despawning"
           ]
         },
         "queue_command": {
-          "command": "tp @s ~~3~"
+          "command": [
+            "summon gvcv5:flag_city_ga ~~1~"
+          ]
         }
       }
     }

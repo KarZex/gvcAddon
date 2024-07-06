@@ -10,12 +10,11 @@
         "default": "textures/pmc/pm4",
         "attack": "textures/pmc/red",
         "follow": "textures/pmc/blue",
-        "wait": "textures/pmc/green",
-        "flag": "textures/pmc/yellow"
+        "wait": "textures/pmc/green"
       },
       "geometry": {
 			"default": "geometry.pmc",
-			"armyblock": "geometry.armyblock"
+			"pmchead": "geometry.pmchead"
       },
       "spawn_egg": {
         "texture": "c3",

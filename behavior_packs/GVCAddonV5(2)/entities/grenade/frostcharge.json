@@ -13,7 +13,7 @@
 			  "family": [ "freeze"]
 			},
 			"minecraft:explode": {
-			"fuseLength": 10,
+			"fuseLength": 4,
 			"fuseLit": true,
 			"power": 0,
 			"causesFire": false
@@ -43,7 +43,7 @@
 				},
 				"remove_on_hit": {}
 			},
-			"power": 1.2,
+			"power": 0.6,
 			"gravity": 0,
 			"inertia": 1.5,
 			"uncertaintyBase": 0,

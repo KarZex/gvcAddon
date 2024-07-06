@@ -1,13 +1,13 @@
 {
   "format_version": "1.8.0",
   "render_controllers": {
-    "controller.render.army": {
+    "controller.render.pmc": {
       "arrays": {
         "textures": {
-          "Array.base": [ "Texture.free","Texture.flag", "Texture.attack", "Texture.wait", "Texture.follow" ]
+          "Array.base": [ "Texture.free", "Texture.attack", "Texture.wait", "Texture.follow" ]
         }
       },
-      "geometry": "Geometry.armyblock",
+      "geometry": "Geometry.pmchead",
       "materials": [ { "*": "Material.default" } ],
       "textures": [ "Array.base[query.variant]" ]
     }

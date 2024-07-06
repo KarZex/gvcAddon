@@ -9,15 +9,8 @@
       "runtime_identifier": "minecraft:bat"
     },
     "component_groups": {
-      "become_CA": {
-        "minecraft:transformation": {
-          "into": "gvcv5:flag_garrison_ca"
-        }
-      },
-      "become_GA": {
-        "minecraft:transformation": {
-          "into": "gvcv5:flag_garrison_ga"
-        }
+      "despawning": {
+        "minecraft:instant_despawn": {}
       }
     },
     "components": {
@@ -172,20 +165,6 @@
           }
         ]
       },
-      "minecraft:behavior.hurt_by_target": {
-        "priority": 1,
-        "entity_types": [
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "operator": "!=",
-              "value": "player"
-            },
-            "max_dist": 64
-          }
-        ]
-      },
       "minecraft:behavior.random_stroll": {
         "priority": 8,
         "speed_multiplier": 0.6
@@ -227,21 +206,25 @@
       "become_CA": {
         "add": {
           "component_groups": [
-            "become_CA"
+            "despawning"
           ]
         },
         "queue_command": {
-          "command": "tp @s ~~3~"
+          "command": [
+            "summon gvcv5:flag_garrison_ca ~~1~"
+          ]
         }
       },
       "become_GA": {
         "add": {
           "component_groups": [
-            "become_GA"
+            "despawning"
           ]
         },
         "queue_command": {
-          "command": "tp @s ~~3~"
+          "command": [
+            "summon gvcv5:flag_garrison_ga ~~1~"
+          ]
         }
       }
     }
