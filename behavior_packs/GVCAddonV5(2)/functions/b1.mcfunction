@@ -1,4 +1,5 @@
-effect @s[tag=!ride] resistance 99999 5 true
+effect @s[tag=!ride] health_boost 99999 80 true
+effect @s[tag=!ride] instant_health 1 100
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:aifv] run event entity @s vmg
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:lav25] run event entity @s vmg

@@ -17,7 +17,7 @@
 
     "components": {
       "minecraft:experience_reward": {
-        "on_death": "10000"
+        "on_death": "1000"
       },
      "minecraft:boss": {
         "name": "action.gvc.ef",
@@ -187,7 +187,7 @@
             "max_dist": 42
           }
         ],
-        "must_see": false
+        "must_see": true
       },
       "minecraft:persistent": {
       },
@@ -204,21 +204,11 @@
 	
 	"events": {
     "become_CA": {
-      "add": {
-        "component_groups": [
-          "despawning"
-        ]
-      },
       "queue_command": {
         "command":[ "summon gvcv5:flag_ ~~5~"]
       }
     },
     "become_GA": {
-      "add": {
-        "component_groups": [
-          "despawning"
-        ]
-      },
       "queue_command": {
         "command":[ "summon gvcv5:flag_ ~~5~"]
       }

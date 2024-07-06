@@ -15,7 +15,7 @@
     },
     "components": {
       "minecraft:experience_reward": {
-        "on_death": "10000"
+        "on_death": "0"
       },
       "minecraft:boss": {
         "name": "entity.gvcv5:flag_city_ca.name",
@@ -25,23 +25,18 @@
       "minecraft:damage_sensor": {
         "triggers": [
           {
+            "cause": "all",
+            "deals_damage": false,
             "on_damage": {
               "filters": {
-                "any_of": [
+                "all_of": [
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "monster"
-                  }
-                ],
-                "all_of": [
-                  {
-                    "test": "has_damage",
-                    "value": "fatal"
+                    "value": "playerp"
                   }
                 ]
-              },
-              "event": "become_GA"
+              }
             }
           }
         ]
@@ -158,19 +153,14 @@
                 {
                   "test": "is_family",
                   "subject": "other",
-                  "value": "mod"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
                   "value": "monster"
                 }
               ]
             },
-            "max_dist": 5
+            "max_dist": 10
           }
         ],
-        "must_see": false
+        "must_see": true
       },
       "minecraft:persistent": {},
       "minecraft:physics": {},
@@ -184,11 +174,6 @@
     },
     "events": {
       "become_CA": {
-        "add": {
-          "component_groups": [
-            "despawning"
-          ]
-        },
         "queue_command": {
           "command": [
             "summon gvcv5:flag_city_ca ~~1~"
@@ -196,11 +181,6 @@
         }
       },
       "become_GA": {
-        "add": {
-          "component_groups": [
-            "despawning"
-          ]
-        },
         "queue_command": {
           "command": [
             "summon gvcv5:flag_city_ga ~~1~"

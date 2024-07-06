@@ -99,7 +99,7 @@ for row in csv_reader:
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
-                    del flag_json["minecraft:entity"]["components"]["minecraft:damage_sensor"]["triggers"][1] 
+                    del flag_json["minecraft:entity"]["components"]["minecraft:damage_sensor"]["triggers"][0] 
 
             with open("behavior_packs/GVCAddonV5(2)/entities/flag/{}_ca.json".format(structure_id),"w") as f:
                 json.dump(flag_json,f,indent=2)

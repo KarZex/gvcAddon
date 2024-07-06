@@ -15,7 +15,7 @@
     },
     "components": {
       "minecraft:experience_reward": {
-        "on_death": "10000"
+        "on_death": "0"
       },
       "minecraft:boss": {
         "name": "entity.gvcv5:flag_airbase_ca.name",
@@ -45,23 +45,18 @@
             }
           },
           {
+            "cause": "all",
+            "deals_damage": false,
             "on_damage": {
               "filters": {
-                "any_of": [
+                "all_of": [
                   {
                     "test": "is_family",
                     "subject": "other",
                     "value": "playerp"
                   }
-                ],
-                "all_of": [
-                  {
-                    "test": "has_damage",
-                    "value": "fatal"
-                  }
                 ]
-              },
-              "event": "become_CA"
+              }
             }
           }
         ]
@@ -178,19 +173,14 @@
                 {
                   "test": "is_family",
                   "subject": "other",
-                  "value": "mod"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
                   "value": "monster"
                 }
               ]
             },
-            "max_dist": 5
+            "max_dist": 10
           }
         ],
-        "must_see": false
+        "must_see": true
       },
       "minecraft:persistent": {},
       "minecraft:physics": {},
@@ -204,11 +194,6 @@
     },
     "events": {
       "become_CA": {
-        "add": {
-          "component_groups": [
-            "despawning"
-          ]
-        },
         "queue_command": {
           "command": [
             "summon gvcv5:flag_airbase_ca ~~1~"
@@ -216,11 +201,6 @@
         }
       },
       "become_GA": {
-        "add": {
-          "component_groups": [
-            "despawning"
-          ]
-        },
         "queue_command": {
           "command": [
             "summon gvcv5:flag_airbase_ga ~~1~"

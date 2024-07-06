@@ -140,7 +140,7 @@
         "value": 0
       },
       "minecraft:type_family": {
-        "family": [ "pmc","playerp", "mob" ]
+        "family": [ "pmc","playerp","allied_soldier", "mob" ]
       },
       "minecraft:breathable": {
         "total_supply": 15,

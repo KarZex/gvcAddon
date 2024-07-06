@@ -1054,6 +1054,7 @@
         "family": [
           "pmc",
           "playerp",
+          "allied_soldier",
           "mob"
         ]
       },

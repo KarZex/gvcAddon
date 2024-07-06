@@ -17,7 +17,7 @@
 
     "components": {
       "minecraft:experience_reward": {
-        "on_death": "10000"
+        "on_death": "0"
       },
      "minecraft:boss": {
         "name": "action.gvc.af",
@@ -40,17 +40,19 @@
               }
         },
         {
+          "cause": "all",
+          "deals_damage": false,
           "on_damage": {
-            "filters": {
-        "any_of": [
-          {"test": "is_family", "subject": "other", "value": "playerp"}
-        ],
-        "all_of": [
-          {"test": "has_damage", "value": "fatal"}
-        ]
-            },
-            "event": "become_CA"
-          }
+                "filters": {
+                    "all_of": [
+                      {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "playerp"
+                      }
+                    ]
+                }
+              }
         }
       ]
 	  },
@@ -149,14 +151,13 @@
           {
             "filters": {  
                 "any_of": [
-                  { "test" :  "is_family", "subject" : "other", "value" :  "mod"},
                   { "test" :  "is_family", "subject" : "other", "value" :  "monster"}
                 ] 
             },
-            "max_dist": 5
+            "max_dist": 10
           }
         ],
-        "must_see": false
+        "must_see": true
       },
       "minecraft:persistent": {
       },
@@ -173,21 +174,11 @@
 	
 	"events": {
     "become_CA": {
-      "add": {
-        "component_groups": [
-          "despawning"
-        ]
-      },
       "queue_command": {
         "command":[ "summon gvcv5:flag_ ~~5~"]
       }
     },
     "become_GA": {
-      "add": {
-        "component_groups": [
-          "despawning"
-        ]
-      },
       "queue_command": {
         "command":[ "summon gvcv5:flag_ ~~5~"]
       }
