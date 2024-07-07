@@ -1,12 +1,15 @@
 {
   "pools": [
     {
-      "rolls": 1,
+      "rolls": {
+        "min": 6,
+        "max": 10
+      },
       "entries": [
         {
           "type": "item",
           "name": "zex:sp",
-          "weight": 5,
+          "weight": 2,
           "functions": [
             {
               "function": "set_count",
@@ -19,35 +22,7 @@
         },
         {
           "type": "item",
-          "name": "gun:mp40",
-          "weight": 1,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "gun:mosin",
-          "weight": 1,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "gun:p90",
+          "name": "minecraft:iron_ingot",
           "weight": 1,
           "functions": [
             {

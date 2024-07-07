@@ -159,8 +159,8 @@
         "goal_radius": 1.0,
         "angle_change": 15.0,
         "radius_range": [ 5.0, 15.0 ],
-        "height_offset_range": [ -10, 10.0 ],
-        "height_above_target_range": [ 0.0, 10.0 ]
+        "height_offset_range": [ -1, 1.0 ],
+        "height_above_target_range": [ 10.0, 15.0 ]
       }
     },
     "events": {

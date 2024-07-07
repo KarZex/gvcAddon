@@ -79,6 +79,7 @@ entity.vehicle:m1126.name=M1126装甲車
 entity.vehicle:m1128.name=M1128戦車駆逐車
 entity.vehicle:lav25.name=LAV25歩兵戦闘車
 entity.vehicle:t34.name=T-34
+entity.vehicle:g_heri.name=ゲリラヘリ
 entity.vehicle:m41.name=M41A3
 entity.vehicle:m1a2.name=M1A2
 entity.vehicle:fv101.name=FV101
@@ -109,6 +110,7 @@ item.spawn_egg.entity.vehicle:pkmset.name=固定機銃PKM
 item.spawn_egg.entity.vehicle:flak18.name=対戦車砲Flak18
 item.spawn_egg.entity.vehicle:pak40.name=対戦車砲Pak40
 item.spawn_egg.entity.vehicle:zu23.name=Zu-23対空砲
+item.spawn_egg.entity.vehicle:g_heri.name=ゲリラヘリ
 entity.vehicle:dp28set.name=固定機銃DP-28
 entity.vehicle:m60set.name=固定機銃M60
 entity.vehicle:pkmset.name=固定機銃PKM
@@ -360,6 +362,8 @@ tile.gvcv5:building_garrison_sn.name=ダンジョン_雪原駐屯地
 tile.gvcv5:building_garrison_ice.name=ダンジョン_氷雪駐屯地
 tile.gvcv5:building_airbase.name=ダンジョン_同盟軍飛行場
 tile.gvcv5:building_city.name=ダンジョン_街
+tile.gvcv5:building_triumphal_arch.name=ダンジョン_凱旋門
+
 
 
 entity.gvcv5:flag_airfield_ca.name=§b同盟軍拠点_野戦飛行場
@@ -378,6 +382,8 @@ entity.gvcv5:flag_airbase_ca.name=§b同盟軍拠点_同盟軍飛行場
 entity.gvcv5:flag_airbase_ga.name=§cゲリラ拠点_同盟軍飛行場
 entity.gvcv5:flag_city_ca.name=§b同盟軍拠点_街
 entity.gvcv5:flag_city_ga.name=§cゲリラ拠点_街
+entity.gvcv5:flag_triumphal_arch_ca.name=§b同盟軍拠点_凱旋門
+entity.gvcv5:flag_triumphal_arch_ga.name=§cゲリラ拠点_凱旋門
 item.spawn_egg.entity.gvcv5:flag_airfield_ca.name=同盟軍拠点_野戦飛行場
 item.spawn_egg.entity.gvcv5:flag_airfield_ga.name=ゲリラ拠点_野戦飛行場
 item.spawn_egg.entity.gvcv5:flag_cannon_position_ca.name=同盟軍拠点_旧砲台陣地
@@ -394,6 +400,8 @@ item.spawn_egg.entity.gvcv5:flag_airbase_ca.name=同盟軍拠点_同盟軍飛行
 item.spawn_egg.entity.gvcv5:flag_airbase_ga.name=ゲリラ拠点_同盟軍飛行場
 item.spawn_egg.entity.gvcv5:flag_city_ca.name=同盟軍拠点_街
 item.spawn_egg.entity.gvcv5:flag_city_ga.name=ゲリラ拠点_街
+item.spawn_egg.entity.gvcv5:flag_triumphal_arch_ca.name=同盟軍拠点_凱旋門
+item.spawn_egg.entity.gvcv5:flag_triumphal_arch_ga.name=ゲリラ拠点_凱旋門
 
 script.gvcv5.minecraft:redstone.name=§4レッドストーン§r
 script.gvcv5.minecraft:emerald.name=§aエメラルド§r
@@ -416,6 +424,7 @@ item.vehicle:m1126_spawn_egg=M1126装甲車
 item.vehicle:m1128_spawn_egg=M1128戦車駆逐車
 item.vehicle:lav25_spawn_egg=LAV25歩兵戦闘車
 item.vehicle:t34_spawn_egg=T-34
+item.vehicle:g_heri_spawn_egg=ゲリラヘリ
 item.vehicle:fv101_spawn_egg=FV101
 item.vehicle:m41_spawn_egg=M41A3
 item.vehicle:m1a2_spawn_egg=M1A2
@@ -467,3 +476,10 @@ item.gvcv5:frostcharge=フロストチャージ
 item.gvcv5:airborne1=空挺要請Level1
 item.gvcv5:airborne2=空挺要請Level2
 item.gvcv5:airborne3=空挺要請Level3
+
+item.zex:stars=フルトン回収システム
+item.zex:trenchclub=塹壕クラブ
+item.gvcv5:parachute=パラシュート
+
+item.spawn_egg.entity.gvcv5:ga_pow.name=ゲリラ捕虜
+entity.gvcv5:ga_pow.name=ゲリラ捕虜

@@ -10,7 +10,7 @@ row_count = 0
 
 m_func = ""
 s_func = ""
-b_func = "effect @s[tag=!ride] resistance 99999 5 true"
+b_func = "effect @s[tag=!ride] health_boost 99999 70 true\neffect @s[tag=!ride] instant_health 1 255 true\n"
 
 #aasdasd
 for row in csv_reader:

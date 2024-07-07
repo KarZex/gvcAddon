@@ -1,0 +1,11 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "gvcv5:f_good1"
+    },
+    "places_block": "gvcv5:good1",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false
+  }
+}

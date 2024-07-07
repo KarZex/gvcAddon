@@ -53,6 +53,21 @@
     "guerrilla_gb5": {
       "textures": "textures/items/guerrilla_gb5"
     },
+    "guerrilla_gc1": {
+      "textures": "textures/items/guerrilla_gc1"
+    },
+    "guerrilla_gc2": {
+      "textures": "textures/items/guerrilla_gc2"
+    },
+    "guerrilla_gc3": {
+      "textures": "textures/items/guerrilla_gc3"
+    },
+    "guerrilla_gc4": {
+      "textures": "textures/items/guerrilla_gc4"
+    },
+    "guerrilla_gc5": {
+      "textures": "textures/items/guerrilla_gc5"
+    },
     "airborne1": {
       "textures": "textures/items/airborne1"
     },
