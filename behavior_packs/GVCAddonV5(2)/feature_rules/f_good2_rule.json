@@ -9,7 +9,7 @@
             "placement_pass": "surface_pass",
       "minecraft:biome_filter": [
         {
-          "any_of": [
+          "all_of": [
             {
               "test": "has_biome_tag",
               "operator": "==",
