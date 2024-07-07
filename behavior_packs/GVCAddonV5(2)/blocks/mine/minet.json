@@ -21,7 +21,7 @@
                 }
             },
 			"minecraft:destructible_by_mining":{
-				"seconds_to_destroy": 5
+				"seconds_to_destroy": 0.1
 			},
             "minecraft:on_step_on": {
               "condition": "query.has_any_family('ww2vehicle')",

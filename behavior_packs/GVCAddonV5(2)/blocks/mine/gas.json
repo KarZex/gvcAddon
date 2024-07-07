@@ -21,7 +21,7 @@
                 }
             },
 			"minecraft:destructible_by_mining":{
-				"seconds_to_destroy": 5
+				"seconds_to_destroy": 0.1
 			},
 			"minecraft:on_player_destroyed":{
 				"event" : "minecraft:ignite"

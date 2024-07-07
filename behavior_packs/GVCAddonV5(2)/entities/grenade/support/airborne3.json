@@ -28,7 +28,6 @@
 			"minecraft:projectile": {
 				"on_hit": {
 				"stick_in_ground": {},
-				"remove_on_hit": {},
 				"definition_event": {
 				  "affectProjectile": true,
 				  "eventTrigger": {
@@ -66,7 +65,7 @@
 		"component_groups": {
 		  "minecraft:exploding": {
 			"minecraft:explode": {
-			  "fuse_length": 10,
+			  "fuse_length": 0,
 			  "destroy_affected_by_griefing": true,
 			  "fuse_lit": true,
 			  "power": 0,

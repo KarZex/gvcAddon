@@ -3,7 +3,7 @@
     "format_version": "1.8.0",
     "minecraft:entity": {
       "description": {
-        "identifier": "addon:gb6_drone",
+        "identifier": "gvcv5:gb6_drone",
      "runtime_identifier": "minecraft:vex",
         "is_spawnable": false,
         "is_summonable": true,
@@ -21,7 +21,7 @@
           "destroy_affected_by_griefing": true
         },
       "minecraft:type_family": {
-        "family": [  "monster","germany", "mob" ]
+        "family": [  "monster","guerrilla", "mob" ]
       },
       "minecraft:health": {
         "value": 10,
@@ -57,8 +57,8 @@
       },
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 3,
-          "burst_interval": 0.1,
+          "burst_shots": 1,
+          "burst_interval": 1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 1.0,
@@ -66,8 +66,7 @@
           "attack_radius": 48.0
         },
         "minecraft:shooter": {
-          "type": "smallfireball",
-          "def": "fire:fire"
+          "def": "fire:ads_m1911"
         },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 3,
@@ -77,6 +76,7 @@
               "any_of" : [
                 {"test" : "is_family", "subject" : "other", "value" :  "player"},
                 {"test" : "is_family", "subject" : "other", "value" :  "irongolem"},
+                {"test" : "is_family", "subject" : "other", "value" :  "allied_soldier"},
                 {"test" : "is_family", "subject" : "other", "value" :  "wandering_trader"}
               ]
             },
@@ -111,6 +111,13 @@
       "minecraft:physics": {
         "has_gravity": false,
         "has_collision": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command":"tp @s ~~3~"
+        }
       }
     }
   }

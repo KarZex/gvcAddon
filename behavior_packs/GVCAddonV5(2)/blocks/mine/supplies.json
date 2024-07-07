@@ -21,7 +21,7 @@
                 }
             },
 			"minecraft:destructible_by_mining":{
-				"seconds_to_destroy": 5
+				"seconds_to_destroy": 2
 			},
             "minecraft:geometry": "geometry.supplies",
             "minecraft:selection_box": {

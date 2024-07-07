@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "addon:gc2",
+      "identifier": "gvcv5:gc2",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false
@@ -64,8 +64,8 @@
       "minecraft:can_climb": {
       },
       "minecraft:health": {
-        "value": 50,
-        "max": 50
+        "value": 100,
+        "max": 100
       },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
@@ -75,7 +75,7 @@
             "test": "is_family",
             "subject": "other",
             "operator": "!=",
-            "value": "germany"
+            "value": "guerrilla"
           },
           "max_dist": 64
 		}
@@ -94,13 +94,6 @@
       "minecraft:behavior.float": {
         "priority": 0
       },
-      "minecraft:behavior.tempt": {
-        "priority": 4,
-        "speed_multiplier": 1.25,
-        "items": [
-          "iron_sword"
-        ]
-      },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
         "must_see": true,
@@ -112,6 +105,7 @@
             "filters": {
               "any_of": [
                 { "test": "is_family", "subject": "other", "value": "villager" },
+                {"test" : "is_family", "subject" : "other", "value" :  "allied_soldier"},
                 { "test": "is_family", "subject": "other", "value": "irongolem" },
 				{ "test": "is_family", "subject": "other", "value": "player" }
               ]
@@ -128,7 +122,7 @@
         "priority": 6
       },
       "minecraft:type_family": {
-        "family": [ "monster", "germany", "mob" ]
+        "family": [ "monster", "guerrilla", "mob" ]
       },
       "minecraft:physics": {
       },
