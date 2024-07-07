@@ -21,17 +21,6 @@
           "into": "addon:des"
         }
       },
-      "firet": {
-        "minecraft:spawn_entity": {
-          "entities": {
-            "min_wait_time": 0,
-            "max_wait_time": 0,
-            "single_use": true,
-            "spawn_entity": "fire:t34",
-            "num_to_spawn": 1
-          }
-        }
-      },
       "firem": {
         "minecraft:spawn_entity": {
           "entities": {
@@ -70,7 +59,7 @@
       "minecraft:rideable": {
         "seat_count": 1,
         "family_types": [
-          "player"
+          "player","guerrilla","allied_soldier"
         ],
         "interact_text": "action.interact.ride.horse",
         "seats": {
@@ -223,29 +212,17 @@
           ]
         }
       },
-      "firem": {
-        "randomize": [
-          {
-            "weight": 10,
-            "add": {
-              "component_groups": [
-                "firem"
-              ]
-            }
-          }
-        ]
-      },
-      "firet": {
-        "randomize": [
-          {
-            "weight": 10,
-            "add": {
-              "component_groups": [
-                "firet"
-              ]
-            }
-          }
-        ]
+      "set_npc_mode": {
+        "queue_command": {
+          "command":[
+            "ride @e[c=1,tag=heriRiding] summon_ride vehicle:g_herir"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "despawning"
+          ]
+        }
       }
     }
   }

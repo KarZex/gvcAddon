@@ -47,6 +47,10 @@ for row in csv_reader:
             if v_main == "":
                 b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_sub)
 
+        if v_type == "heri":
+            b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run tag @s add heriRiding\n".format(v_id)
+            b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @e[r=4,type=vehicle:{0}] set_npc_mode\n".format(v_id)
+
         item_json["texture_data"]["{}".format(v_id)] = { "textures": "textures/items/{}".format(v_id) }
         print("created {}".format(v_id))
     row_count += 1

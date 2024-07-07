@@ -399,6 +399,7 @@ script.gvcv5.minecraft:redstone.name=§4レッドストーン§r
 script.gvcv5.minecraft:emerald.name=§aエメラルド§r
 script.gvcv5.minecraft:gunpowder.name=§8火薬§r
 script.gvcv5.minecraft:iron_ingot.name=§6鉄§r
+script.gvcv5.no_ma.name=§c素材が足りません!§r
 
 
 item.vehicle:dp28set_spawn_egg=固定機銃DP-28

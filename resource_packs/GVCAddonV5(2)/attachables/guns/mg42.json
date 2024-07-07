@@ -1,0 +1,41 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "gun:mg42",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/models/mg42.png"
+      },
+      "geometry": {
+        "default": "geometry.mg42"
+      },
+      "animations": {
+        "first": "animation.mg42.first",
+        "ads": "animation.mg42.ads",
+        "third": "animation.mg42.third"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.main_hand = c.item_slot == 'main_hand';"
+        ],
+        "animate": [
+          {
+            "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
+          },
+          {
+            "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+          },
+          {
+            "third": "v.main_hand && !c.is_first_person"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

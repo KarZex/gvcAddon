@@ -5,7 +5,23 @@
       "states": {
         "default": {
           "transitions": [
-            { "mgg": "query.is_riding && query.is_jumping" }
+            { "ride": "query.is_riding" }
+          ],
+          "on_entry": [
+            "/effect @s resistance 0 7 true"
+          ]
+        },
+        "ride":{
+          "on_entry": [
+            "/effect @s resistance 99999 7 true"
+          ],
+          "transitions": [
+            {
+              "mgg": "query.is_jumping"
+            },
+            {
+              "default": "!query.is_riding"
+            }
           ]
         },
         "mgg": {
@@ -18,6 +34,9 @@
           "transitions": [
               {
                   "default": "!query.is_riding || !query.is_jumping"
+              },
+              {
+                  "ride": "!query.is_jumping"
               }
           ]
         }

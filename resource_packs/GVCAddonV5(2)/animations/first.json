@@ -442,6 +442,87 @@
 					"scale": [0.3, 0.3, 0.3]
 				}
 			}
+		},
+		"animation.awm.third": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"gun": {
+					"rotation": [-270.00718, -0.32621, -179.9786],
+					"position": [-6.00307, 19.48289, 17.46193],
+					"scale": 1
+				}
+			}
+		},
+		"animation.awm.first": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"gun": {
+					"rotation": [91.60267, -2.0323, 180.07023],
+					"position": [-6.42249, 19.98021, 17.48615],
+					"scale": 1
+				}
+			}
+		},
+		"animation.mg42.ads": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 1, 0]
+				},
+				"gun": {
+					"rotation": [8.70544, -62.08157, 668.65107],
+					"position": [93.69377, -50.41737, -16.21982]
+				},
+				"guncube": {
+					"rotation": [0, 0, -0.18]
+				},
+				"mg42": {
+					"position": [-5.65, 6, 6.5],
+					"scale": 8
+				}
+			}
+		},
+		"animation.mg42.first": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"gun": {
+					"rotation": [-1.60171, -0.46672, 0.14013],
+					"position": [0, -8.6, 2],
+					"scale": 0.33
+				},
+				"guncube": {
+					"position": [0, 4, 0]
+				},
+				"mg42": {
+					"position": [-5.5, 19, 7],
+					"scale": 8
+				}
+			}
+		},
+		"animation.mg42.third": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"gun": {
+					"position": [0.5, -8, -0.5],
+					"scale": 0.3
+				},
+				"mg42": {
+					"position": [-5, 19, 7],
+					"scale": 8
+				}
+			}
 		}
 	}
 }

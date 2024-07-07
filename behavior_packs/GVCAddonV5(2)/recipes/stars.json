@@ -2,22 +2,20 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "gvcv5:rep_recipe"
+    "identifier": "gvcv5:stars_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "XAX",
-	  "AAX",
-	  "XXA"
+      "BBB",
+      "BAB",
+      "XAX"
     ],
     "key": {
       "A": {
-        "item": "zex:ps",
-        "data": 0
+        "item": "zex:ps"
       },
       "B": {
-        "item": "minecraft:iron_ingot",
-        "data": 0
+        "item": "minecraft:wool"
       },
       "C": {
         "item": "minecraft:book",
@@ -25,11 +23,11 @@
       },
       "D": {
         "item": "minecraft:dye",
-        "data": 15
+        "data": 2
       }
     },
     "result": {
-      "item": "zex:rep",
+      "item": "zex:stars",
       "count": 1
     }
   }

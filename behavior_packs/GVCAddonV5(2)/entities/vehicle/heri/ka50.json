@@ -68,7 +68,7 @@
         "minecraft:rideable": {
           "seat_count": 1,
           "family_types": [
-            "player"
+            "player","guerrilla","allied_soldier"
           ],
           "interact_text": "action.interact.ride.horse",
           "seats": {
@@ -186,7 +186,19 @@
 				  "despawning"
 			  ]
 		  }
-	  }
+	  },
+    "set_npc_mode": {
+      "queue_command": {
+        "command":[
+          "ride @e[c=1,tag=heriRiding] summon_ride vehicle:ka50r"
+        ]
+      },
+      "add": {
+        "component_groups": [
+          "despawning"
+        ]
+      }
+    }
     }
   }
 }

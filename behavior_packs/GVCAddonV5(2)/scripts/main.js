@@ -1,33 +1,23 @@
-import { world, system, EntityDamageCause, EquipmentSlot, Block, Entity, EntityComponentTypes  } from "@minecraft/server";
+import { world, system, EntityDamageCause, EquipmentSlot, EntityComponentTypes  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 import { craftData } from "./crafts";
 
 function setArmorValue( itemName ){
-	if( itemName.includes("leather") ){ return 0.05 }
-	else if( itemName.includes("chainmail") ){ return 0.125 }
-	else if( itemName.includes("iron") ){ return 0.15 }
-	else if( itemName.includes("golden") ){ return 0.15 }
-	else if( itemName.includes("diamond") ){ return 0.225 }
-	else if( itemName.includes("plastic") ){ return 0.2 }
-	else if( itemName.includes("ghilliesuit") ){ return 0.05 }
-	else if( itemName.includes("trench") ){ return 0.15 }
-	else if( itemName.includes("mghelmet") ){ return 0.15 }
-	else if( itemName.includes("firemask") ){ return 0.05 }
-	else if( itemName.includes("droneguided") ){ return 0.15 }
-	else if( itemName.includes("netherite") ){ return 0.25 }
+	if( itemName.includes("leather") ){ return 0.025 }
+	else if( itemName.includes("chainmail") ){ return 0.05 }
+	else if( itemName.includes("iron") ){ return 0.075 }
+	else if( itemName.includes("golden") ){ return 0.075 }
+	else if( itemName.includes("diamond") ){ return 0.1125 }
+	else if( itemName.includes("plastic") ){ return 0.1 }
+	else if( itemName.includes("ghilliesuit") ){ return 0.025 }
+	else if( itemName.includes("trench") ){ return 0.075 }
+	else if( itemName.includes("mghelmet") ){ return 0.075 }
+	else if( itemName.includes("firemask") ){ return 0.025 }
+	else if( itemName.includes("droneguided") ){ return 0.075 }
+	else if( itemName.includes("netherite") ){ return 0.125 }
 	else { return 0 }
 }
-
-world.afterEvents.projectileHitBlock.subscribe( e => {
-	if ( e.getBlockHit().block.typeId != undefined && e.getBlockHit().block.typeId == `gvcv5:beacon`){
-		e.dimension.playSound("random.explode",e.location);
-		let loc = e.getBlockHit().block.location;
-		e.dimension.spawnParticle("minecraft:huge_explosion_emitter",e.location);
-		e.dimension.runCommand(`setblock ${loc.x} ${loc.y} ${loc.z} air`);
-		
-	}
-})
 
 world.afterEvents.projectileHitEntity.subscribe( e => {
 	if( e.projectile.typeId.includes("fire")){
@@ -35,6 +25,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		let def = 0;
 		const equipmentComp = vict.getComponent(EntityComponentTypes.Equippable)
 		if( equipmentComp ){
+			def = 0.5;
 			if( equipmentComp.getEquipment(EquipmentSlot.Head) != undefined ){ 
 				def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Head).typeId) 
 			}
@@ -147,7 +138,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					player.runCommand(`give @s ${buys[result.selection]["give"]} ${buys[result.selection]["count"]}`);
 				}
 				else{
-					player.sendMessage("§cNo material!");
+					player.sendMessage({ translate: `script.gvcv5.no_ma.name`});
 				}
 				player.runCommand(`scriptevent gvcv5:craft ${craftType}`);
 			}

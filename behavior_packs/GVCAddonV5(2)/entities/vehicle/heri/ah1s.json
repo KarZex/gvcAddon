@@ -48,7 +48,7 @@
       "minecraft:rideable": {
         "seat_count": 1,
         "family_types": [
-          "player"
+          "player","guerrilla","allied_soldier"
         ],
         "interact_text": "action.interact.ride.horse",
         "seats": {
@@ -199,29 +199,17 @@
           ]
         }
       },
-      "firem": {
-        "randomize": [
-          {
-            "weight": 10,
-            "add": {
-              "component_groups": [
-                "firem"
-              ]
-            }
-          }
-        ]
-      },
-      "firet": {
-        "randomize": [
-          {
-            "weight": 10,
-            "add": {
-              "component_groups": [
-                "firet"
-              ]
-            }
-          }
-        ]
+      "set_npc_mode": {
+        "queue_command": {
+          "command":[
+            "ride @e[c=1,tag=heriRiding] summon_ride vehicle:ah1sr"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "despawning"
+          ]
+        }
       }
     }
   }

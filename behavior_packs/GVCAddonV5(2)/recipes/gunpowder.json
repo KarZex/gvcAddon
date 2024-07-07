@@ -2,22 +2,19 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "gvcv5:rep_recipe"
+    "identifier": "gvcv5:gunpowder_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "XAX",
-	  "AAX",
-	  "XXA"
+      "AB",
+      "BA"
     ],
     "key": {
       "A": {
-        "item": "zex:ps",
-        "data": 0
+        "item": "minecraft:coal"
       },
       "B": {
-        "item": "minecraft:iron_ingot",
-        "data": 0
+        "item": "minecraft:dirt"
       },
       "C": {
         "item": "minecraft:book",
@@ -25,11 +22,11 @@
       },
       "D": {
         "item": "minecraft:dye",
-        "data": 15
+        "data": 2
       }
     },
     "result": {
-      "item": "zex:rep",
+      "item": "minecraft:gunpowder",
       "count": 1
     }
   }

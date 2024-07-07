@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "gvcv5:red_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A",
+      "B"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:ps"
+      },
+      "B": {
+        "item": "gvcv5:pmc_spawn_egg"
+      }
+    },
+    "result": {
+      "item": "item:red",
+      "count": 1
+    }
+  }
+  
+}

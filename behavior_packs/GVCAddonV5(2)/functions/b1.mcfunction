@@ -1,5 +1,4 @@
-effect @s[tag=!ride] health_boost 99999 80 true
-effect @s[tag=!ride] instant_health 1 100
+effect @s[tag=!ride] resistance 99999 5 true
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:aifv] run event entity @s vmg
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:lav25] run event entity @s vmg
@@ -14,13 +13,33 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:btr60] run event entity @
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah1s] run event entity @s vmg
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah1s] run tag @s add heriRiding
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah1s] run event entity @e[r=4,type=vehicle:ah1s] set_npc_mode
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah6] run event entity @s vmg
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah6] run tag @s add heriRiding
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah6] run event entity @e[r=4,type=vehicle:ah6] set_npc_mode
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:g_heri] run event entity @s vmg
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:g_heri] run tag @s add heriRiding
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:g_heri] run event entity @e[r=4,type=vehicle:g_heri] set_npc_mode
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ka50] run event entity @s vmg
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ka50] run tag @s add heriRiding
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ka50] run event entity @e[r=4,type=vehicle:ka50] set_npc_mode
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mi24d] run event entity @s vmg
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mi24d] run tag @s add heriRiding
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mi24d] run event entity @e[r=4,type=vehicle:mi24d] set_npc_mode
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:kv2] run event entity @s 152mm
 

@@ -24,16 +24,11 @@
 					}
 				]
 			},
-			"minecraft:explode": {
-				"fuse_length": 4,
-				"fuse_lit": true,
-				"power": 3,
-				"breaks_blocks": false
-			},
 			"minecraft:physics": {},
 			"minecraft:projectile": {
 				"on_hit": {
 				"stick_in_ground": {},
+				"remove_on_hit": {},
 				"definition_event": {
 				  "affectProjectile": true,
 				  "eventTrigger": {

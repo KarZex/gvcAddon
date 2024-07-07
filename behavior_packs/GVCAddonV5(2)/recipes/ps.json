@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "GVC_PS"
+    "identifier": "gvcv5:ps_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [

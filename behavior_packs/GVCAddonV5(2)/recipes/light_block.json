@@ -2,22 +2,18 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "gvcv5:rep_recipe"
+    "identifier": "gvcv5:light_block_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "XAX",
-	  "AAX",
-	  "XXA"
+      "ABA"
     ],
     "key": {
       "A": {
-        "item": "zex:ps",
-        "data": 0
+        "item": "minecraft:soul_sand"
       },
       "B": {
-        "item": "minecraft:iron_ingot",
-        "data": 0
+        "item": "gvcv5:fslight_item"
       },
       "C": {
         "item": "minecraft:book",
@@ -25,12 +21,13 @@
       },
       "D": {
         "item": "minecraft:dye",
-        "data": 15
+        "data": 2
       }
     },
     "result": {
-      "item": "zex:rep",
-      "count": 1
+      "item": "minecraft:light_block",
+      "count": 2,
+      "data": 15
     }
   }
   
