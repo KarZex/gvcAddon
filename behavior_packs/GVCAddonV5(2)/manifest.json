@@ -1,24 +1,24 @@
 {
   "format_version": 2,
   "header": {
-    "description": "作者:Kar Zex\nMosin-Nagant,TT33モデル:kusnek\nV4のGVC Libなどは使用しないでください\n",
-    "name": "§l§gGVC Addon V5.0 BetaV0.3",
+    "description": "作者:Kar Zex\nモデル提供者\nkusnek:Mosin-Nagant,PPSh-41,TT33\nいぬえモン:AWM\nMihono Bourbon:MG42\nV4のGVC Libなどは使用しないでください\n",
+    "name": "§l§gGVC Addon V5.0 BetaV0.4",
     "min_engine_version": [1, 21, 0 ],
-    "uuid": "933937e2-c859-484e-9ab0-1c119de59577",
+    "uuid": "d9975de9-7891-4d39-a572-7168241987db",
     "version": [1, 21, 0]
   },
   "modules": [
     {
       "description": "Data Module",
       "type": "data",
-      "uuid": "09efbe05-e30e-4e05-a863-9cf1e1d884c4",
+      "uuid": "993feaf4-f852-45ab-96c6-ac08d7bb954e",
       "version": [1, 0, 0]
     },
     {
       "description": "Script API Module",
       "language": "javascript",
       "type": "script",
-      "uuid": "96fa5933-4791-49f9-86dc-b2ec5ab11b48",
+      "uuid": "5be88d9b-fb7b-47fe-8958-336fb1590d4a",
       "version": [1, 0, 0],
       "entry": "scripts/main.js"
     }
