@@ -2,7 +2,7 @@
   "format_version": "1.8.0",
   "minecraft:spawn_rules": {
     "description": {
-      "identifier": "addon:ga",
+      "identifier": "gvcv5:gb3",
       "population_control": "monster"
     },
     "conditions": [
@@ -18,7 +18,7 @@
           "max": "hard"
         },
         "minecraft:weight": {
-          "default": 120
+          "default": 20
         },
         "minecraft:herd": {
           "min_size": 1,
@@ -29,6 +29,8 @@
         }
       },
       {
+        "minecraft:spawns_underground": {
+        },
         "minecraft:brightness_filter": {
           "min": 0,
           "max": 15,
@@ -37,8 +39,6 @@
         "minecraft:difficulty_filter": {
           "min": "easy",
           "max": "hard"
-        },
-        "minecraft:spawns_underground": {
         },
         "minecraft:weight": {
           "default": 120

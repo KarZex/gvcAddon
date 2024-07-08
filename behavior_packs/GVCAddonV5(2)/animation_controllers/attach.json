@@ -13,8 +13,8 @@
                 {"default":"!query.is_sneaking"}
             ],
             "on_entry": [
-              "/effect @s[tag=!reload] slowness 1000 255 true",
-              "/tag @s[tag=!reload] add scope"
+              "/effect @s slowness 1000 255 true",
+              "/tag @s add scope"
             ],
             "on_exit": [
               "/effect @s slowness 0 0 true",

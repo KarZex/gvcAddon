@@ -2,7 +2,7 @@
   "format_version": "1.8.0",
   "minecraft:spawn_rules": {
     "description": {
-      "identifier": "addon:ca",
+      "identifier": "gvcv5:ca",
       "population_control": "monster"
     },
     "conditions": [
@@ -18,7 +18,7 @@
           "max": "hard"
         },
         "minecraft:weight": {
-          "default": 30
+          "default": 50
         },
         "minecraft:herd": {
           "min_size": 1,
