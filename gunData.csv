@@ -6,7 +6,8 @@ AWM,awm,5,zex:762m,16,16,0.75,80,19,0,F,0,F,srbullet,1,完了,いぬえモン
 DP-28,dp28,47,zex:762m,8,6,4,80,1,0,F,0,F,lmgbullet,1,完了,Kar Zex
 MGL140,famas,6,zex:rocketm,1,8,2,80,19,2,F,0,F,gbullet,1,,
 Flamethrower,fire,30,zex:556m,2,2,2,60,1,0,F,0,F,,1,,
-H&K G36,g36,30,zex:556m,6,8,1.75,60,1,0,F,0,F,arbullet,1,,
+H&K G36,g36,30,zex:556m,6,8,1.75,60,1,0,F,0,F,arbullet,1,完了,Kar Zex
+G3A3,g3a3,20,zex:556m,7,6,1.25,60,3,0,F,0,F,srbullet,1,完了,Kar Zex
 Glock17,glock17,20,zex:mm9,4,3.4,0,30,4,0,F,0,T,psbullet,1,,
 Glock18c,glock18,20,zex:mm9,4,3.4,0,30,0,0,F,0,T,psbullet,1,,
 HK416,hk416,30,zex:556m,7,6,1.25,60,1,0,F,0,F,arbullet,1,,
@@ -28,7 +29,7 @@ Mosin-Nagant,mosin,5,zex:762m,16,16,1,60,19,0,F,0,F,srbullet,1,完了,kusnek
 MP5,mp5,30,zex:mm9,4,3.6,1.5,60,0,0,F,0,F,smgbullet,1,,
 MP7,mp7,40,zex:mm9,5,6,1.5,45,0,0,F,0,F,smgbullet,1,,
 MP40,mp40,20,zex:mm9,4,3.6,2,45,0,0,F,0,F,smgbullet,1,,
-Panzerfaust,p90,1,zex:rocketm,50,9,4,60,19,4,T,0,F,rpgbullet,1,,
+Panzerfaust,p90,1,zex:rocketm,50,9,4,60,19,4,T,0,F,rpgbullet,1,完了,プチネコ
 PKM,pkm,100,zex:762m,8,6,5,100,1,0,F,0,F,lmgbullet,1,完了,Kar Zex
 PPSh-41,ppsh,72,zex:mm9,4,3.6,3,45,1,0,F,0,F,smgbullet,1,完了,kusnek
 RPG-7,rpg,1,zex:rocketm,60,9,5,80,19,5,T,0,F,rpgbullet,1,,
@@ -37,4 +38,4 @@ SVD,svd,10,zex:762m,12,12,2,60,5,0,F,0,F,srbullet,1,,
 TT33,tt33,6,zex:762m,7,3,0,50,8,0,F,0,T,srbullet,1,完了,kusnek
 UZI,uzi,30,zex:mm9,3,3,1,40,0,0,F,0,F,psbullet,1,,
 Vz 61,vz61,20,zex:mm9,4,3,3,40,0,0,F,0,T,psbullet,1,,
-XM25,xm8,4,zex:rocketm,20,9,2,80,19,2,F,0,F,gbullet,1,,
+XM25,xm8,4,zex:rocketm,20,9,2,80,19,2,F,0,F,gbullet,1,  ,

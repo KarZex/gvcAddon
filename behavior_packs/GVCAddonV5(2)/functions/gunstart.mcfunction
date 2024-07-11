@@ -28,6 +28,8 @@ scoreboard objectives add fire dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s fire 0
 scoreboard objectives add g36 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s g36 0
+scoreboard objectives add g3a3 dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s g3a3 0
 scoreboard objectives add glock17 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s glock17 0
 scoreboard objectives add glock18 dummy

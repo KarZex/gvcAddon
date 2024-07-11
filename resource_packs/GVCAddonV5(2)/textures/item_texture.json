@@ -937,6 +937,9 @@
     },
     "fv101": {
       "textures": "textures/items/fv101"
+    },
+    "g3a3": {
+      "textures": "textures/gun/g3a3"
     }
   }
 }

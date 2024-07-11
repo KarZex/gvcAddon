@@ -177,6 +177,24 @@
           "table": "loot_tables/gun/g36.json"
         }
       },
+      "g3a3": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.2,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:g3a3"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/g3a3.json"
+        }
+      },
       "glock17": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -1322,6 +1340,13 @@
         "add": {
           "component_groups": [
             "g36"
+          ]
+        }
+      },
+      "g3a3": {
+        "add": {
+          "component_groups": [
+            "g3a3"
           ]
         }
       },

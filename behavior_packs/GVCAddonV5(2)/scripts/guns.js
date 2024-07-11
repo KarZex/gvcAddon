@@ -47,6 +47,12 @@ export const gunData = {
     "reloadTime": 60,
     "bullet": "zex:556m"
   },
+  "g3a3": {
+    "damage": 7,
+    "maxGunAmmo": 20,
+    "reloadTime": 60,
+    "bullet": "zex:556m"
+  },
   "glock17": {
     "damage": 4,
     "maxGunAmmo": 20,

@@ -246,6 +246,7 @@ item.gun:m870=M870
 item.gun:m590=M590
 item.gun:pkm=PKM
 item.gun:m60=M60
+item.gun:g3a3=G3A3
 
 tile.gvcv5:good1.name=死体
 tile.gvcv5:good2.name=スクラップ

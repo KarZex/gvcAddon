@@ -333,6 +333,40 @@
           ]
         }
       },
+      "fire:g3a3": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:g3a3"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_g3a3"
+            }
+          ]
+        }
+      },
       "fire:glock17": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -1801,6 +1835,13 @@
         "add": {
           "component_groups": [
             "fire:g36"
+          ]
+        }
+      },
+      "fire:g3a3": {
+        "add": {
+          "component_groups": [
+            "fire:g3a3"
           ]
         }
       },

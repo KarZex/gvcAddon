@@ -30,6 +30,9 @@
               "g36": "query.get_equipped_item_name == 'g36'"
             },
             {
+              "g3a3": "query.get_equipped_item_name == 'g3a3'"
+            },
+            {
               "glock17": "query.get_equipped_item_name == 'glock17'"
             },
             {
@@ -197,6 +200,16 @@
         "g36": {
           "on_entry": [
             "/function hold/g36h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "g3a3": {
+          "on_entry": [
+            "/function hold/g3a3h"
           ],
           "transitions": [
             {
