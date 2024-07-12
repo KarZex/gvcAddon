@@ -9,7 +9,7 @@
       "placement_pass": "surface_pass",
       "minecraft:biome_filter": [
         {
-          "alll_of": [
+          "all_of": [
             {
               "test": "has_biome_tag",
               "operator": "==",
@@ -21,7 +21,7 @@
     },
     "distribution": {
       "iterations": 1,
-      "scatter_chance": 0.25,
+      "scatter_chance": 0.1,
       "x": {
         "distribution": "uniform",
         "extent": [

@@ -9,20 +9,13 @@
       "runtime_identifier": "minecraft:bat"
     },
     "component_groups": {
-      "become_CA": {
-        "minecraft:transformation": {
-          "into": "gvcv5:flag_ff_ca"
-        }
-      },
-      "become_GA": {
-        "minecraft:transformation": {
-          "into": "gvcv5:flag_ff_ga"
-        }
+      "despawning": {
+        "minecraft:instant_despawn": {}
       }
     },
     "components": {
       "minecraft:experience_reward": {
-        "on_death": "10000"
+        "on_death": "0"
       },
       "minecraft:boss": {
         "name": "entity.gvcv5:flag_ff_ca.name",
@@ -52,23 +45,18 @@
             }
           },
           {
+            "cause": "all",
+            "deals_damage": false,
             "on_damage": {
               "filters": {
-                "any_of": [
+                "all_of": [
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "player"
-                  }
-                ],
-                "all_of": [
-                  {
-                    "test": "has_damage",
-                    "value": "fatal"
+                    "value": "playerp"
                   }
                 ]
-              },
-              "event": "become_CA"
+              }
             }
           }
         ]
@@ -78,8 +66,8 @@
       },
       "minecraft:type_family": {
         "family": [
-          "alliedflag",
-          "player",
+          "allied_soldier",
+          "playerp",
           "mob"
         ]
       },
@@ -126,8 +114,8 @@
                 "shape": "circle",
                 "target": "self",
                 "base_delay": 5.0,
-                "num_entities_spawned": 2,
-                "entity_type": "addon:ca",
+                "num_entities_spawned": 5,
+                "entity_type": "gvcv5:ca",
                 "summon_cap": 8,
                 "summon_cap_radius": 32.0,
                 "size": 1.0,
@@ -172,20 +160,6 @@
           }
         ]
       },
-      "minecraft:behavior.hurt_by_target": {
-        "priority": 1,
-        "entity_types": [
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "operator": "!=",
-              "value": "player"
-            },
-            "max_dist": 64
-          }
-        ]
-      },
       "minecraft:behavior.random_stroll": {
         "priority": 8,
         "speed_multiplier": 0.6
@@ -199,19 +173,14 @@
                 {
                   "test": "is_family",
                   "subject": "other",
-                  "value": "mod"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
                   "value": "monster"
                 }
               ]
             },
-            "max_dist": 5
+            "max_dist": 10
           }
         ],
-        "must_see": false
+        "must_see": true
       },
       "minecraft:persistent": {},
       "minecraft:physics": {},
@@ -225,23 +194,17 @@
     },
     "events": {
       "become_CA": {
-        "add": {
-          "component_groups": [
-            "become_CA"
-          ]
-        },
         "queue_command": {
-          "command": "tp @s ~~3~"
+          "command": [
+            "summon gvcv5:flag_ff_ca ~~1~"
+          ]
         }
       },
       "become_GA": {
-        "add": {
-          "component_groups": [
-            "become_GA"
-          ]
-        },
         "queue_command": {
-          "command": "tp @s ~~3~"
+          "command": [
+            "summon gvcv5:flag_ff_ga ~~1~"
+          ]
         }
       }
     }

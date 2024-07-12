@@ -10,7 +10,7 @@ H&K G36,g36,30,zex:556m,6,8,1.75,60,1,0,F,0,F,arbullet,1,完了,Kar Zex
 G3A3,g3a3,20,zex:556m,7,6,1.25,60,3,0,F,0,F,srbullet,1,完了,Kar Zex
 Glock17,glock17,20,zex:mm9,4,3.4,0,30,4,0,F,0,T,psbullet,1,,
 Glock18c,glock18,20,zex:mm9,4,3.4,0,30,0,0,F,0,T,psbullet,1,,
-HK416,hk416,30,zex:556m,7,6,1.25,60,1,0,F,0,F,arbullet,1,,
+HK416,hk416,30,zex:556m,7,6,1.25,60,1,0,F,0,F,arbullet,1,完了,Kar Zex
 Lazer,lazer,100,zex:btm,6,8,0,60,0,0,F,0,F,,1,,
 M4A1,m4,30,zex:556m,6,6,2.5,50,1,0,F,0,F,arbullet,1,完了,Kar Zex
 M9,m9,16,zex:mm9,4,3.4,0,30,4,0,F,0,T,psbullet,1,,

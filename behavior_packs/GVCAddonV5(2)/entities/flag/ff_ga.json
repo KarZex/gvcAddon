@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.18.0",
   "minecraft:entity": {
     "description": {
       "identifier": "gvcv5:flag_ff_ga",
@@ -9,20 +9,13 @@
       "runtime_identifier": "minecraft:bat"
     },
     "component_groups": {
-      "become_CA": {
-        "minecraft:transformation": {
-          "into": "gvcv5:flag_ff_ca"
-        }
-      },
-      "become_GA": {
-        "minecraft:transformation": {
-          "into": "gvcv5:flag_ff_ga"
-        }
+      "despawning": {
+        "minecraft:instant_despawn": {}
       }
     },
     "components": {
       "minecraft:experience_reward": {
-        "on_death": "10000"
+        "on_death": "1000"
       },
       "minecraft:boss": {
         "name": "entity.gvcv5:flag_ff_ga.name",
@@ -58,7 +51,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "player"
+                    "value": "playerp"
                   }
                 ],
                 "all_of": [
@@ -78,7 +71,8 @@
       },
       "minecraft:type_family": {
         "family": [
-          "monsterflag",
+          "guerrilla",
+          "monster",
           "mob"
         ]
       },
@@ -105,20 +99,6 @@
           }
         ]
       },
-      "minecraft:behavior.hurt_by_target": {
-        "priority": 1,
-        "entity_types": [
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "operator": "!=",
-              "value": "monster"
-            },
-            "max_dist": 64
-          }
-        ]
-      },
       "minecraft:collision_box": {
         "width": 1,
         "height": 1
@@ -139,8 +119,8 @@
                 "shape": "circle",
                 "target": "self",
                 "base_delay": 1.0,
-                "num_entities_spawned": 2,
-                "entity_type": "addon:ga",
+                "num_entities_spawned": 5,
+                "entity_type": "gvcv5:ga",
                 "summon_cap": 8,
                 "summon_cap_radius": 32.0,
                 "size": 1.0,
@@ -194,18 +174,46 @@
         "entity_types": [
           {
             "filters": {
-              "any_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "player"
-                }
-              ]
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
             },
-            "max_dist": 5
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "allied_soldier"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "villager"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "wandering_trader"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "irongolem"
+            },
+            "max_dist": 42
           }
         ],
-        "must_see": false
+        "must_see": true
       },
       "minecraft:persistent": {},
       "minecraft:physics": {},
@@ -219,23 +227,17 @@
     },
     "events": {
       "become_CA": {
-        "add": {
-          "component_groups": [
-            "become_CA"
-          ]
-        },
         "queue_command": {
-          "command": "tp @s ~~3~"
+          "command": [
+            "summon gvcv5:flag_ff_ca ~~1~"
+          ]
         }
       },
       "become_GA": {
-        "add": {
-          "component_groups": [
-            "become_GA"
-          ]
-        },
         "queue_command": {
-          "command": "tp @s ~~3~"
+          "command": [
+            "summon gvcv5:flag_ff_ga ~~1~"
+          ]
         }
       }
     }
