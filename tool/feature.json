@@ -7,8 +7,6 @@
         "structure_name": "mystructure:f_radiobase",
         "adjustment_radius": 8,
         "facing_direction": "random",
-        "constraints": {
-            "grounded": {}
-        }
+        "constraints": {   }
     }
 }

@@ -32,6 +32,7 @@ for row in csv_reader:
         structure_loady = int(row[6])
         structure_chance = float(row[7])
         structure_flag_type = row[8]
+        structure_is_ship = row[9]
         text += "tile.gvcv5:building_{0}.name={1}\n".format(structure_id,row[0])
         with open("behavior_packs/GVCAddonV5(2)/functions/structure/{}.mcfunction".format(structure_id),"w") as f:
             f.write("tickingarea add ~~~ ~{0}~63~{1} {2} true\n".format(structure_loadx+16,structure_loadz+16,structure_id))
@@ -45,6 +46,8 @@ for row in csv_reader:
             feature_json = json.load(f)
             feature_json["minecraft:structure_template_feature"]["description"]["identifier"] = "gvcv5:{}".format(structure_id)
             feature_json["minecraft:structure_template_feature"]["structure_name"] = "mystructure:f_{}".format(structure_id)
+            if structure_is_ship == "T": feature_json["minecraft:structure_template_feature"]["constraints"] = { "unburied":{} }
+            else: feature_json["minecraft:structure_template_feature"]["constraints"] = { "grounded":{} }
 
         with open("behavior_packs/GVCAddonV5(2)/features/{}.json".format(structure_id),"w") as f:
             json.dump(feature_json,f,indent=2)
@@ -55,7 +58,7 @@ for row in csv_reader:
             feature_rule_json["minecraft:feature_rules"]["description"]["identifier"] = "gvcv5:{}_rule".format(structure_id)
             feature_rule_json["minecraft:feature_rules"]["description"]["places_feature"] = "gvcv5:{}".format(structure_id)
             feature_rule_json["minecraft:feature_rules"]["distribution"]["scatter_chance"] = structure_chance
-            i = 9
+            i = 10
             j = -1
             while not row[i] == "":
                 if not ";" in row[i]:
@@ -70,6 +73,8 @@ for row in csv_reader:
                     feature_rule_json["minecraft:feature_rules"]["conditions"]["minecraft:biome_filter"][j]["{}_of".format(operator)].append(biome_test)
                     
                 i += 1
+
+            
 
         with open("behavior_packs/GVCAddonV5(2)/feature_rules/{}_rule.json".format(structure_id),"w") as f:
             json.dump(feature_rule_json,f,indent=2)
