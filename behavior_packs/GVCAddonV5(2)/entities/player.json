@@ -469,40 +469,6 @@
           ]
         }
       },
-      "fire:l86": {
-        "minecraft:spawn_entity": {
-          "entities": [
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:l86"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ads_l86"
-            }
-          ]
-        }
-      },
       "fire:lazer": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -703,6 +669,40 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_m60"
+            }
+          ]
+        }
+      },
+      "fire:m79": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m79"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m79"
             }
           ]
         }
@@ -1866,13 +1866,6 @@
           ]
         }
       },
-      "fire:l86": {
-        "add": {
-          "component_groups": [
-            "fire:l86"
-          ]
-        }
-      },
       "fire:lazer": {
         "add": {
           "component_groups": [
@@ -1912,6 +1905,13 @@
         "add": {
           "component_groups": [
             "fire:m60"
+          ]
+        }
+      },
+      "fire:m79": {
+        "add": {
+          "component_groups": [
+            "fire:m79"
           ]
         }
       },

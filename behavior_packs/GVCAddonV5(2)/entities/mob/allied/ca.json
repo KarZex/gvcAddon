@@ -249,24 +249,6 @@
           "table": "loot_tables/gun/hk416.json"
         }
       },
-      "l86": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 10,
-          "burst_interval": 0.1,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:l86"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/gun/l86.json"
-        }
-      },
       "lazer": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -373,6 +355,24 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/m60.json"
+        }
+      },
+      "m79": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m79"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m79.json"
         }
       },
       "m82": {
@@ -1371,13 +1371,6 @@
           ]
         }
       },
-      "l86": {
-        "add": {
-          "component_groups": [
-            "l86"
-          ]
-        }
-      },
       "lazer": {
         "add": {
           "component_groups": [
@@ -1417,6 +1410,13 @@
         "add": {
           "component_groups": [
             "m60"
+          ]
+        }
+      },
+      "m79": {
+        "add": {
+          "component_groups": [
+            "m79"
           ]
         }
       },

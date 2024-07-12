@@ -93,12 +93,6 @@
               "hk416_reload": "query.get_equipped_item_name == 'hk416' && (variable.attack_time > 0.0)"
             },
             {
-              "l86": "query.get_equipped_item_name == 'l86' && query.is_using_item"
-            },
-            {
-              "l86_reload": "query.get_equipped_item_name == 'l86' && (variable.attack_time > 0.0)"
-            },
-            {
               "lazer": "query.get_equipped_item_name == 'lazer' && query.is_using_item"
             },
             {
@@ -133,6 +127,12 @@
             },
             {
               "m60_reload": "query.get_equipped_item_name == 'm60' && (variable.attack_time > 0.0)"
+            },
+            {
+              "m79": "query.get_equipped_item_name == 'm79' && query.is_using_item"
+            },
+            {
+              "m79_reload": "query.get_equipped_item_name == 'm79' && (variable.attack_time > 0.0)"
             },
             {
               "m82": "query.get_equipped_item_name == 'm82' && query.is_using_item"
@@ -601,28 +601,6 @@
             }
           ]
         },
-        "l86_reload": {
-          "on_entry": [
-            "/scriptevent gvcv5:reload l86"
-          ],
-          "transitions": [
-            {
-              "default": "(variable.attack_time <= 0.0)"
-            }
-          ]
-        },
-        "l86": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={l86=1..}] fire:l86",
-            "/playsound empty.a1 @s[tag=!reload,scores={l86=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={l86=1..}] l86 1"
-          ],
-          "transitions": [
-            {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
-            }
-          ]
-        },
         "lazer_reload": {
           "on_entry": [
             "/scriptevent gvcv5:reload lazer"
@@ -812,6 +790,28 @@
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "m79_reload": {
+          "on_entry": [
+            "/scriptevent gvcv5:reload m79"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "m79": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,scores={m79=1..}] fire:m79",
+            "/playsound empty.a1 @s[tag=!reload,scores={m79=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m79=1..}] m79 1"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },

@@ -36,8 +36,6 @@ scoreboard objectives add glock18 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s glock18 0
 scoreboard objectives add hk416 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s hk416 0
-scoreboard objectives add l86 dummy
-execute as @a[tag=!startedv4] run scoreboard players set @s l86 0
 scoreboard objectives add lazer dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s lazer 0
 scoreboard objectives add m4 dummy
@@ -50,6 +48,8 @@ scoreboard objectives add m16a4 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m16a4 0
 scoreboard objectives add m60 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m60 0
+scoreboard objectives add m79 dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s m79 0
 scoreboard objectives add m82 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m82 0
 scoreboard objectives add m110 dummy

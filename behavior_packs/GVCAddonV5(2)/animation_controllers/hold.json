@@ -42,9 +42,6 @@
               "hk416": "query.get_equipped_item_name == 'hk416'"
             },
             {
-              "l86": "query.get_equipped_item_name == 'l86'"
-            },
-            {
               "lazer": "query.get_equipped_item_name == 'lazer'"
             },
             {
@@ -61,6 +58,9 @@
             },
             {
               "m60": "query.get_equipped_item_name == 'm60'"
+            },
+            {
+              "m79": "query.get_equipped_item_name == 'm79'"
             },
             {
               "m82": "query.get_equipped_item_name == 'm82'"
@@ -247,16 +247,6 @@
             }
           ]
         },
-        "l86": {
-          "on_entry": [
-            "/function hold/l86h"
-          ],
-          "transitions": [
-            {
-              "default": "(1.0)"
-            }
-          ]
-        },
         "lazer": {
           "on_entry": [
             "/function hold/lazerh"
@@ -310,6 +300,16 @@
         "m60": {
           "on_entry": [
             "/function hold/m60h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "m79": {
+          "on_entry": [
+            "/function hold/m79h"
           ],
           "transitions": [
             {

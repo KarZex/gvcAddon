@@ -33,7 +33,7 @@
     "damage": 1,
     "maxGunAmmo": 6,
     "reloadTime": 80,
-    "bullet": "zex:rocketm"
+    "bullet": "zex:40m"
   },
   "fire": {
     "damage": 2,
@@ -67,12 +67,6 @@
   },
   "hk416": {
     "damage": 7,
-    "maxGunAmmo": 30,
-    "reloadTime": 60,
-    "bullet": "zex:556m"
-  },
-  "l86": {
-    "damage": 6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m"
@@ -112,6 +106,12 @@
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:762m"
+  },
+  "m79": {
+    "damage": 1,
+    "maxGunAmmo": 1,
+    "reloadTime": 80,
+    "bullet": "zex:40m"
   },
   "m82": {
     "damage": 30,
@@ -237,7 +237,7 @@
     "damage": 20,
     "maxGunAmmo": 4,
     "reloadTime": 80,
-    "bullet": "zex:rocketm"
+    "bullet": "zex:40m"
   },
   "vmg": {
     "damage": 8

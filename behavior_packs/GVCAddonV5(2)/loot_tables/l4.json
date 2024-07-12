@@ -64,6 +64,20 @@
         },
         {
           "type": "item",
+          "name": "gun:m79",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "item",
           "name": "gun:m110",
           "functions": [
             {

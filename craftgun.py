@@ -58,9 +58,11 @@ for row in csv_reader:
         elif(gun_ammo == "zex:1270m"):
             ammo_name = "§c.50Cal§r"
         elif(gun_ammo == "zex:rocketm"):
-            ammo_name = "§e.Rocket§r"
+            ammo_name = "§b.Rocket§r"
         elif(gun_ammo == "zex:12m"):
             ammo_name = "§412Gauge§r"
+        elif(gun_ammo == "zex:40m"):
+            ammo_name = "§e40mmGrenade§r"
 
         #Gundata fot JS
         gundata_json["{}".format(gun_id)] = { "damage": gun_damage, "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo) }

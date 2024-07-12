@@ -940,6 +940,12 @@
     },
     "g3a3": {
       "textures": "textures/gun/g3a3"
+    },
+    "m79": {
+      "textures": "textures/gun/m79"
+    },
+    "40m": {
+      "textures": "textures/items/40m"
     }
   }
 }
