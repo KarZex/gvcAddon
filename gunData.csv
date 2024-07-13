@@ -14,11 +14,11 @@ HK416,hk416,30,zex:556m,7,6,1.25,60,1,0,F,0,F,arbullet,1,完了,Kar Zex
 Lazer,lazer,100,zex:btm,6,8,0,60,0,0,F,0,F,,1,,
 M4A1,m4,30,zex:556m,6,6,2.5,50,1,0,F,0,F,arbullet,1,完了,Kar Zex
 M9,m9,16,zex:mm9,4,3.4,0,30,4,0,F,0,T,psbullet,1,,
-MAC-10,m10,30,zex:mm9,4,3.4,2,40,0,0,F,0,T,psbullet,1,,
+MAC-10,m10,30,zex:mm9,4,3.4,2,40,0,0,F,0,T,psbullet,1,完了,Kar Zex
 M16A4,m16a4,30,zex:556m,7,8,2.5,60,1,0,F,3,F,arbullet,1,完了,Kar Zex
 M60,m60,100,zex:762m,8,6,5,100,1,0,F,0,F,lmgbullet,1,完了,Kar Zex
 M79,m79,1,zex:40m,1,1.6,2,80,19,4,F,0,F,gbullet,1,完了,プチネコ
-Barrett M82,m82,10,zex:1270m,30,12,2,100,9,0,F,0,F,srbullet,1,,
+Barrett M82,m82,10,zex:1270m,30,12,2,100,9,0,F,0,F,tankbullet,1,,
 M110 SASS,m110,20,zex:762m,12,12,1,80,5,0,F,0,F,srbullet,1,,
 M249,m249,100,zex:762m,6,8,4,100,1,0,F,0,F,lmgbullet,1,完了,Kar Zex
 M590,m590,8,zex:12m,2,3,1.5,80,10,0,F,0,F,srbullet,12,完了,Kar Zex

@@ -52,3 +52,9 @@ tile.gvcv5:structure_end_.name=
 tile.gvcv5:structure_end_.name=
 tile.gvcv5:structure_end_.name=
 tile.gvcv5:structure_end_.name=execute if entity @p[r=30] run function flag/
+tile.gvcv5:structure_end_.name=
+tile.gvcv5:structure_end_.name=
+tile.gvcv5:structure_end_.name=
+tile.gvcv5:structure_end_bunker_ne.name=
+tile.gvcv5:structure_end_bunker_cr.name=
+tile.gvcv5:structure_end_bunker_ne.name=

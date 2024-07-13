@@ -28,6 +28,7 @@ tile.gvcv5:building_submarine.name=ダンジョン_潜水艦
 tile.gvcv5:building_submarine_sn.name=ダンジョン_雪原潜水艦
 tile.gvcv5:building_airfield.name=ダンジョン_野戦飛行場
 tile.gvcv5:building_cannon_position.name=ダンジョン_旧砲台陣地
+tile.gvcv5:building_metro.name=ダンジョン_メトロ
 tile.gvcv5:building_ff.name=ダンジョン_ゲリラ駆逐艦
 tile.gvcv5:building_garrison.name=ダンジョン_駐屯地
 tile.gvcv5:building_garrison_de.name=ダンジョン_砂漠駐屯地
