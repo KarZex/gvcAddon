@@ -7,6 +7,7 @@ tag @e[type=fire:fire, tag=!sound] add sound
 execute at @e[type=fire:sar, tag=!sound] run playsound mob.blaze.shoot @a[r=28]
 tag @e[type=fire:sar, tag=!sound] add sound
 execute at @e[family=arbullet, tag=!sound] run playsound fire.r3 @a[r=28]
+execute at @e[family=m82bullet, tag=!sound] run playsound fire.m82 @a[r=28]
 execute at @e[family=akbullet, tag=!sound] run playsound fire.r1 @a[r=28]
 execute at @e[family=srbullet, tag=!sound] run playsound fire.sg @a[r=28]
 execute at @e[family=psbullet, tag=!sound] run playsound fire.hg @a[r=28]

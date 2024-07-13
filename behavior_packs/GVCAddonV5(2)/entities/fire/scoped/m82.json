@@ -12,7 +12,7 @@
       "minecraft:type_family": {
         "family": [
           "bullet",
-          "srbullet"
+          "m82bullet"
         ]
       },
       "minecraft:explode": {
@@ -31,9 +31,16 @@
             "damage": 0,
             "knockback": false
           },
-          "stick_in_ground": {}
+          "stick_in_ground": {},
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          }
         },
-        "power": 2.4000000000000004,
+        "power": 4.4,
         "gravity": 0,
         "inertia": 1.5,
         "uncertaintyBase": 0,
@@ -58,7 +65,7 @@
           "fuse_length": 0,
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
-          "power": 0,
+          "power": 4,
           "breaks_blocks": false
         }
       }

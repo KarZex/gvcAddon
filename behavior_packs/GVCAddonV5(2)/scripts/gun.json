@@ -3,279 +3,332 @@
     "damage": 7,
     "maxGunAmmo": 30,
     "reloadTime": 60,
-    "bullet": "zex:556m"
+    "bullet": "zex:556m",
+    "damageType": "override"
   },
   "ak47": {
     "damage": 6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
-    "bullet": "zex:556m"
+    "bullet": "zex:556m",
+    "damageType": "override"
   },
   "an94": {
     "damage": 6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
-    "bullet": "zex:556m"
+    "bullet": "zex:556m",
+    "damageType": "override"
   },
   "awm": {
     "damage": 16,
     "maxGunAmmo": 5,
     "reloadTime": 80,
-    "bullet": "zex:762m"
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "dp28": {
     "damage": 8,
     "maxGunAmmo": 47,
     "reloadTime": 80,
-    "bullet": "zex:762m"
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "famas": {
     "damage": 1,
     "maxGunAmmo": 6,
     "reloadTime": 80,
-    "bullet": "zex:40m"
+    "bullet": "zex:40m",
+    "damageType": "entityExplosion"
   },
   "fire": {
     "damage": 2,
     "maxGunAmmo": 30,
     "reloadTime": 60,
-    "bullet": "zex:556m"
+    "bullet": "zex:556m",
+    "damageType": "override"
   },
   "g36": {
     "damage": 6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
-    "bullet": "zex:556m"
+    "bullet": "zex:556m",
+    "damageType": "override"
   },
   "g3a3": {
     "damage": 7,
     "maxGunAmmo": 20,
     "reloadTime": 60,
-    "bullet": "zex:556m"
+    "bullet": "zex:556m",
+    "damageType": "override"
   },
   "glock17": {
     "damage": 4,
     "maxGunAmmo": 20,
     "reloadTime": 30,
-    "bullet": "zex:mm9"
+    "bullet": "zex:mm9",
+    "damageType": "override"
   },
   "glock18": {
     "damage": 4,
     "maxGunAmmo": 20,
     "reloadTime": 30,
-    "bullet": "zex:mm9"
+    "bullet": "zex:mm9",
+    "damageType": "override"
   },
   "hk416": {
     "damage": 7,
     "maxGunAmmo": 30,
     "reloadTime": 60,
-    "bullet": "zex:556m"
+    "bullet": "zex:556m",
+    "damageType": "override"
   },
   "lazer": {
     "damage": 6,
     "maxGunAmmo": 100,
     "reloadTime": 60,
-    "bullet": "zex:btm"
+    "bullet": "zex:btm",
+    "damageType": "override"
   },
   "m4": {
     "damage": 6,
     "maxGunAmmo": 30,
     "reloadTime": 50,
-    "bullet": "zex:556m"
+    "bullet": "zex:556m",
+    "damageType": "override"
   },
   "m9": {
     "damage": 4,
     "maxGunAmmo": 16,
     "reloadTime": 30,
-    "bullet": "zex:mm9"
+    "bullet": "zex:mm9",
+    "damageType": "override"
   },
   "m10": {
     "damage": 4,
     "maxGunAmmo": 30,
     "reloadTime": 40,
-    "bullet": "zex:mm9"
+    "bullet": "zex:mm9",
+    "damageType": "override"
   },
   "m16a4": {
     "damage": 7,
     "maxGunAmmo": 30,
     "reloadTime": 60,
-    "bullet": "zex:556m"
+    "bullet": "zex:556m",
+    "damageType": "override"
   },
   "m60": {
     "damage": 8,
     "maxGunAmmo": 100,
     "reloadTime": 100,
-    "bullet": "zex:762m"
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "m79": {
     "damage": 1,
     "maxGunAmmo": 1,
     "reloadTime": 80,
-    "bullet": "zex:40m"
+    "bullet": "zex:40m",
+    "damageType": "entityExplosion"
   },
   "m82": {
-    "damage": 30,
+    "damage": 95,
     "maxGunAmmo": 10,
     "reloadTime": 100,
-    "bullet": "zex:1270m"
+    "bullet": "zex:1270m",
+    "damageType": "entityExplosion"
   },
   "m110": {
     "damage": 12,
     "maxGunAmmo": 20,
     "reloadTime": 80,
-    "bullet": "zex:762m"
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "m249": {
     "damage": 6,
     "maxGunAmmo": 100,
     "reloadTime": 100,
-    "bullet": "zex:762m"
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "m590": {
     "damage": 2,
     "maxGunAmmo": 8,
     "reloadTime": 80,
-    "bullet": "zex:12m"
+    "bullet": "zex:12m",
+    "damageType": "override"
   },
   "m870": {
     "damage": 2,
     "maxGunAmmo": 4,
     "reloadTime": 80,
-    "bullet": "zex:12m"
+    "bullet": "zex:12m",
+    "damageType": "override"
   },
   "m1911": {
     "damage": 5,
     "maxGunAmmo": 8,
     "reloadTime": 30,
-    "bullet": "zex:mm9"
+    "bullet": "zex:mm9",
+    "damageType": "override"
   },
   "mg42": {
     "damage": 8,
     "maxGunAmmo": 75,
     "reloadTime": 100,
-    "bullet": "zex:762m"
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "mosin": {
     "damage": 16,
     "maxGunAmmo": 5,
     "reloadTime": 60,
-    "bullet": "zex:762m"
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "mp5": {
     "damage": 4,
     "maxGunAmmo": 30,
     "reloadTime": 60,
-    "bullet": "zex:mm9"
+    "bullet": "zex:mm9",
+    "damageType": "override"
   },
   "mp7": {
     "damage": 5,
     "maxGunAmmo": 40,
     "reloadTime": 45,
-    "bullet": "zex:mm9"
+    "bullet": "zex:mm9",
+    "damageType": "override"
   },
   "mp40": {
     "damage": 4,
     "maxGunAmmo": 20,
     "reloadTime": 45,
-    "bullet": "zex:mm9"
+    "bullet": "zex:mm9",
+    "damageType": "override"
   },
   "p90": {
     "damage": 50,
     "maxGunAmmo": 1,
     "reloadTime": 60,
-    "bullet": "zex:rocketm"
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
   },
   "pkm": {
     "damage": 8,
     "maxGunAmmo": 100,
     "reloadTime": 100,
-    "bullet": "zex:762m"
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "ppsh": {
     "damage": 4,
     "maxGunAmmo": 72,
     "reloadTime": 45,
-    "bullet": "zex:mm9"
+    "bullet": "zex:mm9",
+    "damageType": "override"
   },
   "rpg": {
     "damage": 60,
     "maxGunAmmo": 1,
     "reloadTime": 80,
-    "bullet": "zex:rocketm"
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
   },
   "scar": {
     "damage": 8,
     "maxGunAmmo": 20,
     "reloadTime": 60,
-    "bullet": "zex:762m"
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "svd": {
     "damage": 12,
     "maxGunAmmo": 10,
     "reloadTime": 60,
-    "bullet": "zex:762m"
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "tt33": {
     "damage": 7,
     "maxGunAmmo": 6,
     "reloadTime": 50,
-    "bullet": "zex:762m"
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "uzi": {
     "damage": 3,
     "maxGunAmmo": 30,
     "reloadTime": 40,
-    "bullet": "zex:mm9"
+    "bullet": "zex:mm9",
+    "damageType": "override"
   },
   "vz61": {
     "damage": 4,
     "maxGunAmmo": 20,
     "reloadTime": 40,
-    "bullet": "zex:mm9"
+    "bullet": "zex:mm9",
+    "damageType": "override"
   },
   "xm8": {
     "damage": 20,
     "maxGunAmmo": 4,
     "reloadTime": 80,
-    "bullet": "zex:40m"
+    "bullet": "zex:40m",
+    "damageType": "entityExplosion"
   },
   "vmg": {
-    "damage": 8
+    "damage": 8,
+    "damageType": "override"
   },
   "76mm": {
-    "damage": 16
+    "damage": 16,
+    "damageType": "entityExplosion"
   },
   "85mm": {
-    "damage": 20
+    "damage": 20,
+    "damageType": "entityExplosion"
   },
   "100mm": {
-    "damage": 24
+    "damage": 24,
+    "damageType": "entityExplosion"
   },
   "105mm": {
-    "damage": 30
+    "damage": 30,
+    "damageType": "entityExplosion"
   },
   "120mm": {
-    "damage": 50
+    "damage": 50,
+    "damageType": "entityExplosion"
   },
   "125mm": {
-    "damage": 100
+    "damage": 100,
+    "damageType": "entityExplosion"
   },
   "152mm": {
-    "damage": 200
+    "damage": 200,
+    "damageType": "entityExplosion"
   },
   "20mm": {
-    "damage": 8
+    "damage": 8,
+    "damageType": "override"
   },
   "23mm": {
-    "damage": 12
+    "damage": 12,
+    "damageType": "override"
   },
   "ads_dp28": {
-    "damage": 8
+    "damage": 8,
+    "damageType": "override"
   },
   "ads_m60": {
-    "damage": 8
+    "damage": 8,
+    "damageType": "override"
   },
   "ads_pkm": {
-    "damage": 8
+    "damage": 8,
+    "damageType": "override"
   }
 }

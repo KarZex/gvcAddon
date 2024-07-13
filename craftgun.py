@@ -35,6 +35,7 @@ for row in csv_reader:
         gun_burst = int(row[11])
         gun_sound = row[13]
         gun_bullet_num = int(row[14])
+        gun_damage_type = row[15]
 
         if(row[10] == "T"):
             gun_break_block = True
@@ -65,7 +66,7 @@ for row in csv_reader:
             ammo_name = "§e40mmGrenade§r"
 
         #Gundata fot JS
-        gundata_json["{}".format(gun_id)] = { "damage": gun_damage, "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo) }
+        gundata_json["{}".format(gun_id)] = { "damage": gun_damage, "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo),"damageType": "{}".format(gun_damage_type) }
 
         #player
         spawn_entity = { 
@@ -327,7 +328,7 @@ for row in csv_reader:
 
         item_json["texture_data"]["{}".format(gun_id)] = { "textures": "textures/gun/{}".format(gun_id) }
 
-        print("created {}".format(gun_id))
+        print("created {0} with {1}".format(gun_id,gun_damage_type))
     row_count += 1
 
 
@@ -346,6 +347,7 @@ for row in csv_reader2:
         gun_interval = int(row[5])
         gun_bomb =  int(row[6])
         gun_sound = row[8]
+        gun_damage_type = row[9]
 
         if(row[7] == "T"):
             gun_break_block = True
@@ -376,7 +378,7 @@ for row in csv_reader2:
         player_json["minecraft:entity"]["events"]["fire:{}".format(gun_id)] = event
         
         #Gundata fot JS
-        gundata_json["{}".format(gun_id)] = { "damage": gun_damage }
+        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
 
         #Bullet 
         with open("tool/fire.json".format(gun_id),"r") as f:
@@ -487,7 +489,7 @@ with open("resource_packs/GVCAddonV5(2)/textures/item_texture.json","w") as f:
 
 
 with open("behavior_packs/GVCAddonV5(2)/scripts/gun.json","r") as f:
-    export = "export const gunData = " 
+    export = "import { EntityDamageCause } from \"@minecraft/server\";\nexport const gunData = " 
     export += f.read()
     export += ";"
 

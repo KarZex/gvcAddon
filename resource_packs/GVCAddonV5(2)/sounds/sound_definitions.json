@@ -19,6 +19,12 @@
 			   "sounds/grenade"
 		   ]
 	   },
+	   "fire.m82": {
+		  "category": "hostile",
+		  "sounds": [
+			  "sounds/fire_m82"
+		  ]
+	  },
  		"fire.r1": {
 			"category": "hostile",
 			"sounds": [
@@ -167,12 +173,6 @@
 			"category": "hostile",
 			"sounds": [
 				"sounds/gun/m10"
-			]
-		},
- 		"fire.m82": {
-			"category": "hostile",
-			"sounds": [
-				"sounds/gun/m82"
 			]
 		},
  		"fire.m110": {

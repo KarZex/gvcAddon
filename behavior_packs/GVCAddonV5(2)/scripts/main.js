@@ -45,8 +45,9 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		
 		if (def > 1){ def = 1 }
 		let damage = gunData[`${gunName}`]["damage"] *  (1 - def);
+		let damageType = gunData[`${gunName}`]["damageType"];
         if( vict.getEffect("resistance") == undefined && vict.hasTag("antiBullet") == false ){
-            vict.applyDamage(damage,{ cause: EntityDamageCause.override,damagingEntity: e.source });
+            vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
             vict.applyKnockback(0, 0, 0, 0);
         }
 		e.projectile.triggerEvent("minecraft:explode");
