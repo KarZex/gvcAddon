@@ -184,34 +184,34 @@
             },
             "add": { "component_groups": [ "navy" ] }
          },
-		 {
-        "randomize": [
-          {
-            "weight": 1,
-            "trigger": "m16a4"
-          },
-          {
-            "weight": 2,
-            "trigger": "m4"
-          },
-          {
-            "weight": 1,
-            "trigger": "famas"
-          },
-          {
-            "weight": 1,
-            "trigger": "m110"
-          },
-          {
-            "weight": 1,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 1,
-            "trigger": "m249"
-          }
-		 ]
-		}
+         {
+            "randomize": [
+              {
+                "weight": 4,
+                "trigger": "m16a1"
+              },
+              {
+                "weight": 2,
+                "trigger": "m4"
+              },
+              {
+                "weight": 1,
+                "trigger": "famas"
+              },
+              {
+                "weight": 1,
+                "trigger": "m110"
+              },
+              {
+                "weight": 1,
+                "trigger": "mp5"
+              },
+              {
+                "weight": 1,
+                "trigger": "m249"
+              }
+         ]
+        }
 	   ]
       },
       "minecraft:entity_spawned": {
@@ -234,34 +234,34 @@
             },
             "add": { "component_groups": [ "navy" ] }
          },
-		 {
-        "randomize": [
-          {
-            "weight": 1,
-            "trigger": "m16a4"
-          },
-          {
-            "weight": 2,
-            "trigger": "m4"
-          },
-          {
-            "weight": 1,
-            "trigger": "famas"
-          },
-          {
-            "weight": 1,
-            "trigger": "m110"
-          },
-          {
-            "weight": 1,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 1,
-            "trigger": "m249"
-          }
-		 ]
-		}
+         {
+            "randomize": [
+              {
+                "weight": 4,
+                "trigger": "m16a1"
+              },
+              {
+                "weight": 2,
+                "trigger": "m4"
+              },
+              {
+                "weight": 1,
+                "trigger": "famas"
+              },
+              {
+                "weight": 1,
+                "trigger": "m110"
+              },
+              {
+                "weight": 1,
+                "trigger": "mp5"
+              },
+              {
+                "weight": 1,
+                "trigger": "m249"
+              }
+         ]
+        }
 	   ]
       },
       "minecraft:spawned_from_block": {
@@ -280,8 +280,8 @@
 		 {
         "randomize": [
           {
-            "weight": 1,
-            "trigger": "m16a4"
+            "weight": 4,
+            "trigger": "m16a1"
           },
           {
             "weight": 2,

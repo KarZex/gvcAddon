@@ -5,7 +5,7 @@
       "entries": [
         {
           "type": "item",
-          "name": "gun:m4",
+          "name": "gun:m16a1",
           "weight": 1,
           "functions": [
             {
@@ -30,8 +30,8 @@
             {
               "function": "set_count",
               "count": {
-                "min": 90,
-                "max": 90
+                "min": 128,
+                "max": 128
               }
             }
           ]
@@ -68,8 +68,8 @@
             {
               "function": "set_count",
               "count": {
-                "min": 45,
-                "max": 45
+                "min": 64,
+                "max": 64
               }
             }
           ]
