@@ -22,7 +22,7 @@ export const gunData = {
     "damageType": "override"
   },
   "awm": {
-    "damage": 16,
+    "damage": 24,
     "maxGunAmmo": 5,
     "reloadTime": 80,
     "bullet": "zex:762m",
@@ -92,7 +92,14 @@ export const gunData = {
     "damageType": "override"
   },
   "m4": {
-    "damage": 6,
+    "damage": 7,
+    "maxGunAmmo": 30,
+    "reloadTime": 50,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "m4a1": {
+    "damage": 7,
     "maxGunAmmo": 30,
     "reloadTime": 50,
     "bullet": "zex:556m",
@@ -112,8 +119,15 @@ export const gunData = {
     "bullet": "zex:mm9",
     "damageType": "override"
   },
+  "m16a1": {
+    "damage": 6,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
   "m16a4": {
-    "damage": 7,
+    "damage": 9,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -134,7 +148,7 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "m82": {
-    "damage": 95,
+    "damage": 50,
     "maxGunAmmo": 10,
     "reloadTime": 100,
     "bullet": "zex:1270m",
@@ -183,7 +197,7 @@ export const gunData = {
     "damageType": "override"
   },
   "mosin": {
-    "damage": 16,
+    "damage": 22,
     "maxGunAmmo": 5,
     "reloadTime": 60,
     "bullet": "zex:762m",

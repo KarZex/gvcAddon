@@ -946,6 +946,12 @@
     },
     "40m": {
       "textures": "textures/items/40m"
+    },
+    "m16a1": {
+      "textures": "textures/gun/m16a1"
+    },
+    "m4a1": {
+      "textures": "textures/gun/m4a1"
     }
   }
 }

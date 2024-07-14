@@ -537,6 +537,40 @@
           ]
         }
       },
+      "fire:m4a1": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m4a1"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m4a1"
+            }
+          ]
+        }
+      },
       "fire:m9": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -601,6 +635,40 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_m10"
+            }
+          ]
+        }
+      },
+      "fire:m16a1": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m16a1"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m16a1"
             }
           ]
         }
@@ -1880,6 +1948,13 @@
           ]
         }
       },
+      "fire:m4a1": {
+        "add": {
+          "component_groups": [
+            "fire:m4a1"
+          ]
+        }
+      },
       "fire:m9": {
         "add": {
           "component_groups": [
@@ -1891,6 +1966,13 @@
         "add": {
           "component_groups": [
             "fire:m10"
+          ]
+        }
+      },
+      "fire:m16a1": {
+        "add": {
+          "component_groups": [
+            "fire:m16a1"
           ]
         }
       },

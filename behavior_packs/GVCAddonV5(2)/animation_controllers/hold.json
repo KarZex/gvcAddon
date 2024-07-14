@@ -48,10 +48,16 @@
               "m4": "query.get_equipped_item_name == 'm4'"
             },
             {
+              "m4a1": "query.get_equipped_item_name == 'm4a1'"
+            },
+            {
               "m9": "query.get_equipped_item_name == 'm9'"
             },
             {
               "m10": "query.get_equipped_item_name == 'm10'"
+            },
+            {
+              "m16a1": "query.get_equipped_item_name == 'm16a1'"
             },
             {
               "m16a4": "query.get_equipped_item_name == 'm16a4'"
@@ -267,6 +273,16 @@
             }
           ]
         },
+        "m4a1": {
+          "on_entry": [
+            "/function hold/m4a1h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
         "m9": {
           "on_entry": [
             "/function hold/m9h"
@@ -280,6 +296,16 @@
         "m10": {
           "on_entry": [
             "/function hold/m10h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "m16a1": {
+          "on_entry": [
+            "/function hold/m16a1h"
           ],
           "transitions": [
             {

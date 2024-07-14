@@ -377,6 +377,24 @@
       "m4": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
+          "burst_shots": 3,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.55,
+          "attack_interval_max": 0.55,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m4"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m4.json"
+        }
+      },
+      "m4a1": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
           "burst_shots": 10,
           "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
@@ -386,10 +404,10 @@
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
-          "def": "fire:m4"
+          "def": "fire:m4a1"
         },
         "minecraft:equipment": {
-          "table": "loot_tables/gun/m4.json"
+          "table": "loot_tables/gun/m4a1.json"
         }
       },
       "m9": {
@@ -426,6 +444,24 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/m10.json"
+        }
+      },
+      "m16a1": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m16a1"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m16a1.json"
         }
       },
       "m16a4": {
@@ -486,7 +522,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 5.05,
+          "burst_interval": 3.05,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1409,6 +1445,13 @@
           ]
         }
       },
+      "m4a1": {
+        "add": {
+          "component_groups": [
+            "m4a1"
+          ]
+        }
+      },
       "m9": {
         "add": {
           "component_groups": [
@@ -1420,6 +1463,13 @@
         "add": {
           "component_groups": [
             "m10"
+          ]
+        }
+      },
+      "m16a1": {
+        "add": {
+          "component_groups": [
+            "m16a1"
           ]
         }
       },

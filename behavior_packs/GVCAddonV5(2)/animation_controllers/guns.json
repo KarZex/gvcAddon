@@ -105,6 +105,12 @@
               "m4_reload": "query.get_equipped_item_name == 'm4' && (variable.attack_time > 0.0)"
             },
             {
+              "m4a1": "query.get_equipped_item_name == 'm4a1' && query.is_using_item"
+            },
+            {
+              "m4a1_reload": "query.get_equipped_item_name == 'm4a1' && (variable.attack_time > 0.0)"
+            },
+            {
               "m9": "query.get_equipped_item_name == 'm9' && query.is_using_item"
             },
             {
@@ -115,6 +121,12 @@
             },
             {
               "m10_reload": "query.get_equipped_item_name == 'm10' && (variable.attack_time > 0.0)"
+            },
+            {
+              "m16a1": "query.get_equipped_item_name == 'm16a1' && query.is_using_item"
+            },
+            {
+              "m16a1_reload": "query.get_equipped_item_name == 'm16a1' && (variable.attack_time > 0.0)"
             },
             {
               "m16a4": "query.get_equipped_item_name == 'm16a4' && query.is_using_item"
@@ -659,6 +671,52 @@
           ],
           "transitions": [
             {
+              "m41": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "m41": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,scores={m4=1..}] fire:m4",
+            "/playsound empty.a1 @s[tag=!reload,scores={m4=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m4=1..}] m4 1"
+          ],
+          "transitions": [
+            {
+              "m42": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "m42": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,scores={m4=1..}] fire:m4",
+            "/playsound empty.a1 @s[tag=!reload,scores={m4=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m4=1..}] m4 1"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 4 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "m4a1_reload": {
+          "on_entry": [
+            "/scriptevent gvcv5:reload m4a1"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "m4a1": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,scores={m4a1=1..}] fire:m4a1",
+            "/playsound empty.a1 @s[tag=!reload,scores={m4a1=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m4a1=1..}] m4a1 1"
+          ],
+          "transitions": [
+            {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
@@ -722,6 +780,28 @@
             },
             {
               "m10": "query.get_equipped_item_name == 'm10' && query.is_using_item"
+            }
+          ]
+        },
+        "m16a1_reload": {
+          "on_entry": [
+            "/scriptevent gvcv5:reload m16a1"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "m16a1": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,scores={m16a1=1..}] fire:m16a1",
+            "/playsound empty.a1 @s[tag=!reload,scores={m16a1=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m16a1=1..}] m16a1 1"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -833,7 +913,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 99 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 59 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },

@@ -40,10 +40,14 @@ scoreboard objectives add lazer dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s lazer 0
 scoreboard objectives add m4 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m4 0
+scoreboard objectives add m4a1 dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s m4a1 0
 scoreboard objectives add m9 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m9 0
 scoreboard objectives add m10 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m10 0
+scoreboard objectives add m16a1 dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s m16a1 0
 scoreboard objectives add m16a4 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m16a4 0
 scoreboard objectives add m60 dummy

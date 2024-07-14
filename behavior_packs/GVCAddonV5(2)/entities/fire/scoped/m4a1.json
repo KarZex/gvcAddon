@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "fire:ads_m16a4",
+      "identifier": "fire:ads_m4a1",
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
@@ -33,7 +33,7 @@
           },
           "stick_in_ground": {}
         },
-        "power": 1.8,
+        "power": 1.4000000000000001,
         "gravity": 0,
         "inertia": 1.5,
         "uncertaintyBase": 0,
