@@ -232,9 +232,10 @@ for row in csv_reader:
         #function
         with open("behavior_packs/GVCAddonV5(2)/functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
             f.write("titleraw @s[tag=!reload] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
-            if(gun_onehand): f.write("playanimation @s[tag=!scope] animation.onehand.first none 0 \"query.is_sneaking\"\n")
+            if(gun_onehand): f.write("playanimation @s animation.onehand.first none 0 \"!query.is_item_equipped\"\n")
             else: f.write("playanimation @s animation.item.first none 0 \"!query.is_item_equipped\"\n")
             f.write("hud @s[tag=scope] hide crosshair\n")
+            f.write("execute if entity @s[tag=!reload,scores={{{0}=0}},hasitem={{item={1}}}] run scriptevent gvcv5:reload {0}\n".format(gun_id,gun_ammo))
             f.write("hud @s[tag=!scope] reset crosshair\n")
 
 

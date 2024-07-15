@@ -21,6 +21,12 @@
               "red": "query.get_equipped_item_name == 'red' && query.item_remaining_use_duration > 0.10"
             },
             {
+              "fire": "query.get_equipped_item_name == 'fire' && query.is_using_item"
+            },
+            {
+              "fire_reload": "query.get_equipped_item_name == 'fire' && (variable.attack_time > 0.0)"
+            },
+            {
               "ak12": "query.get_equipped_item_name == 'ak12' && query.is_using_item"
             },
             {
@@ -55,12 +61,6 @@
             },
             {
               "famas_reload": "query.get_equipped_item_name == 'famas' && (variable.attack_time > 0.0)"
-            },
-            {
-              "fire": "query.get_equipped_item_name == 'fire' && query.is_using_item"
-            },
-            {
-              "fire_reload": "query.get_equipped_item_name == 'fire' && (variable.attack_time > 0.0)"
             },
             {
               "g36": "query.get_equipped_item_name == 'g36' && query.is_using_item"
@@ -331,6 +331,46 @@
             }
           ]
         },
+        "fire_reload": {
+          "on_entry": [
+            "/scriptevent gvcv5:reload fire"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "fire": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,scores={fire=1..}] fire:fire",
+            "/playsound empty.a1 @s[tag=!reload,scores={fire=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={fire=1..}] fire 1"
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_using_item"
+            },
+            {
+              "fireii": "query.get_equipped_item_name == 'fire' && query.is_using_item"
+            }
+          ]
+        },
+        "fireii": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,scores={fire=1..}] fire:fire",
+            "/playsound empty.a1 @s[tag=!reload,scores={fire=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={fire=1..}] fire 1"
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_using_item"
+            },
+            {
+              "fire": "query.get_equipped_item_name == 'fire' && query.is_using_item"
+            }
+          ]
+        },
         "ak12_reload": {
           "on_entry": [
             "/scriptevent gvcv5:reload ak12"
@@ -460,28 +500,6 @@
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
-            }
-          ]
-        },
-        "fire_reload": {
-          "on_entry": [
-            "/scriptevent gvcv5:reload fire"
-          ],
-          "transitions": [
-            {
-              "default": "(variable.attack_time <= 0.0)"
-            }
-          ]
-        },
-        "fire": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={fire=1..}] fire:fire",
-            "/playsound empty.a1 @s[tag=!reload,scores={fire=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={fire=1..}] fire 1"
-          ],
-          "transitions": [
-            {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1187,25 +1205,7 @@
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
-            },
-            {
-              "mp40ii": "query.get_equipped_item_name == 'mp40' && query.is_using_item"
-            }
-          ]
-        },
-        "mp40ii": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,scores={mp40=1..}] fire:mp40",
-            "/playsound empty.a1 @s[tag=!reload,scores={mp40=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={mp40=1..}] mp40 1"
-          ],
-          "transitions": [
-            {
-              "default": "!query.is_using_item"
-            },
-            {
-              "mp40": "query.get_equipped_item_name == 'mp40' && query.is_using_item"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },

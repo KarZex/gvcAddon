@@ -24,8 +24,6 @@ scoreboard objectives add dp28 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s dp28 47
 scoreboard objectives add famas dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s famas 6
-scoreboard objectives add fire dummy
-execute as @a[tag=!startedv4] run scoreboard players set @s fire 30
 scoreboard objectives add g36 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s g36 30
 scoreboard objectives add g3a3 dummy

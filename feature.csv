@@ -25,7 +25,7 @@ name,blockname(java),id,old_id,x方向の長さ,z方向の長さ,深さ,確率,�
 ダンジョン_鉄塔,gvcr2_block_building_latticetower,latticetower,,16,16,6,1,,F,any,;plains,;forest,,,,,,,,,,,,,
 ダンジョン_山岳鉄塔,gvcr2_block_building_latticetower_mt,latticetower_mt,,16,16,6,1,,F,any,;windswept_hills,,,,,,,,,,,,,,
 ダンジョン_雪原鉄塔,gvcr2_block_building_latticetower_sn,latticetower_sn,,16,16,6,1,,F,any,;cold,;ice,,,,,,,,,,,,,
-ダンジョン_潜水艦,gvcr2_block_building_submarine,submarine,,84,19,9,0.25,,T,any,;ocean,,,,,,,,,,,,,,
+ダンジョン_潜水艦,gvcr2_block_building_submarine,submarine,,84,19,9,0.4,,T,any,;ocean,,,,,,,,,,,,,,
 ダンジョン_雪原潜水艦,gvcr2_block_building_submarine_sn,submarine_sn,,96,32,10,0.25,,F,any,;cold,;ice,,,,,,,,,,,,,
 ダンジョン_野戦飛行場,gvcr2_block_building_airfield,airfield,dm1,64,48,10,0.1,M,F,any,;plains,;forest,,,,,,,,,,,,,
 ダンジョン_旧砲台陣地,gvcr2_block_building_cannon_position,cannon_position,dm2,64,64,10,0.1,M,F,all,;overworld,F;ocean,F;river,,,,,,,,,,,,

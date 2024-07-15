@@ -16,16 +16,16 @@
       "fire": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 5,
+          "burst_shots": 10,
           "burst_interval": 0.05,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
           "attack_interval_max": 3.0,
-          "attack_radius": 24.0
+          "attack_radius": 20.0
         },
         "minecraft:shooter": {
-          "def": "fire:ads_fire"
+          "def": "fire:fire"
         }
       }
     },

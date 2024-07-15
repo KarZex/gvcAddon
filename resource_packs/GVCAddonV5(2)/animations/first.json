@@ -94,12 +94,12 @@
 				},
 				"guncube": {
 					"rotation": {
-						"0.0": [-1, 0, -0.375],
-						"5.0": [-1, 0, -0.37]
+						"0.0": [-2.1, 0, -0.18],
+						"5.0": [-2.1, 0, -0.18]
 					},
 					"position": {
-						"0.0": [0, 0, -3],
-						"5.0": [0, 0, -3]
+						"0.0": [0, 10, -3],
+						"5.0": [0, 10, -3]
 					}
 				}
 			}
@@ -317,6 +317,27 @@
 				}
 			}
 		},
+		"animation.onehand.first": {
+			"animation_length": 0.5,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						"variable.is_first_person?(variable.is_sneaking?0:-6.30085):(query.target_x_rotation - 90.0 + math.sin(query.life_time * 76.8) * 2.865 - this)",
+						"variable.is_first_person?(variable.is_sneaking?0:37.71023):(query.target_y_rotation - 5.73)",
+						"variable.is_first_person?(variable.is_sneaking?0:64.81843):((math.cos(query.life_time * 103.2) * 2.865) + 2.865)"
+					],
+					"position": ["variable.is_first_person?(variable.is_sneaking?0:-3):0", "variable.is_first_person?(variable.is_sneaking?0:8):0", "variable.is_first_person?(variable.is_sneaking?0:-9):0"]
+				},
+				"leftArm": {
+					"rotation": [
+						"(query.target_x_rotation - 90.0 - math.sin(query.life_time * 76.8) * 2.865 - this)",
+						"(query.target_y_rotation + 28.65)",
+						"(-(math.cos(query.life_time * 103.2) * 2.865) - 2.865)"
+					],
+					"scale": "variable.is_first_person?0:1"
+				}
+			}
+		},
 		"animation.mob.third": {
 			"animation_length": 0.5,
 			"loop": true,
@@ -334,19 +355,6 @@
 						"(query.target_y_rotation + 28.65)",
 						"(-(math.cos(query.life_time * 103.2) * 2.865) - 2.865)"
 					]
-				}
-			}
-		},
-		"animation.onehand.first": {
-			"animation_length": 0.5,
-			"bones": {
-				"rightArm": {
-					"rotation": ["variable.is_first_person?-6.30085:-75", "variable.is_first_person?37.71023:0", "variable.is_first_person?64.81843:0"],
-					"position": ["variable.is_first_person?-3:0", "variable.is_first_person?8:0", "variable.is_first_person?-9:0"]
-				},
-				"leftArm": {
-					"rotation": [-90, 50, 0],
-					"scale": "variable.is_first_person?0:1"
 				}
 			}
 		},

@@ -59,6 +59,19 @@
             "target": "self"
           }
         }
+      },
+      "fire:fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:fire"
+            }
+          ]
+        }
       }
     },
 
@@ -240,6 +253,13 @@
       "minecraft:remove_raid_trigger": {
         "remove": {
           "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      },
+      "fire:fire": {
+        "add": {
+          "component_groups": [
+            "fire:fire"
+          ]
         }
       }
     }

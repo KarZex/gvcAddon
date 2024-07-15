@@ -1,5 +1,12 @@
 import { EntityDamageCause } from "@minecraft/server";
 export const gunData = {
+  "fire": {
+    "damage": 5,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
   "ak12": {
     "damage": 7,
     "maxGunAmmo": 30,
@@ -41,13 +48,6 @@ export const gunData = {
     "reloadTime": 80,
     "bullet": "zex:40m",
     "damageType": "entityExplosion"
-  },
-  "fire": {
-    "damage": 2,
-    "maxGunAmmo": 30,
-    "reloadTime": 60,
-    "bullet": "zex:556m",
-    "damageType": "override"
   },
   "g36": {
     "damage": 6,
@@ -239,7 +239,7 @@ export const gunData = {
     "damageType": "override"
   },
   "ppsh": {
-    "damage": 4,
+    "damage": 5,
     "maxGunAmmo": 72,
     "reloadTime": 45,
     "bullet": "zex:mm9",

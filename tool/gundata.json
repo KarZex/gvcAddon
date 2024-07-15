@@ -1,1 +1,9 @@
-{}
+{
+    "fire": {
+      "damage": 5,
+      "maxGunAmmo": 30,
+      "reloadTime": 60,
+      "bullet": "zex:556m",
+      "damageType": "override"
+    }
+}

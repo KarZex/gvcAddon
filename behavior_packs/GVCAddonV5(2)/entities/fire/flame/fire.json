@@ -15,7 +15,7 @@
         ]
       },
       "minecraft:explode": {
-        "fuseLength": 5,
+        "fuseLength": 1,
         "fuseLit": true,
         "power": 0,
         "causesFire": false
@@ -28,16 +28,20 @@
         "onHit": {
           "impact_damage": {
             "damage": 0,
+            "catch_fire": true,
             "knockback": false
+          },
+          "catch_fire": {
+            "fireAffectedByGriefing": true
           },
           "stick_in_ground": {}
         },
-        "power": 0.4,
+        "power": 0.05,
         "gravity": 0,
         "inertia": 1.5,
-        "uncertaintyBase": 10.0,
+        "uncertaintyBase": 5.0,
         "uncertaintyMultiplier": 0,
-        "catchFire": false,
+        "catchFire": true,
         "anchor": 1
       },
       "minecraft:physics": {}

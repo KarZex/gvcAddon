@@ -4,7 +4,21 @@
     "controller.animation.hold": {
       "states": {
         "default": {
-          "transitions": []
+          "transitions": [
+            {
+              "fire": "query.get_equipped_item_name == 'fire'"
+            }
+          ]
+        },
+        "fire": {
+          "on_entry": [
+            "/function hold/fireh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
         }
       }
     }
