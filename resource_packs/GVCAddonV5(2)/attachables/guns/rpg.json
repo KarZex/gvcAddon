@@ -2,19 +2,19 @@
   "format_version": "1.16.100",
   "minecraft:attachable": {
     "description": {
-      "identifier": "gun:m870",
+      "identifier": "gun:rpg",
       "materials": {
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/models/m870.png"
+        "default": "textures/models/rpg.png"
       },
       "geometry": {
-        "default": "geometry.m870"
+        "default": "geometry.rpg"
       },
       "animations": {
-        "first": "animation.m870.first",
-        "ads": "animation.m16a4.ads",
+        "first": "animation.ak47.first2",
+        "ads": "animation.ak47.ads3",
         "third": "animation.item.third2"
       },
       "scripts": {

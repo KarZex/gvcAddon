@@ -2,15 +2,15 @@
   "format_version": "1.16.100",
   "minecraft:attachable": {
     "description": {
-      "identifier": "gun:m870",
+      "identifier": "gun:m1014",
       "materials": {
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/models/m870.png"
+        "default": "textures/models/m1014.png"
       },
       "geometry": {
-        "default": "geometry.m870"
+        "default": "geometry.m1014"
       },
       "animations": {
         "first": "animation.m870.first",

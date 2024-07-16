@@ -36,6 +36,7 @@ for row in csv_reader:
         gun_sound = row[13]
         gun_bullet_num = int(row[14])
         gun_damage_type = row[15]
+        gun_fullauto = int(row[16])
 
         if(row[10] == "T"):
             gun_break_block = True
@@ -122,18 +123,32 @@ for row in csv_reader:
 
         if gun_burst == 0:
             if gun_interval > 0:
-                BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
-                    "on_entry": [
-                        "/event entity @s[tag=!reload,scores={{{0}=1..}}] fire:{0}".format(gun_id),
-                        "/playsound empty.a1 @s[tag=!reload,scores={{{0}=0}}] ~~~".format(gun_id),
-                        "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
-                    ],
-                    "transitions": [
-                        {
-                            "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval - 1)
-                        }
-                    ]
-                }
+                if gun_fullauto == 1:
+                    BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
+                        "on_entry": [
+                            "/event entity @s[tag=!reload,scores={{{0}=1..}}] fire:{0}".format(gun_id),
+                            "/playsound empty.a1 @s[tag=!reload,scores={{{0}=0}}] ~~~".format(gun_id),
+                            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                        ],
+                        "transitions": [
+                            {
+                                "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval - 1)
+                            }
+                        ]
+                    }
+                else:
+                    BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
+                        "on_entry": [
+                            "/event entity @s[tag=!reload,scores={{{0}=1..}}] fire:{0}".format(gun_id),
+                            "/playsound empty.a1 @s[tag=!reload,scores={{{0}=0}}] ~~~".format(gun_id),
+                            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                        ],
+                        "transitions": [
+                            {
+                                "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);".format(gun_interval - 1)
+                            }
+                        ]
+                    }
 
             else:
                 BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
@@ -327,7 +342,7 @@ for row in csv_reader:
         with open("resource_packs/GVCAddonV5(2)/render_controllers/first_person.json","w") as f:
             json.dump(gun_entity,f,indent=2)
 
-        item_json["texture_data"]["{}".format(gun_id)] = { "textures": "textures/gun/{}".format(gun_id) }
+        item_json["texture_data"]["{}".format(gun_id)] = { "textures": "textures/items/gun/{}".format(gun_id) }
 
         print("created {0} with {1}".format(gun_id,gun_damage_type))
     row_count += 1

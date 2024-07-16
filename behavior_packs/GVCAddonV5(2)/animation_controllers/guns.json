@@ -177,6 +177,12 @@
               "m870_reload": "query.get_equipped_item_name == 'm870' && (variable.attack_time > 0.0)"
             },
             {
+              "m1014": "query.get_equipped_item_name == 'm1014' && query.is_using_item"
+            },
+            {
+              "m1014_reload": "query.get_equipped_item_name == 'm1014' && (variable.attack_time > 0.0)"
+            },
+            {
               "m1911": "query.get_equipped_item_name == 'm1911' && query.is_using_item"
             },
             {
@@ -371,6 +377,13 @@
             }
           ]
         },
+        "nouse": {
+          "transitions": [
+            {
+              "default": "!query.is_using_item"
+            }
+          ]
+        },
         "ak12_reload": {
           "on_entry": [
             "/scriptevent gvcv5:reload ak12"
@@ -455,7 +468,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -499,7 +512,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -565,7 +578,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -757,7 +770,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -909,7 +922,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -931,7 +944,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 59 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 59 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -953,7 +966,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 6 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -997,7 +1010,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 9 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -1019,7 +1032,29 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 9 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+            }
+          ]
+        },
+        "m1014_reload": {
+          "on_entry": [
+            "/scriptevent gvcv5:reload m1014"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "m1014": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,scores={m1014=1..}] fire:m1014",
+            "/playsound empty.a1 @s[tag=!reload,scores={m1014=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m1014=1..}] m1014 1"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -1041,7 +1076,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 5 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 5 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -1103,7 +1138,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -1227,7 +1262,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -1293,7 +1328,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -1337,7 +1372,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 6 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -1359,7 +1394,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 7 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 5 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         },
@@ -1461,7 +1496,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
             }
           ]
         }

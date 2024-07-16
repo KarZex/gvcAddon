@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "fire:ads_hk416",
+      "identifier": "fire:m1014",
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
@@ -12,7 +12,7 @@
       "minecraft:type_family": {
         "family": [
           "bullet",
-          "arbullet"
+          "srbullet"
         ]
       },
       "minecraft:explode": {
@@ -33,10 +33,10 @@
           },
           "stick_in_ground": {}
         },
-        "power": 1.4000000000000001,
+        "power": 0.6000000000000001,
         "gravity": 0,
         "inertia": 1.5,
-        "uncertaintyBase": 0,
+        "uncertaintyBase": 10.0,
         "uncertaintyMultiplier": 0,
         "catchFire": false,
         "anchor": 1

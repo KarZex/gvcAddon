@@ -109,6 +109,13 @@
               "fire": "query.get_equipped_item_name == 'fire' && query.is_using_item"
             }
           ]
+        },
+        "nouse": {
+          "transitions": [
+            {
+              "default": "!query.is_using_item"
+            }
+          ]
         }
       }
     }

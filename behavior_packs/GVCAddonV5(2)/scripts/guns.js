@@ -8,7 +8,7 @@ export const gunData = {
     "damageType": "override"
   },
   "ak12": {
-    "damage": 7,
+    "damage": 8,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -50,14 +50,14 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "g36": {
-    "damage": 6,
+    "damage": 8,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
     "damageType": "override"
   },
   "g3a3": {
-    "damage": 7,
+    "damage": 8,
     "maxGunAmmo": 20,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -78,9 +78,9 @@ export const gunData = {
     "damageType": "override"
   },
   "hk416": {
-    "damage": 7,
+    "damage": 8,
     "maxGunAmmo": 30,
-    "reloadTime": 60,
+    "reloadTime": 50,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -182,6 +182,13 @@ export const gunData = {
     "bullet": "zex:12m",
     "damageType": "override"
   },
+  "m1014": {
+    "damage": 2,
+    "maxGunAmmo": 8,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
   "m1911": {
     "damage": 5,
     "maxGunAmmo": 8,
@@ -253,7 +260,7 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "scar": {
-    "damage": 8,
+    "damage": 10,
     "maxGunAmmo": 20,
     "reloadTime": 60,
     "bullet": "zex:762m",

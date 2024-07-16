@@ -33,7 +33,7 @@
       "textures": "textures/items/km"
     },
     "an94": {
-      "textures": "textures/gun/an94"
+      "textures": "textures/items/gun/an94"
     },
     "trenchclub": {
       "textures": "textures/items/trenchclub"
@@ -78,7 +78,7 @@
       "textures": "textures/items/airborne3"
     },
     "mp7": {
-      "textures": "textures/gun/mp7"
+      "textures": "textures/items/gun/mp7"
     },
     "amp7": {
       "textures": "textures/ammo/mp7"
@@ -102,37 +102,37 @@
       "textures": "textures/ammo/t89"
     },
     "ak12": {
-      "textures": "textures/gun/ak12"
+      "textures": "textures/items/gun/ak12"
     },
     "aak12": {
       "textures": "textures/ammo/ak12"
     },
     "dp28": {
-      "textures": "textures/gun/dp28"
+      "textures": "textures/items/gun/dp28"
     },
     "dp28m": {
       "textures": "textures/ammo/dp28"
     },
     "famas": {
-      "textures": "textures/gun/famas"
+      "textures": "textures/items/gun/famas"
     },
     "famasm": {
       "textures": "textures/ammo/famas"
     },
     "fire": {
-      "textures": "textures/gun/fire"
+      "textures": "textures/items/gun/fire"
     },
     "firem": {
       "textures": "textures/ammo/fire"
     },
     "glock17": {
-      "textures": "textures/gun/glock17"
+      "textures": "textures/items/gun/glock17"
     },
     "glock17m": {
       "textures": "textures/ammo/glock17"
     },
     "glock18": {
-      "textures": "textures/gun/glock18"
+      "textures": "textures/items/gun/glock18"
     },
     "glock18m": {
       "textures": "textures/ammo/glock18"
@@ -150,43 +150,43 @@
       "textures": "textures/ammo/lewis"
     },
     "m9": {
-      "textures": "textures/gun/m9"
+      "textures": "textures/items/gun/m9"
     },
     "m9m": {
       "textures": "textures/ammo/m9"
     },
     "m10": {
-      "textures": "textures/gun/m10"
+      "textures": "textures/items/gun/m10"
     },
     "m10m": {
       "textures": "textures/ammo/m10"
     },
     "m82": {
-      "textures": "textures/gun/m82"
+      "textures": "textures/items/gun/m82"
     },
     "m82m": {
       "textures": "textures/ammo/m82"
     },
     "m110": {
-      "textures": "textures/gun/m110"
+      "textures": "textures/items/gun/m110"
     },
     "m110m": {
       "textures": "textures/ammo/m110"
     },
     "mg42": {
-      "textures": "textures/gun/mg42"
+      "textures": "textures/items/gun/mg42"
     },
     "mg42m": {
       "textures": "textures/ammo/mg42"
     },
     "mp40": {
-      "textures": "textures/gun/mp40"
+      "textures": "textures/items/gun/mp40"
     },
     "mp40m": {
       "textures": "textures/ammo/mp40"
     },
     "ppsh": {
-      "textures": "textures/gun/ppsh"
+      "textures": "textures/items/gun/ppsh"
     },
     "ppshm": {
       "textures": "textures/ammo/ppsh"
@@ -210,19 +210,19 @@
       "textures": "textures/ammo/thom"
     },
     "uzi": {
-      "textures": "textures/gun/uzi"
+      "textures": "textures/items/gun/uzi"
     },
     "uzim": {
       "textures": "textures/ammo/uzi"
     },
     "vz61": {
-      "textures": "textures/gun/vz61"
+      "textures": "textures/items/gun/vz61"
     },
     "vz61m": {
       "textures": "textures/ammo/vz61"
     },
     "xm8": {
-      "textures": "textures/gun/xm8"
+      "textures": "textures/items/gun/xm8"
     },
     "xm8m": {
       "textures": "textures/ammo/xm8"
@@ -243,7 +243,7 @@
       "textures": "textures/items/tank"
     },
     "ak47": {
-      "textures": "textures/gun/ak47"
+      "textures": "textures/items/gun/ak47"
     },
     "f1": {
       "textures": "textures/items/f1"
@@ -252,7 +252,7 @@
       "textures": "textures/ammo/ak47"
     },
     "g36": {
-      "textures": "textures/gun/g36"
+      "textures": "textures/items/gun/g36"
     },
     "g36m": {
       "textures": "textures/ammo/g36"
@@ -264,25 +264,25 @@
       "textures": "textures/ammo/l86"
     },
     "mosin": {
-      "textures": "textures/gun/mosin"
+      "textures": "textures/items/gun/mosin"
     },
     "mosinm": {
       "textures": "textures/ammo/mosin"
     },
     "tt33": {
-      "textures": "textures/gun/tt33"
+      "textures": "textures/items/gun/tt33"
     },
     "tt33m": {
       "textures": "textures/ammo/tt33"
     },
     "m249": {
-      "textures": "textures/gun/m249"
+      "textures": "textures/items/gun/m249"
     },
     "m249m": {
       "textures": "textures/ammo/m249"
     },
     "hk416": {
-      "textures": "textures/gun/hk416"
+      "textures": "textures/items/gun/hk416"
     },
     "hk416m": {
       "textures": "textures/ammo/hk416"
@@ -300,31 +300,31 @@
       "textures": "textures/ammo/aug"
     },
     "awm": {
-      "textures": "textures/gun/awm"
+      "textures": "textures/items/gun/awm"
     },
     "awmm": {
       "textures": "textures/ammo/awm"
     },
     "lazer": {
-      "textures": "textures/gun/lazer"
+      "textures": "textures/items/gun/lazer"
     },
     "lazerm": {
       "textures": "textures/ammo/lazer"
     },
     "m4": {
-      "textures": "textures/gun/m4"
+      "textures": "textures/items/gun/m4"
     },
     "m4m": {
       "textures": "textures/ammo/m4"
     },
     "m1911": {
-      "textures": "textures/gun/m1911"
+      "textures": "textures/items/gun/m1911"
     },
     "m1911m": {
       "textures": "textures/ammo/m1911"
     },
     "m16a4": {
-      "textures": "textures/gun/m16a4"
+      "textures": "textures/items/gun/m16a4"
     },
     "m16a4m": {
       "textures": "textures/ammo/m16a4"
@@ -336,25 +336,25 @@
       "textures": "textures/ammo/bar"
     },
     "mp5": {
-      "textures": "textures/gun/mp5"
+      "textures": "textures/items/gun/mp5"
     },
     "mp5m": {
       "textures": "textures/ammo/mp5"
     },
     "p90": {
-      "textures": "textures/gun/p90"
+      "textures": "textures/items/gun/p90"
     },
     "p90m": {
       "textures": "textures/ammo/p90"
     },
     "rpg": {
-      "textures": "textures/gun/rpg"
+      "textures": "textures/items/gun/rpg"
     },
     "rpgm": {
       "textures": "textures/ammo/rpg"
     },
     "scar": {
-      "textures": "textures/gun/scar"
+      "textures": "textures/items/gun/scar"
     },
     "scarm": {
       "textures": "textures/ammo/scar"
@@ -363,7 +363,7 @@
       "textures": "textures/ammo/scarh"
     },
     "svd": {
-      "textures": "textures/gun/svd"
+      "textures": "textures/items/gun/svd"
     },
     "b1": {
       "textures": "textures/items/b1"
@@ -738,7 +738,7 @@
       "textures": "textures/items/m41"
     },
     "m60": {
-      "textures": "textures/gun/m60"
+      "textures": "textures/items/gun/m60"
     },
     "kv2": {
       "textures": "textures/items/kv2"
@@ -801,13 +801,13 @@
       "textures": "textures/items/m4"
     },
     "m870": {
-      "textures": "textures/gun/m870"
+      "textures": "textures/items/gun/m870"
     },
     "12m": {
       "textures": "textures/items/12m"
     },
     "m590": {
-      "textures": "textures/gun/m590"
+      "textures": "textures/items/gun/m590"
     },
     "g_heri": {
       "textures": "textures/items/g_heri"
@@ -837,7 +837,7 @@
       "textures": "textures/items/zu23"
     },
     "pkm": {
-      "textures": "textures/gun/pkm"
+      "textures": "textures/items/gun/pkm"
     },
     "m60a1": {
       "textures": "textures/items/m60a1"
@@ -939,19 +939,22 @@
       "textures": "textures/items/fv101"
     },
     "g3a3": {
-      "textures": "textures/gun/g3a3"
+      "textures": "textures/items/gun/g3a3"
     },
     "m79": {
-      "textures": "textures/gun/m79"
+      "textures": "textures/items/gun/m79"
     },
     "40m": {
       "textures": "textures/items/40m"
     },
     "m16a1": {
-      "textures": "textures/gun/m16a1"
+      "textures": "textures/items/gun/m16a1"
     },
     "m4a1": {
-      "textures": "textures/gun/m4a1"
+      "textures": "textures/items/gun/m4a1"
+    },
+    "m1014": {
+      "textures": "textures/items/gun/m1014"
     }
   }
 }

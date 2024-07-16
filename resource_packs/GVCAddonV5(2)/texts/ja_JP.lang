@@ -252,6 +252,7 @@ item.gun:m79=M79
 item.gun:m16a1=M16A1
 item.gun:m16a2=M16A2
 item.gun:m4a1=M4A1
+item.gun:m1014=M1014
 
 tile.gvcv5:good1.name=死体
 tile.gvcv5:good2.name=スクラップ

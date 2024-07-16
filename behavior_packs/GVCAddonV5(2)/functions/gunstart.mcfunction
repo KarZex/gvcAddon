@@ -9,6 +9,9 @@ execute as @s[tag=!startedv4] run scoreboard players set @s scool 0
 execute as @s[tag=!startedv4] run scoreboard players set @s flag 0
 execute as @s run scoreboard players set @s reloading 0
 
+scoreboard objectives add fire dummy
+execute as @s[tag=!startedv4] run scoreboard players set @s fire 30
+
 execute at @s[tag=!startedv4] run fill ^^^2 ^^^2 gvcv5:supplies
 #guns
 
@@ -62,6 +65,8 @@ scoreboard objectives add m590 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m590 8
 scoreboard objectives add m870 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m870 4
+scoreboard objectives add m1014 dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s m1014 8
 scoreboard objectives add m1911 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m1911 8
 scoreboard objectives add mg42 dummy
