@@ -164,168 +164,7 @@
     },
 
     "events": {
-      "minecraft:entity_transformed": {
-        "sequence": [
-          {
-          "add": {
-            "component_groups": [
-              "can_despawn"
-            ]
-          }
-        },
-        {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "has_biome_tag",
-                  "value": "ocean"
-                }
-              ]
-            },
-            "add": { "component_groups": [ "navy" ] }
-         },
-         {
-            "randomize": [
-              {
-                "weight": 4,
-                "trigger": "m16a1"
-              },
-              {
-                "weight": 2,
-                "trigger": "m4"
-              },
-              {
-                "weight": 1,
-                "trigger": "famas"
-              },
-              {
-                "weight": 1,
-                "trigger": "m110"
-              },
-              {
-                "weight": 1,
-                "trigger": "mp5"
-              },
-              {
-                "weight": 1,
-                "trigger": "m249"
-              }
-         ]
-        }
-	   ]
-      },
-      "minecraft:entity_spawned": {
-        "sequence": [
-          {
-          "add": {
-            "component_groups": [
-              "can_despawn"
-            ]
-          }
-        },
-        {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "has_biome_tag",
-                  "value": "ocean"
-                }
-              ]
-            },
-            "add": { "component_groups": [ "navy" ] }
-         },
-         {
-            "randomize": [
-              {
-                "weight": 4,
-                "trigger": "m16a1"
-              },
-              {
-                "weight": 2,
-                "trigger": "m4"
-              },
-              {
-                "weight": 1,
-                "trigger": "famas"
-              },
-              {
-                "weight": 1,
-                "trigger": "m110"
-              },
-              {
-                "weight": 1,
-                "trigger": "mp5"
-              },
-              {
-                "weight": 1,
-                "trigger": "m249"
-              }
-         ]
-        }
-	   ]
-      },
-      "minecraft:spawned_from_block": {
-        "sequence": [
-        {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "has_biome_tag",
-                  "value": "ocean"
-                }
-              ]
-            },
-            "add": { "component_groups": [ "navy" ] }
-         },
-		 {
-        "randomize": [
-          {
-            "weight": 4,
-            "trigger": "m16a1"
-          },
-          {
-            "weight": 2,
-            "trigger": "m4"
-          },
-          {
-            "weight": 1,
-            "trigger": "famas"
-          },
-          {
-            "weight": 1,
-            "trigger": "m110"
-          },
-          {
-            "weight": 1,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 1,
-            "trigger": "m249"
-          }
-		 ]
-		}
-	   ]
-      },
-      "minecraft:spawned_from_air": {
-        "sequence": [
-          {
-          "queue_command": {
-            "command":[ "replaceitem entity @s slot.armor.chest 0 gvcv5:parachute" ]
-          }
-        },
-        {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "has_biome_tag",
-                  "value": "ocean"
-                }
-              ]
-            },
-            "add": { "component_groups": [ "navy" ] }
-         },
-		 {
+      "gvcv5:set_have_gun":{
         "randomize": [
           {
             "weight": 1,
@@ -352,7 +191,89 @@
             "trigger": "m249"
           }
 		 ]
-		}
+    },
+      "minecraft:entity_transformed": {
+        "sequence": [
+        {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": { "component_groups": [ "navy" ] }
+         },
+         {
+            "trigger": "gvcv5:set_have_gun"
+        }
+	   ]
+      },
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+          "add": {
+            "component_groups": [
+              "can_despawn"
+            ]
+          }
+        },
+        {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": { "component_groups": [ "navy" ] }
+         },
+         {
+            "trigger": "gvcv5:set_have_gun"
+        }
+	   ]
+      },
+      "minecraft:spawned_from_block": {
+        "sequence": [
+        {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": { "component_groups": [ "navy" ] }
+         },
+         {
+            "trigger": "gvcv5:set_have_gun"
+        }
+	   ]
+      },
+      "minecraft:spawned_from_air": {
+        "sequence": [
+          {
+          "queue_command": {
+            "command":[ "replaceitem entity @s slot.armor.chest 0 gvcv5:parachute" ]
+          }
+        },
+        {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": { "component_groups": [ "navy" ] }
+         },
+         {
+            "trigger": "gvcv5:set_have_gun"
+        }
 	   ]
       }
     }

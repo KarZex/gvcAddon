@@ -386,7 +386,7 @@
         },
         "ak12_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload ak12"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload ak12"
           ],
           "transitions": [
             {
@@ -396,9 +396,9 @@
         },
         "ak12": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={ak12=1..}] fire:ak12",
-            "/playsound empty.a1 @s[tag=!reload,scores={ak12=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={ak12=1..}] ak12 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={ak12=1..}] fire:ak12",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={ak12=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={ak12=1..}] ak12 1"
           ],
           "transitions": [
             {
@@ -408,7 +408,7 @@
         },
         "ak47_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload ak47"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload ak47"
           ],
           "transitions": [
             {
@@ -418,9 +418,9 @@
         },
         "ak47": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={ak47=1..}] fire:ak47",
-            "/playsound empty.a1 @s[tag=!reload,scores={ak47=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={ak47=1..}] ak47 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={ak47=1..}] fire:ak47",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={ak47=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={ak47=1..}] ak47 1"
           ],
           "transitions": [
             {
@@ -430,7 +430,7 @@
         },
         "an94_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload an94"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload an94"
           ],
           "transitions": [
             {
@@ -440,9 +440,9 @@
         },
         "an94": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={an94=1..}] fire:an94",
-            "/playsound empty.a1 @s[tag=!reload,scores={an94=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={an94=1..}] an94 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={an94=1..}] fire:an94",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={an94=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={an94=1..}] an94 1"
           ],
           "transitions": [
             {
@@ -452,7 +452,7 @@
         },
         "awm_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload awm"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload awm"
           ],
           "transitions": [
             {
@@ -462,9 +462,9 @@
         },
         "awm": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={awm=1..}] fire:awm",
-            "/playsound empty.a1 @s[tag=!reload,scores={awm=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={awm=1..}] awm 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={awm=1..}] fire:awm",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={awm=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={awm=1..}] awm 1"
           ],
           "transitions": [
             {
@@ -474,7 +474,7 @@
         },
         "dp28_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload dp28"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload dp28"
           ],
           "transitions": [
             {
@@ -484,9 +484,9 @@
         },
         "dp28": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={dp28=1..}] fire:dp28",
-            "/playsound empty.a1 @s[tag=!reload,scores={dp28=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={dp28=1..}] dp28 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={dp28=1..}] fire:dp28",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={dp28=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={dp28=1..}] dp28 1"
           ],
           "transitions": [
             {
@@ -496,7 +496,7 @@
         },
         "famas_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload famas"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload famas"
           ],
           "transitions": [
             {
@@ -506,9 +506,9 @@
         },
         "famas": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={famas=1..}] fire:famas",
-            "/playsound empty.a1 @s[tag=!reload,scores={famas=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={famas=1..}] famas 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={famas=1..}] fire:famas",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={famas=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={famas=1..}] famas 1"
           ],
           "transitions": [
             {
@@ -518,7 +518,7 @@
         },
         "g36_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload g36"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload g36"
           ],
           "transitions": [
             {
@@ -528,9 +528,9 @@
         },
         "g36": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={g36=1..}] fire:g36",
-            "/playsound empty.a1 @s[tag=!reload,scores={g36=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={g36=1..}] g36 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={g36=1..}] fire:g36",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={g36=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={g36=1..}] g36 1"
           ],
           "transitions": [
             {
@@ -540,7 +540,7 @@
         },
         "g3a3_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload g3a3"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload g3a3"
           ],
           "transitions": [
             {
@@ -550,9 +550,9 @@
         },
         "g3a3": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={g3a3=1..}] fire:g3a3",
-            "/playsound empty.a1 @s[tag=!reload,scores={g3a3=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={g3a3=1..}] g3a3 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={g3a3=1..}] fire:g3a3",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={g3a3=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={g3a3=1..}] g3a3 1"
           ],
           "transitions": [
             {
@@ -562,7 +562,7 @@
         },
         "glock17_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload glock17"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload glock17"
           ],
           "transitions": [
             {
@@ -572,9 +572,9 @@
         },
         "glock17": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={glock17=1..}] fire:glock17",
-            "/playsound empty.a1 @s[tag=!reload,scores={glock17=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={glock17=1..}] glock17 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={glock17=1..}] fire:glock17",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={glock17=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={glock17=1..}] glock17 1"
           ],
           "transitions": [
             {
@@ -584,7 +584,7 @@
         },
         "glock18_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload glock18"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload glock18"
           ],
           "transitions": [
             {
@@ -594,9 +594,9 @@
         },
         "glock18": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={glock18=1..}] fire:glock18",
-            "/playsound empty.a1 @s[tag=!reload,scores={glock18=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={glock18=1..}] glock18 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={glock18=1..}] fire:glock18",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={glock18=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={glock18=1..}] glock18 1"
           ],
           "transitions": [
             {
@@ -609,9 +609,9 @@
         },
         "glock18ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={glock18=1..}] fire:glock18",
-            "/playsound empty.a1 @s[tag=!reload,scores={glock18=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={glock18=1..}] glock18 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={glock18=1..}] fire:glock18",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={glock18=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={glock18=1..}] glock18 1"
           ],
           "transitions": [
             {
@@ -624,7 +624,7 @@
         },
         "hk416_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload hk416"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload hk416"
           ],
           "transitions": [
             {
@@ -634,9 +634,9 @@
         },
         "hk416": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={hk416=1..}] fire:hk416",
-            "/playsound empty.a1 @s[tag=!reload,scores={hk416=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={hk416=1..}] hk416 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={hk416=1..}] fire:hk416",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={hk416=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={hk416=1..}] hk416 1"
           ],
           "transitions": [
             {
@@ -646,7 +646,7 @@
         },
         "lazer_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload lazer"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload lazer"
           ],
           "transitions": [
             {
@@ -656,9 +656,9 @@
         },
         "lazer": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={lazer=1..}] fire:lazer",
-            "/playsound empty.a1 @s[tag=!reload,scores={lazer=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={lazer=1..}] lazer 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={lazer=1..}] fire:lazer",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={lazer=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={lazer=1..}] lazer 1"
           ],
           "transitions": [
             {
@@ -671,9 +671,9 @@
         },
         "lazerii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={lazer=1..}] fire:lazer",
-            "/playsound empty.a1 @s[tag=!reload,scores={lazer=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={lazer=1..}] lazer 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={lazer=1..}] fire:lazer",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={lazer=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={lazer=1..}] lazer 1"
           ],
           "transitions": [
             {
@@ -686,7 +686,7 @@
         },
         "m4_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m4"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m4"
           ],
           "transitions": [
             {
@@ -696,9 +696,9 @@
         },
         "m4": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m4=1..}] fire:m4",
-            "/playsound empty.a1 @s[tag=!reload,scores={m4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m4=1..}] m4 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m4=1..}] fire:m4",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m4=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m4=1..}] m4 1"
           ],
           "transitions": [
             {
@@ -708,9 +708,9 @@
         },
         "m41": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m4=1..}] fire:m4",
-            "/playsound empty.a1 @s[tag=!reload,scores={m4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m4=1..}] m4 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m4=1..}] fire:m4",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m4=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m4=1..}] m4 1"
           ],
           "transitions": [
             {
@@ -720,9 +720,9 @@
         },
         "m42": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m4=1..}] fire:m4",
-            "/playsound empty.a1 @s[tag=!reload,scores={m4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m4=1..}] m4 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m4=1..}] fire:m4",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m4=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m4=1..}] m4 1"
           ],
           "transitions": [
             {
@@ -732,7 +732,7 @@
         },
         "m4a1_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m4a1"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m4a1"
           ],
           "transitions": [
             {
@@ -742,9 +742,9 @@
         },
         "m4a1": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m4a1=1..}] fire:m4a1",
-            "/playsound empty.a1 @s[tag=!reload,scores={m4a1=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m4a1=1..}] m4a1 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m4a1=1..}] fire:m4a1",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m4a1=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m4a1=1..}] m4a1 1"
           ],
           "transitions": [
             {
@@ -754,7 +754,7 @@
         },
         "m9_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m9"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m9"
           ],
           "transitions": [
             {
@@ -764,9 +764,9 @@
         },
         "m9": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m9=1..}] fire:m9",
-            "/playsound empty.a1 @s[tag=!reload,scores={m9=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m9=1..}] m9 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m9=1..}] fire:m9",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m9=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m9=1..}] m9 1"
           ],
           "transitions": [
             {
@@ -776,7 +776,7 @@
         },
         "m10_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m10"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m10"
           ],
           "transitions": [
             {
@@ -786,9 +786,9 @@
         },
         "m10": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m10=1..}] fire:m10",
-            "/playsound empty.a1 @s[tag=!reload,scores={m10=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m10=1..}] m10 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m10=1..}] fire:m10",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m10=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m10=1..}] m10 1"
           ],
           "transitions": [
             {
@@ -801,9 +801,9 @@
         },
         "m10ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m10=1..}] fire:m10",
-            "/playsound empty.a1 @s[tag=!reload,scores={m10=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m10=1..}] m10 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m10=1..}] fire:m10",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m10=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m10=1..}] m10 1"
           ],
           "transitions": [
             {
@@ -816,7 +816,7 @@
         },
         "m16a1_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m16a1"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m16a1"
           ],
           "transitions": [
             {
@@ -826,9 +826,9 @@
         },
         "m16a1": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m16a1=1..}] fire:m16a1",
-            "/playsound empty.a1 @s[tag=!reload,scores={m16a1=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m16a1=1..}] m16a1 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m16a1=1..}] fire:m16a1",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m16a1=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m16a1=1..}] m16a1 1"
           ],
           "transitions": [
             {
@@ -838,7 +838,7 @@
         },
         "m16a4_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m16a4"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m16a4"
           ],
           "transitions": [
             {
@@ -848,9 +848,9 @@
         },
         "m16a4": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m16a4=1..}] fire:m16a4",
-            "/playsound empty.a1 @s[tag=!reload,scores={m16a4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m16a4=1..}] m16a4 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m16a4=1..}] fire:m16a4",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m16a4=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m16a4=1..}] m16a4 1"
           ],
           "transitions": [
             {
@@ -860,9 +860,9 @@
         },
         "m16a41": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m16a4=1..}] fire:m16a4",
-            "/playsound empty.a1 @s[tag=!reload,scores={m16a4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m16a4=1..}] m16a4 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m16a4=1..}] fire:m16a4",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m16a4=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m16a4=1..}] m16a4 1"
           ],
           "transitions": [
             {
@@ -872,9 +872,9 @@
         },
         "m16a42": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m16a4=1..}] fire:m16a4",
-            "/playsound empty.a1 @s[tag=!reload,scores={m16a4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m16a4=1..}] m16a4 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m16a4=1..}] fire:m16a4",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m16a4=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m16a4=1..}] m16a4 1"
           ],
           "transitions": [
             {
@@ -884,7 +884,7 @@
         },
         "m60_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m60"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m60"
           ],
           "transitions": [
             {
@@ -894,9 +894,9 @@
         },
         "m60": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m60=1..}] fire:m60",
-            "/playsound empty.a1 @s[tag=!reload,scores={m60=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m60=1..}] m60 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m60=1..}] fire:m60",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m60=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m60=1..}] m60 1"
           ],
           "transitions": [
             {
@@ -906,7 +906,7 @@
         },
         "m79_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m79"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m79"
           ],
           "transitions": [
             {
@@ -916,9 +916,9 @@
         },
         "m79": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m79=1..}] fire:m79",
-            "/playsound empty.a1 @s[tag=!reload,scores={m79=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m79=1..}] m79 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m79=1..}] fire:m79",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m79=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m79=1..}] m79 1"
           ],
           "transitions": [
             {
@@ -928,7 +928,7 @@
         },
         "m82_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m82"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m82"
           ],
           "transitions": [
             {
@@ -938,9 +938,9 @@
         },
         "m82": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m82=1..}] fire:m82",
-            "/playsound empty.a1 @s[tag=!reload,scores={m82=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m82=1..}] m82 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m82=1..}] fire:m82",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m82=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m82=1..}] m82 1"
           ],
           "transitions": [
             {
@@ -950,7 +950,7 @@
         },
         "m110_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m110"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m110"
           ],
           "transitions": [
             {
@@ -960,9 +960,9 @@
         },
         "m110": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m110=1..}] fire:m110",
-            "/playsound empty.a1 @s[tag=!reload,scores={m110=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m110=1..}] m110 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m110=1..}] fire:m110",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m110=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m110=1..}] m110 1"
           ],
           "transitions": [
             {
@@ -972,7 +972,7 @@
         },
         "m249_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m249"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m249"
           ],
           "transitions": [
             {
@@ -982,9 +982,9 @@
         },
         "m249": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m249=1..}] fire:m249",
-            "/playsound empty.a1 @s[tag=!reload,scores={m249=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m249=1..}] m249 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m249=1..}] fire:m249",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m249=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m249=1..}] m249 1"
           ],
           "transitions": [
             {
@@ -994,7 +994,7 @@
         },
         "m590_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m590"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m590"
           ],
           "transitions": [
             {
@@ -1004,9 +1004,9 @@
         },
         "m590": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m590=1..}] fire:m590",
-            "/playsound empty.a1 @s[tag=!reload,scores={m590=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m590=1..}] m590 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m590=1..}] fire:m590",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m590=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m590=1..}] m590 1"
           ],
           "transitions": [
             {
@@ -1016,7 +1016,7 @@
         },
         "m870_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m870"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m870"
           ],
           "transitions": [
             {
@@ -1026,9 +1026,9 @@
         },
         "m870": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m870=1..}] fire:m870",
-            "/playsound empty.a1 @s[tag=!reload,scores={m870=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m870=1..}] m870 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m870=1..}] fire:m870",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m870=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m870=1..}] m870 1"
           ],
           "transitions": [
             {
@@ -1038,7 +1038,7 @@
         },
         "m1014_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m1014"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m1014"
           ],
           "transitions": [
             {
@@ -1048,9 +1048,9 @@
         },
         "m1014": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m1014=1..}] fire:m1014",
-            "/playsound empty.a1 @s[tag=!reload,scores={m1014=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m1014=1..}] m1014 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m1014=1..}] fire:m1014",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m1014=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m1014=1..}] m1014 1"
           ],
           "transitions": [
             {
@@ -1060,7 +1060,7 @@
         },
         "m1911_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload m1911"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m1911"
           ],
           "transitions": [
             {
@@ -1070,9 +1070,9 @@
         },
         "m1911": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={m1911=1..}] fire:m1911",
-            "/playsound empty.a1 @s[tag=!reload,scores={m1911=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={m1911=1..}] m1911 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={m1911=1..}] fire:m1911",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m1911=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m1911=1..}] m1911 1"
           ],
           "transitions": [
             {
@@ -1082,7 +1082,7 @@
         },
         "mg42_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload mg42"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload mg42"
           ],
           "transitions": [
             {
@@ -1092,9 +1092,9 @@
         },
         "mg42": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={mg42=1..}] fire:mg42",
-            "/playsound empty.a1 @s[tag=!reload,scores={mg42=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={mg42=1..}] mg42 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={mg42=1..}] fire:mg42",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mg42=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mg42=1..}] mg42 1"
           ],
           "transitions": [
             {
@@ -1107,9 +1107,9 @@
         },
         "mg42ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={mg42=1..}] fire:mg42",
-            "/playsound empty.a1 @s[tag=!reload,scores={mg42=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={mg42=1..}] mg42 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={mg42=1..}] fire:mg42",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mg42=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mg42=1..}] mg42 1"
           ],
           "transitions": [
             {
@@ -1122,7 +1122,7 @@
         },
         "mosin_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload mosin"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload mosin"
           ],
           "transitions": [
             {
@@ -1132,9 +1132,9 @@
         },
         "mosin": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={mosin=1..}] fire:mosin",
-            "/playsound empty.a1 @s[tag=!reload,scores={mosin=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={mosin=1..}] mosin 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={mosin=1..}] fire:mosin",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mosin=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mosin=1..}] mosin 1"
           ],
           "transitions": [
             {
@@ -1144,7 +1144,7 @@
         },
         "mp5_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload mp5"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload mp5"
           ],
           "transitions": [
             {
@@ -1154,9 +1154,9 @@
         },
         "mp5": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={mp5=1..}] fire:mp5",
-            "/playsound empty.a1 @s[tag=!reload,scores={mp5=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={mp5=1..}] mp5 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={mp5=1..}] fire:mp5",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mp5=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mp5=1..}] mp5 1"
           ],
           "transitions": [
             {
@@ -1169,9 +1169,9 @@
         },
         "mp5ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={mp5=1..}] fire:mp5",
-            "/playsound empty.a1 @s[tag=!reload,scores={mp5=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={mp5=1..}] mp5 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={mp5=1..}] fire:mp5",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mp5=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mp5=1..}] mp5 1"
           ],
           "transitions": [
             {
@@ -1184,7 +1184,7 @@
         },
         "mp7_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload mp7"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload mp7"
           ],
           "transitions": [
             {
@@ -1194,9 +1194,9 @@
         },
         "mp7": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={mp7=1..}] fire:mp7",
-            "/playsound empty.a1 @s[tag=!reload,scores={mp7=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={mp7=1..}] mp7 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={mp7=1..}] fire:mp7",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mp7=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mp7=1..}] mp7 1"
           ],
           "transitions": [
             {
@@ -1209,9 +1209,9 @@
         },
         "mp7ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={mp7=1..}] fire:mp7",
-            "/playsound empty.a1 @s[tag=!reload,scores={mp7=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={mp7=1..}] mp7 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={mp7=1..}] fire:mp7",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mp7=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mp7=1..}] mp7 1"
           ],
           "transitions": [
             {
@@ -1224,7 +1224,7 @@
         },
         "mp40_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload mp40"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload mp40"
           ],
           "transitions": [
             {
@@ -1234,9 +1234,9 @@
         },
         "mp40": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={mp40=1..}] fire:mp40",
-            "/playsound empty.a1 @s[tag=!reload,scores={mp40=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={mp40=1..}] mp40 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={mp40=1..}] fire:mp40",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mp40=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mp40=1..}] mp40 1"
           ],
           "transitions": [
             {
@@ -1246,7 +1246,7 @@
         },
         "p90_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload p90"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload p90"
           ],
           "transitions": [
             {
@@ -1256,9 +1256,9 @@
         },
         "p90": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={p90=1..}] fire:p90",
-            "/playsound empty.a1 @s[tag=!reload,scores={p90=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={p90=1..}] p90 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={p90=1..}] fire:p90",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={p90=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={p90=1..}] p90 1"
           ],
           "transitions": [
             {
@@ -1268,7 +1268,7 @@
         },
         "pkm_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload pkm"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload pkm"
           ],
           "transitions": [
             {
@@ -1278,9 +1278,9 @@
         },
         "pkm": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={pkm=1..}] fire:pkm",
-            "/playsound empty.a1 @s[tag=!reload,scores={pkm=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={pkm=1..}] pkm 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={pkm=1..}] fire:pkm",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={pkm=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={pkm=1..}] pkm 1"
           ],
           "transitions": [
             {
@@ -1290,7 +1290,7 @@
         },
         "ppsh_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload ppsh"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload ppsh"
           ],
           "transitions": [
             {
@@ -1300,9 +1300,9 @@
         },
         "ppsh": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={ppsh=1..}] fire:ppsh",
-            "/playsound empty.a1 @s[tag=!reload,scores={ppsh=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={ppsh=1..}] ppsh 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={ppsh=1..}] fire:ppsh",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={ppsh=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={ppsh=1..}] ppsh 1"
           ],
           "transitions": [
             {
@@ -1312,7 +1312,7 @@
         },
         "rpg_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload rpg"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload rpg"
           ],
           "transitions": [
             {
@@ -1322,9 +1322,9 @@
         },
         "rpg": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={rpg=1..}] fire:rpg",
-            "/playsound empty.a1 @s[tag=!reload,scores={rpg=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={rpg=1..}] rpg 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={rpg=1..}] fire:rpg",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={rpg=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={rpg=1..}] rpg 1"
           ],
           "transitions": [
             {
@@ -1334,7 +1334,7 @@
         },
         "scar_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload scar"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload scar"
           ],
           "transitions": [
             {
@@ -1344,9 +1344,9 @@
         },
         "scar": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={scar=1..}] fire:scar",
-            "/playsound empty.a1 @s[tag=!reload,scores={scar=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={scar=1..}] scar 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={scar=1..}] fire:scar",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={scar=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={scar=1..}] scar 1"
           ],
           "transitions": [
             {
@@ -1356,7 +1356,7 @@
         },
         "svd_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload svd"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload svd"
           ],
           "transitions": [
             {
@@ -1366,9 +1366,9 @@
         },
         "svd": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={svd=1..}] fire:svd",
-            "/playsound empty.a1 @s[tag=!reload,scores={svd=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={svd=1..}] svd 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={svd=1..}] fire:svd",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={svd=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={svd=1..}] svd 1"
           ],
           "transitions": [
             {
@@ -1378,7 +1378,7 @@
         },
         "tt33_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload tt33"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload tt33"
           ],
           "transitions": [
             {
@@ -1388,9 +1388,9 @@
         },
         "tt33": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={tt33=1..}] fire:tt33",
-            "/playsound empty.a1 @s[tag=!reload,scores={tt33=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={tt33=1..}] tt33 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={tt33=1..}] fire:tt33",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={tt33=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={tt33=1..}] tt33 1"
           ],
           "transitions": [
             {
@@ -1400,7 +1400,7 @@
         },
         "uzi_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload uzi"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload uzi"
           ],
           "transitions": [
             {
@@ -1410,9 +1410,9 @@
         },
         "uzi": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={uzi=1..}] fire:uzi",
-            "/playsound empty.a1 @s[tag=!reload,scores={uzi=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={uzi=1..}] uzi 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={uzi=1..}] fire:uzi",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={uzi=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={uzi=1..}] uzi 1"
           ],
           "transitions": [
             {
@@ -1425,9 +1425,9 @@
         },
         "uziii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={uzi=1..}] fire:uzi",
-            "/playsound empty.a1 @s[tag=!reload,scores={uzi=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={uzi=1..}] uzi 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={uzi=1..}] fire:uzi",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={uzi=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={uzi=1..}] uzi 1"
           ],
           "transitions": [
             {
@@ -1440,7 +1440,7 @@
         },
         "vz61_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload vz61"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload vz61"
           ],
           "transitions": [
             {
@@ -1450,9 +1450,9 @@
         },
         "vz61": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={vz61=1..}] fire:vz61",
-            "/playsound empty.a1 @s[tag=!reload,scores={vz61=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={vz61=1..}] vz61 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={vz61=1..}] fire:vz61",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={vz61=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={vz61=1..}] vz61 1"
           ],
           "transitions": [
             {
@@ -1465,9 +1465,9 @@
         },
         "vz61ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={vz61=1..}] fire:vz61",
-            "/playsound empty.a1 @s[tag=!reload,scores={vz61=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={vz61=1..}] vz61 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={vz61=1..}] fire:vz61",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={vz61=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={vz61=1..}] vz61 1"
           ],
           "transitions": [
             {
@@ -1480,7 +1480,7 @@
         },
         "xm8_reload": {
           "on_entry": [
-            "/scriptevent gvcv5:reload xm8"
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload xm8"
           ],
           "transitions": [
             {
@@ -1490,9 +1490,9 @@
         },
         "xm8": {
           "on_entry": [
-            "/event entity @s[tag=!reload,scores={xm8=1..}] fire:xm8",
-            "/playsound empty.a1 @s[tag=!reload,scores={xm8=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!noreload,scores={xm8=1..}] xm8 1"
+            "/event entity @s[tag=!reload,tag=!down,scores={xm8=1..}] fire:xm8",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={xm8=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={xm8=1..}] xm8 1"
           ],
           "transitions": [
             {

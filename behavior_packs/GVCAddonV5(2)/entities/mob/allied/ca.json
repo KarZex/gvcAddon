@@ -1114,15 +1114,36 @@
       "minecraft:conditional_bandwidth_optimization": {}
     },
     "events": {
+      "gvcv5:set_have_gun": {
+        "randomize": [
+          {
+            "weight": 1,
+            "trigger": "m16a4"
+          },
+          {
+            "weight": 2,
+            "trigger": "m4"
+          },
+          {
+            "weight": 1,
+            "trigger": "famas"
+          },
+          {
+            "weight": 1,
+            "trigger": "m110"
+          },
+          {
+            "weight": 1,
+            "trigger": "mp5"
+          },
+          {
+            "weight": 1,
+            "trigger": "m249"
+          }
+        ]
+      },
       "minecraft:entity_transformed": {
         "sequence": [
-          {
-            "add": {
-              "component_groups": [
-                "can_despawn"
-              ]
-            }
-          },
           {
             "filters": {
               "any_of": [
@@ -1139,32 +1160,7 @@
             }
           },
           {
-            "randomize": [
-              {
-                "weight": 4,
-                "trigger": "m16a1"
-              },
-              {
-                "weight": 2,
-                "trigger": "m4"
-              },
-              {
-                "weight": 1,
-                "trigger": "famas"
-              },
-              {
-                "weight": 1,
-                "trigger": "m110"
-              },
-              {
-                "weight": 1,
-                "trigger": "mp5"
-              },
-              {
-                "weight": 1,
-                "trigger": "m249"
-              }
-            ]
+            "trigger": "gvcv5:set_have_gun"
           }
         ]
       },
@@ -1193,32 +1189,7 @@
             }
           },
           {
-            "randomize": [
-              {
-                "weight": 4,
-                "trigger": "m16a1"
-              },
-              {
-                "weight": 2,
-                "trigger": "m4"
-              },
-              {
-                "weight": 1,
-                "trigger": "famas"
-              },
-              {
-                "weight": 1,
-                "trigger": "m110"
-              },
-              {
-                "weight": 1,
-                "trigger": "mp5"
-              },
-              {
-                "weight": 1,
-                "trigger": "m249"
-              }
-            ]
+            "trigger": "gvcv5:set_have_gun"
           }
         ]
       },
@@ -1240,32 +1211,7 @@
             }
           },
           {
-            "randomize": [
-              {
-                "weight": 4,
-                "trigger": "m16a1"
-              },
-              {
-                "weight": 2,
-                "trigger": "m4"
-              },
-              {
-                "weight": 1,
-                "trigger": "famas"
-              },
-              {
-                "weight": 1,
-                "trigger": "m110"
-              },
-              {
-                "weight": 1,
-                "trigger": "mp5"
-              },
-              {
-                "weight": 1,
-                "trigger": "m249"
-              }
-            ]
+            "trigger": "gvcv5:set_have_gun"
           }
         ]
       },
@@ -1294,32 +1240,7 @@
             }
           },
           {
-            "randomize": [
-              {
-                "weight": 1,
-                "trigger": "m16a4"
-              },
-              {
-                "weight": 2,
-                "trigger": "m4"
-              },
-              {
-                "weight": 1,
-                "trigger": "famas"
-              },
-              {
-                "weight": 1,
-                "trigger": "m110"
-              },
-              {
-                "weight": 1,
-                "trigger": "mp5"
-              },
-              {
-                "weight": 1,
-                "trigger": "m249"
-              }
-            ]
+            "trigger": "gvcv5:set_have_gun"
           }
         ]
       },

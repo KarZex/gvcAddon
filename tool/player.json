@@ -60,6 +60,514 @@
           }
         }
       },
+      "gvcv5:in_down_red": {
+        "minecraft:type_family": {
+          "family": [ "down","red" ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "entity_attack",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "==",
+                          "value": "down"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "redteam"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:become_rise",
+                  "target": "self"
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "any_of": [
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "operator": "!=",
+                          "value": "player"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "operator": "==",
+                          "value": "redteam"
+                        }
+                    ]
+                  }
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": true,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "==",
+                          "value": "down"
+                        },
+                        {
+                          "test": "has_damage",
+                          "value": "fatal"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:remove_down_red",
+                  "target": "self"
+               }
+            }
+          ]
+        }
+      },
+      "gvcv5:in_down_blue": {
+        "minecraft:type_family": {
+          "family": [ "down","blue" ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "entity_attack",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "==",
+                          "value": "down"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "blueteam"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:become_rise",
+                  "target": "self"
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "any_of": [
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "operator": "!=",
+                          "value": "player"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "operator": "==",
+                          "value": "blueteam"
+                        }
+                    ]
+                  }
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": true,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "==",
+                          "value": "down"
+                        },
+                        {
+                          "test": "has_damage",
+                          "value": "fatal"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:remove_down_blue",
+                  "target": "self"
+               }
+            }
+          ]
+        }
+      },
+      "gvcv5:in_down_green": {
+        "minecraft:type_family": {
+          "family": [ "down","green" ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "entity_attack",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "==",
+                          "value": "down"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "greenteam"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:become_rise",
+                  "target": "self"
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "any_of": [
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "operator": "!=",
+                          "value": "player"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "operator": "==",
+                          "value": "greenteam"
+                        }
+                    ]
+                  }
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": true,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "==",
+                          "value": "down"
+                        },
+                        {
+                          "test": "has_damage",
+                          "value": "fatal"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:remove_down_green",
+                  "target": "self"
+               }
+            }
+          ]
+        }
+      },
+      "gvcv5:in_down_yellow": {
+        "minecraft:type_family": {
+          "family": [ "down","yellow" ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "entity_attack",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "==",
+                          "value": "down"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "yellowteam"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:become_rise",
+                  "target": "self"
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "any_of": [
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "operator": "!=",
+                          "value": "player"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "operator": "==",
+                          "value": "yellowteam"
+                        }
+                    ]
+                  }
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": true,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "==",
+                          "value": "down"
+                        },
+                        {
+                          "test": "has_damage",
+                          "value": "fatal"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:remove_down_yellow",
+                  "target": "self"
+               }
+            }
+          ]
+        }
+      },
+      "gvcv5:team_red": {
+        "minecraft:type_family": {
+          "family": [ "player","playerp","mod","redteam" ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "any_of": [
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "noteam"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "redteam"
+                        }
+                    ]
+                  }
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "!=",
+                          "value": "down"
+                        },
+                        {
+                          "test": "has_damage",
+                          "value": "fatal"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:become_down_red",
+                  "target": "self"
+               }
+            }
+          ]
+        }
+      },
+      "gvcv5:team_blue": {
+        "minecraft:type_family": {
+          "family": [ "player","playerp","mod","blueteam" ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "any_of": [
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "noteam"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "blueteam"
+                        }
+                    ]
+                  }
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "!=",
+                          "value": "down"
+                        },
+                        {
+                          "test": "has_damage",
+                          "value": "fatal"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:become_down_blue",
+                  "target": "self"
+               }
+            }
+          ]
+        }
+      },
+      "gvcv5:team_green": {
+        "minecraft:type_family": {
+          "family": [ "player","playerp","mod","greenteam" ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "any_of": [
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "noteam"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "greenteam"
+                        }
+                    ]
+                  }
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "!=",
+                          "value": "down"
+                        },
+                        {
+                          "test": "has_damage",
+                          "value": "fatal"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:become_down_green",
+                  "target": "self"
+               }
+            }
+          ]
+        }
+      },
+      "gvcv5:team_yellow": {
+        "minecraft:type_family": {
+          "family": [ "player","playerp","mod","yellowteam" ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "any_of": [
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "noteam"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "yellowteam"
+                        }
+                    ]
+                  }
+               }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject":"self",
+                          "operator": "!=",
+                          "value": "down"
+                        },
+                        {
+                          "test": "has_damage",
+                          "value": "fatal"
+                        }
+                    ]
+                  },
+                  "event": "gvcv5:become_down_yellow",
+                  "target": "self"
+               }
+            }
+          ]
+        }
+      },
       "fire:fire": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -261,10 +769,183 @@
             "fire:fire"
           ]
         }
+      },
+      "gvcv5:become_redteam": {
+        "add": {
+          "component_groups": [
+            "gvcv5:team_red"
+          ]
+        }
+      },
+      "gvcv5:become_blueteam": {
+        "add": {
+          "component_groups": [
+            "gvcv5:team_blue"
+          ]
+        }
+      },
+      "gvcv5:become_greenteam": {
+        "add": {
+          "component_groups": [
+            "gvcv5:team_green"
+          ]
+        }
+      },
+      "gvcv5:become_yellowteam": {
+        "add": {
+          "component_groups": [
+            "gvcv5:team_yellow"
+          ]
+        }
+      },
+      "gvcv5:become_down_red": {
+        "queue_command":{
+          "command":[
+            "effect @s instant_health 1 255 true",
+            "tag @s add down"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "gvcv5:in_down_red"
+          ]
+        }
+      },
+      "gvcv5:remove_down_red": {
+        "queue_command":{
+          "command":[
+            "tag @s remove down"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "gvcv5:in_down_red"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "gvcv5:team_red"
+          ]
+        }
+      },
+      "gvcv5:become_down_blue": {
+        "queue_command":{
+          "command":[
+            "effect @s instant_health 1 255 true",
+            "tag @s add down"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "gvcv5:in_down_blue"
+          ]
+        }
+      },
+      "gvcv5:remove_down_blue": {
+        "queue_command":{
+          "command":[
+            "tag @s remove down"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "gvcv5:in_down_blue"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "gvcv5:team_blue"
+          ]
+        }
+      },
+      "gvcv5:become_down_green": {
+        "queue_command":{
+          "command":[
+            "effect @s instant_health 1 255 true",
+            "tag @s add down"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "gvcv5:in_down_green"
+          ]
+        }
+      },
+      "gvcv5:remove_down_green": {
+        "queue_command":{
+          "command":[
+            "tag @s remove down"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "gvcv5:in_down_green"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "gvcv5:team_green"
+          ]
+        }
+      },
+      "gvcv5:become_down_yellow": {
+        "queue_command":{
+          "command":[
+            "effect @s instant_health 1 255 true",
+            "tag @s add down"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "gvcv5:in_down_yellow"
+          ]
+        }
+      },
+      "gvcv5:remove_down_yellow": {
+        "queue_command":{
+          "command":[
+            "tag @s remove down"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "gvcv5:in_down_yellow"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "gvcv5:team_yellow"
+          ]
+        }
+      },
+      "gvcv5:become_rise": {
+        "sequence": [
+          {
+            "queue_command":{
+              "command":[
+                "playanimation @s animation.down.main2 none 6 ",
+                "tag @s add rise",
+                "scoreboard players set @s rise 120"
+              ],
+              "target":"self"
+            }
+        },
+        {
+          "queue_command":{
+            "command":[
+              "tp @s @p[tag=down]",
+              "playanimation @s animation.down.sub2 none 6 ",
+              "tag @s add rise",
+              "scoreboard players set @s rise 120"
+            ],
+            "target":"other"
+          }
+      }
+	   ]
+    }
       }
     }
   }
-}
 
 
 
