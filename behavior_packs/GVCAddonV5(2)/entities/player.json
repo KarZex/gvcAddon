@@ -2442,6 +2442,8 @@
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
+            "effect @s resistance 4 255 true",
+            "effect @s wither 99999 1 true",
             "tag @s add down"
           ]
         },
@@ -2472,6 +2474,8 @@
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
+            "effect @s resistance 4 255 true",
+            "effect @s wither 99999 1 true",
             "tag @s add down"
           ]
         },
@@ -2502,6 +2506,8 @@
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
+            "effect @s resistance 4 255 true",
+            "effect @s wither 99999 1 true",
             "tag @s add down"
           ]
         },
@@ -2532,6 +2538,8 @@
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
+            "effect @s resistance 4 255 true",
+            "effect @s wither 99999 1 true",
             "tag @s add down"
           ]
         },

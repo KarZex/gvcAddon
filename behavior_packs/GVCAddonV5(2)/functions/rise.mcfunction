@@ -9,3 +9,6 @@ event entity @s[scores={rise=0},tag=rise,family=green] gvcv5:remove_down_green
 event entity @s[scores={rise=0},tag=rise,family=yellow] gvcv5:remove_down_yellow
 tag @s[scores={rise=0},tag=rise] remove rise
 tag @s remove down
+effect @s[tag=rise] wither 0
+effect @s[tag=rise] slowness 0
+effect @s[tag=rise] weakness 0
