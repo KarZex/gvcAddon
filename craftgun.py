@@ -145,7 +145,14 @@ for row in csv_reader:
                         ],
                         "transitions": [
                             {
-                                "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);".format(gun_interval - 1)
+                                "{}_after".format(gun_id): "(!query.is_using_item)"
+                            }
+                        ]
+                    }
+                    BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}_after".format(gun_id)] = {
+                        "transitions": [
+                            {
+                                "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval - 1)
                             }
                         ]
                     }

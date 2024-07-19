@@ -366,7 +366,7 @@
       },
       "gvcv5:team_red": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","redteam" ]
+          "family": [ "player","playerp","mod","redteam","red" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -417,7 +417,7 @@
       },
       "gvcv5:team_blue": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","blueteam" ]
+          "family": [ "player","playerp","mod","blueteam","blue" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -468,7 +468,7 @@
       },
       "gvcv5:team_green": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","greenteam" ]
+          "family": [ "player","playerp","mod","greenteam","green" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -519,7 +519,7 @@
       },
       "gvcv5:team_yellow": {
         "minecraft:type_family": {
-          "family": [ "player","playerp","mod","yellowteam" ]
+          "family": [ "player","playerp","mod","yellowteam","yellow" ]
         },
         "minecraft:damage_sensor": {
           "triggers": [

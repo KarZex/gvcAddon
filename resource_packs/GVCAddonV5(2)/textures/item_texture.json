@@ -596,17 +596,17 @@
     "iceblaze": {
       "textures": "textures/items/iceblaze"
     },
-    "g3": {
-      "textures": "textures/craft/g3"
+    "phone_red": {
+      "textures": "textures/items/phone_red"
     },
-    "g4": {
-      "textures": "textures/craft/g4"
+    "phone_blue": {
+      "textures": "textures/items/phone_blue"
     },
-    "g5": {
-      "textures": "textures/craft/g5"
+    "phone_green": {
+      "textures": "textures/items/phone_green"
     },
-    "g6": {
-      "textures": "textures/craft/g6"
+    "phone_yellow": {
+      "textures": "textures/items/phone_yellow"
     },
     "g7": {
       "textures": "textures/craft/g7"

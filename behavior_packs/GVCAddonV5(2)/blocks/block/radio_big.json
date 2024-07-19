@@ -23,6 +23,10 @@
 			"minecraft:destructible_by_mining":{
 				"seconds_to_destroy": 5.0
 			},
+            "minecraft:on_interact": {
+                "event": "gvcv5:usecrafter",
+                "target": "player"
+            },
             "minecraft:loot": "loot_tables/blocks/radio_big.json",
             "minecraft:geometry": "geometry.radio_big",
             "minecraft:selection_box": {
@@ -31,6 +35,14 @@
             },
             "minecraft:light_dampening": 0,
             "minecraft:map_color": "#00ff00"
+        },
+        "events": {
+            "gvcv5:usecrafter":{
+                "run_command":{
+                    "command": "function createteamphone",
+                    "target":"player"
+                }
+            }
         },
         "permutations": [
             {

@@ -4,7 +4,7 @@
     "controller.render.allied_soldier": {
       "arrays": {
         "textures": {
-          "Array.base": [ "Texture.army","Texture.navy" ]
+          "Array.base": [ "Texture.army","Texture.navy","Texture.red","Texture.blue","Texture.green","Texture.yellow" ]
         }
       },
       "geometry": "Geometry.default",

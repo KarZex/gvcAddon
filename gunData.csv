@@ -13,7 +13,7 @@ HK416,hk416,30,zex:556m,8,7,1.25,50,1,0,F,0,F,arbullet,1,override,1,完了,Kar Z
 Lazer,lazer,100,zex:btm,6,8,0,60,0,0,F,0,F,,1,override,1,,
 M4,m4,30,zex:556m,7,7,2,50,1,0,F,3,F,arbullet,1,override,1,完了,Kar Zex
 M4A1,m4a1,30,zex:556m,7,7,2,50,1,0,F,0,F,arbullet,1,override,1,完了,Kar Zex
-M9,m9,16,zex:mm9,4,3.4,0,30,1,0,F,0,T,psbullet,1,override,0,,
+M9,m9,16,zex:mm9,4,3.4,0,30,0,0,F,0,T,psbullet,1,override,0,,
 MAC-10,m10,30,zex:mm9,4,3.4,2,40,0,0,F,0,T,psbullet,1,override,1,完了,Kar Zex
 M16A1,m16a1,30,zex:556m,6,8,2.5,60,1,0,F,0,F,arbullet,1,override,1,完了,Kar Zex
 M16A4,m16a4,30,zex:556m,9,9,1.5,60,1,0,F,3,F,arbullet,1,override,1,完了,Kar Zex

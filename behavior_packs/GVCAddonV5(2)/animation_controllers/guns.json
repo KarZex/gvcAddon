@@ -468,7 +468,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "awm_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "awm_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -512,7 +519,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "famas_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "famas_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -578,7 +592,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "glock17_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "glock17_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -770,7 +791,25 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "default": "!query.is_using_item"
+            },
+            {
+              "m9ii": "query.get_equipped_item_name == 'm9' && query.is_using_item"
+            }
+          ]
+        },
+        "m9ii": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,tag=!down,scores={m9=1..}] fire:m9",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m9=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m9=1..}] m9 1"
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_using_item"
+            },
+            {
+              "m9": "query.get_equipped_item_name == 'm9' && query.is_using_item"
             }
           ]
         },
@@ -922,7 +961,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "m79_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m79_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -944,7 +990,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 59 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "m82_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m82_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 59 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -966,7 +1019,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 6 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "m110_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m110_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 6 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1010,7 +1070,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "m590_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m590_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1032,7 +1099,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "m870_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m870_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1054,7 +1128,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "m1014_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m1014_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1076,7 +1157,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 5 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "m1911_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m1911_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 5 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1138,7 +1226,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "mosin_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "mosin_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1262,7 +1357,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "p90_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "p90_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1328,7 +1430,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "rpg_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "rpg_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1372,7 +1481,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 6 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "svd_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "svd_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 6 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1394,7 +1510,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 5 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "tt33_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "tt33_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 5 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1496,7 +1619,14 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return (variable.cooltime == 0 && !query.is_using_item);"
+              "xm8_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "xm8_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         }

@@ -415,6 +415,12 @@ script.gvcv5.minecraft:emerald.name=§aエメラルド§r
 script.gvcv5.minecraft:gunpowder.name=§8火薬§r
 script.gvcv5.minecraft:iron_ingot.name=§6鉄§r
 script.gvcv5.no_ma.name=§c素材が足りません!§r
+script.gvcv5.invaid_password.name=§cパスワードが異なります!§r
+script.gvcv5.input_password.name=パスワードを入力
+script.gvcv5.phone.name=ホーム画面
+script.gvcv5.phone_tp.name=味方へテレポート
+script.gvcv5.phone_password.name=パスワード変更
+script.gvcv5.phone_back.name=戻る
 
 
 item.vehicle:dp28set_spawn_egg=固定機銃DP-28

@@ -8,7 +8,11 @@
       },
       "textures": {
         "army": "textures/mob/allied_soldier",
-        "navy": "textures/mob/allied_soldier_navy"
+        "navy": "textures/mob/allied_soldier_navy",
+        "red": "textures/mob/allied_soldier_red",
+        "blue": "textures/mob/allied_soldier_blue",
+        "green": "textures/mob/allied_soldier_green",
+        "yellow": "textures/mob/allied_soldier_yellow"
       },
       "geometry": {
         "default": "geometry.gvc_humanoid"

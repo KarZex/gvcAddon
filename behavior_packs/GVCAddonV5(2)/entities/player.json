@@ -383,7 +383,8 @@
             "player",
             "playerp",
             "mod",
-            "redteam"
+            "redteam",
+            "red"
           ]
         },
         "minecraft:damage_sensor": {
@@ -439,7 +440,8 @@
             "player",
             "playerp",
             "mod",
-            "blueteam"
+            "blueteam",
+            "blue"
           ]
         },
         "minecraft:damage_sensor": {
@@ -495,7 +497,8 @@
             "player",
             "playerp",
             "mod",
-            "greenteam"
+            "greenteam",
+            "green"
           ]
         },
         "minecraft:damage_sensor": {
@@ -551,7 +554,8 @@
             "player",
             "playerp",
             "mod",
-            "yellowteam"
+            "yellowteam",
+            "yellow"
           ]
         },
         "minecraft:damage_sensor": {
