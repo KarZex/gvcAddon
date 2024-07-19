@@ -955,6 +955,18 @@
     },
     "m1014": {
       "textures": "textures/items/gun/m1014"
+    },
+    "flag_red": {
+      "textures": "textures/items/flag_red"
+    },
+    "flag_blue": {
+      "textures": "textures/items/flag_blue"
+    },
+    "flag_green": {
+      "textures": "textures/items/flag_green"
+    },
+    "flag_yellow": {
+      "textures": "textures/items/flag_yellow"
     }
   }
 }

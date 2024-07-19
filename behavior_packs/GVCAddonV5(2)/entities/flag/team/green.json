@@ -1,8 +1,9 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "gvcv5:flag_green",
+      "spawn_category": "creature",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
@@ -161,6 +162,44 @@
         "value": 500,
         "max": 500
       },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "hurt_item": 1,
+            "play_sounds": "irongolem.repair",
+            "interact_text": "action.interact.repair",
+            "health_amount": 10,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                { "test": "is_family","subject": "other","value": "greenteam"},
+                { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "zex:rep"},
+                { "test": "is_missing_health" }
+                ]
+              }
+            }
+          },
+          {
+            "hurt_item": 1,
+            "spawn_items": {
+              "table": "loot_tables/flag/flag_green.json"
+            },
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                { "test": "is_family","subject": "other","value": "greenteam"},
+                { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "zex:rep"},
+                { "test": "is_missing_health","operator": "not" }
+                ]
+              },
+              "event": "despawning",
+              "target": "self"
+            }
+          }
+        ]
+      },
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
@@ -295,6 +334,13 @@
       }
     },
     "events": {
+      "despawning": {
+        "add": {
+          "component_groups": [
+            "despawning"
+          ]
+        }
+      },
       "become_R": {
         "queue_command": {
           "command":[ "summon gvcv5:flag_red ~~5~","kill @s"]

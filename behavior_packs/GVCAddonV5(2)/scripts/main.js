@@ -146,7 +146,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		} )
 		
 	}
-	else if( e.id == "gvcv5:phone_noteam" ){
+	else if( e.id == "gvcv5:phone_noteam" && !e.sourceEntity.hasTag(`down`) ){
 		const user = e.sourceEntity;
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
 		const form = new ActionFormData();
@@ -274,7 +274,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			}
 		},)
 	}
-	else if( e.id == "gvcv5:phone_locked" ){
+	else if( e.id == "gvcv5:phone_locked" && !e.sourceEntity.hasTag(`down`)  ){
 		const user = e.sourceEntity;
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
 		const userFamily = e.message;
