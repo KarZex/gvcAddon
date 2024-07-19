@@ -35,7 +35,25 @@
       },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.guns"
-      }
-    }
+      },
+	  "minecraft:on_use": {
+		"on_use": {
+			"event": "missile:launch",
+			"target": "self"
+		}
+	  }
+    },
+
+	"events": {
+		"missile:launch": {
+			"run_command": {
+				"command": [
+					"function noteamphone"
+				],
+				"target": "holder"
+			}
+		}
+	
+	}	
   }
 }

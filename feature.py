@@ -93,18 +93,24 @@ for row in csv_reader:
 
             e_text += "entity.gvcv5:flag_{0}_ca.name=§b{1}\n".format(structure_id,row[0].replace("ダンジョン","同盟軍拠点"))
             se_text += "item.spawn_egg.entity.gvcv5:flag_{0}_ca.name={1}\n".format(structure_id,row[0].replace("ダンジョン","同盟軍拠点"))
-            e_text += "entity.gvcv5:flag_{0}_ga.name=§c{1}\n".format(structure_id,row[0].replace("ダンジョン","ゲリラ拠点"))
+            e_text += "entity.gvcv5:flag_{0}_ga.name=§8{1}\n".format(structure_id,row[0].replace("ダンジョン","ゲリラ拠点"))
             se_text += "item.spawn_egg.entity.gvcv5:flag_{0}_ga.name={1}\n".format(structure_id,row[0].replace("ダンジョン","ゲリラ拠点"))
+            with open("tool/vloot.json","r") as f:
+                loot_table = json.load(f)
+                loot_table["pools"][0]["entries"][0]["functions"][0]["id"] = "gvcv5:flag_{}_ca".format(structure_id)
+            with open("behavior_packs/GVCAddonV5(2)/loot_tables/flag/flag_{}_ca.json".format(structure_id),"w") as f:
+                json.dump(loot_table,f,indent=2)
+
             with open("tool/a1.json","r") as f:
                 flag_json = json.load(f)
                 flag_json["minecraft:entity"]["description"]["identifier"] = "gvcv5:flag_{}_ca".format(structure_id)
+                flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][5]["spawn_items"]["table"] = "loot_tables/flag/flag_{}_ca.json".format(structure_id)
                 flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ca ~~1~".format(structure_id)
                 flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ga ~~1~".format(structure_id)
                 flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.gvcv5:flag_{0}_ca.name".format(structure_id)
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
-                    del flag_json["minecraft:entity"]["components"]["minecraft:damage_sensor"]["triggers"][0] 
 
             with open("behavior_packs/GVCAddonV5(2)/entities/flag/{}_ca.json".format(structure_id),"w") as f:
                 json.dump(flag_json,f,indent=2)

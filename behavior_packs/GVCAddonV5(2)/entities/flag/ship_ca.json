@@ -1,11 +1,11 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "gvcv5:flag_ship_ca",
+      "spawn_category": "creature",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false,
       "runtime_identifier": "minecraft:bat"
     },
     "component_groups": {
@@ -24,6 +24,26 @@
       },
       "minecraft:damage_sensor": {
         "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": true,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "monster"
+                  }
+                ]
+              },
+              "event": "become_GA"
+            }
+          },
           {
             "cause": "all",
             "deals_damage": false,
@@ -80,6 +100,163 @@
       },
       "minecraft:knockback_resistance": {
         "value": 1.0
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "redteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "red_dye"
+                  }
+                ]
+              },
+              "event": "gvcv5:become_redteam",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blue_dye"
+                  }
+                ]
+              },
+              "event": "gvcv5:become_blueteam",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "green_dye"
+                  }
+                ]
+              },
+              "event": "gvcv5:become_greenteam",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "yellowteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "yellow_dye"
+                  }
+                ]
+              },
+              "event": "gvcv5:become_yellowteam",
+              "target": "self"
+            }
+          },
+          {
+            "hurt_item": 1,
+            "play_sounds": "irongolem.repair",
+            "interact_text": "action.interact.repair",
+            "health_amount": 10,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "zex:rep"
+                  },
+                  {
+                    "test": "is_missing_health"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "hurt_item": 1,
+            "spawn_items": {
+              "table": "loot_tables/flag/flag_ship_ca.json"
+            },
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "zex:rep"
+                  },
+                  {
+                    "test": "is_missing_health",
+                    "operator": "not"
+                  }
+                ]
+              },
+              "event": "despawning",
+              "target": "self"
+            }
+          }
+        ]
       },
       "minecraft:behavior.summon_entity": {
         "priority": 2,
@@ -173,6 +350,45 @@
       }
     },
     "events": {
+      "despawning": {
+        "add": {
+          "component_groups": [
+            "despawning"
+          ]
+        }
+      },
+      "gvcv5:become_redteam": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_red ~~5~",
+            "kill @s"
+          ]
+        }
+      },
+      "gvcv5:become_blueteam": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_blue ~~5~",
+            "kill @s"
+          ]
+        }
+      },
+      "gvcv5:become_greenteam": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_green ~~5~",
+            "kill @s"
+          ]
+        }
+      },
+      "gvcv5:become_yellowteam": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_yellow ~~5~",
+            "kill @s"
+          ]
+        }
+      },
       "become_CA": {
         "queue_command": {
           "command": [

@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "gvcv5:flag_red",
+      "materials": {
+        "default": "iron_golem"
+      },
+      "textures": {
+        "default": "textures/flag/redteam"
+      },
+      "geometry": {
+        "default": "geometry.flag"
+      },
+      "spawn_egg": {
+        "texture": "flag_red",
+        "texture_index": 0
+      },
+      "render_controllers": [
+        "controller.render.iron_golem"
+      ]
+    }
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gvcv5:flag_blue",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:bat"
+    },
+    "component_groups": {
+      "despawning": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "0"
+      },
+      "minecraft:boss": {
+        "name": "entity.gvcv5:flag_garrison_blue.name",
+        "should_darken_sky": false,
+        "hud_range": 30
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "monster"
+                  }
+                ],
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "become_GA"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "redteam"
+                  }
+                ],
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "become_R"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  }
+                ],
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "become_B"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  }
+                ],
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "become_G"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "yellowteam"
+                  }
+                ],
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "become_Y"
+            }
+          },
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/a1.json"
+      },
+      "minecraft:type_family": {
+        "family": [
+          "allied_soldier",
+          "playerp",
+          "mob",
+          "blueteam"
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 500,
+        "max": 500
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:behavior.summon_entity": {
+        "priority": 2,
+        "summon_choices": [
+          {
+            "weight": 1,
+            "cooldown_time": 1.0,
+            "cast_duration": 0,
+            "particle_color": "#FF0000",
+            "sequence": [
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 5.0,
+                "num_entities_spawned": 5,
+                "entity_type": "gvcv5:ca",
+                "summon_cap": 8,
+                "summon_cap_radius": 32.0,
+                "size": 1.0,
+                "sound_event": "prepare.summon"
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:behavior.send_event": {
+        "priority": 0,
+        "event_choices": [
+          {
+            "min_activation_range": 0.0,
+            "max_activation_range": 3.0,
+            "cooldown_time": 0,
+            "cast_duration": 0,
+            "particle_color": "#FF0000",
+            "weight": 3,
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "allied_soldier"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "noteam"
+                }
+              ]
+            },
+            "start_sound_event": "cast.spell",
+            "sequence": [
+              {
+                "base_delay": 0,
+                "event": "gvcv5:become_blueteam",
+                "sound_event": "prepare.wololo"
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 8,
+        "speed_multiplier": 0.6
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "monster"
+            },
+            "max_dist": 15
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "redteam"
+            },
+            "max_dist": 15
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "greenteam"
+            },
+            "max_dist": 15
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "yellowteam"
+            },
+            "max_dist": 15
+          }
+        ]
+      },
+      "minecraft:persistent": {},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:follow_range": {
+        "value": 64
+      }
+    },
+    "events": {
+      "become_R": {
+        "queue_command": {
+          "command":[ "summon gvcv5:flag_red ~~5~","kill @s"]
+        }
+      },
+      "become_B": {
+        "queue_command": {
+          "command":[ "summon gvcv5:flag_blue ~~5~","kill @s"]
+        }
+      },
+      "become_G": {
+        "queue_command": {
+          "command":[ "summon gvcv5:flag_green ~~5~","kill @s"]
+        }
+      },
+      "become_Y": {
+        "queue_command": {
+          "command":[ "summon gvcv5:flag_yellow ~~5~","kill @s"]
+        }
+      },
+      "become_CA": {
+        "queue_command": {
+          "command":[ "summon gvcv5:flag_ ~~5~"]
+        }
+      },
+      "become_GA": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_garrison_ga ~~1~"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -272,7 +272,7 @@
         "value": 0
       },
       "minecraft:type_family": {
-        "family": [ "allied_soldier","playerp", "mob" ]
+        "family": [ "allied_soldier","playerp", "mob", "noteam" ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -289,6 +289,7 @@
 				"on_interact": {
 					"filters": {
 						"all_of": [
+              { "test": "is_family","subject": "self","value": "noteam"},
               { "test": "is_family","subject": "other","value": "redteam"},
               { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "red_dye"}
 						]
@@ -304,6 +305,7 @@
 				"on_interact": {
 					"filters": {
 						"all_of": [
+              { "test": "is_family","subject": "self","value": "noteam"},
               { "test": "is_family","subject": "other","value": "blueteam"},
               { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blue_dye"}
 						]
@@ -319,6 +321,7 @@
 				"on_interact": {
 					"filters": {
 						"all_of": [
+              { "test": "is_family","subject": "self","value": "noteam"},
               { "test": "is_family","subject": "other","value": "greenteam"},
               { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "green_dye"}
 						]
@@ -334,6 +337,7 @@
 				"on_interact": {
 					"filters": {
 						"all_of": [
+              { "test": "is_family","subject": "self","value": "noteam"},
               { "test": "is_family","subject": "other","value": "yellowteam"},
               { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "yellow_dye"}
 						]

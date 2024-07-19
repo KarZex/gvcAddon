@@ -1306,7 +1306,8 @@
         "family": [
           "allied_soldier",
           "playerp",
-          "mob"
+          "mob",
+          "noteam"
         ]
       },
       "minecraft:breathable": {
@@ -1323,6 +1324,11 @@
             "on_interact": {
               "filters": {
                 "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "self",
+                    "value": "noteam"
+                  },
                   {
                     "test": "is_family",
                     "subject": "other",
@@ -1349,6 +1355,11 @@
                 "all_of": [
                   {
                     "test": "is_family",
+                    "subject": "self",
+                    "value": "noteam"
+                  },
+                  {
+                    "test": "is_family",
                     "subject": "other",
                     "value": "blueteam"
                   },
@@ -1373,6 +1384,11 @@
                 "all_of": [
                   {
                     "test": "is_family",
+                    "subject": "self",
+                    "value": "noteam"
+                  },
+                  {
+                    "test": "is_family",
                     "subject": "other",
                     "value": "greenteam"
                   },
@@ -1395,6 +1411,11 @@
             "on_interact": {
               "filters": {
                 "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "self",
+                    "value": "noteam"
+                  },
                   {
                     "test": "is_family",
                     "subject": "other",
