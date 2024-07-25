@@ -169,22 +169,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						user.addTag(`wantToBered`);
 					}
 					else{
-						const form = new ModalFormData();
-						form.title(`script.gvcv5.input_password.name`);
-						form.textField(`script.gvcv5.input_password.name`,``);
-						form.show(user).then( r => {
-							if (!r.canceled) {
-								if( r.formValues[0] == `1e4ac6b8` ){
-									user.triggerEvent(`gvcv5:become_redteam`);
-									user.addTag(`redleader`);
-									user.sendMessage({ translate: `script.gvcv5.youAreInredteam.name`});
-									world.setDynamicProperty(`redchat`,``)
-								}
-								else{
-									user.sendMessage({ translate: `script.gvcv5.invaid_password.name`});
-								}
-							}
-						},)
+						user.triggerEvent(`gvcv5:become_redteam`);
+						user.addTag(`redleader`);
+						user.sendMessage({ translate: `script.gvcv5.youAreInredteam.name`});
+						world.setDynamicProperty(`redchat`,``)
 					}
 				}
 				else if( r.selection == 1 ){
@@ -197,22 +185,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						user.addTag(`wantToBeblue`);
 					}
 					else{
-						const form = new ModalFormData();
-						form.title(`script.gvcv5.input_password.name`);
-						form.textField(`script.gvcv5.input_password.name`,``);
-						form.show(user).then( r => {
-							if (!r.canceled) {
-								if( r.formValues[0] == `4586ce6a` ){
-									user.triggerEvent(`gvcv5:become_blueteam`);
-									user.addTag(`blueleader`);
-									user.sendMessage({ translate: `script.gvcv5.youAreInblueteam.name`});
-									world.setDynamicProperty(`bluechat`,``)
-								}
-								else{
-									user.sendMessage({ translate: `script.gvcv5.invaid_password.name`});
-								}
-							}
-						},)
+						user.triggerEvent(`gvcv5:become_blueteam`);
+						user.addTag(`blueleader`);
+						user.sendMessage({ translate: `script.gvcv5.youAreInblueteam.name`});
+						world.setDynamicProperty(`bluechat`,``)
 					}
 				}
 				else if( r.selection == 2 ){
@@ -225,22 +201,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						user.addTag(`wantToBegreen`);
 					}
 					else{
-						const form = new ModalFormData();
-						form.title(`script.gvcv5.input_password.name`);
-						form.textField(`script.gvcv5.input_password.name`,``);
-						form.show(user).then( r => {
-							if (!r.canceled) {
-								if( r.formValues[0] == `fa477c83` ){
-									user.triggerEvent(`gvcv5:become_greenteam`);
-									user.addTag(`greenleader`);
-									user.sendMessage({ translate: `script.gvcv5.youAreIngreenteam.name`});
-									world.setDynamicProperty(`greenchat`,``)
-								}
-								else{
-									user.sendMessage({ translate: `script.gvcv5.invaid_password.name`});
-								}
-							}
-						},)
+						user.triggerEvent(`gvcv5:become_greenteam`);
+						user.addTag(`greenleader`);
+						user.sendMessage({ translate: `script.gvcv5.youAreIngreenteam.name`});
+						world.setDynamicProperty(`greenchat`,``)
 					}
 				}
 				else if( r.selection == 3 ){
@@ -253,22 +217,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						user.addTag(`wantToBeyellow`);
 					}
 					else{
-						const form = new ModalFormData();
-						form.title(`script.gvcv5.input_password.name`);
-						form.textField(`script.gvcv5.input_password.name`,``);
-						form.show(user).then( r => {
-							if (!r.canceled) {
-								if( r.formValues[0] == `2e8a6905` ){
-									user.triggerEvent(`gvcv5:become_yellowteam`);
-									user.addTag(`yellowleader`);
-									user.sendMessage({ translate: `script.gvcv5.youAreInyellowteam.name`});
-									world.setDynamicProperty(`yellowchat`,``)
-								}
-								else{
-									user.sendMessage({ translate: `script.gvcv5.invaid_password.name`});
-								}
-							}
-						},)
+						user.triggerEvent(`gvcv5:become_yellowteam`);
+						user.addTag(`yellowleader`);
+						user.sendMessage({ translate: `script.gvcv5.youAreInyellowteam.name`});
+						world.setDynamicProperty(`yellowchat`,``)
 					}
 				}
 			}

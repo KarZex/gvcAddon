@@ -13,7 +13,7 @@
         "default": "geometry.rpg"
       },
       "animations": {
-        "first": "animation.ak47.first2",
+        "first": "animation.rpg.first",
         "ads": "animation.ak47.ads3",
         "third": "animation.item.third2"
       },

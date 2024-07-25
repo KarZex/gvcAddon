@@ -39,6 +39,12 @@
               "ak47_reload": "query.get_equipped_item_name == 'ak47' && (variable.attack_time > 0.0)"
             },
             {
+              "ak102": "query.get_equipped_item_name == 'ak102' && query.is_using_item"
+            },
+            {
+              "ak102_reload": "query.get_equipped_item_name == 'ak102' && (variable.attack_time > 0.0)"
+            },
+            {
               "an94": "query.get_equipped_item_name == 'an94' && query.is_using_item"
             },
             {
@@ -141,6 +147,12 @@
               "m60_reload": "query.get_equipped_item_name == 'm60' && (variable.attack_time > 0.0)"
             },
             {
+              "m72": "query.get_equipped_item_name == 'm72' && query.is_using_item"
+            },
+            {
+              "m72_reload": "query.get_equipped_item_name == 'm72' && (variable.attack_time > 0.0)"
+            },
+            {
               "m79": "query.get_equipped_item_name == 'm79' && query.is_using_item"
             },
             {
@@ -241,6 +253,12 @@
             },
             {
               "rpg_reload": "query.get_equipped_item_name == 'rpg' && (variable.attack_time > 0.0)"
+            },
+            {
+              "saiga12": "query.get_equipped_item_name == 'saiga12' && query.is_using_item"
+            },
+            {
+              "saiga12_reload": "query.get_equipped_item_name == 'saiga12' && (variable.attack_time > 0.0)"
             },
             {
               "scar": "query.get_equipped_item_name == 'scar' && query.is_using_item"
@@ -421,6 +439,28 @@
             "/event entity @s[tag=!reload,tag=!down,scores={ak47=1..}] fire:ak47",
             "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={ak47=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={ak47=1..}] ak47 1"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "ak102_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload ak102"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "ak102": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,tag=!down,scores={ak102=1..}] fire:ak102",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={ak102=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={ak102=1..}] ak102 1"
           ],
           "transitions": [
             {
@@ -791,25 +831,14 @@
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
-            },
-            {
-              "m9ii": "query.get_equipped_item_name == 'm9' && query.is_using_item"
+              "m9_after": "(!query.is_using_item)"
             }
           ]
         },
-        "m9ii": {
-          "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m9=1..}] fire:m9",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m9=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m9=1..}] m9 1"
-          ],
+        "m9_after": {
           "transitions": [
             {
-              "default": "!query.is_using_item"
-            },
-            {
-              "m9": "query.get_equipped_item_name == 'm9' && query.is_using_item"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -940,6 +969,35 @@
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "m72_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m72"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "m72": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,tag=!down,scores={m72=1..}] fire:m72",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m72=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m72=1..}] m72 1"
+          ],
+          "transitions": [
+            {
+              "m72_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m72_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1135,7 +1193,7 @@
         "m1014_after": {
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 7 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1441,6 +1499,35 @@
             }
           ]
         },
+        "saiga12_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload saiga12"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "saiga12": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,tag=!down,scores={saiga12=1..}] fire:saiga12",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={saiga12=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={saiga12=1..}] saiga12 1"
+          ],
+          "transitions": [
+            {
+              "saiga12_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "saiga12_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
         "scar_reload": {
           "on_entry": [
             "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload scar"
@@ -1517,7 +1604,7 @@
         "tt33_after": {
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 5 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },

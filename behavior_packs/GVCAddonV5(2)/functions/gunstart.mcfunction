@@ -21,6 +21,8 @@ scoreboard objectives add ak12 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s ak12 30
 scoreboard objectives add ak47 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s ak47 30
+scoreboard objectives add ak102 dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s ak102 30
 scoreboard objectives add an94 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s an94 30
 scoreboard objectives add awm dummy
@@ -55,6 +57,8 @@ scoreboard objectives add m16a4 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m16a4 30
 scoreboard objectives add m60 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m60 100
+scoreboard objectives add m72 dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s m72 1
 scoreboard objectives add m79 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m79 1
 scoreboard objectives add m82 dummy
@@ -89,6 +93,8 @@ scoreboard objectives add ppsh dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s ppsh 72
 scoreboard objectives add rpg dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s rpg 1
+scoreboard objectives add saiga12 dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s saiga12 6
 scoreboard objectives add scar dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s scar 20
 scoreboard objectives add svd dummy

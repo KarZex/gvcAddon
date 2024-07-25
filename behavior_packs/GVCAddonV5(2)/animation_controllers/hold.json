@@ -15,6 +15,9 @@
               "ak47": "query.get_equipped_item_name == 'ak47'"
             },
             {
+              "ak102": "query.get_equipped_item_name == 'ak102'"
+            },
+            {
               "an94": "query.get_equipped_item_name == 'an94'"
             },
             {
@@ -64,6 +67,9 @@
             },
             {
               "m60": "query.get_equipped_item_name == 'm60'"
+            },
+            {
+              "m72": "query.get_equipped_item_name == 'm72'"
             },
             {
               "m79": "query.get_equipped_item_name == 'm79'"
@@ -117,6 +123,9 @@
               "rpg": "query.get_equipped_item_name == 'rpg'"
             },
             {
+              "saiga12": "query.get_equipped_item_name == 'saiga12'"
+            },
+            {
               "scar": "query.get_equipped_item_name == 'scar'"
             },
             {
@@ -159,6 +168,16 @@
         "ak47": {
           "on_entry": [
             "/function hold/ak47h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "ak102": {
+          "on_entry": [
+            "/function hold/ak102h"
           ],
           "transitions": [
             {
@@ -336,6 +355,16 @@
             }
           ]
         },
+        "m72": {
+          "on_entry": [
+            "/function hold/m72h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
         "m79": {
           "on_entry": [
             "/function hold/m79h"
@@ -499,6 +528,16 @@
         "rpg": {
           "on_entry": [
             "/function hold/rpgh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "saiga12": {
+          "on_entry": [
+            "/function hold/saiga12h"
           ],
           "transitions": [
             {

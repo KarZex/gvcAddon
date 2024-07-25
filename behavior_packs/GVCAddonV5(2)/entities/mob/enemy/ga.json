@@ -81,6 +81,24 @@
           "table": "loot_tables/gun/ak47.json"
         }
       },
+      "ak102": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ak102"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ak102.json"
+        }
+      },
       "an94": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -301,7 +319,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.05,
+          "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -385,6 +403,24 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/m60.json"
+        }
+      },
+      "m72": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m72"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m72.json"
         }
       },
       "m79": {
@@ -693,6 +729,24 @@
           "table": "loot_tables/gun/rpg.json"
         }
       },
+      "saiga12": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 12,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:saiga12"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/saiga12.json"
+        }
+      },
       "scar": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -733,7 +787,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.35000000000000003,
+          "burst_interval": 0.15000000000000002,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1309,6 +1363,13 @@
           ]
         }
       },
+      "ak102": {
+        "add": {
+          "component_groups": [
+            "ak102"
+          ]
+        }
+      },
       "an94": {
         "add": {
           "component_groups": [
@@ -1428,6 +1489,13 @@
           ]
         }
       },
+      "m72": {
+        "add": {
+          "component_groups": [
+            "m72"
+          ]
+        }
+      },
       "m79": {
         "add": {
           "component_groups": [
@@ -1544,6 +1612,13 @@
         "add": {
           "component_groups": [
             "rpg"
+          ]
+        }
+      },
+      "saiga12": {
+        "add": {
+          "component_groups": [
+            "saiga12"
           ]
         }
       },

@@ -308,6 +308,28 @@
           }
         ]
       },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "gvcv5:order",
+              "target": "self"
+            }
+          }
+        ]
+      },
       "minecraft:loot": {
         "table": "loot_tables/entities/skeleton.json"
       },
@@ -408,125 +430,123 @@
     },
 
     "events": {
-      "minecraft:entity_transformed": {
-        "sequence": [
-		 {
-        "randomize": [
-          {
-            "weight": 1,
-            "trigger": "m16a4"
-          },
-          {
-            "weight": 2,
-            "trigger": "m4"
-          },
-          {
-            "weight": 1,
-            "trigger": "famas"
-          },
-          {
-            "weight": 1,
-            "trigger": "m110"
-          },
-          {
-            "weight": 1,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 1,
-            "trigger": "m249"
-          }
-		 ]
-		}
-	   ]
-      },
-      "attack": {
-        "remove": {
-          "component_groups": [
-            "wait",
-            "follow",
-			      "default"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "attack"
-          ]
-        }
-      },
-      "wait": {
-        "remove": {
-          "component_groups": [
-            "attack",
-            "follow",
-			      "default"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "wait"
-          ]
-        }
-      },
-      "follow": {
-        "remove": {
-          "component_groups": [
-            "attack",
-            "wait",
-			      "default"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "follow"
-          ]
-        }
-      },
-      "free": {
-        "remove": {
-          "component_groups": [
-            "attack",
-            "wait",
-            "follow"
-          ]
-        },
+      "minecraft:entity_spawned": {
         "add": {
           "component_groups": [
             "default"
           ]
-        }
-      },  
-      "minecraft:entity_spawned": {
-        "sequence": [
-		 {
-        "randomize": [
-          {
-            "weight": 1,
-            "trigger": "m16a4"
-          },
-          {
-            "weight": 2,
-            "trigger": "m4"
-          },
-          {
-            "weight": 1,
-            "trigger": "famas"
-          },
-          {
-            "weight": 1,
-            "trigger": "m110"
-          },
-          {
-            "weight": 1,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 1,
-            "trigger": "m249"
-          }
-		 ]
-		}
-	   ]
+        },
+        "trigger": "ak102"
+      },
+      "minecraft:entity_transformed": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        },
+        "trigger": "ak102"
+      },
+      "gvcv5:order":{
+          "sequence":[
+              {
+                  "filters":{
+                    "all_of":[
+                      {
+                        "test":"has_component",
+                        "operator": "!=",
+                        "value":"attack"
+                      },
+                      {
+                        "test":"has_component",
+                        "operator": "!=",
+                        "value":"follow"
+                      },
+                      {
+                        "test":"has_component",
+                        "operator": "!=",
+                        "value":"wait"
+                      }
+                    ]
+                  },
+                  "add":{
+                      "component_groups":[
+                          "attack"
+                      ]
+                  },
+                  "remove":{
+                      "component_groups":[
+                        "default"
+                      ]
+                  },
+                  "queue_command":{
+                    "command":[ "say attack" ],
+                    "target":"player"
+                  }
+              },
+              {
+                  "filters":{
+                      "test":"has_component",
+                      "operator":"==",
+                      "value":"follow"
+                  },
+                  "add":{
+                      "component_groups":[
+                          "attack"
+                      ]
+                  },
+                  "remove":{
+                      "component_groups":[
+                        "follow"
+                      ]
+                  },
+                  "queue_command":{
+                    "command":[ "say attack" ],
+                    "target":"player"
+                  }
+              },
+              {
+                  "filters":{
+                      "test":"has_component",
+                      "operator":"==",
+                      "value":"attack"
+                  },
+                  "add":{
+                      "component_groups":[
+                          "wait"
+                      ]
+                  },
+                  "remove":{
+                      "component_groups":[
+                        "attack"
+                      ]
+                  },
+                  "queue_command":{
+                    "command":[ "say wait" ],
+                    "target":"player"
+                  }
+              },
+              {
+                  "filters":{
+                      "test":"has_component",
+                      "operator":"==",
+                      "value":"wait"
+                  },
+                  "add":{
+                      "component_groups":[
+                          "follow"
+                      ]
+                  },
+                  "remove":{
+                      "component_groups":[
+                        "wait"
+                      ]
+                  },
+                  "queue_command":{
+                    "command":[ "say follow" ],
+                    "target":"player"
+                  }
+              }
+          ]
       }
     }
   }

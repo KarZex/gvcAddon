@@ -1,18 +1,65 @@
 {
-  "format_version": "1.13.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "addon:merg08",
+      "identifier": "gvcv5:merg08",
+      "spawn_category": "monster",
       "is_spawnable": true,
-      "is_summonable": true,
-      "is_experimental": false
+      "is_summonable": true
     },
+    "component_groups": {
+      "rocket": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 4,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "target_in_sight_time":0,
+          "attack_radius": 32.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_rpg"
+        },
+        "minecraft:skin_id": {
+          "value": 2
+        },
+        "minecraft:timer": {
+          "time": 1.6,
+          "time_down_event": { "event": "gun" }
+	      }
+      },
+      "gun": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 4,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.5,
+          "attack_interval_max": 0.5,
+          "attack_radius": 32.0
+        },
+        "minecraft:skin_id": {
+          "value": 1
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_ak12"
+        },
+        "minecraft:timer": {
+          "time": 4,
+          "time_down_event": { "event": "rocket" }
+        }
+      }
+	},
   
     "components": {
      "minecraft:boss": {
         "name": "BOSS MERG08",
         "should_darken_sky": true,
-        "hud_range": 60
+        "hud_range": 100
       },     
       "minecraft:nameable": {},
       "minecraft:type_family": {
@@ -34,12 +81,13 @@
             "filters": {
               "any_of": [
                 { "test": "is_family", "subject": "other", "value": "player" },
+                { "test": "is_family", "subject": "other", "value": "playerp" },
                 { "test": "is_family", "subject": "other", "value": "irongolem" },
                 { "test": "is_family", "subject": "other", "value": "snowgolem" },
                 { "test": "is_family", "subject": "other", "value": "wandering_trader" }
               ]
             },
-            "max_dist": 32
+            "max_dist": 100
           },
           {
             "filters": {
@@ -48,14 +96,14 @@
                 { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
               ]
             },
-            "max_dist": 32
+            "max_dist": 100
           }
         ],
         "must_see": true
       },
       "minecraft:collision_box": {
-        "width": 3.0,
-        "height": 8.0
+        "width": 1.0,
+        "height": 2.0
       },
       "minecraft:health": {
         "value": 360,
@@ -65,10 +113,10 @@
         "value": 1.0
       },
       "minecraft:scale": {
-        "value": 0.3
+        "value": 1.2
       },
       "minecraft:movement": {
-        "value": 0.4
+        "value": 0.2
       },
       "minecraft:navigation.walk": {
         "can_path_over_water": true
@@ -80,31 +128,6 @@
         "is_pushable": true,
         "is_pushable_by_piston": true
       },
-      "minecraft:behavior.summon_entity": {
-        "priority": 2,
-
-        "summon_choices": [
-          {
-            "weight": 1,
-            "cooldown_time": 1.0,
-            "cast_duration": 0.1,
-            "particle_color": "#FFB3B3CC",
-            "sequence": [
-              {
-                "shape": "circle",
-                "target": "self",
-                "base_delay": 2.1,
-                "num_entities_spawned": 6,
-                "entity_type": "addon:merg08_missile",
-                "summon_cap": 64,
-                "summon_cap_radius": 48.0,
-                "size": 1.0,
-                "sound_event": "prepare.summon"
-              }
-            ]
-          }
-        ]
-      },
       "minecraft:movement.basic": {},
       "minecraft:behavior.random_look_around": {
         "priority": 4
@@ -114,10 +137,48 @@
         "speed_multiplier": 0.9
       },
       "minecraft:follow_range": {
-        "value": 64
+        "value": 100
       }
     },
     "events": {
+      "minecraft:spawned_from_block": {
+        "add": {
+          "component_groups": [
+            "gun"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "gun"
+          ]
+        }
+      },
+      "gun": {
+         "remove": {
+           "component_groups": [
+            "rocket"
+           ]
+         },
+         "add": {
+           "component_groups": [
+             "gun"
+           ]
+         }
+       },
+       "rocket": {
+         "remove": {
+           "component_groups": [
+            "gun"
+           ]
+         },
+         "add": {
+           "component_groups": [
+             "rocket"
+           ]
+         }
+       }
     }
   }
 }

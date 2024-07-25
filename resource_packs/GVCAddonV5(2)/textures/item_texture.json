@@ -967,6 +967,21 @@
     },
     "flag_yellow": {
       "textures": "textures/items/flag_yellow"
+    },
+    "phone": {
+      "textures": "textures/items/phone"
+    },
+    "ak110": {
+      "textures": "textures/items/gun/ak110"
+    },
+    "ak102": {
+      "textures": "textures/items/gun/ak102"
+    },
+    "saiga12": {
+      "textures": "textures/items/gun/saiga12"
+    },
+    "m72": {
+      "textures": "textures/items/gun/m72"
     }
   }
 }

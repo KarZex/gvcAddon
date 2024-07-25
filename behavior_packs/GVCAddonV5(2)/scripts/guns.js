@@ -1,7 +1,7 @@
 import { EntityDamageCause } from "@minecraft/server";
 export const gunData = {
   "fire": {
-    "damage": 5,
+    "damage": 1,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -16,6 +16,13 @@ export const gunData = {
   },
   "ak47": {
     "damage": 6,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "ak102": {
+    "damage": 7,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -140,6 +147,13 @@ export const gunData = {
     "bullet": "zex:762m",
     "damageType": "override"
   },
+  "m72": {
+    "damage": 1,
+    "maxGunAmmo": 1,
+    "reloadTime": 80,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
   "m79": {
     "damage": 1,
     "maxGunAmmo": 1,
@@ -183,7 +197,7 @@ export const gunData = {
     "damageType": "override"
   },
   "m1014": {
-    "damage": 2,
+    "damage": 3,
     "maxGunAmmo": 8,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -259,6 +273,13 @@ export const gunData = {
     "bullet": "zex:rocketm",
     "damageType": "entityExplosion"
   },
+  "saiga12": {
+    "damage": 2,
+    "maxGunAmmo": 6,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
   "scar": {
     "damage": 10,
     "maxGunAmmo": 20,
@@ -267,14 +288,14 @@ export const gunData = {
     "damageType": "override"
   },
   "svd": {
-    "damage": 12,
+    "damage": 13,
     "maxGunAmmo": 10,
     "reloadTime": 60,
     "bullet": "zex:762m",
     "damageType": "override"
   },
   "tt33": {
-    "damage": 7,
+    "damage": 10,
     "maxGunAmmo": 6,
     "reloadTime": 50,
     "bullet": "zex:762m",

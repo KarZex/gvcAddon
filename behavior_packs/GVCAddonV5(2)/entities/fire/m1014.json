@@ -12,7 +12,7 @@
       "minecraft:type_family": {
         "family": [
           "bullet",
-          "srbullet"
+          "sgbullet"
         ]
       },
       "minecraft:explode": {
@@ -33,7 +33,7 @@
           },
           "stick_in_ground": {}
         },
-        "power": 0.6000000000000001,
+        "power": 1.0,
         "gravity": 0,
         "inertia": 1.5,
         "uncertaintyBase": 10.0,

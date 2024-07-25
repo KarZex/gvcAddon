@@ -16,35 +16,42 @@ export const craftData = {
   "gc1": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"gun:m1911","texture":"textures/gun/m1911", "count":1, "cost":[ 3, 1, 1 ] },
-      { "give":"gun:m9","texture":"textures/gun/m9", "count":1, "cost":[ 3, 1, 1 ] },
-      { "give":"gun:ak47","texture":"textures/gun/ak47", "count":1, "cost":[ 2, 3, 1 ] },
-      { "give":"gun:m16a4","texture":"textures/gun/m16a4", "count":1, "cost":[ 2, 3, 1 ] },
-      { "give":"gun:m4","texture":"textures/gun/m4", "count":1, "cost":[ 2, 3, 1 ] },
-      { "give":"gun:m60","texture":"textures/gun/m60", "count":1, "cost":[ 6, 3, 6 ] },
-      { "give":"gun:g3a3","texture":"textures/gun/g3a3", "count":1, "cost":[ 2, 4, 1 ] },
-      { "give":"gun:m870","texture":"textures/gun/m870", "count":1, "cost":[ 2, 4, 1 ] }
+      { "give":"gun:m1911","texture":"textures/items/gun/m1911", "count":1, "cost":[ 3, 1, 1 ] },
+      { "give":"gun:m9","texture":"textures/items/gun/m9", "count":1, "cost":[ 3, 1, 1 ] },
+      { "give":"gun:mp40","texture":"textures/items/gun/mp40", "count":1, "cost":[ 3, 1, 1 ] },
+      { "give":"gun:ak47","texture":"textures/items/gun/ak47", "count":1, "cost":[ 2, 3, 1 ] },
+      { "give":"gun:m16a1","texture":"textures/items/gun/m16a1", "count":1, "cost":[ 2, 3, 1 ] },
+      { "give":"gun:m60","texture":"textures/items/gun/m60", "count":1, "cost":[ 6, 3, 6 ] },
+      { "give":"gun:g3a3","texture":"textures/items/gun/g3a3", "count":1, "cost":[ 2, 4, 1 ] },
+      { "give":"gun:m870","texture":"textures/items/gun/m870", "count":1, "cost":[ 2, 4, 1 ] }
     ]
   },
   "gc2": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"gun:glock17","texture":"textures/gun/glock17", "count":1, "cost":[ 3, 1, 1 ] },
-      { "give":"gun:glock18","texture":"textures/gun/glock18", "count":1, "cost":[ 3, 1, 1 ] },
-      { "give":"gun:an94","texture":"textures/gun/an94", "count":1, "cost":[ 2, 6, 1 ] },
-      { "give":"gun:m249","texture":"textures/gun/m249", "count":1, "cost":[ 8, 3, 8 ] },
-      { "give":"gun:m590","texture":"textures/gun/m590", "count":1, "cost":[ 2, 6, 2 ] },
-      { "give":"gun:rpg","texture":"textures/gun/rpg", "count":1, "cost":[ 2, 4, 12 ] },
-      { "give":"gun:m79","texture":"textures/gun/m79", "count":1, "cost":[ 2, 6, 6 ] }
+      { "give":"gun:glock17","texture":"textures/items/gun/glock17", "count":1, "cost":[ 3, 1, 1 ] },
+      { "give":"gun:glock18","texture":"textures/items/gun/glock18", "count":1, "cost":[ 3, 1, 1 ] },
+      { "give":"gun:mp5","texture":"textures/items/gun/mp5", "count":1, "cost":[ 2, 4, 1 ] },
+      { "give":"gun:an94","texture":"textures/items/gun/an94", "count":1, "cost":[ 2, 6, 1 ] },
+      { "give":"gun:ak102","texture":"textures/items/gun/ak102", "count":1, "cost":[ 2, 6, 1 ] },
+      { "give":"gun:m4","texture":"textures/items/gun/m4", "count":1, "cost":[ 2, 3, 1 ] },
+      { "give":"gun:m4a1","texture":"textures/items/gun/m4a1", "count":1, "cost":[ 2, 3, 1 ] },
+      { "give":"gun:m249","texture":"textures/items/gun/m249", "count":1, "cost":[ 8, 3, 8 ] },
+      { "give":"gun:m590","texture":"textures/items/gun/m590", "count":1, "cost":[ 2, 6, 2 ] },
+      { "give":"gun:rpg","texture":"textures/items/gun/rpg", "count":1, "cost":[ 2, 4, 12 ] },
+      { "give":"gun:m79","texture":"textures/items/gun/m79", "count":1, "cost":[ 2, 6, 6 ] }
     ]
   },
   "gc3": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"gun:g36","texture":"textures/gun/g36", "count":1, "cost":[ 6, 1, 6 ] },
-      { "give":"gun:ak12","texture":"textures/gun/ak12", "count":1, "cost":[ 8, 2, 6 ] },
-      { "give":"gun:scar","texture":"textures/gun/scar", "count":1, "cost":[ 8, 2, 6 ] },
-      { "give":"gun:hk416","texture":"textures/gun/hk416", "count":1, "cost":[ 6, 6, 6 ] }
+      { "give":"gun:g36","texture":"textures/items/gun/g36", "count":1, "cost":[ 6, 1, 6 ] },
+      { "give":"gun:m16a4","texture":"textures/items/gun/m16a4", "count":1, "cost":[ 4, 6, 2 ] },
+      { "give":"gun:ak12","texture":"textures/items/gun/ak12", "count":1, "cost":[ 8, 2, 6 ] },
+      { "give":"gun:scar","texture":"textures/items/gun/scar", "count":1, "cost":[ 8, 2, 6 ] },
+      { "give":"gun:hk416","texture":"textures/items/gun/hk416", "count":1, "cost":[ 6, 6, 6 ] },
+      { "give":"gun:m1014","texture":"textures/items/gun/m1014", "count":1, "cost":[ 4, 8, 3 ] },
+      { "give":"gun:saiga12","texture":"textures/items/gun/saiga12", "count":1, "cost":[ 4, 8, 3 ] }
     ]
   },
   "vc1": {

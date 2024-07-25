@@ -319,12 +319,40 @@ for row in csv_reader:
                 ]
             }
         }
+
+        PMC_weapon_change = {
+            "use_item": False,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": True
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:{}".format(gun_id)
+                  }
+                ]
+              },
+              "event": "{}".format(gun_id),
+              "target": "self"
+            }
+          }
+
+
         ga_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         ga_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
         ca_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         ca_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
         pmc_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         pmc_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(PMC_weapon_change)
 
         with open("resource_packs/GVCAddonV5(2)/entity/gun/ak12.json","r") as f:
             gun_entity = json.load(f)

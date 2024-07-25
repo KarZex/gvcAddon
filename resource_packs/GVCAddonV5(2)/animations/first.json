@@ -29,7 +29,7 @@
 				}
 			}
 		},
-		"animation.ak47.first2": {
+		"animation.rpg.first": {
 			"loop": true,
 			"bones": {
 				"rightArm": {
@@ -39,6 +39,23 @@
 				"gun": {
 					"rotation": [-1.60171, -0.46672, 0.14013],
 					"position": [0, -8.6, 1],
+					"scale": 0.33
+				},
+				"guncube": {
+					"position": [0, 4, 0]
+				}
+			}
+		},
+		"animation.ak47.first2": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"gun": {
+					"rotation": [-1.60171, -0.46672, 0.14013],
+					"position": [0, -8.6, 2],
 					"scale": 0.33
 				},
 				"guncube": {

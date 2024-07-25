@@ -388,6 +388,24 @@
           "table": "loot_tables/gun/ak47.json"
         }
       },
+      "ak102": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ak102"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ak102.json"
+        }
+      },
       "an94": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -608,7 +626,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.05,
+          "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -692,6 +710,24 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/m60.json"
+        }
+      },
+      "m72": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m72"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m72.json"
         }
       },
       "m79": {
@@ -1000,6 +1036,24 @@
           "table": "loot_tables/gun/rpg.json"
         }
       },
+      "saiga12": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 12,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:saiga12"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/saiga12.json"
+        }
+      },
       "scar": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -1040,7 +1094,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.35000000000000003,
+          "burst_interval": 0.15000000000000002,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1351,6 +1405,1108 @@
           }
         ]
       },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "gvcv5:order",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:ak12"
+                  }
+                ]
+              },
+              "event": "ak12",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:ak47"
+                  }
+                ]
+              },
+              "event": "ak47",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:ak102"
+                  }
+                ]
+              },
+              "event": "ak102",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:an94"
+                  }
+                ]
+              },
+              "event": "an94",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:awm"
+                  }
+                ]
+              },
+              "event": "awm",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:dp28"
+                  }
+                ]
+              },
+              "event": "dp28",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:famas"
+                  }
+                ]
+              },
+              "event": "famas",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:g36"
+                  }
+                ]
+              },
+              "event": "g36",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:g3a3"
+                  }
+                ]
+              },
+              "event": "g3a3",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:glock17"
+                  }
+                ]
+              },
+              "event": "glock17",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:glock18"
+                  }
+                ]
+              },
+              "event": "glock18",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:hk416"
+                  }
+                ]
+              },
+              "event": "hk416",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:lazer"
+                  }
+                ]
+              },
+              "event": "lazer",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m4"
+                  }
+                ]
+              },
+              "event": "m4",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m4a1"
+                  }
+                ]
+              },
+              "event": "m4a1",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m9"
+                  }
+                ]
+              },
+              "event": "m9",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m10"
+                  }
+                ]
+              },
+              "event": "m10",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m16a1"
+                  }
+                ]
+              },
+              "event": "m16a1",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m16a4"
+                  }
+                ]
+              },
+              "event": "m16a4",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m60"
+                  }
+                ]
+              },
+              "event": "m60",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m72"
+                  }
+                ]
+              },
+              "event": "m72",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m79"
+                  }
+                ]
+              },
+              "event": "m79",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m82"
+                  }
+                ]
+              },
+              "event": "m82",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m110"
+                  }
+                ]
+              },
+              "event": "m110",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m249"
+                  }
+                ]
+              },
+              "event": "m249",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m590"
+                  }
+                ]
+              },
+              "event": "m590",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m870"
+                  }
+                ]
+              },
+              "event": "m870",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m1014"
+                  }
+                ]
+              },
+              "event": "m1014",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m1911"
+                  }
+                ]
+              },
+              "event": "m1911",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mg42"
+                  }
+                ]
+              },
+              "event": "mg42",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mosin"
+                  }
+                ]
+              },
+              "event": "mosin",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mp5"
+                  }
+                ]
+              },
+              "event": "mp5",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mp7"
+                  }
+                ]
+              },
+              "event": "mp7",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mp40"
+                  }
+                ]
+              },
+              "event": "mp40",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:p90"
+                  }
+                ]
+              },
+              "event": "p90",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:pkm"
+                  }
+                ]
+              },
+              "event": "pkm",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:ppsh"
+                  }
+                ]
+              },
+              "event": "ppsh",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:rpg"
+                  }
+                ]
+              },
+              "event": "rpg",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:saiga12"
+                  }
+                ]
+              },
+              "event": "saiga12",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:scar"
+                  }
+                ]
+              },
+              "event": "scar",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:svd"
+                  }
+                ]
+              },
+              "event": "svd",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:tt33"
+                  }
+                ]
+              },
+              "event": "tt33",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:uzi"
+                  }
+                ]
+              },
+              "event": "uzi",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:vz61"
+                  }
+                ]
+              },
+              "event": "vz61",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:xm8"
+                  }
+                ]
+              },
+              "event": "xm8",
+              "target": "self"
+            }
+          }
+        ]
+      },
       "minecraft:loot": {
         "table": "loot_tables/entities/skeleton.json"
       },
@@ -1443,123 +2599,129 @@
       "minecraft:conditional_bandwidth_optimization": {}
     },
     "events": {
-      "minecraft:entity_transformed": {
-        "sequence": [
-          {
-            "randomize": [
-              {
-                "weight": 1,
-                "trigger": "m16a4"
-              },
-              {
-                "weight": 2,
-                "trigger": "m4"
-              },
-              {
-                "weight": 1,
-                "trigger": "famas"
-              },
-              {
-                "weight": 1,
-                "trigger": "m110"
-              },
-              {
-                "weight": 1,
-                "trigger": "mp5"
-              },
-              {
-                "weight": 1,
-                "trigger": "m249"
-              }
-            ]
-          }
-        ]
-      },
-      "attack": {
-        "remove": {
-          "component_groups": [
-            "wait",
-            "follow",
-            "default"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "attack"
-          ]
-        }
-      },
-      "wait": {
-        "remove": {
-          "component_groups": [
-            "attack",
-            "follow",
-            "default"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "wait"
-          ]
-        }
-      },
-      "follow": {
-        "remove": {
-          "component_groups": [
-            "attack",
-            "wait",
-            "default"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "follow"
-          ]
-        }
-      },
-      "free": {
-        "remove": {
-          "component_groups": [
-            "attack",
-            "wait",
-            "follow"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "default"
-          ]
-        }
-      },
       "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        },
+        "trigger": "ak102"
+      },
+      "minecraft:entity_transformed": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        },
+        "trigger": "ak102"
+      },
+      "gvcv5:order": {
         "sequence": [
           {
-            "randomize": [
-              {
-                "weight": 1,
-                "trigger": "m16a4"
-              },
-              {
-                "weight": 2,
-                "trigger": "m4"
-              },
-              {
-                "weight": 1,
-                "trigger": "famas"
-              },
-              {
-                "weight": 1,
-                "trigger": "m110"
-              },
-              {
-                "weight": 1,
-                "trigger": "mp5"
-              },
-              {
-                "weight": 1,
-                "trigger": "m249"
-              }
-            ]
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_component",
+                  "operator": "!=",
+                  "value": "attack"
+                },
+                {
+                  "test": "has_component",
+                  "operator": "!=",
+                  "value": "follow"
+                },
+                {
+                  "test": "has_component",
+                  "operator": "!=",
+                  "value": "wait"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "attack"
+              ]
+            },
+            "remove": {
+              "component_groups": [
+                "default"
+              ]
+            },
+            "queue_command": {
+              "command": [
+                "say attack"
+              ],
+              "target": "player"
+            }
+          },
+          {
+            "filters": {
+              "test": "has_component",
+              "operator": "==",
+              "value": "follow"
+            },
+            "add": {
+              "component_groups": [
+                "attack"
+              ]
+            },
+            "remove": {
+              "component_groups": [
+                "follow"
+              ]
+            },
+            "queue_command": {
+              "command": [
+                "say attack"
+              ],
+              "target": "player"
+            }
+          },
+          {
+            "filters": {
+              "test": "has_component",
+              "operator": "==",
+              "value": "attack"
+            },
+            "add": {
+              "component_groups": [
+                "wait"
+              ]
+            },
+            "remove": {
+              "component_groups": [
+                "attack"
+              ]
+            },
+            "queue_command": {
+              "command": [
+                "say wait"
+              ],
+              "target": "player"
+            }
+          },
+          {
+            "filters": {
+              "test": "has_component",
+              "operator": "==",
+              "value": "wait"
+            },
+            "add": {
+              "component_groups": [
+                "follow"
+              ]
+            },
+            "remove": {
+              "component_groups": [
+                "wait"
+              ]
+            },
+            "queue_command": {
+              "command": [
+                "say follow"
+              ],
+              "target": "player"
+            }
           }
         ]
       },
@@ -1574,6 +2736,13 @@
         "add": {
           "component_groups": [
             "ak47"
+          ]
+        }
+      },
+      "ak102": {
+        "add": {
+          "component_groups": [
+            "ak102"
           ]
         }
       },
@@ -1696,6 +2865,13 @@
           ]
         }
       },
+      "m72": {
+        "add": {
+          "component_groups": [
+            "m72"
+          ]
+        }
+      },
       "m79": {
         "add": {
           "component_groups": [
@@ -1812,6 +2988,13 @@
         "add": {
           "component_groups": [
             "rpg"
+          ]
+        }
+      },
+      "saiga12": {
+        "add": {
+          "component_groups": [
+            "saiga12"
           ]
         }
       },

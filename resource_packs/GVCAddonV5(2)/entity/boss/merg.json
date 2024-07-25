@@ -1,20 +1,36 @@
 {
-  "format_version": "1.8.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "addon:merg08",
-      "materials": { "default": "iron_golem" },
-      "textures": {
-        "default": "textures/entity/merg"
-      },
-      "geometry": {
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "gvcv5:merg08",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/mob/mer08"
+			},
+			"geometry": {
         "default": "geometry.merg08"
-      },
+			},
 	  "spawn_egg":{
 	  "texture":"merg",
 	  "texture_index":0
 	  },
+			"scripts": {
+				"animate": [ 
+          { "walk": "query.is_moving" },
+          { "gun": "query.skin_id == 1" },
+          { "rocket": "query.skin_id == 2" },
+          { "look_at_target": "query.has_target" }
+				]
+			},
+			"animations": {
+				"walk": "animation.merg08.walk",
+				"gun": "animation.merg08.gun",
+				"rocket": "animation.merg08.rocket",
+        "look_at_target": "animation.humanoid.look_at_target.default.v1.0"
+			},
       "render_controllers": [ "controller.render.iron_golem" ]
-    }
-  }
+		}
+	}
 }

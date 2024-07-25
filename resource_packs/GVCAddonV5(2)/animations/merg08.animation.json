@@ -3,6 +3,116 @@
 	"animations": {
 		"animation.merg08.root": {
 			"loop": true
+		},
+		"animation.merg08.walk": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"leftLeg": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [25, 0, 0],
+						"0.5": [0, 0, 0],
+						"0.75": [-25, 0, 0],
+						"1.0": [0, 0, 0]
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-25, 0, 0],
+						"0.5": [0, 0, 0],
+						"0.75": [25, 0, 0],
+						"1.0": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.merg08.gun": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [15.50409, -14.47751, -3.96713]
+				},
+				"bone25": {
+					"rotation": [0, 0, 0]
+				},
+				"leftArm": {
+					"rotation": [-73.31778, -29.438, -4.41146]
+				},
+				"left2": {
+					"rotation": [-85, 0, 0]
+				},
+				"rightArm": {
+					"rotation": [-60, 12.5, 0]
+				},
+				"right2": {
+					"rotation": [-42.5, 0, 0]
+				},
+				"leftLeg": {
+					"rotation": [-15, 0, 0]
+				},
+				"rightLeg": {
+					"rotation": [-30, 0, 0]
+				},
+				"rightL2": {
+					"rotation": [62.5, 0, 0]
+				},
+				"leftL2": {
+					"rotation": [30, 0, 0]
+				},
+				"rightL3": {
+					"rotation": [-30, 0, 0],
+					"position": [0, -1.05424, -0.67162]
+				},
+				"leftL3": {
+					"rotation": [-15, 0, 0],
+					"position": [0, -0.48296, -0.12941]
+				}
+			}
+		},
+		"animation.merg08.rocket": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [15.50409, -14.47751, -3.96713]
+				},
+				"bone25": {
+					"rotation": [0, 0, 0]
+				},
+				"leftArm": {
+					"rotation": [-74.6822, 18.85304, 9.02517]
+				},
+				"left2": {
+					"rotation": [-25, 0, 0]
+				},
+				"rightArm": {
+					"rotation": [-46.17343, 45.17616, 27.12436]
+				},
+				"right2": {
+					"rotation": [-77.5, 0, 0]
+				},
+				"leftLeg": {
+					"rotation": [-15, 0, 0]
+				},
+				"rightLeg": {
+					"rotation": [-30, 0, 0]
+				},
+				"rightL2": {
+					"rotation": [62.5, 0, 0]
+				},
+				"leftL2": {
+					"rotation": [30, 0, 0]
+				},
+				"rightL3": {
+					"rotation": [-30, 0, 0],
+					"position": [0, -1.05424, -0.67162]
+				},
+				"leftL3": {
+					"rotation": [-15, 0, 0],
+					"position": [0, -0.48296, -0.12941]
+				}
+			}
 		}
 	}
 }

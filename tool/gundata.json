@@ -1,6 +1,6 @@
 {
     "fire": {
-      "damage": 5,
+      "damage": 1,
       "maxGunAmmo": 30,
       "reloadTime": 60,
       "bullet": "zex:556m",
