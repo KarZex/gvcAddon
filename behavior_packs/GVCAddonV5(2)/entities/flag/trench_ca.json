@@ -26,38 +26,7 @@
         "triggers": [
           {
             "cause": "all",
-            "deals_damage": true,
-            "on_damage": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "has_damage",
-                    "value": "fatal"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "monster"
-                  }
-                ]
-              },
-              "event": "become_GA"
-            }
-          },
-          {
-            "cause": "all",
-            "deals_damage": false,
-            "on_damage": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "playerp"
-                  }
-                ]
-              }
-            }
+            "deals_damage": false
           }
         ]
       },
@@ -66,8 +35,6 @@
       },
       "minecraft:type_family": {
         "family": [
-          "allied_soldier",
-          "playerp",
           "mob"
         ]
       },

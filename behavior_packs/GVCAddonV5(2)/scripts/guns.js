@@ -7,6 +7,13 @@ export const gunData = {
     "bullet": "zex:556m",
     "damageType": "override"
   },
+  "aa12": {
+    "damage": 2,
+    "maxGunAmmo": 24,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
   "ak12": {
     "damage": 8,
     "maxGunAmmo": 30,

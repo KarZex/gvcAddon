@@ -17,6 +17,8 @@ execute as @s[tag=!startedv4] run scoreboard players set @s fire 30
 execute at @s[tag=!startedv4] run fill ^^^2 ^^^2 gvcv5:supplies
 #guns
 
+scoreboard objectives add aa12 dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s aa12 24
 scoreboard objectives add ak12 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s ak12 30
 scoreboard objectives add ak47 dummy

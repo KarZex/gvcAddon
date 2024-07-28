@@ -17,6 +17,252 @@
       }
     },
     "component_groups": {
+      "char2c": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "allied_soldier"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "villager"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "wandering_trader"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+              },
+              "max_dist": 100
+            }
+          ]
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 64.0
+        },
+        "minecraft:environment_sensor":{
+            "triggers":[
+              {
+                  "filters":{
+                    "all_of":[
+                        { "test": "is_riding","value":false }
+                    ]
+                  },
+                  "event":"despawning"
+              }
+            ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_m60"
+        }
+      },
+      "hauneb_main": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "allied_soldier"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "villager"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "wandering_trader"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+              },
+              "max_dist": 100
+            }
+          ]
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 16,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 10.0,
+          "attack_interval_max": 10.0,
+          "attack_radius": 100.0
+        },
+        "minecraft:environment_sensor":{
+            "triggers":[
+              {
+                  "filters":{
+                    "all_of":[
+                        { "test": "is_riding","value":false }
+                    ]
+                  },
+                  "event":"despawning"
+              }
+            ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:shooter": {
+          "def": "fire:hauneb"
+        }
+      },
+      "hauneb_sub": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "allied_soldier"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "villager"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "wandering_trader"
+              },
+              "max_dist": 100
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+              },
+              "max_dist": 100
+            }
+          ]
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 100.0
+        },
+        "minecraft:environment_sensor":{
+            "triggers":[
+              {
+                  "filters":{
+                    "all_of":[
+                        { "test": "is_riding","value":false }
+                    ]
+                  },
+                  "event":"despawning"
+              }
+            ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_mg42"
+        }
+      },
       "can_despawn": {
         "minecraft:despawn": {
           "despawn_from_distance": {}
@@ -333,6 +579,49 @@
           "add": {
             "component_groups": [
               "freezed"
+            ]
+          }
+      },
+      "despawning": {
+        "queue_command": {
+          "command":[
+            "kill @s"
+          ]
+        }
+      },
+      "char2c": {
+          "add": {
+            "component_groups": [
+              "char2c"
+            ]
+          },
+          "queue_command": {
+            "command":[
+              "effect @s invisibility 99999 1 true"
+            ]
+          }
+      },
+      "hauneb_main": {
+          "add": {
+            "component_groups": [
+              "hauneb_main"
+            ]
+          },
+          "queue_command": {
+            "command":[
+              "effect @s invisibility 99999 1 true"
+            ]
+          }
+      },
+      "hauneb_sub": {
+          "add": {
+            "component_groups": [
+              "hauneb_sub"
+            ]
+          },
+          "queue_command": {
+            "command":[
+              "effect @s invisibility 99999 1 true"
             ]
           }
       }

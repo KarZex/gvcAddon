@@ -352,6 +352,24 @@
           ]
         }
       },
+      "aa12": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 12,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:aa12"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/aa12.json"
+        }
+      },
       "ak12": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -518,7 +536,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.1,
+          "burst_interval": 0.05,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1422,6 +1440,30 @@
                 ]
               },
               "event": "gvcv5:order",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:aa12"
+                  }
+                ]
+              },
+              "event": "aa12",
               "target": "self"
             }
           },
@@ -2724,6 +2766,13 @@
             }
           }
         ]
+      },
+      "aa12": {
+        "add": {
+          "component_groups": [
+            "aa12"
+          ]
+        }
       },
       "ak12": {
         "add": {

@@ -38,6 +38,7 @@ export const craftData = {
       { "give":"gun:m4a1","texture":"textures/items/gun/m4a1", "count":1, "cost":[ 2, 3, 1 ] },
       { "give":"gun:m249","texture":"textures/items/gun/m249", "count":1, "cost":[ 8, 3, 8 ] },
       { "give":"gun:m590","texture":"textures/items/gun/m590", "count":1, "cost":[ 2, 6, 2 ] },
+      { "give":"gun:saiga12","texture":"textures/items/gun/saiga12", "count":1, "cost":[ 2, 4, 3 ] },
       { "give":"gun:rpg","texture":"textures/items/gun/rpg", "count":1, "cost":[ 2, 4, 12 ] },
       { "give":"gun:m79","texture":"textures/items/gun/m79", "count":1, "cost":[ 2, 6, 6 ] }
     ]
@@ -50,8 +51,9 @@ export const craftData = {
       { "give":"gun:ak12","texture":"textures/items/gun/ak12", "count":1, "cost":[ 8, 2, 6 ] },
       { "give":"gun:scar","texture":"textures/items/gun/scar", "count":1, "cost":[ 8, 2, 6 ] },
       { "give":"gun:hk416","texture":"textures/items/gun/hk416", "count":1, "cost":[ 6, 6, 6 ] },
+      { "give":"gun:mp7","texture":"textures/items/gun/mp7", "count":1, "cost":[ 4, 8, 4 ] },
       { "give":"gun:m1014","texture":"textures/items/gun/m1014", "count":1, "cost":[ 4, 8, 3 ] },
-      { "give":"gun:saiga12","texture":"textures/items/gun/saiga12", "count":1, "cost":[ 4, 8, 3 ] }
+      { "give":"gun:aa12","texture":"textures/items/gun/aa12", "count":1, "cost":[ 2, 8, 4 ] }
     ]
   },
   "vc1": {

@@ -48,7 +48,7 @@
 					"rotation": [90, 0, 0]
 				},
 				{
-					"name": "magazine",
+					"name": "mgl_magazine",
 					"parent": "mgl140",
 					"pivot": [-5.55, -113.25, 23.75],
 					"cubes": [
@@ -1355,8 +1355,8 @@
 					]
 				},
 				{
-					"name": "bone2",
-					"parent": "magazine",
+					"name": "ca",
+					"parent": "mgl_magazine",
 					"pivot": [5.13, -79.65, 34.55],
 					"rotation": [0, 0, -90],
 					"cubes": [
@@ -1979,8 +1979,8 @@
 					]
 				},
 				{
-					"name": "bone3",
-					"parent": "magazine",
+					"name": "ca2",
+					"parent": "mgl_magazine",
 					"pivot": [-14.79, -79.65, 48.71],
 					"rotation": [180, 0, -90],
 					"cubes": [
@@ -2603,8 +2603,8 @@
 					]
 				},
 				{
-					"name": "bone4",
-					"parent": "magazine",
+					"name": "ca3",
+					"parent": "mgl_magazine",
 					"pivot": [-6.03, -68.61, 48.71],
 					"rotation": [180, 0, 0],
 					"cubes": [
@@ -3144,7 +3144,7 @@
 				},
 				{
 					"name": "magazine3",
-					"parent": "magazine",
+					"parent": "mgl_magazine",
 					"pivot": [-5.55, -108.6852, 0.95],
 					"cubes": [
 						{
@@ -3415,7 +3415,7 @@
 				},
 				{
 					"name": "magazine2",
-					"parent": "magazine",
+					"parent": "mgl_magazine",
 					"pivot": [-5.55, -111.378, 22.55],
 					"cubes": [
 						{
@@ -3658,11 +3658,11 @@
 				},
 				{
 					"name": "magazine4",
-					"parent": "magazine",
+					"parent": "mgl_magazine",
 					"pivot": [-0.21564, -89.63486, 112.55]
 				},
 				{
-					"name": "bone",
+					"name": "magazine11",
 					"parent": "magazine4",
 					"pivot": [0.98436, -90.83486, 112.55],
 					"cubes": [
@@ -6602,7 +6602,7 @@
 					]
 				},
 				{
-					"name": "barrel",
+					"name": "mgl_barrel",
 					"parent": "mgl140",
 					"pivot": [-5.01564, -87.23486, 112.55],
 					"cubes": [
@@ -7806,7 +7806,7 @@
 				},
 				{
 					"name": "barrel2",
-					"parent": "barrel",
+					"parent": "mgl_barrel",
 					"pivot": [-5.01564, -88.11005, 116.15],
 					"cubes": [
 						{
@@ -8312,7 +8312,7 @@
 					]
 				},
 				{
-					"name": "grip",
+					"name": "mgl_grip",
 					"parent": "mgl140",
 					"pivot": [-5.55, -87.23486, 112.55],
 					"cubes": [
@@ -9111,14 +9111,14 @@
 					]
 				},
 				{
-					"name": "stock",
+					"name": "mgl_stock",
 					"parent": "mgl140",
 					"pivot": [-5.55, -83.7645, -15.81182],
 					"rotation": [5, 0, 0]
 				},
 				{
 					"name": "upperstock",
-					"parent": "stock",
+					"parent": "mgl_stock",
 					"pivot": [-5.0202, -75.01367, -22.15047],
 					"rotation": [5, 0, 0],
 					"cubes": [
@@ -9462,7 +9462,7 @@
 				},
 				{
 					"name": "pad",
-					"parent": "stock",
+					"parent": "mgl_stock",
 					"pivot": [-5.0202, -76.93806, -44.14646]
 				},
 				{
@@ -9949,7 +9949,7 @@
 				},
 				{
 					"name": "stockbottom",
-					"parent": "stock",
+					"parent": "mgl_stock",
 					"pivot": [-2.85836, -82.91513, -23.48408],
 					"rotation": [5, 0, 0],
 					"cubes": [
@@ -10565,7 +10565,7 @@
 				},
 				{
 					"name": "pole",
-					"parent": "stock",
+					"parent": "mgl_stock",
 					"pivot": [-5.01017, -73.7586, -12.47298],
 					"rotation": [4, 0, 0],
 					"cubes": [

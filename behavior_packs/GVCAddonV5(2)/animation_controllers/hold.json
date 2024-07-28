@@ -9,6 +9,9 @@
               "fire": "query.get_equipped_item_name == 'fire'"
             },
             {
+              "aa12": "query.get_equipped_item_name == 'aa12'"
+            },
+            {
               "ak12": "query.get_equipped_item_name == 'ak12'"
             },
             {
@@ -148,6 +151,16 @@
         "fire": {
           "on_entry": [
             "/function hold/fireh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "aa12": {
+          "on_entry": [
+            "/function hold/aa12h"
           ],
           "transitions": [
             {

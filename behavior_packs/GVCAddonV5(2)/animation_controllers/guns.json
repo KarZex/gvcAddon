@@ -27,6 +27,12 @@
               "fire_reload": "query.get_equipped_item_name == 'fire' && (variable.attack_time > 0.0)"
             },
             {
+              "aa12": "query.get_equipped_item_name == 'aa12' && query.is_using_item"
+            },
+            {
+              "aa12_reload": "query.get_equipped_item_name == 'aa12' && (variable.attack_time > 0.0)"
+            },
+            {
               "ak12": "query.get_equipped_item_name == 'ak12' && query.is_using_item"
             },
             {
@@ -402,6 +408,28 @@
             }
           ]
         },
+        "aa12_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload aa12"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "aa12": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,tag=!down,scores={aa12=1..}] fire:aa12",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={aa12=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={aa12=1..}] aa12 1"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 2 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
         "ak12_reload": {
           "on_entry": [
             "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload ak12"
@@ -639,7 +667,7 @@
         "glock17_after": {
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < -1 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },

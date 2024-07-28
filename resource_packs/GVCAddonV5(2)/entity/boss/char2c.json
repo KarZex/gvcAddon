@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "gvcv5:char2c",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/char2c"
+      },
+      "geometry": {
+        "default": "geometry.char2c"
+      },
+	  "spawn_egg":{
+	  "texture":"char2c",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

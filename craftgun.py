@@ -122,8 +122,8 @@ for row in csv_reader:
         }
 
         if gun_burst == 0:
-            if gun_interval > 0:
-                if gun_fullauto == 1:
+            if gun_fullauto == 1:
+                if gun_interval > 0:
                     BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
                         "on_entry": [
                             "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
@@ -145,18 +145,28 @@ for row in csv_reader:
                         ],
                         "transitions": [
                             {
-                                "{}_after".format(gun_id): "(!query.is_using_item)"
+                                "default": "!query.is_using_item"
+                            },
+                            {
+                                "{}ii".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id)
                             }
                         ]
                     }
-                    BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}_after".format(gun_id)] = {
+                    BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = {
+                        "on_entry": [
+                            "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
+                            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
+                            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                        ],
                         "transitions": [
                             {
-                                "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval - 1)
+                                "default": "!query.is_using_item"
+                            },
+                            {
+                                "{}".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id)
                             }
                         ]
                     }
-
             else:
                 BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
                     "on_entry": [
@@ -166,28 +176,18 @@ for row in csv_reader:
                     ],
                     "transitions": [
                         {
-                            "default": "!query.is_using_item"
-                        },
-                        {
-                            "{}ii".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id)
+                            "{}_after".format(gun_id): "(!query.is_using_item)"
                         }
                     ]
                 }
-                BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = {
-                    "on_entry": [
-                        "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
-                        "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
-                        "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
-                    ],
+                BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}_after".format(gun_id)] = {
                     "transitions": [
                         {
-                            "default": "!query.is_using_item"
-                        },
-                        {
-                            "{}".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id)
+                            "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval - 1)
                         }
                     ]
                 }
+
             
         else:
             for i in range(gun_burst - 1):

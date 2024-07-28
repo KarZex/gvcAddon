@@ -1,0 +1,13 @@
+{
+  "materials": {
+    "version": "1.0.0",
+    "particle_ambient_alpha:particle_nocull": {
+      "+defines": [ "ALPHA_TEST" ],
+      "depthFunc": "Always",
+      "depthBias": 9999
+    },
+    "particle_ambient_emissive:particle_ambient_alpha": {
+      "+defines": [ "USE_EMISSIVE" ]
+    }
+  }
+}

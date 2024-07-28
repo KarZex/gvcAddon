@@ -58,7 +58,7 @@ for row in csv_reader:
             feature_rule_json["minecraft:feature_rules"]["description"]["identifier"] = "gvcv5:{}_rule".format(structure_id)
             feature_rule_json["minecraft:feature_rules"]["description"]["places_feature"] = "gvcv5:{}".format(structure_id)
             feature_rule_json["minecraft:feature_rules"]["distribution"]["scatter_chance"] = structure_chance
-            i = 10
+            i = 11
             j = -1
             while not row[i] == "":
                 if not ";" in row[i]:
@@ -111,6 +111,8 @@ for row in csv_reader:
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
+                    flag_json["minecraft:entity"]["components"]["minecraft:damage_sensor"]["triggers"] = [ {  "cause": "all", "deals_damage": False } ]
+                    flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "mob" ]
 
             with open("behavior_packs/GVCAddonV5(2)/entities/flag/{}_ca.json".format(structure_id),"w") as f:
                 json.dump(flag_json,f,indent=2)
@@ -118,7 +120,10 @@ for row in csv_reader:
             with open("tool/a2.json","r") as f:
                 flag_json = json.load(f)
                 flag_json["minecraft:entity"]["description"]["identifier"] = "gvcv5:flag_{}_ga".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ca ~~1~".format(structure_id)
+                if row[10] == "":
+                    flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ca ~~1~".format(structure_id)
+                else:
+                    flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"] = ["summon gvcv5:flag_{}_ca ~~1~".format(structure_id),"{}".format(row[10])]
                 flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ga ~~1~".format(structure_id)
                 flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.gvcv5:flag_{0}_ga.name".format(structure_id)
                 if structure_flag_type == "L":

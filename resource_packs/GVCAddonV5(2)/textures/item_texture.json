@@ -80,11 +80,11 @@
     "mp7": {
       "textures": "textures/items/gun/mp7"
     },
-    "amp7": {
-      "textures": "textures/ammo/mp7"
+    "char2c": {
+      "textures": "textures/items/char2c"
     },
-    "t95": {
-      "textures": "textures/gun/t95"
+    "hauneb": {
+      "textures": "textures/items/hauneb"
     },
     "at95": {
       "textures": "textures/ammo/t95"
@@ -982,6 +982,9 @@
     },
     "m72": {
       "textures": "textures/items/gun/m72"
+    },
+    "aa12": {
+      "textures": "textures/items/gun/aa12"
     }
   }
 }

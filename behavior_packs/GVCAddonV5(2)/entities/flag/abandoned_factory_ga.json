@@ -229,7 +229,8 @@
       "become_CA": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_abandoned_factory_ca ~~1~"
+            "summon gvcv5:flag_abandoned_factory_ca ~~1~",
+            "summon gvcv5:merg08 ~~20~"
           ]
         }
       },

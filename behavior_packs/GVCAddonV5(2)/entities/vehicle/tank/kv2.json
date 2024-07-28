@@ -154,10 +154,6 @@
       },
       "minecraft:nameable": {
       },
-      "minecraft:behavior.player_ride_tamed": {
-      },
-      "minecraft:input_ground_controlled": {
-      },
       "minecraft:balloonable": {
       },
       "minecraft:collision_box": {

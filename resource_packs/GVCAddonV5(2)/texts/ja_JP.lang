@@ -124,11 +124,15 @@ item.spawn_egg.entity.gvcv5:st1.name=ST1
 item.spawn_egg.entity.gvcv5:st1r.name=BOSS ST1
 item.spawn_egg.entity.gvcv5:merg08.name=BOSS MERG08
 item.spawn_egg.entity.gvcv5:merg08b.name=BOSS MERG08SN
+item.spawn_egg.entity.gvcv5:hauneb.name=BOSS HAUNEB
+item.spawn_egg.entity.gvcv5:char2c.name=BOSS char2C
 
 entity.gvcv5:st1.name=ST1
 entity.gvcv5:st1r.name=BOSS ST1
 entity.gvcv5:merg08.name=BOSS MERG08
 entity.gvcv5:merg08b.name=BOSS MERG08SN
+entity.gvcv5:hauneb.name=BOSS HAUNEB
+entity.gvcv5:char2c.name=BOSS char2C
 
 item.zex:km=カロリーメイト
 item.zex:sp=スクラップ
@@ -256,6 +260,7 @@ item.gun:m1014=M1014
 item.gun:ak102=AK102
 item.gun:saiga12=Saiga-12
 item.gun:m72=M72LAW
+item.gun:aa12=AA12
 
 tile.gvcv5:good1.name=死体
 tile.gvcv5:good2.name=スクラップ
