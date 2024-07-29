@@ -58,7 +58,7 @@
     "components": {
      "minecraft:boss": {
         "name": "BOSS MERG08",
-        "should_darken_sky": true,
+        "should_darken_sky": false,
         "hud_range": 100
       },     
       "minecraft:nameable": {},

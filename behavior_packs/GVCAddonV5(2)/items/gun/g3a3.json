@@ -3,7 +3,9 @@
   "minecraft:item": {
     "description": {
       "identifier": "gun:g3a3",
-      "category": "equipment"
+      "menu_category": {
+        "category": "equipment"
+      }
     },
     "components": {
       "minecraft:can_destroy_in_creative": false,

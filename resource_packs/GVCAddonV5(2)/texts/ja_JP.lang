@@ -27,6 +27,10 @@ item.spawn_egg.entity.gvcv5:gc5.name=ゲリラ海軍士官
 entity.gvcv5:ca.name=同盟軍兵士
 
 entity.gvcv5:pmc.name=PMC兵士
+entity.gvcv5:pmc_red.name=PMC兵士
+entity.gvcv5:pmc_blue.name=PMC兵士
+entity.gvcv5:pmc_green.name=PMC兵士
+entity.gvcv5:pmc_yellow.name=PMC兵士
 
 item.spawn_egg.entity.gvcv5:gb1.name=ベテランゲリラ-マシンガン
 item.spawn_egg.entity.gvcv5:gb2.name=ベテランゲリラ-強襲
@@ -119,16 +123,13 @@ entity.vehicle:flak18.name=対戦車砲Flak18
 entity.vehicle:pak40.name=対戦車砲Pak40
 entity.vehicle:zu23.name=Zu-23対空砲
 
-
-item.spawn_egg.entity.gvcv5:st1.name=ST1
-item.spawn_egg.entity.gvcv5:st1r.name=BOSS ST1
+item.spawn_egg.entity.gvcv5:st1.name=BOSS ST1
 item.spawn_egg.entity.gvcv5:merg08.name=BOSS MERG08
 item.spawn_egg.entity.gvcv5:merg08b.name=BOSS MERG08SN
 item.spawn_egg.entity.gvcv5:hauneb.name=BOSS HAUNEB
 item.spawn_egg.entity.gvcv5:char2c.name=BOSS char2C
 
-entity.gvcv5:st1.name=ST1
-entity.gvcv5:st1r.name=BOSS ST1
+entity.gvcv5:st1.name=BOSS ST1
 entity.gvcv5:merg08.name=BOSS MERG08
 entity.gvcv5:merg08b.name=BOSS MERG08SN
 entity.gvcv5:hauneb.name=BOSS HAUNEB

@@ -403,6 +403,10 @@
                           "value": "down"
                         },
                         {
+                          "test": "is_riding",
+                          "value": false
+                        },
+                        {
                           "test": "has_damage",
                           "value": "fatal"
                         }
@@ -452,6 +456,10 @@
                           "subject":"self",
                           "operator": "!=",
                           "value": "down"
+                        },
+                        {
+                          "test": "is_riding",
+                          "value": false
                         },
                         {
                           "test": "has_damage",
@@ -505,6 +513,10 @@
                           "value": "down"
                         },
                         {
+                          "test": "is_riding",
+                          "value": false
+                        },
+                        {
                           "test": "has_damage",
                           "value": "fatal"
                         }
@@ -554,6 +566,10 @@
                           "subject":"self",
                           "operator": "!=",
                           "value": "down"
+                        },
+                        {
+                          "test": "is_riding",
+                          "value": false
                         },
                         {
                           "test": "has_damage",

@@ -1,0 +1,15 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.pmc_soldier": {
+      "arrays": {
+        "textures": {
+          "Array.base": [ "Texture.army","Texture.red","Texture.blue","Texture.green","Texture.yellow" ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Array.base[query.skin_id]" ]
+    }
+  }
+}

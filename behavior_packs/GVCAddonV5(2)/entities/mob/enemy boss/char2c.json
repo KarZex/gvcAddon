@@ -58,7 +58,7 @@
     "components": {
      "minecraft:boss": {
         "name": "BOSS char2C",
-        "should_darken_sky": true,
+        "should_darken_sky": false,
         "hud_range": 100
       },    
       "minecraft:rideable": {

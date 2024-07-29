@@ -57,299 +57,23 @@
         }
       },
       "redteam": {
-        "minecraft:type_family": {
-          "family": [
-            "pmc",
-            "allied_soldier",
-            "playerp",
-            "mob",
-            "redteam"
-          ]
-        },
-        "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "allied_soldier"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "redteam"
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "minecraft:behavior.nearest_attackable_target": {
-          "priority": 2,
-          "must_see": true,
-          "reselect_targets": true,
-          "entity_types": [
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "monster"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "blueteam"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "greenteam"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "yellowteam"
-              },
-              "max_dist": 42
-            }
-          ]
+        "minecraft:transformation": {
+          "into": "gvcv5:pmc_red"
         }
       },
       "blueteam": {
-        "minecraft:type_family": {
-          "family": [
-            "pmc",
-            "allied_soldier",
-            "playerp",
-            "mob",
-            "blueteam"
-          ]
-        },
-        "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "allied_soldier"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "blueteam"
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "minecraft:behavior.nearest_attackable_target": {
-          "priority": 2,
-          "must_see": true,
-          "reselect_targets": true,
-          "entity_types": [
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "monster"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "redteam"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "greenteam"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "yellowteam"
-              },
-              "max_dist": 42
-            }
-          ]
+        "minecraft:transformation": {
+          "into": "gvcv5:pmc_blue"
         }
       },
       "greenteam": {
-        "minecraft:type_family": {
-          "family": [
-            "pmc",
-            "allied_soldier",
-            "playerp",
-            "mob",
-            "greenteam"
-          ]
-        },
-        "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "allied_soldier"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "greenteam"
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "minecraft:behavior.nearest_attackable_target": {
-          "priority": 2,
-          "must_see": true,
-          "reselect_targets": true,
-          "entity_types": [
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "monster"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "redteam"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "blueteam"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "yellowteam"
-              },
-              "max_dist": 42
-            }
-          ]
+        "minecraft:transformation": {
+          "into": "gvcv5:pmc_green"
         }
       },
       "yellowteam": {
-        "minecraft:type_family": {
-          "family": [
-            "pmc",
-            "allied_soldier",
-            "playerp",
-            "mob",
-            "yellowteam"
-          ]
-        },
-        "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "allied_soldier"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "yellowteam"
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "minecraft:behavior.nearest_attackable_target": {
-          "priority": 2,
-          "must_see": true,
-          "reselect_targets": true,
-          "entity_types": [
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "monster"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "redteam"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "blueteam"
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "value": "greenteam"
-              },
-              "max_dist": 42
-            }
-          ]
+        "minecraft:transformation": {
+          "into": "gvcv5:pmc_yellow"
         }
       },
       "aa12": {
@@ -1378,6 +1102,9 @@
     },
     "components": {
       "minecraft:is_hidden_when_invisible": {},
+      "minecraft:skin_id": {
+        "value": 0
+      },
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 10 + (query.equipment_count * Math.Random(1,3)) : 0"
       },
@@ -1396,6 +1123,7 @@
         "family": [
           "pmc",
           "playerp",
+          "noteam",
           "allied_soldier",
           "mob"
         ]
@@ -1440,6 +1168,122 @@
                 ]
               },
               "event": "gvcv5:order",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "self",
+                    "value": "noteam"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "redteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "red_dye"
+                  }
+                ]
+              },
+              "event": "gvcv5:become_redteam",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "self",
+                    "value": "noteam"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "blue_dye"
+                  }
+                ]
+              },
+              "event": "gvcv5:become_blueteam",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "self",
+                    "value": "noteam"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "green_dye"
+                  }
+                ]
+              },
+              "event": "gvcv5:become_greenteam",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "self",
+                    "value": "noteam"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "yellowteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "yellow_dye"
+                  }
+                ]
+              },
+              "event": "gvcv5:become_yellowteam",
               "target": "self"
             }
           },
@@ -2657,112 +2501,154 @@
         },
         "trigger": "ak102"
       },
+      "gvcv5:become_redteam": {
+        "add": {
+          "component_groups": [
+            "redteam"
+          ]
+        }
+      },
+      "gvcv5:become_blueteam": {
+        "add": {
+          "component_groups": [
+            "blueteam"
+          ]
+        }
+      },
+      "gvcv5:become_greenteam": {
+        "add": {
+          "component_groups": [
+            "greenteam"
+          ]
+        }
+      },
+      "gvcv5:become_yellowteam": {
+        "add": {
+          "component_groups": [
+            "yellowteam"
+          ]
+        }
+      },
+      "attack": {
+        "remove": {
+          "component_groups": [
+            "wait",
+            "follow",
+            "default"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "attack"
+          ]
+        }
+      },
+      "wait": {
+        "remove": {
+          "component_groups": [
+            "attack",
+            "follow",
+            "default"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "wait"
+          ]
+        }
+      },
+      "follow": {
+        "remove": {
+          "component_groups": [
+            "attack",
+            "wait",
+            "default"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "follow"
+          ]
+        }
+      },
+      "free": {
+        "remove": {
+          "component_groups": [
+            "attack",
+            "wait",
+            "follow"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        }
+      },
       "gvcv5:order": {
         "sequence": [
           {
             "filters": {
               "all_of": [
                 {
-                  "test": "has_component",
-                  "operator": "!=",
-                  "value": "attack"
-                },
-                {
-                  "test": "has_component",
-                  "operator": "!=",
-                  "value": "follow"
-                },
-                {
-                  "test": "has_component",
-                  "operator": "!=",
-                  "value": "wait"
+                  "test": "is_variant",
+                  "subject": "self",
+                  "operator": "equals",
+                  "value": 0
                 }
               ]
             },
-            "add": {
-              "component_groups": [
-                "attack"
-              ]
-            },
-            "remove": {
-              "component_groups": [
-                "default"
-              ]
-            },
+            "trigger": "attack",
             "queue_command": {
               "command": [
-                "say attack"
+                "say attack0"
               ],
-              "target": "player"
+              "target": "other"
             }
           },
           {
             "filters": {
-              "test": "has_component",
-              "operator": "==",
-              "value": "follow"
+              "test": "is_variant",
+              "subject": "self",
+              "operator": "equals",
+              "value": 3
             },
-            "add": {
-              "component_groups": [
-                "attack"
-              ]
-            },
-            "remove": {
-              "component_groups": [
-                "follow"
-              ]
-            },
+            "trigger": "attack",
             "queue_command": {
               "command": [
-                "say attack"
+                "say attack1"
               ],
-              "target": "player"
+              "target": "other"
             }
           },
           {
             "filters": {
-              "test": "has_component",
-              "operator": "==",
-              "value": "attack"
+              "test": "is_variant",
+              "subject": "self",
+              "operator": "equals",
+              "value": 1
             },
-            "add": {
-              "component_groups": [
-                "wait"
-              ]
-            },
-            "remove": {
-              "component_groups": [
-                "attack"
-              ]
-            },
+            "trigger": "wait",
             "queue_command": {
               "command": [
                 "say wait"
               ],
-              "target": "player"
+              "target": "other"
             }
           },
           {
             "filters": {
-              "test": "has_component",
-              "operator": "==",
-              "value": "wait"
+              "test": "is_variant",
+              "subject": "self",
+              "operator": "equals",
+              "value": 2
             },
-            "add": {
-              "component_groups": [
-                "follow"
-              ]
-            },
-            "remove": {
-              "component_groups": [
-                "wait"
-              ]
-            },
+            "trigger": "follow",
             "queue_command": {
               "command": [
                 "say follow"
               ],
-              "target": "player"
+              "target": "other"
             }
           }
         ]

@@ -14,6 +14,10 @@ BP_animation_hold = json.load(open("tool/animation_controllers_hold.json","r"))
 ga_json = json.load(open("tool/ga.json","r"))
 ca_json = json.load(open("tool/ca.json","r"))
 pmc_json = json.load(open("tool/pmc.json","r"))
+pmc_red_json = json.load(open("tool/pmc_red.json","r"))
+pmc_blue_json = json.load(open("tool/pmc_blue.json","r"))
+pmc_green_json = json.load(open("tool/pmc_green.json","r"))
+pmc_yellow_json = json.load(open("tool/pmc_yellow.json","r"))
 item_json = json.load(open("resource_packs/GVCAddonV5(2)/textures/item_texture.json","r"))
 func = open("tool/gunstart.mcfunction","r")
 a_func = func.read()
@@ -344,6 +348,126 @@ for row in csv_reader:
               "target": "self"
             }
           }
+        
+        PMC_weapon_change_red = {
+            "use_item": False,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": True
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "redteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:{}".format(gun_id)
+                  }
+                ]
+              },
+              "event": "{}".format(gun_id),
+              "target": "self"
+            }
+          }
+        
+        PMC_weapon_change_blue = {
+            "use_item": False,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": True
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:{}".format(gun_id)
+                  }
+                ]
+              },
+              "event": "{}".format(gun_id),
+              "target": "self"
+            }
+          }
+        
+        PMC_weapon_change_green = {
+            "use_item": False,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": True
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:{}".format(gun_id)
+                  }
+                ]
+              },
+              "event": "{}".format(gun_id),
+              "target": "self"
+            }
+          }
+        
+        PMC_weapon_change_yellow = {
+            "use_item": False,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": True
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "yellowteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:{}".format(gun_id)
+                  }
+                ]
+              },
+              "event": "{}".format(gun_id),
+              "target": "self"
+            }
+          }
 
 
         ga_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
@@ -353,6 +477,18 @@ for row in csv_reader:
         pmc_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         pmc_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
         pmc_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(PMC_weapon_change)
+        pmc_red_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(PMC_weapon_change_red)
+        pmc_red_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_red_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_blue_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(PMC_weapon_change_blue)
+        pmc_blue_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_blue_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_green_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(PMC_weapon_change_green)
+        pmc_green_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_green_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_yellow_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(PMC_weapon_change_yellow)
+        pmc_yellow_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_yellow_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
 
         with open("resource_packs/GVCAddonV5(2)/entity/gun/ak12.json","r") as f:
             gun_entity = json.load(f)
@@ -534,6 +670,15 @@ with open("behavior_packs/GVCAddonV5(2)/entities/mob/enemy/ga.json","w") as f:
 
 with open("behavior_packs/GVCAddonV5(2)/entities/mob/allied/pmc.json","w") as f:
     json.dump(pmc_json,f,indent=2)
+
+with open("behavior_packs/GVCAddonV5(2)/entities/mob/allied/pmc_red.json","w") as f:
+    json.dump(pmc_red_json,f,indent=2)
+with open("behavior_packs/GVCAddonV5(2)/entities/mob/allied/pmc_blue.json","w") as f:
+    json.dump(pmc_blue_json,f,indent=2)
+with open("behavior_packs/GVCAddonV5(2)/entities/mob/allied/pmc_green.json","w") as f:
+    json.dump(pmc_green_json,f,indent=2)
+with open("behavior_packs/GVCAddonV5(2)/entities/mob/allied/pmc_yellow.json","w") as f:
+    json.dump(pmc_yellow_json,f,indent=2)
 
 with open("resource_packs/GVCAddonV5(2)/textures/item_texture.json","w") as f:
     json.dump(item_json,f,indent=2)

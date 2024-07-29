@@ -12,11 +12,24 @@
     "components": {
       "minecraft:boss": {
          "name": "BOSS HAUNEB",
-         "should_darken_sky": true,
+         "should_darken_sky": false,
          "hud_range": 100
        },   
        "minecraft:damage_sensor": {
          "triggers": [
+          {
+                "cause": "projectile",
+                "deals_damage": false,
+            "on_damage_sound_event": "non_projectile"
+              },
+          {
+                "cause": "fall",
+                "deals_damage": false
+              },
+              {
+                    "cause": "override",
+                    "deals_damage": false
+                  },
            {
              "cause": "all",
              "deals_damage": false,
