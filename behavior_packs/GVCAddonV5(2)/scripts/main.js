@@ -474,7 +474,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 										if(result.selection == 0){
 											target.triggerEvent(`gvcv5:become_${userFamily}team`);
 											target.removeTag(`wantToBe${userFamily}`);
-											target.sendMessage({ translate: `script.gvcv5.youAreIn${userFamily}team.name`});
+											world.sendMessage([{text: `${target.nameTag}`},{ translate: `script.gvcv5.youAreIn${userFamily}team.name`}]);
 											user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
 										}
 										else if(result.selection == 1){
