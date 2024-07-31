@@ -297,7 +297,10 @@ for row in csv_reader:
         burst_interval = 0.05 + gun_interval * 0.05
         if gun_bullet_num > 1: 
             burst_interval = 0
-            burst_shots = gun_bullet_num
+            burst_shots = 1
+        if gun_maxammo == 1: 
+            attack_interval += gun_reload * 0.05 
+            burst_shots = 1
         spawn_entity = {
             "minecraft:behavior.ranged_attack": {
                 "priority": 3,

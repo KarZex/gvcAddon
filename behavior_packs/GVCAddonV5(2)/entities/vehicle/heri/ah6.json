@@ -66,14 +66,17 @@
           "table": "loot_tables/entities/tank.json"
         },
         "minecraft:rideable": {
-          "seat_count": 1,
+          "seat_count": 4,
           "family_types": [
             "player","guerrilla","allied_soldier"
           ],
           "interact_text": "action.interact.ride.horse",
-          "seats": {
-            "position": [ 0.0, 0.45, 0.5 ]
-          }
+          "seats": [
+            { "position": [ 0.2, 0.45, 0.5 ] },
+            { "position": [ -0.2, 0.45, 0.5 ] },
+            { "position": [ 0.2, 0.45, 0.1 ] },
+            { "position": [ -0.2, 0.45, 0.1 ] }
+          ]
         },
       "minecraft:type_family": {
         "family": [ "vehicle","heri" ]

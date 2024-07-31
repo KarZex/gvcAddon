@@ -4,17 +4,20 @@
     "description": {
       "identifier": "gun:famas",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "entity_alphatest",
+				"scope": "entity_alphablend"
       },
       "textures": {
-        "default": "textures/models/famas.png"
+        "default": "textures/models/famas.png",
+				"scope": "textures/models/scope2.png"
       },
       "geometry": {
-        "default": "geometry.famas"
+        "default": "geometry.famas",
+				"scope": "geometry.scope"
       },
       "animations": {
         "first": "animation.ak47.first2",
-        "ads": "animation.ak47.ads3",
+				"ads": "animation.mosin.ads",
         "third": "animation.item.third2"
       },
       "scripts": {
@@ -34,7 +37,8 @@
         ]
       },
       "render_controllers": [
-        "controller.render.default"
+				{"controller.render.default":"!query.is_sneaking || !c.is_first_person"},
+				{ "controller.render.scope": "query.is_sneaking && c.is_first_person" }
       ]
     }
   }

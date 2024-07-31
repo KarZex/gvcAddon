@@ -79,7 +79,7 @@
       "aa12": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 12,
+          "burst_shots": 1,
           "burst_interval": 0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
@@ -457,12 +457,12 @@
       "m72": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 10,
+          "burst_shots": 1,
           "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -475,12 +475,12 @@
       "m79": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 10,
+          "burst_shots": 1,
           "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -547,7 +547,7 @@
       "m590": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 12,
+          "burst_shots": 1,
           "burst_interval": 0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
@@ -565,7 +565,7 @@
       "m870": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 12,
+          "burst_shots": 1,
           "burst_interval": 0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
@@ -583,7 +583,7 @@
       "m1014": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 12,
+          "burst_shots": 1,
           "burst_interval": 0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
@@ -709,12 +709,12 @@
       "p90": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 10,
+          "burst_shots": 1,
           "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_min": 6.0,
+          "attack_interval_max": 6.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -763,12 +763,12 @@
       "rpg": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 10,
+          "burst_shots": 1,
           "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -781,7 +781,7 @@
       "saiga12": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 12,
+          "burst_shots": 1,
           "burst_interval": 0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
@@ -2393,9 +2393,6 @@
           }
         ]
       },
-      "minecraft:loot": {
-        "table": "loot_tables/entities/skeleton.json"
-      },
       "minecraft:movement": {
         "value": 0.25
       },
@@ -2408,9 +2405,6 @@
       "minecraft:jump.static": {},
       "minecraft:can_climb": {},
       "minecraft:nameable": {},
-      "minecraft:equipment": {
-        "table": "loot_tables/entities/skeleton_gear.json"
-      },
       "minecraft:shooter": {
         "def": "minecraft:arrow"
       },

@@ -123,9 +123,6 @@
           }
         ]
       },
-      "minecraft:loot": {
-        "table": "loot_tables/entities/skeleton.json"
-      },
       "minecraft:movement": {
         "value": 0.25
       },
@@ -141,9 +138,6 @@
       "minecraft:can_climb": {
       },
       "minecraft:nameable": {
-      },
-      "minecraft:equipment": {
-        "table": "loot_tables/entities/skeleton_gear.json"
       },
       "minecraft:shooter": {
         "def": "minecraft:arrow"
@@ -167,6 +161,11 @@
                           "test": "is_family",
                           "subject": "other",
                           "value": "allied_soldier"
+                        },
+                        {
+                          "test": "is_family",
+                          "subject": "other",
+                          "value": "yellowteam"
                         }
                       ]
                   }

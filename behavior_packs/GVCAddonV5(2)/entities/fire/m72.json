@@ -65,8 +65,8 @@
           "fuse_length": 0,
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
-          "power": 4,
-          "breaks_blocks": true
+          "power": 3,
+          "breaks_blocks": false
         }
       }
     }

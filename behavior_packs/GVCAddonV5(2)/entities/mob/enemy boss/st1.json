@@ -1,0 +1,197 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gvcv5:st1",
+      "spawn_category": "monster",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+  
+    "components": {
+     "minecraft:boss": {
+        "name": "BOSS ST1",
+        "should_darken_sky": false,
+        "hud_range": 100
+      },    
+      "minecraft:behavior.ranged_attack": {
+        "priority": 3,
+        "burst_shots": 3,
+        "burst_interval": 1,
+        "charge_charged_trigger": 0.0,
+        "charge_shoot_trigger": 0.0,
+        "attack_interval_min": 30,
+        "attack_interval_max": 30,
+        "attack_radius": 16.0
+      },
+      "minecraft:shooter": {
+        "def": "gvcv5:ga"
+      },
+      "minecraft:rideable": {
+        "seat_count": 3,
+        "family_types": [
+          "guerrilla"
+        ],
+        "interact_text": "action.interact.ride.horse",
+        "seats": [
+          { "position": [ 0, 7, 0 ] },
+          { "position": [ 1.5, 5.5, 0 ] },
+          { "position": [ -1.5, 5.5, 0 ] }
+        ]
+      }, 
+      "minecraft:nameable": {},
+      "minecraft:type_family": {
+        "family": [
+          "mob",
+          "guerrilla",
+          "monster"
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 32.0,
+        
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "player" },
+                { "test": "is_family", "subject": "other", "value": "playerp" },
+                { "test": "is_family", "subject": "other", "value": "irongolem" },
+                { "test": "is_family", "subject": "other", "value": "snowgolem" },
+                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+              ]
+            },
+            "max_dist": 100
+          },
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "villager" },
+                { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+              ]
+            },
+            "max_dist": 100
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+          "cause": "projectile",
+          "deals_damage": false,
+		  "on_damage_sound_event": "non_projectile"
+        },
+		{
+          "cause": "fall",
+          "deals_damage": false
+        },
+        {
+              "cause": "override",
+              "deals_damage": false
+            },
+            {
+              "cause": "all",
+              "deals_damage": true,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:spawn_loot",
+                "target": "self"
+              }
+            }
+	   ]
+      },
+      "minecraft:collision_box": {
+        "width": 2,
+        "height": 7.0
+      },
+      "minecraft:health": {
+        "value": 1000,
+        "max": 1000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:physics": {},
+     
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:follow_range": {
+        "value": 100
+      }
+    },
+    "events": {
+      "gvcv5:spawn_loot": {
+        "queue_command": {
+          "command":[
+            "structure load bosschest4 ~~~"
+          ]
+        }
+      },
+      "minecraft:spawned_from_block": {
+        "queue_command": {
+          "command":[
+            "ride @s summon_rider gvcv5:ga st1",
+            "ride @s summon_rider gvcv5:ga char2c",
+            "ride @s summon_rider gvcv5:ga char2c"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command":[
+            "ride @s summon_rider gvcv5:ga st1",
+            "ride @s summon_rider gvcv5:ga char2c",
+            "ride @s summon_rider gvcv5:ga char2c"
+          ]
+        }
+      },
+      "gun": {
+         "remove": {
+           "component_groups": [
+            "rocket"
+           ]
+         },
+         "add": {
+           "component_groups": [
+             "gun"
+           ]
+         }
+       },
+       "rocket": {
+         "remove": {
+           "component_groups": [
+            "gun"
+           ]
+         },
+         "add": {
+           "component_groups": [
+             "rocket"
+           ]
+         }
+       }
+    }
+  }
+}

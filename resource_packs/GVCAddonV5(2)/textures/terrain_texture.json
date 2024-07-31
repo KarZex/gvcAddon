@@ -34,6 +34,18 @@
     "l5": {
       "textures": "textures/blocks/l5"
     },
+    "spawn_red": {
+      "textures": "textures/blocks/spawn_red"
+    },
+    "spawn_blue": {
+      "textures": "textures/blocks/spawn_blue"
+    },
+    "spawn_green": {
+      "textures": "textures/blocks/spawn_green"
+    },
+    "spawn_yellow": {
+      "textures": "textures/blocks/spawn_yellow"
+    },
     "spawn_ga": {
       "textures": "textures/blocks/spawn/ga"
     },

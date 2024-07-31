@@ -18,7 +18,7 @@
     "component_groups": {
 			"players": {
         "minecraft:transformation": {
-          "into": "addon:des"
+          "into": "vehicle:ah6"
         }
 			},
       "minecraft:monster": {

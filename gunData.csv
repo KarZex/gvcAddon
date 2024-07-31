@@ -6,7 +6,7 @@ AK102,ak102,30,zex:556m,7,7,1.5,60,1,0,F,0,F,akbullet,1,override,1,完了,Kar Ze
 AKS-74M,an94,30,zex:556m,6,8,1.5,60,1,0,F,0,F,akbullet,1,override,1,完了,Kar Zex
 AWM,awm,5,zex:762m,24,16,0.75,80,30,0,F,0,F,srbullet,1,override,0,完了,いぬえモン
 DP-28,dp28,47,zex:762m,8,6,4,80,1,0,F,0,F,lmgbullet,1,override,1,完了,Kar Zex
-MGL140,famas,6,zex:40m,1,8,2,80,19,4,F,0,F,gbullet,1,entityExplosion,0,完了,kusnek
+MGL140,famas,6,zex:40m,1,8,2,80,19,3,F,0,F,gbullet,1,entityExplosion,0,完了,kusnek
 H&K G36,g36,30,zex:556m,8,8,1.75,60,1,0,F,0,F,arbullet,1,override,1,完了,Kar Zex
 G3A3,g3a3,20,zex:556m,8,6,1.25,60,3,0,F,0,F,srbullet,1,override,1,完了,Kar Zex
 Glock17,glock17,20,zex:mm9,4,3.4,0,30,0,0,F,0,T,psbullet,1,override,0,完了,ぁ椅子
@@ -20,9 +20,9 @@ MAC-10,m10,30,zex:mm9,4,3.4,2,40,0,0,F,0,T,psbullet,1,override,1,完了,Kar Zex
 M16A1,m16a1,30,zex:556m,6,8,2.5,60,1,0,F,0,F,arbullet,1,override,1,完了,Kar Zex
 M16A4,m16a4,30,zex:556m,9,9,1.5,60,1,0,F,3,F,arbullet,1,override,1,完了,Kar Zex
 M60,m60,100,zex:762m,8,6,5,100,1,0,F,0,F,lmgbullet,1,override,1,完了,Kar Zex
-M72LAW,m72,1,zex:rocketm,1,1.6,2,80,30,4,T,0,F,rpgbullet,1,entityExplosion,0,完了,Kar Zex
-M79,m79,1,zex:40m,1,1.6,2,80,30,4,F,0,F,gbullet,1,entityExplosion,0,完了,プチネコ
-Barrett M82,m82,10,zex:1270m,50,22,2,100,60,3,F,0,F,m82bullet,1,entityExplosion,0,完了,Kar Zex
+M72LAW,m72,1,zex:rocketm,1,1.6,2,80,30,3,F,0,F,rpgbullet,1,entityExplosion,0,完了,Kar Zex
+M79,m79,1,zex:40m,1,1.6,2,80,30,3,F,0,F,gbullet,1,entityExplosion,0,完了,プチネコ
+Barrett M82,m82,10,zex:1270m,100,22,2,100,60,2,F,0,F,m82bullet,1,entityExplosion,0,完了,Kar Zex
 M110 SASS,m110,20,zex:762m,12,12,1,80,7,0,F,0,F,srbullet,1,override,0,完了,Kar Zex
 M249,m249,100,zex:762m,6,8,4,100,1,0,F,0,F,lmgbullet,1,override,1,完了,Kar Zex
 M590,m590,8,zex:12m,2,3,1.5,80,9,0,F,0,F,sgbullet,12,override,0,完了,Kar Zex
@@ -34,14 +34,14 @@ Mosin-Nagant,mosin,5,zex:762m,22,16,1,60,30,0,F,0,F,srbullet,1,override,0,完了
 MP5,mp5,30,zex:mm9,4,3.6,1.5,60,0,0,F,0,F,psbullet,1,override,1,完了,Kar Zex
 MP7,mp7,40,zex:mm9,5,6,1.5,45,0,0,F,0,T,psbullet,1,override,1,完了,Kar Zex
 MP40,mp40,20,zex:mm9,4,3.6,2,45,1,0,F,0,F,psbullet,1,override,1,完了,Kar Zex
-Panzerfaust,p90,1,zex:rocketm,50,9,4,60,30,4,T,0,F,rpgbullet,1,entityExplosion,0,完了,プチネコ
+Panzerfaust,p90,1,zex:rocketm,50,9,4,60,30,3,T,0,F,rpgbullet,1,entityExplosion,0,完了,プチネコ
 PKM,pkm,100,zex:762m,8,6,5,100,1,0,F,0,F,lmgbullet,1,override,1,完了,Kar Zex
 PPSh-41,ppsh,72,zex:mm9,5,3.6,3,45,1,0,F,0,F,psbullet,1,override,1,完了,kusnek
-RPG-7,rpg,1,zex:rocketm,60,9,5,80,30,5,T,0,F,rpgbullet,1,entityExplosion,0,完了,Kar Zex
+RPG-7,rpg,1,zex:rocketm,50,9,5,80,30,4,T,0,F,rpgbullet,1,entityExplosion,0,完了,Kar Zex
 Saiga12,saiga12,6,zex:12m,2,3,2.5,80,4,0,F,0,F,sgbullet,12,override,0,完了,Kar Zex
 SCAR-H,scar,20,zex:762m,10,6,1.25,60,3,0,F,0,F,srbullet,1,override,1,完了,Kar Zex
 SVD,svd,10,zex:762m,13,12,2,60,7,0,F,0,F,srbullet,1,override,0,完了,Kar Zex
 TT33,tt33,6,zex:762m,10,3,0,50,2,0,F,0,T,srbullet,1,override,0,完了,kusnek
 UZI,uzi,30,zex:mm9,3,3,1,40,0,0,F,0,T,psbullet,1,override,1,完了,Kar Zex
 Vz 61,vz61,20,zex:mm9,4,3,3,40,0,0,F,0,T,psbullet,1,override,1,完了,Kar Zex
-XM25,xm8,4,zex:40m,20,9,2,80,19,5,F,0,F,gbullet,1,entityExplosion,0,,
+XM25,xm8,4,zex:40m,20,9,2,80,19,4,F,0,F,gbullet,1,entityExplosion,0,,

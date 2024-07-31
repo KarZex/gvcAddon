@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "gvcv5:spawn_blue_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      "ADA",
+      "XAX"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:iron_block"
+      },
+      "D": {
+        "item": "minecraft:blue_dye"
+      }
+    },
+    "result": {
+      "item": "gvcv5:spawn_blue",
+      "count": 1
+    }
+  }
+  
+}

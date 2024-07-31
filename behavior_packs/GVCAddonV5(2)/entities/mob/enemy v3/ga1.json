@@ -78,7 +78,7 @@
         "on_death": "query.last_hit_by_player ? 10 : 0"
       },
       "minecraft:loot": {
-        "table": "loot_tables/entities/germany.json"
+        "table": "loot_tables/entities/gc1_loot.json"
       },
       "minecraft:collision_box": {
         "width": 0.5,

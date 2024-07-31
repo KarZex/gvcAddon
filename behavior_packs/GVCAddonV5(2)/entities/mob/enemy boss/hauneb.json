@@ -44,6 +44,22 @@
                  ]
                }
              }
+           },
+           {
+             "cause": "all",
+             "deals_damage": true,
+             "on_damage": {
+               "filters": {
+                 "all_of": [
+                   {
+                     "test": "has_damage",
+                     "value": "fatal"
+                   }
+                 ]
+               },
+               "event": "gvcv5:spawn_loot",
+               "target": "self"
+             }
            }
          ]
        },
@@ -60,7 +76,7 @@
         "on_death": 12000
       },
       "minecraft:loot": {
-        "table": "loot_tables/entities/plane.json"
+        "table": "loot_tables/empty.json"
       },
       "minecraft:nameable": {
       },
@@ -182,6 +198,13 @@
       }
     },
     "events": {
+      "gvcv5:spawn_loot": {
+        "queue_command": {
+          "command":[
+            "structure load bosschest3 ~~~"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "queue_command": {
           "command":[

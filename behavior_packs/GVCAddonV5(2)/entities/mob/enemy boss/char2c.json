@@ -81,7 +81,7 @@
         ]
       },
       "minecraft:loot": {
-        "table": "loot_tables/entities/merg08.json"
+        "table": "loot_tables/empty.json"
       },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
@@ -127,6 +127,22 @@
         {
               "cause": "override",
               "deals_damage": false
+            },
+            {
+              "cause": "all",
+              "deals_damage": true,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:spawn_loot",
+                "target": "self"
+              }
             }
 	   ]
       },
@@ -163,6 +179,13 @@
       }
     },
     "events": {
+      "gvcv5:spawn_loot": {
+        "queue_command": {
+          "command":[
+            "structure load bosschest1 ~~~"
+          ]
+        }
+      },
       "minecraft:spawned_from_block": {
         "add": {
           "component_groups": [

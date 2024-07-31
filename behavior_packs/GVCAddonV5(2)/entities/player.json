@@ -377,6 +377,35 @@
           ]
         }
       },
+      "gvcv5:team_no": {
+        "minecraft:type_family": {
+          "family": [
+            "player",
+            "playerp",
+            "mod",
+            "noteam"
+          ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "allied_soldier"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
       "gvcv5:team_red": {
         "minecraft:type_family": {
           "family": [
@@ -2592,6 +2621,13 @@
         "add": {
           "component_groups": [
             "gvcv5:team_yellow"
+          ]
+        }
+      },
+      "gvcv5:become_noteam": {
+        "add": {
+          "component_groups": [
+            "gvcv5:team_no"
           ]
         }
       },
