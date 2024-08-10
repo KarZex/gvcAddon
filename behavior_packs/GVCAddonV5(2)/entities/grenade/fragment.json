@@ -28,7 +28,7 @@
 			"minecraft:explode": {
 				"fuse_length": 4,
 				"fuse_lit": true,
-				"power": 3,
+				"power": 2,
 				"breaks_blocks": false
 			},
 			"minecraft:physics": {},

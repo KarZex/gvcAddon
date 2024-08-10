@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "gvcv5:smoke_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AB"
+    ],
+    "key": {
+      "A": {
+        "item": "gvcv5:fragment"
+      },
+      "B": {
+        "item": "minecraft:flint"
+      },
+      "C": {
+        "item": "minecraft:book",
+        "data": 0
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 2
+      }
+    },
+    "result": {
+      "item": "gvcv5:smoke",
+      "count": 1
+    }
+  }
+  
+}

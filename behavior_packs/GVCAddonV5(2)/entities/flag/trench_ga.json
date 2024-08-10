@@ -73,7 +73,8 @@
         "family": [
           "guerrilla",
           "monster",
-          "mob"
+          "mob",
+          "flag_large"
         ]
       },
       "minecraft:breathable": {

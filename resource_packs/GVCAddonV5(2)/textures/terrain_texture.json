@@ -351,6 +351,18 @@
     },
     "spawn_vehicle_m60a1": {
       "textures": "textures/spawn/vehicle_m60a1"
+    },
+    "spawn_addon_unks": {
+      "textures": "textures/spawn/addon_unks"
+    },
+    "spawn_addon_af_cpt": {
+      "textures": "textures/spawn/addon_af_cpt"
+    },
+    "spawn_addon_mr_cpt": {
+      "textures": "textures/spawn/addon_mr_cpt"
+    },
+    "spawn_addon_jamming": {
+      "textures": "textures/spawn/addon_jamming"
     }
   }
 }

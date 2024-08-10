@@ -129,6 +129,7 @@ for row in csv_reader:
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
+                    flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "guerrilla","monster","mob","flag_large" ]
                 
 
             with open("behavior_packs/GVCAddonV5(2)/entities/flag/{}_ga.json".format(structure_id),"w") as f:

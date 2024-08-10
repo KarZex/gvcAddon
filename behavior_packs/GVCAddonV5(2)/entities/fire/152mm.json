@@ -66,7 +66,7 @@
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
           "power": 7,
-          "breaks_blocks": true
+          "breaks_blocks": false
         }
       }
     }

@@ -73,7 +73,8 @@
         "family": [
           "guerrilla",
           "monster",
-          "mob"
+          "mob",
+          "flag_large"
         ]
       },
       "minecraft:breathable": {
@@ -229,7 +230,8 @@
       "become_CA": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_cv_ca ~~1~"
+            "summon gvcv5:flag_cv_ca ~~1~",
+            "summon gvcv5:cv"
           ]
         }
       },

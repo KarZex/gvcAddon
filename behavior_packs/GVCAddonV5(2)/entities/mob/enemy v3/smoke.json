@@ -33,7 +33,7 @@
         "family": [ "inanimate", "spawns" ]
       },        
 	  "minecraft:explode": {
-          "fuse_length": 20,
+          "fuse_length": 10,
           "fuse_lit": true,
           "power": 0,
           "causes_fire": true,

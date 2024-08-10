@@ -48,7 +48,7 @@ name,blockname(java),id,old_id,x方向の長さ,z方向の長さ,深さ,確率,�
 ダンジョン_砂漠都市,gvcr2_block_building_desertcity,desertcity,dl9,128,128,10,0.05,L,F,,all,;desert,,,,,,,,,,,,,
 ダンジョン_凱旋門,gvcr2_block_building_triumphal_arch,triumphal_arch,dl10,105,105,10,0.05,L,F,summon gvcv5:char2c ~~1~,all,;overworld,F;ocean,F;river,,,,,,,,,,,
 ダンジョン_旧戦艦,gvcr2_block_building_battleship,battleship,dl11,,,,,,,,,,,,,,,,,,,,,,
-ダンジョン_強襲揚陸艦,gvcr2_block_building_cv,cv,dl12,128,64,2,0.1,L,T,,any,;ocean,,,,,,,,,,,,,
+ダンジョン_強襲揚陸艦,gvcr2_block_building_cv,cv,dl12,128,64,2,0.1,,T,,any,;ocean,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,

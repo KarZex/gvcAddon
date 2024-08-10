@@ -11,6 +11,10 @@ addon:gc2
 addon:gc3
 addon:gc4
 addon:gc5
+addon:unks
+addon:af_cpt
+addon:mr_cpt
+addon:jamming
 vehicle:aifv;v
 vehicle:lav25;v
 vehicle:m113;v

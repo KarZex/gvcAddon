@@ -1,13 +1,16 @@
 {
   "format_version": "1.10.0",
   "animation_controllers": {
-    "controller.animation.hke2": {
+    "controller.animation.jamming": {
       "states": {
         "default": {
           "transitions": [
             {
               "ticking": "(1.0)"
             }
+          ],
+          "on_entry": [
+            "/effect @e[family=flag_large,r=100] instant_health 1 255 true"
           ]
         },
         "ticking": {
@@ -17,8 +20,103 @@
             }
           ],
           "on_entry": [
-            "/summon addon:a2 ~~2~",
-			"/event entity @s A"
+            "/effect @e[family=flag_large,r=100] instant_health 1 255 true"
+          ]
+        }
+      }
+    },
+    "controller.animation.precv": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function precv"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function precv"
+          ]
+        }
+      }
+    },
+    "controller.animation.endcv": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function endcv"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function endcv"
+          ]
+        }
+      }
+    },
+    "controller.animation.losecv": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function losecv"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function losecv"
+          ]
+        }
+      }
+    },
+    "controller.animation.cv": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/damage @s 1 entity_attack entity @s"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/damage @s 1 entity_attack entity @s"
           ]
         }
       }

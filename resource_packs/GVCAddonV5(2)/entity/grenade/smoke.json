@@ -5,10 +5,10 @@
       "identifier": "gre:smoke",
       "materials": { "default": "iron_golem" },
       "textures": {
-        "default": "textures/models/smoke"
+        "default": "textures/models/fragment"
       },
       "geometry": {
-        "default": "geometry.smoke"
+        "default": "geometry.fragment"
       },
       
       "render_controllers": [ "controller.render.iron_golem" ]

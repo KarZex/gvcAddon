@@ -1,0 +1,130 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gvcv5:cv",
+      "spawn_category": "monster",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "scripts": {
+        "animate": [
+          "cv"
+        ]
+      },
+      "animations": {
+        "cv": "controller.animation.precv"
+      }
+    },
+    "component_groups": {
+      "despawning":{
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:collision_box": {
+        "width": 3,
+        "height": 1.8
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+      "minecraft:timer": {
+        "time": 75,
+        "looping": false,
+        "time_down_event": {
+          "event": "become_wave1",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 60,
+        "max": 60
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "not",
+                    "value": "cv"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": false,
+        "avoid_sun": false,
+        "avoid_water": true
+      },
+      "minecraft:type_family": {
+        "family": [
+          "cv"
+        ]
+      },
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    "events": {
+      "despawning":{
+        "add": {
+          "component_groups": [
+            "despawning"
+          ]
+        }
+      },
+      "become_wave1":{
+        "queue_command": {
+          "command": [
+            "summon gvcv5:cv1",
+            "kill @s"
+          ]
+        }
+      },
+      "ak12": {
+        "add": {
+          "component_groups": [
+            "ak12"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "gre"
+          ]
+        }
+      }
+    }
+  }
+}

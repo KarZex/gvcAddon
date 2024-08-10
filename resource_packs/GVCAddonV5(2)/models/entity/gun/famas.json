@@ -7,8 +7,8 @@
 				"texture_width": 16,
 				"texture_height": 16,
 				"visible_bounds_width": 12,
-				"visible_bounds_height": 10.5,
-				"visible_bounds_offset": [0, 4.75, 0]
+				"visible_bounds_height": 13,
+				"visible_bounds_offset": [0, 3.5, 0]
 			},
 			"bones": [
 				{
@@ -10740,7 +10740,7 @@
 					]
 				},
 				{
-					"name": "bone",
+					"name": "scope",
 					"parent": "guncube",
 					"pivot": [-5.28581, -70.75038, -21.87068],
 					"cubes": [

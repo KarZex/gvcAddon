@@ -41,7 +41,7 @@
         "minecraft:spawns_underground": {
         },
         "minecraft:weight": {
-          "default": 120
+          "default": 50
         },
         "minecraft:herd": {
           "min_size": 1,

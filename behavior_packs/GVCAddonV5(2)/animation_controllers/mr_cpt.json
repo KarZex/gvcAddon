@@ -1,0 +1,46 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.mr_cpt": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "ride": "query.is_riding" }
+          ],
+          "on_entry": [
+            "/effect @s resistance 0 7 true"
+          ]
+        },
+        "ride":{
+          "on_entry": [
+            "/effect @s resistance 99999 7 true"
+          ],
+          "transitions": [
+            {
+              "mgg": "query.is_jumping"
+            },
+            {
+              "default": "!query.is_riding"
+            }
+          ]
+        },
+        "mgg": {
+          "on_entry": [
+            "/effect @e[r=2,family=heri] levitation 9999 2 true"
+          ],
+          "on_exit": [
+            "/effect @e[r=2,family=heri] levitation 0 0 true"
+          ],
+          "transitions": [
+              {
+                  "default": "!query.is_riding || !query.is_jumping"
+              },
+              {
+                  "ride": "!query.is_jumping"
+              }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gvcv5:mr_cpt",
+      "spawn_category": "creature",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "scripts": {
+        "animate": [
+          "mr_cpt"
+        ]
+      },
+      "animations": {
+        "mr_cpt": "controller.animation.mr_cpt"
+      }
+    },
+    "component_groups": {
+      "despawning":{
+        "minecraft:instant_despawn": {}
+      },
+      "mr_cpt:crashed":{
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "event": "mr_cpt:talk",
+                "target": "self"
+              }
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 15,
+          "looping": true,
+          "time_down_event": {
+            "event": "mr_cpt:say",
+            "target": "self"
+          }
+        }
+
+      },
+      "mr_cpt:destroy":{
+        "minecraft:timer": {
+          "time": 5,
+          "looping": false,
+          "time_down_event": {
+            "event": "mr_cpt:destroy0",
+            "target": "self"
+          }
+        }
+      },
+      "mr_cpt:destroy1":{
+        "minecraft:timer": {
+          "time": 5,
+          "looping": false,
+          "time_down_event": {
+            "event": "mr_cpt:destroy1",
+            "target": "self"
+          }
+        }
+      },
+      "mr_cpt:destroy2":{
+        "minecraft:timer": {
+          "time": 10,
+          "looping": false,
+          "time_down_event": {
+            "event": "mr_cpt:destroy2",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+        "minecraft:behavior.charge_held_item": {
+          "priority": 3,
+          "items": [
+            "minecraft:arrow"
+          ]
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 30.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:glock18"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/glock18.json"
+        },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1.8
+      },
+      "minecraft:attack": {
+        "damage": 6
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "playerp"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks":  true
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": [
+		{
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "playerp"
+          },
+          "max_dist": 64
+		}
+        ]
+      },
+      "minecraft:follow_range": {
+        "value": 48,
+        "max": 48
+      },
+      "minecraft:nameable": {
+
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+        "within_radius": 25.0,
+        "must_see_forget_duration": 17.0,
+        "entity_types": [
+        {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "monster" }
+              ]
+            },
+		     "max_dist": 35
+		}
+        ]
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      },
+      "minecraft:type_family": {
+        "family": [ "playerp", "allied_soldier", "mob" ]
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+      "minecraft:spawned_from_block": {
+        "add": {
+          "component_groups": [
+            "mr_cpt:crashed"
+          ]
+        },
+        "queue_command": {
+          "command":[
+            "function mr_cpt"
+          ]
+        }
+      },
+      "mr_cpt:say":{
+        "queue_command": {
+          "command":[
+            "execute as @s[tag=!mr_cpt_talk] run function mr_cpt"
+          ]
+        }
+      },
+      "mr_cpt:talk":{
+        "queue_command": {
+          "command":[
+            "function mr_cpt_talk"
+          ]
+        }
+      },
+      "nocrash":{
+        "remove": {
+          "component_groups": [
+            "mr_cpt:crashed"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mr_cpt:destroy"
+          ]
+        }
+      },
+      "mr_cpt:destroy0":{
+        "queue_command": {
+          "command": [
+            "tellraw @a[r=60] { \"rawtext\": [ { \"translate\": \"gvcv5.mr_cpt.jamming_destroy1.name\" } ] }"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mr_cpt:destroy1"
+          ]
+        }
+      },
+      "mr_cpt:destroy1":{
+        "queue_command": {
+          "command": [
+            "tellraw @a[r=60] { \"rawtext\": [ { \"translate\": \"gvcv5.mr_cpt.jamming_destroy2.name\" } ] }",
+            "execute at @e[c=1,type=gvcv5:flag_cv_ga] run function support/airborne3"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "mr_cpt:destroy2"
+          ]
+        }
+      },
+      "mr_cpt:destroy2":{
+      }
+    }
+  }
+}

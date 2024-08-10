@@ -1,0 +1,182 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gvcv5:cv2",
+      "spawn_category": "monster",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "scripts": {
+        "animate": [
+          "cv"
+        ]
+      },
+      "animations": {
+        "cv": "controller.animation.cv"
+      }
+    },
+    "component_groups": {
+      "despawning":{
+        "minecraft:instant_despawn": {}
+      },
+      "start":{
+        "minecraft:boss": {
+          "name": "BOSS CV WAVE2/3",
+          "should_darken_sky": false,
+          "hud_range": 100
+        },   
+        "minecraft:type_family": {
+          "family": [
+            "cv"
+          ]
+        },
+        "minecraft:timer": {
+          "time": 30,
+          "looping": true,
+          "time_down_event": {
+            "event": "summon:unks",
+            "target": "self"
+          }
+        }
+
+      }
+    },
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+      "minecraft:timer": {
+        "time": 30,
+        "looping": true,
+        "time_down_event": {
+          "event": "summon:start",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 120,
+        "max": 120
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "not",
+                    "value": "cv"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "become_wave3"
+            }
+          }
+        ]
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": false,
+        "avoid_sun": false,
+        "avoid_water": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    "events": {
+      "despawning":{
+        "add": {
+          "component_groups": [
+            "despawning"
+          ]
+        }
+      },
+      "summon:start": {
+        "queue_command": {
+          "command": [
+            "function support/unks2",
+            "tellraw @a[r=60] { \"rawtext\": [ { \"translate\": \"gvcv5.mr_cpt.wave2.name\" } ] }"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "start"
+          ]
+        }
+      },
+      "summon:unks": {
+        "queue_command": {
+          "command": [
+            "function support/unks2",
+            "tellraw @a[r=60] { \"rawtext\": [ { \"translate\": \"gvcv5.mr_cpt.wave2_new_enemy.name\" } ] }"
+          ]
+        }
+      },
+      "become_wave3":{
+        "queue_command": {
+          "command": [
+            "summon gvcv5:cv3",
+            "tellraw @a[r=60] { \"rawtext\": [ { \"translate\": \"gvcv5.mr_cpt.wave3_cool.name\" } ] }"
+          ]
+        }
+      },
+      "ak12": {
+        "add": {
+          "component_groups": [
+            "ak12"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "gre"
+          ]
+        }
+      }
+    }
+  }
+}

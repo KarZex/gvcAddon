@@ -25,6 +25,10 @@ item.spawn_egg.entity.gvcv5:gc4.name=エリートゲリラ_ククリ
 item.spawn_egg.entity.gvcv5:gc5.name=ゲリラ海軍士官
 
 entity.gvcv5:ca.name=同盟軍兵士
+item.spawn_egg.entity.gvcv5:af_cpt.name=同盟軍空軍士官
+item.spawn_egg.entity.gvcv5:mr_cpt.name=同盟軍海軍士官
+entity.gvcv5:af_cpt.name=同盟軍空軍士官
+entity.gvcv5:mr_cpt.name=同盟軍海軍士官
 
 entity.gvcv5:pmc.name=PMC兵士
 entity.gvcv5:pmc_red.name=PMC兵士
@@ -93,6 +97,7 @@ entity.vehicle:m60a1.name=M60A1
 entity.vehicle:kv2.name=KV-2
 entity.vehicle:pt76.name=PT-76
 entity.vehicle:t55.name=T-55
+entity.gvcv5:jamming.name=ジャミング発生装置
 
 entity.vehicle:ah6.name=AH-6
 entity.vehicle:mi24d.name=Mi-24D
@@ -128,12 +133,54 @@ item.spawn_egg.entity.gvcv5:merg08.name=BOSS MERG08
 item.spawn_egg.entity.gvcv5:merg08b.name=BOSS MERG08SN
 item.spawn_egg.entity.gvcv5:hauneb.name=BOSS HAUNEB
 item.spawn_egg.entity.gvcv5:char2c.name=BOSS char2C
+item.spawn_egg.entity.gvcv5:unks.name=UNKSolider_TypeC
+item.spawn_egg.entity.gvcv5:cv.name=BOSS CV
 
 entity.gvcv5:st1.name=BOSS ST1
 entity.gvcv5:merg08.name=BOSS MERG08
 entity.gvcv5:merg08b.name=BOSS MERG08SN
 entity.gvcv5:hauneb.name=BOSS HAUNEB
 entity.gvcv5:char2c.name=BOSS char2C
+entity.gvcv5:unks.name=UNKSolider_TypeC
+entity.gvcv5:cv.name=BOSS CV
+
+gvcv5.mr_cpt.crashed0.name=S.O.S......S.O.S.....
+gvcv5.mr_cpt.crashed1.name=付近...味方部隊に連r...、救援...求m...
+gvcv5.mr_cpt.crashed2.name=こちら...残存.....は少ない...救..援を..
+gvcv5.mr_cpt.crashed3.name=救援部隊か！我々は艦首に立てこもっている
+gvcv5.mr_cpt.talk0.name=同盟軍士官:救援部隊か！....成程....
+gvcv5.mr_cpt.talk1.name=同盟軍士官:現在我が艦はゲリラによるシー・ジャックを受け壊滅した
+gvcv5.mr_cpt.talk2.name=同盟軍士官:生き残りは我々だけだ
+gvcv5.mr_cpt.talk3.name=同盟軍士官:君たちには残存兵力を率いて艦内の6つのジャミング装置を破壊してもらいたい
+gvcv5.mr_cpt.talk4.name=同盟軍士官:ゲリラどもがジャミング装置を設置したことで長距離通信が不可能となっている
+gvcv5.mr_cpt.talk5.name=同盟軍士官:全てのジャミング装置を破壊すれば救援部隊を要請出来るだろう
+gvcv5.mr_cpt.talk6.name=同盟軍士官:救援部隊到着後、ゲリラを掃討する
+gvcv5.mr_cpt.talk7.name=同盟軍士官:君たちしか頼れない、頼むぞ
+gvcv5.mr_cpt.jamming_destroy0.name=同盟軍士官:よし！ジャミング装置を全て破壊したぞ!
+gvcv5.mr_cpt.jamming_destroy1.name=同盟軍士官:すぐに救援部隊を要請する!
+gvcv5.mr_cpt.jamming_destroy2.name=同盟軍士官:よし！味方の空挺部隊だ!
+gvcv5.precv.crashed0.name=同盟軍士官:よし！船を奪還したぞ！
+gvcv5.precv.crashed1.name=同盟軍兵士:!?...レーダーに所属不明機を確認！
+gvcv5.precv.crashed2.name=同盟軍士官:ゲリラの新手か!?
+gvcv5.precv.crashed3.name=同盟軍兵士:いえこれは...未確認の機体です!   IFFにも応答ありません!
+gvcv5.precv.crashed4.name=同盟軍士官:ええいっ、迎撃準備だ!
+gvcv5.precv.crashed5.name=同盟軍兵士:あと1分で接敵します!12時方向です!
+gvcv5.mr_cpt.wave1.name=同盟軍士官:来たぞ!向かい撃て!!
+gvcv5.mr_cpt.wave1_new_enemy.name=同盟軍士官:くそ!、また来たぞ!
+gvcv5.mr_cpt.wave2_cool.name=同盟軍兵士:所属不明部隊、6時方向よりさらに接近中!
+gvcv5.mr_cpt.wave2.name=同盟軍士官:ええいっ、キリがないぞ!
+gvcv5.mr_cpt.wave2_new_enemy.name=同盟軍兵士:所属不明部隊、さらに接近中!
+gvcv5.mr_cpt.wave3_cool.name=同盟軍兵士:所属不明部隊、12時と6時方向より接近中!
+gvcv5.mr_cpt.wave3.name=同盟軍士官:耐えろ!、なんとしても耐え抜くんだ!
+gvcv5.mr_cpt.wave3_new_enemy.name=同盟軍兵士:所属不明部隊、さらに接近中!
+gvcv5.endcv.crashed0.name=同盟軍士官:終わったのか...?
+gvcv5.endcv.crashed1.name=同盟軍兵士:付近に敵影無しです
+gvcv5.endcv.crashed2.name=同盟軍士官:君たちには助けられたな
+gvcv5.endcv.crashed3.name=同盟軍士官:少ないかもしれないが報酬だ、持って行ってくれ
+gvcv5.losecv.crashed0.name=同盟軍士官:くそ!、旗が奪われたか!
+gvcv5.losecv.crashed1.name=同盟軍兵士:付近に敵影大勢あり、危険な状態だ!
+gvcv5.losecv.crashed2.name=同盟軍士官:こうなったら仕方ない!、我々は船から撤退する!
+
 
 item.zex:km=カロリーメイト
 item.zex:sp=スクラップ
@@ -303,6 +350,9 @@ tile.gvcv5:spawn_addon_gc4.name=エリートゲリラ_ククリ
 tile.gvcv5:spawn_addon_gc5.name=ゲリラ海軍士官
 tile.gvcv5:spawn_addon_ca.name=同盟軍兵士
 tile.gvcv5:spawn_addon_pmc.name=PMC兵士
+tile.gvcv5:spawn_addon_unks.name=UNKSolider_TypeC
+tile.gvcv5:spawn_addon_af_cpt.name=同盟軍空軍士官
+tile.gvcv5:spawn_addon_mr_cpt.name=同盟軍海軍士官
 
 tile.gvcv5:bc.name=弾薬製造機
 tile.gvcv5:gc1.name=銃製造機Tier1
@@ -599,6 +649,7 @@ item.gvcv5:vc3_item=ビークル製造機Tier3
 item.gvcv5:flame=火炎手榴弾
 item.gvcv5:fragment=破片手榴弾
 item.gvcv5:impact=衝撃手榴弾
+item.gvcv5:smoke=煙幕手榴弾
 item.gvcv5:frostcharge=フロストチャージ
 
 item.gvcv5:airborne1=空挺要請Level1
