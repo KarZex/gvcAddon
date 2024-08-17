@@ -719,7 +719,7 @@
         "lazer": {
           "on_entry": [
             "/playsound charge.rail @s[tag=!reload,tag=!down,scores={lazer=1..}] ~~~",
-            "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharging"
+            "/tag @s[tag=!reload,tag=!down,scores={lazer=1..}] add railcharging"
           ],
           "on_exit": [
             "/tag @s remove railcharging"
@@ -735,11 +735,12 @@
         },
         "lazerii": {
           "on_entry": [
-            "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharged"
+            "/tag @s[tag=!reload,tag=!down,scores={lazer=1..}] add railcharged"
           ],
           "on_exit": [
             "/event entity @s[tag=!reload,tag=!down,scores={lazer=1..}] fire:lazer",
-            "/tag @s remove railcharged/playsound empty.a1 @s[tag=!reload,tag=!down,scores={lazer=0}] ~~~",
+            "/tag @s remove railcharged",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={lazer=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={lazer=1..}] lazer 1"
           ],
           "transitions": [

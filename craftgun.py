@@ -135,7 +135,7 @@ for row in csv_reader:
             BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
                 "on_entry": [
                     "/playsound charge.rail @s[tag=!reload,tag=!down,scores={{{0}=1..}}] ~~~".format(gun_id),
-                    "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharging"
+                    "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharging".format(gun_id)
                 ],
                 "on_exit": [
                     "/tag @s remove railcharging"
@@ -151,11 +151,11 @@ for row in csv_reader:
             }
             BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = {
                 "on_entry": [
-                    "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharged"
+                    "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharged".format(gun_id)
                 ],
                 "on_exit": [
                     "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
-                    "/tag @s remove railcharged"
+                    "/tag @s remove railcharged",
                     "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
                     "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
                 ],
@@ -304,13 +304,17 @@ for row in csv_reader:
             
             if gun_special == "R":
                 f.write("titleraw @s[tag=!railcharged,tag=!railcharging,tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
-                f.write("titleraw @s[tag=railcharged] actionbar {{\"rawtext\":[{{\"text\":\"§eCharged\"}}]}}\n")
-                f.write("titleraw @s[tag=railcharging] actionbar {{\"rawtext\":[{{\"text\":\"Charging\"}}]}}\n")
+                f.write("title @s[tag=railcharged] actionbar §eCharged\n")
+                f.write("title @s[tag=railcharging] actionbar Charging\n")
             
             else:
                 f.write("titleraw @s[tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
-            if(gun_onehand): f.write("playanimation @s animation.onehand.first none 0 \"!query.is_item_equipped\"\n")
-            else: f.write("playanimation @s[tag=!down] animation.item.first none 0 \"!query.is_item_equipped\"\n")
+            
+            if(gun_onehand): 
+                f.write("playanimation @s animation.onehand.first none 0 \"!query.is_item_equipped\"\n")
+            else: 
+                f.write("playanimation @s[tag=!down] animation.item.first none 0 \"!query.is_item_equipped\"\n")
+
             f.write("hud @s[tag=scope] hide crosshair\n")
             f.write("execute if entity @s[tag=autoReload,tag=!reload,tag=!down,scores={{{0}=0}},hasitem={{item={1}}}] run scriptevent gvcv5:reload {0}\n".format(gun_id,gun_ammo))
             f.write("hud @s[tag=!scope] reset crosshair\n")
