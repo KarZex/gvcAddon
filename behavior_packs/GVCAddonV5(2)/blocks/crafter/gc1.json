@@ -23,10 +23,7 @@
 			"minecraft:destructible_by_mining":{
 				"seconds_to_destroy": 2.5
 			},
-            "minecraft:on_interact": {
-                "event": "gvcv5:usecrafter",
-                "target": "player"
-            },
+            "minecraft:custom_components": ["gvcv5:crafter"],
             "minecraft:geometry": "geometry.gc1",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],
@@ -69,14 +66,6 @@
                     }
                 }
             }
-        ],
-        "events": {
-            "gvcv5:usecrafter":{
-                "run_command":{
-                    "command": "scriptevent gvcv5:craft gc1",
-                    "target":"player"
-                }
-            }
-        }
+        ]
     }
 }

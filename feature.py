@@ -18,7 +18,6 @@ for row in csv_reader:
         with open("tool/structure_end.json","r") as f:
             structure_end_json = json.load(f)
             structure_end_json["minecraft:block"]["description"]["identifier"] = "gvcv5:structure_end_{}".format(row[2])
-            structure_end_json["minecraft:block"]["events"]["gvcv5:spawn"]["run_command"]["command"][0] = "tickingarea remove {}".format(row[2])
             
 
         with open("behavior_packs/GVCAddonV5(2)/blocks/endblock/{}_end.json".format(row[2]),"w") as f:
@@ -36,10 +35,10 @@ for row in csv_reader:
         text += "tile.gvcv5:building_{0}.name={1}\n".format(structure_id,row[0])
         with open("behavior_packs/GVCAddonV5(2)/functions/structure/{}.mcfunction".format(structure_id),"w") as f:
             f.write("tickingarea add ~~~ ~{0}~63~{1} {2} true\n".format(structure_loadx+16,structure_loadz+16,structure_id))
-            f.write("structure load {0} ~~-{1}~\n".format(structure_id,structure_loady))
-            if( structure_loadx > 64 ): f.write("structure load {0}_x64 ~64~-{1}~\n".format(structure_id,structure_loady))
-            if( structure_loadz > 64 ): f.write("structure load {0}_z64 ~~-{1}~64\n".format(structure_id,structure_loady))
-            if( structure_loadx > 64 and structure_loadz > 64 ): f.write("structure load {0}_x64z64 ~64~-{1}~64\n".format(structure_id,structure_loady))
+            f.write("structure load {3} ~~-{1}~\n".format(structure_loadx,structure_loady,structure_loadz,structure_id))
+            if( structure_loadx > 64 ): f.write("structure load {3}_x64 ~64~-{1}~\n".format(structure_loadx,structure_loady,structure_loadz,structure_id))
+            if( structure_loadz > 64 ): f.write("structure load {3}_z64 ~~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,structure_id))
+            if( structure_loadx > 64 and structure_loadz > 64 ): f.write("structure load {3}_x64z64 ~64~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,structure_id))
             f.write("fill ~~~ ~~~ minecraft:air\n")
             
         with open("tool/feature.json","r") as f:
@@ -83,7 +82,6 @@ for row in csv_reader:
         with open("tool/structure_block.json","r") as f:
             structure_block_json = json.load(f)
             structure_block_json["minecraft:block"]["description"]["identifier"] = "gvcv5:building_{}".format(structure_id)
-            structure_block_json["minecraft:block"]["events"]["gvcv5:spawn"]["run_command"]["command"][0] = "function structure/{}".format(structure_id)
             
 
         with open("behavior_packs/GVCAddonV5(2)/blocks/buildings/{}.json".format(structure_id),"w") as f:

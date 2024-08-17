@@ -5,31 +5,14 @@
       "states": {
         "default": {
           "transitions": [
-            {
-              "bomb": "query.get_equipped_item_name == 'bomb' && query.item_remaining_use_duration > 0.10"
-            },
             { "tank": "query.is_riding && (variable.attack_time > 0.0)" },
             { "tank": "query.is_riding && query.get_equipped_item_name == 'tank' && query.is_using_item" },
             { "mgg_1": "query.is_riding && query.get_equipped_item_name == 'mgg' && query.is_using_item" },
-            {
-              "red": "query.get_equipped_item_name == 'red' && query.item_remaining_use_duration > 0.10"
-            },
             {
               "fire": "query.get_equipped_item_name == 'fire' && query.is_using_item"
             },
             {
               "fire_reload": "query.get_equipped_item_name == 'fire' && (variable.attack_time > 0.0)"
-            }
-          ]
-        },
-        "bomb": {
-          "on_entry": [
-            "/event entity @s fire:bomb",
-            "/clear @s[tag=!reload] gun:bomb 0 1"
-          ],
-          "transitions": [
-            {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 10 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -58,16 +41,6 @@
           "transitions": [ 
             {"default":"!query.is_using_item"},
             {"mgg_1":"query.is_using_item && query.get_equipped_item_name == 'mgg'"}
-          ]
-        },
-        "red": {
-          "on_entry": [
-            "/function flag"
-          ],
-          "transitions": [
-            {
-              "default": "!query.is_using_item"
-            }
           ]
         },
         "fire_reload": {

@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "gvcv5:red_recipe"
+    "identifier": "gvcv5:commandradio_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
@@ -18,7 +18,7 @@
       }
     },
     "result": {
-      "item": "item:red",
+      "item": "zex:commandradio",
       "count": 1
     }
   }

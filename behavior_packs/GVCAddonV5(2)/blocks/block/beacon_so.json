@@ -26,14 +26,7 @@
                 "origin": [-8, 0, -8],
                 "size": [16, 16, 16]
             },
-            "minecraft:queued_ticking": {
-                "looping": true,
-                "interval_range": [300, 300],
-                "on_tick": {
-                    "event": "gvcv5:spawn",
-                    "target": "self"
-                }
-            },
+            "minecraft:custom_components": ["gvcv5:spawner"],
             "minecraft:light_dampening": 0,
             "minecraft:map_color": "#00ff00"
         },
@@ -70,18 +63,6 @@
                     }
                 }
             }
-        ],
-        "events": {
-            "gvcv5:spawn":{
-                "run_command": {
-                    "target": "self",
-                    "command":[ 
-                        "execute if entity @p[r=8,m=!c] run summon gvcv5:ca ~1~~",
-                        "execute if entity @p[r=8,m=!c] run summon gvcv5:ca ~-1~1~",
-                        "execute if entity @p[r=8,m=!c] run summon gvcv5:ca ~-1~-1~"
-                    ]
-                }
-            }
-        }
+        ]
     }
 }

@@ -46,8 +46,8 @@
     "spawn_yellow": {
       "textures": "textures/blocks/spawn_yellow"
     },
-    "spawn_ga": {
-      "textures": "textures/blocks/spawn/ga"
+    "firstbase": {
+      "textures": "textures/blocks/firstbase"
     },
     "spawn_ca": {
       "textures": "textures/blocks/spawn/ca"

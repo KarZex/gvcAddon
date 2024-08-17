@@ -1,0 +1,158 @@
+{
+  "namespace": "vida",
+ 
+  "easing_alpha": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 3,
+    "from": 1,
+    "to": 0
+  },
+  "control_background": {
+    "$texture|default": "textures/ui/background_image",
+    "$size|default": ["100%","100%"],
+    "$offset|default": [0,0],
+    "type": "image",
+    "texture": "$texture",
+    "size": "$size",
+    "offset": "$offset",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+  "vida_runtime": {
+    "type": "panel",
+    "size": ["100%", "100%"],
+    "property_bag": {
+      "#tfloat": 1.0
+    },
+    "layer": 100,
+    "bindings": [
+      { "binding_type": "global", "binding_name": "#hud_title_text_string"},
+      {  "binding_type": "view", "source_property_name": "((#hud_title_text_string - 'display') = 1)", "target_property_name":"#visible"},
+      { "binding_type": "view", "source_property_name": "((#hud_title_text_string - 'display1') - 'currentHealth')", "target_property_name":"#current_health_integer"},
+      { "binding_type": "view", "source_property_name": "(((#hud_title_text_string - 'display1') - ('currentHealth' + #current_health_integer)) - 'totalHealth')", "target_property_name":"#total_health_integer"},
+      { "binding_type": "view", "source_property_name": "(((#hud_title_text_string - 'display1') - ('currentHealth' + #current_health_integer)) - ('totalHealth' + #total_health_integer))", "target_property_name":"#entity_name"}
+    ],
+    "controls": [
+      {"main_stack_panel_survival@vida.main_stack_panel": {"$bindings|default": [
+     {"binding_name":"(not #is_creative_mode)","binding_name_override":"#visible"}
+    ],"offset":[0,20]}},
+      { "main_stack_panel@vida.main_stack_panel": {} }
+    ]
+  },
+  
+  "entity_preview_panel": {
+    "$size|default": ["100%","100%"],
+    "type": "panel",
+    "size": "$size",
+    "clips_children": true,
+    "controls": [
+      {"bg@vida.control_background": {"alpha": "@vida.easing_alpha", "$size": ["100%","100%"], "$texture": "textures/entity_renderer_panel", "layer": 101} },
+      {
+        "entity_id": {
+        "type": "custom",
+        "layer": 102,
+        "alpha": "@vida.easing_alpha",
+        "renderer": "live_horse_renderer",
+        "size": ["25%","25%"],
+        "offset": [0,"25%"],
+        "property_bag": {"#entity_id": "-1"},
+        "bindings": [
+          {
+            "binding_type": "global",
+            "binding_name": "#hud_subtitle_text_string",
+            "binding_name_override": "#entity_id"
+          }
+        ]
+      }}
+    ]
+  },
+  "name_panel": {
+    "$size|default": ["100%","100%"],
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": "$size",
+    "controls": [ 
+      {"bg@vida.control_background": { "$size": ["100%","100%"], "$texture": "textures/ui/purpleBorder", "ignored": true } },
+      {
+        "name_label": {
+          "type": "label",
+          "alpha": "@vida.easing_alpha",
+          "text": "#entity_name",
+          "bindings": [        
+            { "binding_condition": "always", "binding_type": "view", "source_control_name": "vida_runtime", "source_property_name": "#entity_name", "target_property_name": "#entity_name" }
+          ]
+        }
+      },
+      {"heart_icon@vida.control_background": { "alpha": "@vida.easing_alpha", "$size": [9,"100%"], "$texture": "textures/ui/heart" } },
+      {
+        "health_text": {
+          "type": "label",
+          "text": "#text",
+          
+          "alpha": "@vida.easing_alpha",
+          "bindings": [
+            { "binding_type": "view", "source_control_name": "vida_runtime", "source_property_name": "#current_health_integer", "target_property_name": "#current_health_integer" },
+            { "binding_type": "view", "source_control_name": "vida_runtime", "source_property_name": "#total_health_integer", "target_property_name": "#total_health_integer" },
+            { "binding_type": "view", "source_property_name": "('§z' + #current_health_integer + '/' + #total_health_integer)", "target_property_name": "#text"}
+          ]
+        }
+      }
+    ]
+  },
+  "health_progress_bar_panel": {
+    "type": "panel",
+    "size": "$size",
+    "controls": [
+      {"empty_health_bar@vida.control_background": { "alpha": "@vida.easing_alpha","$size": ["100%","100%"], "$texture": "textures/ui/empty_progress_bar", "color": "green" } },
+      {
+        "filled_health_bar": {
+          "type": "image",
+          "size": ["100%","100%"],
+          "texture": "textures/ui/filled_progress_bar",
+          "color": "green",
+          "clip_direction": "left",
+          "clip_pixelperfect": false,
+          "alpha": "@vida.easing_alpha",
+          "property_bag": { "#current_health_progress": 1.0},
+          "bindings": [
+            { "binding_type": "view", "source_control_name": "vida_runtime", "source_property_name": "#current_health_integer", "target_property_name": "#current_health_float" },
+            { "binding_type": "view", "source_control_name": "vida_runtime", "source_property_name": "#total_health_integer", "target_property_name": "#total_health_float" },
+            { "binding_type": "view", "source_property_name": "(#current_health_progress - ((#current_health_float * #current_health_progress) / #total_health_float))", "target_property_name": "#clip_ratio" }
+            
+          ]
+        }
+      }
+    ]
+  },
+  "name_and_health_panel": {
+    "$size|default": ["100%","100%"],
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": "$size",
+    
+    "controls": [
+      {"name_panel@vida.name_panel": { "$size": [ "100%","25%"] } },
+      { "padding": {"type":"panel","size":["100%","5%"]}},
+      {"health_progress_bar_panel@vida.health_progress_bar_panel": { "$size": [ "100%","15%"] } }
+    ]
+  },
+  "main_stack_panel": {
+    "type": "stack_panel",
+    
+    "orientation": "horizontal",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    
+    "size": ["20%","15%"],
+    "offset": [0,0],
+    "$bindings|default": [
+     {"binding_name":"#is_creative_mode","binding_name_override":"#visible"}
+    ],
+    "bindings": "$bindings",
+    "controls": [
+      {"entity_preview_panel@vida.entity_preview_panel": {"$size": ["35%","100%"] }},
+      {"name_and_health_panel@vida.name_and_health_panel": { "$size": ["65%","100%"] } }
+    ]
+  }
+}

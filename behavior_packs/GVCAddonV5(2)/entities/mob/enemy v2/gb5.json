@@ -220,6 +220,11 @@
           "component_groups": [
             "D"
           ]
+        },
+        "remove": {
+          "component_groups": [
+            "can_despawn"
+          ]
         }
       },
 	   "S": {

@@ -181,6 +181,11 @@
           "component_groups": [
             "fire"
           ]
+        },
+        "remove": {
+          "component_groups": [
+            "can_despawn"
+          ]
         }
       }
     }

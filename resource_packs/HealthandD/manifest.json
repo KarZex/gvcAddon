@@ -1,0 +1,32 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Health and Damage indicator v4.0",
+        "description": "Shows the entity's health and the damage caused by hitting them, by @Juaneitor11",
+        "uuid": "ce720501-526e-497c-9fd9-a31ca7597b99",
+        "version": [
+            4,
+            0,
+            0
+        ],
+        "min_engine_version": [
+            1,
+            19,
+            0
+        ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "f95def09-19e3-4db8-bfa2-b500f1b78b2a",
+            "version": [
+                4,
+                0,
+                0
+            ]
+        }
+    ],
+    "dependencies": [
+      {"uuid": "17c36785-13ff-466a-b5a0-32f8d54c0476", "version": [4,0,0]}
+    ]
+}

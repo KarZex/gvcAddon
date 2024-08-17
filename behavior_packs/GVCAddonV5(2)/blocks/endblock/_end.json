@@ -28,23 +28,12 @@
           16
         ]
       },
-      "minecraft:on_placed": {
-        "event": "gvcv5:spawn"
-      },
+      "minecraft:custom_components": [
+        "gvcv5:end_block"
+      ],
       "minecraft:light_emission": 15,
       "minecraft:light_dampening": 0,
       "minecraft:map_color": "#00ff00"
-    },
-    "events": {
-      "gvcv5:spawn": {
-        "run_command": {
-          "target": "self",
-          "command": [
-            "tickingarea remove ",
-            "fill ~~~ ~~~ air"
-          ]
-        }
-      }
     }
   }
 }

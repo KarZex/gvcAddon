@@ -255,6 +255,13 @@
       "minecraft:conditional_bandwidth_optimization": {}
     },
     "events": {
+      "minecraft:spawned_from_block": {
+        "add": {
+          "component_groups": [
+            "g36"
+          ]
+        }
+      },
       "gre": {
         "randomize": [
           {

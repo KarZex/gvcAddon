@@ -1,25 +1,25 @@
 {
-  "format_version": "1.16.100",
+  "format_version": "1.21.10",
   "minecraft:item": {
     "description": {
       "identifier": "gun:mgg",
-	  "category" : "equipment" 
+      "menu_category": {
+        "category": "equipment"
+      }
     },
 
     "components": {
       "minecraft:can_destroy_in_creative": false,
       "minecraft:max_stack_size": 16,
       "minecraft:hand_equipped": true,
-      "minecraft:use_duration": 99999,
-      "minecraft:icon": {
-        "texture": "mgg"
+      "minecraft:use_modifiers": {
+        "movement_modifier": 1,
+        "use_duration": 9999
       },
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.guns"
-      },
+      "minecraft:icon": "mgg",
       "minecraft:food": {
         "nutrition": 0,
-        "saturation_modifier": "supernatural",
+        "saturation_modifier": 1,
         "can_always_eat": true
       }
     }

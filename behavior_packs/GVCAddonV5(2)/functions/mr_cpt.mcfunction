@@ -1,3 +1,4 @@
+scoreboard objectives add mr_cpt dummy
 scoreboard players set @s[tag=!mr_cpt] mr_cpt 0
 scoreboard players set @s[scores={mr_cpt=4..}] mr_cpt 0
 tag @s[scores={mr_cpt=0}] add mr_cpt

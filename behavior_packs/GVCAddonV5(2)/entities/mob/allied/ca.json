@@ -1733,6 +1733,13 @@
             }
           },
           {
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
+          {
             "trigger": "gvcv5:set_have_gun"
           }
         ]

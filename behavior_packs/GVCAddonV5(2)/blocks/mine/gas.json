@@ -9,7 +9,7 @@
                 }
             },
             "menu_category":{
-                "category": "command"
+                "category": "none"
             }
         },
         "components": {
@@ -20,11 +20,9 @@
 					"ambient_occlusion": false
                 }
             },
+            "minecraft:custom_components": ["gvcv5:gasevent"],
 			"minecraft:destructible_by_mining":{
 				"seconds_to_destroy": 0.1
-			},
-			"minecraft:on_player_destroyed":{
-				"event" : "minecraft:ignite"
 			},
             "minecraft:geometry": "geometry.gas",
             "minecraft:selection_box": {
@@ -34,16 +32,6 @@
             "minecraft:light_dampening": 0,
 			"minecraft:loot": "loot_tables/empty.json",
             "minecraft:map_color": "#00ff00"
-        },
-        "events": {
-          "minecraft:ignite": {
-            "run_command": {
-              "command": [
-                "structure load poison ~~~"
-              ],
-              "target": "self"
-            }
-          }
         },
         "permutations": [
             {

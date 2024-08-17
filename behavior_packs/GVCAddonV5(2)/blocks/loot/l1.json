@@ -20,6 +20,7 @@
 					"ambient_occlusion": false
                 }
             },
+            "minecraft:custom_components": [ "gvcv5:lootblock" ],
             "minecraft:geometry": "geometry.loot",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],
@@ -31,88 +32,38 @@
             "minecraft:map_color": "#00ff00"
         },
         "permutations": [
-            {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
-                "components": {
-                    "minecraft:on_placed":{
-                      "event": "minecraft:south"
-                    },
-                    "minecraft:transformation": {
-                        "rotation": [0, 0, 0]
-                    }
-                }
-            },
-            {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
-                "components": {
-                    "minecraft:on_placed":{
-                      "event": "minecraft:east"
-                    },
-                    "minecraft:transformation": {
-                        "rotation": [0, 90, 0]
-                    }
-                }
-            },
-            {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
-                "components": {
-                    "minecraft:on_placed":{
-                      "event": "minecraft:north"
-                    },
-                    "minecraft:transformation": {
-                        "rotation": [0, 180, 0]
-                    }
-                }
-            },
-            {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
-                "components": {
-                    "minecraft:on_placed":{
-                      "event": "minecraft:west"
-                    },
-                    "minecraft:transformation": {
-                        "rotation": [0, 270, 0]
-                    }
-                }
-            }
-        ],
-        "events": {
-          "minecraft:north": {
-            "run_command": {
-              "command": [
-                "setblock ~~~ chest [\"minecraft:cardinal_direction\"=\"south\"]",
-                "loot insert ~~~ loot l1"
-              ],
-              "target": "self"
-            }
+          {
+              "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+              "components": {
+                  "minecraft:transformation": {
+                      "rotation": [0, 0, 0]
+                  }
+              }
           },
-          "minecraft:west": {
-            "run_command": {
-              "command": [
-                "setblock ~~~ chest [\"minecraft:cardinal_direction\"=\"east\"]",
-                "loot insert ~~~ loot l1"
-              ],
-              "target": "self"
-            }
+          {
+              "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+              "components": {
+                  "minecraft:transformation": {
+                      "rotation": [0, 90, 0]
+                  }
+              }
           },
-          "minecraft:south": {
-            "run_command": {
-              "command": [
-                "setblock ~~~ chest [\"minecraft:cardinal_direction\"=\"north\"]",
-                "loot insert ~~~ loot l1"
-              ],
-              "target": "self"
-            }
+          {
+              "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+              "components": {
+                  "minecraft:transformation": {
+                      "rotation": [0, 180, 0]
+                  }
+              }
           },
-          "minecraft:east": {
-            "run_command": {
-              "command": [
-                "setblock ~~~ chest [\"minecraft:cardinal_direction\"=\"west\"]",
-                "loot insert ~~~ loot l1"
-              ],
-              "target": "self"
-            }
+          {
+              "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+              "components": {
+                  "minecraft:transformation": {
+                      "rotation": [0, 270, 0]
+                  }
+              }
           }
-        }
+      ]
     }
 }

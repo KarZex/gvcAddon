@@ -9,16 +9,36 @@
       "placement_pass": "surface_pass",
       "minecraft:biome_filter": [
         {
-          "any_of": [
+          "all_of": [
             {
               "test": "has_biome_tag",
               "operator": "==",
-              "value": "plains"
+              "value": "overworld"
             },
             {
               "test": "has_biome_tag",
-              "operator": "==",
-              "value": "forest"
+              "operator": "!=",
+              "value": "desert"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "cold"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "ice"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "ocean"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "river"
             }
           ]
         }
@@ -26,7 +46,7 @@
     },
     "distribution": {
       "iterations": 1,
-      "scatter_chance": 0.05,
+      "scatter_chance": 0.01,
       "x": {
         "distribution": "uniform",
         "extent": [

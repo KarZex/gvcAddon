@@ -1,42 +1,22 @@
 {
-  "format_version": "1.16.100",
+  "format_version": "1.21.10",
   "minecraft:item": {
     "description": {
       "identifier": "gvcv5:frostcharge",
-      "category" : "equipment" 
+      "menu_category": {
+        "category": "equipment"
+      }
     },
-
     "components": {
       "minecraft:can_destroy_in_creative": false,
       "minecraft:max_stack_size": 3,
-      "minecraft:icon": {
-        "texture": "frostcharge"
+      "minecraft:icon": "frostcharge",
+      "minecraft:throwable": {
+        "do_swing_animation": true
       },
-	  "minecraft:throwable": {
-		  "do_swing_animation": true
-	  },
-	  "minecraft:projectile": {
-		  "projectile_entity": "gre:frostcharge"
-	  },
-      "minecraft:display_name": {},
-	  "minecraft:on_use": {
-		"on_use": {
-			"event": "zex:on_use",
-			"target": "self"
-		}
-	  },
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.guns"
+      "minecraft:projectile": {
+        "projectile_entity": "gre:frostcharge"
       }
-    },	
-	"events": {
-		"zex:on_use": {
-			"run_command": {
-				"command": [
-					"playsound mob.blaze.shoot @a ~~~"
-				]
-			}
-		}
-	}
-   }
+    }
+  }
 }

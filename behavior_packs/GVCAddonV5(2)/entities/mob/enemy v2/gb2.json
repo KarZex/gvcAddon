@@ -168,6 +168,11 @@
           "component_groups": [
             "pkm"
           ]
+        },
+        "remove": {
+          "component_groups": [
+            "can_despawn"
+          ]
         }
       }
     }

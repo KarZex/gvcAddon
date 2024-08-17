@@ -15,8 +15,6 @@ with open("_summon.txt","r") as f:
         block_json["minecraft:block"]["components"]["minecraft:material_instances"]["*"]["texture"] = "spawn_{}".format(e_id.replace(":","_"))
         block_json["minecraft:block"]["components"]["minecraft:material_instances"]["*"]["texture"] = "spawn_{}".format(e_id.replace(":","_"))
         block_json["minecraft:block"]["components"]["minecraft:loot"] = "loot_tables/empty.json"
-        block_json["minecraft:block"]["events"]["gvcv5:spawn"]["die"] = {  "target" : "self" }
-        block_json["minecraft:block"]["events"]["gvcv5:spawn"]["run_command"]["command"].append("summon {} ~0.1~-1~0.1 ~~ minecraft:spawned_from_block".format(e_id.replace("addon","gvcv5")))
 
         with open("spawn_{}.json".format(e_id.replace(":","_")),"w") as s:
             json.dump(block_json,s,indent=2)

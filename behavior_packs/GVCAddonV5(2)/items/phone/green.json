@@ -1,59 +1,21 @@
 {
-  "format_version": "1.16.100",
+  "format_version": "1.21.10",
   "minecraft:item": {
     "description": {
       "identifier": "zex:phone_green",
-	  "category" : "equipment" 
+      "menu_category": {
+        "category": "equipment"
+      }
     },
-
     "components": {
       "minecraft:can_destroy_in_creative": false,
       "minecraft:max_stack_size": 1,
-	  "minecraft:use_duration": 0.1,
+      "minecraft:custom_components": ["gvcv5:teamphone"],
       "minecraft:hand_equipped": false,
-      "minecraft:use_duration": 1,
-      "minecraft:icon": {
-        "texture": "phone_green"
-      },
-      "minecraft:render_offsets": {
-          "main_hand": {
-              "third_person": {
-                  "scale": [
-                      0.05,
-                      0.05,
-                      0.05
-                  ]
-              },
-              "first_person": {
-                  "scale": [
-                      0.019,
-                      0.019,
-                      0.019
-                  ]
-              }
-          }
-      },
+      "minecraft:icon": "phone_green",
       "minecraft:creative_category": {
         "parent": "itemGroup.name.guns"
-      },
-	  "minecraft:on_use": {
-		"on_use": {
-			"event": "missile:launch",
-			"target": "self"
-		}
-	  }
-    },
-
-	"events": {
-		"missile:launch": {
-			"run_command": {
-				"command": [
-					"scriptevent gvcv5:phone_locked green"
-				],
-				"target": "holder"
-			}
-		}
-	
-	}	
+      }
+    }
   }
 }

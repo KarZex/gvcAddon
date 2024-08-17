@@ -229,7 +229,7 @@ item.zex:icecharge=フロストチャージ
 
 item.item:blue=追従
 item.item:green=待機
-item.item:red=分隊指揮端末
+item.zex:commandradio=分隊指揮端末
 item.item:yellow=占領
 
 item.zex:knife=ククリナイフ
@@ -336,6 +336,7 @@ tile.gvcv5:spawn_red.name=テレポートブロック 赤チーム用
 tile.gvcv5:spawn_blue.name=テレポートブロック 青チーム用
 tile.gvcv5:spawn_green.name=テレポートブロック 緑チーム用
 tile.gvcv5:spawn_yellow.name=テレポートブロック 黄チーム用
+tile.gvcv5:building_firstbase.name=初期拠点
 
 tile.gvcv5:spawn_addon_ga.name=ゲリラ
 tile.gvcv5:spawn_addon_gb1.name=ベテランゲリラ_重MG
@@ -586,7 +587,26 @@ script.gvcv5.newMessage_green.name=§a緑チーム内チャットに新しいメ
 script.gvcv5.newMessage_yellow.name=§e黄チーム内チャットに新しいメッセージがあります
 script.gvcv5.phone_new_leader.name=あなたは新しいリーダーになりました!
 script.gvcv5.wantToBe_deny.name=あなたの加盟要請は拒否されました
-
+script.gvcv5.howToGun.name=銃の使い方	#
+script.gvcv5.howToGunDesc0.name=銃を撃つ    :_input_key.use:	#
+script.gvcv5.howToGunDesc1.name=スコープを覗く :_input_key.sneak:	#
+script.gvcv5.howToGunDesc2.name=リロード     :_input_key.attack:	#
+script.gvcv5.howToGunDesc3.name=(タップの場合,何かのブロックに向ける)	#
+script.gvcv5.autoReloadOn.name=自動リロードをON
+script.gvcv5.autoReloadOff.name=自動リロードをOFF
+script.gvcv5.howToVechile.name=乗り物の使い方	#
+script.gvcv5.howToVechileDesc0.name=機銃     機関銃を持って:_input_key.use:	#
+script.gvcv5.howToVechileDesc1.name=主砲発射 :_input_key.attack:	#
+script.gvcv5.howToVechileDesc2.name=または, 主砲を持って:_input_key.use:	#
+script.gvcv5.phone_howToTeam.name=チームについて	#
+script.gvcv5.phone_howToTeamDesc.name=このモードでは, チームに分かれて戦争となる。他のチームに襲撃されないようにし, 自分の勢力を強化せよ
+script.gvcv5.phone_howToTeam1.name=情報端末について
+script.gvcv5.phone_howToTeam1Desc.name=情報端末は, チームの作戦を手助けする強力なツールである。これを使うと、テレポートや情報共有が可能になる。§c他のチームに取られると、圧倒的に不利になるだろう。§rパスワードをかけ、他人が開けないようにしよう。
+script.gvcv5.phone_howToTeam2.name=テレポートについて
+script.gvcv5.phone_howToTeam2Desc.name=情報端末を使うことでチームにいるプレイヤーにテレポートできる。自分とは異なるチームの情報端末を使えば、敵チームのプレイヤーにテレポートすることも可能だ。
+script.gvcv5.phone_howToTeam3.name=テレポートブロックについて
+script.gvcv5.phone_howToTeam3Desc.name=鉄ブロックx4,染料x1で作成可能。情報端末を持ってテレポートブロックにクリックすることで、座標を登録し、いつでもテレポートできるようにする。1つの情報端末に5つまで場所を登録できる。
+script.gvcv5.select_team.name=チームに加入
 
 item.vehicle:dp28set_spawn_egg=固定機銃DP-28
 item.vehicle:m60set_spawn_egg=固定機銃M60

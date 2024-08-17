@@ -1,0 +1,21 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "gvcv5:stonecutter_iron_ingot_from_mp40"
+    },
+    "tags": [
+      "stonecutter"
+    ],
+    "priority": 2,
+    "ingredients": [
+      {
+        "item": "gun:mp40"
+      }
+    ],
+    "result": {
+      "item": "minecraft:iron_ingot",
+      "count": 2
+    }
+  }
+}

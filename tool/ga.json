@@ -616,6 +616,14 @@
             },
             "add": { "component_groups": [ "navy" ] }
          },
+         {
+          "remove": {
+            "component_groups": [
+              "can_despawn"
+            ]
+          }
+
+         },
           {
               "randomize": [
                 {

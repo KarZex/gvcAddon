@@ -101,8 +101,8 @@
     "ak12": {
       "textures": "textures/items/gun/ak12"
     },
-    "aak12": {
-      "textures": "textures/items/ak12"
+    "commandradio": {
+      "textures": "textures/items/commandradio"
     },
     "dp28": {
       "textures": "textures/items/gun/dp28"

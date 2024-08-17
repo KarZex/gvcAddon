@@ -130,6 +130,8 @@
     },
 
     "events": {
+      "minecraft:spawned_from_block": {
+      },
       "minecraft:entity_spawned": {
         "add": {
           "component_groups": [

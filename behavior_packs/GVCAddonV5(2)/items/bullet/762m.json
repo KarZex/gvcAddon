@@ -1,56 +1,17 @@
 {
-  "format_version": "1.16.100",
+  "format_version": "1.21.10",
   "minecraft:item": {
     "description": {
       "identifier": "zex:762m",
-      "category" : "equipment" 
+      "menu_category": {
+        "category": "equipment"
+      }
     },
-
     "components": {
       "minecraft:can_destroy_in_creative": false,
       "minecraft:max_stack_size": 64,
       "minecraft:hand_equipped": true,
-      "minecraft:use_duration": 99999,
-      "minecraft:icon": {
-        "texture": "762m"
-      },
-			"minecraft:render_offsets": {
-				"main_hand": {
-					"third_person": {
-						"scale": [
-							0.05,
-							0.05,
-							0.05
-						]
-					},
-					"first_person": {
-						"scale": [
-							0.019,
-							0.019,
-							0.019
-						]
-					}
-				},
-				"off_hand": {
-					"third_person": {
-						"scale": [
-							0.05,
-							0.05,
-							0.05
-						]
-					},
-					"first_person": {
-						"scale": [
-							0.019,
-							0.019,
-							0.019
-						]
-					}
-				}
-			},
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.guns_empty"
-      }
+      "minecraft:icon": "762m"
     }
   }
 }

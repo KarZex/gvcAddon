@@ -41,6 +41,7 @@ for row in csv_reader:
         gun_bullet_num = int(row[14])
         gun_damage_type = row[15]
         gun_fullauto = int(row[16])
+        gun_break = int(row[19])
 
         if(row[10] == "T"):
             gun_break_block = True
@@ -261,7 +262,7 @@ for row in csv_reader:
             if(gun_onehand): f.write("playanimation @s animation.onehand.first none 0 \"!query.is_item_equipped\"\n")
             else: f.write("playanimation @s[tag=!down] animation.item.first none 0 \"!query.is_item_equipped\"\n")
             f.write("hud @s[tag=scope] hide crosshair\n")
-            f.write("execute if entity @s[tag=!reload,tag=!down,scores={{{0}=0}},hasitem={{item={1}}}] run scriptevent gvcv5:reload {0}\n".format(gun_id,gun_ammo))
+            f.write("execute if entity @s[tag=autoReload,tag=!reload,tag=!down,scores={{{0}=0}},hasitem={{item={1}}}] run scriptevent gvcv5:reload {0}\n".format(gun_id,gun_ammo))
             f.write("hud @s[tag=!scope] reset crosshair\n")
 
 
@@ -273,10 +274,20 @@ for row in csv_reader:
         with open("tool/item.json","r") as f:
             gun_item = json.load(f)
             gun_item["minecraft:item"]["description"]["identifier"] = "gun:{}".format(gun_id)
-            gun_item["minecraft:item"]["components"]["minecraft:icon"] = { "texture": "{}".format(gun_id) }
+            gun_item["minecraft:item"]["components"]["minecraft:icon"] = "{}".format(gun_id)
         
         with open("behavior_packs/GVCAddonV5(2)/items/gun/{}.json".format(gun_id),"w") as f:
             json.dump(gun_item,f,indent=2)
+
+        #crash recipe
+        with open("tool/gunbreak.json","r") as f:
+            gunbreak = json.load(f)
+            gunbreak["minecraft:recipe_shapeless"]["description"]["identifier"] = "gvcv5:stonecutter_iron_ingot_from_{}".format(gun_id)
+            gunbreak["minecraft:recipe_shapeless"]["ingredients"][0]["item"] = "gun:{}".format(gun_id)
+            gunbreak["minecraft:recipe_shapeless"]["result"]["count"] = gun_break
+        
+        with open("behavior_packs/GVCAddonV5(2)/recipes/gun/{}.json".format(gun_id),"w") as f:
+            json.dump(gunbreak,f,indent=2)
 
         #loot_table (for mob)
         with open("tool/loot.json","r") as f:

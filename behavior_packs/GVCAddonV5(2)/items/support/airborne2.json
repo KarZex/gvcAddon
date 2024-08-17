@@ -1,64 +1,26 @@
 {
-  "format_version": "1.16.100",
+  "format_version": "1.21.10",
   "minecraft:item": {
     "description": {
       "identifier": "gvcv5:airborne2",
-      "category" : "equipment" 
+      "menu_category": {
+        "category": "equipment"
+      }
     },
-
     "components": {
       "minecraft:can_destroy_in_creative": false,
       "minecraft:max_stack_size": 64,
-      "minecraft:icon": {
-        "texture": "airborne2"
+      "minecraft:icon": "airborne2",
+      "minecraft:throwable": {
+        "do_swing_animation": true
       },
-	  "minecraft:throwable": {
-		  "do_swing_animation": true
-	  },
-	  "minecraft:cooldown": {
-		"category": "attack",
-		"duration": 10
-	  },
-	  "minecraft:projectile": {
-		  "projectile_entity": "gre:airborne2"
-	  },
-      "minecraft:display_name": {},
-	  "minecraft:on_use": {
-		"on_use": {
-			"event": "zex:on_use",
-			"target": "self"
-		}
-	  },
-	  "minecraft:render_offsets": {
-		  "main_hand": {
-			  "third_person": {
-				  "scale": [
-					  0.05,
-					  0.05,
-					  0.05
-				  ]
-			  },
-			  "first_person": {
-				  "scale": [
-					  0.019,
-					  0.019,
-					  0.019
-				  ]
-			  }
-		  }
-	  },
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.guns"
+      "minecraft:cooldown": {
+        "category": "attack",
+        "duration": 10
+      },
+      "minecraft:projectile": {
+        "projectile_entity": "gre:airborne2"
       }
-    },	
-	"events": {
-		"zex:on_use": {
-			"run_command": {
-				"command": [
-					"playsound use.support @a ~~~"
-				]
-			}
-		}
-	}
-   }
+    }
+  }
 }

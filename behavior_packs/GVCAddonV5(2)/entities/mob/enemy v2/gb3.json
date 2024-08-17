@@ -181,6 +181,11 @@
           "component_groups": [
             "mosin"
           ]
+        },
+        "remove": {
+          "component_groups": [
+            "can_despawn"
+          ]
         }
       }
     }

@@ -36,5 +36,3 @@ item.spawn_egg.entity.gvcv5:flag_desertcity_ca.name=同盟軍拠点_砂漠都市
 item.spawn_egg.entity.gvcv5:flag_desertcity_ga.name=ゲリラ拠点_砂漠都市
 item.spawn_egg.entity.gvcv5:flag_triumphal_arch_ca.name=同盟軍拠点_凱旋門
 item.spawn_egg.entity.gvcv5:flag_triumphal_arch_ga.name=ゲリラ拠点_凱旋門
-item.spawn_egg.entity.gvcv5:flag_cv_ca.name=同盟軍拠点_強襲揚陸艦
-item.spawn_egg.entity.gvcv5:flag_cv_ga.name=ゲリラ拠点_強襲揚陸艦

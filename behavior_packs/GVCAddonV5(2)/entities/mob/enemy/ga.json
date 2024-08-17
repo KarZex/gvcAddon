@@ -1660,6 +1660,13 @@
             }
           },
           {
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
+          {
             "randomize": [
               {
                 "weight": 20,

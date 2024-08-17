@@ -1,5 +1,5 @@
 {
-	"format_version": "1.13.0",
+	"format_version": "1.21.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "gre:airborne3",
@@ -29,8 +29,8 @@
 				"on_hit": {
 				"stick_in_ground": {},
 				"definition_event": {
-				  "affectProjectile": true,
-				  "eventTrigger": {
+					"affect_projectile": true,
+					"event_trigger": {
 					"event": "minecraft:explode",
 					"target": "self"
 				  }

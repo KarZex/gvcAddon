@@ -1,0 +1,19 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "add:health_indicator",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/none"
+      },
+      "geometry": {
+        "default": "geometry.cube"
+      },
+      "enable_attachables": false,
+      "render_controllers": [ "controller.render.default"]
+    }
+  }
+} 
