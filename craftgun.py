@@ -42,6 +42,7 @@ for row in csv_reader:
         gun_damage_type = row[15]
         gun_fullauto = int(row[16])
         gun_break = int(row[19])
+        gun_special = row[21]
 
         if(row[10] == "T"):
             gun_break_block = True
@@ -52,6 +53,11 @@ for row in csv_reader:
             gun_onehand = True
         else:
             gun_onehand = False
+
+        if(row[20] == "T"):
+            gun_wallbreak = True
+        else:
+            gun_wallbreak = False
 
 
         if(gun_ammo == "zex:556m"):
@@ -125,8 +131,42 @@ for row in csv_reader:
                 }
             ]
         }
+        if gun_special == "R":
+            BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
+                "on_entry": [
+                    "/playsound charge.rail @s[tag=!reload,tag=!down,scores={{{0}=1..}}] ~~~".format(gun_id),
+                    "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharging"
+                ],
+                "on_exit": [
+                    "/tag @s remove railcharging"
+                ],
+                "transitions": [
+                    {
+                        "default": "!query.is_using_item"
+                    },
+                    {
+                        "{}ii".format(gun_id): "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval - 1)
+                    }
+                ]
+            }
+            BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = {
+                "on_entry": [
+                    "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharged"
+                ],
+                "on_exit": [
+                    "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
+                    "/tag @s remove railcharged"
+                    "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
+                    "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                ],
+                "transitions": [
+                    {
+                        "default": "!query.is_using_item"
+                    }
+                ]
+            }
 
-        if gun_burst == 0:
+        elif gun_burst == 0:
             if gun_fullauto == 1:
                 if gun_interval > 0:
                     BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
@@ -236,7 +276,7 @@ for row in csv_reader:
             gun_entity = json.load(f)
             gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
             gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertaintyBase"] = gun_aim * 5
+            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
             gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
             if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
             gun_entity["minecraft:entity"]["events"] = {}
@@ -245,20 +285,30 @@ for row in csv_reader:
             gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
 
             if gun_bomb > 0:
-                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["onHit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+
+            if gun_wallbreak:
+                del gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["stick_in_ground"]
                 
         with open("behavior_packs/GVCAddonV5(2)/entities/fire/{}.json".format(gun_id),"w") as f:
             json.dump(gun_entity,f,indent=2)
 
         with open("behavior_packs/GVCAddonV5(2)/entities/fire/scoped/{}.json".format(gun_id),"w") as f:
             gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}".format(gun_id)
-            if gun_bullet_num > 1: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertaintyBase"] = gun_aim * 2
-            else: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertaintyBase"] = 0
+            if gun_bullet_num > 1: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
+            else: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = 0
             json.dump(gun_entity,f,indent=2)
 
         #function
         with open("behavior_packs/GVCAddonV5(2)/functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
-            f.write("titleraw @s[tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
+            
+            if gun_special == "R":
+                f.write("titleraw @s[tag=!railcharged,tag=!railcharging,tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
+                f.write("titleraw @s[tag=railcharged] actionbar {{\"rawtext\":[{{\"text\":\"§eCharged\"}}]}}\n")
+                f.write("titleraw @s[tag=railcharging] actionbar {{\"rawtext\":[{{\"text\":\"Charging\"}}]}}\n")
+            
+            else:
+                f.write("titleraw @s[tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
             if(gun_onehand): f.write("playanimation @s animation.onehand.first none 0 \"!query.is_item_equipped\"\n")
             else: f.write("playanimation @s[tag=!down] animation.item.first none 0 \"!query.is_item_equipped\"\n")
             f.write("hud @s[tag=scope] hide crosshair\n")
@@ -595,7 +645,7 @@ for row in csv_reader2:
             gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True,	 "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
 
             if gun_bomb > 0:
-                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["onHit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
 
         with open("behavior_packs/GVCAddonV5(2)/entities/fire/{}.json".format(gun_id),"w") as f:
             json.dump(gun_entity,f,indent=2)

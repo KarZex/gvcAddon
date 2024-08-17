@@ -19,6 +19,18 @@
 			   "sounds/grenade"
 		   ]
 	   },
+	   "charge.rail": {
+		  "category": "hostile",
+		  "sounds": [
+			  "sounds/railcharge"
+		  ]
+	  },
+	   "fire.rail": {
+		  "category": "hostile",
+		  "sounds": [
+			  "sounds/fire_rail"
+		  ]
+	  },
 	   "fire.m82": {
 		  "category": "hostile",
 		  "sounds": [

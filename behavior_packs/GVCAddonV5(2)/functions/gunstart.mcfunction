@@ -44,7 +44,7 @@ execute as @a[tag=!startedv4] run scoreboard players set @s glock18 20
 scoreboard objectives add hk416 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s hk416 30
 scoreboard objectives add lazer dummy
-execute as @a[tag=!startedv4] run scoreboard players set @s lazer 100
+execute as @a[tag=!startedv4] run scoreboard players set @s lazer 5
 scoreboard objectives add m4 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m4 30
 scoreboard objectives add m4a1 dummy

@@ -6,9 +6,6 @@
         "default": {
           "transitions": [
             {
-              "bomb": "query.get_equipped_item_name == 'bomb' && query.item_remaining_use_duration > 0.10"
-            },
-            {
               "tank": "query.is_riding && (variable.attack_time > 0.0)"
             },
             {
@@ -16,9 +13,6 @@
             },
             {
               "mgg_1": "query.is_riding && query.get_equipped_item_name == 'mgg' && query.is_using_item"
-            },
-            {
-              "red": "query.get_equipped_item_name == 'red' && query.item_remaining_use_duration > 0.10"
             },
             {
               "fire": "query.get_equipped_item_name == 'fire' && query.is_using_item"
@@ -304,17 +298,6 @@
             }
           ]
         },
-        "bomb": {
-          "on_entry": [
-            "/event entity @s fire:bomb",
-            "/clear @s[tag=!reload] gun:bomb 0 1"
-          ],
-          "transitions": [
-            {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 10 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
-            }
-          ]
-        },
         "tank": {
           "on_entry": [
             "/execute as @s[tag=!reload,scores={mcool=0}] run function vmain"
@@ -348,16 +331,6 @@
             },
             {
               "mgg_1": "query.is_using_item && query.get_equipped_item_name == 'mgg'"
-            }
-          ]
-        },
-        "red": {
-          "on_entry": [
-            "/function flag"
-          ],
-          "transitions": [
-            {
-              "default": "!query.is_using_item"
             }
           ]
         },
@@ -745,31 +718,33 @@
         },
         "lazer": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={lazer=1..}] fire:lazer",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={lazer=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={lazer=1..}] lazer 1"
+            "/playsound charge.rail @s[tag=!reload,tag=!down,scores={lazer=1..}] ~~~",
+            "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharging"
+          ],
+          "on_exit": [
+            "/tag @s remove railcharging"
           ],
           "transitions": [
             {
               "default": "!query.is_using_item"
             },
             {
-              "lazerii": "query.get_equipped_item_name == 'lazer' && query.is_using_item"
+              "lazerii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 19 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
         "lazerii": {
           "on_entry": [
+            "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharged"
+          ],
+          "on_exit": [
             "/event entity @s[tag=!reload,tag=!down,scores={lazer=1..}] fire:lazer",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={lazer=0}] ~~~",
+            "/tag @s remove railcharged/playsound empty.a1 @s[tag=!reload,tag=!down,scores={lazer=0}] ~~~",
             "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={lazer=1..}] lazer 1"
           ],
           "transitions": [
             {
               "default": "!query.is_using_item"
-            },
-            {
-              "lazer": "query.get_equipped_item_name == 'lazer' && query.is_using_item"
             }
           ]
         },
@@ -1250,7 +1225,7 @@
         "m1911_after": {
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 5 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },

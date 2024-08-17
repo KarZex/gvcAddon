@@ -26,7 +26,7 @@
         "height": 0.25
       },
       "minecraft:projectile": {
-        "onHit": {
+        "on_hit": {
           "impact_damage": {
             "damage": 0,
             "knockback": false
@@ -36,9 +36,9 @@
         "power": 1.4000000000000001,
         "gravity": 0,
         "inertia": 1.5,
-        "uncertaintyBase": 0,
-        "uncertaintyMultiplier": 0,
-        "catchFire": false,
+        "uncertainty_base": 0,
+        "uncertainty_multiplier": 0,
+        "catch_fire": false,
         "anchor": 1
       },
       "minecraft:physics": {}

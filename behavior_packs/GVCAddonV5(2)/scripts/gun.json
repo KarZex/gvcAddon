@@ -98,11 +98,11 @@
     "damageType": "override"
   },
   "lazer": {
-    "damage": 6,
-    "maxGunAmmo": 100,
-    "reloadTime": 60,
-    "bullet": "zex:btm",
-    "damageType": "override"
+    "damage": 50,
+    "maxGunAmmo": 5,
+    "reloadTime": 100,
+    "bullet": "zex:1270m",
+    "damageType": "entityExplosion"
   },
   "m4": {
     "damage": 7,
