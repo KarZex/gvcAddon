@@ -107,8 +107,8 @@
     "dp28": {
       "textures": "textures/items/gun/dp28"
     },
-    "dp28m": {
-      "textures": "textures/items/dp28"
+    "mergb": {
+      "textures": "textures/items/mergb"
     },
     "famas": {
       "textures": "textures/items/gun/famas"

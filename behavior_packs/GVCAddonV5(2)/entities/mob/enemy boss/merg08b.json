@@ -8,49 +8,42 @@
       "is_summonable": true
     },
     "component_groups": {
-      "rocket": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 4,
-          "burst_interval": 0.1,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 1.0,
-          "attack_interval_max": 1.0,
-          "target_in_sight_time":0,
-          "attack_radius": 32.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:ads_rpg"
-        },
-        "minecraft:skin_id": {
-          "value": 2
+      "tel": {
+        "minecraft:teleport":{
+            "dark_teleport_chance": 1,
+            "light_teleport_chance": 1,
+            "max_random_teleport_time": 2,
+            "min_random_teleport_time": 2,
+            "random_teleport_cube": [32, 16, 32],
+            "random_teleports": false,
+            "target_distance": 16,
+            "target_teleport_chance": 1
         },
         "minecraft:timer": {
-          "time": 1.6,
+          "time": 0.05,
           "time_down_event": { "event": "gun" }
 	      }
       },
       "gun": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 3,
-          "burst_interval": 2,
+          "burst_shots": 1,
+          "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3,
           "attack_interval_max": 3,
-          "attack_radius": 32.0
+          "attack_radius": 40.0
         },
         "minecraft:skin_id": {
           "value": 1
         },
         "minecraft:shooter": {
-          "def": "fire:ads_ak12"
+          "def": "fire:ads_lazer"
         },
         "minecraft:timer": {
           "time": 10,
-          "time_down_event": { "event": "rocket" }
+          "time_down_event": { "event": "tel" }
         }
       }
 	},
@@ -69,7 +62,7 @@
         ]
       },
       "minecraft:loot": {
-        "table": "loot_tables/entities/merg08.json"
+        "table": "loot_tables/empty.json"
       },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
@@ -101,6 +94,41 @@
         ],
         "must_see": true
       },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "guerrilla"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "cause": "all",
+            "deals_damage": true,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "gvcv5:spawn_loot",
+              "target": "self"
+            }
+          }
+        ]
+      },
       "minecraft:collision_box": {
         "width": 1.0,
         "height": 2.0
@@ -116,7 +144,7 @@
         "value": 1.2
       },
       "minecraft:movement": {
-        "value": 0.2
+        "value": 0.38
       },
       "minecraft:navigation.walk": {
         "can_path_over_water": true
@@ -141,6 +169,13 @@
       }
     },
     "events": {
+      "gvcv5:spawn_loot": {
+        "queue_command": {
+          "command":[
+            "structure load bosschest6 ~~~"
+          ]
+        }
+      },
       "minecraft:spawned_from_block": {
         "add": {
           "component_groups": [
@@ -158,7 +193,7 @@
       "gun": {
          "remove": {
            "component_groups": [
-            "rocket"
+            "tel"
            ]
          },
          "add": {
@@ -167,7 +202,7 @@
            ]
          }
        },
-       "rocket": {
+       "tel": {
          "remove": {
            "component_groups": [
             "gun"
@@ -175,7 +210,7 @@
          },
          "add": {
            "component_groups": [
-             "rocket"
+             "tel"
            ]
          }
        }

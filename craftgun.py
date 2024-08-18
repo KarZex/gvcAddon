@@ -138,7 +138,9 @@ for row in csv_reader:
                     "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharging".format(gun_id)
                 ],
                 "on_exit": [
-                    "/tag @s remove railcharging"
+                    "/tag @s remove railcharging",
+                    "/stopsound @s charge.rail",
+                    "variable.cooltime = 0;"
                 ],
                 "transitions": [
                     {
@@ -151,9 +153,7 @@ for row in csv_reader:
             }
             BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = {
                 "on_entry": [
-                    "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharged".format(gun_id)
-                ],
-                "on_exit": [
+                    "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharged".format(gun_id),                    
                     "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
                     "/tag @s remove railcharged",
                     "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
@@ -640,7 +640,7 @@ for row in csv_reader2:
             gun_entity = json.load(f)
             gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
             gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertaintyBase"] = gun_aim * 5
+            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
             gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
             if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
             gun_entity["minecraft:entity"]["events"] = {}

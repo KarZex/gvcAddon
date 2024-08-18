@@ -71,6 +71,57 @@
 				}
 			}
 		},
+		"animation.merg08b.gun": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [15.50409, -14.47751, -3.96713]
+				},
+				"bone25": {
+					"rotation": [0, 0, 0]
+				},
+				"leftArm": {
+					"rotation": [-73.31778, -29.438, -4.41146]
+				},
+				"left2": {
+					"rotation": [-7.15656, 2.24944, 17.35932]
+				},
+				"rightArm": {
+					"rotation": [-60, 12.5, 0]
+				},
+				"right2": {
+					"rotation": [-42.76124, 0.92447, 31.59621]
+				},
+				"leftLeg": {
+					"rotation": [-15, 0, 0]
+				},
+				"rightLeg": {
+					"rotation": [-30, 0, 0]
+				},
+				"rightL2": {
+					"rotation": [62.5, 0, 0]
+				},
+				"leftL2": {
+					"rotation": [30, 0, 0]
+				},
+				"rightL3": {
+					"rotation": [-30, 0, 0],
+					"position": [0, -1.05424, -0.67162]
+				},
+				"leftL3": {
+					"rotation": [-15, 0, 0],
+					"position": [0, -0.48296, -0.12941]
+				},
+				"bone30": {
+					"rotation": [0, 0, 80],
+					"position": [-4.27721, 5.25349, -0.52684]
+				},
+				"bone39": {
+					"rotation": [0, 0, -30],
+					"position": [6.07856, 1.18597, 1.28244]
+				}
+			}
+		},
 		"animation.merg08.rocket": {
 			"loop": true,
 			"bones": {

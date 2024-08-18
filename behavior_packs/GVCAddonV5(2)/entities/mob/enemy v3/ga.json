@@ -24,6 +24,11 @@
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 10 : 0"
       },
+      "minecraft:boss": {
+         "name": "entity.gvcv5:jamming.name",
+         "should_darken_sky": false,
+         "hud_range": 100
+       },
       "minecraft:collision_box": {
         "width": 0.5,
         "height": 1.8
@@ -56,6 +61,8 @@
     },
 
     "events": {
+      "minecraft:spawned_from_block": {
+      }
     }
   }
 }

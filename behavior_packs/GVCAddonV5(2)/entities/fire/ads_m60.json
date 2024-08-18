@@ -36,11 +36,10 @@
         "power": 1.2000000000000002,
         "gravity": 0,
         "inertia": 1.5,
-        "uncertainty_base": 20.0,
+        "uncertainty_base": 0.0,
         "uncertainty_multiplier": 0,
         "catch_fire": false,
-        "anchor": 1,
-        "uncertaintyBase": 0.0
+        "anchor": 1
       },
       "minecraft:physics": {}
     },

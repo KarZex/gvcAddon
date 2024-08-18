@@ -230,7 +230,8 @@
       "become_CA": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_ruins_ca ~~1~"
+            "summon gvcv5:flag_ruins_ca ~~1~",
+            "summon gvcv5:merg08b ~~20~"
           ]
         }
       },

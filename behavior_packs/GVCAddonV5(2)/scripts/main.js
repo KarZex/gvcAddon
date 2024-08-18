@@ -154,7 +154,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		form.title(`script.gvcv5.phone_noteam.name`);
 		form.button(`script.gvcv5.howToGun.name`);
 		form.button(`script.gvcv5.howToVechile.name`);
-		form.button(`script.gvcv5.howToTeam.name`);
+		form.button(`script.gvcv5.phone_howToTeam.name`);
 		if( team == `noteam` ){
 			form.button(`script.gvcv5.select_team.name`);
 		}
@@ -232,6 +232,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		form.button(`script.gvcv5.phone_howToTeam1.name`);
 		form.button(`script.gvcv5.phone_howToTeam2.name`);
 		form.button(`script.gvcv5.phone_howToTeam3.name`);
+		form.button(`script.gvcv5.phone_howToTeam4.name`);
 		form.button(`script.gvcv5.phone_back.name`);
 		form.show(user).then( r => {
 			if (!r.canceled) {
@@ -269,6 +270,17 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					} )
 				}
 				else if( r.selection == 3 ){
+					const form = new ActionFormData();
+					form.title(`script.gvcv5.phone_howToTeam4.name`);
+					form.body(`script.gvcv5.phone_howToTeam4Desc.name`);
+					form.button(`script.gvcv5.phone_back.name`);
+					form.show(user).then( result => {
+						if ( !result.canceled ){
+							user.runCommand(`scriptevent gvcv5:phone_howToTeam ${team}`);
+						}
+					} )
+				}
+				else if( r.selection == 4 ){
 					user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
 				}
 			}
@@ -287,7 +299,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		form.button(`script.gvcv5.become_yellow.name`);
 		form.button(`script.gvcv5.phone_back.name`);
 		form.show(user).then( r => {
-			if (!r.canceled) {
+			if (!r.canceled) {								
 				if( r.selection == 0 ){
 					for( const myAlly of world.getPlayers({ families: [ `red` ] }) ){
 						if ( myAlly.hasTag(`redleader`) ){
@@ -588,7 +600,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					} )
 				}
 				else if( result.selection == 5 ){
-					user.runCommand(`scriptevent gvcv5:phone_teamChat ${userFamily}`);
+					user.runCommand(`scriptevent gvcv5:phone_noteam ${userFamily}`);
 				}
 				else if( result.selection == 6 ){
 					const form_tp = new ActionFormData();

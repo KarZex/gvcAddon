@@ -722,7 +722,9 @@
             "/tag @s[tag=!reload,tag=!down,scores={lazer=1..}] add railcharging"
           ],
           "on_exit": [
-            "/tag @s remove railcharging"
+            "/tag @s remove railcharging",
+            "/stopsound @s charge.rail",
+            "variable.cooltime = 0;"
           ],
           "transitions": [
             {
@@ -735,9 +737,7 @@
         },
         "lazerii": {
           "on_entry": [
-            "/tag @s[tag=!reload,tag=!down,scores={lazer=1..}] add railcharged"
-          ],
-          "on_exit": [
+            "/tag @s[tag=!reload,tag=!down,scores={lazer=1..}] add railcharged",
             "/event entity @s[tag=!reload,tag=!down,scores={lazer=1..}] fire:lazer",
             "/tag @s remove railcharged",
             "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={lazer=0}] ~~~",
