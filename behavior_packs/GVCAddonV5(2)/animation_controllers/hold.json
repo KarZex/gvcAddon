@@ -84,6 +84,9 @@
               "m110": "query.get_equipped_item_name == 'm110'"
             },
             {
+              "m202": "query.get_equipped_item_name == 'm202'"
+            },
+            {
               "m249": "query.get_equipped_item_name == 'm249'"
             },
             {
@@ -97,6 +100,9 @@
             },
             {
               "m1911": "query.get_equipped_item_name == 'm1911'"
+            },
+            {
+              "mg36": "query.get_equipped_item_name == 'mg36'"
             },
             {
               "mg42": "query.get_equipped_item_name == 'mg42'"
@@ -124,6 +130,9 @@
             },
             {
               "rpg": "query.get_equipped_item_name == 'rpg'"
+            },
+            {
+              "rpk": "query.get_equipped_item_name == 'rpk'"
             },
             {
               "saiga12": "query.get_equipped_item_name == 'saiga12'"
@@ -408,6 +417,16 @@
             }
           ]
         },
+        "m202": {
+          "on_entry": [
+            "/function hold/m202h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
         "m249": {
           "on_entry": [
             "/function hold/m249h"
@@ -451,6 +470,16 @@
         "m1911": {
           "on_entry": [
             "/function hold/m1911h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "mg36": {
+          "on_entry": [
+            "/function hold/mg36h"
           ],
           "transitions": [
             {
@@ -541,6 +570,16 @@
         "rpg": {
           "on_entry": [
             "/function hold/rpgh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "rpk": {
+          "on_entry": [
+            "/function hold/rpkh"
           ],
           "transitions": [
             {

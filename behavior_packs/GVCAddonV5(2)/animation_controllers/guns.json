@@ -171,6 +171,12 @@
               "m110_reload": "query.get_equipped_item_name == 'm110' && (variable.attack_time > 0.0)"
             },
             {
+              "m202": "query.get_equipped_item_name == 'm202' && query.is_using_item"
+            },
+            {
+              "m202_reload": "query.get_equipped_item_name == 'm202' && (variable.attack_time > 0.0)"
+            },
+            {
               "m249": "query.get_equipped_item_name == 'm249' && query.is_using_item"
             },
             {
@@ -199,6 +205,12 @@
             },
             {
               "m1911_reload": "query.get_equipped_item_name == 'm1911' && (variable.attack_time > 0.0)"
+            },
+            {
+              "mg36": "query.get_equipped_item_name == 'mg36' && query.is_using_item"
+            },
+            {
+              "mg36_reload": "query.get_equipped_item_name == 'mg36' && (variable.attack_time > 0.0)"
             },
             {
               "mg42": "query.get_equipped_item_name == 'mg42' && query.is_using_item"
@@ -253,6 +265,12 @@
             },
             {
               "rpg_reload": "query.get_equipped_item_name == 'rpg' && (variable.attack_time > 0.0)"
+            },
+            {
+              "rpk": "query.get_equipped_item_name == 'rpk' && query.is_using_item"
+            },
+            {
+              "rpk_reload": "query.get_equipped_item_name == 'rpk' && (variable.attack_time > 0.0)"
             },
             {
               "saiga12": "query.get_equipped_item_name == 'saiga12' && query.is_using_item"
@@ -1092,6 +1110,35 @@
             }
           ]
         },
+        "m202_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m202"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "m202": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,tag=!down,scores={m202=1..}] fire:m202",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m202=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m202=1..}] m202 1"
+          ],
+          "transitions": [
+            {
+              "m202_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m202_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
         "m249_reload": {
           "on_entry": [
             "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload m249"
@@ -1224,6 +1271,28 @@
           ]
         },
         "m1911_after": {
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "mg36_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload mg36"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "mg36": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,tag=!down,scores={mg36=1..}] fire:mg36",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mg36=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mg36=1..}] mg36 1"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1503,6 +1572,28 @@
             }
           ]
         },
+        "rpk_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload rpk"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "rpk": {
+          "on_entry": [
+            "/event entity @s[tag=!reload,tag=!down,scores={rpk=1..}] fire:rpk",
+            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={rpk=0}] ~~~",
+            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={rpk=1..}] rpk 1"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
         "saiga12_reload": {
           "on_entry": [
             "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload saiga12"
@@ -1717,7 +1808,7 @@
         "xm8_after": {
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         }

@@ -15,10 +15,13 @@
         ]
       },
       "minecraft:explode": {
-        "fuseLength": 5,
-        "fuseLit": true,
+        "fuse_length": 5,
+        "fuse_lit": true,
         "power": 0,
-        "causesFire": false
+        "causes_fire": false
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
       },
       "minecraft:collision_box": {
         "width": 0.25,

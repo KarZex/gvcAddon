@@ -1,0 +1,702 @@
+{
+  "tiers": [
+    {
+      "groups": [
+        {
+          "trades": [
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 6
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:aa12",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:ak12",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:ak47",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:ak102",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:an94",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:awm",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:dp28",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:famas",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:g36",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:g3a3",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:glock17",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:glock18",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:hk416",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 16
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:lazer",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m4",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m4a1",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m9",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m10",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m16a1",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 6
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m16a4",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m60",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m72",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m79",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 16
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m82",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m110",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 7
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m249",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m590",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m870",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m1014",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:m1911",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 16
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:mg42",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:mosin",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:mp5",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 6
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:mp7",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:mp40",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:p90",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 8
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:pkm",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 7
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:ppsh",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:rpg",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:saiga12",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:scar",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 4
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:svd",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:tt33",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:uzi",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:vz61",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "max_uses": 2000,
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 16
+                }
+              ],
+              "gives": [
+                {
+                  "item": "gun:xm8",
+                  "quantity": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -506,6 +506,24 @@
           "table": "loot_tables/gun/m110.json"
         }
       },
+      "m202": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.25,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m202"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m202.json"
+        }
+      },
       "m249": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -594,6 +612,24 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/m1911.json"
+        }
+      },
+      "mg36": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mg36"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mg36.json"
         }
       },
       "mg42": {
@@ -758,6 +794,24 @@
           "table": "loot_tables/gun/rpg.json"
         }
       },
+      "rpk": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:rpk"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/rpk.json"
+        }
+      },
       "saiga12": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -870,7 +924,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 1.0,
+          "burst_interval": 0.5,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1707,6 +1761,35 @@
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
+                    "value": "gun:m202"
+                  }
+                ]
+              },
+              "event": "m202",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
                     "value": "gun:m249"
                   }
                 ]
@@ -1828,6 +1911,35 @@
                 ]
               },
               "event": "m1911",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mg36"
+                  }
+                ]
+              },
+              "event": "mg36",
               "target": "self"
             }
           },
@@ -2089,6 +2201,35 @@
                 ]
               },
               "event": "rpg",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:rpk"
+                  }
+                ]
+              },
+              "event": "rpk",
               "target": "self"
             }
           },
@@ -2703,6 +2844,13 @@
           ]
         }
       },
+      "m202": {
+        "add": {
+          "component_groups": [
+            "m202"
+          ]
+        }
+      },
       "m249": {
         "add": {
           "component_groups": [
@@ -2735,6 +2883,13 @@
         "add": {
           "component_groups": [
             "m1911"
+          ]
+        }
+      },
+      "mg36": {
+        "add": {
+          "component_groups": [
+            "mg36"
           ]
         }
       },
@@ -2798,6 +2953,13 @@
         "add": {
           "component_groups": [
             "rpg"
+          ]
+        }
+      },
+      "rpk": {
+        "add": {
+          "component_groups": [
+            "rpk"
           ]
         }
       },

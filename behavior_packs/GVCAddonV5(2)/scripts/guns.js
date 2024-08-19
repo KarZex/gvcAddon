@@ -99,7 +99,7 @@ export const gunData = {
     "damageType": "override"
   },
   "lazer": {
-    "damage": 50,
+    "damage": 100,
     "maxGunAmmo": 5,
     "reloadTime": 100,
     "bullet": "zex:1270m",
@@ -182,6 +182,13 @@ export const gunData = {
     "bullet": "zex:762m",
     "damageType": "override"
   },
+  "m202": {
+    "damage": 50,
+    "maxGunAmmo": 4,
+    "reloadTime": 100,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
   "m249": {
     "damage": 6,
     "maxGunAmmo": 100,
@@ -215,6 +222,13 @@ export const gunData = {
     "maxGunAmmo": 8,
     "reloadTime": 30,
     "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "mg36": {
+    "damage": 8,
+    "maxGunAmmo": 100,
+    "reloadTime": 100,
+    "bullet": "zex:556m",
     "damageType": "override"
   },
   "mg42": {
@@ -280,6 +294,13 @@ export const gunData = {
     "bullet": "zex:rocketm",
     "damageType": "entityExplosion"
   },
+  "rpk": {
+    "damage": 6,
+    "maxGunAmmo": 100,
+    "reloadTime": 100,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
   "saiga12": {
     "damage": 2,
     "maxGunAmmo": 6,
@@ -324,7 +345,7 @@ export const gunData = {
   },
   "xm8": {
     "damage": 20,
-    "maxGunAmmo": 4,
+    "maxGunAmmo": 8,
     "reloadTime": 80,
     "bullet": "zex:40m",
     "damageType": "entityExplosion"

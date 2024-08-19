@@ -1,0 +1,27 @@
+{
+  "tiers": [
+    {
+      "groups": [
+        {
+          "trades": [
+            {
+              "max_uses": 500,
+              "wants": [
+                {
+                  "item": "zex:9m",
+                  "quantity": 8
+                }
+              ],
+              "gives": [
+                {
+                  "item": "ammo:m1911a",
+                  "quantity": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

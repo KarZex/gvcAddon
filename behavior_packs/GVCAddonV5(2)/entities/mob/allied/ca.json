@@ -787,6 +787,24 @@
           "table": "loot_tables/gun/m110.json"
         }
       },
+      "m202": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.25,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m202"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m202.json"
+        }
+      },
       "m249": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -875,6 +893,24 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/m1911.json"
+        }
+      },
+      "mg36": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mg36"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mg36.json"
         }
       },
       "mg42": {
@@ -1039,6 +1075,24 @@
           "table": "loot_tables/gun/rpg.json"
         }
       },
+      "rpk": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:rpk"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/rpk.json"
+        }
+      },
       "saiga12": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -1151,7 +1205,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 1.0,
+          "burst_interval": 0.5,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1948,6 +2002,13 @@
           ]
         }
       },
+      "m202": {
+        "add": {
+          "component_groups": [
+            "m202"
+          ]
+        }
+      },
       "m249": {
         "add": {
           "component_groups": [
@@ -1980,6 +2041,13 @@
         "add": {
           "component_groups": [
             "m1911"
+          ]
+        }
+      },
+      "mg36": {
+        "add": {
+          "component_groups": [
+            "mg36"
           ]
         }
       },
@@ -2043,6 +2111,13 @@
         "add": {
           "component_groups": [
             "rpg"
+          ]
+        }
+      },
+      "rpk": {
+        "add": {
+          "component_groups": [
+            "rpk"
           ]
         }
       },

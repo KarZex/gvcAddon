@@ -16,10 +16,13 @@
         ]
       },
       "minecraft:explode": {
-        "fuseLength": 5,
-        "fuseLit": true,
+        "fuse_length": 5,
+        "fuse_lit": true,
         "power": 0,
-        "causesFire": false
+        "causes_fire": false
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
       },
       "minecraft:collision_box": {
         "width": 0.25,
@@ -30,14 +33,6 @@
           "impact_damage": {
             "damage": 0,
             "knockback": false
-          },
-          "stick_in_ground": {},
-          "definition_event": {
-            "affectProjectile": true,
-            "eventTrigger": {
-              "event": "minecraft:explode",
-              "target": "self"
-            }
           }
         },
         "power": 4.4,
@@ -65,7 +60,7 @@
           "fuse_length": 0,
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
-          "power": 4,
+          "power": 0,
           "breaks_blocks": false
         }
       }

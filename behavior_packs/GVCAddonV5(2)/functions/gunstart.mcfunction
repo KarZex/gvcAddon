@@ -67,6 +67,8 @@ scoreboard objectives add m82 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m82 10
 scoreboard objectives add m110 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m110 20
+scoreboard objectives add m202 dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s m202 4
 scoreboard objectives add m249 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m249 100
 scoreboard objectives add m590 dummy
@@ -77,6 +79,8 @@ scoreboard objectives add m1014 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m1014 8
 scoreboard objectives add m1911 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s m1911 8
+scoreboard objectives add mg36 dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s mg36 100
 scoreboard objectives add mg42 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s mg42 75
 scoreboard objectives add mosin dummy
@@ -95,6 +99,8 @@ scoreboard objectives add ppsh dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s ppsh 72
 scoreboard objectives add rpg dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s rpg 1
+scoreboard objectives add rpk dummy
+execute as @a[tag=!startedv4] run scoreboard players set @s rpk 100
 scoreboard objectives add saiga12 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s saiga12 6
 scoreboard objectives add scar dummy
@@ -108,5 +114,5 @@ execute as @a[tag=!startedv4] run scoreboard players set @s uzi 30
 scoreboard objectives add vz61 dummy
 execute as @a[tag=!startedv4] run scoreboard players set @s vz61 20
 scoreboard objectives add xm8 dummy
-execute as @a[tag=!startedv4] run scoreboard players set @s xm8 4
+execute as @a[tag=!startedv4] run scoreboard players set @s xm8 8
 tag @a[tag=!startedv4] add startedv4

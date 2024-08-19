@@ -2,23 +2,23 @@
   "format_version": 2,
   "header": {
     "description": "作者:Kar Zex\nモデル提供者\nkusnek,いぬえモン,Mihono Bourbon,プチネコ\nV4のGVC Libなどは使用しないでください\n",
-    "name": "§l§gGVC Addon V5.0 BetaV0.82",
+    "name": "§l§gGVC Addon V5.0 BetaV0.9",
     "min_engine_version": [1, 21, 20 ],
-    "uuid": "9900028d-cd53-4e52-8af0-11f136e1742b",
+    "uuid": "aefa5d28-9f2b-4214-8260-29a45112febc",
     "version": [1, 21, 20]
   },
   "modules": [
     {
       "description": "Data Module",
       "type": "data",
-      "uuid": "9efdc810-586f-4cec-8c94-afe0c6264826",
+      "uuid": "b66f44f9-7548-4294-a964-94fe6cd6a18e",
       "version": [1, 0, 0]
     },
     {
       "description": "Script API Module",
       "language": "javascript",
       "type": "script",
-      "uuid": "41de1096-afa2-47b1-9293-e95d6e53a888",
+      "uuid": "cd10ff51-1d7b-4e6b-8eea-9df86682514d",
       "version": [1, 0, 0],
       "entry": "scripts/main.js"
     }

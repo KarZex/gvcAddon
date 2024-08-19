@@ -189,7 +189,7 @@
       "textures": "textures/items/ppsh"
     },
     "rpk": {
-      "textures": "textures/items/rpk"
+      "textures": "textures/items/gun/rpk"
     },
     "rpkm": {
       "textures": "textures/items/rpk"
@@ -285,7 +285,7 @@
       "textures": "textures/items/hk416"
     },
     "mg36": {
-      "textures": "textures/items/mg36"
+      "textures": "textures/items/gun/mg36"
     },
     "mg36m": {
       "textures": "textures/items/mg36"
@@ -982,6 +982,9 @@
     },
     "aa12": {
       "textures": "textures/items/gun/aa12"
+    },
+    "m202": {
+      "textures": "textures/items/gun/m202"
     }
   }
 }
