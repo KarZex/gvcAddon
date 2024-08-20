@@ -568,36 +568,40 @@
           {
               "randomize": [
                 {
-                  "weight": 20,
+                  "weight": 1,
                   "trigger": "m1911"
                 },
                 {
-                  "weight": 30,
+                  "weight": 2,
                   "trigger": "ak47"
                 },
                 {
-                  "weight": 20,
+                  "weight": 1,
                   "trigger": "an94"
                 },
                 {
-                  "weight": 10,
+                  "weight": 1,
                   "trigger": "mp40"
                 },
                 {
-                  "weight": 10,
+                  "weight": 1,
                   "trigger": "uzi"
                 },
                 {
-                  "weight": 5,
+                  "weight": 1,
                   "trigger": "rpg"
                 },
                 {
-                  "weight": 10,
+                  "weight": 1,
+                  "trigger": "p90"
+                },
+                {
+                  "weight": 1,
                   "trigger": "svd"
                 },
                 {
-                  "weight": 10,
-                  "trigger": "pkm"
+                  "weight": 1,
+                  "trigger": "dp28"
                 }
               ]
             }
@@ -627,36 +631,40 @@
           {
               "randomize": [
                 {
-                  "weight": 20,
+                  "weight": 1,
                   "trigger": "m1911"
                 },
                 {
-                  "weight": 30,
+                  "weight": 2,
                   "trigger": "ak47"
                 },
                 {
-                  "weight": 20,
+                  "weight": 1,
                   "trigger": "an94"
                 },
                 {
-                  "weight": 10,
+                  "weight": 1,
                   "trigger": "mp40"
                 },
                 {
-                  "weight": 10,
+                  "weight": 1,
                   "trigger": "uzi"
                 },
                 {
-                  "weight": 5,
+                  "weight": 1,
                   "trigger": "rpg"
                 },
                 {
-                  "weight": 10,
+                  "weight": 1,
+                  "trigger": "p90"
+                },
+                {
+                  "weight": 1,
                   "trigger": "svd"
                 },
                 {
-                  "weight": 10,
-                  "trigger": "pkm"
+                  "weight": 1,
+                  "trigger": "dp28"
                 }
               ]
             }
