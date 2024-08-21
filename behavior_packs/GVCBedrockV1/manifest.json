@@ -2,23 +2,23 @@
   "format_version": 2,
   "header": {
     "description": "作者:Kar Zex\nモデル提供者\nkusnek,いぬえモン,Mihono Bourbon,プチネコ\nV4のGVC Libなどは使用しないでください\n",
-    "name": "§l§gGVCBedrock Addon V1.0",
+    "name": "§l§gGVCBedrock Addon V1.0 PreRelease1",
     "min_engine_version": [1, 21, 20 ],
-    "uuid": "aefa5d28-9f2b-4214-8260-29a45112febc",
-    "version": [1, 21, 20]
+    "uuid": "a3fc429a-f934-4f02-b840-5f8e9ba88f5f",
+    "version": [1, 21, 21]
   },
   "modules": [
     {
       "description": "Data Module",
       "type": "data",
-      "uuid": "b66f44f9-7548-4294-a964-94fe6cd6a18e",
+      "uuid": "4c059ca0-1c5e-475c-82b3-1f8cf11ae43c",
       "version": [1, 0, 0]
     },
     {
       "description": "Script API Module",
       "language": "javascript",
       "type": "script",
-      "uuid": "cd10ff51-1d7b-4e6b-8eea-9df86682514d",
+      "uuid": "c465c156-5607-40bf-b71e-690790051959",
       "version": [1, 0, 0],
       "entry": "scripts/main.js"
     }
