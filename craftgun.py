@@ -129,8 +129,8 @@ for row in csv_reader:
         player_json["minecraft:entity"]["events"]["fire:{}".format(gun_id)] = event
 
         #animation controllers data
-        BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["default"]["transitions"].append({ "{}".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id) })
-        BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["default"]["transitions"].append({ "{}_reload".format(gun_id): "query.get_equipped_item_name == '{}' && (variable.attack_time > 0.0)".format(gun_id) })
+        BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["default"]["transitions"].append({ "{}".format(gun_id): "query.is_item_name_any('slot.weapon.mainhand', 0, '{}') && query.is_using_item".format(gun_id) })
+        BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["default"]["transitions"].append({ "{}_reload".format(gun_id): "query.is_item_name_any('slot.weapon.mainhand', 0, '{}') && (variable.attack_time > 0.0)".format(gun_id) })
         
         BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}_reload".format(gun_id)] = {
             "on_entry": [
@@ -177,6 +177,57 @@ for row in csv_reader:
                 ]
             }
 
+        elif gun_special == "D":
+            BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
+                "on_entry": [
+                    "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
+                    "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
+                    "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                ],
+                "transitions": [
+                    {
+                        "{}ii".format(gun_id): "query.is_item_name_any('slot.weapon.offhand', 0, '{}')".format(gun_id)
+                    },
+                    {
+                        "{}_after".format(gun_id): "(!query.is_using_item)"
+                    }
+                ]
+            }
+            BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = {
+                "on_entry": [
+                    "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
+                    "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id)
+                ],
+                "transitions": [
+                    {
+                        "{}_afterii".format(gun_id): "(!query.is_using_item)"
+                    }
+                ]
+            }
+            BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}_after".format(gun_id)] = {
+                "transitions": [
+                    {
+                        "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval - 1)
+                    }
+                ]
+            }
+            if gun_interval >= 2: 
+                BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}_afterii".format(gun_id)] = {
+                    "transitions": [
+                        {
+                            "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval - 2)
+                        }
+                    ]
+                }
+            else:
+                BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}_afterii".format(gun_id)] = {
+                    "transitions": [
+                        {
+                            "default": "(1.0)"
+                        }
+                    ]
+                }
+
         elif gun_burst == 0:
             if gun_fullauto == 1:
                 if gun_interval > 0:
@@ -204,7 +255,7 @@ for row in csv_reader:
                                 "default": "!query.is_using_item"
                             },
                             {
-                                "{}ii".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id)
+                                "{}ii".format(gun_id): "query.is_item_name_any('slot.weapon.mainhand', 0, '{}') && query.is_using_item".format(gun_id)
                             }
                         ]
                     }
@@ -219,7 +270,7 @@ for row in csv_reader:
                                 "default": "!query.is_using_item"
                             },
                             {
-                                "{}".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id)
+                                "{}".format(gun_id): "query.is_item_name_any('slot.weapon.mainhand', 0, '{}') && query.is_using_item".format(gun_id)
                             }
                         ]
                     }
@@ -275,7 +326,7 @@ for row in csv_reader:
             }
 
         #hold Animation 
-        BP_animation_hold["animation_controllers"]["controller.animation.hold"]["states"]["default"]["transitions"].append( { "{}".format(gun_id): "query.get_equipped_item_name == '{}'".format(gun_id) } )
+        BP_animation_hold["animation_controllers"]["controller.animation.hold"]["states"]["default"]["transitions"].append( { "{}".format(gun_id): "query.is_item_name_any('slot.weapon.mainhand', 0, '{}')".format(gun_id) } )
         BP_animation_hold["animation_controllers"]["controller.animation.hold"]["states"]["{}".format(gun_id)] = {
           "on_entry": [            
             "/function hold/{}h".format(gun_id)
