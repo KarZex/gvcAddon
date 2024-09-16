@@ -1,5 +1,6 @@
 execute as @a[tag=reload] run function reload
 
+execute as @a[tag=onDeath] run function death
 execute as @a[scores={mcool=1..}] run function mcool
 execute as @a[scores={scool=1..}] run function scool
 

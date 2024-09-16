@@ -17,37 +17,43 @@
     },
     "component_groups": {
       "attack": {
-          "minecraft:movement": {
-            "value": 0.25
-          },
+        "minecraft:movement": {
+          "value": 0.25
+        },
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:behavior.find_mount": {
+          "priority": 1,
+          "within_radius": 16,
+          "start_delay": 15,
+          "max_failed_attempts": 20
+        } 
+     },
+    "wait": {
+        "minecraft:movement": {
+          "value": 0
+        },
           "minecraft:variant": {
-            "value": 1
+            "value": 2
           }
-       },
-      "wait": {
-          "minecraft:movement": {
-            "value": 0
-          },
-            "minecraft:variant": {
-              "value": 2
-            }
-       },
-      "follow": {
-          "minecraft:movement": {
-            "value": 0.25
-          },
-           "minecraft:behavior.tempt": {
-              "priority": 0,
-              "speed_multiplier": 1.2,
-              "within_radius": 16,
-              "items": [
-                "item:red"
-              ]
-           },
-            "minecraft:variant": {
-              "value": 3
-            }
-       },
+     },
+    "follow": {
+        "minecraft:movement": {
+          "value": 0.25
+        },
+         "minecraft:behavior.tempt": {
+            "priority": 0,
+            "speed_multiplier": 1.2,
+            "within_radius": 16,
+            "items": [
+          "zex:commandradio"
+            ]
+         },
+          "minecraft:variant": {
+            "value": 3
+          }
+     },
       "default": {
           "minecraft:movement": {
             "value": 0.25
@@ -192,11 +198,19 @@
         "reselect_targets": true,
         "entity_types": [
           {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "monster"
-            },
+            "filters": { "test": "is_family", "subject": "other", "value": "monster" },
+            "max_dist": 42
+          },
+          {
+            "filters": { "test": "is_family", "subject": "other", "value": "redteam" },
+            "max_dist": 42
+          },
+          {
+            "filters": { "test": "is_family", "subject": "other", "value": "blueteam" },
+            "max_dist": 42
+          },
+          {
+            "filters": { "test": "is_family", "subject": "other", "value": "greenteam" },
             "max_dist": 42
           }
         ]
@@ -299,43 +313,63 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_variant", "subject": "self", "operator": "equals", "value": 0 }
+                {
+                  "test": "is_variant",
+                  "subject": "self",
+                  "operator": "equals",
+                  "value": 0
+                }
               ]
             },
             "trigger": "attack",
             "queue_command": {
               "command": [
-                "say attack0"
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
               ],
               "target": "other"
             }
           },
           {
-            "filters": { "test": "is_variant", "subject": "self", "operator": "equals", "value": 3 },
+            "filters": {
+              "test": "is_variant",
+              "subject": "self",
+              "operator": "equals",
+              "value": 3
+            },
             "trigger": "attack",
             "queue_command": {
               "command": [
-                "say attack1"
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
               ],
               "target": "other"
             }
           },
           {
-            "filters": { "test": "is_variant", "subject": "self", "operator": "equals", "value": 1 },
+            "filters": {
+              "test": "is_variant",
+              "subject": "self",
+              "operator": "equals",
+              "value": 1
+            },
             "trigger": "wait",
             "queue_command": {
               "command": [
-                "say wait"
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.wait.name\"}]}"
               ],
               "target": "other"
             }
           },
           {
-            "filters": { "test": "is_variant", "subject": "self", "operator": "equals", "value": 2 },
+            "filters": {
+              "test": "is_variant",
+              "subject": "self",
+              "operator": "equals",
+              "value": 2
+            },
             "trigger": "follow",
             "queue_command": {
               "command": [
-                "say follow"
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.follow.name\"}]}"
               ],
               "target": "other"
             }

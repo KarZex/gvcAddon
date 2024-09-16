@@ -43,7 +43,7 @@ export const gunData = {
     "damageType": "override"
   },
   "awm": {
-    "damage": 24,
+    "damage": 25,
     "maxGunAmmo": 5,
     "reloadTime": 80,
     "bullet": "zex:762m",
@@ -155,7 +155,7 @@ export const gunData = {
     "damageType": "override"
   },
   "m72": {
-    "damage": 10,
+    "damage": 40,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:rocketm",
@@ -169,7 +169,7 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "m82": {
-    "damage": 100,
+    "damage": 150,
     "maxGunAmmo": 10,
     "reloadTime": 100,
     "bullet": "zex:1270m",
@@ -183,7 +183,7 @@ export const gunData = {
     "damageType": "override"
   },
   "m202": {
-    "damage": 50,
+    "damage": 40,
     "maxGunAmmo": 4,
     "reloadTime": 100,
     "bullet": "zex:rocketm",
@@ -239,7 +239,7 @@ export const gunData = {
     "damageType": "override"
   },
   "mosin": {
-    "damage": 22,
+    "damage": 20,
     "maxGunAmmo": 5,
     "reloadTime": 60,
     "bullet": "zex:762m",
@@ -267,7 +267,7 @@ export const gunData = {
     "damageType": "override"
   },
   "p90": {
-    "damage": 50,
+    "damage": 40,
     "maxGunAmmo": 1,
     "reloadTime": 60,
     "bullet": "zex:rocketm",
@@ -288,7 +288,7 @@ export const gunData = {
     "damageType": "override"
   },
   "rpg": {
-    "damage": 50,
+    "damage": 40,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:rocketm",
@@ -355,31 +355,31 @@ export const gunData = {
     "damageType": "override"
   },
   "76mm": {
-    "damage": 16,
+    "damage": 10,
     "damageType": "entityExplosion"
   },
   "85mm": {
-    "damage": 20,
+    "damage": 10,
     "damageType": "entityExplosion"
   },
   "100mm": {
-    "damage": 24,
+    "damage": 10,
     "damageType": "entityExplosion"
   },
   "105mm": {
-    "damage": 30,
+    "damage": 10,
     "damageType": "entityExplosion"
   },
   "120mm": {
-    "damage": 50,
+    "damage": 10,
     "damageType": "entityExplosion"
   },
   "125mm": {
-    "damage": 100,
+    "damage": 15,
     "damageType": "entityExplosion"
   },
   "152mm": {
-    "damage": 200,
+    "damage": 15,
     "damageType": "entityExplosion"
   },
   "20mm": {

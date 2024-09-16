@@ -22,7 +22,13 @@
           },
           "minecraft:variant": {
             "value": 1
-          }
+          },
+          "minecraft:behavior.find_mount": {
+            "priority": 1,
+            "within_radius": 16,
+            "start_delay": 15,
+            "max_failed_attempts": 20
+          } 
        },
       "wait": {
           "minecraft:movement": {
@@ -41,7 +47,7 @@
               "speed_multiplier": 1.2,
               "within_radius": 16,
               "items": [
-                "item:red"
+            "zex:commandradio"
               ]
            },
             "minecraft:variant": {
@@ -306,6 +312,15 @@
             "default"
           ]
         },
+        "queue_command":{
+          "command":[ 
+            "execute if entity @p[r=8,family=redteam] run event entity @s gvcv5:become_redteam",
+            "execute if entity @p[r=8,family=blueteam] run event entity @s gvcv5:become_blueteam",
+            "execute if entity @p[r=8,family=greenteam] run event entity @s gvcv5:become_greenteam",
+            "execute if entity @p[r=8,family=yellowteam] run event entity @s gvcv5:become_yellowteam"
+          
+          ]
+        },
         "trigger": "ak102"
       },
       "minecraft:spawned_from_block": {
@@ -419,7 +434,7 @@
             "trigger": "attack",
             "queue_command": {
               "command": [
-                "say attack0"
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
               ],
               "target": "other"
             }
@@ -429,7 +444,7 @@
             "trigger": "attack",
             "queue_command": {
               "command": [
-                "say attack1"
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
               ],
               "target": "other"
             }
@@ -439,7 +454,7 @@
             "trigger": "wait",
             "queue_command": {
               "command": [
-                "say wait"
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.wait.name\"}]}"
               ],
               "target": "other"
             }
@@ -449,7 +464,7 @@
             "trigger": "follow",
             "queue_command": {
               "command": [
-                "say follow"
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.follow.name\"}]}"
               ],
               "target": "other"
             }

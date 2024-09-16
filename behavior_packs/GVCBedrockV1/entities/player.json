@@ -2703,12 +2703,28 @@
           "component_groups": [
             "gvcv5:team_red"
           ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add red",
+            "tag @s remove blue",
+            "tag @s remove green",
+            "tag @s remove yellow"
+          ]
         }
       },
       "gvcv5:become_blueteam": {
         "add": {
           "component_groups": [
             "gvcv5:team_blue"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add blue",
+            "tag @s remove red",
+            "tag @s remove green",
+            "tag @s remove yellow"
           ]
         }
       },
@@ -2717,6 +2733,14 @@
           "component_groups": [
             "gvcv5:team_green"
           ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add green",
+            "tag @s remove red",
+            "tag @s remove blue",
+            "tag @s remove yellow"
+          ]
         }
       },
       "gvcv5:become_yellowteam": {
@@ -2724,12 +2748,28 @@
           "component_groups": [
             "gvcv5:team_yellow"
           ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add yellow",
+            "tag @s remove red",
+            "tag @s remove blue",
+            "tag @s remove green"
+          ]
         }
       },
       "gvcv5:become_noteam": {
         "add": {
           "component_groups": [
             "gvcv5:team_no"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s remove yellow",
+            "tag @s remove red",
+            "tag @s remove blue",
+            "tag @s remove green"
           ]
         }
       },

@@ -1,8 +1,5 @@
 entity.gvcv5:ga.name=ゲリラ
 entity.zex:iceblaze.name=フロスト
-entity.zex:icezombie.name=ゾンビ
-entity.zex:g_illager.name=グラハム
-entity.zex:iceologer.name=氷使い
 
 entity.gvcv5:gb1.name=ベテランゲリラ
 entity.gvcv5:gb2.name=ベテランゲリラ
@@ -29,6 +26,10 @@ item.spawn_egg.entity.gvcv5:af_cpt.name=同盟軍空軍士官
 item.spawn_egg.entity.gvcv5:mr_cpt.name=同盟軍海軍士官
 entity.gvcv5:af_cpt.name=同盟軍空軍士官
 entity.gvcv5:mr_cpt.name=同盟軍海軍士官
+
+gvcv5.order.attack.name=各個迎撃！
+gvcv5.order.wait.name=待機！
+gvcv5.order.follow.name=ついてこい！
 
 entity.gvcv5:pmc.name=PMC兵士
 entity.gvcv5:pmc_red.name=PMC兵士
@@ -563,7 +564,7 @@ script.gvcv5.phone_accept_to_join.name=加入要請の確認
 script.gvcv5.phone_player_accept.name=プレイヤーを承認
 script.gvcv5.phone_accept.name=承認
 script.gvcv5.phone_deny.name=拒否
-script.gvcv5.phone_transfer_leader.name=リーダーを変更
+script.gvcv5.phone_transfer_leader.name=メンバーの権限
 script.gvcv5.phone_kick_member.name=チームメンバーを追放
 script.gvcv5.phone_kicked_red.name=§cは赤チームから追放されました§r
 script.gvcv5.phone_kicked_blue.name=§9は青チームから追放されました§r
@@ -613,6 +614,12 @@ script.gvcv5.phone_howToTeam4Desc.name=同盟軍や同盟軍の旗に染料を�
 script.gvcv5.select_team.name=チームに加入
 script.gvcv5.phone_noteam.name=情報端末
 script.gvcv5.phone_howTo.name=ガイドを見る
+script.gvcv5.phone_teamList.name=チームのメンバー一覧
+script.gvcv5.phone_set_leader.name=リーダーに設定
+script.gvcv5.phone_set_subleader.name=サブリーダーに設定
+script.gvcv5.phone_remove_subleader.name=サブリーダーを削除
+script.gvcv5.phone_new_subleader.name=あなたは新しいサブリーダーになりました!
+script.gvcv5.phone_remove_subleader_m.name=あなたはサブリーダーを削除されました
 
 item.vehicle:dp28set_spawn_egg=固定機銃DP-28
 item.vehicle:m60set_spawn_egg=固定機銃M60

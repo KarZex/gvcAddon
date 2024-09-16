@@ -2,23 +2,23 @@
   "format_version": 2,
   "header": {
     "description": "V4のGVC Libなどは使用しないでください\n試験的ゲームプレイは何もしなくていいです\n作者:Kar Zex\nモデル提供者\nkusnek:MGL140,Mosin-Nagant,PPSh-41,TT33\nいぬえモン:AWM\nぁ椅子:Glock17,Glock18c\nMihono Bourbon:M9,MG42\nプチネコ:Panzerfaust,M79\n",
-    "name": "§l§gGVCBedrock Addon V1.0",
+    "name": "§l§gGVCBedrock Addon Lite V1.0",
     "min_engine_version": [1, 21, 20 ],
-    "uuid": "f7eb1093-a27c-4bbb-9c08-78918383970e",
+    "uuid": "60e033e6-a16c-412f-a802-1152b0c37ab6",
     "version": [1, 21, 21]
   },
   "modules": [
     {
       "description": "Data Module",
       "type": "data",
-      "uuid": "97e041fd-dfbc-4423-ad35-f7fb91f8d637",
+      "uuid": "305d249d-d3d3-40f8-a07c-3c26967ea9fb",
       "version": [1, 0, 0]
     },
     {
       "description": "Script API Module",
       "language": "javascript",
       "type": "script",
-      "uuid": "6ac7a9fc-3463-4b70-9339-7881680e9d91",
+      "uuid": "17e27cf1-f75c-4d4e-b243-2fa1b8d0c0c6",
       "version": [1, 0, 0],
       "entry": "scripts/main.js"
     }

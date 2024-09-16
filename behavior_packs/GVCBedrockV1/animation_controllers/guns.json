@@ -658,7 +658,7 @@
         "glock17_after": {
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < -1 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -749,7 +749,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "lazerii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 19 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "lazerii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1077,7 +1077,7 @@
         "m82_after": {
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 59 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 49 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1699,7 +1699,7 @@
         "tt33_after": {
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },

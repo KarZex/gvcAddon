@@ -569,7 +569,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.05,
+          "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -623,7 +623,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 1.05,
+          "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -803,7 +803,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 3.05,
+          "burst_interval": 2.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1199,7 +1199,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.1,
+          "burst_interval": 0.25,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1659,44 +1659,7 @@
             }
           },
           {
-            "randomize": [
-              {
-                "weight": 1,
-                "trigger": "m1911"
-              },
-              {
-                "weight": 2,
-                "trigger": "ak47"
-              },
-              {
-                "weight": 1,
-                "trigger": "an94"
-              },
-              {
-                "weight": 1,
-                "trigger": "mp40"
-              },
-              {
-                "weight": 1,
-                "trigger": "uzi"
-              },
-              {
-                "weight": 1,
-                "trigger": "rpg"
-              },
-              {
-                "weight": 1,
-                "trigger": "p90"
-              },
-              {
-                "weight": 1,
-                "trigger": "svd"
-              },
-              {
-                "weight": 1,
-                "trigger": "dp28"
-              }
-            ]
+            "trigger": "gvcv5:set_have_gun"
           }
         ]
       },
@@ -1725,44 +1688,7 @@
             }
           },
           {
-            "randomize": [
-              {
-                "weight": 1,
-                "trigger": "m1911"
-              },
-              {
-                "weight": 2,
-                "trigger": "ak47"
-              },
-              {
-                "weight": 1,
-                "trigger": "an94"
-              },
-              {
-                "weight": 1,
-                "trigger": "mp40"
-              },
-              {
-                "weight": 1,
-                "trigger": "uzi"
-              },
-              {
-                "weight": 1,
-                "trigger": "rpg"
-              },
-              {
-                "weight": 1,
-                "trigger": "p90"
-              },
-              {
-                "weight": 1,
-                "trigger": "svd"
-              },
-              {
-                "weight": 1,
-                "trigger": "dp28"
-              }
-            ]
+            "trigger": "gvcv5:set_have_gun"
           }
         ]
       },
@@ -1772,6 +1698,150 @@
             "freezed"
           ]
         }
+      },
+      "gvcv5:set_have_gun": {
+        "sequence": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_difficulty",
+                  "value": "easy"
+                }
+              ]
+            },
+            "randomize": [
+              {
+                "weight": 10,
+                "trigger": "m1911"
+              },
+              {
+                "weight": 20,
+                "trigger": "ak47"
+              },
+              {
+                "weight": 10,
+                "trigger": "mp40"
+              },
+              {
+                "weight": 10,
+                "trigger": "uzi"
+              },
+              {
+                "weight": 10,
+                "trigger": "svd"
+              }
+            ]
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_difficulty",
+                  "value": "normal"
+                }
+              ]
+            },
+            "randomize": [
+              {
+                "weight": 10,
+                "trigger": "m1911"
+              },
+              {
+                "weight": 20,
+                "trigger": "ak47"
+              },
+              {
+                "weight": 10,
+                "trigger": "an94"
+              },
+              {
+                "weight": 10,
+                "trigger": "mp40"
+              },
+              {
+                "weight": 10,
+                "trigger": "uzi"
+              },
+              {
+                "weight": 10,
+                "trigger": "p90"
+              },
+              {
+                "weight": 10,
+                "trigger": "svd"
+              },
+              {
+                "weight": 10,
+                "trigger": "dp28"
+              },
+              {
+                "weight": 5,
+                "trigger": "vehicle:t34"
+              }
+            ]
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_difficulty",
+                  "value": "hard"
+                }
+              ]
+            },
+            "randomize": [
+              {
+                "weight": 10,
+                "trigger": "tt33"
+              },
+              {
+                "weight": 20,
+                "trigger": "an94"
+              },
+              {
+                "weight": 10,
+                "trigger": "ak12"
+              },
+              {
+                "weight": 10,
+                "trigger": "rpg"
+              },
+              {
+                "weight": 10,
+                "trigger": "p90"
+              },
+              {
+                "weight": 10,
+                "trigger": "mp5"
+              },
+              {
+                "weight": 10,
+                "trigger": "svd"
+              },
+              {
+                "weight": 10,
+                "trigger": "m79"
+              },
+              {
+                "weight": 10,
+                "trigger": "dp28"
+              },
+              {
+                "weight": 5,
+                "trigger": "vehicle:t34"
+              },
+              {
+                "weight": 5,
+                "trigger": "vehicle:t55"
+              },
+              {
+                "weight": 1,
+                "trigger": "vehicle:t72"
+              }
+            ]
+          }
+        ]
       },
       "despawning": {
         "queue_command": {

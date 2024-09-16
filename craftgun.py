@@ -332,7 +332,7 @@ for row in csv_reader:
 
 
         a_func += "scoreboard objectives add {} dummy\n".format(gun_id)
-        a_func += "execute as @a[tag=!startedv4] run scoreboard players set @s {0} {1}\n".format(gun_id,gun_maxammo)
+        a_func += "execute as @a[tag=!startedv5] run scoreboard players set @s {0} {1}\n".format(gun_id,gun_maxammo)
 
 
         #item
@@ -696,6 +696,14 @@ for row in csv_reader2:
         ca_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
         pmc_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         pmc_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_red_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_red_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_blue_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_blue_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_green_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_green_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_yellow_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_yellow_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
 
         with open("resource_packs/GVCBedrockV1/entity/gun/ak12.json","r") as f:
             gun_entity = json.load(f)
@@ -773,7 +781,7 @@ with open("behavior_packs/GVCBedrockV1/scripts/guns.js","w") as f:
     f.write(export)
 
 
-a_func += "tag @a[tag=!startedv4] add startedv4\n"
+a_func += "tag @a[tag=!startedv5] add startedv5\n"
 with open("behavior_packs/GVCBedrockV1/functions/gunstart.mcfunction","w") as f:
     f.write(a_func)
 
