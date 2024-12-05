@@ -14,6 +14,23 @@
 	  }
     },
     "component_groups": {
+			"summon_enemy": {
+        "minecraft:despawn": {
+          "despawn_from_distance": {}
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/pt76_enemy.json"
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "despawning",
+              "target": "self",
+              "filters": { "test": "has_tag", "subject": "self", "operator": "not", "value": "has.rider" }
+            }
+          ]
+        }
+			},
 			"despawning": {
         "minecraft:transformation": {
           "into": "addon:des"
@@ -154,10 +171,6 @@
       },
       "minecraft:nameable": {
       },
-      "minecraft:behavior.player_ride_tamed": {
-      },
-      "minecraft:input_ground_controlled": {
-      },
       "minecraft:balloonable": {
       },
       "minecraft:collision_box": {
@@ -199,6 +212,13 @@
       }
     },
     "events": {
+      "summon_enemy": {
+        "add": {
+          "component_groups": [
+            "summon_enemy"
+          ]
+        }
+      },
 	  "despawning": {
 		  "add": {
 			  "component_groups": [

@@ -1348,7 +1348,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1372,7 +1372,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1396,7 +1396,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1420,7 +1420,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1444,7 +1444,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1468,7 +1468,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1492,7 +1492,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1516,7 +1516,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1540,7 +1540,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1564,7 +1564,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1588,7 +1588,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1612,7 +1612,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1636,7 +1636,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1660,7 +1660,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1684,7 +1684,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1708,7 +1708,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1732,7 +1732,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1756,7 +1756,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1780,7 +1780,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1804,7 +1804,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1828,7 +1828,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1852,7 +1852,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1876,7 +1876,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1900,7 +1900,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1924,7 +1924,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1948,7 +1948,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1972,7 +1972,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -1996,7 +1996,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2020,7 +2020,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2044,7 +2044,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2068,7 +2068,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2092,7 +2092,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2116,7 +2116,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2140,7 +2140,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2164,7 +2164,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2188,7 +2188,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2212,7 +2212,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2236,7 +2236,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2260,7 +2260,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2284,7 +2284,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2308,7 +2308,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2332,7 +2332,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2356,7 +2356,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2380,7 +2380,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2404,7 +2404,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2428,7 +2428,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2452,7 +2452,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2476,7 +2476,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -2500,7 +2500,7 @@
             }
           },
           {
-            "use_item": false,
+            "use_item": true,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -3231,32 +3231,32 @@
       },
       "vehicle:aifv": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:aifv"
+          "command": "ride @s summon_ride vehicle:aifv no_ride_change summon_enemy"
         }
       },
       "vehicle:lav25": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:lav25"
+          "command": "ride @s summon_ride vehicle:lav25 no_ride_change summon_enemy"
         }
       },
       "vehicle:m113": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:m113"
+          "command": "ride @s summon_ride vehicle:m113 no_ride_change summon_enemy"
         }
       },
       "vehicle:m1126": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:m1126"
+          "command": "ride @s summon_ride vehicle:m1126 no_ride_change summon_enemy"
         }
       },
       "vehicle:m1128": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:m1128"
+          "command": "ride @s summon_ride vehicle:m1128 no_ride_change summon_enemy"
         }
       },
       "vehicle:btr60": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:btr60"
+          "command": "ride @s summon_ride vehicle:btr60 no_ride_change summon_enemy"
         }
       },
       "vehicle:ah1s": {
@@ -3286,82 +3286,82 @@
       },
       "vehicle:kv2": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:kv2"
+          "command": "ride @s summon_ride vehicle:kv2 no_ride_change summon_enemy"
         }
       },
       "vehicle:m1a2": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:m1a2"
+          "command": "ride @s summon_ride vehicle:m1a2 no_ride_change summon_enemy"
         }
       },
       "vehicle:m41": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:m41"
+          "command": "ride @s summon_ride vehicle:m41 no_ride_change summon_enemy"
         }
       },
       "vehicle:fv101": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:fv101"
+          "command": "ride @s summon_ride vehicle:fv101 no_ride_change summon_enemy"
         }
       },
       "vehicle:m60a1": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:m60a1"
+          "command": "ride @s summon_ride vehicle:m60a1 no_ride_change summon_enemy"
         }
       },
       "vehicle:pt76": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:pt76"
+          "command": "ride @s summon_ride vehicle:pt76 no_ride_change summon_enemy"
         }
       },
       "vehicle:t34": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:t34"
+          "command": "ride @s summon_ride vehicle:t34 no_ride_change summon_enemy"
         }
       },
       "vehicle:t55": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:t55"
+          "command": "ride @s summon_ride vehicle:t55 no_ride_change summon_enemy"
         }
       },
       "vehicle:t72": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:t72"
+          "command": "ride @s summon_ride vehicle:t72 no_ride_change summon_enemy"
         }
       },
       "vehicle:20mmaa": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:20mmaa"
+          "command": "ride @s summon_ride vehicle:20mmaa no_ride_change summon_enemy"
         }
       },
       "vehicle:flak18": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:flak18"
+          "command": "ride @s summon_ride vehicle:flak18 no_ride_change summon_enemy"
         }
       },
       "vehicle:pak40": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:pak40"
+          "command": "ride @s summon_ride vehicle:pak40 no_ride_change summon_enemy"
         }
       },
       "vehicle:zu23": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:zu23"
+          "command": "ride @s summon_ride vehicle:zu23 no_ride_change summon_enemy"
         }
       },
       "vehicle:dp28set": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:dp28set"
+          "command": "ride @s summon_ride vehicle:dp28set no_ride_change summon_enemy"
         }
       },
       "vehicle:m60set": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:m60set"
+          "command": "ride @s summon_ride vehicle:m60set no_ride_change summon_enemy"
         }
       },
       "vehicle:pkmset": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:pkmset"
+          "command": "ride @s summon_ride vehicle:pkmset no_ride_change summon_enemy"
         }
       }
     }

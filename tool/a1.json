@@ -5,8 +5,7 @@
       "identifier": "gvcv5:flag_",
       "spawn_category": "creature",
       "is_spawnable": true,
-      "is_summonable": true,
-	  "runtime_identifier": "minecraft:bat"
+      "is_summonable": true
     },
 
 	"component_groups": {
@@ -248,6 +247,11 @@
           }
         ]
       },
+      "minecraft:timer": {
+        "time": 30,
+        "time_down_event": { "event": "tpevent" },
+        "looping": true
+      },
       "minecraft:behavior.send_event": {
         "priority": 3,
         "event_choices": [
@@ -295,11 +299,10 @@
       },
       "minecraft:persistent": {
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics":{},
       "minecraft:pushable": {
         "is_pushable": false,
-        "is_pushable_by_piston": true
+        "is_pushable_by_piston": false
       },
       "minecraft:follow_range": {
         "value": 64
@@ -307,6 +310,11 @@
     },
 	
 	"events": {
+    "minecraft:entity_spawned": {
+      "queue_command": {
+        "command":[ "scriptevent zex:flagstart CA a" ]
+      }
+    },
 	  "despawning": {
 		  "add": {
 			  "component_groups": [
@@ -314,34 +322,39 @@
 			  ]
 		  }
 	  },
+	  "tpevent": {
+      "queue_command": {
+        "command":[ "scriptevent zex:flagTelepo" ]
+      }
+	  },
     "gvcv5:become_redteam": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_red ~~5~","kill @s"]
+        "command":[ "scriptevent zex:flagstart","summon gvcv5:flag_red ~~~","scriptevent zex:flagChange CA a","scoreboard players add §c赤チーム \"勢力ポイント\" 10"]
       }
     },
     "gvcv5:become_blueteam": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_blue ~~5~","kill @s"]
+        "command":[ "summon gvcv5:flag_blue ~~~","scriptevent zex:flagChange CA a","scoreboard players add §9青チーム \"勢力ポイント\" 10"]
       }
     },
     "gvcv5:become_greenteam": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_green ~~5~","kill @s"]
+        "command":[ "summon gvcv5:flag_green ~~~","scriptevent zex:flagChange CA a","scoreboard players add §a緑チーム \"勢力ポイント\" 10"]
       }
     },
     "gvcv5:become_yellowteam": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_yellow ~~5~","kill @s"]
+        "command":[ "summon gvcv5:flag_yellow ~~~","scriptevent zex:flagChange CA a","scoreboard players add §e黄チーム \"勢力ポイント\" 10"]
       }
     },
     "become_CA": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_ ~~5~"]
+        "command":[ "summon gvcv5:flag_ ~~5~","scriptevent zex:flagChange CA a"]
       }
     },
     "become_GA": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_ ~~5~"]
+        "command":[ "summon gvcv5:flag_ ~~5~","scriptevent zex:flagChange CA a"]
       }
     }
 	  }

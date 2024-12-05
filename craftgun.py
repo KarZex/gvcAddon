@@ -20,7 +20,7 @@ pmc_red_json = json.load(open("tool/pmc_red.json","r"))
 pmc_blue_json = json.load(open("tool/pmc_blue.json","r"))
 pmc_green_json = json.load(open("tool/pmc_green.json","r"))
 pmc_yellow_json = json.load(open("tool/pmc_yellow.json","r"))
-item_json = json.load(open("resource_packs/GVCBedrockV1/textures/item_texture.json","r"))
+item_json = json.load(open("resource_packs/GVCBedrock/textures/item_texture.json","r"))
 func = open("tool/gunstart.mcfunction","r")
 a_func = func.read()
 
@@ -301,17 +301,17 @@ for row in csv_reader:
             if gun_wallbreak:
                 del gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["stick_in_ground"]
                 
-        with open("behavior_packs/GVCBedrockV1/entities/fire/{}.json".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"w") as f:
             json.dump(gun_entity,f,indent=2)
 
-        with open("behavior_packs/GVCBedrockV1/entities/fire/scoped/{}.json".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCBedrock/entities/fire/scoped/{}.json".format(gun_id),"w") as f:
             gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}".format(gun_id)
             if gun_bullet_num > 1: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
             else: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = 0
             json.dump(gun_entity,f,indent=2)
 
         #function
-        with open("behavior_packs/GVCBedrockV1/functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCBedrock/functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
             
             if gun_special == "R":
                 f.write("titleraw @s[tag=!railcharged,tag=!railcharging,tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
@@ -341,7 +341,7 @@ for row in csv_reader:
             gun_item["minecraft:item"]["description"]["identifier"] = "gun:{}".format(gun_id)
             gun_item["minecraft:item"]["components"]["minecraft:icon"] = "{}".format(gun_id)
         
-        with open("behavior_packs/GVCBedrockV1/items/gun/{}.json".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCBedrock/items/gun/{}.json".format(gun_id),"w") as f:
             json.dump(gun_item,f,indent=2)
 
         #crash recipe
@@ -351,7 +351,7 @@ for row in csv_reader:
             gunbreak["minecraft:recipe_shapeless"]["ingredients"][0]["item"] = "gun:{}".format(gun_id)
             gunbreak["minecraft:recipe_shapeless"]["result"]["count"] = gun_break
         
-        with open("behavior_packs/GVCBedrockV1/recipes/gun/{}.json".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCBedrock/recipes/gun/{}.json".format(gun_id),"w") as f:
             json.dump(gunbreak,f,indent=2)
 
         #loot_table (for mob)
@@ -359,7 +359,7 @@ for row in csv_reader:
             loot_table = json.load(f)
             loot_table["pools"][0]["entries"][0]["name"] = "gun:{}".format(gun_id)
         
-        with open("behavior_packs/GVCBedrockV1/loot_tables/gun/{}.json".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCBedrock/loot_tables/gun/{}.json".format(gun_id),"w") as f:
             json.dump(loot_table,f,indent=2)
 
         #enemy and allieds
@@ -404,7 +404,7 @@ for row in csv_reader:
         }
 
         PMC_weapon_change = {
-            "use_item": False,
+            "use_item": True,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -429,7 +429,7 @@ for row in csv_reader:
           }
         
         PMC_weapon_change_red = {
-            "use_item": False,
+            "use_item": True,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -459,7 +459,7 @@ for row in csv_reader:
           }
         
         PMC_weapon_change_blue = {
-            "use_item": False,
+            "use_item": True,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -489,7 +489,7 @@ for row in csv_reader:
           }
         
         PMC_weapon_change_green = {
-            "use_item": False,
+            "use_item": True,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -519,7 +519,7 @@ for row in csv_reader:
           }
         
         PMC_weapon_change_yellow = {
-            "use_item": False,
+            "use_item": True,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -569,18 +569,18 @@ for row in csv_reader:
         pmc_yellow_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         pmc_yellow_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
 
-        with open("resource_packs/GVCBedrockV1/entity/gun/ak12.json","r") as f:
+        with open("resource_packs/GVCBedrock/entity/gun/ak12.json","r") as f:
             gun_entity = json.load(f)
 
-        with open("resource_packs/GVCBedrockV1/entity/gun/{}.json".format(gun_id),"w") as f:
+        with open("resource_packs/GVCBedrock/entity/gun/{}.json".format(gun_id),"w") as f:
             gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
             json.dump(gun_entity,f,indent=2)
 
-        with open("resource_packs/GVCBedrockV1/entity/gun/s/{}.json".format(gun_id),"w") as f:
+        with open("resource_packs/GVCBedrock/entity/gun/s/{}.json".format(gun_id),"w") as f:
             gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:ads_{}".format(gun_id)
             json.dump(gun_entity,f,indent=2)
 
-        with open("resource_packs/GVCBedrockV1/render_controllers/first_person.json","r") as f:
+        with open("resource_packs/GVCBedrock/render_controllers/first_person.json","r") as f:
             gun_entity = json.load(f)
             if( not "| query.get_equipped_item_name(0, 1) == '{}' |".format(gun_id) in gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][1]["rightArm"] ):
                 gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][1]["rightArm"] = gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][1]["rightArm"].replace("| query.get_equipped_item_name(0, 1) == 'tt33' |","| query.get_equipped_item_name(0, 1) == '{}' || query.get_equipped_item_name(0, 1) == 'tt33' |".format(gun_id))
@@ -589,7 +589,7 @@ for row in csv_reader:
                 gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][4]["leftSleeve"] = gun_entity["render_controllers"]["controller.render.player.first_person"]["part_visibility"][4]["leftSleeve"].replace("| query.get_equipped_item_name(0, 1) == 'tt33' |","| query.get_equipped_item_name(0, 1) == '{}' || query.get_equipped_item_name(0, 1) == 'tt33' |".format(gun_id))
 
     
-        with open("resource_packs/GVCBedrockV1/render_controllers/first_person.json","w") as f:
+        with open("resource_packs/GVCBedrock/render_controllers/first_person.json","w") as f:
             json.dump(gun_entity,f,indent=2)
 
         item_json["texture_data"]["{}".format(gun_id)] = { "textures": "textures/items/gun/{}".format(gun_id) }
@@ -662,7 +662,7 @@ for row in csv_reader2:
             if gun_bomb > 0:
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
 
-        with open("behavior_packs/GVCBedrockV1/entities/fire/{}.json".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"w") as f:
             json.dump(gun_entity,f,indent=2)
 
         #enemy and allieds
@@ -705,10 +705,10 @@ for row in csv_reader2:
         pmc_yellow_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         pmc_yellow_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
 
-        with open("resource_packs/GVCBedrockV1/entity/gun/ak12.json","r") as f:
+        with open("resource_packs/GVCBedrock/entity/gun/ak12.json","r") as f:
             gun_entity = json.load(f)
 
-        with open("resource_packs/GVCBedrockV1/entity/gun/{}.json".format(gun_id),"w") as f:
+        with open("resource_packs/GVCBedrock/entity/gun/{}.json".format(gun_id),"w") as f:
             gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
             json.dump(gun_entity,f,indent=2)
 
@@ -725,9 +725,9 @@ for row in csv_reader3:
         v_id = row[1]
         v_type = row[2]
         if v_type != "heri":
-            ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}".format(v_id) } }
-            ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}".format(v_id) } }
-            pmc_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}".format(v_id) } }
+            ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{} no_ride_change summon_enemy".format(v_id) } }
+            ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{} no_ride_change summon_enemy".format(v_id) } }
+            pmc_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{} no_ride_change summon_enemy".format(v_id) } }
         else:
             ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}r".format(v_id) } }
             ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{}r".format(v_id) } }
@@ -737,54 +737,54 @@ for row in csv_reader3:
 
 
 
-with open("behavior_packs/GVCBedrockV1/scripts/gun.json","w") as f:
+with open("behavior_packs/GVCBedrock/scripts/gun.json","w") as f:
     json.dump(gundata_json,f,indent=2)
 
-with open("behavior_packs/GVCBedrockV1/entities/player.json","w") as f:
+with open("behavior_packs/GVCBedrock/entities/player.json","w") as f:
     json.dump(player_json,f,indent=2)
 
-with open("behavior_packs/GVCBedrockV1/animation_controllers/guns.json","w") as f:
+with open("behavior_packs/GVCBedrock/animation_controllers/guns.json","w") as f:
     json.dump(BP_animation,f,indent=2)
 
-with open("behavior_packs/GVCBedrockV1/animation_controllers/hold.json","w") as f:
+with open("behavior_packs/GVCBedrock/animation_controllers/hold.json","w") as f:
     json.dump(BP_animation_hold,f,indent=2)
 
-with open("behavior_packs/GVCBedrockV1/entities/mob/allied/ca.json","w") as f:
+with open("behavior_packs/GVCBedrock/entities/mob/allied/ca.json","w") as f:
     json.dump(ca_json,f,indent=2)
 
-with open("behavior_packs/GVCBedrockV1/entities/mob/enemy/ga.json","w") as f:
+with open("behavior_packs/GVCBedrock/entities/mob/enemy/ga.json","w") as f:
     json.dump(ga_json,f,indent=2)
 
-with open("behavior_packs/GVCBedrockV1/entities/mob/allied/pmc.json","w") as f:
+with open("behavior_packs/GVCBedrock/entities/mob/allied/pmc.json","w") as f:
     json.dump(pmc_json,f,indent=2)
 
-with open("behavior_packs/GVCBedrockV1/entities/mob/allied/pmc_red.json","w") as f:
+with open("behavior_packs/GVCBedrock/entities/mob/allied/pmc_red.json","w") as f:
     json.dump(pmc_red_json,f,indent=2)
-with open("behavior_packs/GVCBedrockV1/entities/mob/allied/pmc_blue.json","w") as f:
+with open("behavior_packs/GVCBedrock/entities/mob/allied/pmc_blue.json","w") as f:
     json.dump(pmc_blue_json,f,indent=2)
-with open("behavior_packs/GVCBedrockV1/entities/mob/allied/pmc_green.json","w") as f:
+with open("behavior_packs/GVCBedrock/entities/mob/allied/pmc_green.json","w") as f:
     json.dump(pmc_green_json,f,indent=2)
-with open("behavior_packs/GVCBedrockV1/entities/mob/allied/pmc_yellow.json","w") as f:
+with open("behavior_packs/GVCBedrock/entities/mob/allied/pmc_yellow.json","w") as f:
     json.dump(pmc_yellow_json,f,indent=2)
 
-with open("resource_packs/GVCBedrockV1/textures/item_texture.json","w") as f:
+with open("resource_packs/GVCBedrock/textures/item_texture.json","w") as f:
     json.dump(item_json,f,indent=2)
 
 
-with open("behavior_packs/GVCBedrockV1/scripts/gun.json","r") as f:
+with open("behavior_packs/GVCBedrock/scripts/gun.json","r") as f:
     export = "import { EntityDamageCause } from \"@minecraft/server\";\nexport const gunData = " 
     export += f.read()
     export += ";"
 
 
-with open("behavior_packs/GVCBedrockV1/scripts/guns.js","w") as f:
+with open("behavior_packs/GVCBedrock/scripts/guns.js","w") as f:
     f.write(export)
 
 
 a_func += "tag @a[tag=!startedv5] add startedv5\n"
-with open("behavior_packs/GVCBedrockV1/functions/gunstart.mcfunction","w") as f:
+with open("behavior_packs/GVCBedrock/functions/gunstart.mcfunction","w") as f:
     f.write(a_func)
 
     
-with open("resource_packs/GVCBedrockV1/texts/guns.txt","w") as f:
+with open("resource_packs/GVCBedrock/texts/guns.txt","w") as f:
     f.write(text)

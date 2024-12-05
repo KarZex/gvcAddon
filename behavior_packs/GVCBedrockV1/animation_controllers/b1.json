@@ -21,7 +21,7 @@
               "/tag @s remove ride",
               "/tag @s remove heriRiding",
 			  "/tag @s remove HKE",
-			  "/event entity @s minecraft:entity_spawned",
+			  "/event entity @s gvcv5:set_have_gun_nt",
 			  "/effect @s clear"
             ]
         }

@@ -5,7 +5,7 @@ import shutil
 csv_path = open("vehicleData.csv","r")
 csv_reader = csv.reader(csv_path)
 
-item_json = json.load(open("resource_packs/GVCBedrockV1/textures/item_texture.json","r"))
+item_json = json.load(open("resource_packs/GVCBedrock/textures/item_texture.json","r"))
 row_count = 0
 
 m_func = ""
@@ -31,7 +31,7 @@ for row in csv_reader:
             loot_table = json.load(f)
             loot_table["pools"][0]["entries"][0]["functions"][0]["id"] = "vehicle:{}".format(v_id)
         
-        with open("behavior_packs/GVCBedrockV1/loot_tables/entities/{}.json".format(v_id),"w") as f:
+        with open("behavior_packs/GVCBedrock/loot_tables/entities/{}.json".format(v_id),"w") as f:
             json.dump(loot_table,f,indent=2)
 
         if v_main != "":
@@ -55,15 +55,15 @@ for row in csv_reader:
         print("created {}".format(v_id))
     row_count += 1
 
-with open("behavior_packs/GVCBedrockV1/functions/vmain.mcfunction","w") as f:
+with open("behavior_packs/GVCBedrock/functions/vmain.mcfunction","w") as f:
     f.write(m_func)
 
-with open("behavior_packs/GVCBedrockV1/functions/vsub.mcfunction","w") as f:
+with open("behavior_packs/GVCBedrock/functions/vsub.mcfunction","w") as f:
     f.write(s_func)
 
-with open("behavior_packs/GVCBedrockV1/functions/b1.mcfunction","w") as f:
+with open("behavior_packs/GVCBedrock/functions/b1.mcfunction","w") as f:
     f.write(b_func)
 
 
-with open("resource_packs/GVCBedrockV1/textures/item_texture.json","w") as f:
+with open("resource_packs/GVCBedrock/textures/item_texture.json","w") as f:
     json.dump(item_json,f,indent=2)
