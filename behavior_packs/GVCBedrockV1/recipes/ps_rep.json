@@ -6,9 +6,9 @@
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "XAX",
-	  "AAX",
-	  "XXA"
+      " A ",
+	  "AA ",
+	  "  A"
     ],
     "key": {
       "A": {
