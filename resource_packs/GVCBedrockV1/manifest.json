@@ -3,15 +3,15 @@
   "header": {
     "description": "V4のGVC Libなどは使用しないでください\n試験的ゲームプレイは何もしなくていいです\n作者:Kar Zex\nモデル提供者\nkusnek:MGL140,Mosin-Nagant,PPSh-41,TT33\nいぬえモン:AWM\nぁ椅子:Glock17,Glock18c\nMihono Bourbon:M9,MG42\nプチネコ:Panzerfaust,M79\n",
     "name": "§l§gGVCBedrock Addon V2.0",
-    "min_engine_version": [1, 21, 20 ],
-    "uuid": "781d83fd-3719-4f5d-8388-68906241826d",
-    "version": [1, 21, 21]
+    "min_engine_version": [1, 21, 50 ],
+    "uuid": "43d1c096-0026-439a-b4e6-e79da39e9c14",
+    "version": [1, 21, 50]
   },
   "modules": [
     {
       "description": "resources Module",
       "type": "resources",
-      "uuid": "6a6dbca3-6063-42d3-aa8f-7fa4687d4588",
+      "uuid": "660eb587-dce8-4f48-96da-c32759766e62",
       "version": [0, 0, 1]
     }
   ]
