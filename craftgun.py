@@ -2,7 +2,7 @@ import json
 import csv
 import shutil
 
-csv_path = open("gunData.csv","r")
+csv_path = open("gunData.csv","r",encoding='utf-8')
 csv_reader = csv.reader(csv_path) 
 
 row_count = 0
@@ -598,7 +598,7 @@ for row in csv_reader:
     row_count += 1
 
 
-csv_path2 = open("vehiclewData.csv","r")
+csv_path2 = open("vehiclewData.csv","r",encoding='utf-8')
 csv_reader2 = csv.reader(csv_path2)
 row_count = 0
 #aasdasd

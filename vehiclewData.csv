@@ -1,4 +1,4 @@
-åå‰,id,ãƒ€ãƒ¡ãƒ¼ã‚¸,å¼¾é€Ÿ,å‘½ä¸­ç²¾åº¦,é€£å°„é–“éš”(tick),çˆ†ç™º,ãƒ–ãƒ­ãƒƒã‚¯ç ´å£Š,éŸ³,ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚¿ã‚¤ãƒ—
+–¼‘O,id,ƒ_ƒ[ƒW,’e‘¬,–½’†¸“x,˜AËŠÔŠu(tick),”š”­,ƒuƒƒbƒN”j‰ó,‰¹,ƒ_ƒ[ƒWƒ^ƒCƒv
 ,vmg,8,4,0,1,0,F,mgbullet,override
 ,76mm,10,4,0,60,3,F,tankbullet,entityExplosion
 ,85mm,10,4,0,100,4,F,tankbullet,entityExplosion
@@ -12,3 +12,5 @@
 ,ads_dp28,8,6,0,1,0,F,mgbullet,override
 ,ads_m60,8,6,0,1,0,F,mgbullet,override
 ,ads_pkm,8,6,0,1,0,F,mgbullet,override
+,76mmrocket,15,4,0,20,4,F,rpgbullet,entityExplosion
+,agmissile,10,4,0,100,6,F,missilebullet,entityExplosion

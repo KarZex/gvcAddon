@@ -1,0 +1,36 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tank": {
+      "loop": true,
+      "bones": {
+        "fire": {
+          "rotation": [
+            "Math.max(-30, Math.min(30,query.target_x_rotation))",
+            "0",
+            0
+          ]
+        },
+        "head": {
+          "rotation": [
+            0,
+            "query.target_y_rotation",
+            0
+          ]
+        }
+      }
+    },
+    "animation.herii": {
+      "loop": true,
+      "bones": {
+        "bone19": {
+          "rotation": [
+            "-query.target_x_rotation - 30",
+            0,
+            0
+          ]
+        }
+      }
+    }
+  }
+}
