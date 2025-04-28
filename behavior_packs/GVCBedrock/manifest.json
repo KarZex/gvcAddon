@@ -23,6 +23,23 @@
       "entry": "scripts/main.js"
     }
   ],
+  "subpacks": [
+      {
+          "folder_name": "0",
+          "name": "PVP MODE",
+          "memory_tier": 0
+      },
+      {
+          "folder_name": "1",
+          "name": "§bPVE MODE",
+          "memory_tier": 1
+      },
+      {
+          "folder_name": "2",
+          "name": "§cT§9E§aA§eM§r MODE",
+          "memory_tier": 2
+      }
+  ],
   "capabilities": ["script_eval"],
   "dependencies": [
     {
