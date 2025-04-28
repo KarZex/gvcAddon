@@ -1,4 +1,4 @@
-名前,id,ダメージ,弾速,命中精度,連射間隔(tick),爆発,ブロック破壊,音,ダメージタイプ
+name,id,ダメージ,弾速,命中精度,連射間隔(tick),爆発,ブロック破壊,音,ダメージタイプ
 ,vmg,8,4,0,1,0,F,mgbullet,override
 ,76mm,10,4,0,60,3,F,tankbullet,entityExplosion
 ,85mm,10,4,0,100,4,F,tankbullet,entityExplosion

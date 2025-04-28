@@ -1,4 +1,4 @@
-titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"Åò99mmHGÅòr "},{"score":{"name":"@s","objective":"mp5"}},{"text":"/30"}]}
+titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"¬ß99mmHG¬ßr "},{"score":{"name":"@s","objective":"mp5"}},{"text":"/30"}]}
 playanimation @s[tag=!down] animation.item.first none 0 "!query.is_item_equipped"
 hud @s[tag=scope] hide crosshair
 execute if entity @s[tag=autoReload,tag=!reload,tag=!down,scores={mp5=0},hasitem={item=zex:mm9}] run scriptevent gvcv5:reload mp5

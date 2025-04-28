@@ -3,8 +3,10 @@ execute if entity @e[r=4,type=vehicle:m1128] run event entity @s fire:105mm
 execute if entity @e[r=4,type=vehicle:m1128] run scoreboard players set @p mcool 100
 
 execute if entity @e[r=4,type=vehicle:ka50] run event entity @s fire:76mmrocket
+execute if entity @e[r=4,type=vehicle:ka50] run scoreboard players set @p mcool 20
 
 execute if entity @e[r=4,type=vehicle:mi24d] run event entity @s fire:agmissile
+execute if entity @e[r=4,type=vehicle:mi24d] run scoreboard players set @p mcool 100
 
 execute if entity @e[r=4,type=vehicle:kv2] run event entity @s fire:152mm
 execute if entity @e[r=4,type=vehicle:kv2] run scoreboard players set @p mcool 160

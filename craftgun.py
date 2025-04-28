@@ -311,7 +311,7 @@ for row in csv_reader:
             json.dump(gun_entity,f,indent=2)
 
         #function
-        with open("behavior_packs/GVCBedrock/functions/hold/{}h.mcfunction".format(gun_id),"w") as f:
+        with open("behavior_packs/GVCBedrock/functions/hold/{}h.mcfunction".format(gun_id),"w",encoding="utf-8") as f:
             
             if gun_special == "R":
                 f.write("titleraw @s[tag=!railcharged,tag=!railcharging,tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
@@ -598,7 +598,7 @@ for row in csv_reader:
     row_count += 1
 
 
-csv_path2 = open("vehiclewData.csv","r",encoding='utf-8')
+csv_path2 = open("vehiclewData.csv","r")
 csv_reader2 = csv.reader(csv_path2)
 row_count = 0
 #aasdasd
