@@ -2,7 +2,7 @@
   "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "gvcv5:pmc_red",
+      "identifier": "gvcv5:pmc_yellow",
       "spawn_category": "creature",
       "is_spawnable": false,
       "is_summonable": true,
@@ -943,231 +943,6 @@
         "minecraft:equipment": {
           "table": "loot_tables/gun/xm8.json"
         }
-      },
-      "vmg": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.05,
-          "attack_interval_max": 0.05,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:vmg"
-        }
-      },
-      "76mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:76mm"
-        }
-      },
-      "85mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:85mm"
-        }
-      },
-      "100mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:100mm"
-        }
-      },
-      "105mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:105mm"
-        }
-      },
-      "120mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:120mm"
-        }
-      },
-      "125mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:125mm"
-        }
-      },
-      "152mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 8.0,
-          "attack_interval_max": 8.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:152mm"
-        }
-      },
-      "20mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.25,
-          "attack_interval_max": 0.25,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:20mm"
-        }
-      },
-      "23mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.30000000000000004,
-          "attack_interval_max": 0.30000000000000004,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:23mm"
-        }
-      },
-      "ads_dp28": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.05,
-          "attack_interval_max": 0.05,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:ads_dp28"
-        }
-      },
-      "ads_m60": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.05,
-          "attack_interval_max": 0.05,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:ads_m60"
-        }
-      },
-      "ads_pkm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.05,
-          "attack_interval_max": 0.05,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:ads_pkm"
-        }
-      },
-      "76mmrocket": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 1.0,
-          "attack_interval_max": 1.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:76mmrocket"
-        }
-      },
-      "agmissile": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:agmissile"
-        }
       }
     },
     "components": {
@@ -1193,7 +968,7 @@
         "family": [
           "pmc",
           "playerp",
-          "redteam",
+          "yellowteam",
           "allied_soldier",
           "mob"
         ]
@@ -1238,7 +1013,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   }
                 ]
               },
@@ -1261,7 +1036,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1290,7 +1065,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1319,7 +1094,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1348,7 +1123,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1377,7 +1152,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1406,7 +1181,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1435,7 +1210,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1464,7 +1239,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1493,7 +1268,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1522,7 +1297,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1551,7 +1326,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1580,7 +1355,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1609,7 +1384,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1638,7 +1413,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1667,7 +1442,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1696,7 +1471,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1725,7 +1500,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1754,7 +1529,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1783,7 +1558,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1812,7 +1587,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1841,7 +1616,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1870,7 +1645,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1899,7 +1674,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1928,7 +1703,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1957,7 +1732,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1986,7 +1761,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2015,7 +1790,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2044,7 +1819,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2073,7 +1848,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2102,7 +1877,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2131,7 +1906,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2160,7 +1935,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2189,7 +1964,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2218,7 +1993,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2247,7 +2022,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2276,7 +2051,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2305,7 +2080,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2334,7 +2109,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2363,7 +2138,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2392,7 +2167,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2421,7 +2196,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2450,7 +2225,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2479,7 +2254,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2508,7 +2283,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2537,7 +2312,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2566,7 +2341,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2595,7 +2370,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2624,7 +2399,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2653,7 +2428,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2706,7 +2481,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
+                    "value": "yellowteam"
                   }
                 ]
               }
@@ -2744,6 +2519,14 @@
             "filters": {
               "test": "is_family",
               "subject": "other",
+              "value": "redteam"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
               "value": "blueteam"
             },
             "max_dist": 42
@@ -2753,14 +2536,6 @@
               "test": "is_family",
               "subject": "other",
               "value": "greenteam"
-            },
-            "max_dist": 42
-          },
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "yellowteam"
             },
             "max_dist": 42
           }
@@ -3264,111 +3039,6 @@
         "add": {
           "component_groups": [
             "xm8"
-          ]
-        }
-      },
-      "vmg": {
-        "add": {
-          "component_groups": [
-            "vmg"
-          ]
-        }
-      },
-      "76mm": {
-        "add": {
-          "component_groups": [
-            "76mm"
-          ]
-        }
-      },
-      "85mm": {
-        "add": {
-          "component_groups": [
-            "85mm"
-          ]
-        }
-      },
-      "100mm": {
-        "add": {
-          "component_groups": [
-            "100mm"
-          ]
-        }
-      },
-      "105mm": {
-        "add": {
-          "component_groups": [
-            "105mm"
-          ]
-        }
-      },
-      "120mm": {
-        "add": {
-          "component_groups": [
-            "120mm"
-          ]
-        }
-      },
-      "125mm": {
-        "add": {
-          "component_groups": [
-            "125mm"
-          ]
-        }
-      },
-      "152mm": {
-        "add": {
-          "component_groups": [
-            "152mm"
-          ]
-        }
-      },
-      "20mm": {
-        "add": {
-          "component_groups": [
-            "20mm"
-          ]
-        }
-      },
-      "23mm": {
-        "add": {
-          "component_groups": [
-            "23mm"
-          ]
-        }
-      },
-      "ads_dp28": {
-        "add": {
-          "component_groups": [
-            "ads_dp28"
-          ]
-        }
-      },
-      "ads_m60": {
-        "add": {
-          "component_groups": [
-            "ads_m60"
-          ]
-        }
-      },
-      "ads_pkm": {
-        "add": {
-          "component_groups": [
-            "ads_pkm"
-          ]
-        }
-      },
-      "76mmrocket": {
-        "add": {
-          "component_groups": [
-            "76mmrocket"
-          ]
-        }
-      },
-      "agmissile": {
-        "add": {
-          "component_groups": [
-            "agmissile"
           ]
         }
       }

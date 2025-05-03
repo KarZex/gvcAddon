@@ -2,9 +2,9 @@
   "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "gvcv5:pmc",
+      "identifier": "gvcv5:pmc_green",
       "spawn_category": "creature",
-      "is_spawnable": true,
+      "is_spawnable": false,
       "is_summonable": true,
       "scripts": {
         "animate": [
@@ -60,26 +60,6 @@
         },
         "minecraft:variant": {
           "value": 0
-        }
-      },
-      "redteam": {
-        "minecraft:transformation": {
-          "into": "gvcv5:pmc_red"
-        }
-      },
-      "blueteam": {
-        "minecraft:transformation": {
-          "into": "gvcv5:pmc_blue"
-        }
-      },
-      "greenteam": {
-        "minecraft:transformation": {
-          "into": "gvcv5:pmc_green"
-        }
-      },
-      "yellowteam": {
-        "minecraft:transformation": {
-          "into": "gvcv5:pmc_yellow"
         }
       },
       "aa12": {
@@ -963,231 +943,6 @@
         "minecraft:equipment": {
           "table": "loot_tables/gun/xm8.json"
         }
-      },
-      "vmg": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.05,
-          "attack_interval_max": 0.05,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:vmg"
-        }
-      },
-      "76mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:76mm"
-        }
-      },
-      "85mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:85mm"
-        }
-      },
-      "100mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:100mm"
-        }
-      },
-      "105mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:105mm"
-        }
-      },
-      "120mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:120mm"
-        }
-      },
-      "125mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:125mm"
-        }
-      },
-      "152mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 8.0,
-          "attack_interval_max": 8.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:152mm"
-        }
-      },
-      "20mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.25,
-          "attack_interval_max": 0.25,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:20mm"
-        }
-      },
-      "23mm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.30000000000000004,
-          "attack_interval_max": 0.30000000000000004,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:23mm"
-        }
-      },
-      "ads_dp28": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.05,
-          "attack_interval_max": 0.05,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:ads_dp28"
-        }
-      },
-      "ads_m60": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.05,
-          "attack_interval_max": 0.05,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:ads_m60"
-        }
-      },
-      "ads_pkm": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.05,
-          "attack_interval_max": 0.05,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:ads_pkm"
-        }
-      },
-      "76mmrocket": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 1.0,
-          "attack_interval_max": 1.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:76mmrocket"
-        }
-      },
-      "agmissile": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:agmissile"
-        }
       }
     },
     "components": {
@@ -1213,7 +968,7 @@
         "family": [
           "pmc",
           "playerp",
-          "noteam",
+          "greenteam",
           "allied_soldier",
           "mob"
         ]
@@ -1254,126 +1009,15 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": false
-                  }
-                ]
-              },
-              "event": "gvcv5:order",
-              "target": "self"
-            }
-          },
-          {
-            "use_item": false,
-            "play_sounds": "enderchest.open",
-            "interact_text": "action.gvc.item",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "self",
-                    "value": "noteam"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "redteam"
-                  },
-                  {
-                    "test": "has_equipment",
-                    "subject": "other",
-                    "domain": "hand",
-                    "value": "red_dye"
-                  }
-                ]
-              },
-              "event": "gvcv5:become_redteam",
-              "target": "self"
-            }
-          },
-          {
-            "use_item": false,
-            "play_sounds": "enderchest.open",
-            "interact_text": "action.gvc.item",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "self",
-                    "value": "noteam"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "blueteam"
-                  },
-                  {
-                    "test": "has_equipment",
-                    "subject": "other",
-                    "domain": "hand",
-                    "value": "blue_dye"
-                  }
-                ]
-              },
-              "event": "gvcv5:become_blueteam",
-              "target": "self"
-            }
-          },
-          {
-            "use_item": false,
-            "play_sounds": "enderchest.open",
-            "interact_text": "action.gvc.item",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "self",
-                    "value": "noteam"
                   },
                   {
                     "test": "is_family",
                     "subject": "other",
                     "value": "greenteam"
-                  },
-                  {
-                    "test": "has_equipment",
-                    "subject": "other",
-                    "domain": "hand",
-                    "value": "green_dye"
                   }
                 ]
               },
-              "event": "gvcv5:become_greenteam",
-              "target": "self"
-            }
-          },
-          {
-            "use_item": false,
-            "play_sounds": "enderchest.open",
-            "interact_text": "action.gvc.item",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "self",
-                    "value": "noteam"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "yellowteam"
-                  },
-                  {
-                    "test": "has_equipment",
-                    "subject": "other",
-                    "domain": "hand",
-                    "value": "yellow_dye"
-                  }
-                ]
-              },
-              "event": "gvcv5:become_yellowteam",
+              "event": "gvcv5:order",
               "target": "self"
             }
           },
@@ -1388,6 +1032,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1414,6 +1063,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1436,6 +1090,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1462,6 +1121,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1484,6 +1148,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1510,6 +1179,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1532,6 +1206,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1558,6 +1237,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1580,6 +1264,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1606,6 +1295,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1628,6 +1322,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1654,6 +1353,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1676,6 +1380,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1702,6 +1411,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1724,6 +1438,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1750,6 +1469,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1772,6 +1496,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1798,6 +1527,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1820,6 +1554,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1846,6 +1585,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1868,6 +1612,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1894,6 +1643,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1916,6 +1670,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1942,6 +1701,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1964,6 +1728,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1990,6 +1759,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2012,6 +1786,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2038,6 +1817,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2060,6 +1844,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2086,6 +1875,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2108,6 +1902,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2134,6 +1933,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2156,6 +1960,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2182,6 +1991,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2204,6 +2018,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2230,6 +2049,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2252,6 +2076,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2278,6 +2107,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2300,6 +2134,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2326,6 +2165,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2348,6 +2192,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2374,6 +2223,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2396,6 +2250,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2422,6 +2281,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2444,6 +2308,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2470,6 +2339,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2492,6 +2366,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2518,6 +2397,11 @@
                     "value": true
                   },
                   {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  },
+                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2540,6 +2424,11 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2588,6 +2477,11 @@
                     "test": "is_family",
                     "subject": "other",
                     "value": "allied_soldier"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
                   }
                 ]
               }
@@ -2620,6 +2514,30 @@
               "value": "monster"
             },
             "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "redteam"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "blueteam"
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "yellowteam"
+            },
+            "max_dist": 42
           }
         ]
       },
@@ -2647,22 +2565,6 @@
             "default"
           ]
         },
-        "queue_command": {
-          "command": [
-            "execute if entity @p[r=8,family=redteam] run event entity @s gvcv5:become_redteam",
-            "execute if entity @p[r=8,family=blueteam] run event entity @s gvcv5:become_blueteam",
-            "execute if entity @p[r=8,family=greenteam] run event entity @s gvcv5:become_greenteam",
-            "execute if entity @p[r=8,family=yellowteam] run event entity @s gvcv5:become_yellowteam"
-          ]
-        },
-        "trigger": "ak102"
-      },
-      "minecraft:spawned_from_block": {
-        "add": {
-          "component_groups": [
-            "default"
-          ]
-        },
         "trigger": "ak102"
       },
       "minecraft:entity_transformed": {
@@ -2672,34 +2574,6 @@
           ]
         },
         "trigger": "ak102"
-      },
-      "gvcv5:become_redteam": {
-        "add": {
-          "component_groups": [
-            "redteam"
-          ]
-        }
-      },
-      "gvcv5:become_blueteam": {
-        "add": {
-          "component_groups": [
-            "blueteam"
-          ]
-        }
-      },
-      "gvcv5:become_greenteam": {
-        "add": {
-          "component_groups": [
-            "greenteam"
-          ]
-        }
-      },
-      "gvcv5:become_yellowteam": {
-        "add": {
-          "component_groups": [
-            "yellowteam"
-          ]
-        }
       },
       "attack": {
         "remove": {
@@ -3166,246 +3040,6 @@
           "component_groups": [
             "xm8"
           ]
-        }
-      },
-      "vmg": {
-        "add": {
-          "component_groups": [
-            "vmg"
-          ]
-        }
-      },
-      "76mm": {
-        "add": {
-          "component_groups": [
-            "76mm"
-          ]
-        }
-      },
-      "85mm": {
-        "add": {
-          "component_groups": [
-            "85mm"
-          ]
-        }
-      },
-      "100mm": {
-        "add": {
-          "component_groups": [
-            "100mm"
-          ]
-        }
-      },
-      "105mm": {
-        "add": {
-          "component_groups": [
-            "105mm"
-          ]
-        }
-      },
-      "120mm": {
-        "add": {
-          "component_groups": [
-            "120mm"
-          ]
-        }
-      },
-      "125mm": {
-        "add": {
-          "component_groups": [
-            "125mm"
-          ]
-        }
-      },
-      "152mm": {
-        "add": {
-          "component_groups": [
-            "152mm"
-          ]
-        }
-      },
-      "20mm": {
-        "add": {
-          "component_groups": [
-            "20mm"
-          ]
-        }
-      },
-      "23mm": {
-        "add": {
-          "component_groups": [
-            "23mm"
-          ]
-        }
-      },
-      "ads_dp28": {
-        "add": {
-          "component_groups": [
-            "ads_dp28"
-          ]
-        }
-      },
-      "ads_m60": {
-        "add": {
-          "component_groups": [
-            "ads_m60"
-          ]
-        }
-      },
-      "ads_pkm": {
-        "add": {
-          "component_groups": [
-            "ads_pkm"
-          ]
-        }
-      },
-      "76mmrocket": {
-        "add": {
-          "component_groups": [
-            "76mmrocket"
-          ]
-        }
-      },
-      "agmissile": {
-        "add": {
-          "component_groups": [
-            "agmissile"
-          ]
-        }
-      },
-      "vehicle:aifv": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:aifv no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:lav25": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:lav25 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m113": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m113 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m1126": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m1126 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m1128": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m1128 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:btr60": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:btr60 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:ah1s": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ah1sr"
-        }
-      },
-      "vehicle:ah6": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ah6r"
-        }
-      },
-      "vehicle:g_heri": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:g_herir"
-        }
-      },
-      "vehicle:ka50": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ka50r"
-        }
-      },
-      "vehicle:mi24d": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:mi24dr"
-        }
-      },
-      "vehicle:kv2": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:kv2 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m1a2": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m1a2 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m41": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m41 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:fv101": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:fv101 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m60a1": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m60a1 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:pt76": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:pt76 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:t34": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:t34 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:t55": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:t55 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:t72": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:t72 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:20mmaa": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:20mmaa no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:flak18": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:flak18 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:pak40": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:pak40 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:zu23": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:zu23 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:dp28set": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:dp28set no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m60set": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m60set no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:pkmset": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:pkmset no_ride_change summon_enemy"
         }
       }
     }

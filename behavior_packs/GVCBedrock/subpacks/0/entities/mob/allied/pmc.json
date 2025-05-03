@@ -2,9 +2,9 @@
   "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "gvcv5:pmc_green",
+      "identifier": "gvcv5:pmc",
       "spawn_category": "creature",
-      "is_spawnable": false,
+      "is_spawnable": true,
       "is_summonable": true,
       "scripts": {
         "animate": [
@@ -60,6 +60,26 @@
         },
         "minecraft:variant": {
           "value": 0
+        }
+      },
+      "redteam": {
+        "minecraft:transformation": {
+          "into": "gvcv5:pmc_red"
+        }
+      },
+      "blueteam": {
+        "minecraft:transformation": {
+          "into": "gvcv5:pmc_blue"
+        }
+      },
+      "greenteam": {
+        "minecraft:transformation": {
+          "into": "gvcv5:pmc_green"
+        }
+      },
+      "yellowteam": {
+        "minecraft:transformation": {
+          "into": "gvcv5:pmc_yellow"
         }
       },
       "aa12": {
@@ -1193,7 +1213,7 @@
         "family": [
           "pmc",
           "playerp",
-          "greenteam",
+          "noteam",
           "allied_soldier",
           "mob"
         ]
@@ -1234,11 +1254,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": false
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   }
                 ]
               },
@@ -1257,11 +1272,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1288,11 +1298,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1315,11 +1320,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1346,11 +1346,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1373,11 +1368,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1404,11 +1394,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1431,11 +1416,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1462,11 +1442,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1489,11 +1464,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1520,11 +1490,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1547,11 +1512,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1578,11 +1538,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1605,11 +1560,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1636,11 +1586,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1663,11 +1608,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1694,11 +1634,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1721,11 +1656,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1752,11 +1682,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1779,11 +1704,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1810,11 +1730,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1837,11 +1752,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1868,11 +1778,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1895,11 +1800,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1926,11 +1826,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -1953,11 +1848,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -1984,11 +1874,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2011,11 +1896,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2042,11 +1922,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2069,11 +1944,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2100,11 +1970,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2127,11 +1992,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2158,11 +2018,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2185,11 +2040,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2216,11 +2066,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2243,11 +2088,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2274,11 +2114,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2301,11 +2136,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2332,11 +2162,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2359,11 +2184,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2390,11 +2210,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2417,11 +2232,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2448,11 +2258,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2475,11 +2280,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2506,11 +2306,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2533,11 +2328,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2564,11 +2354,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2591,11 +2376,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2622,11 +2402,6 @@
                     "value": true
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  },
-                  {
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
@@ -2649,11 +2424,6 @@
                     "test": "is_sneaking",
                     "subject": "other",
                     "value": true
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   },
                   {
                     "test": "has_equipment",
@@ -2702,11 +2472,6 @@
                     "test": "is_family",
                     "subject": "other",
                     "value": "allied_soldier"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
                   }
                 ]
               }
@@ -2739,30 +2504,6 @@
               "value": "monster"
             },
             "max_dist": 42
-          },
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "redteam"
-            },
-            "max_dist": 42
-          },
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "blueteam"
-            },
-            "max_dist": 42
-          },
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "yellowteam"
-            },
-            "max_dist": 42
           }
         ]
       },
@@ -2790,6 +2531,22 @@
             "default"
           ]
         },
+        "queue_command": {
+          "command": [
+            "execute if entity @p[r=8,family=redteam] run event entity @s gvcv5:become_redteam",
+            "execute if entity @p[r=8,family=blueteam] run event entity @s gvcv5:become_blueteam",
+            "execute if entity @p[r=8,family=greenteam] run event entity @s gvcv5:become_greenteam",
+            "execute if entity @p[r=8,family=yellowteam] run event entity @s gvcv5:become_yellowteam"
+          ]
+        },
+        "trigger": "ak102"
+      },
+      "minecraft:spawned_from_block": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        },
         "trigger": "ak102"
       },
       "minecraft:entity_transformed": {
@@ -2799,6 +2556,34 @@
           ]
         },
         "trigger": "ak102"
+      },
+      "gvcv5:become_redteam": {
+        "add": {
+          "component_groups": [
+            "redteam"
+          ]
+        }
+      },
+      "gvcv5:become_blueteam": {
+        "add": {
+          "component_groups": [
+            "blueteam"
+          ]
+        }
+      },
+      "gvcv5:become_greenteam": {
+        "add": {
+          "component_groups": [
+            "greenteam"
+          ]
+        }
+      },
+      "gvcv5:become_yellowteam": {
+        "add": {
+          "component_groups": [
+            "yellowteam"
+          ]
+        }
       },
       "attack": {
         "remove": {
@@ -3370,6 +3155,141 @@
           "component_groups": [
             "agmissile"
           ]
+        }
+      },
+      "vehicle:aifv": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:aifv no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:lav25": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:lav25 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:m113": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m113 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:m1126": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m1126 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:m1128": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m1128 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:btr60": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:btr60 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:ah1s": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ah1sr"
+        }
+      },
+      "vehicle:ah6": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ah6r"
+        }
+      },
+      "vehicle:g_heri": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:g_herir"
+        }
+      },
+      "vehicle:ka50": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ka50r"
+        }
+      },
+      "vehicle:mi24d": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:mi24dr"
+        }
+      },
+      "vehicle:kv2": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:kv2 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:m1a2": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m1a2 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:m41": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m41 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:fv101": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:fv101 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:m60a1": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m60a1 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:pt76": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:pt76 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:t34": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t34 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:t55": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t55 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:t72": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t72 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:20mmaa": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:20mmaa no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:flak18": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:flak18 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:pak40": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:pak40 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:zu23": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:zu23 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:dp28set": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:dp28set no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:m60set": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m60set no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:pkmset": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:pkmset no_ride_change summon_enemy"
         }
       }
     }

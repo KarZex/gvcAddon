@@ -1,0 +1,1556 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gvcv5:ca",
+      "spawn_category": "creature",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "scripts": {
+        "animate": [
+          "walk",
+          "para"
+        ]
+      },
+      "animations": {
+        "walk": "controller.animation.riderb1",
+        "para": "controller.animation.para"
+      }
+    },
+    "component_groups": {
+      "can_despawn": {
+        "minecraft:despawn": {
+          "despawn_from_distance": {}
+        }
+      },
+      "army": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "navy": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "aa12": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:aa12"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/aa12.json"
+        }
+      },
+      "ak12": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ak12"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ak12.json"
+        }
+      },
+      "ak47": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ak47"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ak47.json"
+        }
+      },
+      "ak102": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ak102"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ak102.json"
+        }
+      },
+      "an94": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:an94"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/an94.json"
+        }
+      },
+      "awm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:awm"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/awm.json"
+        }
+      },
+      "dp28": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:dp28"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/dp28.json"
+        }
+      },
+      "famas": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:famas"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/famas.json"
+        }
+      },
+      "g36": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:g36"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/g36.json"
+        }
+      },
+      "g3a3": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.2,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:g3a3"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/g3a3.json"
+        }
+      },
+      "glock17": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:glock17"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/glock17.json"
+        }
+      },
+      "glock18": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:glock18"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/glock18.json"
+        }
+      },
+      "hk416": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:hk416"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/hk416.json"
+        }
+      },
+      "lazer": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:lazer"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/lazer.json"
+        }
+      },
+      "m4": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 3,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.55,
+          "attack_interval_max": 0.55,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m4"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m4.json"
+        }
+      },
+      "m4a1": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m4a1"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m4a1.json"
+        }
+      },
+      "m9": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m9"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m9.json"
+        }
+      },
+      "m10": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m10"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m10.json"
+        }
+      },
+      "m16a1": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m16a1"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m16a1.json"
+        }
+      },
+      "m16a4": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 3,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.55,
+          "attack_interval_max": 0.55,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m16a4"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m16a4.json"
+        }
+      },
+      "m60": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m60"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m60.json"
+        }
+      },
+      "m72": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m72"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m72.json"
+        }
+      },
+      "m79": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m79"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m79.json"
+        }
+      },
+      "m82": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 2.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m82"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m82.json"
+        }
+      },
+      "m110": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.4,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m110"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m110.json"
+        }
+      },
+      "m202": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.25,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m202"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m202.json"
+        }
+      },
+      "m249": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m249"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m249.json"
+        }
+      },
+      "m590": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m590"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m590.json"
+        }
+      },
+      "m870": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m870"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m870.json"
+        }
+      },
+      "m1014": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m1014"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m1014.json"
+        }
+      },
+      "m1911": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m1911"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m1911.json"
+        }
+      },
+      "mg36": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mg36"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mg36.json"
+        }
+      },
+      "mg42": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mg42"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mg42.json"
+        }
+      },
+      "mosin": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mosin"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mosin.json"
+        }
+      },
+      "mp5": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mp5"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mp5.json"
+        }
+      },
+      "mp7": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mp7"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mp7.json"
+        }
+      },
+      "mp40": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mp40"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mp40.json"
+        }
+      },
+      "p90": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 6.0,
+          "attack_interval_max": 6.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:p90"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/p90.json"
+        }
+      },
+      "pkm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:pkm"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/pkm.json"
+        }
+      },
+      "ppsh": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ppsh"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ppsh.json"
+        }
+      },
+      "rpg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:rpg"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/rpg.json"
+        }
+      },
+      "rpk": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:rpk"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/rpk.json"
+        }
+      },
+      "saiga12": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:saiga12"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/saiga12.json"
+        }
+      },
+      "scar": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.2,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:scar"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/scar.json"
+        }
+      },
+      "svd": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.4,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:svd"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/svd.json"
+        }
+      },
+      "tt33": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.25,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:tt33"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/tt33.json"
+        }
+      },
+      "uzi": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:uzi"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/uzi.json"
+        }
+      },
+      "vz61": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:vz61"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/vz61.json"
+        }
+      },
+      "xm8": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.5,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:xm8"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/xm8.json"
+        }
+      }
+    },
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:follow_range": {
+        "value": 48,
+        "max": 48
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1.8
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "allied_soldier",
+          "playerp",
+          "mob",
+          "noteam"
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "allied_soldier"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": false,
+        "avoid_sun": false,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
+      "minecraft:shooter": {
+        "def": "minecraft:arrow"
+      },
+      "minecraft:behavior.find_mount": {
+        "priority": 1,
+        "within_radius": 16,
+        "start_delay": 15,
+        "max_failed_attempts": 20
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 0,
+        "attack_interval_min": 1.0,
+        "attack_interval_max": 3.0,
+        "attack_radius": 15.0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "playerp"
+          }
+        }
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "monster"
+            },
+            "max_dist": 42
+          }
+        ]
+      },
+      "minecraft:behavior.equip_item": {
+        "priority": 3
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    "events": {
+      "gvcv5:set_have_gun": {
+        "randomize": [
+          {
+            "weight": 2,
+            "trigger": "m16a1"
+          },
+          {
+            "weight": 1,
+            "trigger": "m4"
+          },
+          {
+            "weight": 1,
+            "trigger": "m72"
+          },
+          {
+            "weight": 1,
+            "trigger": "m110"
+          },
+          {
+            "weight": 1,
+            "trigger": "mp5"
+          },
+          {
+            "weight": 1,
+            "trigger": "m60"
+          }
+        ]
+      },
+      "gvcv5:become_redteam": {
+        "add": {
+          "component_groups": [
+            "redteam"
+          ]
+        }
+      },
+      "gvcv5:become_blueteam": {
+        "add": {
+          "component_groups": [
+            "blueteam"
+          ]
+        }
+      },
+      "gvcv5:become_greenteam": {
+        "add": {
+          "component_groups": [
+            "greenteam"
+          ]
+        }
+      },
+      "gvcv5:become_yellowteam": {
+        "add": {
+          "component_groups": [
+            "yellowteam"
+          ]
+        }
+      },
+      "minecraft:entity_transformed": {
+        "sequence": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "trigger": "gvcv5:set_have_gun"
+          }
+        ]
+      },
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "trigger": "gvcv5:set_have_gun"
+          }
+        ]
+      },
+      "minecraft:spawned_from_block": {
+        "sequence": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
+          {
+            "trigger": "gvcv5:set_have_gun"
+          }
+        ]
+      },
+      "minecraft:spawned_from_air": {
+        "sequence": [
+          {
+            "queue_command": {
+              "command": [
+                "replaceitem entity @s slot.armor.chest 0 gvcv5:parachute"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "trigger": "gvcv5:set_have_gun"
+          }
+        ]
+      },
+      "aa12": {
+        "add": {
+          "component_groups": [
+            "aa12"
+          ]
+        }
+      },
+      "ak12": {
+        "add": {
+          "component_groups": [
+            "ak12"
+          ]
+        }
+      },
+      "ak47": {
+        "add": {
+          "component_groups": [
+            "ak47"
+          ]
+        }
+      },
+      "ak102": {
+        "add": {
+          "component_groups": [
+            "ak102"
+          ]
+        }
+      },
+      "an94": {
+        "add": {
+          "component_groups": [
+            "an94"
+          ]
+        }
+      },
+      "awm": {
+        "add": {
+          "component_groups": [
+            "awm"
+          ]
+        }
+      },
+      "dp28": {
+        "add": {
+          "component_groups": [
+            "dp28"
+          ]
+        }
+      },
+      "famas": {
+        "add": {
+          "component_groups": [
+            "famas"
+          ]
+        }
+      },
+      "g36": {
+        "add": {
+          "component_groups": [
+            "g36"
+          ]
+        }
+      },
+      "g3a3": {
+        "add": {
+          "component_groups": [
+            "g3a3"
+          ]
+        }
+      },
+      "glock17": {
+        "add": {
+          "component_groups": [
+            "glock17"
+          ]
+        }
+      },
+      "glock18": {
+        "add": {
+          "component_groups": [
+            "glock18"
+          ]
+        }
+      },
+      "hk416": {
+        "add": {
+          "component_groups": [
+            "hk416"
+          ]
+        }
+      },
+      "lazer": {
+        "add": {
+          "component_groups": [
+            "lazer"
+          ]
+        }
+      },
+      "m4": {
+        "add": {
+          "component_groups": [
+            "m4"
+          ]
+        }
+      },
+      "m4a1": {
+        "add": {
+          "component_groups": [
+            "m4a1"
+          ]
+        }
+      },
+      "m9": {
+        "add": {
+          "component_groups": [
+            "m9"
+          ]
+        }
+      },
+      "m10": {
+        "add": {
+          "component_groups": [
+            "m10"
+          ]
+        }
+      },
+      "m16a1": {
+        "add": {
+          "component_groups": [
+            "m16a1"
+          ]
+        }
+      },
+      "m16a4": {
+        "add": {
+          "component_groups": [
+            "m16a4"
+          ]
+        }
+      },
+      "m60": {
+        "add": {
+          "component_groups": [
+            "m60"
+          ]
+        }
+      },
+      "m72": {
+        "add": {
+          "component_groups": [
+            "m72"
+          ]
+        }
+      },
+      "m79": {
+        "add": {
+          "component_groups": [
+            "m79"
+          ]
+        }
+      },
+      "m82": {
+        "add": {
+          "component_groups": [
+            "m82"
+          ]
+        }
+      },
+      "m110": {
+        "add": {
+          "component_groups": [
+            "m110"
+          ]
+        }
+      },
+      "m202": {
+        "add": {
+          "component_groups": [
+            "m202"
+          ]
+        }
+      },
+      "m249": {
+        "add": {
+          "component_groups": [
+            "m249"
+          ]
+        }
+      },
+      "m590": {
+        "add": {
+          "component_groups": [
+            "m590"
+          ]
+        }
+      },
+      "m870": {
+        "add": {
+          "component_groups": [
+            "m870"
+          ]
+        }
+      },
+      "m1014": {
+        "add": {
+          "component_groups": [
+            "m1014"
+          ]
+        }
+      },
+      "m1911": {
+        "add": {
+          "component_groups": [
+            "m1911"
+          ]
+        }
+      },
+      "mg36": {
+        "add": {
+          "component_groups": [
+            "mg36"
+          ]
+        }
+      },
+      "mg42": {
+        "add": {
+          "component_groups": [
+            "mg42"
+          ]
+        }
+      },
+      "mosin": {
+        "add": {
+          "component_groups": [
+            "mosin"
+          ]
+        }
+      },
+      "mp5": {
+        "add": {
+          "component_groups": [
+            "mp5"
+          ]
+        }
+      },
+      "mp7": {
+        "add": {
+          "component_groups": [
+            "mp7"
+          ]
+        }
+      },
+      "mp40": {
+        "add": {
+          "component_groups": [
+            "mp40"
+          ]
+        }
+      },
+      "p90": {
+        "add": {
+          "component_groups": [
+            "p90"
+          ]
+        }
+      },
+      "pkm": {
+        "add": {
+          "component_groups": [
+            "pkm"
+          ]
+        }
+      },
+      "ppsh": {
+        "add": {
+          "component_groups": [
+            "ppsh"
+          ]
+        }
+      },
+      "rpg": {
+        "add": {
+          "component_groups": [
+            "rpg"
+          ]
+        }
+      },
+      "rpk": {
+        "add": {
+          "component_groups": [
+            "rpk"
+          ]
+        }
+      },
+      "saiga12": {
+        "add": {
+          "component_groups": [
+            "saiga12"
+          ]
+        }
+      },
+      "scar": {
+        "add": {
+          "component_groups": [
+            "scar"
+          ]
+        }
+      },
+      "svd": {
+        "add": {
+          "component_groups": [
+            "svd"
+          ]
+        }
+      },
+      "tt33": {
+        "add": {
+          "component_groups": [
+            "tt33"
+          ]
+        }
+      },
+      "uzi": {
+        "add": {
+          "component_groups": [
+            "uzi"
+          ]
+        }
+      },
+      "vz61": {
+        "add": {
+          "component_groups": [
+            "vz61"
+          ]
+        }
+      },
+      "xm8": {
+        "add": {
+          "component_groups": [
+            "xm8"
+          ]
+        }
+      }
+    }
+  }
+}
