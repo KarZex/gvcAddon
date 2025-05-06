@@ -1,0 +1,37 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "このパックを使用するには、GVCBedrockの上にこのパックを適用してください。",
+    "name": "§l§gGVCBedrock Addon Team Mode V2.0",
+    "min_engine_version": [1, 21, 50 ],
+    "uuid": "159bcb0a-c204-4cba-bab0-b50400a96c75",
+    "version": [1, 21, 50]
+  },
+  "modules": [
+    {
+      "description": "Data Module",
+      "type": "data",
+      "uuid": "4a3340ad-26b9-4df9-8b0d-dd037752f7b7",
+      "version": [1, 0, 0]
+    },
+    {
+      "description": "Script API Module",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "bb0f4a7b-4281-4ae5-a181-0e626c37429f",
+      "version": [1, 0, 0],
+      "entry": "scripts/team.js"
+    }
+  ],
+  "capabilities": ["script_eval"],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.13.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.2.0"
+    }
+  ]
+}

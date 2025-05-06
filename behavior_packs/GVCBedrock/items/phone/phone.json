@@ -12,7 +12,7 @@
       "minecraft:max_stack_size": 1,
       "minecraft:hand_equipped": false,
       "minecraft:icon": "phone",
-      "minecraft:custom_components": [ "gvcv5:usephone" ],
+      "minecraft:custom_components": [ "gvcv5:phone" ],
       "minecraft:creative_category": {
         "parent": "itemGroup.name.guns"
       }

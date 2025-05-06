@@ -5,8 +5,7 @@
       "identifier": "gvcv5:flag_abandoned_factory_ga",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier": "minecraft:bat"
+      "is_experimental": false
     },
     "component_groups": {
       "despawning": {
@@ -42,6 +41,86 @@
                 ]
               },
               "event": "become_GA"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "redteam"
+                  }
+                ],
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "become_R"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  }
+                ],
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "become_B"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  }
+                ],
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "become_G"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "yellowteam"
+                  }
+                ],
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "become_Y"
             }
           },
           {
@@ -170,6 +249,13 @@
         "priority": 8,
         "speed_multiplier": 0.6
       },
+      "minecraft:timer": {
+        "time": 30,
+        "time_down_event": {
+          "event": "tpevent"
+        },
+        "looping": true
+      },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
         "entity_types": [
@@ -217,16 +303,62 @@
         "must_see": true
       },
       "minecraft:persistent": {},
-      "minecraft:physics": {},
+      "minecraft:physics": {
+        "has_collision": true,
+        "has_gravity": true
+      },
       "minecraft:pushable": {
         "is_pushable": false,
-        "is_pushable_by_piston": true
+        "is_pushable_by_piston": false
       },
       "minecraft:follow_range": {
         "value": 64
       }
     },
     "events": {
+      "tpevent": {
+        "queue_command": {
+          "command": [
+            "scriptevent zex:flagTelepo"
+          ]
+        }
+      },
+      "become_R": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_red ~~5~",
+            "kill @s",
+            "scoreboard players add \u00a7c\u8d64\u30c1\u30fc\u30e0 \"\u52e2\u529b\u30dd\u30a4\u30f3\u30c8\" 10"
+          ]
+        }
+      },
+      "become_B": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_blue ~~5~",
+            "kill @s",
+            "scoreboard players add \u00a79\u9752\u30c1\u30fc\u30e0 \"\u52e2\u529b\u30dd\u30a4\u30f3\u30c8\" 10"
+          ]
+        }
+      },
+      "become_G": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_green ~~5~",
+            "kill @s",
+            "scoreboard players add \u00a7a\u7dd1\u30c1\u30fc\u30e0 \"\u52e2\u529b\u30dd\u30a4\u30f3\u30c8\" 10"
+          ]
+        }
+      },
+      "become_Y": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_yellow ~~5~",
+            "kill @s",
+            "scoreboard players add \u00a7e\u9ec4\u30c1\u30fc\u30e0 \"\u52e2\u529b\u30dd\u30a4\u30f3\u30c8\" 10"
+          ]
+        }
+      },
       "become_CA": {
         "queue_command": {
           "command": [
@@ -238,7 +370,8 @@
       "become_GA": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_abandoned_factory_ga ~~1~"
+            "summon gvcv5:flag_abandoned_factory_ga ~~1~",
+            "scriptevent zex:flagChange CA a"
           ]
         }
       }

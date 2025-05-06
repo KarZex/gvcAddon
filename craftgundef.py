@@ -596,7 +596,7 @@ for row in csv_reader3:
 with open("behavior_packs/GVCBedrock/scripts/gun.json","w") as f:
     json.dump(gundata_json,f,indent=2)
 
-with open("behavior_packs/GVCBedrock/subpacks/0/entities/player.json","w") as f:
+with open("behavior_packs/GVCBedrock/entities/player.json","w") as f:
     json.dump(player_json,f,indent=2)
 
 with open("behavior_packs/GVCBedrock/animation_controllers/guns.json","w") as f:
@@ -605,13 +605,13 @@ with open("behavior_packs/GVCBedrock/animation_controllers/guns.json","w") as f:
 with open("behavior_packs/GVCBedrock/animation_controllers/hold.json","w") as f:
     json.dump(BP_animation_hold,f,indent=2)
 
-with open("behavior_packs/GVCBedrock/subpacks/0/entities/mob/allied/ca.json","w") as f:
+with open("behavior_packs/GVCBedrock/entities/mob/allied/ca.json","w") as f:
     json.dump(ca_json,f,indent=2)
 
 with open("behavior_packs/GVCBedrock/entities/mob/enemy/ga.json","w") as f:
     json.dump(ga_json,f,indent=2)
 
-with open("behavior_packs/GVCBedrock/subpacks/0/entities/mob/allied/pmc.json","w") as f:
+with open("behavior_packs/GVCBedrock/entities/mob/allied/pmc.json","w") as f:
     json.dump(pmc_json,f,indent=2)
 
 

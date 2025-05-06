@@ -5,8 +5,7 @@
       "identifier": "gvcv5:flag_garrison_ice_ca",
       "spawn_category": "creature",
       "is_spawnable": true,
-      "is_summonable": true,
-      "runtime_identifier": "minecraft:bat"
+      "is_summonable": true
     },
     "component_groups": {
       "despawning": {
@@ -343,13 +342,20 @@
       "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": false,
-        "is_pushable_by_piston": true
+        "is_pushable_by_piston": false
       },
       "minecraft:follow_range": {
         "value": 64
       }
     },
     "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+            "scriptevent zex:flagstart CA a"
+          ]
+        }
+      },
       "despawning": {
         "add": {
           "component_groups": [
@@ -357,35 +363,38 @@
           ]
         }
       },
+      "tpevent": {
+        "queue_command": {
+          "command": [
+            "scriptevent zex:flagTelepo"
+          ]
+        }
+      },
       "gvcv5:become_redteam": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_red ~~5~",
-            "kill @s"
+            "summon gvcv5:flag_red ~~~"
           ]
         }
       },
       "gvcv5:become_blueteam": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_blue ~~5~",
-            "kill @s"
+            "summon gvcv5:flag_blue ~~~"
           ]
         }
       },
       "gvcv5:become_greenteam": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_green ~~5~",
-            "kill @s"
+            "summon gvcv5:flag_green ~~~"
           ]
         }
       },
       "gvcv5:become_yellowteam": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_yellow ~~5~",
-            "kill @s"
+            "summon gvcv5:flag_yellow ~~~"
           ]
         }
       },

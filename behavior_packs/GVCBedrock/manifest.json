@@ -24,21 +24,46 @@
     }
   ],
   "subpacks": [
-      {
-          "folder_name": "0",
-          "name": "PVP MODE",
-          "memory_tier": 0
-      },
-      {
-          "folder_name": "1",
-          "name": "§bPVE MODE",
-          "memory_tier": 1
-      },
-      {
-          "folder_name": "2",
-          "name": "§cT§9E§aA§eM§r MODE",
-          "memory_tier": 2
-      }
+    {
+      "folder_name": "0",
+      "memory_tier": 0,
+      "name": "X1"
+    },
+    {
+      "folder_name": "1",
+      "memory_tier": 1,
+      "name": "X0"
+    },
+    {
+      "folder_name": "2",
+      "memory_tier": 2,
+      "name": "X0.25"
+    },
+    {
+      "folder_name": "3",
+      "memory_tier": 3,
+      "name": "X0.5"
+    },
+    {
+      "folder_name": "4",
+      "memory_tier": 4,
+      "name": "X2"
+    },
+    {
+      "folder_name": "5",
+      "memory_tier": 5,
+      "name": "X4"
+    },
+    {
+      "folder_name": "6",
+      "memory_tier": 6,
+      "name": "X8"
+    },
+    {
+      "folder_name": "0",
+      "memory_tier": 7,
+      "name": "X1"
+    }
   ],
   "capabilities": ["script_eval"],
   "dependencies": [

@@ -8,6 +8,7 @@
             { "tank": "query.is_riding && (variable.attack_time > 0.0)" },
             { "tank": "query.is_riding && query.get_equipped_item_name == 'tank' && query.is_using_item" },
             { "mgg_1": "query.is_riding && query.get_equipped_item_name == 'mgg' && query.is_using_item" },
+            { "mgj_1": "query.is_riding && query.is_jumping && query.get_equipped_item_name != 'mgg'" },
             {
               "fire": "query.get_equipped_item_name == 'fire' && query.is_using_item"
             },
@@ -29,8 +30,8 @@
 
           ],
           "transitions": [ 
-            {"default":"!query.is_using_item"},
-            {"mgg_2":"query.is_using_item && query.get_equipped_item_name == 'mgg'"}
+            {"default":"!query.is_using_item || !query.is_riding"},
+            {"mgg_2": "query.is_riding && (query.is_using_item && query.get_equipped_item_name == 'mgg')"}
           ]
         },
         "mgg_2": {
@@ -39,8 +40,28 @@
 
           ],
           "transitions": [ 
-            {"default":"!query.is_using_item"},
-            {"mgg_1":"query.is_using_item && query.get_equipped_item_name == 'mgg'"}
+            {"default":"!query.is_using_item || !query.is_riding"},
+            {"mgg_1":"query.is_riding && (query.is_using_item && query.get_equipped_item_name == 'mgg')"}
+          ]
+        },
+        "mgj_1": {
+          "on_entry": [
+            "/execute unless entity @e[r=2,family=heri] as @s[tag=!reload,scores={scool=0}] run function vsub"
+
+          ],
+          "transitions": [ 
+            {"default":"!query.is_jumping || !query.is_riding"},
+            {"mgj_2":"query.is_jumping && query.is_riding"}
+          ]
+        },
+        "mgj_2": {
+          "on_entry": [
+            "/execute unless entity @e[r=2,family=heri] as @s[tag=!reload,scores={scool=0}] run function vsub"
+
+          ],
+          "transitions": [ 
+            {"default":"!query.is_jumping || !query.is_riding"},
+            {"mgj_1":"query.is_jumping && query.is_riding"}
           ]
         },
         "fire_reload": {
