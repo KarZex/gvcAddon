@@ -7,7 +7,7 @@
 				"default": "iron_golem"
 			},
 			"textures": {
-        "default": "textures/entity/mi24d"
+        "default": "textures/entity/mi_24d"
 			},
 			"geometry": {
         "default": "geometry.mi24d"
@@ -23,8 +23,8 @@
 				]
 			},
 			"animations": {
-        		"look_at_target": "animation.herii",
-				"fly": "animation.ah1s.main"
+        		"look_at_target": "animation.herix",
+				"fly": "animation.heri.fly"
 			},
       "render_controllers": [ "controller.render.iron_golem" ]
 		}

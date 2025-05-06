@@ -26,10 +26,10 @@
         },
         "mgg": {
           "on_entry": [
-            "/effect @e[r=2,family=heri] levitation 9999 2 true"
+            "/effect @e[r=4,family=heri] levitation 9999 2 true"
           ],
           "on_exit": [
-            "/effect @e[r=2,family=heri] levitation 0 0 true"
+            "/effect @e[r=4,family=heri] levitation 0 0 true"
           ],
           "transitions": [
               {

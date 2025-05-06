@@ -1,6 +1,16 @@
 import { world, system, EquipmentSlot, EntityComponentTypes  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import "./teamCompornents";
+function gvcv5GetTime(){
+	const time = world.getAbsoluteTime();
+	let day = Math.floor(time / 24000);
+	if( day < 10 ){ day = `0${day}`;}
+	let hour = Math.floor((time % 24000) / 1000);
+	if( hour < 10 ){ hour = `0${hour}`;}
+	let minute = Math.floor((time % 1000) / 1000 * 60);
+	if( minute < 10 ){ minute = `0${minute}`;}
+	return `${day}:${hour}:${minute}`;
+}
 
 function gvcv5becomeTeam( user,team ){
 	if( world.getDynamicProperty(`${team}Leader`) == undefined ){
@@ -24,8 +34,13 @@ function gvcv5becomeTeam( user,team ){
 		}
 	}
 	else{
-		user.addTag(`wantToBe${team}`);
-		user.runCommand(`tellraw @a[tag=${team}Leader] {\"rawtext\":[{\"text\":\"${user.nameTag}\"},{\"translate\":\"script.gvcv5.wantToBe.name\"}]}`)
+		if( user.hasTag(`bannedFrom${team}`) ){
+			user.sendMessage({ translate: `script.gvcv5.bannedFrom${team}.name`});
+		}
+		else {
+			user.addTag(`wantToBe${team}`);
+			user.runCommand(`tellraw @a[tag=${team}Leader] {\"rawtext\":[{\"text\":\"${user.nameTag}\"},{\"translate\":\"script.gvcv5.wantToBe.name\"}]}`)
+		}
 	}
 }
 
@@ -33,9 +48,34 @@ function gvcv5CreateTeam( user,team ){
 	user.triggerEvent(`gvcv5:become_${team}team`);
 	world.sendMessage([{text: `${user.nameTag}`},{ translate: `script.gvcv5.youAreIn${team}team.name`}]);
 	world.setDynamicProperty(`${team}chat`,``);
+	world.setDynamicProperty(`${team}list`,`${user.nameTag}`);
 	world.setDynamicProperty(`${team}Leader`,`${user.nameTag}`);
 	user.addTag(`${team}Leader`);
 }
+function gvcv5RemoveTeam( team ){
+	world.setDynamicProperty(`${team}Leader`,undefined);
+	world.setDynamicProperty(`${team}list`,``);
+	for( const myAlly of world.getPlayers({ families: [ team ] }) ){
+		myAlly.triggerEvent(`gvcv5:become_noteam`);
+		myAlly.removeTag(`${team}Leader`);
+		myAlly.runCommand(`clear @s zex:phone_${team}`);
+	}
+	world.sendMessage([{ translate: `script.gvcv5.phone_dismantle_${team}.name`}]);
+}
+function gvcv5AddTeamList( user,team ){
+	if( world.getDynamicProperty(`${team}list`) == undefined ){
+		world.setDynamicProperty(`${team}list`,`${user.nameTag}`);
+	}
+	else{
+		world.setDynamicProperty(`${team}list`,`${world.getDynamicProperty(`${team}list`)}\n${user.nameTag}`);
+	}
+}
+function gvcv5RemoveTeamList( user,team ){
+	if( world.getDynamicProperty(`${team}list`) != undefined ){
+		world.setDynamicProperty(`${team}list`,`${world.getDynamicProperty(`${team}list`).replace(`\n${user.nameTag}`,"")}`);
+	}
+}
+
 
 system.afterEvents.scriptEventReceive.subscribe( e => {
 	if( e.id === "gvcv5:TeamList" ){
@@ -283,13 +323,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const userFamily = e.message;
 		const form = new ActionFormData();
 		form.title(`script.gvcv5.phone_tp_block.name`);
-		for( let i = 0; i < 10; i++ ){
+		for( let i = 0; i < 5; i++ ){
 			form.button(`${phone.getDynamicProperty(`slot${i}_name`)}`);
 		}
 		form.button(`script.gvcv5.phone_back.name`);
 		form.show(user).then( result => {
 			if ( !result.canceled ){
-				if( result.selection == 10 ){
+				if( result.selection == 5 ){
 					user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
 				}
 				else if( phone.getDynamicProperty(`slot${result.selection}`) != undefined ){
@@ -305,7 +345,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const form = new ActionFormData();
 		let locateName = `unnamed`
 		form.title(`script.gvcv5.phone_set_tp_block.name`);
-		for( let i = 0; i < 10; i++ ){
+		for( let i = 0; i < 5; i++ ){
 			form.button(`${phone.getDynamicProperty(`slot${i}_name`)}`);
 		}
 		form.show(user).then( result => {
@@ -345,9 +385,19 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					form.textField(`script.gvcv5.input_message.name`,``);
 					form.show(user).then( r => {
 						if (!r.canceled) {
-							text += `[${user.nameTag}]:${r.formValues[0]}\n`;
+							text += `[${user.nameTag}]:${r.formValues[0]} ${gvcv5GetTime()}\n`;
+							const newText = `[${user.nameTag}]:${r.formValues[0]} ${gvcv5GetTime()}\n`;
 							world.setDynamicProperty(`${userFamily}chat`,text);
-							user.runCommand(`tellraw @a[hasitem={item=zex:phone_${userFamily}},rm=1] {\"rawtext\":[{\"translate\":\"script.gvcv5.newMessage_${userFamily}.name\"}]}`);
+							for( const myAlly of world.getAllPlayers() ){
+								for(let i = 0; i < 36; i++){
+									let Haditem = myAlly.getComponent("inventory").container.getItem(i);
+									if( Haditem != undefined && Haditem.typeId === `zex:phone_${userFamily}` ){
+										myAlly.sendMessage({ rawtext: [{ translate: `script.gvcv5.newMessage_${userFamily}.name` },{ text: `${newText}` }] });
+										break;
+									}
+								}
+							}
+							
 							user.runCommand(`scriptevent gvcv5:phone_teamChat ${userFamily}`);
 						}
 					},)
@@ -364,10 +414,25 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 	else if( e.id == "gvcv5:phone_unlocked" ){
 		const userFamily = e.message;
 		const user = e.sourceEntity;
+		if( !user.hasTag(`${userFamily}`) ){
+			let itemRawText = []
+			const userLocationStr = `X:${Math.floor(user.location.x)} Y:${Math.floor(user.location.y)} Z:${Math.floor(user.location.z)}`
+			itemRawText.push({ translate: `script.gvcv5.newMessage_${userFamily}.name` });
+			itemRawText.push({ translate: `script.gvcv5.phoneAbuse0.name` }); //warning
+			itemRawText.push({ text: `${userLocationStr}` });
+			itemRawText.push({ translate: `script.gvcv5.phoneAbuse1.name` }); //at
+			itemRawText.push({ text: `${user.nameTag}` });
+			itemRawText.push({ translate: `script.gvcv5.phoneAbuse2.name` }); //enemy using phone by
+			for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){
+				myAlly.sendMessage({ rawtext: itemRawText });
+				world.setDynamicProperty(`${userFamily}chat`,`${world.getDynamicProperty(`${userFamily}chat`)}\n[System]:${user.nameTag} using phone at ${userLocationStr} in ${gvcv5GetTime()}`);
+			}
+		}
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
 		let phoneArray = [];
 		const form = new ActionFormData();
 		form.title(`script.gvcv5.phone.name`);
+		form.button(`script.gvcv5.phone_menber_list.name`);
 		form.button(`script.gvcv5.phone_tp.name`);
 		form.button(`script.gvcv5.phone_tp_block.name`);
 		form.button(`script.gvcv5.phone_teamChat.name`);
@@ -385,6 +450,15 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			if ( !result.canceled ){
 				if( result.selection == 0 ){
 					const form_tp = new ActionFormData();
+					form_tp.title(`script.gvcv5.phone_menber_list.name`);
+					form_tp.body(`${world.getDynamicProperty(`${userFamily}list`)}`);
+					form_tp.button(`script.gvcv5.phone_back.name`);
+					form_tp.show(user).then( r => {
+						user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
+					} )
+				}
+				if( result.selection == 1 ){ // teleport to player
+					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_tp.name`);
 					for( const myAlly of world.getAllPlayers() ){
 						if( myAlly.hasTag(`${userFamily}`) ){
@@ -395,7 +469,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						for(let i = 0; i < 36; i++){
 							let Haditem = myAlly.getComponent("inventory").container.getItem(i);
 							if( Haditem != undefined && Haditem.typeId === `zex:phone_${userFamily}` ){
-								world.sendMessage(`detected`);
 								phoneArray.push( myAlly );
 								form_tp.button(`§4${myAlly.nameTag}\nX:${Math.floor(myAlly.location.x)} Y:${Math.floor(myAlly.location.y)} Z:${Math.floor(myAlly.location.z)}§r`);
 								break;
@@ -405,8 +478,12 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					form_tp.button(`script.gvcv5.phone_back.name`);
 					form_tp.show(user).then( result => {
 						if ( !result.canceled ){
-							if( result.selection < phoneArray.length && user.hasTag(`${userFamily}`) ){
+							if( result.selection < phoneArray.length ){
 								user.teleport(phoneArray[result.selection].location,{ dimension : phoneArray[result.selection].dimension });
+								if( !user.hasTag(`${userFamily}`) ){
+									user.sendMessage({ translate: `script.gvcv5.phoneAbuse0.name` }); //warning
+									user.runCommand(`clear @s zex:phone_${userFamily} 0 1`);
+								}
 							}
 							else{
 								user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
@@ -414,13 +491,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				if( result.selection == 1 ){
+				if( result.selection == 2 ){ // teleport to block
 					user.runCommand(`scriptevent gvcv5:phone_tp_block ${userFamily}`);
 				}
-				else if( result.selection == 2 ){
+				else if( result.selection == 3 ){ // team chat
 					user.runCommand(`scriptevent gvcv5:phone_teamChat ${userFamily}`);
 				}
-				else if( result.selection == 3 ){
+				else if( result.selection == 4 ){ //change password
 					const form = new ModalFormData()
 					form.title(`script.gvcv5.phone_password.name`)
 					form.textField(`script.gvcv5.input_password.name`,`${phone.getDynamicProperty("password")}`);
@@ -431,7 +508,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					},)
 				}
-				if( result.selection == 4 ){
+				if( result.selection == 5 ){ //leave team
 					const form = new ActionFormData();
 					form.title(`script.gvcv5.phone_leave.name`);
 					form.body(`script.gvcv5.leave_team_body.name`);
@@ -442,18 +519,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 							if( result.selection == 0 ){
 								user.triggerEvent(`gvcv5:become_noteam`);
 								user.runCommand(`clear @s zex:phone_${userFamily}`);
+								gvcv5RemoveTeamList(user,userFamily);
 								user.kill();
 								user.removeTag(`${userFamily}Leader`);
 								world.sendMessage([{text: `${user.nameTag}`},{ translate: `script.gvcv5.phone_left_${userFamily}.name`}]);
 
 								if( user.nameTag == world.getDynamicProperty(`${userFamily}Leader`) ){
-									world.sendMessage([{ translate: `script.gvcv5.phone_dismantle_${userFamily}.name`}]);
-									world.setDynamicProperty(`${userFamily}Leader`,undefined);
-									world.setDynamicProperty(`${userFamily}Member`,``);
-									for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){
-										myAlly.triggerEvent(`gvcv5:become_noteam`);
-										myAlly.runCommand(`clear @s zex:phone_${userFamily}`);
-									}
+									gvcv5RemoveTeam(userFamily);
 								}
 							}
 							else{
@@ -462,10 +534,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				else if( result.selection == 5 ){
+				else if( result.selection == 6 ){ //how to use phone
 					user.runCommand(`scriptevent gvcv5:phone_noteam ${userFamily}`);
 				}
-				else if( result.selection == 6 ){
+				else if( result.selection == 7 ){ //accept to join team
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_accept_to_join.name`);
 					for( const myAlly of world.getPlayers({ tags: [ `wantToBe${userFamily}` ],families: [ `noteam` ] }) ){
@@ -485,6 +557,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 									if ( !result.canceled ){
 										if(result.selection == 0){
 											target.triggerEvent(`gvcv5:become_${userFamily}team`);
+											gvcv5AddTeamList(target,userFamily);
 											target.removeTag(`wantToBe${userFamily}`);
 											world.sendMessage([{text: `${target.nameTag}`},{ translate: `script.gvcv5.youAreIn${userFamily}team.name`}]);
 										}
@@ -502,7 +575,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				if( result.selection == 7 ){ 
+				if( result.selection == 8 ){ //kick member
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_kick_member.name`);
 					for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){
@@ -517,7 +590,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 							if( result.selection < phoneArray.length ){
 								phoneArray[result.selection].triggerEvent(`gvcv5:become_noteam`);
 								phoneArray[result.selection].runCommand(`clear @s zex:phone_${userFamily}`);
+								gvcv5RemoveTeamList(phoneArray[result.selection],userFamily);
 								phoneArray[result.selection].kill();
+								phoneArray[result.selection].addTag(`bannedFrom${userFamily}`);
 								phoneArray[result.selection].removeTag(`${userFamily}Leader`);
 								world.sendMessage([{text: `${phoneArray[result.selection].nameTag}`},{ translate: `script.gvcv5.phone_left_${userFamily}.name`}]);
 							}
@@ -527,7 +602,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				if( result.selection == 8 ){
+				if( result.selection == 9 ){ //transfer leader
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_transfer_leader.name`);
 					for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){
@@ -617,40 +692,16 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						e.sourceEntity.sendMessage(`Yellow team Password is now ${result.formValues[3]}`);
 					}
 					if( result.formValues[4] ){
-						world.setDynamicProperty(`redLeader`,undefined);
-						world.setDynamicProperty(`redMember`,``);
-						for( const myAlly of world.getPlayers({ families: [ `red` ] }) ){
-							myAlly.triggerEvent(`gvcv5:become_noteam`);
-							myAlly.runCommand(`clear @s zex:phone_red`);
-						}
-						world.sendMessage([{ translate: `script.gvcv5.phone_dismantle_red.name`}]);
+						gvcv5RemoveTeam("red")
 					}
 					if( result.formValues[5] ){
-						world.setDynamicProperty(`blueLeader`,undefined);
-						world.setDynamicProperty(`blueMember`,``);
-						for( const myAlly of world.getPlayers({ families: [ `blue` ] }) ){
-							myAlly.triggerEvent(`gvcv5:become_noteam`);
-							myAlly.runCommand(`clear @s zex:phone_blue`);
-						}
-						world.sendMessage([{ translate: `script.gvcv5.phone_dismantle_blue.name`}]);
+						gvcv5RemoveTeam("blue")
 					}
 					if( result.formValues[6] ){
-						world.setDynamicProperty(`greenLeader`,undefined);
-						world.setDynamicProperty(`greenMember`,``);
-						for( const myAlly of world.getPlayers({ families: [ `green` ] }) ){
-							myAlly.triggerEvent(`gvcv5:become_noteam`);
-							myAlly.runCommand(`clear @s zex:phone_green`);
-						}
-						world.sendMessage([{ translate: `script.gvcv5.phone_dismantle_green.name`}]);
+						gvcv5RemoveTeam("green")
 					}
 					if( result.formValues[7] ){
-						world.setDynamicProperty(`yellowLeader`,undefined);
-						world.setDynamicProperty(`yellowMember`,``);
-						for( const myAlly of world.getPlayers({ families: [ `yellow` ] }) ){
-							myAlly.triggerEvent(`gvcv5:become_noteam`);
-							myAlly.runCommand(`clear @s zex:phone_yellow`);
-						}
-						world.sendMessage([{ translate: `script.gvcv5.phone_dismantle_yellow.name`}]);
+						gvcv5RemoveTeam("yellow")
 					}
 				}
 			} )

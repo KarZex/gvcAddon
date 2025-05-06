@@ -584,10 +584,10 @@ script.gvcv5.phone_dismantle_blue.name=§9青チームは解散しました§r
 script.gvcv5.phone_dismantle_green.name=§a緑チームは解散しました§r
 script.gvcv5.phone_dismantle_yellow.name=§e黄チームは解散しました§r
 script.gvcv5.wantToBe.name=がチームに加盟要請を送りました
-script.gvcv5.newMessage_red.name=§c赤チーム内チャットに新しいメッセージがあります
-script.gvcv5.newMessage_blue.name=§9青チーム内チャットに新しいメッセージがあります
-script.gvcv5.newMessage_green.name=§a緑チーム内チャットに新しいメッセージがあります
-script.gvcv5.newMessage_yellow.name=§e黄チーム内チャットに新しいメッセージがあります
+script.gvcv5.newMessage_red.name=§c
+script.gvcv5.newMessage_blue.name=§9
+script.gvcv5.newMessage_green.name=§a
+script.gvcv5.newMessage_yellow.name=§e
 script.gvcv5.phone_new_leader.name=あなたは新しいリーダーになりました!
 script.gvcv5.wantToBe_deny.name=あなたの加盟要請は拒否されました
 script.gvcv5.howToGun.name=銃の使い方	#
@@ -717,3 +717,12 @@ item.spawn_egg.entity.gvcv5:flag_red.name=赤チーム拠点
 item.spawn_egg.entity.gvcv5:flag_blue.name=青チーム拠点
 item.spawn_egg.entity.gvcv5:flag_green.name=緑チーム拠点
 item.spawn_egg.entity.gvcv5:flag_yellow.name=黄チーム拠点
+
+script.gvcv5.bannedFromred.name=§cあなたは赤チームから追放されています§r
+script.gvcv5.bannedFromblue.name=§9あなたは青チームから追放されています§r
+script.gvcv5.bannedFromgreen.name=§aあなたは緑チームから追放されています§r
+script.gvcv5.bannedFromyellow.name=§eあなたは黄チームから追放されています§r
+
+script.gvcv5.phoneAbuse0.name=警告::
+script.gvcv5.phoneAbuse1.name=にて
+script.gvcv5.phoneAbuse2.name=による端末の使用を確認しました。
