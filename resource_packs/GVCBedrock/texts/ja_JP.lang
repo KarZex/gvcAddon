@@ -615,7 +615,7 @@ script.gvcv5.phone_howToTeam4Desc.name=同盟軍や同盟軍の旗に染料を�
 script.gvcv5.select_team.name=チームに加入
 script.gvcv5.phone_noteam.name=情報端末
 script.gvcv5.phone_howTo.name=ガイドを見る
-script.gvcv5.phone_teamList.name=チームのメンバー一覧
+script.gvcv5.phone_teamList.name=サーバーにいるプレイヤーのチーム情報
 script.gvcv5.phone_set_leader.name=リーダーに設定
 script.gvcv5.phone_set_subleader.name=サブリーダーに設定
 script.gvcv5.phone_remove_subleader.name=サブリーダーを削除
@@ -726,3 +726,7 @@ script.gvcv5.bannedFromyellow.name=§eあなたは黄チームから追放され
 script.gvcv5.phoneAbuse0.name=警告::
 script.gvcv5.phoneAbuse1.name=にて
 script.gvcv5.phoneAbuse2.name=による端末の使用を確認しました。
+
+script.gvcv5.phone_menber_list.name=チームメンバー一覧
+
+script.gvcv5.phoneAbuse.name=§c敵の端末でテレポートすると、端末は破壊されます。§r
