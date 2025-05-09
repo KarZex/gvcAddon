@@ -204,9 +204,6 @@
           "component_groups": [
             "flying"
           ]
-        },
-        "queue_command": {
-          "command":"ride @s summon_rider gvcv5:ca"
         }
       },
       "gvcv5:on_landing": {

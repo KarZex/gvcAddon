@@ -985,6 +985,15 @@
     },
     "m202": {
       "textures": "textures/items/gun/m202"
+    },
+    "missile1": {
+      "textures": "textures/items/missile1"
+    },
+    "missile2": {
+      "textures": "textures/items/missile2"
+    },
+    "missile3": {
+      "textures": "textures/items/missile3"
     }
   }
 }

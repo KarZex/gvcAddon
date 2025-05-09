@@ -19,6 +19,90 @@ function setArmorValue( itemName ){
 	else if( itemName.includes("netherite") ){ return 0.25 }
 	else { return 0 }
 }
+function summonAirbone(projectile,location,Radius,Height,Sigma,team ){
+	const rad = Sigma * Math.PI / 180;
+	const spawnPoint = { 
+		x: location.x + Radius * -Math.sin(rad),
+		y: location.y + Height,
+		z: location.z + Radius * Math.cos(rad) 
+	};
+	const airbone = projectile.dimension.spawnEntity(`gvcv5:ca`,spawnPoint);
+	airbone.triggerEvent(`minecraft:spawned_from_air`);
+	airbone.teleport( airbone.location, {rotation: projectile.getRotation() } )
+	if( team != `noteam` ){
+		airbone.triggerEvent(`gvcv5:become_${team}team`);
+	}
+	return airbone
+}
+function airbone1( projectile,team ){
+	const owner = projectile.getComponent(`projectile`).owner;
+	const location = projectile.location;
+	const S = owner.getRotation().y;
+	projectile.teleport( projectile.location, {rotation: owner.getRotation() } )
+	for( let i = -3; i < 4; i++ ){
+		summonAirbone( projectile,location,i*5,10*i+60,S,team);
+	}
+}
+function airbone2( projectile,team ){
+	const owner = projectile.getComponent(`projectile`).owner;
+	const S = owner.getRotation().y;
+	const rad = S * Math.PI / 180;
+	const location = projectile.location;
+	const location1 = { 
+		x: projectile.location.x + 5 * -Math.sin(rad+Math.PI/2),
+		y: projectile.location.y,
+		z: projectile.location.z + 5 * Math.cos(rad+Math.PI/2) 
+	};
+	const location2 = { 
+		x: projectile.location.x + 5 * -Math.sin(rad-Math.PI/2),
+		y: projectile.location.y,
+		z: projectile.location.z + 5 * Math.cos(rad-Math.PI/2) 
+	};
+	projectile.teleport( projectile.location, {rotation: owner.getRotation() } )
+	for( let i = -3; i < 4; i++ ){
+		summonAirbone( projectile,location1,i*5,10*i+60,S,team);
+		summonAirbone( projectile,location2,i*5,10*i+60,S,team);
+	}
+	const ride = summonAirbone( projectile,location,0,60,S,team);
+	ride.runCommand(`ride @s summon_ride vehicle:fv101 reassign_rides minecraft:spawned_from_air`);
+}
+function airbone3( projectile,team ){
+	const owner = projectile.getComponent(`minecraft:projectile`).owner;
+	const S = owner.getRotation().y;
+	const rad = S * Math.PI / 180;
+	const location = projectile.location;
+	const location1 = { 
+		x: projectile.location.x + 5 * -Math.sin(rad+Math.PI/2),
+		y: projectile.location.y,
+		z: projectile.location.z + 5 * Math.cos(rad+Math.PI/2) 
+	};
+	const location2 = { 
+		x: projectile.location.x + 5 * -Math.sin(rad-Math.PI/2),
+		y: projectile.location.y,
+		z: projectile.location.z + 5 * Math.cos(rad-Math.PI/2) 
+	};
+	projectile.teleport( projectile.location, {rotation: owner.getRotation() } )
+	for( let i = -4; i < 5; i++ ){
+		summonAirbone( projectile,location1,i*5,10*i+80,S,team);
+		summonAirbone( projectile,location,i*5,10*i+80,S,team);
+		summonAirbone( projectile,location2,i*5,10*i+80,S,team);
+	}
+	const ride = summonAirbone( projectile,location,0,80,S,team);
+	ride.runCommand(`ride @s summon_ride vehicle:fv101 reassign_rides minecraft:spawned_from_air`);
+	const ride1 = summonAirbone( projectile,location1,-12.5,60,S,team);
+	ride1.runCommand(`ride @s summon_ride vehicle:fv101 reassign_rides minecraft:spawned_from_air`);
+	const ride2 = summonAirbone( projectile,location2,12.5,100,S,team);
+	ride2.runCommand(`ride @s summon_ride vehicle:fv101 reassign_rides minecraft:spawned_from_air`);
+}
+function missile( projectile,level,team ){
+	const location = { 
+		x: projectile.location.x,
+		y: 320,
+		z: projectile.location.z
+	};
+	const missile = projectile.dimension.spawnEntity(`gvcv5:drop${level}_${team}`,location);
+}
+
 
 world.afterEvents.projectileHitEntity.subscribe( e => {
 	if( e.projectile.typeId.includes("fire")){
@@ -58,7 +142,35 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		e.projectile.triggerEvent("minecraft:explode");
 	}
 })
+
+world.afterEvents.projectileHitBlock.subscribe( e => {
+	const projectile = e.projectile;
+	if( projectile.typeId.includes(`gre`)){
+		if( projectile.getComponent(`projectile`).owner != undefined ){
+			const player = projectile.getComponent(`projectile`).owner
+			let team
+			if( player.hasTag(`red`) ){ team = `red`; }
+			else if( player.hasTag(`blue`) ){ team = `blue`; }
+			else if( player.hasTag(`green`) ){ team = `green`; }
+			else if( player.hasTag(`yellow`) ){ team = `yellow`; }
+			else { team = `noteam`; }
+			if( projectile.typeId == `gre:airborne1` ){ airbone1( projectile,team ); }
+			else if( projectile.typeId == `gre:airborne2` ){ airbone2( projectile,team ); }
+			else if( projectile.typeId == `gre:airborne3` ){ airbone3( projectile,team ); }
+			else if( projectile.typeId == `gre:missile1` ){ missile( projectile,1,team ); }
+			else if( projectile.typeId == `gre:missile2` ){ missile( projectile,2,team ); }
+			else if( projectile.typeId == `gre:missile3` ){ missile( projectile,3,team ); }
+		}
+	}
+})
+
 system.afterEvents.scriptEventReceive.subscribe( e => {
+	if( e.id == "zex:view"){
+		const view = e.sourceEntity.getRotation();
+		world.sendMessage(`x:${view.x} y:${view.y}`);
+		
+	}
+
 	if( e.id == "zex:start" ){
 		if( world.getDynamicProperty("gvcv5:playerDamage") == undefined ){
 			world.setDynamicProperty("gvcv5:playerDamage",0.5);

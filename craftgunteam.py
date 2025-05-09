@@ -2,7 +2,7 @@ import json
 import csv
 import shutil
 
-csv_path = open("gunData.csv","r",encoding='utf-8')
+csv_path = open("gunData.csv","r")
 csv_reader = csv.reader(csv_path) 
 
 row_count = 0
@@ -10,8 +10,8 @@ row_count = 0
 text = ""
 
 player_json = json.load(open("tool/player_team.json","r"))
-ca_json = json.load(open("tool/ca.json","r"))
-pmc_json = json.load(open("tool/pmc.json","r"))
+ca_json = json.load(open("tool/ca_team.json","r"))
+pmc_json = json.load(open("tool/pmc_team.json","r"))
 pmc_red_json = json.load(open("tool/pmc_red.json","r"))
 pmc_blue_json = json.load(open("tool/pmc_blue.json","r"))
 pmc_green_json = json.load(open("tool/pmc_green.json","r"))

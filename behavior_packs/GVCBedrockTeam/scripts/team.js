@@ -57,7 +57,7 @@ function gvcv5CreateTeam( user,team ){
 	user.triggerEvent(`gvcv5:become_${team}team`);
 	world.sendMessage([{text: `${user.nameTag}`},{ translate: `script.gvcv5.youAreIn${team}team.name`}]);
 	world.setDynamicProperty(`${team}chat`,``);
-	world.setDynamicProperty(`${team}list`,`${user.nameTag} [Leader]`);
+	world.setDynamicProperty(`${team}list`,`${user.nameTag}`);
 	world.setDynamicProperty(`${team}Leader`,`${user.nameTag}`);
 	user.addTag(`${team}Leader`);
 }
@@ -81,12 +81,7 @@ function gvcv5AddTeamList( user,team ){
 }
 function gvcv5RemoveTeamList( user,team ){
 	if( world.getDynamicProperty(`${team}list`) != undefined ){
-		if( user.hasTag(`${team}Leader`)){
-			world.setDynamicProperty(`${team}list`,`${world.getDynamicProperty(`${team}list`).replace(`\n${user.nameTag} [SubLeader]`,"")}`);
-		}
-		else{
-			world.setDynamicProperty(`${team}list`,`${world.getDynamicProperty(`${team}list`).replace(`\n${user.nameTag}`,"")}`);
-		}
+		world.setDynamicProperty(`${team}list`,`${world.getDynamicProperty(`${team}list`).replace(`\n${user.nameTag}`,"")}`);
 	}
 }
 
@@ -660,20 +655,16 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 										if(result.selection == 0){
 											world.setDynamicProperty(`${userFamily}Leader`,`${target.nameTag}`)
 											target.sendMessage(`script.gvcv5.phone_new_leader.name`);
-											world.setDynamicProperty(`${userFamily}list`,`${world.getDynamicProperty(`${userFamily}list`).replace(`\n${target.nameTag}`,"")}\n${target.nameTag} [Leader]`);
-											world.setDynamicProperty(`${userFamily}list`,`${world.getDynamicProperty(`${userFamily}list`).replace(`\n${user.nameTag} [Leader]`,"")}\n${user.nameTag} [SubLeader]`);
 											target.addTag(`${userFamily}Leader`);
 											user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
 										}
 										else if(result.selection == 1){
 											if( target.hasTag(`${userFamily}Leader`) ){
 												target.removeTag(`${userFamily}Leader`);
-												world.setDynamicProperty(`${userFamily}list`,`${world.getDynamicProperty(`${userFamily}list`).replace(`\n${target.nameTag} [SubLerder]`,`\n${target.nameTag}`)}`);
 												target.sendMessage(`script.gvcv5.phone_remove_subleader_m.name`);
 											}
 											else{
 												target.addTag(`${userFamily}Leader`);
-												world.setDynamicProperty(`${userFamily}list`,`${world.getDynamicProperty(`${userFamily}list`).replace(`\n${target.nameTag}`,"")}\n${target.nameTag} [SubLeader]`);
 												target.sendMessage(`script.gvcv5.phone_new_subleader.name`);
 											}
 											user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);

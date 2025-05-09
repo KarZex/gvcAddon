@@ -28,13 +28,6 @@
 			"minecraft:projectile": {
 				"on_hit": {
 				"stick_in_ground": {},
-				"definition_event": {
-				  "affect_projectile": true,
-				  "event_trigger": {
-					"event": "minecraft:explode",
-					"target": "self"
-				  }
-				},
 					"impact_damage": {
 						"damage": 2,
 						"knockback": false
@@ -56,16 +49,13 @@
 			  "component_groups": [
 				"minecraft:exploding"
 			  ]
-			},
-			"queue_command": {
-				"command":"function support/airborne1"
 			}
 		  }
 		},
 		"component_groups": {
 		  "minecraft:exploding": {
 			"minecraft:explode": {
-			  "fuse_length": 0,
+			  "fuse_length": 10,
 			  "destroy_affected_by_griefing": true,
 			  "fuse_lit": true,
 			  "power": 0,

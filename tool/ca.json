@@ -292,6 +292,14 @@
           }
         },
         {
+          
+          "remove": {
+            "component_groups": [
+              "can_despawn"
+            ]
+          }
+         },
+        {
             "filters": {
               "any_of": [
                 {

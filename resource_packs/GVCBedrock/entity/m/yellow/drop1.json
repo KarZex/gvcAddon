@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "gvcv5:drop1_yellow",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/tnt0"
+      },
+      "geometry": {
+        "default": "geometry.dropmissile"
+      },
+	  "spawn_egg":{
+	  "texture":"missile",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}
