@@ -994,6 +994,15 @@
     },
     "missile3": {
       "textures": "textures/items/missile3"
+    },
+    "airstrike1": {
+      "textures": "textures/items/airstrike1"
+    },
+    "airstrike2": {
+      "textures": "textures/items/airstrike2"
+    },
+    "airstrike3": {
+      "textures": "textures/items/airstrike3"
     }
   }
 }

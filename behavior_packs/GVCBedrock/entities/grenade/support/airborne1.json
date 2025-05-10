@@ -55,7 +55,7 @@
 		"component_groups": {
 		  "minecraft:exploding": {
 			"minecraft:explode": {
-			  "fuse_length": 10,
+			  "fuse_length": 1,
 			  "destroy_affected_by_griefing": true,
 			  "fuse_lit": true,
 			  "power": 0,

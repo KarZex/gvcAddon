@@ -109,7 +109,7 @@ for row in csv_reader:
             with open("tool/a1.json","r") as f:
                 flag_json = json.load(f)
                 flag_json["minecraft:entity"]["description"]["identifier"] = "gvcv5:flag_{}_ca".format(structure_id)
-                flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][5]["spawn_items"]["table"] = "loot_tables/flag/flag_{}_ca.json".format(structure_id)
+                flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][1]["spawn_items"]["table"] = "loot_tables/flag/flag_{}_ca.json".format(structure_id)
                 flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ca ~~1~".format(structure_id)
                 flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ga ~~1~".format(structure_id)
                 flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.gvcv5:flag_{0}_ca.name".format(structure_id)
@@ -121,6 +121,28 @@ for row in csv_reader:
 
             with open("behavior_packs/GVCBedrock/entities/flag/{}_ca.json".format(structure_id),"w") as f:
                 json.dump(flag_json,f,indent=2)
+
+            with open("tool/a1_team.json","r") as f:
+                flag_json = json.load(f)
+                flag_json["minecraft:entity"]["description"]["identifier"] = "gvcv5:flag_{}_ca".format(structure_id)
+                flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][5]["spawn_items"]["table"] = "loot_tables/flag/flag_{}_ca.json".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ca ~~1~".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ga ~~1~".format(structure_id)
+                flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.gvcv5:flag_{0}_ca.name".format(structure_id)
+                if structure_flag_type == "L":
+                    flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
+                    flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
+                    flag_json["minecraft:entity"]["components"]["minecraft:damage_sensor"]["triggers"] = [ {  "cause": "all", "deals_damage": False } ]
+                    flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "mob" ]
+
+            with open("behavior_packs/GVCBedrockTeam/entities/flag/{}_ca.json".format(structure_id),"w") as f:
+                json.dump(flag_json,f,indent=2)
+
+
+
+
+
+
 
             with open("tool/a2.json","r",encoding="utf-8") as f:
                 flag_json = json.load(f)
@@ -140,12 +162,37 @@ for row in csv_reader:
             with open("behavior_packs/GVCBedrock/entities/flag/{}_ga.json".format(structure_id),"w") as f:
                 json.dump(flag_json,f,indent=2)
 
+
+            with open("tool/a2_team.json","r",encoding="utf-8") as f:
+                flag_json = json.load(f)
+                flag_json["minecraft:entity"]["description"]["identifier"] = "gvcv5:flag_{}_ga".format(structure_id)
+                if row[10] == "":
+                    flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ca ~~1~".format(structure_id)
+                else:
+                    flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"] = ["summon gvcv5:flag_{}_ca ~~1~".format(structure_id),"{}".format(row[10])]
+                    flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"] = ["summon gvcv5:flag_red ~~5~","{}".format(row[10])]
+                    flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"] = ["summon gvcv5:flag_blue ~~5~","{}".format(row[10])]
+                    flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"] = ["summon gvcv5:flag_green ~~5~","{}".format(row[10])]
+                    flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"] = ["summon gvcv5:flag_yellow ~~5~","{}".format(row[10])]
+
+                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ga ~~1~".format(structure_id)
+                flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.gvcv5:flag_{0}_ga.name".format(structure_id)
+                if structure_flag_type == "L":
+                    flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
+                    flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
+                    flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "guerrilla","monster","mob","flag_large" ]
+                
+
+            with open("behavior_packs/GVCBedrockTeam/entities/flag/{}_ga.json".format(structure_id),"w") as f:
+                json.dump(flag_json,f,indent=2)
+
+
             with open("behavior_packs/GVCBedrock/functions/flag/{}.mcfunction".format(structure_id),"w") as f:
                 if(structure_flag_type == "L" or structure_flag_type == "M"): f.write("summon gvcv5:flag_{}_ga\n".format(structure_id))
                 elif(structure_flag_type == "A"): f.write("summon gvcv5:flag_{}_ca\n".format(structure_id))
                 f.write("fill ~~~ ~~~ air\n")
             
-            
+            #Resouce Pack
             with open("tool/flag_ca.json","r") as f:
                 flag_r_json = json.load(f)
                 flag_r_json["minecraft:client_entity"]["description"]["identifier"] = "gvcv5:flag_{}_ca".format(structure_id)
@@ -157,6 +204,7 @@ for row in csv_reader:
                 flag_r_json["minecraft:client_entity"]["description"]["identifier"] = "gvcv5:flag_{}_ga".format(structure_id)
             with open("resource_packs/GVCBedrock/entity/flag/{}_ga.json".format(structure_id),"w") as f:
                 json.dump(flag_r_json,f,indent=2)
+            
 
         print("{}\n".format(structure_id))
 

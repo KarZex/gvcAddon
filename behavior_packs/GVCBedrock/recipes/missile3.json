@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "gvcv5:missile3_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AA",
+      "AA"
+    ],
+    "key": {
+      "A": {
+        "item": "gvcv5:missile2",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "gvcv5:missile3",
+      "count": 1
+    }
+  }
+  
+}

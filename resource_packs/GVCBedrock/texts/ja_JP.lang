@@ -689,6 +689,12 @@ item.gvcv5:frostcharge=フロストチャージ
 item.gvcv5:airborne1=空挺要請Level1
 item.gvcv5:airborne2=空挺要請Level2
 item.gvcv5:airborne3=空挺要請Level3
+item.gvcv5:airstrike1=爆撃要請Level1
+item.gvcv5:airstrike2=爆撃要請Level2
+item.gvcv5:airstrike3=爆撃要請Level3
+item.gvcv5:missile1=ミサイル要請Level1
+item.gvcv5:missile2=ミサイル要請Level2
+item.gvcv5:missile3=ミサイル要請Level3
 
 item.zex:stars=フルトン回収システム
 item.zex:trenchclub=塹壕クラブ
@@ -713,6 +719,37 @@ entity.gvcv5:flag_garrison_blue.name=§9青チーム拠点
 entity.gvcv5:flag_garrison_green.name=§a緑チーム拠点
 entity.gvcv5:flag_garrison_yellow.name=§e黄チーム拠点
 
+entity.gvcv5:airstrike_red.name=§c赤チーム支援爆撃§r
+entity.gvcv5:airstrike_blue.name=§9青チーム支援爆撃§r
+entity.gvcv5:airstrike_green.name=§a緑チーム支援爆撃§r
+entity.gvcv5:airstrike_yellow.name=§e黄チーム支援爆撃§r
+
+entity.gvcv5:airstrike_red.name=§c赤チームの支援爆撃§r
+entity.gvcv5:airstrike_blue.name=§9青チームの支援爆撃§r
+entity.gvcv5:airstrike_green.name=§a緑チームの支援爆撃§r
+entity.gvcv5:airstrike_yellow.name=§e黄チームの支援爆撃§r
+entity.gvcv5:airstrike_noteam.name=支援爆撃§r
+
+entity.gvcv5:drop1_red.name=§c赤チームのミサイル§r
+entity.gvcv5:drop2_red.name=§c赤チームのミサイル§r
+entity.gvcv5:drop3_red.name=§c赤チームのミサイル§r
+
+entity.gvcv5:drop1_blue.name=§9青チームのミサイル§r
+entity.gvcv5:drop2_blue.name=§9青チームのミサイル§r
+entity.gvcv5:drop3_blue.name=§9青チームのミサイル§r
+
+entity.gvcv5:drop1_green.name=§a緑チームのミサイル§r
+entity.gvcv5:drop2_green.name=§a緑チームのミサイル§r
+entity.gvcv5:drop3_green.name=§a緑チームのミサイル§r
+
+entity.gvcv5:drop1_yellow.name=§e黄チームのミサイル§r
+entity.gvcv5:drop2_yellow.name=§e黄チームのミサイル§r
+entity.gvcv5:drop3_yellow.name=§e黄チームのミサイル§r
+
+entity.gvcv5:drop1_noteam.name=支援ミサイル§r
+entity.gvcv5:drop2_noteam.name=支援ミサイル§r
+entity.gvcv5:drop3_noteam.name=支援ミサイル§r
+
 item.spawn_egg.entity.gvcv5:flag_red.name=赤チーム拠点
 item.spawn_egg.entity.gvcv5:flag_blue.name=青チーム拠点
 item.spawn_egg.entity.gvcv5:flag_green.name=緑チーム拠点
@@ -730,3 +767,5 @@ script.gvcv5.phoneAbuse2.name=による端末の使用を確認しました。
 script.gvcv5.phone_menber_list.name=チームメンバー一覧
 
 script.gvcv5.phoneAbuse.name=§c敵の端末でテレポートすると、端末は破壊されます。§r
+
+action.gvcv5.team.dye=染色する

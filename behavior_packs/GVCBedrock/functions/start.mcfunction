@@ -19,6 +19,14 @@ execute at @e[type=fire:fire] run particle minecraft:basic_flame_particle ~~~
 execute at @e[type=fire:famas] run particle minecraft:basic_smoke_particle ~~~
 execute at @e[type=fire:ads_famas] run particle minecraft:basic_smoke_particle ~~~
 
+execute at @e[family=fire:drop] run particle minecraft:basic_flame_particle ~~~
+
+execute at @e[type=gvcv5:airstrike_red] run particle zex:red_strike ~~~
+execute at @e[type=gvcv5:airstrike_blue] run particle zex:blue_strike ~~~
+execute at @e[type=gvcv5:airstrike_green] run particle zex:green_strike ~~~
+execute at @e[type=gvcv5:airstrike_yellow] run particle zex:yellow_strike ~~~
+execute at @e[type=gvcv5:airstrike_noteam] run particle zex:noteam_strike ~~~
+
 kill @e[type=item,name=83a5bfca04b6b421d23c]
 
 gamerule commandblockoutput false

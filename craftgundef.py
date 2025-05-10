@@ -125,8 +125,8 @@ for row in csv_reader:
         player_json["minecraft:entity"]["events"]["fire:{}".format(gun_id)] = event
 
         #animation controllers data
-        BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["default"]["transitions"].append({ "{}".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id) })
-        BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["default"]["transitions"].append({ "{}_reload".format(gun_id): "query.get_equipped_item_name == '{}' && (variable.attack_time > 0.0)".format(gun_id) })
+        BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["default"]["transitions"].append({ "{}".format(gun_id): "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && query.is_using_item".format(gun_id) })
+        BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["default"]["transitions"].append({ "{}_reload".format(gun_id): "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && (variable.attack_time > 0.0)".format(gun_id) })
         
         BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}_reload".format(gun_id)] = {
             "on_entry": [
@@ -200,7 +200,7 @@ for row in csv_reader:
                                 "default": "!query.is_using_item"
                             },
                             {
-                                "{}ii".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id)
+                                "{}ii".format(gun_id): "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && query.is_using_item".format(gun_id)
                             }
                         ]
                     }
@@ -215,7 +215,7 @@ for row in csv_reader:
                                 "default": "!query.is_using_item"
                             },
                             {
-                                "{}".format(gun_id): "query.get_equipped_item_name == '{}' && query.is_using_item".format(gun_id)
+                                "{}".format(gun_id): "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && query.is_using_item".format(gun_id)
                             }
                         ]
                     }

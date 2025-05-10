@@ -1,0 +1,74 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "gre:airstrike3",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:scale": {
+				"value": 0.15
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:projectile": {
+				"on_hit": {
+				"stick_in_ground": {},
+				"definition_event": {
+					"affect_projectile": true,
+					"event_trigger": {
+					"event": "minecraft:explode",
+					"target": "self"
+				  }
+				},
+					"impact_damage": {
+						"damage": 2,
+						"knockback": false
+					}
+				},
+				"power": 1.3,
+				"gravity": 0.025,
+				"anchor": 1,
+				"offset": [
+					0,
+					-0.1,
+					0
+				]
+			}
+		},
+		"events": {
+		  "minecraft:explode": {
+			"add": {
+			  "component_groups": [
+				"minecraft:exploding"
+			  ]
+			}
+		  }
+		},
+		"component_groups": {
+		  "minecraft:exploding": {
+			"minecraft:explode": {
+			  "fuse_length": 1,
+			  "destroy_affected_by_griefing": true,
+			  "fuse_lit": true,
+			  "power": 0,
+			  "breaks_blocks": false
+			}
+		  }
+		}
+	}
+}

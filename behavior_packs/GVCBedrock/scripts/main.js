@@ -95,6 +95,7 @@ function airbone3( projectile,team ){
 	ride2.runCommand(`ride @s summon_ride vehicle:fv101 reassign_rides minecraft:spawned_from_air`);
 }
 function missile( projectile,level,team ){
+	projectile.dimension.spawnParticle(`zex:${team}_ring1`,projectile.location);
 	const location = { 
 		x: projectile.location.x,
 		y: 320,
@@ -103,6 +104,36 @@ function missile( projectile,level,team ){
 	const missile = projectile.dimension.spawnEntity(`gvcv5:drop${level}_${team}`,location);
 }
 
+function airstrike1( location,team ){
+
+}
+
+
+async function airstrike(projectile,level,team){
+	const dimension = projectile.dimension;
+	projectile.dimension.spawnParticle(`zex:${team}_ring1`,projectile.location);
+	let Radius = Math.random() * 5 * level;
+	let Sigma = Math.random() * 2 * Math.PI;
+	const location = { 
+		x: projectile.location.x,
+		y: 320,
+		z: projectile.location.z
+	}
+	let spawnPointLocation = location;
+	const num = Math.pow(5,level);
+	for( let i = 0; i < num; i++ ){
+		dimension.spawnEntity(`gvcv5:airstrike_${team}`,spawnPointLocation);
+		Radius = Math.random() * 5 * level;
+		Sigma = Math.random() * 2 * Math.PI;
+		spawnPointLocation = { 
+			x: location.x + Radius * Math.cos(Sigma),
+			y: 320,
+			z: location.z + Radius * Math.sin(Sigma)
+		}
+		await system.waitTicks((4-level)*(4-level));
+		
+	}
+}
 
 world.afterEvents.projectileHitEntity.subscribe( e => {
 	if( e.projectile.typeId.includes("fire")){
@@ -160,6 +191,9 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 			else if( projectile.typeId == `gre:missile1` ){ missile( projectile,1,team ); }
 			else if( projectile.typeId == `gre:missile2` ){ missile( projectile,2,team ); }
 			else if( projectile.typeId == `gre:missile3` ){ missile( projectile,3,team ); }
+			else if( projectile.typeId == `gre:airstrike1` ){ airstrike( projectile,1,team ); }
+			else if( projectile.typeId == `gre:airstrike2` ){ airstrike( projectile,2,team ); }
+			else if( projectile.typeId == `gre:airstrike3` ){ airstrike( projectile,3,team ); }
 		}
 	}
 })

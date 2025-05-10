@@ -285,13 +285,12 @@
 			{
 				"use_item": false,
 				"play_sounds": "enderchest.open",
-				"interact_text": "action.gvc.item",
+				"interact_text": "action.gvcv5.team.dye",
 				"on_interact": {
 					"filters": {
 						"all_of": [
               { "test": "is_family","subject": "self","value": "noteam"},
-              { "test": "is_family","subject": "other","value": "redteam"},
-              { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "red_dye"}
+              { "test": "is_family","subject": "other","value": "redteam"}
 						]
 					},
 					"event": "gvcv5:become_redteam",
@@ -301,13 +300,12 @@
 			{
 				"use_item": false,
 				"play_sounds": "enderchest.open",
-				"interact_text": "action.gvc.item",
+				"interact_text": "action.gvcv5.team.dye",
 				"on_interact": {
 					"filters": {
 						"all_of": [
               { "test": "is_family","subject": "self","value": "noteam"},
-              { "test": "is_family","subject": "other","value": "blueteam"},
-              { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blue_dye"}
+              { "test": "is_family","subject": "other","value": "blueteam"}
 						]
 					},
 					"event": "gvcv5:become_blueteam",
@@ -317,13 +315,12 @@
 			{
 				"use_item": false,
 				"play_sounds": "enderchest.open",
-				"interact_text": "action.gvc.item",
+				"interact_text": "action.gvcv5.team.dye",
 				"on_interact": {
 					"filters": {
 						"all_of": [
               { "test": "is_family","subject": "self","value": "noteam"},
-              { "test": "is_family","subject": "other","value": "greenteam"},
-              { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "green_dye"}
+              { "test": "is_family","subject": "other","value": "greenteam"}
 						]
 					},
 					"event": "gvcv5:become_greenteam",
@@ -333,13 +330,12 @@
 			{
 				"use_item": false,
 				"play_sounds": "enderchest.open",
-				"interact_text": "action.gvc.item",
+				"interact_text": "action.gvcv5.team.dye",
 				"on_interact": {
 					"filters": {
 						"all_of": [
               { "test": "is_family","subject": "self","value": "noteam"},
-              { "test": "is_family","subject": "other","value": "yellowteam"},
-              { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "yellow_dye"}
+              { "test": "is_family","subject": "other","value": "yellowteam"}
 						]
 					},
 					"event": "gvcv5:become_yellowteam",

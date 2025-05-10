@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "gre:airstrike2",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/models/support"
+      },
+      "geometry": {
+        "default": "geometry.fragment"
+      },
+      
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

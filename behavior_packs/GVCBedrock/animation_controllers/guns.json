@@ -9,313 +9,316 @@
               "tank": "query.is_riding && (variable.attack_time > 0.0)"
             },
             {
-              "tank": "query.is_riding && query.get_equipped_item_name == 'tank' && query.is_using_item"
+              "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tank') && query.is_using_item"
             },
             {
-              "mgg_1": "query.is_riding && query.get_equipped_item_name == 'mgg' && query.is_using_item"
+              "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mgg') && query.is_using_item"
             },
             {
               "mgj_1": "query.is_riding && query.is_jumping && query.get_equipped_item_name != 'mgg'"
             },
             {
-              "fire": "query.get_equipped_item_name == 'fire' && query.is_using_item"
+              "shield": "query.is_sneaking && query.is_item_name_any('slot.weapon.offhand', 0, 'minecraft:shield')"
             },
             {
-              "fire_reload": "query.get_equipped_item_name == 'fire' && (variable.attack_time > 0.0)"
+              "fire": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:fire') && query.is_using_item"
             },
             {
-              "aa12": "query.get_equipped_item_name == 'aa12' && query.is_using_item"
+              "fire_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:fire') && (variable.attack_time > 0.0)"
             },
             {
-              "aa12_reload": "query.get_equipped_item_name == 'aa12' && (variable.attack_time > 0.0)"
+              "aa12": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:aa12') && query.is_using_item"
             },
             {
-              "ak12": "query.get_equipped_item_name == 'ak12' && query.is_using_item"
+              "aa12_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:aa12') && (variable.attack_time > 0.0)"
             },
             {
-              "ak12_reload": "query.get_equipped_item_name == 'ak12' && (variable.attack_time > 0.0)"
+              "ak12": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ak12') && query.is_using_item"
             },
             {
-              "ak47": "query.get_equipped_item_name == 'ak47' && query.is_using_item"
+              "ak12_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ak12') && (variable.attack_time > 0.0)"
             },
             {
-              "ak47_reload": "query.get_equipped_item_name == 'ak47' && (variable.attack_time > 0.0)"
+              "ak47": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ak47') && query.is_using_item"
             },
             {
-              "ak102": "query.get_equipped_item_name == 'ak102' && query.is_using_item"
+              "ak47_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ak47') && (variable.attack_time > 0.0)"
             },
             {
-              "ak102_reload": "query.get_equipped_item_name == 'ak102' && (variable.attack_time > 0.0)"
+              "ak102": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ak102') && query.is_using_item"
             },
             {
-              "an94": "query.get_equipped_item_name == 'an94' && query.is_using_item"
+              "ak102_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ak102') && (variable.attack_time > 0.0)"
             },
             {
-              "an94_reload": "query.get_equipped_item_name == 'an94' && (variable.attack_time > 0.0)"
+              "an94": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:an94') && query.is_using_item"
             },
             {
-              "awm": "query.get_equipped_item_name == 'awm' && query.is_using_item"
+              "an94_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:an94') && (variable.attack_time > 0.0)"
             },
             {
-              "awm_reload": "query.get_equipped_item_name == 'awm' && (variable.attack_time > 0.0)"
+              "awm": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:awm') && query.is_using_item"
             },
             {
-              "dp28": "query.get_equipped_item_name == 'dp28' && query.is_using_item"
+              "awm_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:awm') && (variable.attack_time > 0.0)"
             },
             {
-              "dp28_reload": "query.get_equipped_item_name == 'dp28' && (variable.attack_time > 0.0)"
+              "dp28": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:dp28') && query.is_using_item"
             },
             {
-              "famas": "query.get_equipped_item_name == 'famas' && query.is_using_item"
+              "dp28_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:dp28') && (variable.attack_time > 0.0)"
             },
             {
-              "famas_reload": "query.get_equipped_item_name == 'famas' && (variable.attack_time > 0.0)"
+              "famas": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:famas') && query.is_using_item"
             },
             {
-              "g36": "query.get_equipped_item_name == 'g36' && query.is_using_item"
+              "famas_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:famas') && (variable.attack_time > 0.0)"
             },
             {
-              "g36_reload": "query.get_equipped_item_name == 'g36' && (variable.attack_time > 0.0)"
+              "g36": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:g36') && query.is_using_item"
             },
             {
-              "g3a3": "query.get_equipped_item_name == 'g3a3' && query.is_using_item"
+              "g36_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:g36') && (variable.attack_time > 0.0)"
             },
             {
-              "g3a3_reload": "query.get_equipped_item_name == 'g3a3' && (variable.attack_time > 0.0)"
+              "g3a3": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:g3a3') && query.is_using_item"
             },
             {
-              "glock17": "query.get_equipped_item_name == 'glock17' && query.is_using_item"
+              "g3a3_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:g3a3') && (variable.attack_time > 0.0)"
             },
             {
-              "glock17_reload": "query.get_equipped_item_name == 'glock17' && (variable.attack_time > 0.0)"
+              "glock17": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock17') && query.is_using_item"
             },
             {
-              "glock18": "query.get_equipped_item_name == 'glock18' && query.is_using_item"
+              "glock17_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock17') && (variable.attack_time > 0.0)"
             },
             {
-              "glock18_reload": "query.get_equipped_item_name == 'glock18' && (variable.attack_time > 0.0)"
+              "glock18": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock18') && query.is_using_item"
             },
             {
-              "hk416": "query.get_equipped_item_name == 'hk416' && query.is_using_item"
+              "glock18_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock18') && (variable.attack_time > 0.0)"
             },
             {
-              "hk416_reload": "query.get_equipped_item_name == 'hk416' && (variable.attack_time > 0.0)"
+              "hk416": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:hk416') && query.is_using_item"
             },
             {
-              "lazer": "query.get_equipped_item_name == 'lazer' && query.is_using_item"
+              "hk416_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:hk416') && (variable.attack_time > 0.0)"
             },
             {
-              "lazer_reload": "query.get_equipped_item_name == 'lazer' && (variable.attack_time > 0.0)"
+              "lazer": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:lazer') && query.is_using_item"
             },
             {
-              "m4": "query.get_equipped_item_name == 'm4' && query.is_using_item"
+              "lazer_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:lazer') && (variable.attack_time > 0.0)"
             },
             {
-              "m4_reload": "query.get_equipped_item_name == 'm4' && (variable.attack_time > 0.0)"
+              "m4": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m4') && query.is_using_item"
             },
             {
-              "m4a1": "query.get_equipped_item_name == 'm4a1' && query.is_using_item"
+              "m4_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m4') && (variable.attack_time > 0.0)"
             },
             {
-              "m4a1_reload": "query.get_equipped_item_name == 'm4a1' && (variable.attack_time > 0.0)"
+              "m4a1": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m4a1') && query.is_using_item"
             },
             {
-              "m9": "query.get_equipped_item_name == 'm9' && query.is_using_item"
+              "m4a1_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m4a1') && (variable.attack_time > 0.0)"
             },
             {
-              "m9_reload": "query.get_equipped_item_name == 'm9' && (variable.attack_time > 0.0)"
+              "m9": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m9') && query.is_using_item"
             },
             {
-              "m10": "query.get_equipped_item_name == 'm10' && query.is_using_item"
+              "m9_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m9') && (variable.attack_time > 0.0)"
             },
             {
-              "m10_reload": "query.get_equipped_item_name == 'm10' && (variable.attack_time > 0.0)"
+              "m10": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m10') && query.is_using_item"
             },
             {
-              "m16a1": "query.get_equipped_item_name == 'm16a1' && query.is_using_item"
+              "m10_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m10') && (variable.attack_time > 0.0)"
             },
             {
-              "m16a1_reload": "query.get_equipped_item_name == 'm16a1' && (variable.attack_time > 0.0)"
+              "m16a1": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m16a1') && query.is_using_item"
             },
             {
-              "m16a4": "query.get_equipped_item_name == 'm16a4' && query.is_using_item"
+              "m16a1_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m16a1') && (variable.attack_time > 0.0)"
             },
             {
-              "m16a4_reload": "query.get_equipped_item_name == 'm16a4' && (variable.attack_time > 0.0)"
+              "m16a4": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m16a4') && query.is_using_item"
             },
             {
-              "m60": "query.get_equipped_item_name == 'm60' && query.is_using_item"
+              "m16a4_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m16a4') && (variable.attack_time > 0.0)"
             },
             {
-              "m60_reload": "query.get_equipped_item_name == 'm60' && (variable.attack_time > 0.0)"
+              "m60": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m60') && query.is_using_item"
             },
             {
-              "m72": "query.get_equipped_item_name == 'm72' && query.is_using_item"
+              "m60_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m60') && (variable.attack_time > 0.0)"
             },
             {
-              "m72_reload": "query.get_equipped_item_name == 'm72' && (variable.attack_time > 0.0)"
+              "m72": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m72') && query.is_using_item"
             },
             {
-              "m79": "query.get_equipped_item_name == 'm79' && query.is_using_item"
+              "m72_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m72') && (variable.attack_time > 0.0)"
             },
             {
-              "m79_reload": "query.get_equipped_item_name == 'm79' && (variable.attack_time > 0.0)"
+              "m79": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m79') && query.is_using_item"
             },
             {
-              "m82": "query.get_equipped_item_name == 'm82' && query.is_using_item"
+              "m79_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m79') && (variable.attack_time > 0.0)"
             },
             {
-              "m82_reload": "query.get_equipped_item_name == 'm82' && (variable.attack_time > 0.0)"
+              "m82": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m82') && query.is_using_item"
             },
             {
-              "m110": "query.get_equipped_item_name == 'm110' && query.is_using_item"
+              "m82_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m82') && (variable.attack_time > 0.0)"
             },
             {
-              "m110_reload": "query.get_equipped_item_name == 'm110' && (variable.attack_time > 0.0)"
+              "m110": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m110') && query.is_using_item"
             },
             {
-              "m202": "query.get_equipped_item_name == 'm202' && query.is_using_item"
+              "m110_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m110') && (variable.attack_time > 0.0)"
             },
             {
-              "m202_reload": "query.get_equipped_item_name == 'm202' && (variable.attack_time > 0.0)"
+              "m202": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m202') && query.is_using_item"
             },
             {
-              "m249": "query.get_equipped_item_name == 'm249' && query.is_using_item"
+              "m202_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m202') && (variable.attack_time > 0.0)"
             },
             {
-              "m249_reload": "query.get_equipped_item_name == 'm249' && (variable.attack_time > 0.0)"
+              "m249": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m249') && query.is_using_item"
             },
             {
-              "m590": "query.get_equipped_item_name == 'm590' && query.is_using_item"
+              "m249_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m249') && (variable.attack_time > 0.0)"
             },
             {
-              "m590_reload": "query.get_equipped_item_name == 'm590' && (variable.attack_time > 0.0)"
+              "m590": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m590') && query.is_using_item"
             },
             {
-              "m870": "query.get_equipped_item_name == 'm870' && query.is_using_item"
+              "m590_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m590') && (variable.attack_time > 0.0)"
             },
             {
-              "m870_reload": "query.get_equipped_item_name == 'm870' && (variable.attack_time > 0.0)"
+              "m870": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m870') && query.is_using_item"
             },
             {
-              "m1014": "query.get_equipped_item_name == 'm1014' && query.is_using_item"
+              "m870_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m870') && (variable.attack_time > 0.0)"
             },
             {
-              "m1014_reload": "query.get_equipped_item_name == 'm1014' && (variable.attack_time > 0.0)"
+              "m1014": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1014') && query.is_using_item"
             },
             {
-              "m1911": "query.get_equipped_item_name == 'm1911' && query.is_using_item"
+              "m1014_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1014') && (variable.attack_time > 0.0)"
             },
             {
-              "m1911_reload": "query.get_equipped_item_name == 'm1911' && (variable.attack_time > 0.0)"
+              "m1911": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1911') && query.is_using_item"
             },
             {
-              "mg36": "query.get_equipped_item_name == 'mg36' && query.is_using_item"
+              "m1911_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1911') && (variable.attack_time > 0.0)"
             },
             {
-              "mg36_reload": "query.get_equipped_item_name == 'mg36' && (variable.attack_time > 0.0)"
+              "mg36": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mg36') && query.is_using_item"
             },
             {
-              "mg42": "query.get_equipped_item_name == 'mg42' && query.is_using_item"
+              "mg36_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mg36') && (variable.attack_time > 0.0)"
             },
             {
-              "mg42_reload": "query.get_equipped_item_name == 'mg42' && (variable.attack_time > 0.0)"
+              "mg42": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mg42') && query.is_using_item"
             },
             {
-              "mosin": "query.get_equipped_item_name == 'mosin' && query.is_using_item"
+              "mg42_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mg42') && (variable.attack_time > 0.0)"
             },
             {
-              "mosin_reload": "query.get_equipped_item_name == 'mosin' && (variable.attack_time > 0.0)"
+              "mosin": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mosin') && query.is_using_item"
             },
             {
-              "mp5": "query.get_equipped_item_name == 'mp5' && query.is_using_item"
+              "mosin_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mosin') && (variable.attack_time > 0.0)"
             },
             {
-              "mp5_reload": "query.get_equipped_item_name == 'mp5' && (variable.attack_time > 0.0)"
+              "mp5": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp5') && query.is_using_item"
             },
             {
-              "mp7": "query.get_equipped_item_name == 'mp7' && query.is_using_item"
+              "mp5_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp5') && (variable.attack_time > 0.0)"
             },
             {
-              "mp7_reload": "query.get_equipped_item_name == 'mp7' && (variable.attack_time > 0.0)"
+              "mp7": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp7') && query.is_using_item"
             },
             {
-              "mp40": "query.get_equipped_item_name == 'mp40' && query.is_using_item"
+              "mp7_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp7') && (variable.attack_time > 0.0)"
             },
             {
-              "mp40_reload": "query.get_equipped_item_name == 'mp40' && (variable.attack_time > 0.0)"
+              "mp40": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp40') && query.is_using_item"
             },
             {
-              "p90": "query.get_equipped_item_name == 'p90' && query.is_using_item"
+              "mp40_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp40') && (variable.attack_time > 0.0)"
             },
             {
-              "p90_reload": "query.get_equipped_item_name == 'p90' && (variable.attack_time > 0.0)"
+              "p90": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:p90') && query.is_using_item"
             },
             {
-              "pkm": "query.get_equipped_item_name == 'pkm' && query.is_using_item"
+              "p90_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:p90') && (variable.attack_time > 0.0)"
             },
             {
-              "pkm_reload": "query.get_equipped_item_name == 'pkm' && (variable.attack_time > 0.0)"
+              "pkm": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:pkm') && query.is_using_item"
             },
             {
-              "ppsh": "query.get_equipped_item_name == 'ppsh' && query.is_using_item"
+              "pkm_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:pkm') && (variable.attack_time > 0.0)"
             },
             {
-              "ppsh_reload": "query.get_equipped_item_name == 'ppsh' && (variable.attack_time > 0.0)"
+              "ppsh": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ppsh') && query.is_using_item"
             },
             {
-              "rpg": "query.get_equipped_item_name == 'rpg' && query.is_using_item"
+              "ppsh_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ppsh') && (variable.attack_time > 0.0)"
             },
             {
-              "rpg_reload": "query.get_equipped_item_name == 'rpg' && (variable.attack_time > 0.0)"
+              "rpg": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:rpg') && query.is_using_item"
             },
             {
-              "rpk": "query.get_equipped_item_name == 'rpk' && query.is_using_item"
+              "rpg_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:rpg') && (variable.attack_time > 0.0)"
             },
             {
-              "rpk_reload": "query.get_equipped_item_name == 'rpk' && (variable.attack_time > 0.0)"
+              "rpk": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:rpk') && query.is_using_item"
             },
             {
-              "saiga12": "query.get_equipped_item_name == 'saiga12' && query.is_using_item"
+              "rpk_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:rpk') && (variable.attack_time > 0.0)"
             },
             {
-              "saiga12_reload": "query.get_equipped_item_name == 'saiga12' && (variable.attack_time > 0.0)"
+              "saiga12": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:saiga12') && query.is_using_item"
             },
             {
-              "scar": "query.get_equipped_item_name == 'scar' && query.is_using_item"
+              "saiga12_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:saiga12') && (variable.attack_time > 0.0)"
             },
             {
-              "scar_reload": "query.get_equipped_item_name == 'scar' && (variable.attack_time > 0.0)"
+              "scar": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:scar') && query.is_using_item"
             },
             {
-              "svd": "query.get_equipped_item_name == 'svd' && query.is_using_item"
+              "scar_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:scar') && (variable.attack_time > 0.0)"
             },
             {
-              "svd_reload": "query.get_equipped_item_name == 'svd' && (variable.attack_time > 0.0)"
+              "svd": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:svd') && query.is_using_item"
             },
             {
-              "tt33": "query.get_equipped_item_name == 'tt33' && query.is_using_item"
+              "svd_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:svd') && (variable.attack_time > 0.0)"
             },
             {
-              "tt33_reload": "query.get_equipped_item_name == 'tt33' && (variable.attack_time > 0.0)"
+              "tt33": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tt33') && query.is_using_item"
             },
             {
-              "uzi": "query.get_equipped_item_name == 'uzi' && query.is_using_item"
+              "tt33_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tt33') && (variable.attack_time > 0.0)"
             },
             {
-              "uzi_reload": "query.get_equipped_item_name == 'uzi' && (variable.attack_time > 0.0)"
+              "uzi": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:uzi') && query.is_using_item"
             },
             {
-              "vz61": "query.get_equipped_item_name == 'vz61' && query.is_using_item"
+              "uzi_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:uzi') && (variable.attack_time > 0.0)"
             },
             {
-              "vz61_reload": "query.get_equipped_item_name == 'vz61' && (variable.attack_time > 0.0)"
+              "vz61": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:vz61') && query.is_using_item"
             },
             {
-              "xm8": "query.get_equipped_item_name == 'xm8' && query.is_using_item"
+              "vz61_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:vz61') && (variable.attack_time > 0.0)"
             },
             {
-              "xm8_reload": "query.get_equipped_item_name == 'xm8' && (variable.attack_time > 0.0)"
+              "xm8": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:xm8') && query.is_using_item"
+            },
+            {
+              "xm8_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:xm8') && (variable.attack_time > 0.0)"
             }
           ]
         },
@@ -378,6 +381,19 @@
             },
             {
               "mgj_1": "query.is_jumping && query.is_riding"
+            }
+          ]
+        },
+        "shield": {
+          "on_entry": [
+            "/effect @s resistance 99999 1 true"
+          ],
+          "on_exit": [
+            "/effect @s resistance 0"
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_sneaking"
             }
           ]
         },
@@ -712,7 +728,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "glock18ii": "query.get_equipped_item_name == 'glock18' && query.is_using_item"
+              "glock18ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock18') && query.is_using_item"
             }
           ]
         },
@@ -727,7 +743,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "glock18": "query.get_equipped_item_name == 'glock18' && query.is_using_item"
+              "glock18": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock18') && query.is_using_item"
             }
           ]
         },
@@ -914,7 +930,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "m10ii": "query.get_equipped_item_name == 'm10' && query.is_using_item"
+              "m10ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m10') && query.is_using_item"
             }
           ]
         },
@@ -929,7 +945,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "m10": "query.get_equipped_item_name == 'm10' && query.is_using_item"
+              "m10": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m10') && query.is_using_item"
             }
           ]
         },
@@ -1349,7 +1365,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "mg42ii": "query.get_equipped_item_name == 'mg42' && query.is_using_item"
+              "mg42ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mg42') && query.is_using_item"
             }
           ]
         },
@@ -1364,7 +1380,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "mg42": "query.get_equipped_item_name == 'mg42' && query.is_using_item"
+              "mg42": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mg42') && query.is_using_item"
             }
           ]
         },
@@ -1418,7 +1434,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "mp5ii": "query.get_equipped_item_name == 'mp5' && query.is_using_item"
+              "mp5ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp5') && query.is_using_item"
             }
           ]
         },
@@ -1433,7 +1449,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "mp5": "query.get_equipped_item_name == 'mp5' && query.is_using_item"
+              "mp5": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp5') && query.is_using_item"
             }
           ]
         },
@@ -1458,7 +1474,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "mp7ii": "query.get_equipped_item_name == 'mp7' && query.is_using_item"
+              "mp7ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp7') && query.is_using_item"
             }
           ]
         },
@@ -1473,7 +1489,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "mp7": "query.get_equipped_item_name == 'mp7' && query.is_using_item"
+              "mp7": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp7') && query.is_using_item"
             }
           ]
         },
@@ -1753,7 +1769,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "uziii": "query.get_equipped_item_name == 'uzi' && query.is_using_item"
+              "uziii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:uzi') && query.is_using_item"
             }
           ]
         },
@@ -1768,7 +1784,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "uzi": "query.get_equipped_item_name == 'uzi' && query.is_using_item"
+              "uzi": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:uzi') && query.is_using_item"
             }
           ]
         },
@@ -1793,7 +1809,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "vz61ii": "query.get_equipped_item_name == 'vz61' && query.is_using_item"
+              "vz61ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:vz61') && query.is_using_item"
             }
           ]
         },
@@ -1808,7 +1824,7 @@
               "default": "!query.is_using_item"
             },
             {
-              "vz61": "query.get_equipped_item_name == 'vz61' && query.is_using_item"
+              "vz61": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:vz61') && query.is_using_item"
             }
           ]
         },

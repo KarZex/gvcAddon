@@ -6,14 +6,15 @@
         "default": {
           "transitions": [
             { "tank": "query.is_riding && (variable.attack_time > 0.0)" },
-            { "tank": "query.is_riding && query.get_equipped_item_name == 'tank' && query.is_using_item" },
-            { "mgg_1": "query.is_riding && query.get_equipped_item_name == 'mgg' && query.is_using_item" },
+            { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tank') && query.is_using_item" },
+            { "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mgg') && query.is_using_item" },
             { "mgj_1": "query.is_riding && query.is_jumping && query.get_equipped_item_name != 'mgg'" },
+            { "shield": "query.is_sneaking && query.is_item_name_any('slot.weapon.offhand', 0, 'minecraft:shield')" },
             {
-              "fire": "query.get_equipped_item_name == 'fire' && query.is_using_item"
+              "fire": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:fire') && query.is_using_item"
             },
             {
-              "fire_reload": "query.get_equipped_item_name == 'fire' && (variable.attack_time > 0.0)"
+              "fire_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:fire') && (variable.attack_time > 0.0)"
             }
           ]
         },
@@ -62,6 +63,19 @@
           "transitions": [ 
             {"default":"!query.is_jumping || !query.is_riding"},
             {"mgj_1":"query.is_jumping && query.is_riding"}
+          ]
+        },
+        "shield": {
+          "on_entry": [
+            "/effect @s resistance 99999 1 true"
+
+          ],
+          "on_exit": [
+            "/effect @s resistance 0"
+
+          ],
+          "transitions": [ 
+            {"default":"!query.is_sneaking"}
           ]
         },
         "fire_reload": {
