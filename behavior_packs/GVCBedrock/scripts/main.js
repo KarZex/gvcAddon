@@ -108,7 +108,6 @@ function airstrike1( location,team ){
 
 }
 
-
 async function airstrike(projectile,level,team){
 	const dimension = projectile.dimension;
 	projectile.dimension.spawnParticle(`zex:${team}_ring1`,projectile.location);
@@ -134,6 +133,8 @@ async function airstrike(projectile,level,team){
 		
 	}
 }
+
+
 
 world.afterEvents.projectileHitEntity.subscribe( e => {
 	if( e.projectile.typeId.includes("fire")){
@@ -170,6 +171,10 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
             vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
             vict.applyKnockback(0, 0, 0, 0);
         }
+		else if( damageType != `override` ){
+            vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
+            vict.applyKnockback(0, 0, 0, 0);
+		}
 		e.projectile.triggerEvent("minecraft:explode");
 	}
 })

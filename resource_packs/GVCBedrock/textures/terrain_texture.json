@@ -363,6 +363,18 @@
     },
     "spawn_addon_jamming": {
       "textures": "textures/spawn/addon_jamming"
+    },
+    "redspawn": {
+      "textures": "textures/blocks/redspawn"
+    },
+    "bluespawn": {
+      "textures": "textures/blocks/bluespawn"
+    },
+    "greenspawn": {
+      "textures": "textures/blocks/greenspawn"
+    },
+    "yellowspawn": {
+      "textures": "textures/blocks/yellowspawn"
     }
   }
 }

@@ -719,11 +719,6 @@ entity.gvcv5:flag_garrison_blue.name=§9青チーム拠点
 entity.gvcv5:flag_garrison_green.name=§a緑チーム拠点
 entity.gvcv5:flag_garrison_yellow.name=§e黄チーム拠点
 
-entity.gvcv5:airstrike_red.name=§c赤チーム支援爆撃§r
-entity.gvcv5:airstrike_blue.name=§9青チーム支援爆撃§r
-entity.gvcv5:airstrike_green.name=§a緑チーム支援爆撃§r
-entity.gvcv5:airstrike_yellow.name=§e黄チーム支援爆撃§r
-
 entity.gvcv5:airstrike_red.name=§c赤チームの支援爆撃§r
 entity.gvcv5:airstrike_blue.name=§9青チームの支援爆撃§r
 entity.gvcv5:airstrike_green.name=§a緑チームの支援爆撃§r
@@ -764,8 +759,26 @@ script.gvcv5.phoneAbuse0.name=警告::
 script.gvcv5.phoneAbuse1.name=にて
 script.gvcv5.phoneAbuse2.name=による端末の使用を確認しました。
 
-script.gvcv5.phone_menber_list.name=チームメンバー一覧
+script.gvcv5.phone_menber_list.name=収容者一覧
+script.gvcv5.phone_to_menber.name=収容者にテレポート
+script.gvcv5.phone_from_menber.name=収容者をこちらにテレポート
+script.gvcv5.phone_release_menber.name=収容者を釈放
 
 script.gvcv5.phoneAbuse.name=§c敵の端末でテレポートすると、端末は破壊されます。§r
 
 action.gvcv5.team.dye=染色する
+
+tile.gvcv5:building_redjail_b.name=§c赤チームの収容所
+tile.gvcv5:building_bluejail_b.name=§9青チームの収容所
+tile.gvcv5:building_greenjail_b.name=§a緑チームの収容所
+tile.gvcv5:building_yellowjail_b.name=§e黄チームの収容所
+
+tile.gvcv5:redspawn.name=§c赤チームのスポーン地点
+tile.gvcv5:bluespawn.name=§9青チームのスポーン地点
+tile.gvcv5:greenspawn.name=§a緑チームのスポーン地点
+tile.gvcv5:yellowspawn.name=§e黄チームのスポーン地点
+
+script.gvcv5.releasedJail0.name=が刑務所から脱獄しました!
+script.gvcv5.youreleased.name=あなたは刑務所から脱獄しました!
+script.gvcv5.released0.name=は
+script.gvcv5.released1.name=によって刑務所から解放されました

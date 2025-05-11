@@ -69,19 +69,31 @@
           "reselect_targets": true,
           "entity_types": [
             {
-              "filters": { "test": "is_family", "subject": "other", "value": "monster" },
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"redteam" },
+                  { "test": "has_tag", "operator":"!=", "subject":"other", "value":"redSub" }
+                ]
+              },
               "max_dist": 42
             },
             {
-              "filters": { "test": "is_family", "subject": "other", "value": "blueteam" },
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "allied_soldier" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"redteam" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"noteam" }
+                ]
+              },
               "max_dist": 42
             },
             {
-              "filters": { "test": "is_family", "subject": "other", "value": "greenteam" },
-              "max_dist": 42
-            },
-            {
-              "filters": { "test": "is_family", "subject": "other", "value": "yellowteam" },
+              "filters": {
+                "any_of": [
+                  { "test": "is_family", "subject": "other", "value": "monster" }
+                ]
+              },
               "max_dist": 42
             }
           ]
@@ -118,29 +130,41 @@
               }
             ]
           },
-          "minecraft:behavior.nearest_attackable_target": {
-            "priority": 2,
-            "must_see": true,
-            "reselect_targets": true,
-            "entity_types": [
-              {
-                "filters": { "test": "is_family", "subject": "other", "value": "monster" },
-                "max_dist": 42
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"blueteam" },
+                  { "test": "has_tag", "operator":"!=", "subject":"other", "value":"blueSub" }
+                ]
               },
-              {
-                "filters": { "test": "is_family", "subject": "other", "value": "redteam" },
-                "max_dist": 42
+              "max_dist": 42
+            },
+            {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "allied_soldier" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"blueteam" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"noteam" }
+                ]
               },
-              {
-                "filters": { "test": "is_family", "subject": "other", "value": "greenteam" },
-                "max_dist": 42
+              "max_dist": 42
+            },
+            {
+              "filters": {
+                "any_of": [
+                  { "test": "is_family", "subject": "other", "value": "monster" }
+                ]
               },
-              {
-                "filters": { "test": "is_family", "subject": "other", "value": "yellowteam" },
-                "max_dist": 42
-              }
-            ]
-          }
+              "max_dist": 42
+            }
+          ]
+        }
 
       },
       "greenteam":{
@@ -180,19 +204,31 @@
           "reselect_targets": true,
           "entity_types": [
             {
-              "filters": { "test": "is_family", "subject": "other", "value": "monster" },
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"greenteam" },
+                  { "test": "has_tag", "operator":"!=", "subject":"other", "value":"greenSub" }
+                ]
+              },
               "max_dist": 42
             },
             {
-              "filters": { "test": "is_family", "subject": "other", "value": "redteam" },
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "allied_soldier" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"greenteam" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"noteam" }
+                ]
+              },
               "max_dist": 42
             },
             {
-              "filters": { "test": "is_family", "subject": "other", "value": "blueteam" },
-              "max_dist": 42
-            },
-            {
-              "filters": { "test": "is_family", "subject": "other", "value": "yellowteam" },
+              "filters": {
+                "any_of": [
+                  { "test": "is_family", "subject": "other", "value": "monster" }
+                ]
+              },
               "max_dist": 42
             }
           ]
@@ -230,29 +266,41 @@
           }
         ]
       },
-      "minecraft:behavior.nearest_attackable_target": {
-        "priority": 2,
-        "must_see": true,
-        "reselect_targets": true,
-        "entity_types": [
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "monster" },
-            "max_dist": 42
-          },
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "redteam" },
-            "max_dist": 42
-          },
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "blueteam" },
-            "max_dist": 42
-          },
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "greenteam" },
-            "max_dist": 42
-          }
-        ]
-      }
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"yellowteam" },
+                  { "test": "has_tag", "operator":"!=", "subject":"other", "value":"yellowSub" }
+                ]
+              },
+              "max_dist": 42
+            },
+            {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "allied_soldier" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"yellowteam" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"noteam" }
+                ]
+              },
+              "max_dist": 42
+            },
+            {
+              "filters": {
+                "any_of": [
+                  { "test": "is_family", "subject": "other", "value": "monster" }
+                ]
+              },
+              "max_dist": 42
+            }
+          ]
+        }
 
   }
     },

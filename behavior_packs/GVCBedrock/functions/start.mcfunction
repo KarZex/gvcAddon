@@ -8,6 +8,9 @@ execute as @a[tag=!startedv5] run function gunstart
 execute as @a[tag=down] run function down
 execute as @a[tag=rise] run function rise
 
+gamemode a @a[m=s,scores={antiMining=1..}]
+execute as @a[m=a,scores={antiMining=1..}] run function antiMining
+
 function sounds
 
 
@@ -26,6 +29,7 @@ execute at @e[type=gvcv5:airstrike_blue] run particle zex:blue_strike ~~~
 execute at @e[type=gvcv5:airstrike_green] run particle zex:green_strike ~~~
 execute at @e[type=gvcv5:airstrike_yellow] run particle zex:yellow_strike ~~~
 execute at @e[type=gvcv5:airstrike_noteam] run particle zex:noteam_strike ~~~
+execute at @e[type=fire:agmissile] run particle minecraft:basic_flame_particle ~~~
 
 kill @e[type=item,name=83a5bfca04b6b421d23c]
 
