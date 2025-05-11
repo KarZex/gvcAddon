@@ -211,7 +211,8 @@
               "filters": {
                 "all_of": [
                   { "test": "is_family", "subject": "other", "value": "allied_soldier" },
-                  { "test": "is_family", "subject": "other","operator":"!=", "value":"yellowteam" }
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"yellowteam" },
+                  { "test": "is_family", "subject": "other","operator":"!=", "value":"noteam" }
                 ]
               },
               "max_dist": 42

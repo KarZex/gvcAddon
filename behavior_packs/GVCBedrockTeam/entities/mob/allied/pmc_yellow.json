@@ -2544,6 +2544,12 @@
                   "subject": "other",
                   "operator": "!=",
                   "value": "yellowteam"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "noteam"
                 }
               ]
             },

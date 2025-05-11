@@ -90,8 +90,8 @@
                   },
                   {
                     "test": "has_tag",
-                    "operator": "!=",
                     "subject": "other",
+                    "operator": "!=",
                     "value": "redSub"
                   }
                 ]
@@ -194,8 +194,8 @@
                   },
                   {
                     "test": "has_tag",
-                    "operator": "!=",
                     "subject": "other",
+                    "operator": "!=",
                     "value": "blueSub"
                   }
                 ]
@@ -298,8 +298,8 @@
                   },
                   {
                     "test": "has_tag",
-                    "operator": "!=",
                     "subject": "other",
+                    "operator": "!=",
                     "value": "greenSub"
                   }
                 ]
@@ -402,8 +402,8 @@
                   },
                   {
                     "test": "has_tag",
-                    "operator": "!=",
                     "subject": "other",
+                    "operator": "!=",
                     "value": "yellowSub"
                   }
                 ]
