@@ -138,7 +138,7 @@
                   {
                     "all_of": [
                       {"test": "is_family","subject": "other","value": "player"},
-                      {"test": "has_tag","operator":"!=","subject": "other","value": "blueSub"}
+                      {"test": "has_tag","operator":"==","subject": "other","value": "blueSub"}
                     ]
                   }
                 ]

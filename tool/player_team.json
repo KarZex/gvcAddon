@@ -88,6 +88,20 @@
             },
             {
               "cause": "all",
+              "deals_damage": true,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {"test": "has_tag","subject": "self","operator": "==","value": "down"},
+                    {"test": "has_damage","value": "fatal"}
+                  ]
+                },
+                "event": "gvcv5:remove_down",
+                "target": "self"
+              }
+            },
+            {
+              "cause": "all",
               "deals_damage": false,
               "on_damage": {
                 "filters": {
@@ -202,7 +216,7 @@
                     {"test": "has_damage","value": "fatal"}
                   ]
                 },
-                "event": "gvcv5:remove_down_red",
+                "event": "gvcv5:remove_down",
                 "target": "self"
               }
             },
@@ -213,6 +227,7 @@
                 "filters": {
                   "any_of": [
                     {"test": "is_family","subject": "other","value": "noteam"},
+                    {"test": "has_tag","operator":"==","subject": "other","value": "redSub"},
                     {"test": "is_family","subject": "other","value": "redteam"}
                   ]
                 }
@@ -345,6 +360,7 @@
                 "filters": {
                   "any_of": [
                     {"test": "is_family","subject": "other","value": "noteam"},
+                    {"test": "has_tag","operator":"==","subject": "other","value": "blueSub"},
                     {"test": "is_family","subject": "other","value": "blueteam"}
                   ]
                 }
@@ -477,6 +493,7 @@
                 "filters": {
                   "any_of": [
                     {"test": "is_family","subject": "other","value": "noteam"},
+                    {"test": "has_tag","operator":"==","subject": "other","value": "greenSub"},
                     {"test": "is_family","subject": "other","value": "greenteam"}
                   ]
                 }
@@ -609,6 +626,7 @@
                 "filters": {
                   "any_of": [
                     {"test": "is_family","subject": "other","value": "noteam"},
+                    {"test": "has_tag","operator":"==","subject": "other","value": "yellowSub"},
                     {"test": "is_family","subject": "other","value": "yellowteam"}
                   ]
                 }
@@ -967,7 +985,8 @@
           "command": [
             "tag @s remove down",
             "inputpermission set @s jump enabled",
-            "inputpermission set @s mount enabled"
+            "inputpermission set @s mount enabled",
+            "scoreboard players set @s antiMining 1"
           ]
         }
       },
@@ -977,7 +996,10 @@
             "effect @s instant_health 1 255 true",
             "effect @s resistance 4 255 true",
             "effect @s wither 99999 1 true",
-            "tag @s add down"
+            "tag @s add down",
+            "inputpermission set @s jump disabled",
+            "inputpermission set @s mount disabled",
+            "scoreboard players set @s antiMining 999999"
           ]
         }
       },
@@ -989,7 +1011,10 @@
             "effect @s wither 99999 1 true",
             "tag @s add down",
             "tag @s add downedbyred",
-            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyred.name\" } ] }"
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyred.name\" } ] }",
+            "inputpermission set @s jump disabled",
+            "inputpermission set @s mount disabled",
+            "scoreboard players set @s antiMining 999999"
           ]
         }
       },
@@ -1001,7 +1026,10 @@
             "effect @s wither 99999 1 true",
             "tag @s add down",
             "tag @s add downedbyblue",
-            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyblue.name\" } ] }"
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyblue.name\" } ] }",
+            "inputpermission set @s jump disabled",
+            "inputpermission set @s mount disabled",
+            "scoreboard players set @s antiMining 999999"
           ]
         }
       },
@@ -1013,7 +1041,10 @@
             "effect @s wither 99999 1 true",
             "tag @s add down",
             "tag @s add downedbygreen",
-            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbygreen.name\" } ] }"
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbygreen.name\" } ] }",
+            "inputpermission set @s jump disabled",
+            "inputpermission set @s mount disabled",
+            "scoreboard players set @s antiMining 999999"
           ]
         }
       },
@@ -1025,7 +1056,10 @@
             "effect @s wither 99999 1 true",
             "tag @s add down",
             "tag @s add downedbyyellow",
-            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyyellow.name\" } ] }"
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyyellow.name\" } ] }",
+            "inputpermission set @s jump disabled",
+            "inputpermission set @s mount disabled",
+            "scoreboard players set @s antiMining 999999"
           ]
         }
       },
@@ -1034,6 +1068,10 @@
           {
             "queue_command": {
               "command": [
+                "tag @s remove down",
+                "inputpermission set @s jump enabled",
+                "inputpermission set @s mount enabled",
+                "scoreboard players set @s antiMining 1",
                 "playanimation @s animation.down.main2 none 6 ",
                 "tag @s add rise",
                 "effect @s resistance 7 255 true",
