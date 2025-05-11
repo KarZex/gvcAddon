@@ -782,3 +782,8 @@ script.gvcv5.releasedJail0.name=が刑務所から脱獄しました!
 script.gvcv5.youreleased.name=あなたは刑務所から脱獄しました!
 script.gvcv5.released0.name=は
 script.gvcv5.released1.name=によって刑務所から解放されました
+
+script.gvcv5.downedbyred.name=は§c赤チーム§rによってダウンしました
+script.gvcv5.downedbyblue.name=は§9青チーム§rによってダウンしました
+script.gvcv5.downedbygreen.name=は§a緑チーム§rによってダウンしました
+script.gvcv5.downedbyyellow.name=は§e黄チーム§rによってダウンしました

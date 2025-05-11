@@ -45,21 +45,23 @@
               "cause": "all",
               "deals_damage": false,
               "on_damage": {
-                    "filters": {
-                        "all_of": [
-                          {
-                            "test": "is_family",
-                            "subject": "other",
-                            "value": "allied_soldier"
-                          },
-                          {
-                            "test": "is_family",
-                            "subject": "other",
-                            "value": "redteam"
-                          }
-                        ]
+                "filters": {
+                  "any_of":[
+                    {
+                      "all_of": [
+                        {"test": "is_family","subject": "other","value": "allied_soldier"},
+                        {"test": "is_family","subject": "other", "value": "redteam"}
+                      ]
+                    },
+                    {
+                      "all_of": [
+                        {"test": "is_family","subject": "other","value": "player"},
+                        {"test": "has_tag","operator":"!=","subject": "other","value": "redSub"}
+                      ]
                     }
-                  }
+                  ]
+                }
+              }
             }
           ]
         },
@@ -106,30 +108,32 @@
           "minecraft:type_family": {
             "family": [ "allied_soldier","playerp", "mob","blueteam" ]
           },
-          "minecraft:damage_sensor": {
-            "triggers": [
-              {
-                "cause": "all",
-                "deals_damage": false,
-                "on_damage": {
-                      "filters": {
-                          "all_of": [
-                            {
-                              "test": "is_family",
-                              "subject": "other",
-                              "value": "allied_soldier"
-                            },
-                            {
-                              "test": "is_family",
-                              "subject": "other",
-                              "value": "blueteam"
-                            }
-                          ]
-                      }
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "any_of":[
+                    {
+                      "all_of": [
+                        {"test": "is_family","subject": "other","value": "allied_soldier"},
+                        {"test": "is_family","subject": "other", "value": "blueteam"}
+                      ]
+                    },
+                    {
+                      "all_of": [
+                        {"test": "is_family","subject": "other","value": "player"},
+                        {"test": "has_tag","operator":"!=","subject": "other","value": "blueSub"}
+                      ]
                     }
+                  ]
+                }
               }
-            ]
-          },
+            }
+          ]
+        },
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 2,
           "must_see": true,
@@ -180,21 +184,23 @@
               "cause": "all",
               "deals_damage": false,
               "on_damage": {
-                    "filters": {
-                        "all_of": [
-                          {
-                            "test": "is_family",
-                            "subject": "other",
-                            "value": "allied_soldier"
-                          },
-                          {
-                            "test": "is_family",
-                            "subject": "other",
-                            "value": "greenteam"
-                          }
-                        ]
+                "filters": {
+                  "any_of":[
+                    {
+                      "all_of": [
+                        {"test": "is_family","subject": "other","value": "allied_soldier"},
+                        {"test": "is_family","subject": "other", "value": "greenteam"}
+                      ]
+                    },
+                    {
+                      "all_of": [
+                        {"test": "is_family","subject": "other","value": "player"},
+                        {"test": "has_tag","operator":"!=","subject": "other","value": "greenSub"}
+                      ]
                     }
-                  }
+                  ]
+                }
+              }
             }
           ]
         },
@@ -248,21 +254,23 @@
             "cause": "all",
             "deals_damage": false,
             "on_damage": {
-                  "filters": {
-                      "all_of": [
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "allied_soldier"
-                        },
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "yellowteam"
-                        }
-                      ]
+              "filters": {
+                "any_of":[
+                  {
+                    "all_of": [
+                      {"test": "is_family","subject": "other","value": "allied_soldier"},
+                      {"test": "is_family","subject": "other", "value": "yellowteam"}
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {"test": "is_family","subject": "other","value": "player"},
+                      {"test": "has_tag","operator":"!=","subject": "other","value": "yellowSub"}
+                    ]
                   }
-                }
+                ]
+              }
+            }
           }
         ]
       },

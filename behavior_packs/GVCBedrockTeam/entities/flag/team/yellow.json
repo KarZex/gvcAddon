@@ -130,11 +130,17 @@
             "deals_damage": false,
             "on_damage": {
               "filters": {
-                "all_of": [
+                "any_of":[
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "yellowteam"
+                    "all_of": [
+                      {"test": "is_family","subject": "other", "value": "yellowteam"}
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {"test": "is_family","subject": "other","value": "player"},
+                      {"test": "has_tag","operator":"!=","subject": "other","value": "yellowSub"}
+                    ]
                   }
                 ]
               }
@@ -291,35 +297,31 @@
         "entity_types": [
           {
             "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "monster"
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "player" },
+                { "test": "is_family", "subject": "other","operator":"!=", "value":"yellowteam" },
+                { "test": "has_tag",   "subject": "other","operator":"!=", "value":"yellowSub" }
+              ]
             },
-            "max_dist": 15
+            "max_dist": 32
           },
           {
             "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "blueteam"
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "allied_soldier" },
+                { "test": "is_family", "subject": "other","operator":"!=", "value":"yellowteam" },
+                { "test": "is_family", "subject": "other","operator":"!=", "value":"noteam" }
+              ]
             },
-            "max_dist": 15
+            "max_dist": 32
           },
           {
             "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "greenteam"
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "monster" }
+              ]
             },
-            "max_dist": 15
-          },
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "redteam"
-            },
-            "max_dist": 15
+            "max_dist": 32
           }
         ]
       },

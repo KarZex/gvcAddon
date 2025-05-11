@@ -2472,16 +2472,35 @@
             "deals_damage": false,
             "on_damage": {
               "filters": {
-                "all_of": [
+                "any_of": [
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
+                    "all_of": [
+                      {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "allied_soldier"
+                      },
+                      {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "yellowteam"
+                      }
+                    ]
                   },
                   {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "yellowteam"
+                    "all_of": [
+                      {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "player"
+                      },
+                      {
+                        "test": "has_tag",
+                        "operator": "!=",
+                        "subject": "other",
+                        "value": "yellowSub"
+                      }
+                    ]
                   }
                 ]
               }

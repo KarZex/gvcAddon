@@ -77,14 +77,155 @@
               "deals_damage": false,
               "on_damage": {
                 "filters": {
-                  "any_of": [
+                  "all_of": [
                     {
                       "test": "is_family",
                       "subject": "other",
                       "value": "allied_soldier"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "noteam"
                     }
                   ]
                 }
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "redteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_red"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "blueteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_blue"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "greenteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_green"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "yellowteam"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:down_by_yellow"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:become_down",
+                "target": "self"
               }
             }
           ]
@@ -202,28 +343,6 @@
                       "value": "down"
                     },
                     {
-                      "test": "has_damage",
-                      "value": "fatal"
-                    }
-                  ]
-                },
-                "event": "gvcv5:become_down",
-                "target": "self"
-              }
-            },
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "has_tag",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "down"
-                    },
-                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -317,6 +436,34 @@
                   ]
                 },
                 "event": "gvcv5:down_by_yellow"
+              }
+            },
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "down"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "gvcv5:become_down",
+                "target": "self"
               }
             }
           ]
@@ -540,6 +687,12 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
                     },
                     {
                       "test": "has_damage",
@@ -774,6 +927,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "has_damage",
                       "value": "fatal"
                     }
@@ -1004,6 +1163,12 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
                     },
                     {
                       "test": "has_damage",
@@ -3186,7 +3351,7 @@
           ]
         }
       },
-      "gvcv5:down_by_red":{
+      "gvcv5:down_by_red": {
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
@@ -3194,11 +3359,11 @@
             "effect @s wither 99999 1 true",
             "tag @s add down",
             "tag @s add downedbyred",
-            "say was downed by §cred"
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyred.name\" } ] }"
           ]
         }
       },
-      "gvcv5:down_by_blue":{
+      "gvcv5:down_by_blue": {
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
@@ -3206,11 +3371,11 @@
             "effect @s wither 99999 1 true",
             "tag @s add down",
             "tag @s add downedbyblue",
-            "say was downed by §9blue"
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyblue.name\" } ] }"
           ]
         }
       },
-      "gvcv5:down_by_green":{
+      "gvcv5:down_by_green": {
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
@@ -3218,11 +3383,11 @@
             "effect @s wither 99999 1 true",
             "tag @s add down",
             "tag @s add downedbygreen",
-            "say was downed by §agreen"
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbygreen.name\" } ] }"
           ]
         }
       },
-      "gvcv5:down_by_yellow":{
+      "gvcv5:down_by_yellow": {
         "queue_command": {
           "command": [
             "effect @s instant_health 1 255 true",
@@ -3230,7 +3395,7 @@
             "effect @s wither 99999 1 true",
             "tag @s add down",
             "tag @s add downedbyyellow",
-            "say was downed by §eyellow"
+            "tellraw @a { \"rawtext\": [ { \"selector\": \"@s\" },{ \"translate\": \"script.gvcv5.downedbyyellow.name\" } ] }"
           ]
         }
       },

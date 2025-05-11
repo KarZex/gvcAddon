@@ -90,17 +90,14 @@ function gvcv5RemoveTeamList( user,team ){
 
 world.afterEvents.playerSpawn.subscribe( e => {
 	const p = e.player;
-	world.sendMessage(`a`);
 	const redJail = world.getDynamicProperty(`redJail`); 
 	const blueJail = world.getDynamicProperty(`blueJail`); 
 	const greenJail = world.getDynamicProperty(`greenJail`);
 	const yellowJail = world.getDynamicProperty(`yellowJail`);
 
 	if( ( p.hasTag(`downedbyred`) || p.hasTag(`redSub`) ) ){
-		world.sendMessage(`a`);
 		p.teleport(redJail);
 		if(  p.hasTag(`downedbyred`) ){
-			world.sendMessage(`a`);
 			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
 			p.addTag(`redSub`);
 			p.addTag(`onDeath`);
@@ -109,10 +106,8 @@ world.afterEvents.playerSpawn.subscribe( e => {
 	}
 
 	else if(( p.hasTag(`downedbyblue`) || p.hasTag(`blueSub`) )){
-		world.sendMessage(`a`);
 		p.teleport(blueJail);
 		if(  p.hasTag(`downedbyblue`) ){
-			world.sendMessage(`a`);
 			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
 			p.addTag(`blueSub`);
 			p.addTag(`onDeath`);
@@ -120,10 +115,8 @@ world.afterEvents.playerSpawn.subscribe( e => {
 		}
 	}
 	else if( (p.hasTag(`downedbygreen`) || p.hasTag(`greenSub`))){
-		world.sendMessage(`a`);
 		p.teleport(greenJail);
 		if(  p.hasTag(`downedbygreen`) ){
-			world.sendMessage(`a`);
 			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
 			p.addTag(`greenSub`);
 			p.addTag(`onDeath`);
@@ -131,7 +124,6 @@ world.afterEvents.playerSpawn.subscribe( e => {
 		}
 	}
 	else if( (p.hasTag(`downedbyyellow`) || p.hasTag(`yellowSub`)) ){
-		world.sendMessage(`a`);
 		p.teleport(yellowJail);
 		if(  p.hasTag(`downedbyyellow`) ){
 			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
@@ -140,7 +132,6 @@ world.afterEvents.playerSpawn.subscribe( e => {
 			p.runCommand(`give @s rotten_flesh 4`);
 		}
 	}
-	world.sendMessage(`x`);
 	p.runCommand(`inputpermission set @s movement enabled`);
 	p.removeTag(`downedbyred`);
 	p.removeTag(`downedbyblue`);
@@ -154,7 +145,7 @@ world.beforeEvents.playerLeave.subscribe( e => {
 	}
 } )
 world.afterEvents.playerJoin.subscribe( e => {
-	const player = world.getPlayers( { name : e.playerName } )
+	const player = world.getPlayers( { name : e.playerName } )[0];
 	if( player.hasTag(`onDeath`) ){
 		const score = world.getAbsoluteTime() - player.getDynamicProperty(`cTime`);
 		world.scoreboard.getObjective("DeathTime").setScore(player,score);
@@ -182,8 +173,33 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		}
 		world.sendMessage({ rawtext: itemRawText});
 	}
-	else if( e.id == `zex:test` ){
-		e.sourceEntity.teleport(world.getDynamicProperty(`greenJail`));
+	else if( e.id == `zex:spawnpoint` ){
+		const player = e.sourceEntity;
+		const location = player.getSpawnPoint();
+		const O = world.getDefaultSpawnLocation();
+		player.removeTag(`redSub`);
+		player.removeTag(`blueSub`);
+		player.removeTag(`greenSub`);
+		player.removeTag(`yellowSub`);
+		if( player.getSpawnPoint() != undefined  ){
+			player.teleport({ x:location.x,y:location.y,z:location.y },{ dimension:location.dimension } );
+		}
+		else if (player.hasTag(`red`) && world.getDynamicProperty(`redSpawn`) != undefined ){
+			player.teleport(world.getDynamicProperty(`redSpawn`),{ dimension:world.getDimension(`overworld`) } );
+		}
+		else if (player.hasTag(`blue`) && world.getDynamicProperty(`blueSpawn`) != undefined ){
+			player.teleport(world.getDynamicProperty(`blueSpawn`),{ dimension:world.getDimension(`overworld`) } );
+		}
+		else if (player.hasTag(`green`) && world.getDynamicProperty(`greenSpawn`) != undefined ){
+			player.teleport(world.getDynamicProperty(`greenSpawn`),{ dimension:world.getDimension(`overworld`) } );
+		}
+		else if (player.hasTag(`yellow`) && world.getDynamicProperty(`yellowSpawn`) != undefined ){
+			player.teleport(world.getDynamicProperty(`yellowSpawn`),{ dimension:world.getDimension(`overworld`) } );
+		}
+		else{
+			player.teleport( {x:O.x,y:320,z:O.z} ,{ dimension:world.getDimension(`overworld`) } );
+			player.addEffect(`resistance`,600,{ amplifier:255 } );
+		}
 	}
 	else if( e.id === `zex:jailpoint` ){
 		const block = e.sourceBlock;
@@ -208,7 +224,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		form.show(user).then( result => {
 			if ( !result.canceled && result.selection < targets.length ){
 				targets[result.selection].teleport(location);
-				targets[result.selection].addTag(`${userFamily}Execution`);
 				targets[result.selection].runCommand(`inputpermission set @s movement disabled`);
 			}
 		})
@@ -578,6 +593,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			}
 		}
 		if( world.scoreboard.getObjective("DeathTime").getScore(user) > 0 ){
+			let itemRawText = []
 			let jail = `noteam`
 			if( user.hasTag(`redSub`) ){ jail = `red`; }
 			else if( user.hasTag(`blueSub`) ){ jail = `blue`; }
@@ -672,7 +688,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 								if( re.selection == 0 ){ user.teleport(phoneArray[r.selection].location,{ dimension : phoneArray[r.selection].dimension }); }
 								else if( re.selection == 1 ){ phoneArray[r.selection].teleport(user.location,{ dimension : user.dimension }); }
 								else if( re.selection == 2 ){ 
-									phoneArray[r.selection].removeTag(`onDeath`);
 									world.scoreboard.getObjective("DeathTime").setScore(phoneArray[r.selection],0); 
 									world.sendMessage([
 										{text:`${phoneArray[r.selection].nameTag}`},
