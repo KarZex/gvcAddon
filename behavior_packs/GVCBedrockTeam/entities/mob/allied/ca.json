@@ -111,6 +111,12 @@
                     "subject": "other",
                     "operator": "!=",
                     "value": "redteam"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "noteam"
                   }
                 ]
               },
@@ -209,6 +215,12 @@
                     "subject": "other",
                     "operator": "!=",
                     "value": "blueteam"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "noteam"
                   }
                 ]
               },
@@ -307,6 +319,12 @@
                     "subject": "other",
                     "operator": "!=",
                     "value": "greenteam"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "noteam"
                   }
                 ]
               },
@@ -405,6 +423,12 @@
                     "subject": "other",
                     "operator": "!=",
                     "value": "yellowteam"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "noteam"
                   }
                 ]
               },

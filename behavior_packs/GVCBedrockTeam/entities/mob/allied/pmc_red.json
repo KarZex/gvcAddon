@@ -2509,33 +2509,61 @@
         "entity_types": [
           {
             "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "monster"
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "redteam"
+                },
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "subject": "other",
+                  "value": "redSub"
+                }
+              ]
             },
             "max_dist": 42
           },
           {
             "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "blueteam"
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "allied_soldier"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "redteam"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "noteam"
+                }
+              ]
             },
             "max_dist": 42
           },
           {
             "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "greenteam"
-            },
-            "max_dist": 42
-          },
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "yellowteam"
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "monster"
+                }
+              ]
             },
             "max_dist": 42
           }

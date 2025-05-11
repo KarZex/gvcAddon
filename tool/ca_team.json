@@ -73,7 +73,7 @@
                 "all_of": [
                   { "test": "is_family", "subject": "other", "value": "player" },
                   { "test": "is_family", "subject": "other","operator":"!=", "value":"redteam" },
-                  { "test": "has_tag", "operator":"!=", "subject":"other", "value":"redSub" }
+                  { "test": "has_tag",   "subject": "other","operator":"!=", "value":"redSub" }
                 ]
               },
               "max_dist": 42
@@ -140,7 +140,7 @@
                 "all_of": [
                   { "test": "is_family", "subject": "other", "value": "player" },
                   { "test": "is_family", "subject": "other","operator":"!=", "value":"blueteam" },
-                  { "test": "has_tag", "operator":"!=", "subject":"other", "value":"blueSub" }
+                  { "test": "has_tag",   "subject": "other","operator":"!=", "value":"blueSub" }
                 ]
               },
               "max_dist": 42
@@ -208,7 +208,7 @@
                 "all_of": [
                   { "test": "is_family", "subject": "other", "value": "player" },
                   { "test": "is_family", "subject": "other","operator":"!=", "value":"greenteam" },
-                  { "test": "has_tag", "operator":"!=", "subject":"other", "value":"greenSub" }
+                  { "test": "has_tag",   "subject": "other","operator":"!=", "value":"greenSub" }
                 ]
               },
               "max_dist": 42
@@ -276,7 +276,7 @@
                 "all_of": [
                   { "test": "is_family", "subject": "other", "value": "player" },
                   { "test": "is_family", "subject": "other","operator":"!=", "value":"yellowteam" },
-                  { "test": "has_tag", "operator":"!=", "subject":"other", "value":"yellowSub" }
+                  { "test": "has_tag",   "subject": "other","operator":"!=", "value":"yellowSub" }
                 ]
               },
               "max_dist": 42
