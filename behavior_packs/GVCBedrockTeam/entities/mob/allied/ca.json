@@ -76,7 +76,7 @@
                         },
                         {
                           "test": "has_tag",
-                          "operator": "!=",
+                          "operator": "==",
                           "subject": "other",
                           "value": "redSub"
                         }
@@ -199,7 +199,7 @@
                         },
                         {
                           "test": "has_tag",
-                          "operator": "!=",
+                          "operator": "==",
                           "subject": "other",
                           "value": "blueSub"
                         }
@@ -322,7 +322,7 @@
                         },
                         {
                           "test": "has_tag",
-                          "operator": "!=",
+                          "operator": "==",
                           "subject": "other",
                           "value": "greenSub"
                         }
@@ -445,7 +445,7 @@
                         },
                         {
                           "test": "has_tag",
-                          "operator": "!=",
+                          "operator": "==",
                           "subject": "other",
                           "value": "yellowSub"
                         }

@@ -1063,18 +1063,28 @@
           ]
         }
       },
+      "gvcv5:remove_down_true": {
+        "queue_command": {
+          "command": [
+            "tag @s remove down",
+            "inputpermission set @s jump enabled",
+            "inputpermission set @s mount enabled",
+            "scoreboard players set @s antiMining 1",
+            "tag @s remove downedbyred",
+            "tag @s remove downedbyblue",
+            "tag @s remove downedbygreen",
+            "tag @s remove downedbyyellow"
+          ]
+        }
+      },
       "gvcv5:become_rise": {
         "sequence": [
           {
             "queue_command": {
               "command": [
-                "tag @s remove down",
-                "inputpermission set @s jump enabled",
-                "inputpermission set @s mount enabled",
-                "scoreboard players set @s antiMining 1",
                 "playanimation @s animation.down.main2 none 6 ",
                 "tag @s add rise",
-                "effect @s resistance 7 255 true",
+                "effect @s resistance 0 1 true",
                 "effect @s wither 0",
                 "scoreboard players set @s rise 120"
               ],

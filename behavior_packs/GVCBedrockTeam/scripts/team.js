@@ -182,7 +182,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		player.removeTag(`greenSub`);
 		player.removeTag(`yellowSub`);
 		if( player.getSpawnPoint() != undefined  ){
-			player.teleport({ x:location.x,y:location.y,z:location.y },{ dimension:location.dimension } );
+			player.teleport({ x:location.x,y:location.y,z:location.z },{ dimension:location.dimension } );
 		}
 		else if (player.hasTag(`red`) && world.getDynamicProperty(`redSpawn`) != undefined ){
 			player.teleport(world.getDynamicProperty(`redSpawn`),{ dimension:world.getDimension(`overworld`) } );
@@ -633,7 +633,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_tp.name`);
 					for( const myAlly of world.getAllPlayers() ){
-						if( myAlly.hasTag(`${userFamily}`) ){
+						if( myAlly.hasTag(`${userFamily}`) && world.scoreboard.getObjective("DeathTime").getScore(myAlly) <= 0 ){
 							phoneArray.push( myAlly );
 							form_tp.button(`${myAlly.nameTag}\nX:${Math.floor(myAlly.location.x)} Y:${Math.floor(myAlly.location.y)} Z:${Math.floor(myAlly.location.z)}`);
 							continue;

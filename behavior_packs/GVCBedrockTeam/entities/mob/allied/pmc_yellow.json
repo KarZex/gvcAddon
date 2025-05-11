@@ -2496,7 +2496,7 @@
                       },
                       {
                         "test": "has_tag",
-                        "operator": "!=",
+                        "operator": "==",
                         "subject": "other",
                         "value": "yellowSub"
                       }

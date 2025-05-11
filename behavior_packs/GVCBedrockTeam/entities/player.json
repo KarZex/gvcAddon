@@ -344,6 +344,12 @@
                       "value": "noteam"
                     },
                     {
+                      "test": "has_tag",
+                      "operator": "==",
+                      "subject": "other",
+                      "value": "redSub"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "value": "redteam"
@@ -580,6 +586,12 @@
                       "test": "is_family",
                       "subject": "other",
                       "value": "noteam"
+                    },
+                    {
+                      "test": "has_tag",
+                      "operator": "==",
+                      "subject": "other",
+                      "value": "blueSub"
                     },
                     {
                       "test": "is_family",
@@ -820,6 +832,12 @@
                       "value": "noteam"
                     },
                     {
+                      "test": "has_tag",
+                      "operator": "==",
+                      "subject": "other",
+                      "value": "greenSub"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "value": "greenteam"
@@ -1056,6 +1074,12 @@
                       "test": "is_family",
                       "subject": "other",
                       "value": "noteam"
+                    },
+                    {
+                      "test": "has_tag",
+                      "operator": "==",
+                      "subject": "other",
+                      "value": "yellowSub"
                     },
                     {
                       "test": "is_family",
@@ -3447,6 +3471,10 @@
                 "inputpermission set @s mount enabled",
                 "scoreboard players set @s antiMining 1",
                 "playanimation @s animation.down.main2 none 6 ",
+                "tag @s remove downedbyred",
+                "tag @s remove downedbyblue",
+                "tag @s remove downedbygreen",
+                "tag @s remove downedbyyellow",
                 "tag @s add rise",
                 "effect @s resistance 7 255 true",
                 "effect @s wither 0",
