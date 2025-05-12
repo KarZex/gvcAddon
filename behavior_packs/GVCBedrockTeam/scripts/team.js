@@ -203,7 +203,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 	}
 	else if( e.id === `zex:jailpoint` ){
 		const block = e.sourceBlock;
-		world.sendMessage(`${block.typeId}`)
 		const dimension = block.dimension;
 		const location = block.location;
 		const team = e.message;
