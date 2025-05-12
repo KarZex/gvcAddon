@@ -47,7 +47,7 @@
                       {
                         "test": "is_family",
                         "subject": "other",
-                        "value": "playerp"
+                        "value": "allied_soldier"
                       }
                     ]
                 }

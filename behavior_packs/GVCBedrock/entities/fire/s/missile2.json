@@ -33,7 +33,7 @@
 	  },
       "minecraft:type_family": {
         "family": [
-          "drop","allied_soldier"
+          "drop","allied_soldier","noteam"
         ]
       },
       "minecraft:scale": {

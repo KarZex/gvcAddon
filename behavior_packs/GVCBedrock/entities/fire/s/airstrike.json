@@ -33,7 +33,7 @@
 	  },
       "minecraft:type_family": {
         "family": [
-          "airstrike","allied_soldier"
+          "airstrike","allied_soldier","noteam"
         ]
       },
       "minecraft:scale": {

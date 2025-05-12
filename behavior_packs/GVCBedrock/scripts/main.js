@@ -161,7 +161,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		}
 		if (def > 1){ def = 1 }
 		let damage = gunData[`${gunName}`]["damage"] *  (1 - def);
-		if ( vict.id == "minecraft:player" ){ 
+		if ( vict.typeId == "minecraft:player" ){ 
 			damage = damage * world.getDynamicProperty("gvcv5:playerDamage");
 		}
 		else{
@@ -211,30 +211,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 	}
 
 	if( e.id == "zex:start" ){
-		if( world.getDynamicProperty("gvcv5:playerDamage") == undefined ){
-			world.setDynamicProperty("gvcv5:playerDamage",0.5);
-		}
-		if( world.getDynamicProperty("gvcv5:mobDamage") == undefined ){
-			world.setDynamicProperty("gvcv5:mobDamage",1);
-		}
-		if( world.getDynamicProperty("gvcv5:doBulletSpend") == undefined ){
-			world.setDynamicProperty("gvcv5:doBulletSpend",true);
-		}
-
 		e.sourceEntity.runCommand(`scoreboard players set S building 1`);
 		e.sourceEntity.runCommand(`scoreboard players set M building 1`);
 		e.sourceEntity.runCommand(`scoreboard players set L building 1`);
 		e.sourceEntity.runCommand(`scoreboard players set A building 1`);
-		
-		if( world.getDynamicProperty("gvcv5:doSpawnFromBeacon") == undefined ){
-			world.setDynamicProperty("gvcv5:doSpawnFromBeacon",true);
-		}
-		if( world.getDynamicProperty("gvcv5:doSpawnFromBlock") == undefined ){
-			world.setDynamicProperty("gvcv5:doSpawnFromBlock",true);
-		}
-
-
-		
 	}
 	//ブロックを叩くことで、リロード
 	else if (e.id === "gvcv5:reload"){

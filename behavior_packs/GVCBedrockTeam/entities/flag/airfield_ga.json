@@ -131,6 +131,11 @@
                     "test": "is_family",
                     "subject": "other",
                     "value": "playerp"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "allied_soldier"
                   }
                 ],
                 "all_of": [

@@ -122,7 +122,8 @@
           "on_damage": {
             "filters": {
         "any_of": [
-          {"test": "is_family", "subject": "other", "value": "playerp"}
+          {"test": "is_family", "subject": "other", "value": "playerp"},
+          {"test": "is_family", "subject": "other", "value": "allied_soldier"}
         ],
         "all_of": [
           {"test": "has_damage", "value": "fatal"}

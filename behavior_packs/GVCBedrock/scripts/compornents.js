@@ -114,6 +114,22 @@ function gvcv5UseAidKit( event ){
 }
 
 world.beforeEvents.worldInitialize.subscribe( e => {
+    if( world.getDynamicProperty("gvcv5:playerDamage") == undefined ){
+        world.setDynamicProperty("gvcv5:playerDamage",0.5);
+    }
+    if( world.getDynamicProperty("gvcv5:mobDamage") == undefined ){
+        world.setDynamicProperty("gvcv5:mobDamage",1);
+    }
+    if( world.getDynamicProperty("gvcv5:doBulletSpend") == undefined ){
+        world.setDynamicProperty("gvcv5:doBulletSpend",true);
+    }
+    
+    if( world.getDynamicProperty("gvcv5:doSpawnFromBeacon") == undefined ){
+        world.setDynamicProperty("gvcv5:doSpawnFromBeacon",true);
+    }
+    if( world.getDynamicProperty("gvcv5:doSpawnFromBlock") == undefined ){
+        world.setDynamicProperty("gvcv5:doSpawnFromBlock",true);
+    }
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawn`,{onPlace: gvcv5SpawnEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:end_block`,{onPlace: gvcv5EndBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,{onPlace: gvcv5BuildingBlockEvent});

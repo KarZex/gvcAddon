@@ -782,6 +782,10 @@ script.gvcv5.releasedJail0.name=が刑務所から脱獄しました!
 script.gvcv5.youreleased.name=あなたは刑務所から脱獄しました!
 script.gvcv5.released0.name=は
 script.gvcv5.released1.name=によって刑務所から解放されました
+script.gvcv5.execution.name=銃殺する対象を選択
+script.gvcv5.jail.name=独房に転送する対象を選択
+script.gvcv5.phone_execution.name=銃殺
+script.gvcv5.phone_jail.name=独房に転送
 
 script.gvcv5.downedbyred.name=は§c赤チーム§rによってダウンしました
 script.gvcv5.downedbyblue.name=は§9青チーム§rによってダウンしました

@@ -95,7 +95,7 @@ world.afterEvents.playerSpawn.subscribe( e => {
 	const greenJail = world.getDynamicProperty(`greenJail`);
 	const yellowJail = world.getDynamicProperty(`yellowJail`);
 
-	if( ( p.hasTag(`downedbyred`) || p.hasTag(`redSub`) ) ){
+	if( ( p.hasTag(`downedbyred`) || p.hasTag(`redSub`) ) && world.getDynamicProperty(`teamJail`) ){
 		p.teleport(redJail);
 		if(  p.hasTag(`downedbyred`) ){
 			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
@@ -105,7 +105,7 @@ world.afterEvents.playerSpawn.subscribe( e => {
 		}
 	}
 
-	else if(( p.hasTag(`downedbyblue`) || p.hasTag(`blueSub`) )){
+	else if(( p.hasTag(`downedbyblue`) || p.hasTag(`blueSub`) ) && world.getDynamicProperty(`teamJail`) ){
 		p.teleport(blueJail);
 		if(  p.hasTag(`downedbyblue`) ){
 			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
@@ -114,7 +114,7 @@ world.afterEvents.playerSpawn.subscribe( e => {
 			p.runCommand(`give @s rotten_flesh 4`);
 		}
 	}
-	else if( (p.hasTag(`downedbygreen`) || p.hasTag(`greenSub`))){
+	else if( (p.hasTag(`downedbygreen`) || p.hasTag(`greenSub`)) && world.getDynamicProperty(`teamJail`) ){
 		p.teleport(greenJail);
 		if(  p.hasTag(`downedbygreen`) ){
 			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
@@ -123,7 +123,7 @@ world.afterEvents.playerSpawn.subscribe( e => {
 			p.runCommand(`give @s rotten_flesh 4`);
 		}
 	}
-	else if( (p.hasTag(`downedbyyellow`) || p.hasTag(`yellowSub`)) ){
+	else if( (p.hasTag(`downedbyyellow`) || p.hasTag(`yellowSub`)) && world.getDynamicProperty(`teamJail`) ){
 		p.teleport(yellowJail);
 		if(  p.hasTag(`downedbyyellow`) ){
 			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
@@ -663,13 +663,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				if( result.selection == 1 ){ // teleport to block
+				else if( result.selection == 1 ){ // teleport to block
 					user.runCommand(`scriptevent gvcv5:phone_tp_block ${userFamily}`);
 				}
 				else if( result.selection == 2 ){ // team chat
 					user.runCommand(`scriptevent gvcv5:phone_teamChat ${userFamily}`);
 				}
-				if( result.selection == 3 ){ //menber list
+				else if( result.selection == 3 ){ //menber list
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_menber_list.name`);
 					for( const myAlly of world.getPlayers({ tags:[ `${userFamily}Sub` ] }) ){
@@ -714,7 +714,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					},)
 				}
-				if( result.selection == 5 ){ //leave team
+				else if( result.selection == 5 ){ //leave team
 					const form = new ActionFormData();
 					form.title(`script.gvcv5.phone_leave.name`);
 					form.body(`script.gvcv5.leave_team_body.name`);
@@ -781,7 +781,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				if( result.selection == 8 ){ //kick member
+				else if( result.selection == 8 ){ //kick member
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_kick_member.name`);
 					for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){
@@ -808,7 +808,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				if( result.selection == 9 ){ //transfer leader
+				else if( result.selection == 9 ){ //transfer leader
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_transfer_leader.name`);
 					for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){

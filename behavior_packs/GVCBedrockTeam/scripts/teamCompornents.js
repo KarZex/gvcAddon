@@ -36,6 +36,9 @@ function gvcv5UseTPBlock( event ){
 
 
 world.beforeEvents.worldInitialize.subscribe( e => {
+    if( world.getDynamicProperty(`teamJail`) == undefined ){
+        world.setDynamicProperty("teamJail",true);
+    }
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:jail`,{onPlace: gvcv5JailSpawn});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawnpoint`,{onPlace: gvcv5TeamSpawn});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:tpblock`,{onPlayerInteract: gvcv5UseTPBlock});

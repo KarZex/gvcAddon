@@ -90,7 +90,7 @@
           ],
           "interact_text": "action.interact.ride.horse",
           "seats": {
-            "position": [ 0.0, 1.7, -0.1 ]
+            "position": [ 0.0, 2.5, -0.1 ]
           }
         },
       "minecraft:interact": {

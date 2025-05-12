@@ -22,7 +22,7 @@ execute at @e[type=fire:fire] run particle minecraft:basic_flame_particle ~~~
 execute at @e[type=fire:famas] run particle minecraft:basic_smoke_particle ~~~
 execute at @e[type=fire:ads_famas] run particle minecraft:basic_smoke_particle ~~~
 
-execute at @e[family=fire:drop] run particle minecraft:basic_flame_particle ~~~
+execute at @e[family=drop] run particle minecraft:basic_flame_particle ~~~
 
 execute at @e[type=gvcv5:airstrike_red] run particle zex:red_strike ~~~
 execute at @e[type=gvcv5:airstrike_blue] run particle zex:blue_strike ~~~

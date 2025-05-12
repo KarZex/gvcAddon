@@ -45,6 +45,41 @@
             "redteam"
           ]
         },
+        "minecraft:behavior.send_event": {
+          "priority": 3,
+          "event_choices": [
+            {
+              "min_activation_range": 0.0,
+              "max_activation_range": 0.1,
+              "cooldown_time": 0,
+              "cast_duration": 0,
+              "particle_color": "#FFFF00",
+              "weight": 3,
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "allied_soldier"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "noteam"
+                  }
+                ]
+              },
+              "start_sound_event": "cast.spell",
+              "sequence": [
+                {
+                  "base_delay": 0,
+                  "event": "gvcv5:become_redteam",
+                  "sound_event": "prepare.wololo"
+                }
+              ]
+            }
+          ]
+        },
         "minecraft:damage_sensor": {
           "triggers": [
             {
@@ -166,6 +201,41 @@
             "playerp",
             "mob",
             "blueteam"
+          ]
+        },
+        "minecraft:behavior.send_event": {
+          "priority": 3,
+          "event_choices": [
+            {
+              "min_activation_range": 0.0,
+              "max_activation_range": 0.1,
+              "cooldown_time": 0,
+              "cast_duration": 0,
+              "particle_color": "#FFFF00",
+              "weight": 3,
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "allied_soldier"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "noteam"
+                  }
+                ]
+              },
+              "start_sound_event": "cast.spell",
+              "sequence": [
+                {
+                  "base_delay": 0,
+                  "event": "gvcv5:become_blueteam",
+                  "sound_event": "prepare.wololo"
+                }
+              ]
+            }
           ]
         },
         "minecraft:damage_sensor": {
@@ -291,6 +361,41 @@
             "greenteam"
           ]
         },
+        "minecraft:behavior.send_event": {
+          "priority": 3,
+          "event_choices": [
+            {
+              "min_activation_range": 0.0,
+              "max_activation_range": 0.1,
+              "cooldown_time": 0,
+              "cast_duration": 0,
+              "particle_color": "#00FF00",
+              "weight": 3,
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "allied_soldier"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "noteam"
+                  }
+                ]
+              },
+              "start_sound_event": "cast.spell",
+              "sequence": [
+                {
+                  "base_delay": 0,
+                  "event": "gvcv5:become_greenteam",
+                  "sound_event": "prepare.wololo"
+                }
+              ]
+            }
+          ]
+        },
         "minecraft:damage_sensor": {
           "triggers": [
             {
@@ -405,6 +510,41 @@
       "yellowteam": {
         "minecraft:variant": {
           "value": 5
+        },
+        "minecraft:behavior.send_event": {
+          "priority": 3,
+          "event_choices": [
+            {
+              "min_activation_range": 0.0,
+              "max_activation_range": 0.1,
+              "cooldown_time": 0,
+              "cast_duration": 0,
+              "particle_color": "#FFFF00",
+              "weight": 3,
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "allied_soldier"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "noteam"
+                  }
+                ]
+              },
+              "start_sound_event": "cast.spell",
+              "sequence": [
+                {
+                  "base_delay": 0,
+                  "event": "gvcv5:become_yellowteam",
+                  "sound_event": "prepare.wololo"
+                }
+              ]
+            }
+          ]
         },
         "minecraft:type_family": {
           "family": [
