@@ -1003,6 +1003,9 @@
     },
     "airstrike3": {
       "textures": "textures/items/airstrike3"
+    },
+    "f35": {
+      "textures": "textures/items/f35"
     }
   }
 }

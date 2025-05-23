@@ -204,13 +204,35 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 })
 
 system.afterEvents.scriptEventReceive.subscribe( e => {
-	if( e.id == "zex:view"){
+	if( e.id == "zex:air"){
+		const airCraft = e.sourceEntity;
+		const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+		let v = airCraft.getVelocity();
+		let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+		if( abs_v > 3.0 ){
+			abs_v = 3.0
+		}
+		if( abs_v < 0.05 ){
+			abs_v = 0
+		}
+		
+		else{
+			const d = player.getViewDirection();
+			airCraft.clearVelocity();
+			airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
+		}
+		player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"Speed:${Math.round(abs_v*20*100)/100}m/s"}]}`)
+	
+
+	}
+
+	else if( e.id == "zex:view"){
 		const view = e.sourceEntity.getRotation();
 		world.sendMessage(`x:${view.x} y:${view.y}`);
 		
 	}
 
-	if( e.id == "zex:start" ){
+	else if( e.id == "zex:start" ){
 		e.sourceEntity.runCommand(`scoreboard players set S building 1`);
 		e.sourceEntity.runCommand(`scoreboard players set M building 1`);
 		e.sourceEntity.runCommand(`scoreboard players set L building 1`);

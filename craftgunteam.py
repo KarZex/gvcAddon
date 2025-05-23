@@ -344,25 +344,49 @@ for row in csv_reader2:
         gun_bomb =  int(row[6])
         gun_sound = row[8]
         gun_damage_type = row[9]
+        gun_offset = row[10]
 
         if(row[7] == "T"):
             gun_break_block = True
         else:
             gun_break_block = False
         #player
-        spawn_entity = { 
-            "minecraft:spawn_entity":{
-                "entities": [
-                    {
-                        "max_wait_time": 0,
-                        "min_wait_time": 0,
-                        "num_to_spawn": 1,
-                        "single_use": True,
-                        "spawn_entity": "fire:{}".format(gun_id)
-                    }
-                ]
+        if(  gun_offset == "D"  ):
+            spawn_entity = { 
+                "minecraft:spawn_entity":{
+                    "entities": [
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}r".format(gun_id)
+                        },
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}l".format(gun_id)
+                        }
+                    ]
+                }
             }
-        }
+        
+        else:
+            spawn_entity = { 
+                "minecraft:spawn_entity":{
+                    "entities": [
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}".format(gun_id)
+                        }
+                    ]
+                }
+            }
         event = {
             "add": {
                 "component_groups": [

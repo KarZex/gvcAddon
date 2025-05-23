@@ -74,3 +74,5 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:dp28set] run event entity
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m60set] run event entity @s ads_m60
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pkmset] run event entity @s ads_pkm
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f35] run event entity @s vmgii

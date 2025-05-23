@@ -3102,6 +3102,26 @@
             }
           ]
         }
+      },
+      "fire:vmgii": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:vmgiir"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:vmgiil"
+            }
+          ]
+        }
       }
     },
     "components": {
@@ -3947,6 +3967,13 @@
         "add": {
           "component_groups": [
             "fire:agmissile"
+          ]
+        }
+      },
+      "fire:vmgii": {
+        "add": {
+          "component_groups": [
+            "fire:vmgii"
           ]
         }
       }

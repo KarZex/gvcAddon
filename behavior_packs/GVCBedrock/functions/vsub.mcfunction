@@ -65,3 +65,5 @@ execute if entity @e[r=4,type=vehicle:m60set] run scoreboard players set @p scoo
 
 execute if entity @e[r=4,type=vehicle:pkmset] run event entity @s fire:ads_pkm
 execute if entity @e[r=4,type=vehicle:pkmset] run scoreboard players set @p scool 2
+
+execute if entity @e[r=4,type=vehicle:f35] run event entity @s fire:vmgii

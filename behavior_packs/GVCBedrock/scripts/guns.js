@@ -409,5 +409,13 @@ export const gunData = {
   "agmissile": {
     "damage": 10,
     "damageType": "entityExplosion"
+  },
+  "vmgiir": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "vmgiil": {
+    "damage": 8,
+    "damageType": "override"
   }
 };

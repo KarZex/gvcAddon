@@ -25,6 +25,18 @@
 			   "sounds/grenade"
 		   ]
 	   },
+		"fire.hmg": {
+		   "category": "hostile",
+		   "sounds": [
+			   "sounds/fire_hmg"
+		   ]
+	   },
+		"fire.mgii": {
+		   "category": "hostile",
+		   "sounds": [
+			   "sounds/mgii"
+		   ]
+	   },
 	   "charge.rail": {
 		  "category": "hostile",
 		  "sounds": [
