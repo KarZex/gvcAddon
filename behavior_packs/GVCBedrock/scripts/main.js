@@ -206,6 +206,7 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 system.afterEvents.scriptEventReceive.subscribe( e => {
 	if( e.id == "zex:air"){
 		const airCraft = e.sourceEntity;
+		const maxSpeed = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
 		const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
 		let v = airCraft.getVelocity();
 		let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
@@ -214,9 +215,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			y:v.y/abs_v,
 			z:v.z/abs_v
 		}
-
-		if( abs_v > 2.0 ){
-			abs_v = 2.0
+		if( abs_v > maxSpeed ){
+			abs_v = maxSpeed
 		}
 
 		if( abs_v < 0.5 ){

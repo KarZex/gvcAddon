@@ -16,16 +16,6 @@ execute if entity @e[r=4,type=vehicle:m1128] run event entity @s fire:vmg
 execute if entity @e[r=4,type=vehicle:btr60] run event entity @s fire:vmg
 execute if entity @e[r=4,type=vehicle:btr60] run scoreboard players set @p scool 2
 
-execute if entity @e[r=4,type=vehicle:ah1s] run event entity @s fire:vmg
-
-execute if entity @e[r=4,type=vehicle:ah6] run event entity @s fire:vmg
-
-execute if entity @e[r=4,type=vehicle:g_heri] run event entity @s fire:vmg
-
-execute if entity @e[r=4,type=vehicle:ka50] run event entity @s fire:vmg
-
-execute if entity @e[r=4,type=vehicle:mi24d] run event entity @s fire:vmg
-
 execute if entity @e[r=4,type=vehicle:kv2] run event entity @s fire:vmg
 
 execute if entity @e[r=4,type=vehicle:m1a2] run event entity @s fire:vmg
@@ -50,6 +40,16 @@ execute if entity @e[r=4,type=vehicle:t55] run scoreboard players set @p scool 2
 
 execute if entity @e[r=4,type=vehicle:t72] run event entity @s fire:vmg
 execute if entity @e[r=4,type=vehicle:t72] run scoreboard players set @p scool 2
+
+execute if entity @e[r=4,type=vehicle:ah1s] run event entity @s fire:vmg
+
+execute if entity @e[r=4,type=vehicle:ah6] run event entity @s fire:vmg
+
+execute if entity @e[r=4,type=vehicle:g_heri] run event entity @s fire:vmg
+
+execute if entity @e[r=4,type=vehicle:ka50] run event entity @s fire:vmg
+
+execute if entity @e[r=4,type=vehicle:mi24d] run event entity @s fire:vmg
 
 execute if entity @e[r=4,type=vehicle:20mmaa] run event entity @s fire:20mm
 execute if entity @e[r=4,type=vehicle:20mmaa] run scoreboard players set @p scool 4

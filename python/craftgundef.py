@@ -573,21 +573,38 @@ for row in csv_reader2:
         #enemy and allieds
         attack_interval = gun_interval * 0.05
 
-        spawn_entity = {
-            "minecraft:behavior.ranged_attack": {
-                "priority": 3,
-                "burst_shots": 1,
-                "burst_interval": 0,
-                "charge_charged_trigger": 0.0,
-                "charge_shoot_trigger": 0.0,
-                "attack_interval_min": attack_interval,
-                "attack_interval_max": attack_interval,
-                "attack_radius": 20.0
-            },
-            "minecraft:shooter": {
-                "def": "fire:{}".format(gun_id)
+        if( gun_offset == "D" ):
+            spawn_entity = {
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 3,
+                    "burst_shots": 1,
+                    "burst_interval": 0,
+                    "charge_charged_trigger": 0.0,
+                    "charge_shoot_trigger": 0.0,
+                    "attack_interval_min": attack_interval,
+                    "attack_interval_max": attack_interval,
+                    "attack_radius": 120.0
+                },
+                "minecraft:shooter": {
+                    "def": "fire:{}l".format(gun_id)
+                }
             }
-        }
+        else:
+            spawn_entity = {
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 3,
+                    "burst_shots": 1,
+                    "burst_interval": 0,
+                    "charge_charged_trigger": 0.0,
+                    "charge_shoot_trigger": 0.0,
+                    "attack_interval_min": attack_interval,
+                    "attack_interval_max": attack_interval,
+                    "attack_radius": 120.0
+                },
+                "minecraft:shooter": {
+                    "def": "fire:{}".format(gun_id)
+                }
+            }
         event = {
             "add": {
                 "component_groups": [

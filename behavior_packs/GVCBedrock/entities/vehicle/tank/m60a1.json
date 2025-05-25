@@ -2,7 +2,7 @@
   "format_version": "1.18.10",
   "minecraft:entity": {
     "description": {
-      "identifier": "vehicle:m1126",
+      "identifier": "vehicle:m60a1",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
@@ -22,7 +22,7 @@
     },
     "components": {
       "minecraft:boss": {
-        "name": "entity.vehicle:m1126.name",
+        "name": "entity.vehicle:m60a1.name",
         "should_darken_sky": false,
         "hud_range": 4
       },
@@ -41,57 +41,20 @@
         }
       },
       "minecraft:rideable": {
-        "seat_count": 6,
+        "seat_count": 1,
         "family_types": [
           "guerrilla",
           "allied_soldier",
           "player"
         ],
         "interact_text": "action.interact.ride.horse",
-        "seats": [
-          {
-            "position": [
-              0,
-              1.85,
-              -0.6
-            ]
-          },
-          {
-            "position": [
-              1,
-              1.2,
-              -1.5
-            ]
-          },
-          {
-            "position": [
-              0,
-              1.2,
-              -2.1
-            ]
-          },
-          {
-            "position": [
-              -1,
-              1.2,
-              -0.6
-            ]
-          },
-          {
-            "position": [
-              1,
-              1.2,
-              -0.6
-            ]
-          },
-          {
-            "position": [
-              -1,
-              1.2,
-              -1.5
-            ]
-          }
-        ]
+        "seats": {
+          "position": [
+            0.0,
+            1.7,
+            -0.1
+          ]
+        }
       },
       "minecraft:interact": {
         "interactions": [
@@ -175,8 +138,8 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 120,
-        "max": 120
+        "value": 200,
+        "max": 200
       },
       "minecraft:scale": {
         "value": 1.0
@@ -198,7 +161,7 @@
       "minecraft:balloonable": {},
       "minecraft:collision_box": {
         "width": 3.0,
-        "height": 3.0
+        "height": 2.0
       },
       "minecraft:damage_sensor": {
         "triggers": [

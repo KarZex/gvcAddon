@@ -31,8 +31,8 @@ for row in csv_reader:
         v_maincool3 = int(row[12])
         v_antibullet = row[13]
         v_water = row[14]
-        v_sizew = int(row[15])
-        v_sizeh = int(row[16])
+        v_sizew = float(row[15])
+        v_sizeh = float(row[16])
         v_menber = int(row[17])
         v_break = row[18]
         v_ridef = ast.literal_eval(row[19])
@@ -43,8 +43,12 @@ for row in csv_reader:
         v_position5 = row[24]
         v_position6 = row[25]
         
-        if( v_type == "tank" or v_type == "apc" or v_type == "set" ):
+        if( v_type == "tank" or v_type == "apc" ):
             f_path = open("tool/t34.json","r")
+            entity_json = json.load(f_path)
+
+        if( v_type == "set" ):
+            f_path = open("tool/20mmaa.json","r")
             entity_json = json.load(f_path)
 
         if( v_type == "heri" ):
@@ -60,7 +64,7 @@ for row in csv_reader:
         entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seat_count"] = v_menber
         entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["family_types"] = v_ridef
         if v_menber == 1:
-            entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"]["position"] = ast.literal_eval(v_position1)
+            entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"] = { "position" :ast.literal_eval(v_position1) }
         else:
             entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"] = []
             entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position1) } )
@@ -123,8 +127,8 @@ for row in csv_reader:
                 ] 
             }
 
-        with open("behavior_packs/GVCBedrock/loot_tables/entities/vehicle/{0}/{1}.json".format(v_type,v_id),"w") as f:
-            json.dump(loot_table,f,indent=2)
+        with open("behavior_packs/GVCBedrock/entities/vehicle/{0}/{1}.json".format(v_type,v_id),"w") as f:
+            json.dump(entity_json,f,indent=2)
 
         #loot_table (for mob)
         with open("tool/vloot.json","r") as f:

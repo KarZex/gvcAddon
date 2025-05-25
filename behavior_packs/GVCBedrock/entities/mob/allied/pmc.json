@@ -973,7 +973,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.05,
           "attack_interval_max": 0.05,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:vmg"
@@ -988,7 +988,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
           "attack_interval_max": 3.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:76mm"
@@ -1003,7 +1003,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:85mm"
@@ -1018,7 +1018,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:100mm"
@@ -1033,7 +1033,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:105mm"
@@ -1048,7 +1048,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:120mm"
@@ -1063,7 +1063,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:125mm"
@@ -1078,7 +1078,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 8.0,
           "attack_interval_max": 8.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:152mm"
@@ -1093,7 +1093,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.25,
           "attack_interval_max": 0.25,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:20mm"
@@ -1108,7 +1108,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.30000000000000004,
           "attack_interval_max": 0.30000000000000004,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:23mm"
@@ -1123,7 +1123,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.05,
           "attack_interval_max": 0.05,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:ads_dp28"
@@ -1138,7 +1138,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.05,
           "attack_interval_max": 0.05,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:ads_m60"
@@ -1153,7 +1153,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.05,
           "attack_interval_max": 0.05,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:ads_pkm"
@@ -1168,7 +1168,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 1.0,
           "attack_interval_max": 1.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:76mmrocket"
@@ -1183,7 +1183,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:agmissile"
@@ -1198,10 +1198,10 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.0,
           "attack_interval_max": 0.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:vmgii"
+          "def": "fire:vmgiil"
         }
       },
       "vmgi": {
@@ -1213,7 +1213,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.0,
           "attack_interval_max": 0.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:vmgi"
