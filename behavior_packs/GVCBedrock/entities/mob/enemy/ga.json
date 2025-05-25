@@ -2591,31 +2591,6 @@
           "command": "ride @s summon_ride vehicle:btr60 no_ride_change summon_enemy"
         }
       },
-      "vehicle:ah1s": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ah1sr"
-        }
-      },
-      "vehicle:ah6": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ah6r"
-        }
-      },
-      "vehicle:g_heri": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:g_herir"
-        }
-      },
-      "vehicle:ka50": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ka50r"
-        }
-      },
-      "vehicle:mi24d": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:mi24dr"
-        }
-      },
       "vehicle:kv2": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:kv2 no_ride_change summon_enemy"
@@ -2659,6 +2634,31 @@
       "vehicle:t72": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:t72 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:ah1s": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ah1sr"
+        }
+      },
+      "vehicle:ah6": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ah6r"
+        }
+      },
+      "vehicle:g_heri": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:g_herir"
+        }
+      },
+      "vehicle:ka50": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ka50r"
+        }
+      },
+      "vehicle:mi24d": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:mi24dr"
         }
       },
       "vehicle:20mmaa": {

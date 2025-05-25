@@ -15,9 +15,7 @@
     },
     "component_groups": {
 			"despawning": {
-        "minecraft:transformation": {
-          "into": "addon:des"
-        }
+        "minecraft:instant_despawn": { }
 			},
 			"firet": {
 				"minecraft:spawn_entity": {
