@@ -76,3 +76,11 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m60set] run event entity 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pkmset] run event entity @s ads_pkm
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f35] run event entity @s vmgii
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mig17] run event entity @s vmgii
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su27] run event entity @s agmissile
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f16] run event entity @s agmissile
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su25] run event entity @s agmissile

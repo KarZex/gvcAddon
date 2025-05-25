@@ -417,5 +417,9 @@ export const gunData = {
   "vmgiil": {
     "damage": 8,
     "damageType": "override"
+  },
+  "vmgi": {
+    "damage": 8,
+    "damageType": "override"
   }
 };

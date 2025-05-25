@@ -40,3 +40,12 @@ execute if entity @e[r=4,type=vehicle:flak18] run scoreboard players set @p mcoo
 
 execute if entity @e[r=4,type=vehicle:pak40] run event entity @s fire:105mm
 execute if entity @e[r=4,type=vehicle:pak40] run scoreboard players set @p mcool 100
+
+execute if entity @e[r=4,type=vehicle:su27] run event entity @s fire:agmissile
+execute if entity @e[r=4,type=vehicle:su27] run scoreboard players set @p mcool 100
+
+execute if entity @e[r=4,type=vehicle:f16] run event entity @s fire:agmissile
+execute if entity @e[r=4,type=vehicle:f16] run scoreboard players set @p mcool 100
+
+execute if entity @e[r=4,type=vehicle:su25] run event entity @s fire:agmissile
+execute if entity @e[r=4,type=vehicle:su25] run scoreboard players set @p mcool 100

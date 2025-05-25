@@ -209,16 +209,40 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
 		let v = airCraft.getVelocity();
 		let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
-		if( abs_v > 3.0 ){
-			abs_v = 3.0
+		let r = {
+			x:v.x/abs_v,
+			y:v.y/abs_v,
+			z:v.z/abs_v
 		}
-		if( abs_v < 0.05 ){
+
+		if( abs_v > 2.0 ){
+			abs_v = 2.0
+		}
+
+		if( abs_v < 0.5 ){
 			abs_v = 0
 		}
-		
 		else{
-			const d = player.getViewDirection();
+			let d = player.getViewDirection();
 			airCraft.clearVelocity();
+			if( Math.asin(d.x) > Math.asin(r.x) + Math.PI/20 ){
+				d.x = r.x + Math.sin(Math.PI/20);
+			}
+			if( Math.asin(d.x) < Math.asin(r.x) - Math.PI/20 ){
+				d.x = r.x - Math.sin(Math.PI/20);
+			}
+			if( Math.asin(d.y) > Math.asin(r.y) + Math.PI/20 ){
+				d.y = r.y + Math.sin(Math.PI/20);
+			}
+			if( Math.asin(d.y) < Math.asin(r.y) - Math.PI/20 ){
+				d.y = r.y - Math.sin(Math.PI/20);
+			}
+			if( Math.asin(d.z) > Math.asin(r.z) + Math.PI/20 ){
+				d.z = r.z + Math.sin(Math.PI/20);
+			}
+			if( Math.asin(d.z) < Math.asin(r.z) - Math.PI/20 ){
+				d.z = r.z - Math.sin(Math.PI/20);
+			}
 			airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
 		}
 		player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"Speed:${Math.round(abs_v*20*100)/100}m/s"}]}`)
@@ -229,6 +253,11 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 	else if( e.id == "zex:view"){
 		const view = e.sourceEntity.getRotation();
 		world.sendMessage(`x:${view.x} y:${view.y}`);
+		
+	}
+	else if( e.id == "zex:scale"){
+		const entity = e.sourceEntity;
+		entity.getComponent("minecraft:scale").value = Number(e.message)
 		
 	}
 

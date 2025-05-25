@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.camera": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "camera": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:camera') && query.is_using_item" }
+          ],
+          "on_entry": [
+            "/effect @s resistance 0 7 true"
+          ]
+        },
+        "camera":{
+          "transitions": [
+            {
+              "camera1": "!query.is_using_item"
+            }
+          ]
+        },
+        "camera1": {
+          "on_entry": [
+            "/camera @s set minecraft:follow_orbit entity_offset 0 0 -8"
+          ],
+          "on_exit": [
+            "/camera @s clear"
+          ],
+          "transitions": [
+              {
+                  "camera2": "(query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:camera') && query.is_using_item) || !query.is_riding"
+              }
+          ]
+        },
+        "camera2": {
+          "transitions": [
+              {
+                  "default": "!query.is_using_item|| !query.is_riding"
+              }
+          ]
+        }
+      }
+    }
+  }
+}

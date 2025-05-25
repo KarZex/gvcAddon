@@ -2,7 +2,7 @@ import json
 import csv
 import shutil
 
-csv_path = open("feature.csv","r")
+csv_path = open("csv/feature.csv","r")
 csv_reader = csv.reader(csv_path)
 
 text = ""

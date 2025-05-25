@@ -2,7 +2,7 @@ import json
 import csv
 import ast
 
-csv_path = open("gunData.csv","r")
+csv_path = open("csv/gunData.csv","r")
 csv_reader = csv.reader(csv_path) 
 
 row_count = 0
@@ -462,7 +462,7 @@ for row in csv_reader:
     row_count += 1
 
 
-csv_path2 = open("vehiclewData.csv","r")
+csv_path2 = open("csv/vehiclewData.csv","r")
 csv_reader2 = csv.reader(csv_path2)
 row_count = 0
 #aasdasd
@@ -622,7 +622,7 @@ for row in csv_reader2:
     row_count += 1
 
 
-csv_path3 = open("vehicleData.csv","r")
+csv_path3 = open("csv/vehicleData.csv","r")
 csv_reader3 = csv.reader(csv_path3)
 row_count = 0
 for row in csv_reader3:

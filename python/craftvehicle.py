@@ -2,7 +2,7 @@ import json
 import csv
 import shutil
 
-csv_path = open("vehicleData.csv","r")
+csv_path = open("csv/vehicleData.csv","r")
 csv_reader = csv.reader(csv_path)
 
 item_json = json.load(open("resource_packs/GVCBedrock/textures/item_texture.json","r"))
