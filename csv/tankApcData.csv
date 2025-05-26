@@ -1,0 +1,16 @@
+name,id,type,health,speed,sub,sub_cool,main1,main_cool,main2,main_cool,main3,main_cool,tiea
+vehicle,aifv,apc,120,0.3,vmg,2,,0,,0,,0,
+vehicle,lav25,apc,120,0.3,vmg,2,,0,,0,,0,
+vehicle,m113,apc,120,0.3,vmg,2,,0,,0,,0,
+vehicle,m1126,apc,120,0.2,vmg,2,,0,,0,,0,
+vehicle,m1128,apc,120,0.2,vmg,0,105mm,100,,0,,0,
+vehicle,btr60,apc,100,0.3,vmg,2,,0,,0,,0,
+vehicle,kv2,tank,400,0.1,vmg,0,152mm,160,,0,,0,
+vehicle,m1a2,tank,300,0.2,vmg,2,120mm,100,,0,,0,3
+vehicle,m41,tank,120,0.3,vmg,2,76mm,60,,0,,0,
+vehicle,fv101,tank,120,0.3,vmg,2,76mm,60,,0,,0,
+vehicle,m60a1,tank,200,0.2,vmg,2,105mm,100,,0,,0,
+vehicle,pt76,tank,120,0.3,vmg,2,76mm,60,,0,,0,
+vehicle,t34,tank,160,0.2,vmg,0,85mm,100,,0,,0,
+vehicle,t55,tank,200,0.2,vmg,2,100mm,100,,0,,0,
+vehicle,t72,tank,300,0.2,vmg,2,125mm,100,,0,,0,3

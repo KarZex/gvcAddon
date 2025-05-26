@@ -1,0 +1,5 @@
+name,id,type,health,sub,sub_cool,main1,main_cool,main2,main_cool,main3,main_cool,speed,tiea
+vehicle,mig17,air,100,vmgii,0,,0,,0,,0,0,
+vehicle,su27,air,200,vmgii,0,agmissile,0,,0,agmissile,0,100,
+vehicle,f16,air,200,vmgii,0,agmissile,0,,0,agmissile,0,100,
+vehicle,su25,air,200,vmgi,0,agmissile,100,agmissile,100,agmissile,100,100,

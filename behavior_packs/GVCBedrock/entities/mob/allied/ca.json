@@ -924,7 +924,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.05,
           "attack_interval_max": 0.05,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:vmg"
@@ -939,7 +939,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
           "attack_interval_max": 3.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:76mm"
@@ -954,7 +954,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:85mm"
@@ -969,7 +969,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:100mm"
@@ -984,7 +984,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:105mm"
@@ -999,7 +999,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:120mm"
@@ -1014,7 +1014,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:125mm"
@@ -1029,7 +1029,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 8.0,
           "attack_interval_max": 8.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:152mm"
@@ -1044,7 +1044,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.25,
           "attack_interval_max": 0.25,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:20mm"
@@ -1059,7 +1059,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.30000000000000004,
           "attack_interval_max": 0.30000000000000004,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:23mm"
@@ -1074,7 +1074,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.05,
           "attack_interval_max": 0.05,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:ads_dp28"
@@ -1089,7 +1089,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.05,
           "attack_interval_max": 0.05,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:ads_m60"
@@ -1104,7 +1104,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 0.05,
           "attack_interval_max": 0.05,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:ads_pkm"
@@ -1119,7 +1119,7 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 1.0,
           "attack_interval_max": 1.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:76mmrocket"
@@ -1134,10 +1134,40 @@
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 5.0,
           "attack_interval_max": 5.0,
-          "attack_radius": 20.0
+          "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:agmissile"
+        }
+      },
+      "vmgii": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.0,
+          "attack_interval_max": 0.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:vmgiil"
+        }
+      },
+      "vmgi": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.0,
+          "attack_interval_max": 0.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:vmgi"
         }
       }
     },
@@ -1888,6 +1918,20 @@
           ]
         }
       },
+      "vmgii": {
+        "add": {
+          "component_groups": [
+            "vmgii"
+          ]
+        }
+      },
+      "vmgi": {
+        "add": {
+          "component_groups": [
+            "vmgi"
+          ]
+        }
+      },
       "vehicle:aifv": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:aifv no_ride_change summon_enemy"
@@ -1916,31 +1960,6 @@
       "vehicle:btr60": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:btr60 no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:ah1s": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ah1sr"
-        }
-      },
-      "vehicle:ah6": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ah6r"
-        }
-      },
-      "vehicle:g_heri": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:g_herir"
-        }
-      },
-      "vehicle:ka50": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:ka50r"
-        }
-      },
-      "vehicle:mi24d": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:mi24dr"
         }
       },
       "vehicle:kv2": {
@@ -1988,6 +2007,31 @@
           "command": "ride @s summon_ride vehicle:t72 no_ride_change summon_enemy"
         }
       },
+      "vehicle:ah1s": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ah1sr"
+        }
+      },
+      "vehicle:ah6": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ah6r"
+        }
+      },
+      "vehicle:g_heri": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:g_herir"
+        }
+      },
+      "vehicle:ka50": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ka50r"
+        }
+      },
+      "vehicle:mi24d": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:mi24dr"
+        }
+      },
       "vehicle:20mmaa": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:20mmaa no_ride_change summon_enemy"
@@ -2021,6 +2065,31 @@
       "vehicle:pkmset": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:pkmset no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:f35": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:f35 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:mig17": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:mig17 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:su27": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:su27 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:f16": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:f16 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:su25": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:su25 no_ride_change summon_enemy"
         }
       }
     }

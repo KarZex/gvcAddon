@@ -17,31 +17,7 @@
     },
     "component_groups": {
       "despawning": {
-        "minecraft:transformation": {
-          "into": "addon:des"
-        }
-      },
-      "firet": {
-        "minecraft:spawn_entity": {
-          "entities": {
-            "min_wait_time": 0,
-            "max_wait_time": 0,
-            "single_use": true,
-            "spawn_entity": "fire:t34",
-            "num_to_spawn": 1
-          }
-        }
-      },
-      "firem": {
-        "minecraft:spawn_entity": {
-          "entities": {
-            "min_wait_time": 0,
-            "max_wait_time": 0,
-            "single_use": true,
-            "spawn_entity": "fire:mgt",
-            "num_to_spawn": 1
-          }
-        }
+        "minecraft:instant_despawn": {}
       }
     },
     "components": {
@@ -56,9 +32,6 @@
       "minecraft:loot": {
         "table": "loot_tables/entities/tank.json"
       },
-      "minecraft:addrider": {
-        "entity_type": "vehicle:c2b"
-      },
       "minecraft:can_power_jump": {},
       "minecraft:input_ground_controlled": {},
       "minecraft:horse.jump_strength": {
@@ -68,20 +41,51 @@
         }
       },
       "minecraft:rideable": {
-        "seat_count": 1,
+        "seat_count": 5,
         "family_types": [
-          "guerrilla","allied_soldier","player"
+          "guerrilla",
+          "allied_soldier",
+          "player"
         ],
         "interact_text": "action.interact.ride.horse",
-        "seats": {
-          "position": [
-            0.0,
-            1.7,
-            -0.1
-          ]
-        }
+        "seats": [
+          {
+            "position": [
+              -0.5,
+              2.35,
+              0
+            ]
+          },
+          {
+            "position": [
+              1,
+              0.8,
+              -1.2
+            ]
+          },
+          {
+            "position": [
+              -1,
+              0.8,
+              -1.2
+            ]
+          },
+          {
+            "position": [
+              1,
+              0.8,
+              -2.2
+            ]
+          },
+          {
+            "position": [
+              -1,
+              0.8,
+              -2.2
+            ]
+          }
+        ]
       },
-      "minecraft:behavior.player_ride_tamed": {},
       "minecraft:interact": {
         "interactions": [
           {
@@ -113,7 +117,7 @@
           {
             "hurt_item": 1,
             "spawn_items": {
-              "table": "loot_tables/entities/btr60.json"
+              "table": "loot_tables/entities/t34.json"
             },
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
@@ -183,10 +187,11 @@
       "minecraft:movement.basic": {},
       "minecraft:jump.static": {},
       "minecraft:nameable": {},
+      "minecraft:behavior.player_ride_tamed": {},
       "minecraft:balloonable": {},
       "minecraft:collision_box": {
-        "width": 3,
-        "height": 1
+        "width": 3.0,
+        "height": 3.0
       },
       "minecraft:damage_sensor": {
         "triggers": [
@@ -205,14 +210,6 @@
           }
         ]
       },
-      "minecraft:healable": {
-        "items": [
-          {
-            "item": "string",
-            "heal_amount": 1
-          }
-        ]
-      },
       "minecraft:is_tamed": {},
       "minecraft:pushable": {
         "is_pushable": true,
@@ -227,30 +224,6 @@
             "despawning"
           ]
         }
-      },
-      "firem": {
-        "randomize": [
-          {
-            "weight": 10,
-            "add": {
-              "component_groups": [
-                "firem"
-              ]
-            }
-          }
-        ]
-      },
-      "firet": {
-        "randomize": [
-          {
-            "weight": 10,
-            "add": {
-              "component_groups": [
-                "firet"
-              ]
-            }
-          }
-        ]
       }
     }
   }

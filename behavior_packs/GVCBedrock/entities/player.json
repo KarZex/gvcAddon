@@ -15,6 +15,7 @@
           "hold",
           "para",
           "heri",
+          "camera",
           "ads"
         ]
       },
@@ -23,6 +24,7 @@
         "hold": "controller.animation.hold",
         "para": "controller.animation.para",
         "ads": "controller.animation.ads",
+        "camera": "controller.animation.camera",
         "heri": "controller.animation.heri"
       }
     },
@@ -2523,6 +2525,39 @@
             }
           ]
         }
+      },
+      "fire:vmgii": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:vmgiir"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:vmgiil"
+            }
+          ]
+        }
+      },
+      "fire:vmgi": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:vmgi"
+            }
+          ]
+        }
       }
     },
     "components": {
@@ -2540,6 +2575,9 @@
       "minecraft:is_hidden_when_invisible": {},
       "minecraft:loot": {
         "table": "loot_tables/empty.json"
+      },
+      "minecraft:scale": {
+        "value": 1.0
       },
       "minecraft:collision_box": {
         "width": 0.6,
@@ -3399,6 +3437,20 @@
         "add": {
           "component_groups": [
             "fire:agmissile"
+          ]
+        }
+      },
+      "fire:vmgii": {
+        "add": {
+          "component_groups": [
+            "fire:vmgii"
+          ]
+        }
+      },
+      "fire:vmgi": {
+        "add": {
+          "component_groups": [
+            "fire:vmgi"
           ]
         }
       }

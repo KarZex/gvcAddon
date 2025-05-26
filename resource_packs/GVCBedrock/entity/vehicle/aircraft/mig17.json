@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:mig17",
+      "materials": { "default": "entity_alphablend" },
+      "textures": {
+        "default": "textures/entity/mig17"
+      },
+      "geometry": {
+        "default": "geometry.mig17"
+      },
+		"animations": {
+		  "fly": "animation.airmig17"
+		},
+			"scripts": {
+				"animate": [ 
+			{ "fly": "query.has_rider" }
+				]
+			},
+	  "spawn_egg":{
+	  "texture":"mig17",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

@@ -15,6 +15,7 @@
           "hold",
           "para",
           "heri",
+          "camera",
           "ads"
         ]
       },
@@ -23,6 +24,7 @@
         "hold": "controller.animation.hold",
         "para": "controller.animation.para",
         "ads": "controller.animation.ads",
+        "camera": "controller.animation.camera",
         "heri": "controller.animation.heri"
       }
     },
@@ -727,6 +729,9 @@
       },
       "minecraft:type_family": {
         "family": [ "player","playerp","mod","noteam" ]
+      },
+      "minecraft:scale": {
+        "value": 1.0
       },
       "minecraft:is_hidden_when_invisible": {
       },

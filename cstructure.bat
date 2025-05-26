@@ -1,2 +1,2 @@
 @echo off
-python feature.py
+python python/feature.py

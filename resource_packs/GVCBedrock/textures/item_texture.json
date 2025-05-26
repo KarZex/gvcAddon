@@ -194,8 +194,8 @@
     "rpkm": {
       "textures": "textures/items/rpk"
     },
-    "sar": {
-      "textures": "textures/items/sar"
+    "camera": {
+      "textures": "textures/items/camera"
     },
     "sarm": {
       "textures": "textures/items/sar"
@@ -1003,6 +1003,21 @@
     },
     "airstrike3": {
       "textures": "textures/items/airstrike3"
+    },
+    "f35": {
+      "textures": "textures/items/f35"
+    },
+    "mig17": {
+      "textures": "textures/items/mig17"
+    },
+    "su27": {
+      "textures": "textures/items/su27"
+    },
+    "f16": {
+      "textures": "textures/items/f16"
+    },
+    "su25": {
+      "textures": "textures/items/su25"
     }
   }
 }

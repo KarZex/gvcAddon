@@ -1,4 +1,4 @@
 @echo off
-python craftgunteam.py
-python craftgundef.py
-python craftvehicle.py
+python python/craftgunteam.py
+python python/craftgundef.py
+python python/craftvehicle.py

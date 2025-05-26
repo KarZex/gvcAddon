@@ -13,36 +13,6 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1128] run event entity @
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:btr60] run event entity @s vmg
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah1s] run event entity @s vmg
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah1s] run tag @s add heriRiding
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah1s] run event entity @e[r=4,type=vehicle:ah1s] set_npc_mode
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah6] run event entity @s vmg
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah6] run tag @s add heriRiding
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah6] run event entity @e[r=4,type=vehicle:ah6] set_npc_mode
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:g_heri] run event entity @s vmg
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:g_heri] run tag @s add heriRiding
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:g_heri] run event entity @e[r=4,type=vehicle:g_heri] set_npc_mode
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ka50] run event entity @s 76mmrocket
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ka50] run tag @s add heriRiding
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ka50] run event entity @e[r=4,type=vehicle:ka50] set_npc_mode
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mi24d] run event entity @s agmissile
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mi24d] run tag @s add heriRiding
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mi24d] run event entity @e[r=4,type=vehicle:mi24d] set_npc_mode
-
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:kv2] run event entity @s 152mm
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1a2] run event entity @s 120mm
@@ -61,6 +31,16 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t55] run event entity @s 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t72] run event entity @s 125mm
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah1s] run event entity @s vmg
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah6] run event entity @s vmg
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:g_heri] run event entity @s vmg
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ka50] run event entity @s 76mmrocket
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mi24d] run event entity @s agmissile
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:20mmaa] run event entity @s 20mm
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:flak18] run event entity @s 125mm
@@ -74,3 +54,13 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:dp28set] run event entity
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m60set] run event entity @s ads_m60
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pkmset] run event entity @s ads_pkm
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f35] run event entity @s vmgii
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mig17] run event entity @s vmgii
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su27] run event entity @s agmissile
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f16] run event entity @s agmissile
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su25] run event entity @s agmissile
