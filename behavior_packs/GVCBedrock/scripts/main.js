@@ -245,8 +245,74 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			}
 			airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
 		}
-		player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"Speed:${Math.round(abs_v*20*100)/100}m/s"}]}`)
+		player.runCommand(`titleraw @s[tag=!reload,tag=!down,tag=!lader] actionbar {"rawtext":[{"text":"Speed:${Math.round(abs_v*20*100)/100}m/s"}]}`)
 	
+
+	}
+	else if( e.id == "zex:lader"){
+		const player = e.sourceEntity;
+		const V = player.getViewDirection();
+		const P0 = player.location;
+		const d0 = Math.atan2(V.z, V.x);
+		let team = `noteam`;
+		let print = [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ];
+		if( player.hasTag(`red`) ){ team = `red`; }
+		else if( player.hasTag(`blue`) ){ team = `blue`; }
+		else if( player.hasTag(`green`) ){ team = `green`; }
+		else if( player.hasTag(`yellow`) ){ team = `yellow`; }
+		const allPlayers = world.getAllPlayers();
+		for( let i of allPlayers ){
+			const Pi = i.location;
+			if( i.hasTag(`${team}`) || i.nameTag == player.nameTag ){
+				continue;
+			}
+			const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + (Pi.z - P0.z) * (Pi.z - P0.z) );
+			const adi = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri);
+			const di = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri) - d0;
+			world.sendMessage(`di:${Math.floor(di*180/Math.PI)} adi:${Math.floor(adi*180/Math.PI)}`);
+			for( let j = 0; j < 21; j++ ){
+				if( - Math.PI/2 + j * Math.PI / 21 <= di && di < - Math.PI/2 + (j + 1) * Math.PI / 21 ){
+					if( 1024 <= ri && ri < 2048  && print[j] < 1 ){
+						print[j] = 1;
+					}
+					else if( (512 <= ri && ri < 1024) && print[j] < 2 ){
+						print[j] = 2;
+					}
+					else if( (256 <= ri && ri < 512) && print[j] < 3 ){
+						print[j] = 3;
+					}
+					else if( (64 <= ri && ri < 256) && print[j] < 4 ){
+						print[j] = 4;
+					}
+					else if( (ri < 64) && print[j] < 5 ){
+						print[j] = 5;
+					}
+
+				}
+			}
+
+		}
+		for( let j = 0; j < 21; j++ ){
+			if( print[j] == 0 ){
+				print[j] = `§7`;
+			}
+			else if( print[j] == 1 ){
+				print[j] = `§f`;
+			}
+			else if( print[j] == 2 ){
+				print[j] = `§e`;
+			}
+			else if( print[j] == 3 ){
+				print[j] = `§g`;
+			}
+			else if( print[j] == 4 ){
+				print[j] = `§6`;
+			}
+			else if( print[j] == 5 ){
+				print[j] = `§4`;
+			}
+		}
+		player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"${print[0]}|${print[1]}|${print[2]}|${print[3]}|${print[4]}|${print[5]}|${print[6]}|${print[7]}|${print[8]}|${print[9]}| ${print[10]}${Math.floor(180*d0/Math.PI)} ${print[11]}|${print[12]}|${print[13]}|${print[14]}|${print[15]}|${print[16]}|${print[17]}|${print[18]}|${print[19]}|${print[20]}"},{"text":"§r"}]}`)
 
 	}
 
