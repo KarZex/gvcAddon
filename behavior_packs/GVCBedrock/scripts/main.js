@@ -269,7 +269,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + (Pi.z - P0.z) * (Pi.z - P0.z) );
 			const adi = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri);
 			const di = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri) - d0;
-			world.sendMessage(`di:${Math.floor(di*180/Math.PI)} adi:${Math.floor(adi*180/Math.PI)}`);
 			for( let j = 0; j < 21; j++ ){
 				if( - Math.PI/2 + j * Math.PI / 21 <= di && di < - Math.PI/2 + (j + 1) * Math.PI / 21 ){
 					if( 1024 <= ri && ri < 2048  && print[j] < 1 ){
