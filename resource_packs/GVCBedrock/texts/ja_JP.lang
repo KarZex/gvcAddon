@@ -104,11 +104,22 @@ entity.vehicle:ah6.name=AH-6
 entity.vehicle:mi24d.name=Mi-24D
 entity.vehicle:ka50.name=Ka-50
 
+entity.vehicle:f16.name=F-16
+entity.vehicle:mig17.name=MiG-17
+entity.vehicle:su25.name=Su-25
+entity.vehicle:su27.name=Su-27
+
 item.spawn_egg.entity.vehicle:f18.name=F/A-18
 item.spawn_egg.entity.vehicle:ah1s.name=AH-1S
 item.spawn_egg.entity.vehicle:ah6.name=AH-6
 item.spawn_egg.entity.vehicle:mi24d.name=Mi-24D
 item.spawn_egg.entity.vehicle:ka50.name=Ka-50
+
+item.spawn_egg.entity.vehicle:f16.name=F-16
+item.spawn_egg.entity.vehicle:mig17.name=MiG-17
+item.spawn_egg.entity.vehicle:su25.name=Su-25
+item.spawn_egg.entity.vehicle:su27.name=Su-27
+
 
 entity.vehicle:f18.name=F/A-18
 entity.vehicle:ah1s.name=AH-1S
@@ -533,10 +544,10 @@ item.spawn_egg.entity.gvcv5:flag_triumphal_arch_ga.name=ゲリラ拠点_凱旋�
 item.spawn_egg.entity.gvcv5:flag_cv_ca.name=同盟軍拠点_強襲揚陸艦
 item.spawn_egg.entity.gvcv5:flag_cv_ga.name=ゲリラ拠点_強襲揚陸艦
 
-script.gvcv5.minecraft:redstone.name=§4レッドストーン§r
-script.gvcv5.minecraft:emerald.name=§aエメラルド§r
-script.gvcv5.minecraft:gunpowder.name=§8火薬§r
-script.gvcv5.minecraft:iron_ingot.name=§6鉄§r
+script.gvcv5.minecraft:redstone.name=§4RS§r
+script.gvcv5.minecraft:emerald.name=§aEM§r
+script.gvcv5.minecraft:gunpowder.name=§8GP§r
+script.gvcv5.minecraft:iron_ingot.name=§6IR§r
 script.gvcv5.no_ma.name=§c素材が足りません!§r
 
 

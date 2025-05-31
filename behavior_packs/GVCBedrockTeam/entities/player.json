@@ -3137,6 +3137,32 @@
             }
           ]
         }
+      },
+      "fire:aamissile": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:aamissile"
+            }
+          ]
+        }
+      },
+      "fire:bomb": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:bomb"
+            }
+          ]
+        }
       }
     },
     "components": {
@@ -3999,6 +4025,20 @@
         "add": {
           "component_groups": [
             "fire:vmgi"
+          ]
+        }
+      },
+      "fire:aamissile": {
+        "add": {
+          "component_groups": [
+            "fire:aamissile"
+          ]
+        }
+      },
+      "fire:bomb": {
+        "add": {
+          "component_groups": [
+            "fire:bomb"
           ]
         }
       }

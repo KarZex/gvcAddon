@@ -80,6 +80,7 @@ export const craftData = {
       { "give":"vehicle:aifv_spawn_egg","texture":"textures/items/aifv", "count":1, "cost":[ 3, 9, 9 ] },
       { "give":"vehicle:lav25_spawn_egg","texture":"textures/items/lav25", "count":1, "cost":[ 9, 9, 9 ] },
       { "give":"vehicle:ah1s_spawn_egg","texture":"textures/items/ah1s", "count":1, "cost":[ 9, 9, 24 ] },
+      { "give":"vehicle:mig17_spawn_egg","texture":"textures/items/mig17", "count":1, "cost":[ 9, 9, 24 ] },
       { "give":"vehicle:mi24d_spawn_egg","texture":"textures/items/mi24d", "count":1, "cost":[ 9, 9, 24 ] },
       { "give":"vehicle:m60a1_spawn_egg","texture":"textures/items/m60a1", "count":1, "cost":[ 9, 18, 12 ] },
       { "give":"vehicle:t55_spawn_egg","texture":"textures/items/t55", "count":1, "cost":[ 9, 16, 9 ] },
@@ -97,6 +98,9 @@ export const craftData = {
       { "give":"vehicle:m1a2_spawn_egg","texture":"textures/items/m1a2", "count":1, "cost":[ 16, 64, 32 ] },
       { "give":"vehicle:t72_spawn_egg","texture":"textures/items/t72", "count":1, "cost":[ 16, 32, 24 ] },
       { "give":"vehicle:flak18_spawn_egg","texture":"textures/items/flak18", "count":1, "cost":[ 8, 8, 8 ] },
+      { "give":"vehicle:su25_spawn_egg","texture":"textures/items/su25", "count":1, "cost":[ 18, 18, 48 ] },
+      { "give":"vehicle:su27_spawn_egg","texture":"textures/items/su27", "count":1, "cost":[ 18, 18, 48 ] },
+      { "give":"vehicle:f16_spawn_egg","texture":"textures/items/f16", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:zu23_spawn_egg","texture":"textures/items/zu23", "count":1, "cost":[ 4, 4, 4 ] }
     ]
   }

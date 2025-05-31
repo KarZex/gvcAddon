@@ -108,6 +108,9 @@ function gvcv5Phone( event ){
 function gvcv5UseFlag( event ){
     event.source.runCommand(`function flag`);
 }
+function gvcv5UseMtype( event ){
+    event.source.runCommand(`function mtype`);
+}
 
 function gvcv5UseAidKit( event ){
     event.source.addEffect("regeneration",14,{ amplifier: 4 })
@@ -140,5 +143,6 @@ world.beforeEvents.worldInitialize.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:mineevent`,{onStepOn: gvcv5MineEvent,onPlayerDestroy: gvcv5MineEvent});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:phone`,{onUse: gvcv5Phone});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:orderflag`,{onUse: gvcv5UseFlag});
+    e.itemComponentRegistry.registerCustomComponent(`gvcv5:mtype`,{onUse: gvcv5UseMtype});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:aid`,{onConsume: gvcv5UseAidKit});
 } )

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:f117",
+      "materials": { "default": "entity_alphablend" },
+      "textures": {
+        "default": "textures/entity/f117"
+      },
+      "geometry": {
+        "default": "geometry.f117"
+      },
+		"animations": {
+		  "fly": "animation.airmig17"
+		},
+			"scripts": {
+				"animate": [ 
+			{ "fly": "query.has_rider" }
+				]
+			},
+	  "spawn_egg":{
+	  "texture":"f117",
+	  "texture_index":0
+	  },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

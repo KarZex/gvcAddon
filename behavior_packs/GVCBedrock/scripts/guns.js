@@ -421,5 +421,13 @@ export const gunData = {
   "vmgi": {
     "damage": 8,
     "damageType": "override"
+  },
+  "aamissile": {
+    "damage": 15,
+    "damageType": "entityExplosion"
+  },
+  "bomb": {
+    "damage": 15,
+    "damageType": "entityExplosion"
   }
 };

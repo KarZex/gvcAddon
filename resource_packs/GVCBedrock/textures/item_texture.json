@@ -1018,6 +1018,9 @@
     },
     "su25": {
       "textures": "textures/items/su25"
+    },
+    "f117": {
+      "textures": "textures/items/f117"
     }
   }
 }

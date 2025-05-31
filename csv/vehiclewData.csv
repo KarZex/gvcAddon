@@ -16,3 +16,5 @@ name,id,ƒ_ƒ[ƒW,’e‘¬,–½’†¸“x,˜AËŠÔŠu(tick),”š”­,ƒuƒƒbƒN”j‰ó,‰¹,ƒ_ƒ[ƒWƒ^ƒCƒ
 ,agmissile,10,4,0,100,6,F,missilebullet,entityExplosion,
 ,vmgii,8,6,0,0,0,F,mgiibullet,override,D
 ,vmgi,8,6,0,0,0,F,mgiibullet,override,
+,aamissile,15,2,0,100,4,F,missilebullet,entityExplosion,H
+,bomb,15,2,0,100,4,F,missilebullet,entityExplosion,HM

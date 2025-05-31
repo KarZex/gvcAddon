@@ -1530,6 +1530,36 @@
         "minecraft:shooter": {
           "def": "fire:vmgi"
         }
+      },
+      "aamissile": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:aamissile"
+        }
+      },
+      "bomb": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:bomb"
+        }
       }
     },
     "components": {
@@ -2558,6 +2588,20 @@
         "add": {
           "component_groups": [
             "vmgi"
+          ]
+        }
+      },
+      "aamissile": {
+        "add": {
+          "component_groups": [
+            "aamissile"
+          ]
+        }
+      },
+      "bomb": {
+        "add": {
+          "component_groups": [
+            "bomb"
           ]
         }
       },

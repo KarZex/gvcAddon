@@ -2,27 +2,41 @@
   "format_version": "1.18.10",
   "minecraft:entity": {
     "description": {
-      "identifier": "vehicle:pt76",
+      "identifier": "vehicle:m41",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
       "scripts": {
         "animate": [
-          "walk"
+          "walk",
+          "para"
         ]
       },
       "animations": {
-        "walk": "controller.animation.vehicle"
+        "walk": "controller.animation.vehicle",
+        "para": "controller.animation.tankpara"
       }
     },
     "component_groups": {
       "despawning": {
-        "minecraft:instant_despawn": {}
+        "minecraft:transformation": {
+          "into": "addon:des"
+        }
+      },
+      "flying": {
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+      "landing": {
+        "minecraft:skin_id": {
+          "value": 0
+        }
       }
     },
     "components": {
       "minecraft:boss": {
-        "name": "entity.vehicle:pt76.name",
+        "name": "entity.vehicle:m41.name",
         "should_darken_sky": false,
         "hud_range": 4
       },
@@ -32,8 +46,10 @@
       "minecraft:loot": {
         "table": "loot_tables/entities/tank.json"
       },
+      "minecraft:addrider": {
+        "entity_type": "vehicle:c3b"
+      },
       "minecraft:can_power_jump": {},
-      "minecraft:input_ground_controlled": {},
       "minecraft:horse.jump_strength": {
         "value": {
           "range_min": 0,
@@ -51,7 +67,7 @@
         "seats": {
           "position": [
             0.0,
-            1.5,
+            1.7,
             -0.1
           ]
         }
@@ -87,7 +103,7 @@
           {
             "hurt_item": 1,
             "spawn_items": {
-              "table": "loot_tables/entities/t34.json"
+              "table": "loot_tables/entities/m41.json"
             },
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
@@ -131,6 +147,9 @@
         ]
       },
       "minecraft:fire_immune": {},
+      "minecraft:behavior.float": {
+        "priority": 7
+      },
       "minecraft:breathable": {
         "total_supply": 35,
         "suffocate_time": 0,
@@ -138,26 +157,33 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 120,
-        "max": 120
+        "value": 160,
+        "max": 160
       },
       "minecraft:scale": {
-        "value": 1.0
+        "value": 0.8
       },
       "minecraft:movement": {
-        "value": 0.3
+        "value": 0.4
       },
       "minecraft:knockback_resistance": {
         "value": 1.0
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.4
       },
       "minecraft:navigation.walk": {
         "is_amphibious": true,
         "avoid_water": true
       },
       "minecraft:movement.basic": {},
+      "minecraft:skin_id": {
+        "value": 0
+      },
       "minecraft:jump.static": {},
       "minecraft:nameable": {},
       "minecraft:behavior.player_ride_tamed": {},
+      "minecraft:input_ground_controlled": {},
       "minecraft:balloonable": {},
       "minecraft:collision_box": {
         "width": 3.0,
@@ -177,6 +203,18 @@
           {
             "cause": "override",
             "deals_damage": false
+          },
+          {
+            "cause": "override",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:healable": {
+        "items": [
+          {
+            "item": "string",
+            "heal_amount": 1
           }
         ]
       },
@@ -185,16 +223,35 @@
         "is_pushable": true,
         "is_pushable_by_piston": false
       },
-      "minecraft:physics": {},
-      "minecraft:underwater_movement": {
-        "value": 0.3
-      }
+      "minecraft:physics": {}
     },
     "events": {
       "despawning": {
         "add": {
           "component_groups": [
             "despawning"
+          ]
+        }
+      },
+      "minecraft:spawned_from_air": {
+        "add": {
+          "component_groups": [
+            "flying"
+          ]
+        },
+        "queue_command": {
+          "command": "ride @s summon_rider gvcv5:ca"
+        }
+      },
+      "gvcv5:on_landing": {
+        "remove": {
+          "component_groups": [
+            "flying"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "landing"
           ]
         }
       }

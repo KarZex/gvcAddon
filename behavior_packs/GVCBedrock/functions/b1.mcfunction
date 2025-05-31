@@ -3,7 +3,7 @@ effect @s[tag=!ride] instant_health 1 255 true
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:aifv] run event entity @s vmg
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:lav25] run event entity @s vmg
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:lav25] run event entity @s aamissile
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m113] run event entity @s vmg
 
@@ -17,7 +17,7 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:kv2] run event entity @s 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1a2] run event entity @s 120mm
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m41] run event entity @s 76mm
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m41] run event entity @s 85mm
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:fv101] run event entity @s 76mm
 
@@ -59,8 +59,8 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f35] run event entity @s 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mig17] run event entity @s vmgii
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su27] run event entity @s agmissile
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su27] run event entity @s aamissile
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f16] run event entity @s agmissile
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f16] run event entity @s aamissile
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su25] run event entity @s agmissile

@@ -2,15 +2,16 @@
   "format_version": "1.18.10",
   "minecraft:entity": {
     "description": {
-      "identifier": "vehicle:m60a1",
+      "identifier": "vehicle:fv101",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
       "scripts": {
-	    "animate": [ "walk" ]
+	    "animate": [ "walk","para" ]
 	  },
 	  "animations": {
-	    "walk": "controller.animation.vehicle"
+	    "walk": "controller.animation.vehicle",
+	    "para": "controller.animation.tankpara"
 	  }
     },
     "component_groups": {
@@ -19,33 +20,21 @@
           "into": "addon:des"
         }
 			},
-			"firet": {
-				"minecraft:spawn_entity": {
-				    "entities": {
-						"min_wait_time": 0,
-						"max_wait_time": 0,
-						"single_use": true,
-						"spawn_entity": "fire:m60",
-						"num_to_spawn": 1
-					}
-				}
+			"flying": {
+        "minecraft:skin_id": {
+          "value": 1
+        }
 			},
-			"firem": {
-				"minecraft:spawn_entity": {
-				    "entities": {
-						"min_wait_time": 0,
-						"max_wait_time": 0,
-						"single_use": true,
-						"spawn_entity": "fire:mgt",
-						"num_to_spawn": 1
-					}
-				}
+			"landing": {
+        "minecraft:skin_id": {
+          "value": 0
+        }
 			}
     },
 
     "components": {
 		"minecraft:boss": {
-			"name": "entity.vehicle:m60.name",
+			"name": "entity.vehicle:fv101.name",
 			"should_darken_sky": false,
 			"hud_range": 4
 		},
@@ -60,8 +49,6 @@
         },
         "minecraft:can_power_jump":{
 		},
-		"minecraft:input_ground_controlled": {
-		},
 		"minecraft:horse.jump_strength": {
 			"value": {
 				"range_min": 0,
@@ -75,11 +62,8 @@
           ],
           "interact_text": "action.interact.ride.horse",
           "seats": {
-            "position": [ 0.0, 1.7, -0.1 ]
+            "position": [ 0.0, 2.1, -1.2 ]
           }
-        },
-        "minecraft:behavior.player_ride_tamed": {
-  
         },
       "minecraft:interact": {
         "interactions": [
@@ -101,7 +85,7 @@
 			{
 				"hurt_item": 1,
 				"spawn_items": {
-					"table": "loot_tables/entities/m60a1.json"
+					"table": "loot_tables/entities/fv101.json"
 				},
 				"play_sounds": "enderchest.open",
 				"interact_text": "action.gvc.item",
@@ -125,6 +109,9 @@
       },
       "minecraft:fire_immune": {
       },
+      "minecraft:behavior.float": {
+        "priority": 7
+      },
       "minecraft:breathable": {
         "total_supply": 35,
         "suffocate_time": 0,
@@ -132,11 +119,11 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 200,
-        "max": 200
+        "value": 140,
+        "max": 140
       },
       "minecraft:scale": {
-        "value": 1.0
+        "value": 0.8
       },
       "minecraft:movement": {
         "value": 0.25
@@ -144,11 +131,17 @@
 	   "minecraft:knockback_resistance": {
         "value": 1.0
       },
+      "minecraft:underwater_movement": {
+        "value": 0.4
+      },
       "minecraft:navigation.walk": {
         "is_amphibious": true,
         "avoid_water": true
       },
       "minecraft:movement.basic": {
+      },
+      "minecraft:skin_id": {
+        "value": 0
       },
       "minecraft:jump.static": {
       },
@@ -206,29 +199,27 @@
 			  ]
 		  }
 	  },
-      "firem": {
-        "randomize": [
-          {
-            "weight": 10,
-            "add": {
-              "component_groups": [
-                "firem"
-              ]
-            }
-          }
-        ]
+      "minecraft:spawned_from_air": {
+        "add": {
+          "component_groups": [
+            "flying"
+          ]
+        },
+        "queue_command": {
+          "command":"ride @s summon_rider gvcv5:ca"
+        }
       },
-      "firet": {
-        "randomize": [
-          {
-            "weight": 10,
-            "add": {
-              "component_groups": [
-                "firet"
-              ]
-            }
-          }
-        ]
+      "gvcv5:on_landing": {
+        "remove": {
+          "component_groups": [
+            "flying"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "landing"
+          ]
+        }
       }
     }
   }

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:mtype",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:use_modifiers": {
+        "movement_modifier": 0,
+        "use_duration": 0
+      },
+      "minecraft:custom_components": [ "gvcv5:mtype" ],
+      "minecraft:icon": "mtype"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.aa": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/scriptevent zex:aamissile"
+          ],
+          "transitions": [
+            { "ride": "1.0" }
+          ]
+        },
+        "ride":{
+          "on_entry": [
+            "/scriptevent zex:aamissile"
+          ],
+          "transitions": [
+            { "default": "1.0" }
+          ]
+        }
+      }
+    }
+  }
+}

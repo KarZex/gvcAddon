@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "fire:bomb",
+      "materials": {
+        "default": "spider"
+      },
+      "textures": {
+        "default": "textures/bomb"
+      },
+      "geometry": {
+        "default": "geometry.bomb"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

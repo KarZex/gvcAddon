@@ -117,7 +117,7 @@
           {
             "hurt_item": 1,
             "spawn_items": {
-              "table": "loot_tables/entities/t34.json"
+              "table": "loot_tables/entities/m113.json"
             },
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",

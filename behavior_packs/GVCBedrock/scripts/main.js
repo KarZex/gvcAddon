@@ -243,14 +243,18 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			if( Math.asin(d.z) < Math.asin(r.z) - Math.PI/20 ){
 				d.z = r.z - Math.sin(Math.PI/20);
 			}
+			if( airCraft.location.y > 320 && d.y > 0 ){
+				d.y = 0;
+			}
 			airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
 		}
-		player.runCommand(`titleraw @s[tag=!reload,tag=!down,tag=!lader] actionbar {"rawtext":[{"text":"Speed:${Math.round(abs_v*20*100)/100}m/s"}]}`)
+		player.runCommand(`scriptevent zex:lader ${abs_v}`);
 	
 
 	}
 	else if( e.id == "zex:lader"){
 		const player = e.sourceEntity;
+		const abs_v = e.message;
 		const V = player.getViewDirection();
 		const P0 = player.location;
 		const d0 = Math.atan2(V.z, V.x);
@@ -263,7 +267,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const allPlayers = world.getAllPlayers();
 		for( let i of allPlayers ){
 			const Pi = i.location;
-			if( i.hasTag(`${team}`) || i.nameTag == player.nameTag ){
+			if( i.hasTag(`${team}`) || i.nameTag == player.nameTag || (!i.hasTag(`air`) && !i.hasTag(`heri`) )){
 				continue;
 			}
 			const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + (Pi.z - P0.z) * (Pi.z - P0.z) );
@@ -311,7 +315,59 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				print[j] = `§4`;
 			}
 		}
-		player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"${print[0]}|${print[1]}|${print[2]}|${print[3]}|${print[4]}|${print[5]}|${print[6]}|${print[7]}|${print[8]}|${print[9]}| ${print[10]}${Math.floor(180*d0/Math.PI)} ${print[11]}|${print[12]}|${print[13]}|${print[14]}|${print[15]}|${print[16]}|${print[17]}|${print[18]}|${print[19]}|${print[20]}"},{"text":"§r"}]}`)
+		player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"${Math.round(abs_v*20*100)/100}m/s  "},{"text":"${print[0]}|${print[1]}|${print[2]}|${print[3]}|${print[4]}|${print[5]}|${print[6]}|${print[7]}|${print[8]}|${print[9]}| ${print[10]}${Math.floor(-180*d0/Math.PI)} ${print[11]}|${print[12]}|${print[13]}|${print[14]}|${print[15]}|${print[16]}|${print[17]}|${print[18]}|${print[19]}|${print[20]}|"},{"text":"§r"}]}`)
+
+	}
+	else if( e.id == "zex:aamissile"){
+		const missile = e.sourceEntity;
+		const player = missile.getComponent("projectile").owner;
+		let team = `noteam`;
+		if( player.hasTag(`red`) ){ team = `red`; }
+		else if( player.hasTag(`blue`) ){ team = `blue`; }
+		else if( player.hasTag(`green`) ){ team = `green`; }
+		else if( player.hasTag(`yellow`) ){ team = `yellow`; }
+		
+		const target = missile.dimension.getEntities( { 
+			tags:[ `air` ],
+			excludeNames:[ `${player.nameTag}` ],
+			excludeTags:[ `${team}` ],
+			location:missile.location,
+			maxDistance:32,
+			closest: 1
+		 } );
+
+		if( target.length > 0 ){
+			const P0 = missile.location;
+			const Pi = target[0].location;
+			target[0].runCommand(`title @s title §cMISSILE WARNING`);
+
+			const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
+			const dx = (Pi.x - P0.x) / ri;
+			const dy = (Pi.y - P0.y) / ri;
+			const dz = (Pi.z - P0.z) / ri;
+			const v = missile.getVelocity();
+			const abs_v = 2;
+			missile.clearVelocity();
+			missile.applyImpulse( { 
+				x: dx * abs_v,
+				y: dy * abs_v,
+				z: dz * abs_v
+			 } )
+		}
+		else{
+			const V = player.getViewDirection();
+			missile.clearVelocity();
+			missile.applyImpulse( { 
+				x: V.x * 4,
+				y: V.y * 4,
+				z: V.z * 4
+			 } )
+
+		}
+
+
+
+	
 
 	}
 

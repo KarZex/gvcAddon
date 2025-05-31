@@ -485,7 +485,7 @@ for row in csv_reader2:
         else:
             gun_break_block = False
         #player
-        if(  gun_offset == "D"  ):
+        if( "D" in gun_offset  ):
             spawn_entity = { 
                 "minecraft:spawn_entity":{
                     "entities": [
@@ -506,6 +506,42 @@ for row in csv_reader2:
                     ]
                 }
             }
+        elif( "M" in gun_offset ):
+            spawn_entity = { 
+                "minecraft:spawn_entity":{
+                    "entities": [
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}".format(gun_id)
+                        },
+                        {
+                            "max_wait_time": 1,
+                            "min_wait_time": 1,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}".format(gun_id)
+                        },
+                        {
+                            "max_wait_time": 2,
+                            "min_wait_time": 2,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}".format(gun_id)
+                        },
+                        {
+                            "max_wait_time": 3,
+                            "min_wait_time": 3,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}".format(gun_id)
+                        }
+                    ]
+                }
+            }
+
         
         else:
             spawn_entity = { 
@@ -532,48 +568,50 @@ for row in csv_reader2:
         player_json["minecraft:entity"]["events"]["fire:{}".format(gun_id)] = event
         
         #Gundata fot JS
-        if( gun_offset == "D" ):
+        if( "D" in gun_offset ):
             gundata_json["{}r".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
             gundata_json["{}l".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
         else:
             gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"damageType": "{}".format(gun_damage_type) }
 
         #Bullet 
-        with open("tool/fire.json".format(gun_id),"r") as f:
-            gun_entity = json.load(f)
-            gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
-            if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
-            gun_entity["minecraft:entity"]["events"] = {}
-            gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
-            gun_entity["minecraft:entity"]["component_groups"] = {}
-            gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True,	 "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
+        if( "H" not in gun_offset ):
+            with open("tool/fire.json".format(gun_id),"r") as f:
+                gun_entity = json.load(f)
+                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
+                gun_entity["minecraft:entity"]["events"] = {}
+                gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
+                gun_entity["minecraft:entity"]["component_groups"] = {}
+                gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True,	 "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
 
 
-            if gun_bomb > 0:
-                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+                if gun_bomb > 0:
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
 
-        with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"w") as f:
-            json.dump(gun_entity,f,indent=2)
-
-        if( gun_offset == "D" ):
-            gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}r".format(gun_id)
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ 0.5,0,0 ]
-            with open("behavior_packs/GVCBedrock/entities/fire/{}r.json".format(gun_id),"w") as f:
-                json.dump(gun_entity,f,indent=2)
-            gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}l".format(gun_id)
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ -0.5,0,0 ]
-            with open("behavior_packs/GVCBedrock/entities/fire/{}l.json".format(gun_id),"w") as f:
-                json.dump(gun_entity,f,indent=2)
-        else:
             with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"w") as f:
                 json.dump(gun_entity,f,indent=2)
+
+        if( "H" not in gun_offset):
+            if( gun_offset == "D" ):
+                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}r".format(gun_id)
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ 0.5,0,0 ]
+                with open("behavior_packs/GVCBedrock/entities/fire/{}r.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
+                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}l".format(gun_id)
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ -0.5,0,0 ]
+                with open("behavior_packs/GVCBedrock/entities/fire/{}l.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
+            else:
+                with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
         #enemy and allieds
         attack_interval = gun_interval * 0.05
 
-        if( gun_offset == "D" ):
+        if( "D" in gun_offset ):
             spawn_entity = {
                 "minecraft:behavior.ranged_attack": {
                     "priority": 3,
@@ -618,21 +656,21 @@ for row in csv_reader2:
         ca_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
         pmc_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         pmc_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        if( "H" not in gun_offset ):
+            with open("resource_packs/GVCBedrock/entity/gun/ak12.json","r") as f:
+                gun_entity = json.load(f)
 
-        with open("resource_packs/GVCBedrock/entity/gun/ak12.json","r") as f:
-            gun_entity = json.load(f)
-
-        if( gun_offset == "D" ):
-            gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}r".format(gun_id)
-            with open("resource_packs/GVCBedrock/entity/gun/{}r.json".format(gun_id),"w") as f:
-                json.dump(gun_entity,f,indent=2)
-            gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}l".format(gun_id)
-            with open("resource_packs/GVCBedrock/entity/gun/{}l.json".format(gun_id),"w") as f:
-                json.dump(gun_entity,f,indent=2)
-        else:
-            with open("resource_packs/GVCBedrock/entity/gun/{}.json".format(gun_id),"w") as f:
-                gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
-                json.dump(gun_entity,f,indent=2)
+            if( gun_offset == "D" ):
+                gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}r".format(gun_id)
+                with open("resource_packs/GVCBedrock/entity/gun/{}r.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
+                gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}l".format(gun_id)
+                with open("resource_packs/GVCBedrock/entity/gun/{}l.json".format(gun_id),"w") as f:
+                    json.dump(gun_entity,f,indent=2)
+            else:
+                with open("resource_packs/GVCBedrock/entity/gun/{}.json".format(gun_id),"w") as f:
+                    gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
+                    json.dump(gun_entity,f,indent=2)
 
 
         print("created {}".format(gun_id))
