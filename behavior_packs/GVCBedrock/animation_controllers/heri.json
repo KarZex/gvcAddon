@@ -9,6 +9,13 @@
           ],
           "on_entry": [
             "/effect @s resistance 0 7 true",
+            "/replaceitem entity @s[tag=onAir] slot.armor.chest 0 gvcv5:parachute",
+            "/clear @s[tag=onAir] gun:mgg",
+            "/clear @s[tag=onAir] gun:tank",
+            "/clear @s[tag=onAir] gun:camera",
+            "/clear @s[tag=onAir] zex:mtype",
+            "/clear @s[tag=onAir] spyglass",
+            "/clear @s[tag=onAir] gun:no",
             "/tag @s remove air",
             "/tag @s remove heri"
           ]

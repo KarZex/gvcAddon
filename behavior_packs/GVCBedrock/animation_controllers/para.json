@@ -17,7 +17,7 @@
             ],
             "on_exit": [
               "/effect @s slow_falling 0",
-              "/replaceitem entity @s[type=!player] slot.armor.chest 0 air"
+              "/replaceitem entity @s slot.armor.chest 0 air"
             ]
         }
       }

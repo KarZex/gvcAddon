@@ -3,12 +3,15 @@ import uuid
 import sys
 import ast
 
-name = "§l§gGVCBedrock Addon V" + input("Enter the name of the pack Ver: ")
-ver1 = int(input("Enter the Minecraft version 1st number: "))
-ver2 = int(input("Enter the Minecraft version 2nd number: "))
-ver3 = int(input("Enter the Minecraft version 3rd number: "))
+data = "manifest.json"
+with open(data, "r", encoding="utf-8") as f:
+    manifest = json.load(f)
+    name = manifest["header"]["name"]
+    ver = manifest["header"]["version"]
+    description = manifest["header"]["description"]
+    min_engine_version = manifest["header"]["min_engine_version"]
 
-ver = [ver1, ver2, ver3]
+    f.close()
 
 behavior = "behavior_packs/GVCBedrockWTeam/manifest.json"
 resource = "resource_packs/GVCBedrockW/manifest.json"

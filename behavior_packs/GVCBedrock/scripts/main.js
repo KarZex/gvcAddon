@@ -204,6 +204,7 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 })
 
 system.runInterval( () => {
+	world.getDimension(`minecraft:overworld`).runCommand(`execute as @a[tag=MissileAlert] run function missileAlert`);
 	if ( world.getDynamicProperty(`gvcv5:worldLimit`) ){
 		const over = world.getDynamicProperty(`gvcv5:worldLimitO`);
 		const nether = world.getDynamicProperty(`gvcv5:worldLimitN`);
@@ -391,7 +392,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		if( target.length > 0 ){
 			const P0 = missile.location;
 			const Pi = target[0].location;
-			target[0].runCommand(`title @s title §cMISSILE WARNING`);
+			target[0].runCommand(`tag @s add MissileAlert`);
+			target[0].runCommand(`playsound sound.alert1 @s`);
+
 
 			const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
 			const dx = (Pi.x - P0.x) / ri;
@@ -418,6 +421,34 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		}
 	}
 
+	else if( e.id == "zex:chkride"){
+		const airCraft = e.sourceEntity;
+		const p = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+		let noItem = true;
+		for(let i = 0; i < 36; i++){
+			let Haditem = p.getComponent("inventory").container.getItem(i);
+			if( Haditem != undefined && Haditem.typeId != "minecraft:air" ){
+				airCraft.runCommand(`ride @s evict_riders`);
+				noItem = false;
+				p.sendMessage(`§cYou can't ride this vehicle with items!`);
+				p.runCommand(`clear @s minecraft:barrier`);
+				break;
+			}
+		}
+		if( noItem ){
+			for(let i = 0; i < 36; i++){
+				p.runCommand(`replaceitem entity @s slot.inventory ${i} gun:no 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			}
+			p.addTag(`onAir`);
+			p.runCommand(`give @s gun:mgg 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			p.runCommand(`give @s gun:tank 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			p.runCommand(`give @s gun:camera 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			p.runCommand(`give @s zex:mtype 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			p.runCommand(`give @s spyglass 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			p.runCommand(`give @s gun:no 4 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+		}
+		
+	}
 	else if( e.id == "zex:view"){
 		const view = e.sourceEntity.getRotation();
 		world.sendMessage(`x:${view.x} y:${view.y}`);

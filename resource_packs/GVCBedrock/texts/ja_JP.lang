@@ -661,6 +661,11 @@ item.vehicle:ah1s_spawn_egg=AH-1S
 item.vehicle:ah6_spawn_egg=AH-6
 item.vehicle:mi24d_spawn_egg=Mi-24D
 item.vehicle:ka50_spawn_egg=Ka-50
+item.vehicle:mig17_spawn_egg=MiG-17
+item.vehicle:su25_spawn_egg=Su-25
+item.vehicle:su27_spawn_egg=Su-27
+item.vehicle:f16_spawn_egg=F-16
+
 
 item.gvcv5:supplies_item=支援物資
 item.gvcv5:beacon_item=スポーンブロック_ゲリラ

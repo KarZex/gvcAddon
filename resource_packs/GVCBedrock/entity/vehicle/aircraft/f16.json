@@ -19,7 +19,7 @@
 				]
 			},
 	  "spawn_egg":{
-	  "texture":"f18",
+	  "texture":"f16",
 	  "texture_index":0
 	  },
       "render_controllers": [ "controller.render.iron_golem" ]

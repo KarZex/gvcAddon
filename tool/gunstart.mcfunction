@@ -29,4 +29,3 @@ execute at @s[tag=!startedv5] run fill ^^^2 ^^^2 gvcv5:supplies
 scriptevent zex:start
 scriptevent gvcv5:phone
 #guns
-

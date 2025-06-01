@@ -9,6 +9,7 @@ export const craftData = {
       { "give":"zex:40m","texture":"textures/items/40m", "count":16, "cost":[ 2, 4, 0 ] },
       { "give":"zex:rocketm","texture":"textures/items/rocketm", "count":16, "cost":[ 4, 4, 0 ] },
       { "give":"gun:mgg","texture":"textures/items/mgg", "count":1, "cost":[ 1, 0, 0 ] },
+      { "give":"gun:camera","texture":"textures/items/camera", "count":1, "cost":[ 1, 0, 0 ] },
       { "give":"gun:tank","texture":"textures/items/tank", "count":1, "cost":[ 1, 0, 0 ] }
     ]
   },

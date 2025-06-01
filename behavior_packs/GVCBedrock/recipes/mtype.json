@@ -2,21 +2,21 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "gvcv5:rep_recipe"
+    "identifier": "gvcv5:mtype_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-    " A ",
-	  "AA ",
-	  "  A"
+    "BBB",
+	  "BAB",
+	  "BBB"
     ],
     "key": {
       "A": {
-        "item": "zex:ps",
+        "item": "zex:rep",
         "data": 0
       },
       "B": {
-        "item": "minecraft:iron_ingot",
+        "item": "zex:sp",
         "data": 0
       },
       "C": {
@@ -29,7 +29,7 @@
       }
     },
     "result": {
-      "item": "zex:rep",
+      "item": "zex:mtype",
       "count": 1
     }
   }

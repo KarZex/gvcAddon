@@ -7,6 +7,12 @@
 				"sounds/reload_cannon"
 			]
 		},
+		"sound.alert1": {
+		   "category": "hostile",
+		   "sounds": [
+			   "sounds/sound_alert1"
+		   ]
+	   },
 		"fire.missile": {
 		   "category": "hostile",
 		   "sounds": [

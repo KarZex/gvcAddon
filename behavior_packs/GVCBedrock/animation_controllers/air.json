@@ -5,7 +5,21 @@
       "states": {
         "default": {
           "transitions": [
+            { "preride": "query.has_rider" }
+          ]
+        },
+        "preride": {
+          "on_entry": [
+            "/scriptevent zex:chkride"
+          ],
+          "transitions": [
+            { "default": "!query.has_rider" },
             { "ride": "query.has_rider" }
+          ]
+        },
+        "exit":{
+          "transitions": [
+            { "default": "1.0" }
           ]
         },
         "ride":{
@@ -13,7 +27,7 @@
             "/scriptevent zex:air"
           ],
           "transitions": [
-            { "default": "!query.has_rider" },
+            { "exit": "!query.has_rider" },
             {
               "g": "query.is_on_ground && query.is_moving"
             },
@@ -27,7 +41,7 @@
             "/scriptevent zex:air ground"
           ],
           "transitions": [
-            { "default": "!query.has_rider" },
+            { "exit": "!query.has_rider" },
             {
               "g2": "query.is_on_ground && query.is_moving"
             },
@@ -41,7 +55,7 @@
             "/scriptevent zex:air ground"
           ],
           "transitions": [
-            { "default": "!query.has_rider" },
+            { "exit": "!query.has_rider" },
             {
               "g": "query.is_on_ground && query.is_moving"
             },
@@ -55,7 +69,7 @@
             "/scriptevent zex:air air"
           ],
           "transitions": [
-            { "default": "!query.has_rider" },
+            { "exit": "!query.has_rider" },
             {
               "g": "query.is_on_ground && query.is_moving"
             },
@@ -69,7 +83,7 @@
             "/scriptevent zex:air air"
           ],
           "transitions": [
-            { "default": "!query.has_rider" },
+            { "exit": "!query.has_rider" },
             {
               "g": "query.is_on_ground && query.is_moving"
             },
