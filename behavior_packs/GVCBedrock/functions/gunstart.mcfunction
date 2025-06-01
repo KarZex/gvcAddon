@@ -16,7 +16,7 @@ execute as @s[tag=!startedv5] run scoreboard players set @s mcool 20
 execute as @s[tag=!startedv5] run scoreboard players set @s scool 0
 execute as @s[tag=!startedv5] run scoreboard players set @s flag 0
 execute as @s[tag=!startedv5] run scoreboard players set @s rise 0
-execute as @s[tag=!startedv5] run scoreboard players set @s out 0
+execute as @s[tag=!startedv5] run scoreboard players set @s out 10
 execute as @s[tag=!startedv5] run scoreboard players set @s antiMining 0
 execute as @s[tag=!startedv5] run scoreboard players set @s DeathTime 0
 execute as @s[tag=!startedv5] run scoreboard players set @s mtype 0
@@ -29,7 +29,6 @@ execute at @s[tag=!startedv5] run fill ^^^2 ^^^2 gvcv5:supplies
 scriptevent zex:start
 scriptevent gvcv5:phone
 #guns
-
 scoreboard objectives add aa12 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s aa12 24
 scoreboard objectives add ak12 dummy

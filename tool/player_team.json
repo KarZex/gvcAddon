@@ -77,11 +77,6 @@
                         {
                           "test": "is_family",
                           "subject": "other",
-                          "value": "allied_soldier"
-                        },
-                        {
-                          "test": "is_family",
-                          "subject": "other",
                           "value": "noteam"
                         }
                     ]

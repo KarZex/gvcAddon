@@ -38,23 +38,29 @@ for row in csv_reader:
             e_text += "entity.gvcv5:flag_green_{0}.name=§a{1}\n".format(structure_id,row[0].replace("ダンジョン","緑チーム拠点"))
             e_text += "entity.gvcv5:flag_yellow_{0}.name=§e{1}\n".format(structure_id,row[0].replace("ダンジョン","黄チーム拠点"))
 
-            with open("tool/a1.json","r") as f:
+            with open("tool/a1_team2.json","r") as f:
                 flag_json = json.load(f)
                 flag_json["minecraft:entity"]["description"]["identifier"] = "gvcv5:flag_{}_ca".format(structure_id)
                 flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][5]["spawn_items"]["table"] = "loot_tables/flag/flag_{}_ca.json".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ "scriptevent zex:flagStart CA {}".format(structure_id) ] } }
+                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ "scoreboard players set §b{} ALLFlags 0".format(structure_id) ] } }
                 flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ca ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][1] = "scriptevent zex:flagChange CA {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][1] = "scoreboard players reset §b{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][2] = "kill @s"
                 flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ga ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][1] = "scriptevent zex:flagChange CA {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["gvcv5:become_redteam"]["queue_command"]["command"][0] = "summon gvcv5:flag_red_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["gvcv5:become_redteam"]["queue_command"]["command"][1] = "scriptevent zex:flagChange CA {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["gvcv5:become_blueteam"]["queue_command"]["command"][0] = "summon gvcv5:flag_blue_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["gvcv5:become_blueteam"]["queue_command"]["command"][1] = "scriptevent zex:flagChange CA {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["gvcv5:become_greenteam"]["queue_command"]["command"][0] = "summon gvcv5:flag_green_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["gvcv5:become_greenteam"]["queue_command"]["command"][1] = "scriptevent zex:flagChange CA {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["gvcv5:become_yellowteam"]["queue_command"]["command"][0] = "summon gvcv5:flag_yellow_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["gvcv5:become_yellowteam"]["queue_command"]["command"][1] = "scriptevent zex:flagChange CA {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][1] = "scoreboard players reset §b{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][2] = "kill @s"
+                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][0] = "summon gvcv5:flag_red_{} ~~~".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][1] = "scoreboard players reset §b{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][2] = "kill @s"
+                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][0] = "summon gvcv5:flag_blue_{} ~~~".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][1] = "scoreboard players reset §b{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][2] = "kill @s"
+                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][0] = "summon gvcv5:flag_green_{} ~~~".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][1] = "scoreboard players reset §b{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][2] = "kill @s"
+                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][0] = "summon gvcv5:flag_yellow_{} ~~~".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][1] = "scoreboard players reset §b{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][2] = "kill @s"
                 flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "CAflag", "inanimate" ]
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.gvcv5:flag_{0}_ca.name".format(structure_id)
@@ -63,35 +69,43 @@ for row in csv_reader:
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:damage_sensor"]["triggers"] = [ {  "cause": "all", "deals_damage": False } ]
 
-            with open("behavior_packs/GVCBedrock/entities/flag/{}_ca.json".format(structure_id),"w") as f:
+            with open("behavior_packs/GVCBedrockTeam/entities/flag/team/{}_ca.json".format(structure_id),"w") as f:
                 json.dump(flag_json,f,indent=2)
 
-            with open("tool/a2.json","r") as f:
+            with open("tool/a2_team2.json","r") as f:
                 flag_json = json.load(f)
                 flag_json["minecraft:entity"]["description"]["identifier"] = "gvcv5:flag_{}_ga".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ "scriptevent zex:flagStart GA {}".format(structure_id) ] } }
+                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ "scoreboard players set §8{} ALLFlags 0".format(structure_id) ] } }
                 flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ca ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][1] = "scriptevent zex:flagChange GA {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][1] = "scoreboard players reset §8{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"][2] = "kill @s"
                 flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ga ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][1] = "scriptevent zex:flagChange GA {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][1] = "scoreboard players reset §8{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][2] = "kill @s"
                 flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][0] = "summon gvcv5:flag_red_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][1] = "scriptevent zex:flagChange GA {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][1] = "scoreboard players reset §8{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][2] = "kill @s"
                 flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][0] = "summon gvcv5:flag_blue_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][1] = "scriptevent zex:flagChange GA {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][1] = "scoreboard players reset §8{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][2] = "kill @s"
                 flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][0] = "summon gvcv5:flag_green_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][1] = "scriptevent zex:flagChange GA {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][1] = "scoreboard players reset §8{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][2] = "kill @s"
                 flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][0] = "summon gvcv5:flag_yellow_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][1] = "scriptevent zex:flagChange GA {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][1] = "scoreboard players reset §8{} ALLFlags".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][2] = "kill @s"
                 flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "GAflag", "inanimate" ]
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
                     
-            with open("behavior_packs/GVCBedrock/entities/flag/{}_ga.json".format(structure_id),"w") as f:
+            with open("behavior_packs/GVCBedrockTeam/entities/flag/team/{}_ga.json".format(structure_id),"w") as f:
                 json.dump(flag_json,f,indent=2)
 
 
-
+            if structure_loot == "":
+                structure_loot = "flag"
+            
             red_interact = {
                 "on_interact": {
                     "filters": {
@@ -180,23 +194,52 @@ for row in csv_reader:
                 flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.gvcv5:flag_red_{0}.name".format(structure_id)
                 flag_json["minecraft:entity"]["description"]["identifier"] = "gvcv5:flag_red_{}".format(structure_id)
                 flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(red_interact)
-                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ "scriptevent zex:flagStart red {}".format(structure_id) ] } }
-                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ga ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][1] = "scriptevent zex:flagChange red {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][0] = "summon gvcv5:flag_red_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][1] = "scriptevent zex:flagChange red {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][0] = "summon gvcv5:flag_blue_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][1] = "scriptevent zex:flagChange red {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][0] = "summon gvcv5:flag_green_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][1] = "scriptevent zex:flagChange red {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][0] = "summon gvcv5:flag_yellow_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][1] = "scriptevent zex:flagChange red {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ 
+                    "scoreboard players set §c{} ALLFlags 0".format(structure_id),
+                    "scoreboard players add §cRED ALLFlags 10"
+                ] } }
+                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_{}_ca ~~~".format(structure_id),
+                    "scoreboard players reset §c{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §cRED ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_{}_ga ~~~".format(structure_id),
+                    "scoreboard players reset §c{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §cRED ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_red_{} ~~~".format(structure_id),
+                    "scoreboard players reset §c{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §cRED ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_blue_{} ~~~".format(structure_id),
+                    "scoreboard players reset §c{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §cRED ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_green_{} ~~~".format(structure_id),
+                    "scoreboard players reset §c{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §cRED ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_yellow_{} ~~~".format(structure_id),
+                    "scoreboard players reset §c{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §cRED ALLFlags 10"
+                ]
                 flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "Rflag", "inanimate" ]
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
 
-            with open("behavior_packs/GVCBedrock/entities/flag/flag_red_{}.json".format(structure_id),"w") as f:
+            with open("behavior_packs/GVCBedrockTeam/entities/flag/team/flag_red_{}.json".format(structure_id),"w") as f:
                 json.dump(flag_json,f,indent=2)
 
             with open("tool/a1blue.json","r") as f:
@@ -204,23 +247,52 @@ for row in csv_reader:
                 flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.gvcv5:flag_blue_{0}.name".format(structure_id)
                 flag_json["minecraft:entity"]["description"]["identifier"] = "gvcv5:flag_blue_{}".format(structure_id)
                 flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(blue_interact)
-                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ "scriptevent zex:flagStart blue {}".format(structure_id) ] } }
-                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ga ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][1] = "scriptevent zex:flagChange blue {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][0] = "summon gvcv5:flag_red_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][1] = "scriptevent zex:flagChange blue {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][0] = "summon gvcv5:flag_blue_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][1] = "scriptevent zex:flagChange blue {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][0] = "summon gvcv5:flag_green_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][1] = "scriptevent zex:flagChange blue {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][0] = "summon gvcv5:flag_yellow_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][1] = "scriptevent zex:flagChange blue {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ 
+                    "scoreboard players set §9{} ALLFlags 0".format(structure_id),
+                    "scoreboard players add §9BLUE ALLFlags 10"
+                ] } }
+                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_{}_ca ~~~".format(structure_id),
+                    "scoreboard players reset §9{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §9BLUE ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_{}_ga ~~~".format(structure_id),
+                    "scoreboard players reset §9{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §9BLUE ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_red_{} ~~~".format(structure_id),
+                    "scoreboard players reset §9{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §9BLUE ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_blue_{} ~~~".format(structure_id),
+                    "scoreboard players reset §9{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §9BLUE ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_green_{} ~~~".format(structure_id),
+                    "scoreboard players reset §9{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §9BLUE ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_yellow_{} ~~~".format(structure_id),
+                    "scoreboard players reset §9{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §9BLUE ALLFlags 10"
+                ]
                 flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "Bflag", "inanimate" ]
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
 
-            with open("behavior_packs/GVCBedrock/entities/flag/flag_blue_{}.json".format(structure_id),"w") as f:
+            with open("behavior_packs/GVCBedrockTeam/entities/flag/team/flag_blue_{}.json".format(structure_id),"w") as f:
                 json.dump(flag_json,f,indent=2)
 
             with open("tool/a1green.json","r") as f:
@@ -228,23 +300,52 @@ for row in csv_reader:
                 flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.gvcv5:flag_green_{0}.name".format(structure_id)
                 flag_json["minecraft:entity"]["description"]["identifier"] = "gvcv5:flag_green_{}".format(structure_id)
                 flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(green_interact)
-                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ "scriptevent zex:flagStart green {}".format(structure_id) ] } }
-                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ga ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][1] = "scriptevent zex:flagChange green {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][0] = "summon gvcv5:flag_red_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][1] = "scriptevent zex:flagChange green {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][0] = "summon gvcv5:flag_blue_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][1] = "scriptevent zex:flagChange green {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][0] = "summon gvcv5:flag_green_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][1] = "scriptevent zex:flagChange green {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][0] = "summon gvcv5:flag_yellow_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][1] = "scriptevent zex:flagChange green {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ 
+                    "scoreboard players set §a{} ALLFlags 0".format(structure_id),
+                    "scoreboard players add §aGREEN ALLFlags 10"
+                ] } }
+                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_{}_ca ~~~".format(structure_id),
+                    "scoreboard players reset §a{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §aGREEN ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_{}_ga ~~~".format(structure_id),
+                    "scoreboard players reset §a{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §aGREEN ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_red_{} ~~~".format(structure_id),
+                    "scoreboard players reset §a{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §aGREEN ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_blue_{} ~~~".format(structure_id),
+                    "scoreboard players reset §a{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §aGREEN ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_green_{} ~~~".format(structure_id),
+                    "scoreboard players reset §a{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §aGREEN ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_yellow_{} ~~~".format(structure_id),
+                    "scoreboard players reset §a{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §aGREEN ALLFlags 10"
+                ]
                 flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "Gflag", "inanimate" ]
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
 
-            with open("behavior_packs/GVCBedrock/entities/flag/flag_green_{}.json".format(structure_id),"w") as f:
+            with open("behavior_packs/GVCBedrockTeam/entities/flag/team/flag_green_{}.json".format(structure_id),"w") as f:
                 json.dump(flag_json,f,indent=2)
 
             with open("tool/a1yellow.json","r") as f:
@@ -252,23 +353,52 @@ for row in csv_reader:
                 flag_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.gvcv5:flag_yellow_{0}.name".format(structure_id)
                 flag_json["minecraft:entity"]["description"]["identifier"] = "gvcv5:flag_yellow_{}".format(structure_id)
                 flag_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"].append(yellow_interact)
-                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ "scriptevent zex:flagStart yellow {}".format(structure_id) ] } }
-                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][0] = "summon gvcv5:flag_{}_ga ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"][1] = "scriptevent zex:flagChange yellow {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][0] = "summon gvcv5:flag_red_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"][1] = "scriptevent zex:flagChange yellow {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][0] = "summon gvcv5:flag_blue_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"][1] = "scriptevent zex:flagChange yellow {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][0] = "summon gvcv5:flag_green_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"][1] = "scriptevent zex:flagChange yellow {}".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][0] = "summon gvcv5:flag_yellow_{} ~~~".format(structure_id)
-                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"][1] = "scriptevent zex:flagChange yellow {}".format(structure_id)
+                flag_json["minecraft:entity"]["events"]["minecraft:entity_spawned"] = { "queue_command": { "command":[ 
+                    "scoreboard players set §e{} ALLFlags 0".format(structure_id),
+                    "scoreboard players add §eYELLOW ALLFlags 10"
+                ] } }
+                flag_json["minecraft:entity"]["events"]["become_CA"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_{}_ca ~~~".format(structure_id),
+                    "scoreboard players reset §e{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §eYELLOW ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_GA"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_{}_ga ~~~".format(structure_id),
+                    "scoreboard players reset §e{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §eYELLOW ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_R"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_red_{} ~~~".format(structure_id),
+                    "scoreboard players reset §e{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §eYELLOW ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_B"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_blue_{} ~~~".format(structure_id),
+                    "scoreboard players reset §e{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §eYELLOW ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_G"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_green_{} ~~~".format(structure_id),
+                    "scoreboard players reset §e{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §eYELLOW ALLFlags 10"
+                ]
+                flag_json["minecraft:entity"]["events"]["become_Y"]["queue_command"]["command"] = [    
+                    "summon gvcv5:flag_yellow_{} ~~~".format(structure_id),
+                    "scoreboard players reset §e{} ALLFlags".format(structure_id),
+                    "kill @s",
+                    "scoreboard players remove §eYELLOW ALLFlags 10"
+                ]
                 flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "Yflag", "inanimate" ]
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
 
-            with open("behavior_packs/GVCBedrock/entities/flag/flag_yellow_{}.json".format(structure_id),"w") as f:
+            with open("behavior_packs/GVCBedrockTeam/entities/flag/team/flag_yellow_{}.json".format(structure_id),"w") as f:
                 json.dump(flag_json,f,indent=2)
 
 
