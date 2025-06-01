@@ -78,7 +78,6 @@ export const craftData = {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
       { "give":"vehicle:aifv_spawn_egg","texture":"textures/items/aifv", "count":1, "cost":[ 3, 9, 9 ] },
-      { "give":"vehicle:lav25_spawn_egg","texture":"textures/items/lav25", "count":1, "cost":[ 9, 9, 9 ] },
       { "give":"vehicle:ah1s_spawn_egg","texture":"textures/items/ah1s", "count":1, "cost":[ 9, 9, 24 ] },
       { "give":"vehicle:mig17_spawn_egg","texture":"textures/items/mig17", "count":1, "cost":[ 9, 9, 24 ] },
       { "give":"vehicle:mi24d_spawn_egg","texture":"textures/items/mi24d", "count":1, "cost":[ 9, 9, 24 ] },
@@ -86,7 +85,8 @@ export const craftData = {
       { "give":"vehicle:t55_spawn_egg","texture":"textures/items/t55", "count":1, "cost":[ 9, 16, 9 ] },
       { "give":"vehicle:20mmaa_spawn_egg","texture":"textures/items/20mmaa", "count":1, "cost":[ 4, 4, 4 ] },
       { "give":"vehicle:pkmset_spawn_egg","texture":"textures/items/pkmset", "count":1, "cost":[ 2, 2, 2 ] },
-      { "give":"vehicle:pak40_spawn_egg","texture":"textures/items/pak40", "count":1, "cost":[ 4, 4, 4 ] }
+      { "give":"vehicle:pak40_spawn_egg","texture":"textures/items/pak40", "count":1, "cost":[ 4, 4, 4 ] },
+      { "give":"vehicle:flak18_spawn_egg","texture":"textures/items/flak18", "count":1, "cost":[ 8, 8, 8 ] }
     ]
   },
   "vc3": {
@@ -94,10 +94,10 @@ export const craftData = {
     "buy":[ 
       { "give":"vehicle:m1126_spawn_egg","texture":"textures/items/m1126", "count":1, "cost":[ 12, 12, 12 ] },
       { "give":"vehicle:m1128_spawn_egg","texture":"textures/items/m1128", "count":1, "cost":[ 12, 12, 12 ] },
+      { "give":"vehicle:lav25_spawn_egg","texture":"textures/items/lav25", "count":1, "cost":[ 27, 27, 27 ] },
       { "give":"vehicle:ka50_spawn_egg","texture":"textures/items/ka50", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:m1a2_spawn_egg","texture":"textures/items/m1a2", "count":1, "cost":[ 16, 64, 32 ] },
       { "give":"vehicle:t72_spawn_egg","texture":"textures/items/t72", "count":1, "cost":[ 16, 32, 24 ] },
-      { "give":"vehicle:flak18_spawn_egg","texture":"textures/items/flak18", "count":1, "cost":[ 8, 8, 8 ] },
       { "give":"vehicle:su25_spawn_egg","texture":"textures/items/su25", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:su27_spawn_egg","texture":"textures/items/su27", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:f16_spawn_egg","texture":"textures/items/f16", "count":1, "cost":[ 18, 18, 48 ] },

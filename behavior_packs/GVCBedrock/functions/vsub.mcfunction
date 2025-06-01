@@ -2,8 +2,8 @@
 execute if entity @e[r=4,type=vehicle:aifv] run event entity @s fire:vmg
 execute if entity @e[r=4,type=vehicle:aifv] run scoreboard players set @p scool 2
 
-execute if entity @e[r=4,type=vehicle:lav25] run event entity @s fire:vmg
-execute if entity @e[r=4,type=vehicle:lav25] run scoreboard players set @p scool 2
+execute if entity @e[r=4,type=vehicle:lav25] run event entity @s fire:20mm
+execute if entity @e[r=4,type=vehicle:lav25] run scoreboard players set @p scool 4
 
 execute if entity @e[r=4,type=vehicle:m113] run event entity @s fire:vmg
 execute if entity @e[r=4,type=vehicle:m113] run scoreboard players set @p scool 2

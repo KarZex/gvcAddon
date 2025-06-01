@@ -5,8 +5,7 @@
       "states": {
         "default": {
           "transitions": [
-            { "camera": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:camera') && query.is_using_item" },
-            { "lader": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:lader') && query.is_riding" }
+            { "camera": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:camera') && query.is_using_item" }
           ],
           "on_entry": [
             "/effect @s resistance 0 7 true",
@@ -38,30 +37,6 @@
           "transitions": [
               {
                   "default": "!query.is_using_item|| !query.is_riding"
-              }
-          ]
-        },
-        "lader":{
-          "on_entry": [
-            "/tag @s add lader"
-          ],
-          "transitions": [
-            {
-              "default": "!query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:lader') || !query.is_riding"
-            },
-            {
-              "lader2": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:lader')"
-            }
-          ]
-        },
-        "lader2": {
-          "on_entry": [
-            "/tag @s add lader",
-            "/scriptevent zex:lader"
-          ],
-          "transitions": [
-              {
-                  "lader": "(1.0)"
               }
           ]
         }

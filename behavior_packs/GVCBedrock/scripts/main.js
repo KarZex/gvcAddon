@@ -9,7 +9,7 @@ function setArmorValue( itemName ){
 	else if( itemName.includes("chainmail") ){ return 0.1 }
 	else if( itemName.includes("iron") ){ return 0.15 }
 	else if( itemName.includes("golden") ){ return 0.15 }
-	else if( itemName.includes("diamond") ){ return 0.25 }
+	else if( itemName.includes("diamond") ){ return 0.225 }
 	else if( itemName.includes("plastic") ){ return 0.2 }
 	else if( itemName.includes("ghilliesuit") ){ return 0.05 }
 	else if( itemName.includes("trench") ){ return 0.15 }
@@ -203,6 +203,18 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 	}
 })
 
+system.runInterval( () => {
+	if ( world.getDynamicProperty(`gvcv5:worldLimit`) ){
+		const over = world.getDynamicProperty(`gvcv5:worldLimitO`);
+		const nether = world.getDynamicProperty(`gvcv5:worldLimitN`);
+		const end = world.getDynamicProperty(`gvcv5:worldLimitE`);
+		world.getDimension(`minecraft:overworld`).runCommand(`tag @a[x=-${over/2},y=-64,z=-${over/2},dx=${over},dy=384,dz=${over}] add noout`);
+		world.getDimension(`minecraft:overworld`).runCommand(`function out/over`);
+		world.getDimension(`minecraft:nether`).runCommand(`tag @a[x=-${nether/2},y=0,z=-${nether/2},dx=${nether},dy=128,dz=${nether}] add noout`);
+		world.getDimension(`the_end`).runCommand(`tag @a[x=0,y=0,z=0,r=512,tag=down] add noout`);
+	}
+},20)
+
 system.afterEvents.scriptEventReceive.subscribe( e => {
 	if( e.id == "zex:air"){
 		const airCraft = e.sourceEntity;
@@ -243,8 +255,48 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			if( Math.asin(d.z) < Math.asin(r.z) - Math.PI/20 ){
 				d.z = r.z - Math.sin(Math.PI/20);
 			}
-			if( airCraft.location.y > 320 && d.y > 0 ){
-				d.y = 0;
+			if( world.getDynamicProperty(`gvcv5:worldLimit`) && airCraft.dimension.id == `minecraft:overworld` ){
+				
+				if( airCraft.location.x > world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.x > 0 ){
+					d.x = 0;
+				}
+				if( airCraft.location.x < -world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.x < 0 ){
+					d.x = 0;
+				}
+				if( airCraft.location.y > 320 && d.y > 0 ){
+					d.y = 0;
+				}
+				if( airCraft.location.y < -64 && d.y < 0 ){
+					d.y = 0;
+				}
+				if( airCraft.location.z > world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.z > 0 ){
+					d.z = 0;
+				}
+				if( airCraft.location.z < -world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.z < 0 ){
+					d.z = 0;
+				}
+
+			}
+			else if( world.getDynamicProperty(`gvcv5:worldLimit`) && airCraft.dimension.id == `minecraft:nether` ){
+				if( airCraft.location.x > world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.x > 0 ){
+					d.x = 0;
+				}
+				if( airCraft.location.x < -world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.x < 0 ){
+					d.x = 0;
+				}
+				if( airCraft.location.y > 128 && d.y > 0 ){
+					d.y = 0;
+				}
+				if( airCraft.location.y < 0 && d.y < 0 ){
+					d.y = 0;
+				}
+				if( airCraft.location.z > world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.z > 0 ){
+					d.z = 0;
+				}
+				if( airCraft.location.z < -world.getDynamicProperty(`gvcv5:worldLimitN`)/2 && d.z < 0 ){
+					d.z = 0;
+				}
+
 			}
 			airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
 		}
@@ -364,11 +416,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			 } )
 
 		}
-
-
-
-	
-
 	}
 
 	else if( e.id == "zex:view"){
@@ -388,7 +435,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		e.sourceEntity.runCommand(`scoreboard players set L building 1`);
 		e.sourceEntity.runCommand(`scoreboard players set A building 1`);
 	}
-	//ブロックを叩くことで、リロード
 	else if (e.id === "gvcv5:reload"){
 		let p = e.sourceEntity;
 		const gunName = e.message;
@@ -399,7 +445,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		let Ammo = gunData[`${gunName}`]["bullet"];
 		let c = 0;
 		if( d > 0 ){
-			//インベントリから弾の個数を取得する
 			for(let i = 0; i < 36; i++){
 				let Haditem = p.getComponent("inventory").container.getItem(i);
 				if( Haditem != undefined && Haditem.typeId === Ammo ){
@@ -613,6 +658,36 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					if( world.getDynamicProperty(`gvcv5:doSpawnFromBeacon`) != Boolean(result.formValues[1]) ){
 						world.setDynamicProperty(`gvcv5:doSpawnFromBeacon`,Boolean(result.formValues[1]));
 						world.sendMessage(`Beacon Spawn is now ${result.formValues[1]}`);
+					}
+				}
+			} )
+
+
+		}
+		else if( e.message == `gameRule`){
+			const form = new ModalFormData();
+			form.title(`gameRule Settings`);
+			form.toggle(`Enable WorldLimit`, world.getDynamicProperty(`gvcv5:worldLimit`));
+			form.textField(`World Limit O`, `Current is ${world.getDynamicProperty(`gvcv5:worldLimitO`)}`,`${world.getDynamicProperty(`gvcv5:worldLimitO`)}`);
+			form.textField(`World Limit N`, `Current is ${world.getDynamicProperty(`gvcv5:worldLimitN`)}`,`${world.getDynamicProperty(`gvcv5:worldLimitN`)}`);
+			form.textField(`World Limit E`, `Current is ${world.getDynamicProperty(`gvcv5:worldLimitE`)}`,`${world.getDynamicProperty(`gvcv5:worldLimitE`)}`);
+			form.show(e.sourceEntity).then( result => {
+				if ( !result.canceled ){
+					if( world.getDynamicProperty(`gvcv5:worldLimit`) != Boolean(result.formValues[0]) ){
+						world.setDynamicProperty(`gvcv5:worldLimit`,Boolean(result.formValues[0]));
+						world.sendMessage(`World Limit is now ${result.formValues[0]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:worldLimitO`) != Number(result.formValues[1]) ){
+						world.setDynamicProperty(`gvcv5:worldLimitO`,Number(result.formValues[1]));
+						world.sendMessage(`World Limit O is now ${result.formValues[1]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:worldLimitN`) != Number(result.formValues[2]) ){
+						world.setDynamicProperty(`gvcv5:worldLimitN`,Number(result.formValues[2]));
+						world.sendMessage(`World Limit N is now ${result.formValues[2]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:worldLimitE`) != Number(result.formValues[3]) ){
+						world.setDynamicProperty(`gvcv5:worldLimitE`,Number(result.formValues[3]));
+						world.sendMessage(`World Limit E is now ${result.formValues[3]}`);
 					}
 				}
 			} )

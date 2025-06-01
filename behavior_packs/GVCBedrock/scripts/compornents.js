@@ -133,6 +133,19 @@ world.beforeEvents.worldInitialize.subscribe( e => {
     if( world.getDynamicProperty("gvcv5:doSpawnFromBlock") == undefined ){
         world.setDynamicProperty("gvcv5:doSpawnFromBlock",true);
     }
+    if( world.getDynamicProperty("gvcv5:worldLimit") == undefined ){
+        world.setDynamicProperty("gvcv5:worldLimit",false);
+    }
+    if( world.getDynamicProperty(`gvcv5:worldLimitO`) == undefined ){
+        world.setDynamicProperty(`gvcv5:worldLimitO`,2048);
+    }
+    if( world.getDynamicProperty(`gvcv5:worldLimitN`) == undefined ){
+        world.setDynamicProperty(`gvcv5:worldLimitN`,2048);
+    }
+    if( world.getDynamicProperty(`gvcv5:worldLimitE`) == undefined ){
+        world.setDynamicProperty(`gvcv5:worldLimitE`,512);
+    }
+
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawn`,{onPlace: gvcv5SpawnEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:end_block`,{onPlace: gvcv5EndBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,{onPlace: gvcv5BuildingBlockEvent});

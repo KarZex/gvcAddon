@@ -1,6 +1,6 @@
 name,id,type,health,speed,sub,sub_cool,main1,main_cool,main2,main_cool,main3,main_cool,antibullet,water,v_sizew,v_sizeh,v_menber,v_break,v_ridef,v_position1,v_position2,v_position3,v_position4,v_position5,v_position6
 vehicle,aifv,apc,120,0.3,vmg,2,,0,,0,,0,T,,3,2,5,T,"[ ""guerrilla"",""allied_soldier"",""player""]","[ -0.5, 2.35, 0 ]","[ 1, 0.8, -1.2 ]","[ -1, 0.8, -1.2 ]","[ 1, 0.8, -2.2 ]","[ -1, 0.8, -2.2 ]",
-vehicle,lav25,apc,120,0.3,vmg,2,aamissile,100,,0,,0,T,,3,3,5,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 2.25, -1.2 ]",,,,,
+vehicle,lav25,apc,120,0.3,20mm,4,aamissile,100,,0,,0,T,,3,3,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 2.25, -1.2 ]",,,,,
 vehicle,m113,apc,120,0.3,vmg,2,,0,,0,,0,T,,3,2,5,T,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.2 ]","[ 1, 0.8, -1.2 ]","[ -1, 0.8, -1.2 ]","[ 1, 0.8, -2.2 ]","[ -1, 0.8, -2.2 ]",
 vehicle,m1126,apc,120,0.2,vmg,2,,0,,0,,0,T,,3,3,6,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.6 ]","[ 1, 1.2, -1.5 ]","[ 0, 1.2, -2.1 ]","[ -1, 1.2, -0.6 ]","[ 1, 1.2, -0.6 ]","[ -1, 1.2, -1.5 ]"
 vehicle,m1128,apc,120,0.2,vmg,0,105mm,100,,0,,0,T,,3,3,6,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.6 ]","[ 1, 1.2, -1.5 ]","[ 0, 1.2, -2.1 ]","[ -1, 1.2, -0.6 ]","[ 1, 1.2, -0.6 ]","[ -1, 1.2, -1.5 ]"
