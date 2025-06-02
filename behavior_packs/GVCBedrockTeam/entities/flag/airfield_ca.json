@@ -121,7 +121,7 @@
                   }
                 ]
               },
-              "event": "gvcv5:become_redteam",
+              "event": "become_R",
               "target": "self"
             }
           },
@@ -139,7 +139,7 @@
                   }
                 ]
               },
-              "event": "gvcv5:become_blueteam",
+              "event": "become_B",
               "target": "self"
             }
           },
@@ -157,7 +157,7 @@
                   }
                 ]
               },
-              "event": "gvcv5:become_greenteam",
+              "event": "become_G",
               "target": "self"
             }
           },
@@ -175,7 +175,7 @@
                   }
                 ]
               },
-              "event": "gvcv5:become_yellowteam",
+              "event": "become_Y",
               "target": "self"
             }
           },
