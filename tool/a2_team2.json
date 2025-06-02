@@ -287,32 +287,32 @@
 	"events": {
     "become_R": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_red ~~5~","kill @s"]
+        "command":[ "summon gvcv5:flag_red ~~5~","kill @s","kill @s"]
       }
     },
     "become_B": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_blue ~~5~","kill @s"]
+        "command":[ "summon gvcv5:flag_blue ~~5~","kill @s","kill @s"]
       }
     },
     "become_G": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_green ~~5~","kill @s"]
+        "command":[ "summon gvcv5:flag_green ~~5~","kill @s","kill @s"]
       }
     },
     "become_Y": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_yellow ~~5~","kill @s"]
+        "command":[ "summon gvcv5:flag_yellow ~~5~","kill @s","kill @s"]
       }
     },
     "become_CA": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_ ~~5~","kill @s"]
+        "command":[ "summon gvcv5:flag_ ~~5~","kill @s","kill @s"]
       }
     },
     "become_GA": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_ ~~5~","kill @s"]
+        "command":[ "summon gvcv5:flag_ ~~5~","kill @s","kill @s"]
       }
     }
 	}

@@ -16,6 +16,7 @@
             "/clear @s[tag=onAir] zex:mtype",
             "/clear @s[tag=onAir] spyglass",
             "/clear @s[tag=onAir] gun:no",
+            "/tag @s remove onAir",
             "/tag @s remove air",
             "/tag @s remove heri"
           ]
