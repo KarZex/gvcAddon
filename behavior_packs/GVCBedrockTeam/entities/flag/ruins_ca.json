@@ -306,7 +306,7 @@
           ]
         }
       },
-      "gvcv5:become_redteam": {
+      "become_R": {
         "queue_command": {
           "command": [
             "summon gvcv5:flag_red ~~~",
@@ -314,7 +314,7 @@
           ]
         }
       },
-      "gvcv5:become_blueteam": {
+      "become_B": {
         "queue_command": {
           "command": [
             "summon gvcv5:flag_blue ~~~",
@@ -322,7 +322,7 @@
           ]
         }
       },
-      "gvcv5:become_greenteam": {
+      "become_G": {
         "queue_command": {
           "command": [
             "summon gvcv5:flag_green ~~~",
@@ -330,7 +330,7 @@
           ]
         }
       },
-      "gvcv5:become_yellowteam": {
+      "become_Y": {
         "queue_command": {
           "command": [
             "summon gvcv5:flag_yellow ~~~",

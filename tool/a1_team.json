@@ -109,7 +109,7 @@
                   }
                 ]
               },
-              "event": "gvcv5:become_redteam",
+              "event": "become_R",
               "target": "self"
             }
           },
@@ -127,7 +127,7 @@
                   }
                 ]
               },
-              "event": "gvcv5:become_blueteam",
+              "event": "become_B",
               "target": "self"
             }
           },
@@ -145,7 +145,7 @@
                   }
                 ]
               },
-              "event": "gvcv5:become_greenteam",
+              "event": "become_G",
               "target": "self"
             }
           },
@@ -163,7 +163,7 @@
                   }
                 ]
               },
-              "event": "gvcv5:become_yellowteam",
+              "event": "become_Y",
               "target": "self"
             }
           },
@@ -300,32 +300,32 @@
 	  },
     "become_R": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_red ~~~","kill @s",""]
+        "command":[ "summon gvcv5:flag_red ~~~","kill @s"]
       }
     },
     "become_B": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_blue ~~~","kill @s",""]
+        "command":[ "summon gvcv5:flag_blue ~~~","kill @s"]
       }
     },
     "become_G": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_green ~~~","kill @s",""]
+        "command":[ "summon gvcv5:flag_green ~~~","kill @s"]
       }
     },
     "become_Y": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_yellow ~~~","kill @s",""]
+        "command":[ "summon gvcv5:flag_yellow ~~~","kill @s"]
       }
     },
     "become_CA": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_ ~~5~","kill @s",""]
+        "command":[ "summon gvcv5:flag_ ~~5~","kill @s"]
       }
     },
     "become_GA": {
       "queue_command": {
-        "command":[ "summon gvcv5:flag_ ~~5~","kill @s",""]
+        "command":[ "summon gvcv5:flag_ ~~5~","kill @s"]
       }
     }
 	  }
