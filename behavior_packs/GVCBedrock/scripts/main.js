@@ -4,6 +4,8 @@ import { gunData } from "./guns";
 import { craftData } from "./crafts";
 import "./compornents";
 
+const globalVarWW2Sides = [ `USA`,`SOV`,`GER`,`JAP` ] //using hoi4 tags
+
 function setArmorValue( itemName ){
 	if( itemName.includes("leather") ){ return 0.05 }
 	else if( itemName.includes("chainmail") ){ return 0.1 }
@@ -104,14 +106,132 @@ function missile( projectile,level,team ){
 	const missile = projectile.dimension.spawnEntity(`gvcv5:drop${level}_${team}`,location);
 }
 
-function airstrike1( location,team ){
+function airCraftlader( player ){
+	const V = player.getViewDirection();
+	const P0 = player.location;
+	const d0 = Math.atan2(V.z, V.x);
+	let team = `noteam`;
+	let print = [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ];
+	if( player.hasTag(`red`) ){ team = `red`; }
+	else if( player.hasTag(`blue`) ){ team = `blue`; }
+	else if( player.hasTag(`green`) ){ team = `green`; }
+	else if( player.hasTag(`yellow`) ){ team = `yellow`; }
+	const allPlayers = world.getAllPlayers();
+	for( let i of allPlayers ){
+		const Pi = i.location;
+		if( i.hasTag(`${team}`) || i.nameTag == player.nameTag || (!i.hasTag(`air`) && !i.hasTag(`heri`) )){
+			continue;
+		}
+		const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + (Pi.z - P0.z) * (Pi.z - P0.z) );
+		const adi = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri);
+		const di = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri) - d0;
+		for( let j = 0; j < 21; j++ ){
+			if( - Math.PI/2 + j * Math.PI / 21 <= di && di < - Math.PI/2 + (j + 1) * Math.PI / 21 ){
+				if( 1024 <= ri && ri < 2048  && print[j] < 1 ){
+					print[j] = 1;
+				}
+				else if( (512 <= ri && ri < 1024) && print[j] < 2 ){
+					print[j] = 2;
+				}
+				else if( (256 <= ri && ri < 512) && print[j] < 3 ){
+					print[j] = 3;
+				}
+				else if( (64 <= ri && ri < 256) && print[j] < 4 ){
+					print[j] = 4;
+				}
+				else if( (ri < 64) && print[j] < 5 ){
+					print[j] = 5;
+				}
 
+			}
+		}
+
+	}
+	for( let j = 0; j < 21; j++ ){
+		if( print[j] == 0 ){
+			print[j] = `§7`;
+		}
+		else if( print[j] == 1 ){
+			print[j] = `§f`;
+		}
+		else if( print[j] == 2 ){
+			print[j] = `§e`;
+		}
+		else if( print[j] == 3 ){
+			print[j] = `§g`;
+		}
+		else if( print[j] == 4 ){
+			print[j] = `§6`;
+		}
+		else if( print[j] == 5 ){
+			print[j] = `§4`;
+		}
+	}
+	return `{"text":"${print[0]}|${print[1]}|${print[2]}|${print[3]}|${print[4]}|${print[5]}|${print[6]}|${print[7]}|${print[8]}|${print[9]}| ${print[10]}${Math.floor(-180*d0/Math.PI)} ${print[11]}|${print[12]}|${print[13]}|${print[14]}|${print[15]}|${print[16]}|${print[17]}|${print[18]}|${print[19]}|${print[20]}|\n"}`;
+}
+
+function subWeapon( player,vehicle ){
+	const subWeaponName = `{"translate":"gvcv5.${vehicle.typeId.replace("vehicle:","")}.subWeapon.name"}`;
+	const subWeaponScore = world.scoreboard.getObjective(`subWeapon`).getScore(player);
+	const subWeaponScoreMax = world.scoreboard.getObjective(`maxsubcool`).getScore(player);
+	const subWeaponCool = world.scoreboard.getObjective(`scool`).getScore(player);
+	let subWeaponData = `{"text":": ${subWeaponScore}/${subWeaponScoreMax}\n"}`;
+	if( subWeaponCool <= 20 ){
+		subWeaponData = `{"text":": ${subWeaponScore}/${subWeaponScoreMax}\n"}`;
+	}
+	else if( subWeaponCool > 20 ){
+		subWeaponData = `{"text":": §cCOOL ${subWeaponCool}§r\n"}`;
+	}
+	return `${subWeaponName},${subWeaponData}`;
+}
+function mainWeapon0( player,vehicle ){
+	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
+	let mainTypeData = ``;
+	if( mtype == 0){
+		mainTypeData = `{"text":"§e"},`;
+	}
+	const mainWeaponName = `{"translate":"gvcv5.${vehicle.typeId.replace("vehicle:","")}.mainWeapon.name"}`;
+	const mainWeaponScore = world.scoreboard.getObjective(`mcool`).getScore(player);
+	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
+	if( mainWeaponScore <= 0 ){
+		mainWeaponData = `{"text":": READY§r\n"}`;
+	}
+	return `${mainTypeData}${mainWeaponName},${mainWeaponData}`;
+}
+
+function mainWeapon1( player,vehicle ){
+	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
+	let mainTypeData = ``;
+	if( mtype == 1){
+		mainTypeData = `{"text":"§e"},`;
+	}
+	const mainWeaponName = `{"translate":"gvcv5.${vehicle.typeId.replace("vehicle:","")}.mainWeaponi.name"}`;
+	const mainWeaponScore = world.scoreboard.getObjective(`mcooli`).getScore(player);
+	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
+	if( mainWeaponScore <= 0 ){
+		mainWeaponData = `{"text":": READY§r\n"}`;
+	}
+	return `${mainTypeData}${mainWeaponName},${mainWeaponData}`;
+}
+function mainWeapon2( player,vehicle ){
+	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
+	let mainTypeData = ``;
+	if( mtype == 2){
+		mainTypeData = `{"text":"§e"},`;
+	}
+	const mainWeaponName = `{"translate":"gvcv5.${vehicle.typeId.replace("vehicle:","")}.mainWeaponii.name"}`;
+	const mainWeaponScore = world.scoreboard.getObjective(`mcoolii`).getScore(player);
+	let mainWeaponData = `{"text":": ${mainWeaponScore}§r\n"}`;
+	if( mainWeaponScore <= 0 ){
+		mainWeaponData = `{"text":": READY§r\n"}`;
+	}
+	return `${mainTypeData}${mainWeaponName},${mainWeaponData}`;
 }
 
 async function airstrike(projectile,level,team){
 	const dimension = projectile.dimension;
 	projectile.dimension.spawnParticle(`zex:${team}_ring1`,projectile.location);
-	let Radius = Math.random() * 5 * level;
+	let Radius = Math.random() * 4 * level * level;
 	let Sigma = Math.random() * 2 * Math.PI;
 	const location = { 
 		x: projectile.location.x,
@@ -121,13 +241,15 @@ async function airstrike(projectile,level,team){
 	let spawnPointLocation = location;
 	const num = Math.pow(5,level);
 	for( let i = 0; i < num; i++ ){
-		dimension.spawnEntity(`gvcv5:airstrike_${team}`,spawnPointLocation);
-		Radius = Math.random() * 5 * level;
-		Sigma = Math.random() * 2 * Math.PI;
-		spawnPointLocation = { 
-			x: location.x + Radius * Math.cos(Sigma),
-			y: 320,
-			z: location.z + Radius * Math.sin(Sigma)
+		for( let j = 0; j < level; j++ ){
+			dimension.spawnEntity(`gvcv5:airstrike_${team}`,spawnPointLocation);
+			Radius = Math.random() * 4  * level * level;
+			Sigma = Math.random() * 2 * Math.PI;
+			spawnPointLocation = { 
+				x: location.x + Radius * Math.cos(Sigma),
+				y: 320,
+				z: location.z + Radius * Math.sin(Sigma)
+			}
 		}
 		await system.waitTicks((4-level)*(4-level));
 		
@@ -301,75 +423,21 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			}
 			airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
 		}
-		player.runCommand(`scriptevent zex:lader ${abs_v}`);
+		player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[${airCraftlader(player)},{"text":"§f§rair.${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,airCraft)},${mainWeapon0(player,airCraft)},${mainWeapon1(player,airCraft)},${mainWeapon2(player,airCraft)}]}`);
 	
 
 	}
-	else if( e.id == "zex:lader"){
-		const player = e.sourceEntity;
-		const abs_v = e.message;
-		const V = player.getViewDirection();
-		const P0 = player.location;
-		const d0 = Math.atan2(V.z, V.x);
-		let team = `noteam`;
-		let print = [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ];
-		if( player.hasTag(`red`) ){ team = `red`; }
-		else if( player.hasTag(`blue`) ){ team = `blue`; }
-		else if( player.hasTag(`green`) ){ team = `green`; }
-		else if( player.hasTag(`yellow`) ){ team = `yellow`; }
-		const allPlayers = world.getAllPlayers();
-		for( let i of allPlayers ){
-			const Pi = i.location;
-			if( i.hasTag(`${team}`) || i.nameTag == player.nameTag || (!i.hasTag(`air`) && !i.hasTag(`heri`) )){
-				continue;
-			}
-			const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + (Pi.z - P0.z) * (Pi.z - P0.z) );
-			const adi = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri);
-			const di = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri) - d0;
-			for( let j = 0; j < 21; j++ ){
-				if( - Math.PI/2 + j * Math.PI / 21 <= di && di < - Math.PI/2 + (j + 1) * Math.PI / 21 ){
-					if( 1024 <= ri && ri < 2048  && print[j] < 1 ){
-						print[j] = 1;
-					}
-					else if( (512 <= ri && ri < 1024) && print[j] < 2 ){
-						print[j] = 2;
-					}
-					else if( (256 <= ri && ri < 512) && print[j] < 3 ){
-						print[j] = 3;
-					}
-					else if( (64 <= ri && ri < 256) && print[j] < 4 ){
-						print[j] = 4;
-					}
-					else if( (ri < 64) && print[j] < 5 ){
-						print[j] = 5;
-					}
-
-				}
-			}
-
+	else if( e.id == "zex:vtext"){
+		const vehicle = e.sourceEntity;
+		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+		if( player.typeId == "minecraft:player" ){
+			let v = vehicle.getVelocity();
+			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"§f§rair.${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,vehicle)},${mainWeapon0(player,vehicle)},${mainWeapon1(player,vehicle)},${mainWeapon2(player,vehicle)}]}`);
 		}
-		for( let j = 0; j < 21; j++ ){
-			if( print[j] == 0 ){
-				print[j] = `§7`;
-			}
-			else if( print[j] == 1 ){
-				print[j] = `§f`;
-			}
-			else if( print[j] == 2 ){
-				print[j] = `§e`;
-			}
-			else if( print[j] == 3 ){
-				print[j] = `§g`;
-			}
-			else if( print[j] == 4 ){
-				print[j] = `§6`;
-			}
-			else if( print[j] == 5 ){
-				print[j] = `§4`;
-			}
+		else if( player.hasTag(`cantriding`) ){
+			vehicle.remove();
 		}
-		player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"${Math.round(abs_v*20*100)/100}m/s  "},{"text":"${print[0]}|${print[1]}|${print[2]}|${print[3]}|${print[4]}|${print[5]}|${print[6]}|${print[7]}|${print[8]}|${print[9]}| ${print[10]}${Math.floor(-180*d0/Math.PI)} ${print[11]}|${print[12]}|${print[13]}|${print[14]}|${print[15]}|${print[16]}|${print[17]}|${print[18]}|${print[19]}|${print[20]}|"},{"text":"§r"}]}`)
-
 	}
 	else if( e.id == "zex:aamissile"){
 		const missile = e.sourceEntity;
@@ -410,44 +478,56 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			 } )
 		}
 		else{
-			const V = player.getViewDirection();
-			missile.clearVelocity();
-			missile.applyImpulse( { 
-				x: V.x * 4,
-				y: V.y * 4,
-				z: V.z * 4
-			 } )
+			const V_m = missile.getVelocity();
+			const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
+			if( V_ma < 0.5 ){
+				const V = player.getViewDirection();
+				missile.clearVelocity();
+				missile.applyImpulse( { 
+					x: V.x * 4,
+					y: V.y * 4,
+					z: V.z * 4
+				} )
+			}
+			else{
+				missile.applyImpulse( { 
+					x: V_m.x,
+					y: V_m.y,
+					z: V_m.z
+				} )
+			}
 
 		}
 	}
 
 	else if( e.id == "zex:chkride"){
-		const airCraft = e.sourceEntity;
-		const p = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
-		let noItem = true;
-		for(let i = 0; i < 36; i++){
-			let Haditem = p.getComponent("inventory").container.getItem(i);
-			if( Haditem != undefined && Haditem.typeId != "minecraft:air" ){
-				airCraft.runCommand(`ride @s evict_riders`);
-				noItem = false;
-				p.sendMessage(`§cYou can't ride this vehicle with items!`);
-				p.runCommand(`clear @s minecraft:barrier`);
-				break;
-			}
-		}
-		if( noItem ){
+		if( world.getDynamicProperty(`gvcv5:airCraftWithItem`) ){
+			const airCraft = e.sourceEntity;
+			const p = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+			let noItem = true;
 			for(let i = 0; i < 36; i++){
-				p.runCommand(`replaceitem entity @s slot.inventory ${i} gun:no 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+				let Haditem = p.getComponent("inventory").container.getItem(i);
+				if( Haditem != undefined && Haditem.typeId != "minecraft:air" ){
+					airCraft.runCommand(`ride @s evict_riders`);
+					noItem = false;
+					p.sendMessage(`§cYou can't ride this vehicle with items!`);
+					p.runCommand(`clear @s minecraft:barrier`);
+					break;
+				}
 			}
-			p.addTag(`onAir`);
-			p.runCommand(`give @s gun:mgg 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-			p.runCommand(`give @s gun:tank 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-			p.runCommand(`give @s gun:camera 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-			p.runCommand(`give @s zex:mtype 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-			p.runCommand(`give @s spyglass 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
-			p.runCommand(`give @s gun:no 4 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			if( noItem ){
+				for(let i = 0; i < 36; i++){
+					p.runCommand(`replaceitem entity @s slot.inventory ${i} gun:no 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+				}
+				p.addTag(`onAir`);
+				p.runCommand(`give @s gun:mgg 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+				p.runCommand(`give @s gun:tank 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+				p.runCommand(`give @s gun:camera 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+				p.runCommand(`give @s zex:mtype 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+				p.runCommand(`give @s spyglass 1 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+				p.runCommand(`give @s gun:no 4 0 {"item_lock": { "mode": "lock_in_slot" } }`);
+			}
 		}
-		
 	}
 	else if( e.id == "zex:view"){
 		const view = e.sourceEntity.getRotation();
@@ -461,10 +541,14 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 	}
 
 	else if( e.id == "zex:start" ){
-		e.sourceEntity.runCommand(`scoreboard players set S building 1`);
-		e.sourceEntity.runCommand(`scoreboard players set M building 1`);
-		e.sourceEntity.runCommand(`scoreboard players set L building 1`);
-		e.sourceEntity.runCommand(`scoreboard players set A building 1`);
+		const buildingS = Number(world.getDynamicProperty(`gvcv5:buildingSpawnS`))
+		const buildingM = Number(world.getDynamicProperty(`gvcv5:buildingSpawnM`))
+		const buildingL = Number(world.getDynamicProperty(`gvcv5:buildingSpawnL`))
+		const buildingA = Number(world.getDynamicProperty(`gvcv5:buildingSpawnA`))
+		e.sourceEntity.runCommand(`scoreboard players set S building ${buildingS}`);
+		e.sourceEntity.runCommand(`scoreboard players set M building ${buildingM}`);
+		e.sourceEntity.runCommand(`scoreboard players set L building ${buildingL}`);
+		e.sourceEntity.runCommand(`scoreboard players set A building ${buildingA}`);
 	}
 	else if (e.id === "gvcv5:reload"){
 		let p = e.sourceEntity;
@@ -648,25 +732,29 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		else if( e.message == `building`){
 			const form = new ModalFormData();
 			form.title(`Building Settings`);
-			form.toggle(`Small Building Spawn`, Boolean( world.scoreboard.getObjective(`building`).getScore(`S`) == 1));
-			form.toggle(`Medium Building Spawn`, Boolean( world.scoreboard.getObjective(`building`).getScore(`M`) == 1));
-			form.toggle(`Large Building Spawn`, Boolean( world.scoreboard.getObjective(`building`).getScore(`L`) == 1));
-			form.toggle(`Allies Building Spawn`, Boolean( world.scoreboard.getObjective(`building`).getScore(`A`) == 1));
+			form.toggle(`Small Building Spawn`, world.getDynamicProperty(`gvcv5:buildingSpawnS`));
+			form.toggle(`Medium Building Spawn`, world.getDynamicProperty(`gvcv5:buildingSpawnM`));
+			form.toggle(`Large Building Spawn`, world.getDynamicProperty(`gvcv5:buildingSpawnL`));
+			form.toggle(`Allies Building Spawn`, world.getDynamicProperty(`gvcv5:buildingSpawnA`));
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
-					if( world.scoreboard.getObjective(`building`).getScore(`S`) != Number(result.formValues[0]) ){
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnS`) != Boolean(result.formValues[0]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnS`,Boolean(result.formValues[0]));
 						world.scoreboard.getObjective(`building`).setScore(`S`,Number(result.formValues[0]));
 						world.sendMessage(`Small Building Spawn is now ${result.formValues[0]}`);
 					}
-					if( world.scoreboard.getObjective(`building`).getScore(`M`) != Number(result.formValues[1]) ){
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnM`) != Boolean(result.formValues[1]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnM`,Boolean(result.formValues[1]));
 						world.scoreboard.getObjective(`building`).setScore(`M`,Number(result.formValues[1]));
 						world.sendMessage(`Medium Building Spawn is now ${result.formValues[1]}`);
 					}
-					if( world.scoreboard.getObjective(`building`).getScore(`L`) != Number(result.formValues[2]) ){
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnL`) != Boolean(result.formValues[2]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnL`,Boolean(result.formValues[2]));
 						world.scoreboard.getObjective(`building`).setScore(`L`,Number(result.formValues[2]));
 						world.sendMessage(`Large Building Spawn is now ${result.formValues[2]}`);
 					}
-					if( world.scoreboard.getObjective(`building`).getScore(`A`) != Number(result.formValues[3]) ){
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnA`) != Boolean(result.formValues[3]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnA`,Boolean(result.formValues[3]));
 						world.scoreboard.getObjective(`building`).setScore(`A`,Number(result.formValues[3]));
 						world.sendMessage(`Allies Building Spawn is now ${result.formValues[3]}`);
 					}
@@ -702,6 +790,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			form.textField(`World Limit O`, `Current is ${world.getDynamicProperty(`gvcv5:worldLimitO`)}`,`${world.getDynamicProperty(`gvcv5:worldLimitO`)}`);
 			form.textField(`World Limit N`, `Current is ${world.getDynamicProperty(`gvcv5:worldLimitN`)}`,`${world.getDynamicProperty(`gvcv5:worldLimitN`)}`);
 			form.textField(`World Limit E`, `Current is ${world.getDynamicProperty(`gvcv5:worldLimitE`)}`,`${world.getDynamicProperty(`gvcv5:worldLimitE`)}`);
+			form.toggle(`Disable AirCraft With Item`, world.getDynamicProperty(`gvcv5:airCraftWithItem`));
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
 					if( world.getDynamicProperty(`gvcv5:worldLimit`) != Boolean(result.formValues[0]) ){
@@ -719,6 +808,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					if( world.getDynamicProperty(`gvcv5:worldLimitE`) != Number(result.formValues[3]) ){
 						world.setDynamicProperty(`gvcv5:worldLimitE`,Number(result.formValues[3]));
 						world.sendMessage(`World Limit E is now ${result.formValues[3]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:airCraftWithItem`) != Boolean(result.formValues[0]) ){
+						world.setDynamicProperty(`gvcv5:airCraftWithItem`,Boolean(result.formValues[0]));
+						world.sendMessage(`Disable AirCraft With Item is now ${result.formValues[0]}`);
 					}
 				}
 			} )

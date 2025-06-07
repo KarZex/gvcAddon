@@ -7,14 +7,32 @@
       "is_summonable": true,
       "is_experimental": false,
       "scripts": {
-	    "animate": [ "walk","para" ]
+	    "animate": [ "walk","para","vtext" ]
 	  },
 	  "animations": {
 	    "walk": "controller.animation.vehicle",
-	    "para": "controller.animation.tankpara"
+	    "para": "controller.animation.tankpara",
+	    "vtext": "controller.animation.vtext"
 	  }
     },
     "component_groups": {
+			"summon_enemy": {
+        "minecraft:despawn": {
+          "despawn_from_distance": {}
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/t55_enemy.json"
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "event": "despawning",
+              "target": "self",
+              "filters": { "test": "has_tag", "subject": "self", "operator": "not", "value": "has.rider" }
+            }
+          ]
+        }
+			},
 			"despawning": {
         "minecraft:transformation": {
           "into": "addon:des"
@@ -192,6 +210,13 @@
       }
     },
     "events": {
+      "summon_enemy": {
+        "add": {
+          "component_groups": [
+            "summon_enemy"
+          ]
+        }
+      },
 	  "despawning": {
 		  "add": {
 			  "component_groups": [

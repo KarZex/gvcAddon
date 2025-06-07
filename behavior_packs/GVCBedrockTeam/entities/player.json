@@ -79,11 +79,17 @@
               "deals_damage": false,
               "on_damage": {
                 "filters": {
-                  "all_of": [
+                  "any_of": [
                     {
                       "test": "is_family",
                       "subject": "other",
                       "value": "noteam"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "down"
                     }
                   ]
                 }
@@ -124,6 +130,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -149,6 +165,16 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
                     },
                     {
                       "test": "is_family",
@@ -178,6 +204,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -205,6 +241,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -230,6 +276,10 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
                     },
                     {
                       "test": "has_mob_effect",
@@ -336,6 +386,12 @@
                 "filters": {
                   "any_of": [
                     {
+                      "test": "has_tag",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "down"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "value": "noteam"
@@ -368,6 +424,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -393,6 +459,16 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
                     },
                     {
                       "test": "is_family",
@@ -422,6 +498,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -449,6 +535,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -474,6 +570,10 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
                     },
                     {
                       "test": "has_mob_effect",
@@ -580,6 +680,12 @@
                 "filters": {
                   "any_of": [
                     {
+                      "test": "has_tag",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "down"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "value": "noteam"
@@ -612,6 +718,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -637,6 +753,16 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
                     },
                     {
                       "test": "is_family",
@@ -666,6 +792,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -693,6 +829,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -718,6 +864,10 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
                     },
                     {
                       "test": "has_mob_effect",
@@ -824,6 +974,12 @@
                 "filters": {
                   "any_of": [
                     {
+                      "test": "has_tag",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "down"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "value": "noteam"
@@ -856,6 +1012,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -881,6 +1047,16 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
                     },
                     {
                       "test": "is_family",
@@ -910,6 +1086,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -937,6 +1123,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -962,6 +1158,10 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
                     },
                     {
                       "test": "has_mob_effect",
@@ -1068,6 +1268,12 @@
                 "filters": {
                   "any_of": [
                     {
+                      "test": "has_tag",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": "down"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "value": "noteam"
@@ -1100,6 +1306,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -1125,6 +1341,16 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
                     },
                     {
                       "test": "is_family",
@@ -1154,6 +1380,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -1181,6 +1417,16 @@
                       "value": "down"
                     },
                     {
+                      "test": "is_riding",
+                      "operator": "not"
+                    },
+                    {
+                      "test": "has_mob_effect",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "resistance"
+                    },
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "operator": "==",
@@ -1206,6 +1452,10 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "is_riding",
+                      "operator": "not"
                     },
                     {
                       "test": "has_mob_effect",

@@ -57,14 +57,14 @@ function gvcv5SpawnerEvent( event ){
         let spawn = event.block.typeId;
         const spawnLocation = event.block.location;
         if ( spawn.includes(`so`) ){
-            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 }).triggerEvent(`minecraft:spawned_from_block`);
-            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z }).triggerEvent(`minecraft:spawned_from_block`);
-            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z-1 }).triggerEvent(`minecraft:spawned_from_block`);
+            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 }).triggerEvent(`gvcv5:set_have_gun_nt`);
+            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z }).triggerEvent(`gvcv5:set_have_gun_nt`);
+            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z-1 }).triggerEvent(`gvcv5:set_have_gun_nt`);
         }
         else {
-            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 }).triggerEvent(`minecraft:spawned_from_block`);
-            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z }).triggerEvent(`minecraft:spawned_from_block`);
-            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z-1 }).triggerEvent(`minecraft:spawned_from_block`);
+            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 }).triggerEvent(`gvcv5:set_have_gun_nt`);
+            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z }).triggerEvent(`gvcv5:set_have_gun_nt`);
+            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z-1 }).triggerEvent(`gvcv5:set_have_gun_nt`);
         }
     }
 }
@@ -127,6 +127,19 @@ world.beforeEvents.worldInitialize.subscribe( e => {
         world.setDynamicProperty("gvcv5:doBulletSpend",true);
     }
     
+    if( world.getDynamicProperty("gvcv5:buildingSpawnS") == undefined ){
+        world.setDynamicProperty("gvcv5:buildingSpawnS",true);
+    }
+    if( world.getDynamicProperty("gvcv5:buildingSpawnM") == undefined ){
+        world.setDynamicProperty("gvcv5:buildingSpawnM",true);
+    }
+    if( world.getDynamicProperty("gvcv5:buildingSpawnL") == undefined ){
+        world.setDynamicProperty("gvcv5:buildingSpawnL",true);
+    }
+    if( world.getDynamicProperty("gvcv5:buildingSpawnA") == undefined ){
+        world.setDynamicProperty("gvcv5:buildingSpawnA",true);
+    }
+    
     if( world.getDynamicProperty("gvcv5:doSpawnFromBeacon") == undefined ){
         world.setDynamicProperty("gvcv5:doSpawnFromBeacon",true);
     }
@@ -144,6 +157,9 @@ world.beforeEvents.worldInitialize.subscribe( e => {
     }
     if( world.getDynamicProperty(`gvcv5:worldLimitE`) == undefined ){
         world.setDynamicProperty(`gvcv5:worldLimitE`,512);
+    }
+    if( world.getDynamicProperty("gvcv5:airCraftWithItem") == undefined ){
+        world.setDynamicProperty("gvcv5:airCraftWithItem",false);
     }
 
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawn`,{onPlace: gvcv5SpawnEvent});

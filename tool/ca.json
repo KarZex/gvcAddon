@@ -188,6 +188,34 @@
           }
 		 ]
     },
+      "gvcv5:set_have_gun_nt":{
+        "randomize": [
+          {
+            "weight": 2,
+            "trigger": "m16a1"
+          },
+          {
+            "weight": 1,
+            "trigger": "m4"
+          },
+          {
+            "weight": 1,
+            "trigger": "m72"
+          },
+          {
+            "weight": 1,
+            "trigger": "m110"
+          },
+          {
+            "weight": 1,
+            "trigger": "mp5"
+          },
+          {
+            "weight": 1,
+            "trigger": "m60"
+          }
+		 ]
+    },
     "gvcv5:become_redteam": {
       "add": {
         "component_groups": [

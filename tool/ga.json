@@ -615,6 +615,14 @@
       },
       "gvcv5:set_have_gun_nt": {
         "sequence": [
+         {
+          "queue_command": {
+            "command": [
+              "tag @s add cantriding"
+            ]
+          }
+
+         },
           {
             "filters": {
               "any_of": [

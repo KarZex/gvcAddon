@@ -4,6 +4,9 @@
     "controller.animation.guns": {
       "states": {
         "default": {
+          "on_entry": [
+            "/tag @s remove subattack"
+          ],
           "transitions": [
             { "tank": "query.is_riding && (variable.attack_time > 0.0)" },
             { "tank": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tank') && query.is_using_item" },
@@ -20,7 +23,7 @@
         },
         "tank": {
           "on_entry": [
-            "/execute as @s[tag=!reload,scores={mcool=0}] run function vmain"
+            "/execute as @s[tag=!reload] run function vmain"
 
           ],
           "transitions": [ {"default":"(variable.attack_time <= 0.0)"}]

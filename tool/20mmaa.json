@@ -8,11 +8,12 @@
       "is_experimental": false,
       "scripts": {
         "animate": [
-          "walk"
+          "walk","vtext"
         ]
       },
       "animations": {
-        "walk": "controller.animation.vehicle"
+        "walk": "controller.animation.vehicle",
+        "vtext": "controller.animation.vtext"
       }
     },
     "component_groups": {

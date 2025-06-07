@@ -22,9 +22,11 @@
         },
         "camera1": {
           "on_entry": [
+            "/title @s title §0air.aim",
             "/camera @s set minecraft:follow_orbit entity_offset 0 0 -8"
           ],
           "on_exit": [
+            "/title @s clear",
             "/camera @s clear"
           ],
           "transitions": [

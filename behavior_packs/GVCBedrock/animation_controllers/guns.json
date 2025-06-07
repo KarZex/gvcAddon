@@ -4,6 +4,9 @@
     "controller.animation.guns": {
       "states": {
         "default": {
+          "on_entry": [
+            "/tag @s remove subattack"
+          ],
           "transitions": [
             {
               "tank": "query.is_riding && (variable.attack_time > 0.0)"
@@ -324,7 +327,7 @@
         },
         "tank": {
           "on_entry": [
-            "/execute as @s[tag=!reload,scores={mcool=0}] run function vmain"
+            "/execute as @s[tag=!reload] run function vmain"
           ],
           "transitions": [
             {

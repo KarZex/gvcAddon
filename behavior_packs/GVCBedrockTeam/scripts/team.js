@@ -20,6 +20,13 @@ function gvcv5GetTime() {
 
     return `${day}:${hour}:${minute}`;
 }
+async function tpWithDelay( user, location,dimension, delay){
+	user.sendMessage(`you will be teleported in ${delay/20} seconds`);
+	user.runCommand(`inputpermission set @s movement disabled`);
+	await system.waitTicks(delay);
+	user.runCommand(`inputpermission set @s movement enabled`);
+	user.teleport(location, { dimension: dimension });
+}
 
 function gvcv5becomeTeam( user,team ){
 	if( world.getDynamicProperty(`${team}Leader`) == undefined ){
@@ -496,7 +503,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
 				}
 				else if( phone.getDynamicProperty(`slot${result.selection}`) != undefined ){
-					user.teleport(phone.getDynamicProperty(`slot${result.selection}`),{ dimension: world.getDimension(phone.getDynamicProperty(`slot${result.selection}_dimension`))} )
+					let location = phone.getDynamicProperty(`slot${result.selection}`);
+					let dimension = world.getDimension(phone.getDynamicProperty(`slot${result.selection}_dimension`));
+					tpWithDelay(user, location, dimension, 100);
 				}
 			}
 		},)
@@ -650,7 +659,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					form_tp.show(user).then( result => {
 						if ( !result.canceled ){
 							if( result.selection < phoneArray.length ){
-								user.teleport(phoneArray[result.selection].location,{ dimension : phoneArray[result.selection].dimension });
+								const targetLocation = phoneArray[result.selection].location;
+								const targetDimension = phoneArray[result.selection].dimension;
+								tpWithDelay(user, targetLocation, targetDimension, 100);
 								if( !user.hasTag(`${userFamily}`) ){
 									user.sendMessage({ translate: `script.gvcv5.phoneAbuse.name` }); //warning
 									user.runCommand(`clear @s zex:phone_${userFamily} 0 1`);

@@ -9,12 +9,12 @@
       "scripts": {
         "animate": [
           "walk",
-          "vheri"
+          "vtext"
         ]
       },
       "animations": {
         "walk": "controller.animation.vehicle",
-        "vheri": "controller.animation.vheri"
+        "vtext": "controller.animation.vtext"
       }
     },
     "component_groups": {

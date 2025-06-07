@@ -7,11 +7,11 @@
       "is_summonable": true,
       "is_experimental": false,
       "scripts": {
-	    "animate": [ "walk","vheri" ]
+	    "animate": [ "walk","vtext" ]
 	  },
 	  "animations": {
 	    "walk": "controller.animation.vehicle",
-	    "vheri": "controller.animation.vheri"
+	    "vtext": "controller.animation.vtext"
 	  }
     },
     "component_groups": {
