@@ -65,6 +65,7 @@
       },
       "minecraft:type_family": {
         "family": [
+          "allied_soldier_flag",
           "allied_soldier",
           "playerp",
           "mob"

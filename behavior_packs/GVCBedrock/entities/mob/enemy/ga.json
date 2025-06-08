@@ -18,6 +18,71 @@
       }
     },
     "component_groups": {
+      "is_raid": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": false,
+          "reselect_targets": true,
+          "scan_interval": 10,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "allied_soldier"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "villager"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "wandering_trader"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "allied_soldier_flag"
+              },
+              "max_dist": 160
+            }
+          ]
+        },
+        "minecraft:follow_range": {
+          "value": 256
+        },
+        "minecraft:floats_in_liquid": {},
+        "minecraft:navigation.generic": {
+          "is_amphibious": true,
+          "can_path_over_water": true,
+          "can_break_doors": true,
+          "can_swim": true,
+          "can_walk": true,
+          "avoid_sun": false
+        },
+        "minecraft:underwater_movement": {
+          "value": 0.2
+        }
+      },
       "st1": {
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 2,
@@ -1571,6 +1636,10 @@
         "width": 0.5,
         "height": 1.8
       },
+      "minecraft:inventory": {
+        "container_type": "inventory",
+        "inventory_size": 5
+      },
       "minecraft:type_family": {
         "family": [
           "guerrilla",
@@ -1646,6 +1715,9 @@
         "avoid_water": true
       },
       "minecraft:movement.basic": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
       "minecraft:jump.static": {},
       "minecraft:can_climb": {},
       "minecraft:nameable": {},
@@ -1733,6 +1805,35 @@
       "minecraft:conditional_bandwidth_optimization": {}
     },
     "events": {
+      "gvcv5:entity_spawned_raid": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "is_raid"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "trigger": "gvcv5:set_have_gun"
+          }
+        ]
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {

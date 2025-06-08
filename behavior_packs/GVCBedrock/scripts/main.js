@@ -1,4 +1,4 @@
-import { world, system, EquipmentSlot, EntityComponentTypes  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes, EntityInitializationCause, ItemComponent, ItemComponentTypes  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 import { craftData } from "./crafts";
@@ -256,7 +256,31 @@ async function airstrike(projectile,level,team){
 	}
 }
 
-
+world.afterEvents.entitySpawn.subscribe( e => {
+	if( e.entity.typeId.includes("fire")  ){
+		const projectile = e.entity;
+		let gunName = projectile.typeId
+		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
+		else if( gunName.includes("fire:") ){ gunName = gunName.replace("fire:",""); }
+		let damageType = gunData[`${gunName}`]["damageType"];
+		const dmg = gunData[`${gunName}`]["damage"];
+		projectile.setDynamicProperty(`damageType`,damageType);
+		projectile.setDynamicProperty(`damage`,dmg);
+		
+		const player = projectile.getComponent(EntityComponentTypes.Projectile).owner;
+		if( player.typeId == `minecraft:player` ){
+			const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+			const ench = gun.getItem().getComponent(ItemComponentTypes.Enchantable);
+			if( ench.hasEnchantment(`minecraft:flame`) ){
+				projectile.setOnFire(10,true);
+			}
+			if( ench.hasEnchantment(`minecraft:power`) ){
+				const level = ench.getEnchantment(`minecraft:power`).level;
+				projectile.setDynamicProperty(`damage`,dmg * 0.25 * (level + 5) );
+			}
+		}
+	}
+} )
 
 world.afterEvents.projectileHitEntity.subscribe( e => {
 	if( e.projectile.typeId.includes("fire")){
@@ -265,7 +289,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		let gunName = e.projectile.typeId
 		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
 		else if( gunName.includes("fire:") ){ gunName = gunName.replace("fire:",""); }
-		let damageType = gunData[`${gunName}`]["damageType"];
+		let damageType = e.projectile.getDynamicProperty(`damageType`);
 		const equipmentComp = vict.getComponent(EntityComponentTypes.Equippable)
 		if( equipmentComp ){
 			if( equipmentComp.getEquipment(EquipmentSlot.Head) != undefined ){ 
@@ -282,7 +306,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			}
 		}
 		if (def > 1){ def = 1 }
-		let damage = gunData[`${gunName}`]["damage"] *  (1 - def);
+		let damage = e.projectile.getDynamicProperty(`damage`) *  (1 - def);
 		if ( vict.typeId == "minecraft:player" ){ 
 			damage = damage * world.getDynamicProperty("gvcv5:playerDamage");
 		}
@@ -439,6 +463,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			vehicle.remove();
 		}
 	}
+	else if( e.id == "zex:test" ){
+		const player = e.sourceEntity;
+		for( let i = 0; i < 35; i++ ){
+			let gun = player.getComponent(EntityComponentTypes.Inventory).container.getSlot(i);
+			if( gun != undefined ){ world.sendMessage(`i=${i},Item=${gun.typeId}`);  }
+		}
+	}
 	else if( e.id == "zex:aamissile"){
 		const missile = e.sourceEntity;
 		const player = missile.getComponent("projectile").owner;
@@ -549,6 +580,17 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		e.sourceEntity.runCommand(`scoreboard players set M building ${buildingM}`);
 		e.sourceEntity.runCommand(`scoreboard players set L building ${buildingL}`);
 		e.sourceEntity.runCommand(`scoreboard players set A building ${buildingA}`);
+	}
+	else if (e.id === "gvcv5:gunUse"){
+		//tag=!reload,tag=!down
+		const player = e.sourceEntity;
+		const gunName = e.message;
+		const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+		let damage = gun.getItem().getComponent(ItemComponentTypes.Durability).damage;
+		if( damage < gunData[`${gunName}`]["bullet"] && !player.hasTag(`reload`) && !player.hasTag(`down`) ){
+			damage = damage + 1;
+			player.triggerEvent(`fire:${gunName}`);
+		}
 	}
 	else if (e.id === "gvcv5:reload"){
 		let p = e.sourceEntity;

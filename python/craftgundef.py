@@ -336,6 +336,9 @@ for row in csv_reader:
             gun_item = json.load(f)
             gun_item["minecraft:item"]["description"]["identifier"] = "gun:{}".format(gun_id)
             gun_item["minecraft:item"]["components"]["minecraft:icon"] = "{}".format(gun_id)
+
+            gun_item["minecraft:item"]["components"]["minecraft:enchantable"]["value"] = 5 * int(row[23])
+            gun_item["minecraft:item"]["components"]["minecraft:durability"]["max_durability"] = gun_maxammo
         
         with open("behavior_packs/GVCBedrock/items/gun/{}.json".format(gun_id),"w") as f:
             json.dump(gun_item,f,indent=2)
