@@ -1,5 +1,4 @@
-titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"§3.30Cal§r "},{"score":{"name":"@s","objective":"awm"}},{"text":"/5"}]}
+scriptevent gvcv5:vgun awm
 playanimation @s[tag=!down] animation.item.first none 0 "!query.is_item_equipped"
 hud @s[tag=scope] hide crosshair
-execute if entity @s[tag=autoReload,tag=!reload,tag=!down,scores={awm=0},hasitem={item=zex:762m}] run scriptevent gvcv5:reload awm
 hud @s[tag=!scope] reset crosshair

@@ -325,6 +325,16 @@
             }
           ]
         },
+        "no_use": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
+          "transitions": [
+            {
+              "default": "1.0"
+            }
+          ]
+        },
         "tank": {
           "on_entry": [
             "/execute as @s[tag=!reload] run function vmain"
@@ -459,13 +469,27 @@
         },
         "aa12": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={aa12=1..}] fire:aa12",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={aa12=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={aa12=1..}] aa12 1"
+            "/scriptevent gvcv5:gunUse aa12"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 2 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "aa12ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "aa12ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse aa12"
+          ],
+          "transitions": [
+            {
+              "aa12": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -481,13 +505,27 @@
         },
         "ak12": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={ak12=1..}] fire:ak12",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={ak12=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={ak12=1..}] ak12 1"
+            "/scriptevent gvcv5:gunUse ak12"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "ak12ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "ak12ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse ak12"
+          ],
+          "transitions": [
+            {
+              "ak12": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -503,13 +541,27 @@
         },
         "ak47": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={ak47=1..}] fire:ak47",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={ak47=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={ak47=1..}] ak47 1"
+            "/scriptevent gvcv5:gunUse ak47"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "ak47ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "ak47ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse ak47"
+          ],
+          "transitions": [
+            {
+              "ak47": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -525,13 +577,27 @@
         },
         "ak102": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={ak102=1..}] fire:ak102",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={ak102=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={ak102=1..}] ak102 1"
+            "/scriptevent gvcv5:gunUse ak102"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "ak102ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "ak102ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse ak102"
+          ],
+          "transitions": [
+            {
+              "ak102": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -547,13 +613,27 @@
         },
         "an94": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={an94=1..}] fire:an94",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={an94=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={an94=1..}] an94 1"
+            "/scriptevent gvcv5:gunUse an94"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "an94ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "an94ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse an94"
+          ],
+          "transitions": [
+            {
+              "an94": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -569,9 +649,7 @@
         },
         "awm": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={awm=1..}] fire:awm",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={awm=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={awm=1..}] awm 1"
+            "/scriptevent gvcv5:gunUse awm"
           ],
           "transitions": [
             {
@@ -580,6 +658,9 @@
           ]
         },
         "awm_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -598,13 +679,27 @@
         },
         "dp28": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={dp28=1..}] fire:dp28",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={dp28=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={dp28=1..}] dp28 1"
+            "/scriptevent gvcv5:gunUse dp28"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "dp28ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "dp28ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse dp28"
+          ],
+          "transitions": [
+            {
+              "dp28": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -620,9 +715,7 @@
         },
         "famas": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={famas=1..}] fire:famas",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={famas=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={famas=1..}] famas 1"
+            "/scriptevent gvcv5:gunUse famas"
           ],
           "transitions": [
             {
@@ -631,6 +724,9 @@
           ]
         },
         "famas_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -649,13 +745,27 @@
         },
         "g36": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={g36=1..}] fire:g36",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={g36=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={g36=1..}] g36 1"
+            "/scriptevent gvcv5:gunUse g36"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "g36ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "g36ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse g36"
+          ],
+          "transitions": [
+            {
+              "g36": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -671,13 +781,27 @@
         },
         "g3a3": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={g3a3=1..}] fire:g3a3",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={g3a3=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={g3a3=1..}] g3a3 1"
+            "/scriptevent gvcv5:gunUse g3a3"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 2 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "g3a3ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "g3a3ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse g3a3"
+          ],
+          "transitions": [
+            {
+              "g3a3": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -693,9 +817,7 @@
         },
         "glock17": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={glock17=1..}] fire:glock17",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={glock17=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={glock17=1..}] glock17 1"
+            "/scriptevent gvcv5:gunUse glock17"
           ],
           "transitions": [
             {
@@ -704,6 +826,9 @@
           ]
         },
         "glock17_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -722,13 +847,11 @@
         },
         "glock18": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={glock18=1..}] fire:glock18",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={glock18=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={glock18=1..}] glock18 1"
+            "/scriptevent gvcv5:gunUse glock18"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "glock18ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock18') && query.is_using_item"
@@ -737,13 +860,11 @@
         },
         "glock18ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={glock18=1..}] fire:glock18",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={glock18=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={glock18=1..}] glock18 1"
+            "/scriptevent gvcv5:gunUse glock18"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "glock18": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock18') && query.is_using_item"
@@ -762,13 +883,27 @@
         },
         "hk416": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={hk416=1..}] fire:hk416",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={hk416=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={hk416=1..}] hk416 1"
+            "/scriptevent gvcv5:gunUse hk416"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "hk416ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "hk416ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse hk416"
+          ],
+          "transitions": [
+            {
+              "hk416": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -794,7 +929,7 @@
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "lazerii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -803,15 +938,11 @@
         },
         "lazerii": {
           "on_entry": [
-            "/tag @s[tag=!reload,tag=!down,scores={lazer=1..}] add railcharged",
-            "/event entity @s[tag=!reload,tag=!down,scores={lazer=1..}] fire:lazer",
-            "/tag @s remove railcharged",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={lazer=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={lazer=1..}] lazer 1"
+            "/scriptevent gvcv5:gunUse lazer"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             }
           ]
         },
@@ -827,9 +958,7 @@
         },
         "m4": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m4=1..}] fire:m4",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m4=1..}] m4 1"
+            "/scriptevent gvcv5:gunUse m4"
           ],
           "transitions": [
             {
@@ -839,9 +968,7 @@
         },
         "m41": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m4=1..}] fire:m4",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m4=1..}] m4 1"
+            "/scriptevent gvcv5:gunUse m4"
           ],
           "transitions": [
             {
@@ -851,13 +978,14 @@
         },
         "m42": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m4=1..}] fire:m4",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m4=1..}] m4 1"
+            "/scriptevent gvcv5:gunUse m4"
           ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 4 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -873,13 +1001,27 @@
         },
         "m4a1": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m4a1=1..}] fire:m4a1",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m4a1=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m4a1=1..}] m4a1 1"
+            "/scriptevent gvcv5:gunUse m4a1"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "m4a1ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m4a1ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse m4a1"
+          ],
+          "transitions": [
+            {
+              "m4a1": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -895,9 +1037,7 @@
         },
         "m9": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m9=1..}] fire:m9",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m9=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m9=1..}] m9 1"
+            "/scriptevent gvcv5:gunUse m9"
           ],
           "transitions": [
             {
@@ -906,6 +1046,9 @@
           ]
         },
         "m9_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -924,13 +1067,11 @@
         },
         "m10": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m10=1..}] fire:m10",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m10=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m10=1..}] m10 1"
+            "/scriptevent gvcv5:gunUse m10"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "m10ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m10') && query.is_using_item"
@@ -939,13 +1080,11 @@
         },
         "m10ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m10=1..}] fire:m10",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m10=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m10=1..}] m10 1"
+            "/scriptevent gvcv5:gunUse m10"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "m10": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m10') && query.is_using_item"
@@ -964,13 +1103,27 @@
         },
         "m16a1": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m16a1=1..}] fire:m16a1",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m16a1=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m16a1=1..}] m16a1 1"
+            "/scriptevent gvcv5:gunUse m16a1"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "m16a1ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m16a1ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse m16a1"
+          ],
+          "transitions": [
+            {
+              "m16a1": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -986,9 +1139,7 @@
         },
         "m16a4": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m16a4=1..}] fire:m16a4",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m16a4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m16a4=1..}] m16a4 1"
+            "/scriptevent gvcv5:gunUse m16a4"
           ],
           "transitions": [
             {
@@ -998,9 +1149,7 @@
         },
         "m16a41": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m16a4=1..}] fire:m16a4",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m16a4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m16a4=1..}] m16a4 1"
+            "/scriptevent gvcv5:gunUse m16a4"
           ],
           "transitions": [
             {
@@ -1010,13 +1159,14 @@
         },
         "m16a42": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m16a4=1..}] fire:m16a4",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m16a4=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m16a4=1..}] m16a4 1"
+            "/scriptevent gvcv5:gunUse m16a4"
           ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 4 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -1032,13 +1182,27 @@
         },
         "m60": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m60=1..}] fire:m60",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m60=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m60=1..}] m60 1"
+            "/scriptevent gvcv5:gunUse m60"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "m60ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m60ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse m60"
+          ],
+          "transitions": [
+            {
+              "m60": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -1054,9 +1218,7 @@
         },
         "m72": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m72=1..}] fire:m72",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m72=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m72=1..}] m72 1"
+            "/scriptevent gvcv5:gunUse m72"
           ],
           "transitions": [
             {
@@ -1065,6 +1227,9 @@
           ]
         },
         "m72_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1083,9 +1248,7 @@
         },
         "m79": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m79=1..}] fire:m79",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m79=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m79=1..}] m79 1"
+            "/scriptevent gvcv5:gunUse m79"
           ],
           "transitions": [
             {
@@ -1094,6 +1257,9 @@
           ]
         },
         "m79_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1112,9 +1278,7 @@
         },
         "m82": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m82=1..}] fire:m82",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m82=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m82=1..}] m82 1"
+            "/scriptevent gvcv5:gunUse m82"
           ],
           "transitions": [
             {
@@ -1123,6 +1287,9 @@
           ]
         },
         "m82_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 49 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1141,9 +1308,7 @@
         },
         "m110": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m110=1..}] fire:m110",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m110=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m110=1..}] m110 1"
+            "/scriptevent gvcv5:gunUse m110"
           ],
           "transitions": [
             {
@@ -1152,6 +1317,9 @@
           ]
         },
         "m110_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 6 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1170,9 +1338,7 @@
         },
         "m202": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m202=1..}] fire:m202",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m202=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m202=1..}] m202 1"
+            "/scriptevent gvcv5:gunUse m202"
           ],
           "transitions": [
             {
@@ -1181,6 +1347,9 @@
           ]
         },
         "m202_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1199,13 +1368,27 @@
         },
         "m249": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m249=1..}] fire:m249",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m249=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m249=1..}] m249 1"
+            "/scriptevent gvcv5:gunUse m249"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "m249ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "m249ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse m249"
+          ],
+          "transitions": [
+            {
+              "m249": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -1221,9 +1404,7 @@
         },
         "m590": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m590=1..}] fire:m590",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m590=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m590=1..}] m590 1"
+            "/scriptevent gvcv5:gunUse m590"
           ],
           "transitions": [
             {
@@ -1232,6 +1413,9 @@
           ]
         },
         "m590_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1250,9 +1434,7 @@
         },
         "m870": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m870=1..}] fire:m870",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m870=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m870=1..}] m870 1"
+            "/scriptevent gvcv5:gunUse m870"
           ],
           "transitions": [
             {
@@ -1261,6 +1443,9 @@
           ]
         },
         "m870_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1279,9 +1464,7 @@
         },
         "m1014": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m1014=1..}] fire:m1014",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m1014=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m1014=1..}] m1014 1"
+            "/scriptevent gvcv5:gunUse m1014"
           ],
           "transitions": [
             {
@@ -1290,6 +1473,9 @@
           ]
         },
         "m1014_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 7 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1308,9 +1494,7 @@
         },
         "m1911": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={m1911=1..}] fire:m1911",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={m1911=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={m1911=1..}] m1911 1"
+            "/scriptevent gvcv5:gunUse m1911"
           ],
           "transitions": [
             {
@@ -1319,6 +1503,9 @@
           ]
         },
         "m1911_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1337,13 +1524,27 @@
         },
         "mg36": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={mg36=1..}] fire:mg36",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mg36=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mg36=1..}] mg36 1"
+            "/scriptevent gvcv5:gunUse mg36"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "mg36ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "mg36ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse mg36"
+          ],
+          "transitions": [
+            {
+              "mg36": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -1359,13 +1560,11 @@
         },
         "mg42": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={mg42=1..}] fire:mg42",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mg42=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mg42=1..}] mg42 1"
+            "/scriptevent gvcv5:gunUse mg42"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "mg42ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mg42') && query.is_using_item"
@@ -1374,13 +1573,11 @@
         },
         "mg42ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={mg42=1..}] fire:mg42",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mg42=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mg42=1..}] mg42 1"
+            "/scriptevent gvcv5:gunUse mg42"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "mg42": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mg42') && query.is_using_item"
@@ -1399,9 +1596,7 @@
         },
         "mosin": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={mosin=1..}] fire:mosin",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mosin=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mosin=1..}] mosin 1"
+            "/scriptevent gvcv5:gunUse mosin"
           ],
           "transitions": [
             {
@@ -1410,6 +1605,9 @@
           ]
         },
         "mosin_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1428,13 +1626,11 @@
         },
         "mp5": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={mp5=1..}] fire:mp5",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mp5=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mp5=1..}] mp5 1"
+            "/scriptevent gvcv5:gunUse mp5"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "mp5ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp5') && query.is_using_item"
@@ -1443,13 +1639,11 @@
         },
         "mp5ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={mp5=1..}] fire:mp5",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mp5=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mp5=1..}] mp5 1"
+            "/scriptevent gvcv5:gunUse mp5"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "mp5": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp5') && query.is_using_item"
@@ -1468,13 +1662,11 @@
         },
         "mp7": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={mp7=1..}] fire:mp7",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mp7=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mp7=1..}] mp7 1"
+            "/scriptevent gvcv5:gunUse mp7"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "mp7ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp7') && query.is_using_item"
@@ -1483,13 +1675,11 @@
         },
         "mp7ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={mp7=1..}] fire:mp7",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mp7=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mp7=1..}] mp7 1"
+            "/scriptevent gvcv5:gunUse mp7"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "mp7": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp7') && query.is_using_item"
@@ -1508,13 +1698,27 @@
         },
         "mp40": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={mp40=1..}] fire:mp40",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={mp40=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={mp40=1..}] mp40 1"
+            "/scriptevent gvcv5:gunUse mp40"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "mp40ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "mp40ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse mp40"
+          ],
+          "transitions": [
+            {
+              "mp40": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -1530,9 +1734,7 @@
         },
         "p90": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={p90=1..}] fire:p90",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={p90=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={p90=1..}] p90 1"
+            "/scriptevent gvcv5:gunUse p90"
           ],
           "transitions": [
             {
@@ -1541,6 +1743,9 @@
           ]
         },
         "p90_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1559,13 +1764,27 @@
         },
         "pkm": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={pkm=1..}] fire:pkm",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={pkm=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={pkm=1..}] pkm 1"
+            "/scriptevent gvcv5:gunUse pkm"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "pkmii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "pkmii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse pkm"
+          ],
+          "transitions": [
+            {
+              "pkm": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -1581,13 +1800,27 @@
         },
         "ppsh": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={ppsh=1..}] fire:ppsh",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={ppsh=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={ppsh=1..}] ppsh 1"
+            "/scriptevent gvcv5:gunUse ppsh"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "ppshii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "ppshii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse ppsh"
+          ],
+          "transitions": [
+            {
+              "ppsh": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -1603,9 +1836,7 @@
         },
         "rpg": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={rpg=1..}] fire:rpg",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={rpg=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={rpg=1..}] rpg 1"
+            "/scriptevent gvcv5:gunUse rpg"
           ],
           "transitions": [
             {
@@ -1614,6 +1845,9 @@
           ]
         },
         "rpg_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1632,13 +1866,27 @@
         },
         "rpk": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={rpk=1..}] fire:rpk",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={rpk=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={rpk=1..}] rpk 1"
+            "/scriptevent gvcv5:gunUse rpk"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 0 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "rpkii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "rpkii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse rpk"
+          ],
+          "transitions": [
+            {
+              "rpk": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -1654,9 +1902,7 @@
         },
         "saiga12": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={saiga12=1..}] fire:saiga12",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={saiga12=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={saiga12=1..}] saiga12 1"
+            "/scriptevent gvcv5:gunUse saiga12"
           ],
           "transitions": [
             {
@@ -1665,6 +1911,9 @@
           ]
         },
         "saiga12_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1683,13 +1932,27 @@
         },
         "scar": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={scar=1..}] fire:scar",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={scar=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={scar=1..}] scar 1"
+            "/scriptevent gvcv5:gunUse scar"
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 2 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "scarii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "scarii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse scar"
+          ],
+          "transitions": [
+            {
+              "scar": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         },
@@ -1705,9 +1968,7 @@
         },
         "svd": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={svd=1..}] fire:svd",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={svd=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={svd=1..}] svd 1"
+            "/scriptevent gvcv5:gunUse svd"
           ],
           "transitions": [
             {
@@ -1716,6 +1977,9 @@
           ]
         },
         "svd_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 6 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1734,9 +1998,7 @@
         },
         "tt33": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={tt33=1..}] fire:tt33",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={tt33=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={tt33=1..}] tt33 1"
+            "/scriptevent gvcv5:gunUse tt33"
           ],
           "transitions": [
             {
@@ -1745,6 +2007,9 @@
           ]
         },
         "tt33_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 3 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
@@ -1763,13 +2028,11 @@
         },
         "uzi": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={uzi=1..}] fire:uzi",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={uzi=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={uzi=1..}] uzi 1"
+            "/scriptevent gvcv5:gunUse uzi"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "uziii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:uzi') && query.is_using_item"
@@ -1778,13 +2041,11 @@
         },
         "uziii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={uzi=1..}] fire:uzi",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={uzi=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={uzi=1..}] uzi 1"
+            "/scriptevent gvcv5:gunUse uzi"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "uzi": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:uzi') && query.is_using_item"
@@ -1803,13 +2064,11 @@
         },
         "vz61": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={vz61=1..}] fire:vz61",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={vz61=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={vz61=1..}] vz61 1"
+            "/scriptevent gvcv5:gunUse vz61"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "vz61ii": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:vz61') && query.is_using_item"
@@ -1818,13 +2077,11 @@
         },
         "vz61ii": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={vz61=1..}] fire:vz61",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={vz61=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={vz61=1..}] vz61 1"
+            "/scriptevent gvcv5:gunUse vz61"
           ],
           "transitions": [
             {
-              "default": "!query.is_using_item"
+              "no_use": "!query.is_using_item"
             },
             {
               "vz61": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:vz61') && query.is_using_item"
@@ -1843,9 +2100,7 @@
         },
         "xm8": {
           "on_entry": [
-            "/event entity @s[tag=!reload,tag=!down,scores={xm8=1..}] fire:xm8",
-            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={xm8=0}] ~~~",
-            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={xm8=1..}] xm8 1"
+            "/scriptevent gvcv5:gunUse xm8"
           ],
           "transitions": [
             {
@@ -1854,6 +2109,9 @@
           ]
         },
         "xm8_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"

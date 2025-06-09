@@ -465,10 +465,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 	}
 	else if( e.id == "zex:test" ){
 		const player = e.sourceEntity;
-		for( let i = 0; i < 35; i++ ){
-			let gun = player.getComponent(EntityComponentTypes.Inventory).container.getSlot(i);
-			if( gun != undefined ){ world.sendMessage(`i=${i},Item=${gun.typeId}`);  }
-		}
+		player.setDynamicProperty(`gvcv5:gunUsed`,0);
 	}
 	else if( e.id == "zex:aamissile"){
 		const missile = e.sourceEntity;
@@ -585,23 +582,73 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		//tag=!reload,tag=!down
 		const player = e.sourceEntity;
 		const gunName = e.message;
-		const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-		let damage = gun.getItem().getComponent(ItemComponentTypes.Durability).damage;
-		if( damage < gunData[`${gunName}`]["bullet"] && !player.hasTag(`reload`) && !player.hasTag(`down`) ){
-			damage = damage + 1;
+		const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
+		const dmgCom = gun.getComponent(ItemComponentTypes.Durability);
+		const damage = dmgCom.damage;
+		const maxAmmo = dmgCom.maxDurability;
+		const usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
+		const ench = gun.getComponent(ItemComponentTypes.Enchantable);
+		if( usedGun == undefined ){
+			usedGun = 0;
+		}
+		if( damage + usedGun < maxAmmo && !player.hasTag(`reload`) && !player.hasTag(`down`) ){
+			
+			if( ench.hasEnchantment(`minecraft:unbreaking`) ){
+				const level = ench.getEnchantment(`minecraft:unbreaking`).level;
+				if( Math.random() < 1/level ){
+					player.setDynamicProperty(`gvcv5:gunUsed`,usedGun+1);
+				}
+			}
+			else{
+				player.setDynamicProperty(`gvcv5:gunUsed`,usedGun+1);
+			}
 			player.triggerEvent(`fire:${gunName}`);
 		}
 	}
-	else if (e.id === "gvcv5:reload"){
-		let p = e.sourceEntity;
+	else if (e.id === "gvcv5:gunapply"){
+		//tag=!reload,tag=!down
+		const player = e.sourceEntity;
 		const gunName = e.message;
-		let maxGunAmmo = gunData[`${gunName}`]["maxGunAmmo"];
-		let s = Number(world.scoreboard.getObjective(gunName).getScore(p));
-		let d = Number(maxGunAmmo) - s;
-		let reloadTime = gunData[`${gunName}`]["reloadTime"];
-		let Ammo = gunData[`${gunName}`]["bullet"];
+		const gunUsed = player.getDynamicProperty(`gvcv5:gunUsed`);
+		player.setDynamicProperty(`gvcv5:gunUsed`,0);
+		const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
+		const dmgCom = gun.getComponent(ItemComponentTypes.Durability);
+		const damage = dmgCom.damage;
+		const maxAmmo = dmgCom.maxDurability;
+		const newDamage = damage + gunUsed;
+		gun.getComponent(ItemComponentTypes.Durability).damage = newDamage;
+		player.getComponent("minecraft:inventory").container.setItem(player.selectedSlotIndex, gun);
+	}
+	else if (e.id === "gvcv5:vgun"){
+		//tag=!reload,tag=!down
+		//titleraw @s[tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}
+		//f.write("execute if entity @s[tag=autoReload,tag=!reload,tag=!down,scores={{{0}=0}},hasitem={{item={1}}}] run scriptevent gvcv5:reload {0}\n".format(gun_id,gun_ammo))
+		let player = e.sourceEntity;
+		const gunName = e.message;
+		const Ammo = gunData[`${gunName}`]["bullet"];
+		let gun = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
+		const dmgCom = gun.getComponent(ItemComponentTypes.Durability);
+		const damage = dmgCom.damage;
+		const maxAmmo = dmgCom.maxDurability;
+		const usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
+		if( usedGun == undefined ){
+			usedGun = 0;
+		}
+		if( !player.hasTag(`reload`) && !player.hasTag(`down`) ){
+			player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcv5:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo}\"}]}`)
+		}
+	}
+	else if (e.id === "gvcv5:reload"){
+		const p = e.sourceEntity;
+		const gunName = e.message;
+		let gun = p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
+		const dmgCom = gun.getComponent(ItemComponentTypes.Durability)
+		const damage = dmgCom.damage;
+		const reloadTime = gunData[`${gunName}`]["reloadTime"];
+		const Ammo = gunData[`${gunName}`]["bullet"];
+		const ench = gun.getComponent(ItemComponentTypes.Enchantable);
 		let c = 0;
-		if( d > 0 ){
+		if( damage > 0 ){
 			for(let i = 0; i < 36; i++){
 				let Haditem = p.getComponent("inventory").container.getItem(i);
 				if( Haditem != undefined && Haditem.typeId === Ammo ){
@@ -611,18 +658,28 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			if( world.getDynamicProperty(`gvcv5:doBulletSpend`) == false ){
 				p.addEffect("slowness", reloadTime,{ amplifier: 2 });
 				p.addTag("reload")
-				world.scoreboard.getObjective(gunName).setScore(p,Number(maxGunAmmo));
+				gun.getComponent(ItemComponentTypes.Durability).damage = 0;
+				p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
+				world.scoreboard.getObjective("reloading").setScore(p,Number(reloadTime));
+				p.runCommand("playsound reload.ak47 @s ~~~ ");
+			}
+			if( ench.hasEnchantment(`minecraft:infinity`) ){
+				p.addEffect("slowness", reloadTime,{ amplifier: 2 });
+				p.addTag("reload")
+				gun.getComponent(ItemComponentTypes.Durability).damage = 0;
+				p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
 				world.scoreboard.getObjective("reloading").setScore(p,Number(reloadTime));
 				p.runCommand("playsound reload.ak47 @s ~~~ ");
 			}
 			else if (c > 0){
-				if( c > d ){
-					world.scoreboard.getObjective(gunName).setScore(p,Number(maxGunAmmo));
-					p.runCommand(`clear @s ${Ammo} 0 ${d}`);
+				if( c > damage ){
+					gun.getComponent(ItemComponentTypes.Durability).damage = 0;
+					p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
+					p.runCommand(`clear @s ${Ammo} 0 ${damage}`);
 				}
 				else{
-					s = s + c;
-					world.scoreboard.getObjective(gunName).setScore(p,s);
+					gun.getComponent(ItemComponentTypes.Durability).damage = damage - c;
+					p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
 					p.runCommand(`clear @s ${Ammo} 0 ${c}`);
 				}
 				p.addEffect("slowness", reloadTime,{ amplifier: 2 });

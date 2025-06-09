@@ -1636,10 +1636,6 @@
         "width": 0.5,
         "height": 1.8
       },
-      "minecraft:inventory": {
-        "container_type": "inventory",
-        "inventory_size": 5
-      },
       "minecraft:type_family": {
         "family": [
           "guerrilla",

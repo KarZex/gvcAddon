@@ -151,7 +151,7 @@ for row in csv_reader:
                 ],
                 "transitions": [
                     {
-                        "default": "!query.is_using_item"
+                        "no_use": "!query.is_using_item"
                     },
                     {
                         "{}ii".format(gun_id): "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval - 1)
@@ -160,15 +160,11 @@ for row in csv_reader:
             }
             BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = {
                 "on_entry": [
-                    "/tag @s[tag=!reload,tag=!down,scores={{{0}=1..}}] add railcharged".format(gun_id),                    
-                    "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
-                    "/tag @s remove railcharged",
-                    "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
-                    "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                    "/scriptevent gvcv5:gunUse {}".format(gun_id)
                 ],
                 "transitions": [
                     {
-                        "default": "!query.is_using_item"
+                        "no_use": "!query.is_using_item"
                     }
                 ]
             }
@@ -178,26 +174,38 @@ for row in csv_reader:
                 if gun_interval > 0:
                     BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
                         "on_entry": [
-                            "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
-                            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
-                            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                            "/scriptevent gvcv5:gunUse {}".format(gun_id)
                         ],
                         "transitions": [
                             {
-                                "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval - 1)
+                                "{}ii".format(gun_id): "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);".format(gun_interval)
+                            },
+                            {
+                                "no_use".format(gun_id): "(!query.is_using_item)"
+                            }
+                        ]
+                    }
+                    BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = {
+                        "on_entry": [
+                            "/scriptevent gvcv5:gunUse {}".format(gun_id)
+                        ],
+                        "transitions": [
+                            {
+                                "{}".format(gun_id): "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);".format(gun_interval)
+                            },
+                            {
+                                "no_use".format(gun_id): "(!query.is_using_item)"
                             }
                         ]
                     }
                 else:
                     BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
                         "on_entry": [
-                            "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
-                            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
-                            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                            "/scriptevent gvcv5:gunUse {}".format(gun_id)
                         ],
                         "transitions": [
                             {
-                                "default": "!query.is_using_item"
+                                "no_use": "!query.is_using_item"
                             },
                             {
                                 "{}ii".format(gun_id): "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && query.is_using_item".format(gun_id)
@@ -206,13 +214,11 @@ for row in csv_reader:
                     }
                     BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}ii".format(gun_id)] = {
                         "on_entry": [
-                            "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
-                            "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
-                            "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                            "/scriptevent gvcv5:gunUse {}".format(gun_id)
                         ],
                         "transitions": [
                             {
-                                "default": "!query.is_using_item"
+                                "no_use": "!query.is_using_item"
                             },
                             {
                                 "{}".format(gun_id): "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && query.is_using_item".format(gun_id)
@@ -222,9 +228,7 @@ for row in csv_reader:
             else:
                 BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
                     "on_entry": [
-                        "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
-                        "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
-                        "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                        "/scriptevent gvcv5:gunUse {}".format(gun_id)
                     ],
                     "transitions": [
                         {
@@ -233,6 +237,9 @@ for row in csv_reader:
                     ]
                 }
                 BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}_after".format(gun_id)] = {
+                    "on_entry": [
+                        "/scriptevent gvcv5:gunapply"
+                    ],
                     "transitions": [
                         {
                             "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval - 1)
@@ -247,9 +254,7 @@ for row in csv_reader:
                 if i > 0: count = str(i)
                 BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}{}".format(gun_id,count)] = {
                     "on_entry": [
-                        "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
-                        "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
-                        "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                        "/scriptevent gvcv5:gunUse {}".format(gun_id)
                     ],
                     "transitions": [
                         {
@@ -259,13 +264,14 @@ for row in csv_reader:
                 }
             BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}{}".format(gun_id,gun_burst-1)] = {
                 "on_entry": [
-                    "/event entity @s[tag=!reload,tag=!down,scores={{{0}=1..}}] fire:{0}".format(gun_id),
-                    "/playsound empty.a1 @s[tag=!reload,tag=!down,scores={{{0}=0}}] ~~~".format(gun_id),
-                    "/scoreboard players remove @s[tag=!reload,tag=!down,tag=!noreload,scores={{{0}=1..}}] {0} 1".format(gun_id)
+                    "/scriptevent gvcv5:gunUse {}".format(gun_id)
                 ],
                 "transitions": [
                     {
                         "default".format(gun_id): "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < {} ? variable.cooltime + 1:0;return variable.cooltime == 0;".format(gun_interval * 3 + 1)
+                    },
+                    {
+                        "no_use".format(gun_id): "(!query.is_using_item)"
                     }
                 ]
             }
@@ -310,12 +316,10 @@ for row in csv_reader:
         with open("behavior_packs/GVCBedrock/functions/hold/{}h.mcfunction".format(gun_id),"w",encoding="utf-8") as f:
             
             if gun_special == "R":
-                f.write("titleraw @s[tag=!railcharged,tag=!railcharging,tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
-                f.write("title @s[tag=railcharged] actionbar §eCharged\n")
-                f.write("title @s[tag=railcharging] actionbar Charging\n")
+                f.write("scriptevent gvcv5:vgun {}\n".format(gun_id))
             
             else:
-                f.write("titleraw @s[tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}\n".format(gun_id,ammo_name,gun_maxammo))
+                f.write("scriptevent gvcv5:vgun {}\n".format(gun_id))
             
             if(gun_onehand): 
                 f.write("playanimation @s animation.onehand.first none 0 \"!query.is_item_equipped\"\n")
@@ -323,7 +327,6 @@ for row in csv_reader:
                 f.write("playanimation @s[tag=!down] animation.item.first none 0 \"!query.is_item_equipped\"\n")
 
             f.write("hud @s[tag=scope] hide crosshair\n")
-            f.write("execute if entity @s[tag=autoReload,tag=!reload,tag=!down,scores={{{0}=0}},hasitem={{item={1}}}] run scriptevent gvcv5:reload {0}\n".format(gun_id,gun_ammo))
             f.write("hud @s[tag=!scope] reset crosshair\n")
 
 

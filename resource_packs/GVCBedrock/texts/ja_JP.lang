@@ -324,6 +324,17 @@ item.gun:aa12=AA12
 item.gun:m202=M202
 item.gun:mg36=MG36
 
+script.gvcv5:zex:12m.name=§412Gauge§r
+script.gvcv5:zex:556m.name=§6.22Cal§r
+script.gvcv5:zex:762m.name=§3.30Cal§r
+script.gvcv5:zex:mm9.name=§99mmHG§r
+script.gvcv5:ex:btm.name=§aBattery§r
+script.gvcv5:zex:1270m.name=§c.50Cal§r
+script.gvcv5:zex:rocketm.name=§b.Rocket§r
+script.gvcv5:zex:40m.name=§e40mmGrenade§r
+script.gvcv5:zex:12m.name=§412Gauge§r
+
+
 tile.gvcv5:good1.name=死体
 tile.gvcv5:good2.name=スクラップ
 tile.gvcv5:good3.name=段ボール
