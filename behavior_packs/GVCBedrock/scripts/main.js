@@ -637,6 +637,12 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		if( !player.hasTag(`reload`) && !player.hasTag(`down`) ){
 			player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcv5:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo}\"}]}`)
 		}
+		if( damage + usedGun >= maxAmmo ){
+			player.runCommand(`scriptevent gvcv5:gunapply`);
+		}
+		if( damage >= maxAmmo ){
+			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
+		}
 	}
 	else if (e.id === "gvcv5:reload"){
 		const p = e.sourceEntity;
