@@ -361,6 +361,12 @@
     "spawn_addon_mr_cpt": {
       "textures": "textures/spawn/addon_mr_cpt"
     },
+    "gvcv5_scaffold_top": {
+      "textures": "textures/blocks/gvcv5_scaffold_top"
+    },
+    "gvcv5_scaffold_side": {
+      "textures": "textures/blocks/gvcv5_scaffold_side"
+    },
     "spawn_addon_jamming": {
       "textures": "textures/spawn/addon_jamming"
     },

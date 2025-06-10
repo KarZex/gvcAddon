@@ -1,4 +1,4 @@
-import { world, EquipmentSlot } from "@minecraft/server";
+import { world, EquipmentSlot, system } from "@minecraft/server";
 
 function gvcv5SpawnEvent( event ){
     if( world.getDynamicProperty(`gvcv5:doSpawnFromBlock`)){
@@ -73,6 +73,11 @@ function gvcv5UseCrafter( event ){
     const type = event.block.typeId.replace(`gvcv5:`,``);
     const player = event.player;
     player.runCommand(`scriptevent gvcv5:craft ${type}`);
+}
+
+async function gvcv5Scaffold( event ) {
+    await system.waitTicks(15);
+    event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
 }
 
 function gvcv5GasEvent( event ){
@@ -166,6 +171,7 @@ world.beforeEvents.worldInitialize.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:end_block`,{onPlace: gvcv5EndBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,{onPlace: gvcv5BuildingBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:lootblock`,{onPlace: gvcv5LootBlockEvent});
+    e.blockComponentRegistry.registerCustomComponent("gvcv5:scaffold",{onPlace: gvcv5Scaffold})
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawner`,{onRandomTick: gvcv5SpawnerEvent,onStepOn:gvcv5BreakBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:crafter`,{onPlayerInteract: gvcv5UseCrafter});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:gasevent`,{onStepOn: gvcv5GasEvent,onPlayerDestroy: gvcv5GasEvent});

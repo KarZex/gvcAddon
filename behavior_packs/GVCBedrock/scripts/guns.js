@@ -76,7 +76,7 @@ export const gunData = {
     "speed": 1.0,
     "maxGunAmmo": 1,
     "reloadTime": 80,
-    "bullet": "zex:rocketm",
+    "bullet": "zex:missilem",
     "damageType": "entityExplosion"
   },
   "fim92": {
@@ -84,7 +84,7 @@ export const gunData = {
     "speed": 2.0,
     "maxGunAmmo": 1,
     "reloadTime": 80,
-    "bullet": "zex:rocketm",
+    "bullet": "zex:missilem",
     "damageType": "entityExplosion"
   },
   "g36": {

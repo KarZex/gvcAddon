@@ -122,8 +122,8 @@
     "fire": {
       "textures": "textures/items/gun/fire"
     },
-    "firem": {
-      "textures": "textures/items/fire"
+    "missilem": {
+      "textures": "textures/items/missilem"
     },
     "glock17": {
       "textures": "textures/items/gun/glock17"

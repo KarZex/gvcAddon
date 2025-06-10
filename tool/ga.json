@@ -18,6 +18,14 @@
     },
     "component_groups": {
       "is_raid":{
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "fall",
+              "deals_damage": false
+            }
+          ]
+        },
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 2,
           "must_see": false,
@@ -507,8 +515,8 @@
         ]
       },
       "minecraft:follow_range": {
-        "value": 48,
-        "max": 48
+        "value": 128,
+        "max": 128
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/ga.json"
@@ -625,6 +633,18 @@
           "add": {
             "component_groups": [
               "is_raid"
+            ]
+          },
+          "remove": {
+            "component_groups": [
+              "can_despawn"
+            ]
+          }
+        },
+          {
+          "queue_command": {
+            "command": [
+              "tag @s add raid"
             ]
           }
         },

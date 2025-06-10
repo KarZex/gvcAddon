@@ -11,6 +11,7 @@ execute as @a[scores={scool=1..}] run function scool
 execute as @a[tag=!startedv5] run function gunstart
 execute as @a[tag=down] run function down
 execute as @a[tag=rise] run function rise
+execute as @e[tag=raid] run function raid/zombietarget
 
 gamemode a @a[m=s,scores={antiMining=1..}]
 execute as @a[m=a,scores={antiMining=1..}] run function antiMining

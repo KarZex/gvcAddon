@@ -8,6 +8,80 @@
       "is_summonable": true
     },
     "component_groups": {
+      "is_raid":{
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "fall",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": false,
+          "reselect_targets": true,
+          "scan_interval": 10,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "allied_soldier"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "villager"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "wandering_trader"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "allied_soldier_flag"
+              },
+              "max_dist": 160
+            }
+          ]
+        },
+        "minecraft:follow_range": {
+          "value": 256
+        },
+        "minecraft:floats_in_liquid": {},
+        "minecraft:navigation.generic": {
+          "is_amphibious": true,
+          "can_path_over_water": true,
+          "can_break_doors": true,
+          "can_swim": true,
+          "can_walk": true,
+          "avoid_sun": false
+        },
+        "minecraft:underwater_movement": {
+          "value": 0.2
+        }
+
+      },
       "D": {
       "minecraft:behavior.summon_entity": {
         "priority": 0,
@@ -111,8 +185,8 @@
         ]
       },
       "minecraft:follow_range": {
-        "value": 48,
-        "max": 48
+        "value": 128,
+        "max": 128
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/ga.json"
@@ -208,6 +282,40 @@
     },
 
     "events": {
+      "gvcv5:entity_spawned_raid": {
+        "sequence": [
+          {
+          "add": {
+            "component_groups": [
+              "is_raid"
+            ]
+          },
+          "remove": {
+            "component_groups": [
+              "can_despawn"
+            ]
+          }
+        },
+          {
+          "queue_command": {
+            "command": [
+              "tag @s add raid"
+            ]
+          }
+        },
+        {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": { "component_groups": [ "navy" ] }
+         }
+          ]
+      },
       "minecraft:entity_spawned": {
         "add": {
           "component_groups": [

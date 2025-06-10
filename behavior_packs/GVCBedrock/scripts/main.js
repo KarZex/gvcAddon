@@ -1,11 +1,66 @@
-import { world, system, EquipmentSlot, EntityComponentTypes, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 import { craftData } from "./crafts";
+import { raidData } from "./raid";
 import "./compornents";
 
 const globalVarWW2Sides = [ `USA`,`SOV`,`GER`,`JAP` ] //using hoi4 tags
 
+
+async function RaidSpawner(flag,type,wave) {
+	const R = 64;
+	const thita = Math.PI * 2 * Math.random();
+	const L = flag.location;
+	const baseLocation = { 
+		x:L.x + R * Math.cos(thita),
+		y:L.y,
+		z:L.z + R * Math.sin(thita)
+	}
+	await flag.runCommand(`tickingarea add circle ${Math.floor(baseLocation.x)} ${Math.floor(baseLocation.y)} ${Math.floor(baseLocation.z)} 1 raidSpawner false`);
+	const d = flag.dimension;
+	const raid = raidData[`${type}`][`${wave}`];
+	for( let c of raid ){
+		for( let i = 0; i < c["counts"]; i++ ){
+			let type = c["type"];
+			let gun = c["gun"];
+			let armor = c["armor"];
+			let isBoss = c["isBoss"];
+			let Ench = c["Ench"];
+			const thita_i = Math.PI * 2 * Math.random();
+			const summonLocation = { 
+				x:baseLocation.x + 8 * Math.cos(thita_i),
+				y:baseLocation.y + 10,
+				z:baseLocation.z + 8 * Math.sin(thita_i)
+			}
+			const cont = d.spawnEntity(type,summonLocation);
+			cont.triggerEvent(`gvcv5:entity_spawned_raid`);
+			cont.addTag(`raid`);
+			if( gun != undefined ){
+				cont.triggerEvent(gun);
+			}
+			if( armor != undefined ){
+				cont.addTag(armor);
+				cont.runCommand(`function armor/${armor}`);
+			}
+			if( isBoss ){
+				cont.addEffect("health_boost",9999999,{ amplifier: 10 } );
+				cont.addEffect("instant_health",1,{ amplifier: 255 } );
+				cont.nameTag = `Raid Boss`
+			}
+			if( Ench != undefined ){
+				for( let e of Ench ){
+					let Id = e["id"];
+					let Lv = e["lv"];
+					cont.setDynamicProperty(`Ench_${Id}`,Lv);
+					cont.runCommand(`enchant @s ${Id} ${Lv}`);
+				}
+			}
+		}
+	}
+	await system.waitTicks(20);
+	flag.runCommand(`tickingarea remove raidSpawner`);
+}
 function setArmorValue( itemName ){
 	if( itemName.includes("leather") ){ return 0.05 }
 	else if( itemName.includes("chainmail") ){ return 0.1 }
@@ -279,6 +334,14 @@ world.afterEvents.entitySpawn.subscribe( e => {
 				projectile.setDynamicProperty(`damage`,dmg * 0.25 * (level + 5) );
 			}
 		}
+		else {
+			if( player.getDynamicProperty(`Ench_flame`) != undefined ){
+				projectile.setOnFire(10,true);
+			}
+			if( player.getDynamicProperty(`Ench_power`) != undefined ){
+				projectile.setDynamicProperty(`damage`,dmg * 0.25 * (player.getDynamicProperty(`Ench_power`) + 5) );
+			}
+		}
 	}
 } )
 
@@ -289,9 +352,15 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		let gunName = e.projectile.typeId
 		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
 		else if( gunName.includes("fire:") ){ gunName = gunName.replace("fire:",""); }
-		let damageType = e.projectile.getDynamicProperty(`damageType`);
+		let damageType;
+		if( e.projectile != undefined ){
+			damageType = e.projectile.getDynamicProperty(`damageType`);
+		}
+		else{
+			damageType = "override"
+		}
 		const equipmentComp = vict.getComponent(EntityComponentTypes.Equippable)
-		if( equipmentComp ){
+		if( equipmentComp && vict.typeId == "minecraft:player" ){
 			if( equipmentComp.getEquipment(EquipmentSlot.Head) != undefined ){ 
 				def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Head).typeId) 
 			}
@@ -304,6 +373,9 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			if( equipmentComp.getEquipment(EquipmentSlot.Feet) != undefined  ){
 				 def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Feet).typeId) 
 			}
+		}
+		else if( vict.hasTag(`plastic`)){
+			def = 0.8;
 		}
 		if (def > 1){ def = 1 }
 		let damage = e.projectile.getDynamicProperty(`damage`) *  (1 - def);
@@ -550,10 +622,11 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			else if( entity.hasTag(`yellow`) ){ team = `yellow`; }
 			if( entity.typeId == "minecraft:player" ){
 				target = missile.dimension.getEntities( { 
-					tags:[ `Tof${entity.nameTag}` ]
+					tags:[ `"Tof${entity.nameTag}"` ]
 				} );
 			}
 			else{
+				world.sendMessage(`${entity.target.typeId}`)
 				if( entity.target != undefined ){ 
 					target.push(entity.target); 
 				}
@@ -630,6 +703,12 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const entity = e.sourceEntity;
 		entity.getComponent("minecraft:scale").value = Number(e.message)
 		
+	}
+	else if (e.id === "gvcv5:raid"){
+		const type = e.message.split(` `)[0];
+		const wave = e.message.split(` `)[1];
+		const flag = e.sourceEntity;
+		RaidSpawner(flag,type,wave);
 	}
 
 	else if( e.id == "zex:start" ){
@@ -738,8 +817,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const Target = Targetm.concat(Targetp).concat(Targetv)
 			if( Target[0] != undefined ){
 				const name = player.nameTag;
-				player.runCommand(`tag @e remove Tof${name}`);
-				Target[0].entity.addTag(`Tof${name}`);
+				player.runCommand(`tag @e remove "Tof${name}"`);
+				Target[0].entity.addTag(`"Tof${name}"`);
 				if( Target[0].entity.nameTag == undefined || Target[0].entity.nameTag == `` ){
 					player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§eFind target:\"},{\"translate\":\"entity.${Target[0].entity.typeId.replace(`minecraft:`,``)}.name\"}]}`);
 				}
