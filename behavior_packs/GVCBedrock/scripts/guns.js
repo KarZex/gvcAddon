@@ -9,6 +9,7 @@ export const gunData = {
   },
   "aa12": {
     "damage": 2,
+    "speed": 1.0,
     "maxGunAmmo": 24,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -16,6 +17,7 @@ export const gunData = {
   },
   "ak12": {
     "damage": 8,
+    "speed": 1.6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -23,6 +25,7 @@ export const gunData = {
   },
   "ak47": {
     "damage": 6,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -30,6 +33,7 @@ export const gunData = {
   },
   "ak102": {
     "damage": 7,
+    "speed": 1.4000000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -37,6 +41,7 @@ export const gunData = {
   },
   "an94": {
     "damage": 6,
+    "speed": 1.6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -44,6 +49,7 @@ export const gunData = {
   },
   "awm": {
     "damage": 25,
+    "speed": 3.2,
     "maxGunAmmo": 5,
     "reloadTime": 80,
     "bullet": "zex:762m",
@@ -51,20 +57,39 @@ export const gunData = {
   },
   "dp28": {
     "damage": 8,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 47,
     "reloadTime": 80,
     "bullet": "zex:762m",
     "damageType": "override"
   },
   "famas": {
-    "damage": 10,
+    "damage": 30,
+    "speed": 1.6,
     "maxGunAmmo": 6,
     "reloadTime": 80,
     "bullet": "zex:40m",
     "damageType": "entityExplosion"
   },
+  "fgm148": {
+    "damage": 80,
+    "speed": 1.0,
+    "maxGunAmmo": 1,
+    "reloadTime": 80,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
+  "fim92": {
+    "damage": 50,
+    "speed": 2.0,
+    "maxGunAmmo": 1,
+    "reloadTime": 80,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
   "g36": {
     "damage": 8,
+    "speed": 1.6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -72,6 +97,7 @@ export const gunData = {
   },
   "g3a3": {
     "damage": 8,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 20,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -79,6 +105,7 @@ export const gunData = {
   },
   "glock17": {
     "damage": 4,
+    "speed": 0.68,
     "maxGunAmmo": 20,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -86,6 +113,7 @@ export const gunData = {
   },
   "glock18": {
     "damage": 4,
+    "speed": 0.68,
     "maxGunAmmo": 20,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -93,6 +121,7 @@ export const gunData = {
   },
   "hk416": {
     "damage": 8,
+    "speed": 1.4000000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 50,
     "bullet": "zex:556m",
@@ -100,6 +129,7 @@ export const gunData = {
   },
   "lazer": {
     "damage": 100,
+    "speed": 4.4,
     "maxGunAmmo": 5,
     "reloadTime": 100,
     "bullet": "zex:1270m",
@@ -107,6 +137,7 @@ export const gunData = {
   },
   "m4": {
     "damage": 7,
+    "speed": 1.4000000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 50,
     "bullet": "zex:556m",
@@ -114,6 +145,7 @@ export const gunData = {
   },
   "m4a1": {
     "damage": 7,
+    "speed": 1.4000000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 50,
     "bullet": "zex:556m",
@@ -121,6 +153,7 @@ export const gunData = {
   },
   "m9": {
     "damage": 4,
+    "speed": 0.68,
     "maxGunAmmo": 16,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -128,6 +161,7 @@ export const gunData = {
   },
   "m10": {
     "damage": 4,
+    "speed": 0.68,
     "maxGunAmmo": 30,
     "reloadTime": 40,
     "bullet": "zex:mm9",
@@ -135,6 +169,7 @@ export const gunData = {
   },
   "m16a1": {
     "damage": 5,
+    "speed": 1.6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -142,6 +177,7 @@ export const gunData = {
   },
   "m16a4": {
     "damage": 9,
+    "speed": 1.8,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -149,6 +185,7 @@ export const gunData = {
   },
   "m60": {
     "damage": 6,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -156,13 +193,15 @@ export const gunData = {
   },
   "m72": {
     "damage": 40,
+    "speed": 0.32000000000000006,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:rocketm",
     "damageType": "entityExplosion"
   },
   "m79": {
-    "damage": 10,
+    "damage": 30,
+    "speed": 0.32000000000000006,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:40m",
@@ -170,6 +209,7 @@ export const gunData = {
   },
   "m82": {
     "damage": 150,
+    "speed": 4.4,
     "maxGunAmmo": 10,
     "reloadTime": 100,
     "bullet": "zex:1270m",
@@ -177,13 +217,15 @@ export const gunData = {
   },
   "m110": {
     "damage": 12,
+    "speed": 2.4000000000000004,
     "maxGunAmmo": 20,
     "reloadTime": 80,
     "bullet": "zex:762m",
     "damageType": "override"
   },
   "m202": {
-    "damage": 40,
+    "damage": 50,
+    "speed": 1.8,
     "maxGunAmmo": 4,
     "reloadTime": 100,
     "bullet": "zex:rocketm",
@@ -191,6 +233,7 @@ export const gunData = {
   },
   "m249": {
     "damage": 10,
+    "speed": 1.6,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -198,6 +241,7 @@ export const gunData = {
   },
   "m590": {
     "damage": 2,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 8,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -205,6 +249,7 @@ export const gunData = {
   },
   "m870": {
     "damage": 2,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 4,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -212,6 +257,7 @@ export const gunData = {
   },
   "m1014": {
     "damage": 3,
+    "speed": 1.0,
     "maxGunAmmo": 8,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -219,6 +265,7 @@ export const gunData = {
   },
   "m1911": {
     "damage": 5,
+    "speed": 0.48,
     "maxGunAmmo": 8,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -226,6 +273,7 @@ export const gunData = {
   },
   "mg36": {
     "damage": 8,
+    "speed": 1.6,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:556m",
@@ -233,6 +281,7 @@ export const gunData = {
   },
   "mg42": {
     "damage": 8,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 75,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -240,6 +289,7 @@ export const gunData = {
   },
   "mosin": {
     "damage": 20,
+    "speed": 3.2,
     "maxGunAmmo": 5,
     "reloadTime": 60,
     "bullet": "zex:762m",
@@ -247,6 +297,7 @@ export const gunData = {
   },
   "mp5": {
     "damage": 4,
+    "speed": 0.7200000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:mm9",
@@ -254,6 +305,7 @@ export const gunData = {
   },
   "mp7": {
     "damage": 5,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 40,
     "reloadTime": 45,
     "bullet": "zex:mm9",
@@ -261,13 +313,15 @@ export const gunData = {
   },
   "mp40": {
     "damage": 4,
+    "speed": 0.7200000000000001,
     "maxGunAmmo": 20,
     "reloadTime": 45,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
   "p90": {
-    "damage": 40,
+    "damage": 50,
+    "speed": 1.8,
     "maxGunAmmo": 1,
     "reloadTime": 60,
     "bullet": "zex:rocketm",
@@ -275,6 +329,7 @@ export const gunData = {
   },
   "pkm": {
     "damage": 8,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -282,13 +337,15 @@ export const gunData = {
   },
   "ppsh": {
     "damage": 5,
+    "speed": 0.7200000000000001,
     "maxGunAmmo": 72,
     "reloadTime": 45,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
   "rpg": {
-    "damage": 40,
+    "damage": 60,
+    "speed": 1.8,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:rocketm",
@@ -296,6 +353,7 @@ export const gunData = {
   },
   "rpk": {
     "damage": 6,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:556m",
@@ -303,6 +361,7 @@ export const gunData = {
   },
   "saiga12": {
     "damage": 2,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 6,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -310,6 +369,7 @@ export const gunData = {
   },
   "scar": {
     "damage": 10,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 20,
     "reloadTime": 60,
     "bullet": "zex:762m",
@@ -317,6 +377,7 @@ export const gunData = {
   },
   "svd": {
     "damage": 13,
+    "speed": 2.4000000000000004,
     "maxGunAmmo": 10,
     "reloadTime": 60,
     "bullet": "zex:762m",
@@ -324,6 +385,7 @@ export const gunData = {
   },
   "tt33": {
     "damage": 10,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 8,
     "reloadTime": 50,
     "bullet": "zex:762m",
@@ -331,6 +393,7 @@ export const gunData = {
   },
   "uzi": {
     "damage": 3,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 40,
     "bullet": "zex:mm9",
@@ -338,13 +401,15 @@ export const gunData = {
   },
   "vz61": {
     "damage": 4,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 20,
     "reloadTime": 40,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
   "xm8": {
-    "damage": 10,
+    "damage": 20,
+    "speed": 1.8,
     "maxGunAmmo": 8,
     "reloadTime": 80,
     "bullet": "zex:40m",

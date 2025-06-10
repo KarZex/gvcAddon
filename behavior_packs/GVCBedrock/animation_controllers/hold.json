@@ -33,6 +33,12 @@
               "famas": "query.get_equipped_item_name == 'famas'"
             },
             {
+              "fgm148": "query.get_equipped_item_name == 'fgm148'"
+            },
+            {
+              "fim92": "query.get_equipped_item_name == 'fim92'"
+            },
+            {
               "g36": "query.get_equipped_item_name == 'g36'"
             },
             {
@@ -240,6 +246,26 @@
         "famas": {
           "on_entry": [
             "/function hold/famash"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "fgm148": {
+          "on_entry": [
+            "/function hold/fgm148h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "fim92": {
+          "on_entry": [
+            "/function hold/fim92h"
           ],
           "transitions": [
             {

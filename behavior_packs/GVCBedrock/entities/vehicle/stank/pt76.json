@@ -165,7 +165,7 @@
       },
       "minecraft:type_family": {
         "family": [
-          "ww2vehicle",
+          "vehicle",
           "playerfire",
           "plate"
         ]

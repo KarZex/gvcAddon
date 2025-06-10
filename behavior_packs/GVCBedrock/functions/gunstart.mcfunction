@@ -53,6 +53,10 @@ scoreboard objectives add dp28 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s dp28 47
 scoreboard objectives add famas dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s famas 6
+scoreboard objectives add fgm148 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s fgm148 1
+scoreboard objectives add fim92 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s fim92 1
 scoreboard objectives add g36 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s g36 30
 scoreboard objectives add g3a3 dummy

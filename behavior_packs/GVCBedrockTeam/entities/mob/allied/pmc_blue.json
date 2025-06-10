@@ -206,6 +206,42 @@
           "table": "loot_tables/gun/famas.json"
         }
       },
+      "fgm148": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0.15000000000000002,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:fgm148"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/fgm148.json"
+        }
+      },
+      "fim92": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0.15000000000000002,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:fim92"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/fim92.json"
+        }
+      },
       "g36": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -1250,6 +1286,64 @@
                 ]
               },
               "event": "famas",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:fgm148"
+                  }
+                ]
+              },
+              "event": "fgm148",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:fim92"
+                  }
+                ]
+              },
+              "event": "fim92",
               "target": "self"
             }
           },
@@ -2799,6 +2893,20 @@
         "add": {
           "component_groups": [
             "famas"
+          ]
+        }
+      },
+      "fgm148": {
+        "add": {
+          "component_groups": [
+            "fgm148"
+          ]
+        }
+      },
+      "fim92": {
+        "add": {
+          "component_groups": [
+            "fim92"
           ]
         }
       },

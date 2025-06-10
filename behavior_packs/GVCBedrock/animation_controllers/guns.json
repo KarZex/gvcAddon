@@ -78,6 +78,18 @@
               "famas_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:famas') && (variable.attack_time > 0.0)"
             },
             {
+              "fgm148": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:fgm148') && query.is_using_item"
+            },
+            {
+              "fgm148_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:fgm148') && (variable.attack_time > 0.0)"
+            },
+            {
+              "fim92": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:fim92') && query.is_using_item"
+            },
+            {
+              "fim92_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:fim92') && (variable.attack_time > 0.0)"
+            },
+            {
               "g36": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:g36') && query.is_using_item"
             },
             {
@@ -730,6 +742,66 @@
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 18 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "fgm148_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload fgm148"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "fgm148": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse fgm148"
+          ],
+          "transitions": [
+            {
+              "fgm148_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "fgm148_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "fim92_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload fim92"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "fim92": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse fim92"
+          ],
+          "transitions": [
+            {
+              "fim92_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "fim92_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },
@@ -1448,7 +1520,7 @@
           ],
           "transitions": [
             {
-              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },

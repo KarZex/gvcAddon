@@ -8,6 +8,7 @@
   },
   "aa12": {
     "damage": 2,
+    "speed": 1.0,
     "maxGunAmmo": 24,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -15,6 +16,7 @@
   },
   "ak12": {
     "damage": 8,
+    "speed": 1.6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -22,6 +24,7 @@
   },
   "ak47": {
     "damage": 6,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -29,6 +32,7 @@
   },
   "ak102": {
     "damage": 7,
+    "speed": 1.4000000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -36,6 +40,7 @@
   },
   "an94": {
     "damage": 6,
+    "speed": 1.6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -43,6 +48,7 @@
   },
   "awm": {
     "damage": 25,
+    "speed": 3.2,
     "maxGunAmmo": 5,
     "reloadTime": 80,
     "bullet": "zex:762m",
@@ -50,20 +56,39 @@
   },
   "dp28": {
     "damage": 8,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 47,
     "reloadTime": 80,
     "bullet": "zex:762m",
     "damageType": "override"
   },
   "famas": {
-    "damage": 10,
+    "damage": 30,
+    "speed": 1.6,
     "maxGunAmmo": 6,
     "reloadTime": 80,
     "bullet": "zex:40m",
     "damageType": "entityExplosion"
   },
+  "fgm148": {
+    "damage": 80,
+    "speed": 1.0,
+    "maxGunAmmo": 1,
+    "reloadTime": 80,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
+  "fim92": {
+    "damage": 50,
+    "speed": 2.0,
+    "maxGunAmmo": 1,
+    "reloadTime": 80,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
   "g36": {
     "damage": 8,
+    "speed": 1.6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -71,6 +96,7 @@
   },
   "g3a3": {
     "damage": 8,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 20,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -78,6 +104,7 @@
   },
   "glock17": {
     "damage": 4,
+    "speed": 0.68,
     "maxGunAmmo": 20,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -85,6 +112,7 @@
   },
   "glock18": {
     "damage": 4,
+    "speed": 0.68,
     "maxGunAmmo": 20,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -92,6 +120,7 @@
   },
   "hk416": {
     "damage": 8,
+    "speed": 1.4000000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 50,
     "bullet": "zex:556m",
@@ -99,6 +128,7 @@
   },
   "lazer": {
     "damage": 100,
+    "speed": 4.4,
     "maxGunAmmo": 5,
     "reloadTime": 100,
     "bullet": "zex:1270m",
@@ -106,6 +136,7 @@
   },
   "m4": {
     "damage": 7,
+    "speed": 1.4000000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 50,
     "bullet": "zex:556m",
@@ -113,6 +144,7 @@
   },
   "m4a1": {
     "damage": 7,
+    "speed": 1.4000000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 50,
     "bullet": "zex:556m",
@@ -120,6 +152,7 @@
   },
   "m9": {
     "damage": 4,
+    "speed": 0.68,
     "maxGunAmmo": 16,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -127,6 +160,7 @@
   },
   "m10": {
     "damage": 4,
+    "speed": 0.68,
     "maxGunAmmo": 30,
     "reloadTime": 40,
     "bullet": "zex:mm9",
@@ -134,6 +168,7 @@
   },
   "m16a1": {
     "damage": 5,
+    "speed": 1.6,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -141,6 +176,7 @@
   },
   "m16a4": {
     "damage": 9,
+    "speed": 1.8,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -148,6 +184,7 @@
   },
   "m60": {
     "damage": 6,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -155,13 +192,15 @@
   },
   "m72": {
     "damage": 40,
+    "speed": 0.32000000000000006,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:rocketm",
     "damageType": "entityExplosion"
   },
   "m79": {
-    "damage": 10,
+    "damage": 30,
+    "speed": 0.32000000000000006,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:40m",
@@ -169,6 +208,7 @@
   },
   "m82": {
     "damage": 150,
+    "speed": 4.4,
     "maxGunAmmo": 10,
     "reloadTime": 100,
     "bullet": "zex:1270m",
@@ -176,13 +216,15 @@
   },
   "m110": {
     "damage": 12,
+    "speed": 2.4000000000000004,
     "maxGunAmmo": 20,
     "reloadTime": 80,
     "bullet": "zex:762m",
     "damageType": "override"
   },
   "m202": {
-    "damage": 40,
+    "damage": 50,
+    "speed": 1.8,
     "maxGunAmmo": 4,
     "reloadTime": 100,
     "bullet": "zex:rocketm",
@@ -190,6 +232,7 @@
   },
   "m249": {
     "damage": 10,
+    "speed": 1.6,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -197,6 +240,7 @@
   },
   "m590": {
     "damage": 2,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 8,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -204,6 +248,7 @@
   },
   "m870": {
     "damage": 2,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 4,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -211,6 +256,7 @@
   },
   "m1014": {
     "damage": 3,
+    "speed": 1.0,
     "maxGunAmmo": 8,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -218,6 +264,7 @@
   },
   "m1911": {
     "damage": 5,
+    "speed": 0.48,
     "maxGunAmmo": 8,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -225,6 +272,7 @@
   },
   "mg36": {
     "damage": 8,
+    "speed": 1.6,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:556m",
@@ -232,6 +280,7 @@
   },
   "mg42": {
     "damage": 8,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 75,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -239,6 +288,7 @@
   },
   "mosin": {
     "damage": 20,
+    "speed": 3.2,
     "maxGunAmmo": 5,
     "reloadTime": 60,
     "bullet": "zex:762m",
@@ -246,6 +296,7 @@
   },
   "mp5": {
     "damage": 4,
+    "speed": 0.7200000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:mm9",
@@ -253,6 +304,7 @@
   },
   "mp7": {
     "damage": 5,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 40,
     "reloadTime": 45,
     "bullet": "zex:mm9",
@@ -260,13 +312,15 @@
   },
   "mp40": {
     "damage": 4,
+    "speed": 0.7200000000000001,
     "maxGunAmmo": 20,
     "reloadTime": 45,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
   "p90": {
-    "damage": 40,
+    "damage": 50,
+    "speed": 1.8,
     "maxGunAmmo": 1,
     "reloadTime": 60,
     "bullet": "zex:rocketm",
@@ -274,6 +328,7 @@
   },
   "pkm": {
     "damage": 8,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -281,13 +336,15 @@
   },
   "ppsh": {
     "damage": 5,
+    "speed": 0.7200000000000001,
     "maxGunAmmo": 72,
     "reloadTime": 45,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
   "rpg": {
-    "damage": 40,
+    "damage": 60,
+    "speed": 1.8,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:rocketm",
@@ -295,6 +352,7 @@
   },
   "rpk": {
     "damage": 6,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:556m",
@@ -302,6 +360,7 @@
   },
   "saiga12": {
     "damage": 2,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 6,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -309,6 +368,7 @@
   },
   "scar": {
     "damage": 10,
+    "speed": 1.2000000000000002,
     "maxGunAmmo": 20,
     "reloadTime": 60,
     "bullet": "zex:762m",
@@ -316,6 +376,7 @@
   },
   "svd": {
     "damage": 13,
+    "speed": 2.4000000000000004,
     "maxGunAmmo": 10,
     "reloadTime": 60,
     "bullet": "zex:762m",
@@ -323,6 +384,7 @@
   },
   "tt33": {
     "damage": 10,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 8,
     "reloadTime": 50,
     "bullet": "zex:762m",
@@ -330,6 +392,7 @@
   },
   "uzi": {
     "damage": 3,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 30,
     "reloadTime": 40,
     "bullet": "zex:mm9",
@@ -337,13 +400,15 @@
   },
   "vz61": {
     "damage": 4,
+    "speed": 0.6000000000000001,
     "maxGunAmmo": 20,
     "reloadTime": 40,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
   "xm8": {
-    "damage": 10,
+    "damage": 20,
+    "speed": 1.8,
     "maxGunAmmo": 8,
     "reloadTime": 80,
     "bullet": "zex:40m",

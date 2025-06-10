@@ -603,6 +603,42 @@
           "table": "loot_tables/gun/famas.json"
         }
       },
+      "fgm148": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0.15000000000000002,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:fgm148"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/fgm148.json"
+        }
+      },
+      "fim92": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0.15000000000000002,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:fim92"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/fim92.json"
+        }
+      },
       "g36": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -2286,6 +2322,20 @@
         "add": {
           "component_groups": [
             "famas"
+          ]
+        }
+      },
+      "fgm148": {
+        "add": {
+          "component_groups": [
+            "fgm148"
+          ]
+        }
+      },
+      "fim92": {
+        "add": {
+          "component_groups": [
+            "fim92"
           ]
         }
       },

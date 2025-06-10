@@ -1,0 +1,90 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "fire:aamissile",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:arrow",
+      "scripts": {
+        "animate": [
+          "walk"
+        ]
+      },
+      "animations": {
+        "walk": "controller.animation.horming"
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "bullet"
+        ]
+      },
+      "minecraft:explode": {
+        "fuse_length": 100,
+        "fuse_lit": true,
+        "power": 0,
+        "causes_fire": false
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": 50,
+            "knockback": false
+          },
+          "stick_in_ground": {},
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          }
+        },
+        "power": 0.4,
+        "gravity": 0,
+        "inertia": 1.5,
+        "uncertainty_base": 0.0,
+        "uncertainty_multiplier": 0,
+        "catch_fire": false,
+        "anchor": 1
+      },
+      "minecraft:scale": {
+        "value": 5
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "minecraft:explode": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding"
+          ]
+        }
+      }
+    },
+    "component_groups": {
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "destroy_affected_by_griefing": true,
+          "fuse_lit": true,
+          "power": 5,
+          "breaks_blocks": false
+        }
+      }
+    }
+  }
+}

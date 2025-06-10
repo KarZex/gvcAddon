@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.horming": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/scriptevent zex:horming"
+          ],
+          "transitions": [
+            { "ride": "1.0" }
+          ]
+        },
+        "ride":{
+          "on_entry": [
+            "/scriptevent zex:horming"
+          ],
+          "transitions": [
+            { "default": "1.0" }
+          ]
+        }
+      }
+    }
+  }
+}

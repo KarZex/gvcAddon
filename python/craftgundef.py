@@ -85,7 +85,7 @@ for row in csv_reader:
         text += "item.gun:{0}={2}{1}§r\n".format(gun_id,row[0],Rare)
 
         #Gundata fot JS
-        gundata_json["{}".format(gun_id)] = { "damage": gun_damage, "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo),"damageType": "{}".format(gun_damage_type) }
+        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"speed": gun_power * 0.2, "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo),"damageType": "{}".format(gun_damage_type) }
 
         #player
         spawn_entity = { 
@@ -285,24 +285,46 @@ for row in csv_reader:
           "transitions": [ { "default": "(1.0)"}]
         }
         #Bullet 
-        with open("tool/fire.json".format(gun_id),"r") as f:
-            gun_entity = json.load(f)
-            gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
-            gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
-            if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
-            gun_entity["minecraft:entity"]["events"] = {}
-            gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
-            gun_entity["minecraft:entity"]["component_groups"] = {}
-            gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
+        if gun_special == "H":
+            with open("tool/horming.json".format(gun_id),"r") as f:
+                gun_entity = json.load(f)
+                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                gun_entity["minecraft:entity"]["components"]["minecraft:movement"]["value"] = gun_power * 0.2
+    
+                if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
+                gun_entity["minecraft:entity"]["events"] = {}
+                gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
+                gun_entity["minecraft:entity"]["component_groups"] = {}
+                gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
 
-            if gun_bomb > 0:
-                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+                if gun_bomb > 0:
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
 
-            if gun_wallbreak:
-                del gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["stick_in_ground"]
-                
+                if gun_wallbreak:
+                    del gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["stick_in_ground"]
+              
+        else:
+            with open("tool/fire.json".format(gun_id),"r") as f:
+                gun_entity = json.load(f)
+                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
+                gun_entity["minecraft:entity"]["events"] = {}
+                gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }
+                gun_entity["minecraft:entity"]["component_groups"] = {}
+                gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
+
+                if gun_bomb > 0:
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+
+                if gun_wallbreak:
+                    del gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["stick_in_ground"]
+                   
         with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"w") as f:
             json.dump(gun_entity,f,indent=2)
 
@@ -317,6 +339,9 @@ for row in csv_reader:
             
             if gun_special == "R":
                 f.write("scriptevent gvcv5:vgun {}\n".format(gun_id))
+            
+            elif gun_special == "H":
+                f.write("scriptevent gvcv5:hgun {}\n".format(gun_id))
             
             else:
                 f.write("scriptevent gvcv5:vgun {}\n".format(gun_id))

@@ -1,4 +1,4 @@
-import { world, system, EquipmentSlot, EntityComponentTypes, EntityInitializationCause, ItemComponent, ItemComponentTypes  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 import { craftData } from "./crafts";
@@ -527,6 +527,70 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 
 		}
 	}
+	else if( e.id == "zex:horming"){
+		const missile = e.sourceEntity;
+		let gunName = missile.typeId
+		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
+		else if( gunName.includes("fire:") ){ gunName = gunName.replace("fire:",""); }
+		const maxSpeed = gunData[`${gunName}`]["speed"];
+		if( missile.isValid ){
+			if( missile.getDynamicProperty(`age`) == undefined ){
+				missile.setDynamicProperty(`age`,0);
+			}
+			else if( missile.getDynamicProperty(`age`) <= 20 ){
+				missile.setDynamicProperty(`age`,1+missile.getDynamicProperty(`age`));
+			}
+			const age = missile.getDynamicProperty(`age`);
+			const entity = missile.getComponent("projectile").owner;
+			let target = [];
+			let team = `noteam`;
+			if( entity.hasTag(`red`) ){ team = `red`; }
+			else if( entity.hasTag(`blue`) ){ team = `blue`; }
+			else if( entity.hasTag(`green`) ){ team = `green`; }
+			else if( entity.hasTag(`yellow`) ){ team = `yellow`; }
+			if( entity.typeId == "minecraft:player" ){
+				target = missile.dimension.getEntities( { 
+					tags:[ `Tof${entity.nameTag}` ]
+				} );
+			}
+			else{
+				if( entity.target != undefined ){ 
+					target.push(entity.target); 
+				}
+			}
+
+			if( target.length > 0 ){
+				const P0 = missile.location;
+				const Pi = target[0].location;
+				target[0].runCommand(`tag @s add MissileAlert`);
+				target[0].runCommand(`playsound sound.alert1 @s`);
+				const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
+				const dx = (Pi.x - P0.x) / ri;
+				const dy = (Pi.y - P0.y) / ri;
+				const dz = (Pi.z - P0.z) / ri;
+				const v = missile.getVelocity();
+				const abs_v = maxSpeed;
+				missile.clearVelocity();
+				missile.applyImpulse( { 
+					x: dx * abs_v,
+					y: dy * abs_v + ( 20 - age ) * 0.05,
+					z: dz * abs_v
+				} )
+			}
+			else{
+				const V_m = missile.getVelocity();
+				const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
+				const V = entity.getViewDirection();
+				missile.clearVelocity();
+				missile.applyImpulse( { 
+					x: V.x * maxSpeed * 0.5,
+					y: V.y * maxSpeed * 0.5,
+					z: V.z * maxSpeed * 0.5
+				} )
+
+			}
+		}
+	}
 
 	else if( e.id == "zex:chkride"){
 		if( world.getDynamicProperty(`gvcv5:airCraftWithItem`) ){
@@ -586,7 +650,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const dmgCom = gun.getComponent(ItemComponentTypes.Durability);
 		const damage = dmgCom.damage;
 		const maxAmmo = dmgCom.maxDurability;
-		const usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
+		let usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
 		const ench = gun.getComponent(ItemComponentTypes.Enchantable);
 		if( usedGun == undefined ){
 			usedGun = 0;
@@ -609,15 +673,25 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		//tag=!reload,tag=!down
 		const player = e.sourceEntity;
 		const gunName = e.message;
+		if( player.getDynamicProperty(`gvcv5:gunUsed`) == undefined ){
+			player.setDynamicProperty(`gvcv5:gunUsed`,0);
+		}
 		const gunUsed = player.getDynamicProperty(`gvcv5:gunUsed`);
-		player.setDynamicProperty(`gvcv5:gunUsed`,0);
 		const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
 		const dmgCom = gun.getComponent(ItemComponentTypes.Durability);
 		const damage = dmgCom.damage;
 		const maxAmmo = dmgCom.maxDurability;
 		const newDamage = damage + gunUsed;
-		gun.getComponent(ItemComponentTypes.Durability).damage = newDamage;
-		player.getComponent("minecraft:inventory").container.setItem(player.selectedSlotIndex, gun);
+		if( newDamage < maxAmmo ){
+			gun.getComponent(ItemComponentTypes.Durability).damage = newDamage;
+			player.getComponent("minecraft:inventory").container.setItem(player.selectedSlotIndex, gun);
+			player.setDynamicProperty(`gvcv5:gunUsed`,0);
+		}
+		else{
+			gun.getComponent(ItemComponentTypes.Durability).damage = maxAmmo;
+			player.getComponent("minecraft:inventory").container.setItem(player.selectedSlotIndex, gun);
+			player.setDynamicProperty(`gvcv5:gunUsed`,newDamage - maxAmmo);
+		}
 	}
 	else if (e.id === "gvcv5:vgun"){
 		//tag=!reload,tag=!down
@@ -630,15 +704,55 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const dmgCom = gun.getComponent(ItemComponentTypes.Durability);
 		const damage = dmgCom.damage;
 		const maxAmmo = dmgCom.maxDurability;
-		const usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
+		let usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
 		if( usedGun == undefined ){
 			usedGun = 0;
 		}
 		if( !player.hasTag(`reload`) && !player.hasTag(`down`) ){
 			player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcv5:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo}\"}]}`)
 		}
-		if( damage + usedGun >= maxAmmo ){
-			player.runCommand(`scriptevent gvcv5:gunapply`);
+		if( damage >= maxAmmo ){
+			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
+		}
+	}
+	else if (e.id === "gvcv5:hgun"){
+		//tag=!reload,tag=!down
+		//titleraw @s[tag=!reload,tag=!down] actionbar {{\"rawtext\":[{{\"text\":\"{1} \"}},{{\"score\":{{\"name\":\"@s\",\"objective\":\"{0}\"}}}},{{\"text\":\"/{2}\"}}]}}
+		//f.write("execute if entity @s[tag=autoReload,tag=!reload,tag=!down,scores={{{0}=0}},hasitem={{item={1}}}] run scriptevent gvcv5:reload {0}\n".format(gun_id,gun_ammo))
+		const player = e.sourceEntity;
+		const gunName = e.message;
+		const Ammo = gunData[`${gunName}`]["bullet"];
+		let gun = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Mainhand);
+		const dmgCom = gun.getComponent(ItemComponentTypes.Durability);
+		const damage = dmgCom.damage;
+		const maxAmmo = dmgCom.maxDurability;
+		let usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
+		
+		if( usedGun == undefined ){
+			usedGun = 0;
+		}
+		if( player.isSneaking && !player.hasTag(`reload`) && !player.hasTag(`down`) ){
+			const Targetv = player.getEntitiesFromViewDirection( {families:[ `vehicle` ],ignoreBlockCollision:false} );
+			const Targetm = player.getEntitiesFromViewDirection( {families:[ `mob` ],ignoreBlockCollision:false} );
+			const Targetp = player.getEntitiesFromViewDirection( {families:[ `player` ],ignoreBlockCollision:false} );
+			const Target = Targetm.concat(Targetp).concat(Targetv)
+			if( Target[0] != undefined ){
+				const name = player.nameTag;
+				player.runCommand(`tag @e remove Tof${name}`);
+				Target[0].entity.addTag(`Tof${name}`);
+				if( Target[0].entity.nameTag == undefined || Target[0].entity.nameTag == `` ){
+					player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§eFind target:\"},{\"translate\":\"entity.${Target[0].entity.typeId.replace(`minecraft:`,``)}.name\"}]}`);
+				}
+				else{
+					player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§eFind target:${Target[0].entity.nameTag}\"}]}`);
+				}
+			}
+			else{
+				player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§cNo Target\"}]}`);
+			}
+		}
+		else if( !player.hasTag(`reload`) && !player.hasTag(`down`) ){
+			player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcv5:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo}\"}]}`)
 		}
 		if( damage >= maxAmmo ){
 			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);

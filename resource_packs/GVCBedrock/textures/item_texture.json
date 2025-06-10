@@ -1024,6 +1024,12 @@
     },
     "f117": {
       "textures": "textures/items/f117"
+    },
+    "fgm148": {
+      "textures": "textures/items/gun/fgm148"
+    },
+    "fim92": {
+      "textures": "textures/items/gun/fim92"
     }
   }
 }
