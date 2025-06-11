@@ -210,10 +210,6 @@ export const raidData = {
             "lv":3
           },
           {
-            "id":"flame",
-            "lv":1
-          },
-          {
             "id":"unbreaking",
             "lv":3
           }
