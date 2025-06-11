@@ -27,11 +27,12 @@ async function RaidSpawner(flag,type,wave) {
 			let armor = c["armor"];
 			let isBoss = c["isBoss"];
 			let Ench = c["Ench"];
+			const Radius = 8 * Math.random();
 			const thita_i = Math.PI * 2 * Math.random();
 			const summonLocation = { 
-				x:baseLocation.x + 8 * Math.cos(thita_i),
+				x:baseLocation.x + Radius * Math.cos(thita_i),
 				y:baseLocation.y + 10,
-				z:baseLocation.z + 8 * Math.sin(thita_i)
+				z:baseLocation.z + Radius * Math.sin(thita_i)
 			}
 			const cont = d.spawnEntity(type,summonLocation);
 			cont.triggerEvent(`gvcv5:entity_spawned_raid`);
