@@ -177,29 +177,7 @@ export const raidData = {
     ],
     "wave5": [
       {
-        "counts": 1,
-        "type": "gvcv5:ga",
-        "gun": "rpk",
-        "armor": "plastic",
-        "isBoss":true,
-        "Ench":[
-          {
-            "id":"power",
-            "lv":3
-          },
-          {
-            "id":"flame",
-            "lv":1
-          },
-          {
-            "id":"unbreaking",
-            "lv":3
-          }
-
-        ]
-      },
-      {
-        "counts": 1,
+        "counts": 2,
         "type": "gvcv5:ga",
         "gun": "rpk",
         "armor": "plastic",
