@@ -225,7 +225,15 @@ export const raidData = {
         "Ench":undefined
       },
       {
-        "counts": 12,
+        "counts": 6,
+        "type": "gvcv5:ga",
+        "gun": "g3a3",
+        "armor": undefined,
+        "isBoss":false,
+        "Ench":undefined
+      },
+      {
+        "counts": 6,
         "type": "gvcv5:ga",
         "gun": "mp40",
         "armor": undefined,
