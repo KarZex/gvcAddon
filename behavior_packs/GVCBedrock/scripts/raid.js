@@ -31,7 +31,7 @@ export const raidData = {
       {
         "counts": 6,
         "type": "gvcv5:ga",
-        "gun": "mp40",
+        "gun": "uzi",
         "armor": undefined,
         "isBoss":false,
         "Ench":undefined
@@ -137,7 +137,7 @@ export const raidData = {
       {
         "counts": 8,
         "type": "gvcv5:ga",
-        "gun": "g3a3",
+        "gun": "uzi",
         "armor": undefined,
         "isBoss":false,
         "Ench":undefined
@@ -227,7 +227,7 @@ export const raidData = {
       {
         "counts": 6,
         "type": "gvcv5:ga",
-        "gun": "g3a3",
+        "gun": "svd",
         "armor": undefined,
         "isBoss":false,
         "Ench":undefined
@@ -235,7 +235,7 @@ export const raidData = {
       {
         "counts": 6,
         "type": "gvcv5:ga",
-        "gun": "mp40",
+        "gun": "uzi",
         "armor": undefined,
         "isBoss":false,
         "Ench":undefined
