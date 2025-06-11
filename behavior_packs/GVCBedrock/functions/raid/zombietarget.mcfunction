@@ -8,6 +8,6 @@ execute at @s if entity @s[scores={break=50..}] unless block ^^^1 minecraft:air 
 execute at @s if entity @s[scores={break=50..}] unless block ^^^1 minecraft:air run scoreboard players set @s break 0
 
 #Across the river and buiding the bridge
-execute as @s at @s[tag=blockxplace] unless block ~~-1~ minecraft:air run fill ^^-1^1 ^^-1^1 gvcv5:gvcv5_scaffold keep
-execute as @s at @s[tag=blockxplace] unless block ~~-1~ minecraft:air if block ~~~ minecraft:air run fill ^^-1^1 ^^-1^1 gvcv5:gvcv5_scaffold replace minecraft:water
-execute as @s at @s[tag=blockxplace] unless block ~~-1~ minecraft:air if block ~~~ minecraft:air run fill ^^-1^1 ^^-1^1 gvcv5:gvcv5_scaffold replace minecraft:lava
+execute as @s at @s unless block ~~-1~ minecraft:air run fill ^^-1^1 ^^-1^1 gvcv5:gvcv5_scaffold keep
+execute as @s at @s unless block ~~-1~ minecraft:air if block ~~~ minecraft:air run fill ^^-1^1 ^^-1^1 gvcv5:gvcv5_scaffold replace minecraft:water
+execute as @s at @s unless block ~~-1~ minecraft:air if block ~~~ minecraft:air run fill ^^-1^1 ^^-1^1 gvcv5:gvcv5_scaffold replace minecraft:lava
