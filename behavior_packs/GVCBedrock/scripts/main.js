@@ -44,10 +44,12 @@ async function RaidSpawner(flag,type,wave) {
 				cont.addTag(armor);
 				cont.runCommand(`function armor/${armor}`);
 			}
-			if( isBoss ){
-				cont.addEffect("health_boost",9999999,{ amplifier: 10 } );
-				cont.addEffect("instant_health",1,{ amplifier: 255 } );
-				cont.nameTag = `Raid Boss`
+			if( isBoss != undefined ){
+				if( isBoss ){
+					cont.addEffect("health_boost",9999999,{ amplifier: 10 } );
+					cont.addEffect("instant_health",1,{ amplifier: 255 } );
+					cont.nameTag = `Raid Boss`
+				}
 			}
 			if( Ench != undefined ){
 				for( let e of Ench ){

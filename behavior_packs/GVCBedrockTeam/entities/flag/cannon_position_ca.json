@@ -236,6 +236,30 @@
               "event": "despawning",
               "target": "self"
             }
+          },
+          {
+            "hurt_item": 1,
+            "play_sounds": "irongolem.repair",
+            "interact_text": "Start Invasion Mode",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gvcv5:infantry_i"
+                  }
+                ]
+              },
+              "event": "gvcv5:raid_mode_infantry_i",
+              "target": "self"
+            }
           }
         ]
       },
@@ -335,6 +359,15 @@
         "queue_command": {
           "command": [
             "scriptevent zex:flagstart CA a"
+          ]
+        }
+      },
+      "gvcv5:raid_mode_infantry_i": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_raid_ca ~~5~",
+            "summon gvcv5:raid_infantry_i ~~~",
+            "kill @s"
           ]
         }
       },

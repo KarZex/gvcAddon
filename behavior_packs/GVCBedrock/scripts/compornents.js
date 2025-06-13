@@ -76,7 +76,7 @@ function gvcv5UseCrafter( event ){
 }
 
 async function gvcv5Scaffold( event ) {
-    await system.waitTicks(15);
+    await system.waitTicks(50);
     event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
 }
 

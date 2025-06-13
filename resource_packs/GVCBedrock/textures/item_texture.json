@@ -1030,6 +1030,12 @@
     },
     "fim92": {
       "textures": "textures/items/gun/fim92"
+    },
+    "infantry_i": {
+      "textures": "textures/items/infantry_i"
+    },
+    "infantry_ii": {
+      "textures": "textures/items/infantry_ii"
     }
   }
 }

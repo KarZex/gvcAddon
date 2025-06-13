@@ -245,6 +245,11 @@ item.item:green=待機
 item.zex:commandradio=分隊指揮端末
 item.item:yellow=占領
 
+
+item.gvcv5:infantry_i=拠点防衛_vs歩兵隊_Level1
+item.gvcv5:infantry_ii=拠点防衛_vs歩兵隊_Level2
+item.gvcv5:infantry_iii=拠点防衛_vs歩兵隊_Level3
+
 item.zex:knife=ククリナイフ
 
 action.gvc.craft0=マガジンクラフター
@@ -517,6 +522,8 @@ entity.gvcv5:flag_triumphal_arch_ca.name=§b同盟軍拠点_凱旋門
 entity.gvcv5:flag_triumphal_arch_ga.name=§8ゲリラ拠点_凱旋門
 entity.gvcv5:flag_cv_ca.name=§b同盟軍拠点_強襲揚陸艦
 entity.gvcv5:flag_cv_ga.name=§8ゲリラ拠点_強襲揚陸艦
+
+entity.gvcv5:flag_raid_ca.name=§b同盟軍拠点_防衛陣地
 
 item.spawn_egg.entity.gvcv5:flag_airfield_ca.name=同盟軍拠点_野戦飛行場
 item.spawn_egg.entity.gvcv5:flag_airfield_ga.name=ゲリラ拠点_野戦飛行場

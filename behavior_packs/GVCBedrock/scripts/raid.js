@@ -2,98 +2,21 @@ import { EntityDamageCause } from "@minecraft/server";
 export const raidData = {
   "infantry_i": {
     "wave1": [
-      {
-        "counts": 4,
-        "type": "gvcv5:ga",
-        "gun": "m1911",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 8,
-        "type": "gvcv5:ga",
-        "gun": "mp40",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      }
+      { "counts": 4,"type": "gvcv5:ga","gun": "m1911" },
+      { "counts": 8,"type": "gvcv5:ga","gun": "mp40" }
     ],
     "wave2": [
-      {
-        "counts": 4,
-        "type": "gvcv5:ga",
-        "gun": "ak47",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 6,
-        "type": "gvcv5:ga",
-        "gun": "uzi",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 1,
-        "type": "gvcv5:ga",
-        "gun": "p90",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 1,
-        "type": "gvcv5:gb1",
-        "gun": undefined,
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      }
+      { "counts": 4,"type": "gvcv5:ga","gun": "ak47" },
+      { "counts": 6,"type": "gvcv5:ga","gun": "uzi" },
+      { "counts": 1,"type": "gvcv5:ga","gun": "p90" },
+      { "counts": 1,"type": "gvcv5:gb1"}
     ],
     "wave3": [
-      {
-        "counts": 8,
-        "type": "gvcv5:ga",
-        "gun": "ak47",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 6,
-        "type": "gvcv5:ga",
-        "gun": "mp40",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 2,
-        "type": "gvcv5:ga",
-        "gun": "p90",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 2,
-        "type": "gvcv5:gb1",
-        "gun": undefined,
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 1,
-        "type": "gvcv5:gb3",
-        "gun": undefined,
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      }
+      { "counts": 8,"type": "gvcv5:ga","gun": "ak47" },
+      { "counts": 6,"type": "gvcv5:ga","gun": "mp40" },
+      { "counts": 2,"type": "gvcv5:ga","gun": "p90" },
+      { "counts": 2,"type": "gvcv5:gb1" },
+      { "counts": 1,"type": "gvcv5:gb3" }
     ],
     "wave4": [
       {
@@ -118,62 +41,13 @@ export const raidData = {
 
         ]
       },
-      {
-        "counts": 8,
-        "type": "gvcv5:ga",
-        "gun": "ak47",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 8,
-        "type": "gvcv5:ga",
-        "gun": "mp40",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 8,
-        "type": "gvcv5:ga",
-        "gun": "uzi",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 2,
-        "type": "gvcv5:ga",
-        "gun": "p90",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 2,
-        "type": "gvcv5:gb1",
-        "gun": undefined,
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 2,
-        "type": "gvcv5:gb3",
-        "gun": undefined,
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 2,
-        "type": "gvcv5:gb2",
-        "gun": undefined,
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      }
+      { "counts": 8,"type": "gvcv5:ga","gun": "ak47" },
+      { "counts": 8,"type": "gvcv5:ga","gun": "mp40" },
+      { "counts": 8,"type": "gvcv5:ga","gun": "uzi" },
+      { "counts": 2,"type": "gvcv5:ga","gun": "p90" },
+      { "counts": 2,"type": "gvcv5:gb1" },
+      { "counts": 2,"type": "gvcv5:gb3" },
+      { "counts": 2,"type": "gvcv5:gb2" }
     ],
     "wave5": [
       {
@@ -216,78 +90,40 @@ export const raidData = {
 
         ]
       },
-      {
-        "counts": 12,
-        "type": "gvcv5:ga",
-        "gun": "ak47",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 6,
-        "type": "gvcv5:ga",
-        "gun": "svd",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 6,
-        "type": "gvcv5:ga",
-        "gun": "uzi",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 4,
-        "type": "gvcv5:ga",
-        "gun": "p90",
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 2,
-        "type": "gvcv5:gb1",
-        "gun": undefined,
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 2,
-        "type": "gvcv5:gb3",
-        "gun": undefined,
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 3,
-        "type": "gvcv5:gb2",
-        "gun": undefined,
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 1,
-        "type": "gvcv5:gb4",
-        "gun": undefined,
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      },
-      {
-        "counts": 1,
-        "type": "gvcv5:gb5",
-        "gun": undefined,
-        "armor": undefined,
-        "isBoss":false,
-        "Ench":undefined
-      }
+      { "counts": 12,"type": "gvcv5:ga","gun": "ak47" },
+      { "counts": 6,"type": "gvcv5:ga","gun": "svd" },
+      { "counts": 6,"type": "gvcv5:ga","gun": "uzi" },
+      { "counts": 4,"type": "gvcv5:ga","gun": "p90" },
+      { "counts": 2,"type": "gvcv5:gb1" },
+      { "counts": 2,"type": "gvcv5:gb3" },
+      { "counts": 3,"type": "gvcv5:gb2" },
+      { "counts": 1,"type": "gvcv5:gb4" },
+      { "counts": 1,"type": "gvcv5:gb5" }
+    ]
+  },
+  "infantry_i_sub": {
+    "wave1": [
+      { "counts": 3,"type": "gvcv5:ga","gun": "m1911" },
+      { "counts": 1,"type": "gvcv5:ga","gun": "mp40" }
+    ],
+    "wave2": [
+      { "counts": 1,"type": "gvcv5:ga","gun": "ak47" },
+      { "counts": 3,"type": "gvcv5:ga","gun": "uzi" }
+    ],
+    "wave3": [
+      { "counts": 2,"type": "gvcv5:ga","gun": "ak47" },
+      { "counts": 4,"type": "gvcv5:ga","gun": "mp40" }
+    ],
+    "wave4": [
+      { "counts": 3,"type": "gvcv5:ga","gun": "ak47" },
+      { "counts": 2,"type": "gvcv5:ga","gun": "mp40" },
+      { "counts": 2,"type": "gvcv5:ga","gun": "uzi" }
+    ],
+    "wave5": [
+      { "counts": 3,"type": "gvcv5:ga","gun": "ak47" },
+      { "counts": 1,"type": "gvcv5:ga","gun": "svd" },
+      { "counts": 2,"type": "gvcv5:ga","gun": "uzi" },
+      { "counts": 1,"type": "gvcv5:gb2" }
     ]
   }
 };
