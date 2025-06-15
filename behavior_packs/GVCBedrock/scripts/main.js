@@ -326,7 +326,7 @@ world.afterEvents.entitySpawn.subscribe( e => {
 		projectile.setDynamicProperty(`damage`,dmg);
 		
 		const player = projectile.getComponent(EntityComponentTypes.Projectile).owner;
-		if( player.typeId == `minecraft:player` ){
+		if( player.typeId == `minecraft:player` && !player.hasTag("isRiding") ){
 			const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 			const ench = gun.getItem().getComponent(ItemComponentTypes.Enchantable);
 			if( ench.hasEnchantment(`minecraft:flame`) ){
@@ -356,10 +356,10 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
 		else if( gunName.includes("fire:") ){ gunName = gunName.replace("fire:",""); }
 		let damageType;
-		if( e.projectile != undefined ){
+		try{
 			damageType = e.projectile.getDynamicProperty(`damageType`);
 		}
-		else{
+		catch( error ){
 			damageType = "override"
 		}
 		const equipmentComp = vict.getComponent(EntityComponentTypes.Equippable)
@@ -377,11 +377,26 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 				 def = def + setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Feet).typeId) 
 			}
 		}
+		else if( vict.hasTag(`iron`)){
+			def = 0.6;
+		}
 		else if( vict.hasTag(`plastic`)){
 			def = 0.8;
 		}
+		else if( vict.hasTag(`diamond`)){
+			def = 0.9;
+		}
+		else if( vict.hasTag(`netherite`)){
+			def = 1;
+		}
 		if (def > 1){ def = 1 }
-		let damage = e.projectile.getDynamicProperty(`damage`) *  (1 - def);
+		let damage
+		try{
+			damage = e.projectile.getDynamicProperty(`damage`) *  (1 - def);
+		}
+		catch( error ){
+			damage = gunData[`${gunName}`][`damage`];
+		}
 		if ( vict.typeId == "minecraft:player" ){ 
 			damage = damage * world.getDynamicProperty("gvcv5:playerDamage");
 		}
@@ -396,7 +411,12 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
             vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
             vict.applyKnockback(0, 0, 0, 0);
 		}
-		e.projectile.triggerEvent("minecraft:explode");
+		try{
+			e.projectile.triggerEvent("minecraft:explode");
+		}
+		catch( error ){
+			console.warn(error)
+		}
 	}
 })
 
@@ -534,8 +554,12 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
 			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"§f§rair.${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,vehicle)},${mainWeapon0(player,vehicle)},${mainWeapon1(player,vehicle)},${mainWeapon2(player,vehicle)}]}`);
 		}
-		else if( player.hasTag(`cantriding`) ){
+		else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
 			vehicle.remove();
+		}
+		else if( player.hasTag(`cantriding`) && vehicle.hasTag(`is_enemy`) ){
+			vehicle.remove();
+			player.remove();
 		}
 	}
 	else if( e.id == "zex:test" ){
@@ -625,7 +649,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			else if( entity.hasTag(`yellow`) ){ team = `yellow`; }
 			if( entity.typeId == "minecraft:player" ){
 				target = missile.dimension.getEntities( { 
-					tags:[ `"Tof${entity.nameTag}"` ]
+					tags:[ `Tof${entity.nameTag}` ]
 				} );
 			}
 			else{
@@ -821,7 +845,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			if( Target[0] != undefined ){
 				const name = player.nameTag;
 				player.runCommand(`tag @e remove "Tof${name}"`);
-				Target[0].entity.addTag(`"Tof${name}"`);
+				Target[0].entity.addTag(`Tof${name}`);
 				if( Target[0].entity.nameTag == undefined || Target[0].entity.nameTag == `` ){
 					player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§eFind target:\"},{\"translate\":\"entity.${Target[0].entity.typeId.replace(`minecraft:`,``)}.name\"}]}`);
 				}

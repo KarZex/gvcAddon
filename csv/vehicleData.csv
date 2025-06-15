@@ -1,9 +1,9 @@
 name,id,type,health,speed,sub,sub_cool,main1,main_cool,main2,main_cool,main3,main_cool,antibullet,water,v_sizew,v_sizeh,v_menber,v_break,v_ridef,v_position1,v_position2,v_position3,v_position4,v_position5,v_position6,maxsubcool,sub,main1,main2,main3
-vehicle,aifv,apc,120,0.3,vmg,2,,0,,0,,0,T,,3,2,5,T,"[ ""guerrilla"",""allied_soldier"",""player""]","[ -0.5, 2.35, 0 ]","[ 1, 0.8, -1.2 ]","[ -1, 0.8, -1.2 ]","[ 1, 0.8, -2.2 ]","[ -1, 0.8, -2.2 ]",,30,vmg,NO,NO,NO
+vehicle,aifv,apc,120,0.3,20mmMC,3,,0,,0,,0,T,,3,2,5,T,"[ ""guerrilla"",""allied_soldier"",""player""]","[ -0.5, 2.35, 0 ]","[ 1, 0.8, -1.2 ]","[ -1, 0.8, -1.2 ]","[ 1, 0.8, -2.2 ]","[ -1, 0.8, -2.2 ]",,30,vmg,NO,NO,NO
 vehicle,lav25,apc,120,0.3,20mm,4,aamissile,100,,0,,0,T,,3,3,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 2.25, -1.2 ]",,,,,,30,20mm,aamissile,NO,NO
-vehicle,m113,apc,120,0.3,vmg,2,,0,,0,,0,T,,3,2,5,T,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.2 ]","[ 1, 0.8, -1.2 ]","[ -1, 0.8, -1.2 ]","[ 1, 0.8, -2.2 ]","[ -1, 0.8, -2.2 ]",,30,vmg,NO,NO,NO
-vehicle,m1126,apc,120,0.2,vmg,2,,0,,0,,0,T,,3,3,6,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.6 ]","[ 1, 1.2, -1.5 ]","[ 0, 1.2, -2.1 ]","[ -1, 1.2, -0.6 ]","[ 1, 1.2, -0.6 ]","[ -1, 1.2, -1.5 ]",30,vmg,NO,NO,NO
-vehicle,m1128,apc,120,0.2,vmg,0,105mm,100,,0,,0,T,,3,3,6,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.6 ]","[ 1, 1.2, -1.5 ]","[ 0, 1.2, -2.1 ]","[ -1, 1.2, -0.6 ]","[ 1, 1.2, -0.6 ]","[ -1, 1.2, -1.5 ]",30,vmg,105mm,NO,NO
+vehicle,m113,apc,120,0.3,20mmMC,5,,0,,0,,0,T,,3,2,5,T,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.2 ]","[ 1, 0.8, -1.2 ]","[ -1, 0.8, -1.2 ]","[ 1, 0.8, -2.2 ]","[ -1, 0.8, -2.2 ]",,30,vmg,NO,NO,NO
+vehicle,m1126,apc,120,0.2,20mm,2,,0,,0,,0,T,,3,3,6,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.6 ]","[ 1, 1.2, -1.5 ]","[ 0, 1.2, -2.1 ]","[ -1, 1.2, -0.6 ]","[ 1, 1.2, -0.6 ]","[ -1, 1.2, -1.5 ]",30,vmg,NO,NO,NO
+vehicle,m1128,apc,120,0.2,,0,105mm,100,,0,,0,T,,3,3,6,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.6 ]","[ 1, 1.2, -1.5 ]","[ 0, 1.2, -2.1 ]","[ -1, 1.2, -0.6 ]","[ 1, 1.2, -0.6 ]","[ -1, 1.2, -1.5 ]",30,vmg,105mm,NO,NO
 vehicle,btr60,apc,100,0.3,vmg,2,,0,,0,,0,T,,3,3,5,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ -0.5, 2.35, 0 ]","[ 1, 0.8, -1.2 ]","[ -1, 0.8, -1.2 ]","[ 1, 0.8, -2.2 ]","[ -1, 0.8, -2.2 ]",,30,vmg,NO,NO,NO
 vehicle,kv2,tank,400,0.1,vmg,0,152mm,160,,0,,0,T,,3,3,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 2.5, -0.1 ]",,,,,,30,vmg,152mm,NO,NO
 vehicle,m1a2,tank,300,0.2,vmg,2,120mm,100,,0,,0,T,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 1.7, -0.1 ]",,,,,,30,vmg,120mm,NO,NO

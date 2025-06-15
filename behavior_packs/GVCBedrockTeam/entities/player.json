@@ -130,6 +130,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -165,6 +171,12 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
                     },
                     {
                       "test": "is_riding",
@@ -204,6 +216,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -241,6 +259,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -263,38 +287,6 @@
                   ]
                 },
                 "event": "gvcv5:down_by_yellow"
-              }
-            },
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "has_tag",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "down"
-                    },
-                    {
-                      "test": "is_riding",
-                      "operator": "not"
-                    },
-                    {
-                      "test": "has_mob_effect",
-                      "subject": "self",
-                      "operator": "!=",
-                      "value": "resistance"
-                    },
-                    {
-                      "test": "has_damage",
-                      "value": "fatal"
-                    }
-                  ]
-                },
-                "event": "gvcv5:become_down",
-                "target": "self"
               }
             }
           ]
@@ -424,6 +416,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -459,6 +457,12 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
                     },
                     {
                       "test": "is_riding",
@@ -498,6 +502,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -535,6 +545,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -570,6 +586,12 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
                     },
                     {
                       "test": "is_riding",
@@ -718,6 +740,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -753,6 +781,12 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
                     },
                     {
                       "test": "is_riding",
@@ -792,6 +826,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -829,6 +869,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -864,6 +910,12 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
                     },
                     {
                       "test": "is_riding",
@@ -1012,6 +1064,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -1047,6 +1105,12 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
                     },
                     {
                       "test": "is_riding",
@@ -1086,6 +1150,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -1123,6 +1193,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -1158,6 +1234,12 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
                     },
                     {
                       "test": "is_riding",
@@ -1306,6 +1388,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -1341,6 +1429,12 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
                     },
                     {
                       "test": "is_riding",
@@ -1380,6 +1474,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -1417,6 +1517,12 @@
                       "value": "down"
                     },
                     {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
+                    },
+                    {
                       "test": "is_riding",
                       "operator": "not"
                     },
@@ -1452,6 +1558,12 @@
                       "subject": "self",
                       "operator": "!=",
                       "value": "down"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "nodownable"
                     },
                     {
                       "test": "is_riding",
@@ -3327,6 +3439,19 @@
           ]
         }
       },
+      "fire:20mmMC": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:20mmMC"
+            }
+          ]
+        }
+      },
       "fire:20mm": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -4289,6 +4414,13 @@
         "add": {
           "component_groups": [
             "fire:152mm"
+          ]
+        }
+      },
+      "fire:20mmMC": {
+        "add": {
+          "component_groups": [
+            "fire:20mmMC"
           ]
         }
       },

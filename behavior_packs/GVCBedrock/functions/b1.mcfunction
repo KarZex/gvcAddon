@@ -1,13 +1,13 @@
 effect @s[tag=!ride] health_boost 99999 70 true
 effect @s[tag=!ride] instant_health 1 255 true
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:aifv] run event entity @s vmg
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:aifv] run event entity @s 20mmMC
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:lav25] run event entity @s aamissile
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m113] run event entity @s vmg
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m113] run event entity @s 20mmMC
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1126] run event entity @s vmg
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1126] run event entity @s 20mm
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1128] run event entity @s 105mm
 

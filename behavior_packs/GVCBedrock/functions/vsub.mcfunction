@@ -1,11 +1,11 @@
 tag @s add subattack
 
-execute if entity @e[r=4,type=vehicle:aifv] run event entity @s[scores={subWeapon=..30}] fire:vmg
+execute if entity @e[r=4,type=vehicle:aifv] run event entity @s[scores={subWeapon=..30}] fire:20mmMC
 
 execute if entity @e[r=4,type=vehicle:aifv] run scoreboard players add @s[scores={subWeapon=..30}] subWeapon 1
 
 scoreboard players set @s maxsubcool 30
-execute if entity @e[r=4,type=vehicle:aifv] run scoreboard players set @s scool 2
+execute if entity @e[r=4,type=vehicle:aifv] run scoreboard players set @s scool 3
 
 execute if entity @e[r=4,type=vehicle:lav25] run event entity @s[scores={subWeapon=..30}] fire:20mm
 
@@ -14,25 +14,19 @@ execute if entity @e[r=4,type=vehicle:lav25] run scoreboard players add @s[score
 scoreboard players set @s maxsubcool 30
 execute if entity @e[r=4,type=vehicle:lav25] run scoreboard players set @s scool 4
 
-execute if entity @e[r=4,type=vehicle:m113] run event entity @s[scores={subWeapon=..30}] fire:vmg
+execute if entity @e[r=4,type=vehicle:m113] run event entity @s[scores={subWeapon=..30}] fire:20mmMC
 
 execute if entity @e[r=4,type=vehicle:m113] run scoreboard players add @s[scores={subWeapon=..30}] subWeapon 1
 
 scoreboard players set @s maxsubcool 30
-execute if entity @e[r=4,type=vehicle:m113] run scoreboard players set @s scool 2
+execute if entity @e[r=4,type=vehicle:m113] run scoreboard players set @s scool 5
 
-execute if entity @e[r=4,type=vehicle:m1126] run event entity @s[scores={subWeapon=..30}] fire:vmg
+execute if entity @e[r=4,type=vehicle:m1126] run event entity @s[scores={subWeapon=..30}] fire:20mm
 
 execute if entity @e[r=4,type=vehicle:m1126] run scoreboard players add @s[scores={subWeapon=..30}] subWeapon 1
 
 scoreboard players set @s maxsubcool 30
 execute if entity @e[r=4,type=vehicle:m1126] run scoreboard players set @s scool 2
-
-execute if entity @e[r=4,type=vehicle:m1128] run event entity @s[scores={subWeapon=..30}] fire:vmg
-
-execute if entity @e[r=4,type=vehicle:m1128] run scoreboard players add @s[scores={subWeapon=..30}] subWeapon 1
-
-scoreboard players set @s maxsubcool 30
 
 execute if entity @e[r=4,type=vehicle:btr60] run event entity @s[scores={subWeapon=..30}] fire:vmg
 

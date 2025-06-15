@@ -1036,6 +1036,9 @@
     },
     "infantry_ii": {
       "textures": "textures/items/infantry_ii"
+    },
+    "infantry_iii": {
+      "textures": "textures/items/infantry_iii"
     }
   }
 }

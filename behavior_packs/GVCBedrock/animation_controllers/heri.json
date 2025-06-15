@@ -8,6 +8,7 @@
             { "ride": "query.is_riding" }
           ],
           "on_entry": [
+            "/tag @s remove isRiding",
             "/effect @s resistance 0 7 true",
             "/replaceitem entity @s[tag=onAir] slot.armor.chest 0 gvcv5:parachute",
             "/clear @s[tag=onAir] gun:mgg",
@@ -23,6 +24,7 @@
         },
         "ride":{
           "on_entry": [
+            "/tag @s add isRiding",
             "/effect @s resistance 99999 7 true",
             "/execute if entity @e[r=4,family=heri] run tag @s add heri",
             "/execute if entity @e[r=4,family=heri] run tag @s add air",

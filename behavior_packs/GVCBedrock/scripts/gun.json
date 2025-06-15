@@ -415,44 +415,48 @@
     "damageType": "entityExplosion"
   },
   "vmg": {
-    "damage": 8,
+    "damage": 4,
     "damageType": "override"
   },
   "76mm": {
-    "damage": 10,
+    "damage": 30,
     "damageType": "entityExplosion"
   },
   "85mm": {
-    "damage": 10,
+    "damage": 40,
     "damageType": "entityExplosion"
   },
   "100mm": {
-    "damage": 10,
+    "damage": 50,
     "damageType": "entityExplosion"
   },
   "105mm": {
-    "damage": 10,
+    "damage": 50,
     "damageType": "entityExplosion"
   },
   "120mm": {
-    "damage": 10,
+    "damage": 80,
     "damageType": "entityExplosion"
   },
   "125mm": {
-    "damage": 15,
+    "damage": 80,
     "damageType": "entityExplosion"
   },
   "152mm": {
-    "damage": 15,
+    "damage": 90,
     "damageType": "entityExplosion"
   },
-  "20mm": {
-    "damage": 8,
+  "20mmMC": {
+    "damage": 5,
     "damageType": "override"
+  },
+  "20mm": {
+    "damage": 10,
+    "damageType": "entityExplosion"
   },
   "23mm": {
     "damage": 12,
-    "damageType": "override"
+    "damageType": "entityExplosion"
   },
   "ads_dp28": {
     "damage": 8,
@@ -467,11 +471,11 @@
     "damageType": "override"
   },
   "76mmrocket": {
-    "damage": 15,
+    "damage": 60,
     "damageType": "entityExplosion"
   },
   "agmissile": {
-    "damage": 10,
+    "damage": 60,
     "damageType": "entityExplosion"
   },
   "vmgiir": {
@@ -487,11 +491,11 @@
     "damageType": "override"
   },
   "aamissile": {
-    "damage": 15,
+    "damage": 60,
     "damageType": "entityExplosion"
   },
   "bomb": {
-    "damage": 15,
+    "damage": 60,
     "damageType": "entityExplosion"
   }
 }

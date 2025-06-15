@@ -22,6 +22,7 @@
           "render_method": "blend"
         }
       },
+			"minecraft:loot": "loot_tables/empty.json",
       "minecraft:geometry": "minecraft:geometry.full_block",
       "minecraft:selection_box": {
         "origin": [

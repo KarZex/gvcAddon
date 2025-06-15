@@ -1,0 +1,584 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gvcv5:raid_infantry_iii",
+      "spawn_category": "monster",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "scripts": {
+        "animate": [
+          "cv"
+        ]
+      },
+      "animations": {
+        "cv": "controller.animation.cv"
+      }
+    },
+    "component_groups": {
+      "despawning":{
+        "minecraft:instant_despawn": {}
+      },
+      "zex:wave0":{
+        "minecraft:boss": {
+          "name": "Invasion Mode",
+          "should_darken_sky": false,
+          "hud_range": 100
+        },
+        "minecraft:health": {
+          "value": 120,
+          "max": 120
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "not",
+                      "value": "cv"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "become_wave1"
+              }
+            }
+          ]
+        }
+      },
+      "zex:wave1":{
+        "minecraft:boss": {
+          "name": "Invasion Mode WAVE1/5",
+          "should_darken_sky": false,
+          "hud_range": 100
+        },
+        "minecraft:timer": {
+          "time": 10,
+          "looping": true,
+          "time_down_event": {
+            "event": "zex:summon_wave1",
+            "target": "self"
+          }
+        },
+        "minecraft:health": {
+          "value": 240,
+          "max": 240
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "not",
+                      "value": "cv"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "become_wave2"
+              }
+            }
+          ]
+        }
+      },
+      "zex:wave2":{
+        "minecraft:boss": {
+          "name": "Invasion Mode WAVE2/5",
+          "should_darken_sky": false,
+          "hud_range": 100
+        },
+        "minecraft:timer": {
+          "time": 10,
+          "looping": true,
+          "time_down_event": {
+            "event": "zex:summon_wave2",
+            "target": "self"
+          }
+        },
+        "minecraft:health": {
+          "value": 240,
+          "max": 240
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "not",
+                      "value": "cv"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "become_wave3"
+              }
+            }
+          ]
+        }
+      },
+      "zex:wave3":{
+        "minecraft:boss": {
+          "name": "Invasion Mode WAVE3/5",
+          "should_darken_sky": false,
+          "hud_range": 100
+        },
+        "minecraft:timer": {
+          "time": 10,
+          "looping": true,
+          "time_down_event": {
+            "event": "zex:summon_wave3",
+            "target": "self"
+          }
+        },
+        "minecraft:health": {
+          "value": 240,
+          "max": 240
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "not",
+                      "value": "cv"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "become_wave4"
+              }
+            }
+          ]
+        }
+      },
+      "zex:wave4":{
+        "minecraft:boss": {
+          "name": "Invasion Mode WAVE4/5",
+          "should_darken_sky": false,
+          "hud_range": 100
+        },
+        "minecraft:timer": {
+          "time": 10,
+          "looping": true,
+          "time_down_event": {
+            "event": "zex:summon_wave4",
+            "target": "self"
+          }
+        },
+        "minecraft:health": {
+          "value": 240,
+          "max": 240
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "not",
+                      "value": "cv"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "become_wave5"
+              }
+            }
+          ]
+        }
+      },
+      "zex:wave5":{
+        "minecraft:boss": {
+          "name": "Invasion Mode WAVE5/5",
+          "should_darken_sky": false,
+          "hud_range": 100
+        },
+        "minecraft:timer": {
+          "time": 10,
+          "looping": true,
+          "time_down_event": {
+            "event": "zex:summon_wave5",
+            "target": "self"
+          }
+        },
+        "minecraft:health": {
+          "value": 240,
+          "max": 240
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "operator": "not",
+                      "value": "cv"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "become_wave_end"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+      "minecraft:health": {
+        "value": 240,
+        "max": 240
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": false,
+        "avoid_sun": false,
+        "avoid_water": true
+      },
+      "minecraft:type_family": {
+        "family": [
+          "cv"
+        ]
+      },
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    "events": {
+      "despawning":{
+        "add": {
+          "component_groups": [
+            "despawning"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add":{
+          "component_groups": [
+            "zex:wave0"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"gvcv5.mr_cpt.wave1.name\" } ] }"
+          ]
+        }
+      },
+      "gvcv5:entity_spawned_wave1": {
+        "add": {
+          "component_groups": [
+            "zex:wave1"
+          ]
+        }
+      },
+      "gvcv5:entity_spawned_wave2": {
+        "add": {
+          "component_groups": [
+            "zex:wave2"
+          ]
+        }
+      },
+      "gvcv5:entity_spawned_wave3": {
+        "add": {
+          "component_groups": [
+            "zex:wave3"
+          ]
+        }
+      },
+      "gvcv5:entity_spawned_wave4": {
+        "add": {
+          "component_groups": [
+            "zex:wave4"
+          ]
+        }
+      },
+      "gvcv5:entity_spawned_wave5": {
+        "add": {
+          "component_groups": [
+            "zex:wave5"
+          ]
+        }
+      },
+      
+      "zex:summon_wave1": {
+        "queue_command": {
+          "command": [
+            "scriptevent gvcv5:raid infantry_iii_sub wave1"
+          ]
+        }
+      },
+      "zex:summon_wave2": {
+        "queue_command": {
+          "command": [
+            "scriptevent gvcv5:raid infantry_iii_sub wave2"
+          ]
+        }
+      },
+      "zex:summon_wave3": {
+        "queue_command": {
+          "command": [
+            "scriptevent gvcv5:raid infantry_iii_sub wave3"
+          ]
+        }
+      },
+      "zex:summon_wave4": {
+        "queue_command": {
+          "command": [
+            "scriptevent gvcv5:raid infantry_iii_sub wave4"
+          ]
+        }
+      },
+      "zex:summon_wave5": {
+        "queue_command": {
+          "command": [
+            "scriptevent gvcv5:raid infantry_iii_sub wave5"
+          ]
+        }
+      },
+      "become_wave1":{
+        "add": {
+          "component_groups": [
+            "zex:wave1"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "zex:wave0"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "scriptevent gvcv5:raid infantry_iii wave1",
+            "summon gvcv5:raid_infantry_iii ~~~~~ gvcv5:entity_spawned_wave1",
+            "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE1\" } ] }"
+          ]
+        }
+      },
+      "become_wave2":{
+        "add": {
+          "component_groups": [
+            "zex:wave2"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "zex:wave1"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "scriptevent gvcv5:raid infantry_iii wave2",
+            "summon gvcv5:raid_infantry_iii ~~~~~ gvcv5:entity_spawned_wave2",
+            "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE2\" } ] }"
+          ]
+        }
+      },
+      "become_wave3":{
+        "add": {
+          "component_groups": [
+            "zex:wave3"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "zex:wave2"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "scriptevent gvcv5:raid infantry_iii wave3",
+            "summon gvcv5:raid_infantry_iii ~~~~~ gvcv5:entity_spawned_wave3",
+            "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE3\" } ] }"
+          ]
+        }
+      },
+      "become_wave4":{
+        "add": {
+          "component_groups": [
+            "zex:wave4"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "zex:wave3"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "scriptevent gvcv5:raid infantry_iii wave4",
+            "summon gvcv5:raid_infantry_iii ~~~~~ gvcv5:entity_spawned_wave4",
+            "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE4\" } ] }"
+          ]
+        }
+      },
+      "become_wave5":{
+        "add": {
+          "component_groups": [
+            "zex:wave5"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "zex:wave4"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "scriptevent gvcv5:raid infantry_iii wave5",
+            "summon gvcv5:raid_infantry_iii ~~~~~ gvcv5:entity_spawned_wave5",
+            "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE5\" } ] }"
+          ]
+        }
+      },
+      "become_wave_end":{
+        "add": {
+          "component_groups": [
+            "despawning"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "zex:wave5"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "kill @e[tag=raid]",
+            "tag @e[type=gvcv5:flag_raid_ca,tag=!raid_mode_end,c=1] add raid_mode_end",
+            "structure load loot_inf3 ~~1~",
+            "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE Win\" } ] }"
+          ]
+        }
+      },
+      "ak12": {
+        "add": {
+          "component_groups": [
+            "ak12"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "gre"
+          ]
+        }
+      }
+    }
+  }
+}

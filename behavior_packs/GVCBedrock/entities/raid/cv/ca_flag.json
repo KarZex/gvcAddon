@@ -174,6 +174,38 @@
               "event": "gvcv5:raid_mode_infantry_i",
               "target": "self"
             }
+          },
+          {
+            "hurt_item": 1,
+            "play_sounds": "irongolem.repair",
+            "interact_text": "Start Invasion Mode",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family","subject": "other","value": "player"},
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "gvcv5:infantry_ii"},
+                  { "test": "has_tag", "value": "raid_mode_end" }
+                ]
+              },
+              "event": "gvcv5:raid_mode_infantry_ii",
+              "target": "self"
+            }
+          },
+          {
+            "hurt_item": 1,
+            "play_sounds": "irongolem.repair",
+            "interact_text": "Start Invasion Mode",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family","subject": "other","value": "player"},
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "gvcv5:infantry_iii"},
+                  { "test": "has_tag", "value": "raid_mode_end" }
+                ]
+              },
+              "event": "gvcv5:raid_mode_infantry_iii",
+              "target": "self"
+            }
           }
         ]
       },
@@ -281,6 +313,24 @@
           "command":[ 
             "summon gvcv5:flag_raid_ca ~~5~",
             "summon gvcv5:raid_infantry_i ~~~",
+            "kill @s"
+          ]
+        }
+      },
+      "gvcv5:raid_mode_infantry_ii": {
+        "queue_command": {
+          "command":[ 
+            "summon gvcv5:flag_raid_ca ~~5~",
+            "summon gvcv5:raid_infantry_ii ~~~",
+            "kill @s"
+          ]
+        }
+      },
+      "gvcv5:raid_mode_infantry_iii": {
+        "queue_command": {
+          "command":[ 
+            "summon gvcv5:flag_raid_ca ~~5~",
+            "summon gvcv5:raid_infantry_iii ~~~",
             "kill @s"
           ]
         }

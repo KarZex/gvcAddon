@@ -105,6 +105,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family", "subject": "other","operator": "==","value": "redteam"},
@@ -121,6 +122,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "blueteam"},
@@ -137,6 +139,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "greenteam"},
@@ -153,6 +156,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "yellowteam"},
@@ -160,22 +164,6 @@
                   ]
                 },
                 "event": "gvcv5:down_by_yellow"
-              }
-            },
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
-                    { "test": "is_riding","operator": "not" },
-                    {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
-                    {"test": "has_damage","value": "fatal"}
-                  ]
-                },
-                "event": "gvcv5:become_down",
-                "target": "self"
               }
             }
           ]
@@ -248,6 +236,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family", "subject": "other","operator": "==","value": "redteam"},
@@ -264,6 +253,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "blueteam"},
@@ -280,6 +270,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "greenteam"},
@@ -296,6 +287,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "yellowteam"},
@@ -312,6 +304,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "has_damage","value": "fatal"}
@@ -391,6 +384,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family", "subject": "other","operator": "==","value": "redteam"},
@@ -407,6 +401,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "blueteam"},
@@ -423,6 +418,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "greenteam"},
@@ -439,6 +435,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "yellowteam"},
@@ -455,6 +452,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "has_damage","value": "fatal"}
@@ -534,6 +532,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family", "subject": "other","operator": "==","value": "redteam"},
@@ -550,6 +549,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "blueteam"},
@@ -566,6 +566,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "greenteam"},
@@ -582,6 +583,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "yellowteam"},
@@ -598,6 +600,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "has_damage","value": "fatal"}
@@ -677,6 +680,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family", "subject": "other","operator": "==","value": "redteam"},
@@ -693,6 +697,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "blueteam"},
@@ -709,6 +714,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "greenteam"},
@@ -725,6 +731,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "is_family","subject": "other", "operator": "==","value": "yellowteam"},
@@ -741,6 +748,7 @@
                 "filters": {
                   "all_of": [
                     {"test": "has_tag","subject": "self","operator": "!=","value": "down"},
+                    {"test": "has_tag","subject": "self","operator": "!=","value": "nodownable"},
                     { "test": "is_riding","operator": "not" },
                     {"test":"has_mob_effect","subject": "self","operator": "!=","value": "resistance" },
                     {"test": "has_damage","value": "fatal"}

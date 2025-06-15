@@ -53,7 +53,7 @@ for row in csv_reader:
             
         for l in range(7):
             if l == 0: chance = structure_chance
-            elif l == 1: chance = structure_chance * 0
+            elif l == 1: continue
             elif l == 2: chance = structure_chance * 0.25
             elif l == 3: chance = structure_chance * 0.5
             elif l == 4: chance = structure_chance * 2

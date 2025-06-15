@@ -710,7 +710,33 @@
           },
           "queue_command": {
             "command": [
-              "ride @s stop_riding"
+              "tag @s add cantriding"
+            ]
+          }
+
+         },
+         {
+           "trigger": "gvcv5:set_have_gun_nt"
+         }
+          ]
+      },
+      "minecraft:spawned_from_spawner": {
+        "sequence": [
+        {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": { "component_groups": [ "navy" ] }
+         },
+         {
+          "queue_command": {
+            "command": [
+              "tag @s add cantriding"
             ]
           }
 
@@ -729,14 +755,6 @@
       },
       "gvcv5:set_have_gun_nt": {
         "sequence": [
-         {
-          "queue_command": {
-            "command": [
-              "tag @s add cantriding"
-            ]
-          }
-
-         },
           {
             "filters": {
               "any_of": [

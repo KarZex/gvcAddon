@@ -1120,6 +1120,21 @@
           "def": "fire:152mm"
         }
       },
+      "20mmMC": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.1,
+          "attack_interval_max": 0.1,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mmMC"
+        }
+      },
       "20mm": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -3263,6 +3278,13 @@
         "add": {
           "component_groups": [
             "152mm"
+          ]
+        }
+      },
+      "20mmMC": {
+        "add": {
+          "component_groups": [
+            "20mmMC"
           ]
         }
       },

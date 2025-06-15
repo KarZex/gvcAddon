@@ -2,7 +2,7 @@
   "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "gvcv5:raid_infantry_i",
+      "identifier": "gvcv5:raid_infantry_ii",
       "spawn_category": "monster",
       "is_spawnable": false,
       "is_summonable": true,
@@ -420,35 +420,35 @@
       "zex:summon_wave1": {
         "queue_command": {
           "command": [
-            "scriptevent gvcv5:raid infantry_i_sub wave1"
+            "scriptevent gvcv5:raid infantry_ii_sub wave1"
           ]
         }
       },
       "zex:summon_wave2": {
         "queue_command": {
           "command": [
-            "scriptevent gvcv5:raid infantry_i_sub wave2"
+            "scriptevent gvcv5:raid infantry_ii_sub wave2"
           ]
         }
       },
       "zex:summon_wave3": {
         "queue_command": {
           "command": [
-            "scriptevent gvcv5:raid infantry_i_sub wave3"
+            "scriptevent gvcv5:raid infantry_ii_sub wave3"
           ]
         }
       },
       "zex:summon_wave4": {
         "queue_command": {
           "command": [
-            "scriptevent gvcv5:raid infantry_i_sub wave4"
+            "scriptevent gvcv5:raid infantry_ii_sub wave4"
           ]
         }
       },
       "zex:summon_wave5": {
         "queue_command": {
           "command": [
-            "scriptevent gvcv5:raid infantry_i_sub wave5"
+            "scriptevent gvcv5:raid infantry_ii_sub wave5"
           ]
         }
       },
@@ -465,8 +465,8 @@
         },
         "queue_command": {
           "command": [
-            "scriptevent gvcv5:raid infantry_i wave1",
-            "summon gvcv5:raid_infantry_i ~~~~~ gvcv5:entity_spawned_wave1",
+            "scriptevent gvcv5:raid infantry_ii wave1",
+            "summon gvcv5:raid_infantry_ii ~~~~~ gvcv5:entity_spawned_wave1",
             "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE1\" } ] }"
           ]
         }
@@ -484,8 +484,8 @@
         },
         "queue_command": {
           "command": [
-            "scriptevent gvcv5:raid infantry_i wave2",
-            "summon gvcv5:raid_infantry_i ~~~~~ gvcv5:entity_spawned_wave2",
+            "scriptevent gvcv5:raid infantry_ii wave2",
+            "summon gvcv5:raid_infantry_ii ~~~~~ gvcv5:entity_spawned_wave2",
             "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE2\" } ] }"
           ]
         }
@@ -503,8 +503,8 @@
         },
         "queue_command": {
           "command": [
-            "scriptevent gvcv5:raid infantry_i wave3",
-            "summon gvcv5:raid_infantry_i ~~~~~ gvcv5:entity_spawned_wave3",
+            "scriptevent gvcv5:raid infantry_ii wave3",
+            "summon gvcv5:raid_infantry_ii ~~~~~ gvcv5:entity_spawned_wave3",
             "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE3\" } ] }"
           ]
         }
@@ -522,8 +522,8 @@
         },
         "queue_command": {
           "command": [
-            "scriptevent gvcv5:raid infantry_i wave4",
-            "summon gvcv5:raid_infantry_i ~~~~~ gvcv5:entity_spawned_wave4",
+            "scriptevent gvcv5:raid infantry_ii wave4",
+            "summon gvcv5:raid_infantry_ii ~~~~~ gvcv5:entity_spawned_wave4",
             "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE4\" } ] }"
           ]
         }
@@ -541,8 +541,8 @@
         },
         "queue_command": {
           "command": [
-            "scriptevent gvcv5:raid infantry_i wave5",
-            "summon gvcv5:raid_infantry_i ~~~~~ gvcv5:entity_spawned_wave5",
+            "scriptevent gvcv5:raid infantry_ii wave5",
+            "summon gvcv5:raid_infantry_ii ~~~~~ gvcv5:entity_spawned_wave5",
             "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE5\" } ] }"
           ]
         }
@@ -562,6 +562,7 @@
           "command": [
             "kill @e[tag=raid]",
             "tag @e[type=gvcv5:flag_raid_ca,tag=!raid_mode_end,c=1] add raid_mode_end",
+            "structure load loot_inf2 ~~1~",
             "tellraw @a[r=60] { \"rawtext\": [ { \"text\": \"WAVE Win\" } ] }"
           ]
         }

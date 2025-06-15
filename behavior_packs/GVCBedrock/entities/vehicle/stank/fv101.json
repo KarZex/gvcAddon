@@ -255,6 +255,11 @@
           "component_groups": [
             "summon_enemy"
           ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add is_enemy"
+          ]
         }
       },
       "despawning": {

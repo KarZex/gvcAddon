@@ -57,14 +57,14 @@ function gvcv5SpawnerEvent( event ){
         let spawn = event.block.typeId;
         const spawnLocation = event.block.location;
         if ( spawn.includes(`so`) ){
-            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 }).triggerEvent(`gvcv5:set_have_gun_nt`);
-            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z }).triggerEvent(`gvcv5:set_have_gun_nt`);
-            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z-1 }).triggerEvent(`gvcv5:set_have_gun_nt`);
+            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 })
+            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z })
+            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z-1 })
         }
         else {
-            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 }).triggerEvent(`gvcv5:set_have_gun_nt`);
-            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z }).triggerEvent(`gvcv5:set_have_gun_nt`);
-            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z-1 }).triggerEvent(`gvcv5:set_have_gun_nt`);
+            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 }).triggerEvent(`minecraft:spawned_from_spawner`);
+            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z }).triggerEvent(`minecraft:spawned_from_spawner`);
+            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z-1 }).triggerEvent(`minecraft:spawned_from_spawner`);
         }
     }
 }
@@ -75,8 +75,9 @@ function gvcv5UseCrafter( event ){
     player.runCommand(`scriptevent gvcv5:craft ${type}`);
 }
 
-async function gvcv5Scaffold( event ) {
-    await system.waitTicks(50);
+function gvcv5Scaffold( event ) {
+    const L = event.block.location;
+    event.block.dimension.runCommand(`fill ${L.x-16} ${L.y-16} ${L.z-16} ${L.x+15} ${L.y+15} ${L.z+15} air replace gvcv5:gvcv5_scaffold`)
     event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
 }
 
@@ -171,7 +172,7 @@ world.beforeEvents.worldInitialize.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:end_block`,{onPlace: gvcv5EndBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,{onPlace: gvcv5BuildingBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:lootblock`,{onPlace: gvcv5LootBlockEvent});
-    e.blockComponentRegistry.registerCustomComponent("gvcv5:scaffold",{onPlace: gvcv5Scaffold})
+    e.blockComponentRegistry.registerCustomComponent("gvcv5:scaffold",{onPlayerDestroy: gvcv5Scaffold})
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawner`,{onRandomTick: gvcv5SpawnerEvent,onStepOn:gvcv5BreakBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:crafter`,{onPlayerInteract: gvcv5UseCrafter});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:gasevent`,{onStepOn: gvcv5GasEvent,onPlayerDestroy: gvcv5GasEvent});
