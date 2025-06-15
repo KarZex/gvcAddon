@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "gvcv5:pmc_recipe"
+    "identifier": "gvcv5:pmc_brown_egg_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
@@ -14,7 +14,7 @@
         "item": "zex:ps"
       },
       "B": {
-        "item": "minecraft:egg"
+        "item": "minecraft:brown_egg"
       },
       "C": {
         "item": "minecraft:book",

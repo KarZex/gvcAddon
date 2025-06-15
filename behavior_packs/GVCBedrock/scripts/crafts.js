@@ -57,6 +57,8 @@ export const craftData = {
       { "give":"gun:m249","texture":"textures/items/gun/m249", "count":1, "cost":[ 8, 3, 8 ] },
       { "give":"gun:mg36","texture":"textures/items/gun/mg36", "count":1, "cost":[ 10, 1, 6 ] },
       { "give":"gun:m1014","texture":"textures/items/gun/m1014", "count":1, "cost":[ 4, 8, 3 ] },
+      { "give":"gun:fgm148","texture":"textures/items/gun/fgm148", "count":1, "cost":[ 12, 6, 24 ] },
+      { "give":"gun:fim92","texture":"textures/items/gun/fim92", "count":1, "cost":[ 12, 6, 24 ] },
       { "give":"gun:aa12","texture":"textures/items/gun/aa12", "count":1, "cost":[ 2, 8, 4 ] },
       { "give":"gun:famas","texture":"textures/items/gun/famas", "count":1, "cost":[ 2, 6, 6 ] }
     ]

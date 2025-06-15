@@ -161,7 +161,7 @@ for row in csv_reader:
         }
 
         PMC_weapon_change = {
-            "use_item": True,
+            "use_item": False,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -186,7 +186,7 @@ for row in csv_reader:
           }
         
         PMC_weapon_change_red = {
-            "use_item": True,
+            "use_item": False,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -216,7 +216,7 @@ for row in csv_reader:
           }
         
         PMC_weapon_change_blue = {
-            "use_item": True,
+            "use_item": False,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -246,7 +246,7 @@ for row in csv_reader:
           }
         
         PMC_weapon_change_green = {
-            "use_item": True,
+            "use_item": False,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {
@@ -276,7 +276,7 @@ for row in csv_reader:
           }
         
         PMC_weapon_change_yellow = {
-            "use_item": True,
+            "use_item": False,
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
             "on_interact": {

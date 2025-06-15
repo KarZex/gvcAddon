@@ -419,31 +419,31 @@
     "damageType": "override"
   },
   "76mm": {
-    "damage": 30,
+    "damage": 60,
     "damageType": "entityExplosion"
   },
   "85mm": {
-    "damage": 40,
+    "damage": 80,
     "damageType": "entityExplosion"
   },
   "100mm": {
-    "damage": 50,
+    "damage": 100,
     "damageType": "entityExplosion"
   },
   "105mm": {
-    "damage": 50,
+    "damage": 100,
     "damageType": "entityExplosion"
   },
   "120mm": {
-    "damage": 80,
+    "damage": 160,
     "damageType": "entityExplosion"
   },
   "125mm": {
-    "damage": 80,
+    "damage": 160,
     "damageType": "entityExplosion"
   },
   "152mm": {
-    "damage": 90,
+    "damage": 180,
     "damageType": "entityExplosion"
   },
   "20mmMC": {

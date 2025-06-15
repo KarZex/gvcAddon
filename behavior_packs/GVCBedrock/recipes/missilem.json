@@ -2,27 +2,33 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "gvcv5:pmc_recipe"
+    "identifier": "gvcv5:missilem_recipe"
     },
     "tags": [ "crafting_table" ],
     "pattern": [
-      "B",
-      "A"
+      " A ",
+      "ABA",
+      " A "
     ],
     "key": {
       "A": {
-        "item": "zex:ps"
+        "item": "zex:rocketm"
       },
       "B": {
-        "item": "minecraft:egg"
+        "item": "minecraft:redstone"
       },
       "C": {
         "item": "minecraft:book",
         "data": 0
+      },
+      "D": {
+        "item": "minecraft:dye",
+        "data": 2
       }
     },
     "result": {
-      "item": "gvcv5:pmc_spawn_egg"
+      "item": "zex:missilem",
+      "count": 4
     }
   }
   

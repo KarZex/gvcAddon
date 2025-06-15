@@ -240,6 +240,9 @@ item.zex:icerod=フロストロッド
 item.zex:icepowder=フロストパウダー
 item.zex:icecharge=フロストチャージ
 
+item.zex:mtype=武装変更キット
+item.gun:camera=乗り物視点変更
+
 item.item:blue=追従
 item.item:green=待機
 item.zex:commandradio=分隊指揮端末
