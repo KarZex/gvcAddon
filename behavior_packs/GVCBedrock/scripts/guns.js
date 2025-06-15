@@ -128,7 +128,7 @@ export const gunData = {
     "damageType": "override"
   },
   "lazer": {
-    "damage": 100,
+    "damage": 50,
     "speed": 4.4,
     "maxGunAmmo": 5,
     "reloadTime": 100,
@@ -208,7 +208,7 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "m82": {
-    "damage": 150,
+    "damage": 75,
     "speed": 4.4,
     "maxGunAmmo": 10,
     "reloadTime": 100,
