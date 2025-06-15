@@ -25,7 +25,8 @@ export const craftData = {
       { "give":"gun:rpk","texture":"textures/items/gun/rpk", "count":1, "cost":[ 6, 4, 1 ] },
       { "give":"gun:g3a3","texture":"textures/items/gun/g3a3", "count":1, "cost":[ 2, 4, 1 ] },
       { "give":"gun:m870","texture":"textures/items/gun/m870", "count":1, "cost":[ 2, 4, 1 ] },
-      { "give":"gun:p90","texture":"textures/items/gun/p90", "count":1, "cost":[ 2, 4, 1 ] }
+      { "give":"gun:p90","texture":"textures/items/gun/p90", "count":1, "cost":[ 2, 4, 1 ] },
+      { "give":"gvcv5:infantry_i","texture":"textures/items/infantry_i", "count":1, "cost":[ 8, 8, 8 ] }
     ]
   },
   "gc2": {
@@ -41,7 +42,8 @@ export const craftData = {
       { "give":"gun:m590","texture":"textures/items/gun/m590", "count":1, "cost":[ 2, 6, 2 ] },
       { "give":"gun:saiga12","texture":"textures/items/gun/saiga12", "count":1, "cost":[ 2, 4, 3 ] },
       { "give":"gun:rpg","texture":"textures/items/gun/rpg", "count":1, "cost":[ 2, 4, 12 ] },
-      { "give":"gun:m79","texture":"textures/items/gun/m79", "count":1, "cost":[ 2, 6, 6 ] }
+      { "give":"gun:m79","texture":"textures/items/gun/m79", "count":1, "cost":[ 2, 6, 6 ] },
+      { "give":"gvcv5:infantry_ii","texture":"textures/items/infantry_ii", "count":1, "cost":[ 8, 8, 8 ] }
     ]
   },
   "gc3": {
@@ -60,7 +62,8 @@ export const craftData = {
       { "give":"gun:fgm148","texture":"textures/items/gun/fgm148", "count":1, "cost":[ 12, 6, 24 ] },
       { "give":"gun:fim92","texture":"textures/items/gun/fim92", "count":1, "cost":[ 12, 6, 24 ] },
       { "give":"gun:aa12","texture":"textures/items/gun/aa12", "count":1, "cost":[ 2, 8, 4 ] },
-      { "give":"gun:famas","texture":"textures/items/gun/famas", "count":1, "cost":[ 2, 6, 6 ] }
+      { "give":"gun:famas","texture":"textures/items/gun/famas", "count":1, "cost":[ 2, 6, 6 ] },
+      { "give":"gvcv5:infantry_iii","texture":"textures/items/infantry_iii", "count":1, "cost":[ 8, 8, 8 ] }
     ]
   },
   "vc1": {
