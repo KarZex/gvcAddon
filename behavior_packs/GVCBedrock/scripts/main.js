@@ -392,7 +392,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		if (def > 1){ def = 1 }
 		let damage
 		try{
-			damage = e.projectile.getDynamicProperty(`damage`) *  (1 - def);
+			damage = e.projectile.getDynamicProperty(`damage`);
 		}
 		catch( error ){
 			damage = gunData[`${gunName}`][`damage`];
@@ -404,10 +404,12 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			damage = damage * world.getDynamicProperty("gvcv5:mobDamage");
 		}
         if( vict.getEffect("resistance") == undefined && vict.hasTag("antiBullet") == false ){
+			damage = damage * (1 - def);
             vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
             vict.applyKnockback(0, 0, 0, 0);
         }
 		else if( damageType != `override` ){
+			damage = damage * (1 - (def/2));
             vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
             vict.applyKnockback(0, 0, 0, 0);
 		}
@@ -415,7 +417,6 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			e.projectile.triggerEvent("minecraft:explode");
 		}
 		catch( error ){
-			console.warn(error)
 		}
 	}
 })
