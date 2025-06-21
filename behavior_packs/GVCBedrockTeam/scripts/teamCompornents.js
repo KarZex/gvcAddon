@@ -1,4 +1,4 @@
-import { world, EquipmentSlot } from "@minecraft/server";
+import { world, EquipmentSlot, system } from "@minecraft/server";
 
 
 function gvcv5TeamSpawn( event ){
@@ -35,13 +35,17 @@ function gvcv5UseTPBlock( event ){
 }
 
 
-world.beforeEvents.worldInitialize.subscribe( e => {
-    if( world.getDynamicProperty(`teamJail`) == undefined ){
-        world.setDynamicProperty("teamJail",true);
-    }
+system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:jail`,{onPlace: gvcv5JailSpawn});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawnpoint`,{onPlace: gvcv5TeamSpawn});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:tpblock`,{onPlayerInteract: gvcv5UseTPBlock});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:usephone`,{onUse: gvcv5UsePhone});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:teamphone`,{onUse: gvcv5UseTeamPhone});
+});
+
+world.afterEvents.worldLoad.subscribe( e => {
+    world.sendMessage(`World loaded, setting up team properties...`);
+    if( world.getDynamicProperty(`teamJail`) == undefined ){
+        world.setDynamicProperty("teamJail",true);
+    }
 } )

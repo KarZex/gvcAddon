@@ -32,6 +32,9 @@ execute if entity @e[r=4,type=vehicle:t55] if entity @s[scores={mcool=0}] run sc
 execute if entity @e[r=4,type=vehicle:t72] if entity @s[scores={mcool=0}] run event entity @s[scores={mtype=0..}] fire:125mm
 execute if entity @e[r=4,type=vehicle:t72] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0..}] mcool 100
 
+execute if entity @e[r=4,type=vehicle:ah1s] if entity @s[scores={mcool=0}] run event entity @s[scores={mtype=0..}] fire:76mmrocket
+execute if entity @e[r=4,type=vehicle:ah1s] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0..}] mcool 20
+
 execute if entity @e[r=4,type=vehicle:ka50] if entity @s[scores={mcool=0}] run event entity @s[scores={mtype=0..}] fire:76mmrocket
 execute if entity @e[r=4,type=vehicle:ka50] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0..}] mcool 20
 

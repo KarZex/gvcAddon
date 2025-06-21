@@ -7,11 +7,11 @@
       "is_summonable": true,
       "is_experimental": false,
       "scripts": {
-	    "animate": [ "walk","vtext" ]
+	    "animate": [ "walk","vtext","heri" ]
 	  },
 	  "animations": {
 	    "walk": "controller.animation.vehicle",
-	    "vtext": "controller.animation.vtext"
+	    "heri": "controller.animation.vheri"
 	  }
     },
     "component_groups": {
@@ -134,7 +134,7 @@
         "max": 100
       },
       "minecraft:scale": {
-        "value": 2.6
+        "value": 1.0
       },
       "minecraft:movement": {
         "value": 0.8

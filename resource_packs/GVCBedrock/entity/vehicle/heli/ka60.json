@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:ka60",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/entity/ka60"
+			},
+			"geometry": {
+        "default": "geometry.ka60"
+			},
+	  "spawn_egg":{
+	  "texture":"ka60",
+	  "texture_index":0
+	  },
+			"scripts": {
+				"animate": [ 
+					{ "look_at_target": "query.has_rider"},
+					{ "fly": "query.has_rider" }
+				]
+			},
+			"animations": {
+        		"look_at_target": "animation.heriix",
+				"fly": "animation.heri.fly"
+			},
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

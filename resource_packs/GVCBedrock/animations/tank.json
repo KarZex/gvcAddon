@@ -20,6 +20,22 @@
 				}
 			}
 		},
+		"animation.heriii": {
+			"loop": true,
+			"bones": {
+				"bone19": {
+					"rotation": ["query.target_x_rotation + 30", 0, 0]
+				}
+			}
+		},
+		"animation.heriix": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": ["query.target_x_rotation + 30", 0, 0]
+				}
+			}
+		},
 		"animation.air": {
 			"loop": true,
 			"bones": {

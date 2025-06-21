@@ -135,6 +135,9 @@
               "ppsh": "query.get_equipped_item_name == 'ppsh'"
             },
             {
+              "qbz95": "query.get_equipped_item_name == 'qbz95'"
+            },
+            {
               "rpg": "query.get_equipped_item_name == 'rpg'"
             },
             {
@@ -586,6 +589,16 @@
         "ppsh": {
           "on_entry": [
             "/function hold/ppshh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "qbz95": {
+          "on_entry": [
+            "/function hold/qbz95h"
           ],
           "transitions": [
             {

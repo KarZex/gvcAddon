@@ -208,7 +208,7 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "m82": {
-    "damage": 75,
+    "damage": 80,
     "speed": 4.4,
     "maxGunAmmo": 10,
     "reloadTime": 100,
@@ -341,6 +341,14 @@ export const gunData = {
     "maxGunAmmo": 72,
     "reloadTime": 45,
     "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "qbz95": {
+    "damage": 8,
+    "speed": 1.4000000000000001,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
     "damageType": "override"
   },
   "rpg": {

@@ -13,12 +13,12 @@
         ]
       },
       "animations": {
-        "walk": "controller.animation.riderb1",
+        "walk": "controller.animation.riderunks",
         "para": "controller.animation.para"
       }
     },
     "component_groups": {
-      "is_raid":{
+      "is_raid": {
         "minecraft:damage_sensor": {
           "triggers": [
             {
@@ -90,7 +90,6 @@
         "minecraft:underwater_movement": {
           "value": 0.2
         }
-
       },
       "can_despawn": {
         "minecraft:despawn": {
@@ -113,7 +112,9 @@
         },
         "minecraft:timer": {
           "time": 2,
-          "time_down_event": { "event": "g36" }
+          "time_down_event": {
+            "event": "qbz95"
+          }
         }
       },
       "impact": {
@@ -132,7 +133,9 @@
         },
         "minecraft:timer": {
           "time": 2,
-          "time_down_event": { "event": "g36" }
+          "time_down_event": {
+            "event": "qbz95"
+          }
         }
       },
       "flame": {
@@ -151,7 +154,9 @@
         },
         "minecraft:timer": {
           "time": 2,
-          "time_down_event": { "event": "g36" }
+          "time_down_event": {
+            "event": "qbz95"
+          }
         }
       },
       "smoke": {
@@ -170,10 +175,12 @@
         },
         "minecraft:timer": {
           "time": 2,
-          "time_down_event": { "event": "g36" }
+          "time_down_event": {
+            "event": "qbz95"
+          }
         }
       },
-      "g36": {
+      "qbz95": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
@@ -185,11 +192,33 @@
           "attack_radius": 32.0
         },
         "minecraft:shooter": {
-          "def": "fire:g36"
+          "def": "fire:qbz95"
         },
         "minecraft:timer": {
           "time": 5,
-          "time_down_event": { "event": "gre" }
+          "time_down_event": {
+            "event": "gre"
+          }
+        }
+      },
+      "rider": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 32.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:vmg"
+        },
+        "minecraft:timer": {
+          "time": 30,
+          "looping": true,
+          "time_down_event": { "event": "gvcv5:summon" }
         }
       }
     },
@@ -224,9 +253,17 @@
       "minecraft:type_family": {
         "family": [
           "mob",
-          "guerrilla",
+          "unks",
           "monster"
         ]
+      },
+      "minecraft:behavior.find_mount": {
+        "avoid_water": false,
+        "mount_distance": -1,
+        "start_delay": 0,
+        "target_needed": false,
+        "within_radius": 15,
+        "max_failed_attempts": 0
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -255,7 +292,7 @@
         "value": 0.3
       },
       "minecraft:equipment": {
-        "table": "loot_tables/gun/g36.json"
+        "table": "loot_tables/gun/qbz95.json"
       },
       "minecraft:navigation.walk": {
         "is_amphibious": false,
@@ -290,17 +327,36 @@
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
         "within_radius": 32.0,
-        
         "reselect_targets": true,
         "entity_types": [
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "playerp" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" },
-                { "test": "is_family", "subject": "other", "value": "snowgolem" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "playerp"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 100
@@ -308,8 +364,17 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
               ]
             },
             "max_dist": 100
@@ -331,25 +396,25 @@
       "gvcv5:entity_spawned_raid": {
         "sequence": [
           {
-          "add": {
-            "component_groups": [
-              "is_raid"
-            ]
+            "add": {
+              "component_groups": [
+                "is_raid"
+              ]
+            },
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
           },
-          "remove": {
-            "component_groups": [
-              "can_despawn"
-            ]
-          }
-        },
           {
-          "queue_command": {
-            "command": [
-              "tag @s add raid"
-            ]
-          }
-        },
-        {
+            "queue_command": {
+              "command": [
+                "tag @s add raid"
+              ]
+            }
+          },
+          {
             "filters": {
               "any_of": [
                 {
@@ -358,14 +423,18 @@
                 }
               ]
             },
-            "add": { "component_groups": [ "navy" ] }
-         }
-          ]
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          }
+        ]
       },
       "minecraft:spawned_from_block": {
         "add": {
           "component_groups": [
-            "g36"
+            "qbz95"
           ]
         }
       },
@@ -377,10 +446,24 @@
           }
         ]
       },
+      "gunner": {
+        "sequence": [
+          {
+            "trigger": "qbz95"
+          }
+        ]
+      },
+      "rider": {
+        "add": {
+          "component_groups": [
+            "rider"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {
-            "trigger": "g36"
+            "trigger": "qbz95"
           }
         ]
       },
@@ -394,9 +477,32 @@
             }
           },
           {
-            "trigger": "g36"
+            "trigger": "qbz95"
           }
         ]
+      },
+      "minecraft:spawned_as_heli": {
+        "sequence": [
+          {
+            "queue_command": {
+              "command": [
+                "ride @s summon_ride vehicle:ka60"
+              ]
+            }
+          }
+        ]
+      },
+      "gvcv5:summon": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:unks ~1~~-3~~ minecraft:spawned_from_air",
+            "summon gvcv5:unks ~-1~~-3~~ minecraft:spawned_from_air",
+            "summon gvcv5:unks ~1~-2~-3~~ minecraft:spawned_from_air",
+            "summon gvcv5:unks ~-1~-2~-3~~ minecraft:spawned_from_air",
+            "summon gvcv5:unks ~1~-4~-3~~ minecraft:spawned_from_air",
+            "summon gvcv5:unks ~-1~-4~-3~~ minecraft:spawned_from_air"
+          ]
+        }
       },
       "smoke": {
         "add": {
@@ -406,7 +512,7 @@
         },
         "remove": {
           "component_groups": [
-            "g36"
+            "qbz95"
           ]
         }
       },
@@ -418,7 +524,7 @@
         },
         "remove": {
           "component_groups": [
-            "g36"
+            "qbz95"
           ]
         }
       },
@@ -430,7 +536,7 @@
         },
         "remove": {
           "component_groups": [
-            "g36"
+            "qbz95"
           ]
         }
       },
@@ -442,14 +548,14 @@
         },
         "remove": {
           "component_groups": [
-            "g36"
+            "qbz95"
           ]
         }
       },
-      "g36": {
+      "qbz95": {
         "add": {
           "component_groups": [
-            "g36"
+            "qbz95"
           ]
         },
         "remove": {

@@ -40,6 +40,7 @@ item.gun:mp40=MP40˜r
 item.gun:p90=˜aPanzerfaust˜r
 item.gun:pkm=˜dPKM˜r
 item.gun:ppsh=˜aPPSh-41˜r
+item.gun:qbz95=˜dQBZ95˜r
 item.gun:rpg=˜dRPG-7˜r
 item.gun:rpk=˜aRPK47˜r
 item.gun:saiga12=˜bSaiga12˜r

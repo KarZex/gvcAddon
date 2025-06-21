@@ -26,12 +26,12 @@
   "capabilities": ["script_eval"],
   "dependencies": [
     {
-      "module_name": "@minecraft/server",
-      "version": "1.13.0"
+        "module_name": "@minecraft/server",
+        "version": "2.1.0-beta"
     },
     {
-      "module_name": "@minecraft/server-ui",
-      "version": "1.2.0"
+        "module_name": "@minecraft/server-ui",
+          "version": "2.0.0"
     }
   ]
 }

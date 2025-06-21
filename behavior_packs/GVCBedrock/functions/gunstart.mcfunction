@@ -121,6 +121,8 @@ scoreboard objectives add pkm dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s pkm 100
 scoreboard objectives add ppsh dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s ppsh 72
+scoreboard objectives add qbz95 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s qbz95 30
 scoreboard objectives add rpg dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s rpg 1
 scoreboard objectives add rpk dummy

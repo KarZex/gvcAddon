@@ -41,6 +41,7 @@ MP40,mp40,20,zex:mm9,4,3.6,2,45,1,0,F,0,F,psbullet,1,override,1,完了,Kar Zex,2,F
 Panzerfaust,p90,1,zex:rocketm,50,9,4,60,30,4,T,0,F,rpgbullet,1,entityExplosion,0,完了,プチネコ,4,F,,4,2
 PKM,pkm,100,zex:762m,8,6,5,100,1,0,F,0,F,lmgbullet,1,override,1,完了,Kar Zex,8,F,,8,4
 PPSh-41,ppsh,72,zex:mm9,5,3.6,3,45,1,0,F,0,F,psbullet,1,override,1,完了,kusnek,7,F,,7,2
+QBZ95,qbz95,30,zex:556m,8,7,1.25,60,1,0,F,0,F,akbullet,1,override,1,完了,Kar Zex,5,F,,5,4
 RPG-7,rpg,1,zex:rocketm,60,9,5,80,30,5,T,0,F,rpgbullet,1,entityExplosion,0,完了,Kar Zex,5,F,,5,4
 RPK47,rpk,100,zex:556m,6,6,2.5,100,1,0,F,0,F,akbullet,1,override,1,完了,Kar Zex,5,F,,5,2
 Saiga12,saiga12,6,zex:12m,2,3,2.5,80,4,0,F,0,F,sgbullet,12,override,0,完了,Kar Zex,5,F,,5,3

@@ -1039,6 +1039,15 @@
     },
     "infantry_iii": {
       "textures": "textures/items/infantry_iii"
+    },
+    "qbz95": {
+      "textures": "textures/items/gun/qbz95"
+    },
+    "r22": {
+      "textures": "textures/items/r22"
+    },
+    "ka60": {
+      "textures": "textures/items/ka60"
     }
   }
 }

@@ -1,4 +1,4 @@
-import { world, system, EquipmentSlot, EntityComponentTypes, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 import { craftData } from "./crafts";
@@ -7,6 +7,9 @@ import "./compornents";
 
 const globalVarWW2Sides = [ `USA`,`SOV`,`GER`,`JAP` ] //using hoi4 tags
 
+function print(text){
+	world.sendMessage(`§a[System]§r: ${text}`);
+}
 
 async function RaidSpawner(flag,type,wave) {
 	const R = 64;
@@ -406,12 +409,12 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
         if( vict.getEffect("resistance") == undefined && vict.hasTag("antiBullet") == false ){
 			damage = damage * (1 - def);
             vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
-            vict.applyKnockback(0, 0, 0, 0);
+            vict.applyKnockback({x:0,z:0},0);
         }
 		else if( damageType != `override` ){
 			damage = damage * (1 - (def/2));
             vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
-            vict.applyKnockback(0, 0, 0, 0);
+            vict.applyKnockback({x:0,z:0},0);
 		}
 		try{
 			e.projectile.triggerEvent("minecraft:explode");
@@ -547,8 +550,15 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 	
 
 	}
+	else if( e.id == "zex:playerRotation" ){
+		let player = e.sourceEntity;
+		let rotation = e.message.split(" ");
+		world.sendMessage(`§aX:${rotation[0]} Y:${rotation[1]}`);
+		player.setRotation({x: Number(rotation[0]), y: Number(rotation[1])});
+		//player.teleport( player.location, {rotation: {x: Number(rotation[0]), y: Number(rotation[1])} } );
+	}
 	else if( e.id == "zex:vtext"){
-		const vehicle = e.sourceEntity;
+		let vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
 		if( player.typeId == "minecraft:player" ){
 			let v = vehicle.getVelocity();
@@ -563,8 +573,60 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			player.remove();
 		}
 	}
+	else if( e.id == "zex:vheri"){
+		let vehicle = e.sourceEntity;
+		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+		if( player.typeId == "minecraft:player" ){
+			let v = vehicle.getVelocity();
+			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"§f§rair.${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,vehicle)},${mainWeapon0(player,vehicle)},${mainWeapon1(player,vehicle)},${mainWeapon2(player,vehicle)}]}`);
+		}
+		else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
+			vehicle.remove();
+		}
+		else if( player.hasTag(`cantriding`) && vehicle.hasTag(`is_enemy`) ){
+			vehicle.remove();
+			player.remove();
+		}
+		else if( player.target != undefined ){
+			let abs_v = vehicle.getComponent(EntityComponentTypes.Movement).defaultValue;
+			vehicle.clearVelocity();
+			const P_t = player.target.location;
+			const P_v = vehicle.location;
+			const target = {
+				x: P_t.x - P_v.x,
+				y: P_t.y - P_v.y,
+				z: P_t.z - P_v.z
+			}
+			const distance = Math.sqrt(target.x*target.x + target.y*target.y + target.z*target.z);
+			const E_target = {
+				x: (P_t.x - P_v.x)/distance,
+				y: (P_t.y - P_v.y)/distance,
+				z: (P_t.z - P_v.z)/distance
+			}
+			const H = Math.sqrt(E_target.x*E_target.x + E_target.z*E_target.z);
+			const rotate = {
+				x: -Math.asin(E_target.y) * 180 / Math.PI,
+				y: Math.atan2(E_target.z/H, E_target.x/H) * 180 / Math.PI
+			}
+			player.setRotation({x: rotate.x, y: rotate.y-90});
+			if( distance > 16 ){
+				let fly = 0.25;
+				if( vehicle.isOnGround ){ fly = 10; }
+				vehicle.applyImpulse({x:E_target.x*abs_v,y:E_target.y*abs_v+fly,z:E_target.z*abs_v});
+			}
+
+		}
+		else if( player.target == undefined ){
+			vehicle.clearVelocity();
+			let fly = 0;
+			if( vehicle.isOnGround ){ fly = 10; }
+			vehicle.applyImpulse({x:0,y:fly,z:0});
+		}
+	}
 	else if( e.id == "zex:test" ){
 		const player = e.sourceEntity;
+		const a = Infinity;
 		player.setDynamicProperty(`gvcv5:gunUsed`,0);
 	}
 	else if( e.id == "zex:aamissile"){
@@ -728,7 +790,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		
 	}
 	else if( e.id == "zex:scale"){
-		const entity = e.sourceEntity;
+		let entity = e.sourceEntity;
 		entity.getComponent("minecraft:scale").value = Number(e.message)
 		
 	}
@@ -1035,9 +1097,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		if( e.message== `guns` ){
 			const form = new ModalFormData();
 			form.title(`Admin Settings`);
-			form.textField(`Player Damage`, `Current is ${world.getDynamicProperty(`gvcv5:playerDamage`)}`,`${world.getDynamicProperty(`gvcv5:playerDamage`)}`);
-			form.textField(`Mob Damage`, `Current is ${world.getDynamicProperty(`gvcv5:mobDamage`)}`,`${world.getDynamicProperty(`gvcv5:mobDamage`)}`);
-			form.toggle(`Bullet Spend`, world.getDynamicProperty(`gvcv5:doBulletSpend`));
+			form.textField(`Player Damage`,`${world.getDynamicProperty(`gvcv5:playerDamage`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:playerDamage`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:playerDamage`)}`});
+			form.textField(`Mob Damage`,`${world.getDynamicProperty(`gvcv5:mobDamage`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:mobDamage`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:mobDamage`)}`});
+			form.toggle(`Bullet Spend`, {defaultValue: world.getDynamicProperty(`gvcv5:doBulletSpend`),tooltip:`Bullet Spend`});
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
 					if( world.getDynamicProperty(`gvcv5:playerDamage`) != Number(result.formValues[0]) ){
@@ -1056,12 +1118,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			} )
 		}
 		else if( e.message == `building`){
+			print(`${world.getDynamicProperty(`gvcv5:buildingSpawnS`)}`)
 			const form = new ModalFormData();
 			form.title(`Building Settings`);
-			form.toggle(`Small Building Spawn`, world.getDynamicProperty(`gvcv5:buildingSpawnS`));
-			form.toggle(`Medium Building Spawn`, world.getDynamicProperty(`gvcv5:buildingSpawnM`));
-			form.toggle(`Large Building Spawn`, world.getDynamicProperty(`gvcv5:buildingSpawnL`));
-			form.toggle(`Allies Building Spawn`, world.getDynamicProperty(`gvcv5:buildingSpawnA`));
+			form.toggle(`Small Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnS`),tooltip:`Small Building Spawn`});
+			form.toggle(`Medium Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnM`),tooltip:`Medium Building Spawn`});
+			form.toggle(`Large Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnL`),tooltip:`Large Building Spawn`});
+			form.toggle(`Allies Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnA`),tooltip:`Allies Building Spawn`});
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
 					if( world.getDynamicProperty(`gvcv5:buildingSpawnS`) != Boolean(result.formValues[0]) ){
@@ -1092,8 +1155,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		else if( e.message == `mobSpawn`){
 			const form = new ModalFormData();
 			form.title(`mobSpawn Settings`);
-			form.toggle(`Block Spawn`, world.getDynamicProperty(`gvcv5:doSpawnFromBlock`));
-			form.toggle(`Beacon Spawn`, world.getDynamicProperty(`gvcv5:doSpawnFromBeacon`));
+			form.toggle(`Block Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:doSpawnFromBlock`),tooltip:`Block Spawn`});
+			form.toggle(`Beacon Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:doSpawnFromBeacon`),tooltip:`Beacon Spawn`});
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
 					if( world.getDynamicProperty(`gvcv5:doSpawnFromBlock`) != Boolean(result.formValues[0]) ){
@@ -1112,11 +1175,11 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		else if( e.message == `gameRule`){
 			const form = new ModalFormData();
 			form.title(`gameRule Settings`);
-			form.toggle(`Enable WorldLimit`, world.getDynamicProperty(`gvcv5:worldLimit`));
-			form.textField(`World Limit O`, `Current is ${world.getDynamicProperty(`gvcv5:worldLimitO`)}`,`${world.getDynamicProperty(`gvcv5:worldLimitO`)}`);
-			form.textField(`World Limit N`, `Current is ${world.getDynamicProperty(`gvcv5:worldLimitN`)}`,`${world.getDynamicProperty(`gvcv5:worldLimitN`)}`);
-			form.textField(`World Limit E`, `Current is ${world.getDynamicProperty(`gvcv5:worldLimitE`)}`,`${world.getDynamicProperty(`gvcv5:worldLimitE`)}`);
-			form.toggle(`Disable AirCraft With Item`, world.getDynamicProperty(`gvcv5:airCraftWithItem`));
+			form.toggle(`Enable WorldLimit`, {defaultValue: world.getDynamicProperty(`gvcv5:worldLimit`),tooltip:`Enable WorldLimit`});
+			form.textField(`World Limit O`,`${world.getDynamicProperty(`gvcv5:worldLimitO`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:worldLimitO`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:worldLimitO`)}`});
+			form.textField(`World Limit N`,`${world.getDynamicProperty(`gvcv5:worldLimitN`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:worldLimitN`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:worldLimitN`)}`});
+			form.textField(`World Limit E`,`${world.getDynamicProperty(`gvcv5:worldLimitE`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:worldLimitE`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:worldLimitE`)}`});
+			form.toggle(`Disable AirCraft With Item`, {defaultValue: world.getDynamicProperty(`gvcv5:airCraftWithItem`),tooltip:`Disable AirCraft With Item`});
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
 					if( world.getDynamicProperty(`gvcv5:worldLimit`) != Boolean(result.formValues[0]) ){

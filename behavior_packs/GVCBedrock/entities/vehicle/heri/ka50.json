@@ -9,12 +9,13 @@
       "scripts": {
         "animate": [
           "walk",
-          "vtext"
+          "vtext",
+          "heri"
         ]
       },
       "animations": {
         "walk": "controller.animation.vehicle",
-        "vtext": "controller.animation.vtext"
+        "heri": "controller.animation.vheri"
       }
     },
     "component_groups": {
@@ -69,14 +70,16 @@
       "minecraft:rideable": {
         "seat_count": 1,
         "family_types": [
+          "guerrilla",
+          "allied_soldier",
           "player"
         ],
         "interact_text": "action.interact.ride.horse",
         "seats": {
           "position": [
             0.0,
-            0.45,
-            0.5
+            1.2,
+            0.6
           ]
         }
       },
@@ -168,7 +171,7 @@
         "max": 400
       },
       "minecraft:scale": {
-        "value": 2.6
+        "value": 1.0
       },
       "minecraft:movement": {
         "value": 0.4

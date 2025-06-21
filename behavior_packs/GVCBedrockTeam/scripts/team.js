@@ -908,10 +908,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		if( e.message== `team` ){
 			const form = new ModalFormData();
 			form.title(`Admin Settings`);
-			form.textField(`Red team Password`, `${world.getDynamicProperty(`redPass`)}`,`${world.getDynamicProperty(`redPass`)}`);
-			form.textField(`Blue team Password`, `${world.getDynamicProperty(`bluePass`)}`,`${world.getDynamicProperty(`bluePass`)}`);
-			form.textField(`Green team Password`, `${world.getDynamicProperty(`greenPass`)}`,`${world.getDynamicProperty(`greenPass`)}`);
-			form.textField(`Yellow team Password`, `${world.getDynamicProperty(`yellowPass`)}`,`${world.getDynamicProperty(`yellowPass`)}`);
+			form.textField(`Red team Password`, `${world.getDynamicProperty(`redPass`)}`,{defaultValue:`${world.getDynamicProperty(`redPass`)}`,tooltip:`Current is ${world.getDynamicProperty(`redPass`)}`});
+			form.textField(`Blue team Password`, `${world.getDynamicProperty(`bluePass`)}`,{defaultValue:`${world.getDynamicProperty(`bluePass`)}`,tooltip:`Current is ${world.getDynamicProperty(`bluePass`)}`});
+			form.textField(`Green team Password`, `${world.getDynamicProperty(`greenPass`)}`,{defaultValue:`${world.getDynamicProperty(`greenPass`)}`,tooltip:`Current is ${world.getDynamicProperty(`greenPass`)}`});
+			form.textField(`Yellow team Password`, `${world.getDynamicProperty(`yellowPass`)}`,{defaultValue:`${world.getDynamicProperty(`yellowPass`)}`,tooltip:`Current is ${world.getDynamicProperty(`yellowPass`)}`});
 			form.toggle(`Delete Red Team`, false);
 			form.toggle(`Delete Blue Team`, false);
 			form.toggle(`Delete Green Team`, false);

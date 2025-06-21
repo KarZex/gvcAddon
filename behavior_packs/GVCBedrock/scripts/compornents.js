@@ -121,8 +121,8 @@ function gvcv5UseMtype( event ){
 function gvcv5UseAidKit( event ){
     event.source.addEffect("regeneration",14,{ amplifier: 4 })
 }
-
-world.beforeEvents.worldInitialize.subscribe( e => {
+async function setUp(){
+    await system.waitTicks(100);
     if( world.getDynamicProperty("gvcv5:playerDamage") == undefined ){
         world.setDynamicProperty("gvcv5:playerDamage",0.5);
     }
@@ -167,7 +167,20 @@ world.beforeEvents.worldInitialize.subscribe( e => {
     if( world.getDynamicProperty("gvcv5:airCraftWithItem") == undefined ){
         world.setDynamicProperty("gvcv5:airCraftWithItem",false);
     }
+    await system.waitTicks(1);
+    const buildingS = Number(world.getDynamicProperty(`gvcv5:buildingSpawnS`))
+    const buildingM = Number(world.getDynamicProperty(`gvcv5:buildingSpawnM`))
+    const buildingL = Number(world.getDynamicProperty(`gvcv5:buildingSpawnL`))
+    const buildingA = Number(world.getDynamicProperty(`gvcv5:buildingSpawnA`))
+    world.sendMessage(`Setting up building spawn properties: S=${buildingS}, M=${buildingM}, L=${buildingL}, A=${buildingA}`);
+    world.scoreboard.getObjective(`building`).setScore(`S`, buildingS);
+    world.scoreboard.getObjective(`building`).setScore(`M`, buildingM);
+    world.scoreboard.getObjective(`building`).setScore(`L`, buildingL);
+    world.scoreboard.getObjective(`building`).setScore(`A`, buildingA);
+}
 
+
+system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawn`,{onPlace: gvcv5SpawnEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:end_block`,{onPlace: gvcv5EndBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,{onPlace: gvcv5BuildingBlockEvent});
@@ -181,4 +194,10 @@ world.beforeEvents.worldInitialize.subscribe( e => {
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:orderflag`,{onUse: gvcv5UseFlag});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:mtype`,{onUse: gvcv5UseMtype});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:aid`,{onConsume: gvcv5UseAidKit});
+});
+
+world.afterEvents.worldLoad.subscribe( async e => {
+    await setUp();
+    world.sendMessage(`World loaded, setting up team properties...`);
+    
 } )

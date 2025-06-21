@@ -5,7 +5,8 @@
       "identifier": "gvcv5:flag_cv_ga",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:bat"
     },
     "component_groups": {
       "despawning": {
@@ -50,92 +51,7 @@
                   {
                     "test": "is_family",
                     "subject": "other",
-                    "value": "redteam"
-                  }
-                ],
-                "all_of": [
-                  {
-                    "test": "has_damage",
-                    "value": "fatal"
-                  }
-                ]
-              },
-              "event": "become_R"
-            }
-          },
-          {
-            "on_damage": {
-              "filters": {
-                "any_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "blueteam"
-                  }
-                ],
-                "all_of": [
-                  {
-                    "test": "has_damage",
-                    "value": "fatal"
-                  }
-                ]
-              },
-              "event": "become_B"
-            }
-          },
-          {
-            "on_damage": {
-              "filters": {
-                "any_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  }
-                ],
-                "all_of": [
-                  {
-                    "test": "has_damage",
-                    "value": "fatal"
-                  }
-                ]
-              },
-              "event": "become_G"
-            }
-          },
-          {
-            "on_damage": {
-              "filters": {
-                "any_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "yellowteam"
-                  }
-                ],
-                "all_of": [
-                  {
-                    "test": "has_damage",
-                    "value": "fatal"
-                  }
-                ]
-              },
-              "event": "become_Y"
-            }
-          },
-          {
-            "on_damage": {
-              "filters": {
-                "any_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
                     "value": "playerp"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
                   }
                 ],
                 "all_of": [
@@ -301,64 +217,28 @@
         "must_see": true
       },
       "minecraft:persistent": {},
-      "minecraft:physics": {
-        "has_collision": true,
-        "has_gravity": true
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": false,
-        "is_pushable_by_piston": false
+        "is_pushable_by_piston": true
       },
       "minecraft:follow_range": {
         "value": 64
       }
     },
     "events": {
-      "become_R": {
-        "queue_command": {
-          "command": [
-            "summon gvcv5:flag_red ~~5~",
-            "kill @s"
-          ]
-        }
-      },
-      "become_B": {
-        "queue_command": {
-          "command": [
-            "summon gvcv5:flag_blue ~~5~",
-            "kill @s"
-          ]
-        }
-      },
-      "become_G": {
-        "queue_command": {
-          "command": [
-            "summon gvcv5:flag_green ~~5~",
-            "kill @s"
-          ]
-        }
-      },
-      "become_Y": {
-        "queue_command": {
-          "command": [
-            "summon gvcv5:flag_yellow ~~5~",
-            "kill @s"
-          ]
-        }
-      },
       "become_CA": {
         "queue_command": {
           "command": [
             "summon gvcv5:flag_cv_ca ~~1~",
-            "kill @s"
+            "summon gvcv5:cv"
           ]
         }
       },
       "become_GA": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_cv_ga ~~1~",
-            "kill @s"
+            "summon gvcv5:flag_cv_ga ~~1~"
           ]
         }
       }

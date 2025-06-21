@@ -54,6 +54,33 @@
         }
       }
     },
+    "controller.animation.vheri": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "vtext": "query.has_rider" }
+          ]
+        },
+        "vtext": {
+          "transitions": [
+            { "default": "!query.has_rider" },
+            { "vtextii": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/scriptevent zex:vheri"
+          ]
+        },
+        "vtextii": {
+          "transitions": [
+            { "default": "!query.has_rider" },
+            { "vtext": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/scriptevent zex:vheri"
+          ]
+        }
+      }
+    },
     "controller.animation.sss": {
       "states": {
         "default": {

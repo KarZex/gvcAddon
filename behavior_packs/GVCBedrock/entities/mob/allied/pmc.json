@@ -838,6 +838,24 @@
           "table": "loot_tables/gun/ppsh.json"
         }
       },
+      "qbz95": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:qbz95"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/qbz95.json"
+        }
+      },
       "rpg": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -2396,6 +2414,30 @@
                     "test": "has_equipment",
                     "subject": "other",
                     "domain": "hand",
+                    "value": "gun:qbz95"
+                  }
+                ]
+              },
+              "event": "qbz95",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
                     "value": "gun:rpg"
                   }
                 ]
@@ -3162,6 +3204,13 @@
           ]
         }
       },
+      "qbz95": {
+        "add": {
+          "component_groups": [
+            "qbz95"
+          ]
+        }
+      },
       "rpg": {
         "add": {
           "component_groups": [
@@ -3440,6 +3489,11 @@
           "command": "ride @s summon_ride vehicle:t72 no_ride_change summon_enemy"
         }
       },
+      "vehicle:r22": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:r22r"
+        }
+      },
       "vehicle:ah1s": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:ah1sr"
@@ -3458,6 +3512,11 @@
       "vehicle:ka50": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:ka50r"
+        }
+      },
+      "vehicle:ka60": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ka60r"
         }
       },
       "vehicle:mi24d": {

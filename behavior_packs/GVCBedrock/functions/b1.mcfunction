@@ -31,13 +31,17 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t55] run event entity @s 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t72] run event entity @s 125mm
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah1s] run event entity @s vmg
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:r22] run event entity @s ads_dp28
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah1s] run event entity @s 76mmrocket
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah6] run event entity @s vmg
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:g_heri] run event entity @s vmg
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ka50] run event entity @s 76mmrocket
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ka60] run event entity @s vmg
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mi24d] run event entity @s agmissile
 

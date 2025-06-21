@@ -282,6 +282,12 @@
               "ppsh_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ppsh') && (variable.attack_time > 0.0)"
             },
             {
+              "qbz95": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:qbz95') && query.is_using_item"
+            },
+            {
+              "qbz95_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:qbz95') && (variable.attack_time > 0.0)"
+            },
+            {
               "rpg": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:rpg') && query.is_using_item"
             },
             {
@@ -1886,6 +1892,42 @@
           "transitions": [
             {
               "ppsh": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "qbz95_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload qbz95"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "qbz95": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse qbz95"
+          ],
+          "transitions": [
+            {
+              "qbz95ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "qbz95ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse qbz95"
+          ],
+          "transitions": [
+            {
+              "qbz95": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
             },
             {
               "no_use": "(!query.is_using_item)"

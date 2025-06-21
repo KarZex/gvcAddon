@@ -19,7 +19,7 @@
       "language": "javascript",
       "type": "script",
       "uuid": "e8d18318-dfc4-47c8-99ea-aacb13c24067",
-      "version": [1, 0, 0],
+      "version": [2, 0, 0],
       "entry": "scripts/main.js"
     }
   ],
@@ -67,13 +67,13 @@
   ],
   "capabilities": ["script_eval"],
   "dependencies": [
-    {
-      "module_name": "@minecraft/server",
-      "version": "1.19.0"
-    },
-    {
-      "module_name": "@minecraft/server-ui",
-      "version": "1.2.0"
-    }
+      {
+          "module_name": "@minecraft/server",
+          "version": "2.1.0-beta"
+      },
+      {
+          "module_name": "@minecraft/server-ui",
+          "version": "2.0.0"
+      }
   ]
 }

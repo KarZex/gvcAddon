@@ -1421,6 +1421,24 @@
           "table": "loot_tables/gun/ppsh.json"
         }
       },
+      "qbz95": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:qbz95"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/qbz95.json"
+        }
+      },
       "rpg": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -2598,6 +2616,13 @@
         "add": {
           "component_groups": [
             "ppsh"
+          ]
+        }
+      },
+      "qbz95": {
+        "add": {
+          "component_groups": [
+            "qbz95"
           ]
         }
       },
