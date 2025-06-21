@@ -3,9 +3,9 @@
   "header": {
     "description": "このパックを使用するには、GVCBedrockの上にこのパックを適用してください。",
     "name": "§l§gGVCBedrock Addon Team Mode V3.0",
-    "min_engine_version": [1, 21, 80 ],
+    "min_engine_version": [1, 21, 90 ],
     "uuid": "159bcb0a-c204-4cba-bab0-b50400a96c75",
-    "version": [1, 21, 80]
+    "version": [1, 21, 90]
   },
   "modules": [
     {
