@@ -77,7 +77,7 @@
           ]
         },
       "minecraft:type_family": {
-        "family": [ "vehicle","air" ]
+        "family": [ "vehicle","air","TofAA" ]
       },
       "minecraft:fire_immune": {
       },

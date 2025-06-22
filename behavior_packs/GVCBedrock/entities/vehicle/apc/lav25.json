@@ -209,7 +209,13 @@
         "is_pushable": true,
         "is_pushable_by_piston": false
       },
-      "minecraft:physics": {}
+      "minecraft:physics": {},
+      "minecraft:behavior.float": {
+        "priority": 1
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.1
+      }
     },
     "events": {
       "summon_enemy": {

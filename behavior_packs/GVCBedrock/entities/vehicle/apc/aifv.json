@@ -65,50 +65,20 @@
         }
       },
       "minecraft:rideable": {
-        "seat_count": 5,
+        "seat_count": 1,
         "family_types": [
           "guerrilla",
           "allied_soldier",
           "player"
         ],
         "interact_text": "action.interact.ride.horse",
-        "seats": [
-          {
-            "position": [
-              -0.5,
-              2.35,
-              0
-            ]
-          },
-          {
-            "position": [
-              1,
-              0.8,
-              -1.2
-            ]
-          },
-          {
-            "position": [
-              -1,
-              0.8,
-              -1.2
-            ]
-          },
-          {
-            "position": [
-              1,
-              0.8,
-              -2.2
-            ]
-          },
-          {
-            "position": [
-              -1,
-              0.8,
-              -2.2
-            ]
-          }
-        ]
+        "seats": {
+          "position": [
+            -0.5,
+            2.35,
+            0
+          ]
+        }
       },
       "minecraft:interact": {
         "interactions": [

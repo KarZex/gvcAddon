@@ -8,7 +8,8 @@
       "is_summonable": true,
       "scripts": {
         "animate": [
-          "walk","para"
+          "walk",
+          "para"
         ]
       },
       "animations": {
@@ -33,10 +34,8 @@
         }
       }
     },
-
     "components": {
-      "minecraft:is_hidden_when_invisible": {
-      },
+      "minecraft:is_hidden_when_invisible": {},
       "minecraft:follow_range": {
         "value": 48,
         "max": 48
@@ -49,7 +48,12 @@
         "value": 0
       },
       "minecraft:type_family": {
-        "family": [ "allied_soldier","playerp", "mob", "noteam" ]
+        "family": [
+          "allied_soldier",
+          "playerp",
+          "mob",
+          "noteam"
+        ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -62,20 +66,19 @@
             "cause": "all",
             "deals_damage": false,
             "on_damage": {
-                  "filters": {
-                      "all_of": [
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "allied_soldier"
-                        }
-                      ]
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "allied_soldier"
                   }
-                }
+                ]
+              }
+            }
           }
         ]
       },
-
       "minecraft:health": {
         "value": 20,
         "max": 20
@@ -83,7 +86,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -97,22 +105,18 @@
         "avoid_sun": false,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
-      "minecraft:nameable": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
       "minecraft:shooter": {
         "def": "minecraft:arrow"
       },
       "minecraft:behavior.find_mount": {
-          "priority": 1,
-          "within_radius": 16,
-          "start_delay": 15,
-          "max_failed_attempts": 20
+        "priority": 1,
+        "within_radius": 16,
+        "start_delay": 15,
+        "max_failed_attempts": 20
       },
       "minecraft:behavior.ranged_attack": {
         "priority": 0,
@@ -123,13 +127,13 @@
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
         "entity_types": {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "operator": "!=",
-              "value": "playerp"
-            }
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "playerp"
           }
+        }
       },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
@@ -149,18 +153,63 @@
       "minecraft:behavior.equip_item": {
         "priority": 3
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       },
-      "minecraft:conditional_bandwidth_optimization": {
-      }
+      "minecraft:conditional_bandwidth_optimization": {}
     },
-
     "events": {
-      "gvcv5:set_have_gun":{
+      "gvcv5:set_have_gun": {
+        "randomize": [
+          {
+            "weight": 20,
+            "trigger": "m16a1"
+          },
+          {
+            "weight": 10,
+            "trigger": "m4"
+          },
+          {
+            "weight": 10,
+            "trigger": "m72"
+          },
+          {
+            "weight": 10,
+            "trigger": "m110"
+          },
+          {
+            "weight": 10,
+            "trigger": "mp5"
+          },
+          {
+            "weight": 10,
+            "trigger": "m60"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:m113"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:m41"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:m60a1"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:ah1s"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:ah6"
+          }
+        ]
+      },
+      "gvcv5:set_have_gun_nt": {
         "randomize": [
           {
             "weight": 2,
@@ -186,67 +235,39 @@
             "weight": 1,
             "trigger": "m60"
           }
-		 ]
-    },
-      "gvcv5:set_have_gun_nt":{
-        "randomize": [
-          {
-            "weight": 2,
-            "trigger": "m16a1"
-          },
-          {
-            "weight": 1,
-            "trigger": "m4"
-          },
-          {
-            "weight": 1,
-            "trigger": "m72"
-          },
-          {
-            "weight": 1,
-            "trigger": "m110"
-          },
-          {
-            "weight": 1,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 1,
-            "trigger": "m60"
-          }
-		 ]
-    },
-    "gvcv5:become_redteam": {
-      "add": {
-        "component_groups": [
-          "redteam"
         ]
-      }
-    },
-    "gvcv5:become_blueteam": {
-      "add": {
-        "component_groups": [
-          "blueteam"
-        ]
-      }
-    },
-    "gvcv5:become_greenteam": {
-      "add": {
-        "component_groups": [
-          "greenteam"
-        ]
-      }
-    },
-    "gvcv5:become_yellowteam": {
-      "add": {
-        "component_groups": [
-          "yellowteam"
-        ]
-      }
-    },
+      },
+      "gvcv5:become_redteam": {
+        "add": {
+          "component_groups": [
+            "redteam"
+          ]
+        }
+      },
+      "gvcv5:become_blueteam": {
+        "add": {
+          "component_groups": [
+            "blueteam"
+          ]
+        }
+      },
+      "gvcv5:become_greenteam": {
+        "add": {
+          "component_groups": [
+            "greenteam"
+          ]
+        }
+      },
+      "gvcv5:become_yellowteam": {
+        "add": {
+          "component_groups": [
+            "yellowteam"
+          ]
+        }
+      },
       "minecraft:entity_transformed": {
         "sequence": [
-        {
+          {
             "filters": {
               "any_of": [
                 {
@@ -255,23 +276,27 @@
                 }
               ]
             },
-            "add": { "component_groups": [ "navy" ] }
-         },
-         {
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
             "trigger": "gvcv5:set_have_gun"
-        }
-	   ]
+          }
+        ]
       },
       "minecraft:entity_spawned": {
         "sequence": [
           {
-          "add": {
-            "component_groups": [
-              "can_despawn"
-            ]
-          }
-        },
-        {
+            "add": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
+          {
             "filters": {
               "any_of": [
                 {
@@ -280,16 +305,20 @@
                 }
               ]
             },
-            "add": { "component_groups": [ "navy" ] }
-         },
-         {
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
             "trigger": "gvcv5:set_have_gun"
-        }
-	   ]
+          }
+        ]
       },
       "minecraft:spawned_from_block": {
         "sequence": [
-        {
+          {
             "filters": {
               "any_of": [
                 {
@@ -298,36 +327,77 @@
                 }
               ]
             },
-            "add": { "component_groups": [ "navy" ] }
-         },{
-          
-          "remove": {
-            "component_groups": [
-              "can_despawn"
-            ]
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "queue_command": {
+              "command": [
+                "tag @s add cantriding"
+              ]
+            }
+          },
+          {
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
+          {
+            "trigger": "gvcv5:set_have_gun_nt"
           }
-         },
-         {
-            "trigger": "gvcv5:set_have_gun"
-        }
-	   ]
+        ]
+      },
+      "minecraft:spawned_from_spawner": {
+        "sequence": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "queue_command": {
+              "command": [
+                "tag @s add cantriding"
+              ]
+            }
+          },
+          {
+            "trigger": "gvcv5:set_have_gun_nt"
+          }
+        ]
       },
       "minecraft:spawned_from_air": {
         "sequence": [
           {
-          "queue_command": {
-            "command":[ "replaceitem entity @s slot.armor.chest 0 gvcv5:parachute" ]
-          }
-        },
-        {
-          
-          "remove": {
-            "component_groups": [
-              "can_despawn"
-            ]
-          }
-         },
-        {
+            "queue_command": {
+              "command": [
+                "replaceitem entity @s slot.armor.chest 0 gvcv5:parachute"
+              ]
+            }
+          },
+          {
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
+          {
             "filters": {
               "any_of": [
                 {
@@ -336,12 +406,16 @@
                 }
               ]
             },
-            "add": { "component_groups": [ "navy" ] }
-         },
-         {
-            "trigger": "gvcv5:set_have_gun"
-        }
-	   ]
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "trigger": "gvcv5:set_have_gun_nt"
+          }
+        ]
       }
     }
   }

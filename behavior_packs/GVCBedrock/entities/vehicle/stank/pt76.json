@@ -172,7 +172,7 @@
       },
       "minecraft:fire_immune": {},
       "minecraft:behavior.float": {
-        "priority": 7
+        "priority": 1
       },
       "minecraft:breathable": {
         "total_supply": 35,
@@ -194,7 +194,7 @@
         "value": 1.0
       },
       "minecraft:underwater_movement": {
-        "value": 0.3
+        "value": 0.1
       },
       "minecraft:navigation.walk": {
         "is_amphibious": true,
@@ -247,8 +247,7 @@
         "is_pushable": true,
         "is_pushable_by_piston": false
       },
-      "minecraft:physics": {},
-      "minecraft:floats_in_liquid": {}
+      "minecraft:physics": {}
     },
     "events": {
       "summon_enemy": {

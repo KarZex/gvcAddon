@@ -632,6 +632,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 	else if( e.id == "zex:aamissile"){
 		const missile = e.sourceEntity;
 		const player = missile.getComponent("projectile").owner;
+		const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
+		const excludeList = [ "player","playerp","mod","mob" ];
+		const allies = intFamily.filter(char => !excludeList.includes(char));
 		let team = `noteam`;
 		if( player.hasTag(`red`) ){ team = `red`; }
 		else if( player.hasTag(`blue`) ){ team = `blue`; }
@@ -642,6 +645,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			tags:[ `air` ],
 			excludeNames:[ `${player.nameTag}` ],
 			excludeTags:[ `${team}` ],
+			excludeFamilies:allies,
 			location:missile.location,
 			maxDistance:32,
 			closest: 1
@@ -674,9 +678,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				const V = player.getViewDirection();
 				missile.clearVelocity();
 				missile.applyImpulse( { 
-					x: V.x * 4,
-					y: V.y * 4,
-					z: V.z * 4
+					x: V.x * 2,
+					y: V.y * 2,
+					z: V.z * 2
 				} )
 			}
 			else{

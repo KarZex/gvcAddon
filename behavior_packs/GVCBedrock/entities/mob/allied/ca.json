@@ -1254,7 +1254,7 @@
           "def": "fire:bomb"
         }
       },
-      "HMG": {
+      "hmg": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
@@ -1266,7 +1266,7 @@
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:HMG"
+          "def": "fire:hmg"
         }
       },
       "7.62mmmgs": {
@@ -1580,28 +1580,48 @@
       "gvcv5:set_have_gun": {
         "randomize": [
           {
-            "weight": 2,
+            "weight": 20,
             "trigger": "m16a1"
           },
           {
-            "weight": 1,
+            "weight": 10,
             "trigger": "m4"
           },
           {
-            "weight": 1,
+            "weight": 10,
             "trigger": "m72"
           },
           {
-            "weight": 1,
+            "weight": 10,
             "trigger": "m110"
           },
           {
-            "weight": 1,
+            "weight": 10,
             "trigger": "mp5"
           },
           {
-            "weight": 1,
+            "weight": 10,
             "trigger": "m60"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:m113"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:m41"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:m60a1"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:ah1s"
+          },
+          {
+            "weight": 1,
+            "trigger": "vehicle:ah6"
           }
         ]
       },
@@ -1730,6 +1750,13 @@
             }
           },
           {
+            "queue_command": {
+              "command": [
+                "tag @s add cantriding"
+              ]
+            }
+          },
+          {
             "remove": {
               "component_groups": [
                 "can_despawn"
@@ -1737,7 +1764,36 @@
             }
           },
           {
-            "trigger": "gvcv5:set_have_gun"
+            "trigger": "gvcv5:set_have_gun_nt"
+          }
+        ]
+      },
+      "minecraft:spawned_from_spawner": {
+        "sequence": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_biome_tag",
+                  "value": "ocean"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "queue_command": {
+              "command": [
+                "tag @s add cantriding"
+              ]
+            }
+          },
+          {
+            "trigger": "gvcv5:set_have_gun_nt"
           }
         ]
       },
@@ -1773,7 +1829,7 @@
             }
           },
           {
-            "trigger": "gvcv5:set_have_gun"
+            "trigger": "gvcv5:set_have_gun_nt"
           }
         ]
       },
@@ -2274,10 +2330,10 @@
           ]
         }
       },
-      "HMG": {
+      "hmg": {
         "add": {
           "component_groups": [
-            "HMG"
+            "hmg"
           ]
         }
       },
@@ -2442,37 +2498,37 @@
       },
       "vehicle:r22": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:r22r"
+          "command": "ride @s summon_ride vehicle:r22 no_ride_change summon_enemy"
         }
       },
       "vehicle:ah1s": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:ah1sr"
+          "command": "ride @s summon_ride vehicle:ah1s no_ride_change summon_enemy"
         }
       },
       "vehicle:ah6": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:ah6r"
+          "command": "ride @s summon_ride vehicle:ah6 no_ride_change summon_enemy"
         }
       },
       "vehicle:g_heri": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:g_herir"
+          "command": "ride @s summon_ride vehicle:g_heri no_ride_change summon_enemy"
         }
       },
       "vehicle:ka50": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:ka50r"
+          "command": "ride @s summon_ride vehicle:ka50 no_ride_change summon_enemy"
         }
       },
       "vehicle:ka60": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:ka60r"
+          "command": "ride @s summon_ride vehicle:ka60 no_ride_change summon_enemy"
         }
       },
       "vehicle:mi24d": {
         "queue_command": {
-          "command": "ride @s summon_ride vehicle:mi24dr"
+          "command": "ride @s summon_ride vehicle:mi24d no_ride_change summon_enemy"
         }
       },
       "vehicle:20mmaa": {

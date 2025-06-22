@@ -444,15 +444,15 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "120mm": {
-    "damage": 160,
+    "damage": 180,
     "damageType": "entityExplosion"
   },
   "125mm": {
-    "damage": 160,
+    "damage": 200,
     "damageType": "entityExplosion"
   },
   "152mm": {
-    "damage": 180,
+    "damage": 250,
     "damageType": "entityExplosion"
   },
   "20mm": {
@@ -480,7 +480,7 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "agmissile": {
-    "damage": 60,
+    "damage": 120,
     "damageType": "entityExplosion"
   },
   "vmgiir": {
@@ -496,14 +496,14 @@ export const gunData = {
     "damageType": "override"
   },
   "aamissile": {
-    "damage": 60,
+    "damage": 100,
     "damageType": "entityExplosion"
   },
   "bomb": {
-    "damage": 60,
+    "damage": 100,
     "damageType": "entityExplosion"
   },
-  "HMG": {
+  "hmg": {
     "damage": 8,
     "damageType": "override"
   },
@@ -525,7 +525,7 @@ export const gunData = {
   },
   "14.5mmhmg": {
     "damage": 6,
-    "damageType": "entityExplosion"
+    "damageType": "override"
   },
   "20mmmc": {
     "damage": 5,

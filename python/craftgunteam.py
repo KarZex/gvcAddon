@@ -426,10 +426,30 @@ for row in csv_reader2:
         ca_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
         pmc_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
         pmc_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_red_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_red_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_blue_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_blue_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_green_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_green_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
+        pmc_yellow_json["minecraft:entity"]["component_groups"]["{}".format(gun_id)] = spawn_entity
+        pmc_yellow_json["minecraft:entity"]["events"]["{}".format(gun_id)] = event
 
         print("created {}".format(gun_id))
     row_count += 1
-
+    
+csv_path3 = open("csv/vehicleData.csv","r")
+csv_reader3 = csv.reader(csv_path3)
+row_count = 0
+for row in csv_reader3:
+    if( row_count >= 1 ):
+        #from CSV
+        v_id = row[1]
+        v_type = row[2]
+        ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{} no_ride_change summon_enemy".format(v_id) } }
+        pmc_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{} no_ride_change summon_enemy".format(v_id) } }
+    
+    row_count += 1
 
 
 with open("behavior_packs/GVCBedrockTeam/entities/player.json","w") as f:

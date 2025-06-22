@@ -3623,7 +3623,7 @@
           ]
         }
       },
-      "fire:HMG": {
+      "fire:hmg": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -3631,7 +3631,7 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:HMG"
+              "spawn_entity": "fire:hmg"
             }
           ]
         }
@@ -4712,10 +4712,10 @@
           ]
         }
       },
-      "fire:HMG": {
+      "fire:hmg": {
         "add": {
           "component_groups": [
-            "fire:HMG"
+            "fire:hmg"
           ]
         }
       },

@@ -997,6 +997,486 @@
         "minecraft:equipment": {
           "table": "loot_tables/gun/xm8.json"
         }
+      },
+      "vmg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:vmg"
+        }
+      },
+      "76mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:76mm"
+        }
+      },
+      "85mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:85mm"
+        }
+      },
+      "100mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:100mm"
+        }
+      },
+      "105mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:105mm"
+        }
+      },
+      "120mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:120mm"
+        }
+      },
+      "125mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:125mm"
+        }
+      },
+      "152mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:152mm"
+        }
+      },
+      "20mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.25,
+          "attack_interval_max": 0.25,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mm"
+        }
+      },
+      "23mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.30000000000000004,
+          "attack_interval_max": 0.30000000000000004,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:23mm"
+        }
+      },
+      "ads_dp28": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_dp28"
+        }
+      },
+      "ads_m60": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_m60"
+        }
+      },
+      "ads_pkm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_pkm"
+        }
+      },
+      "76mmrocket": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:76mmrocket"
+        }
+      },
+      "agmissile": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:agmissile"
+        }
+      },
+      "vmgii": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.0,
+          "attack_interval_max": 0.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:vmgii"
+        }
+      },
+      "vmgi": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.0,
+          "attack_interval_max": 0.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:vmgi"
+        }
+      },
+      "aamissile": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:aamissile"
+        }
+      },
+      "bomb": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:bomb"
+        }
+      },
+      "hmg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.1,
+          "attack_interval_max": 0.1,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:hmg"
+        }
+      },
+      "7.62mmmgs": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:7.62mmmgs"
+        }
+      },
+      "7.62mmmg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:7.62mmmg"
+        }
+      },
+      "12.7mmmg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:12.7mmmg"
+        }
+      },
+      "14.5mmhmg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.1,
+          "attack_interval_max": 0.1,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:14.5mmhmg"
+        }
+      },
+      "20mmmc": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.0,
+          "attack_interval_max": 0.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mmmc"
+        }
+      },
+      "20mmmcheri": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mmmcheri"
+        }
+      },
+      "23mmmc": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.1,
+          "attack_interval_max": 0.1,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:23mmmc"
+        }
+      },
+      "25mmmc": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.45,
+          "attack_interval_max": 0.45,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:25mmmc"
+        }
+      },
+      "30mmmc": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.1,
+          "attack_interval_max": 0.1,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:30mmmc"
+        }
+      },
+      "23mmmcair": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:23mmmcair"
+        }
+      },
+      "20mmmcair": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.0,
+          "attack_interval_max": 0.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mmmcair"
+        }
+      },
+      "30mmmcair": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.0,
+          "attack_interval_max": 0.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:30mmmcair"
+        }
       }
     },
     "components": {
@@ -3248,6 +3728,230 @@
         "add": {
           "component_groups": [
             "xm8"
+          ]
+        }
+      },
+      "vmg": {
+        "add": {
+          "component_groups": [
+            "vmg"
+          ]
+        }
+      },
+      "76mm": {
+        "add": {
+          "component_groups": [
+            "76mm"
+          ]
+        }
+      },
+      "85mm": {
+        "add": {
+          "component_groups": [
+            "85mm"
+          ]
+        }
+      },
+      "100mm": {
+        "add": {
+          "component_groups": [
+            "100mm"
+          ]
+        }
+      },
+      "105mm": {
+        "add": {
+          "component_groups": [
+            "105mm"
+          ]
+        }
+      },
+      "120mm": {
+        "add": {
+          "component_groups": [
+            "120mm"
+          ]
+        }
+      },
+      "125mm": {
+        "add": {
+          "component_groups": [
+            "125mm"
+          ]
+        }
+      },
+      "152mm": {
+        "add": {
+          "component_groups": [
+            "152mm"
+          ]
+        }
+      },
+      "20mm": {
+        "add": {
+          "component_groups": [
+            "20mm"
+          ]
+        }
+      },
+      "23mm": {
+        "add": {
+          "component_groups": [
+            "23mm"
+          ]
+        }
+      },
+      "ads_dp28": {
+        "add": {
+          "component_groups": [
+            "ads_dp28"
+          ]
+        }
+      },
+      "ads_m60": {
+        "add": {
+          "component_groups": [
+            "ads_m60"
+          ]
+        }
+      },
+      "ads_pkm": {
+        "add": {
+          "component_groups": [
+            "ads_pkm"
+          ]
+        }
+      },
+      "76mmrocket": {
+        "add": {
+          "component_groups": [
+            "76mmrocket"
+          ]
+        }
+      },
+      "agmissile": {
+        "add": {
+          "component_groups": [
+            "agmissile"
+          ]
+        }
+      },
+      "vmgii": {
+        "add": {
+          "component_groups": [
+            "vmgii"
+          ]
+        }
+      },
+      "vmgi": {
+        "add": {
+          "component_groups": [
+            "vmgi"
+          ]
+        }
+      },
+      "aamissile": {
+        "add": {
+          "component_groups": [
+            "aamissile"
+          ]
+        }
+      },
+      "bomb": {
+        "add": {
+          "component_groups": [
+            "bomb"
+          ]
+        }
+      },
+      "hmg": {
+        "add": {
+          "component_groups": [
+            "hmg"
+          ]
+        }
+      },
+      "7.62mmmgs": {
+        "add": {
+          "component_groups": [
+            "7.62mmmgs"
+          ]
+        }
+      },
+      "7.62mmmg": {
+        "add": {
+          "component_groups": [
+            "7.62mmmg"
+          ]
+        }
+      },
+      "12.7mmmg": {
+        "add": {
+          "component_groups": [
+            "12.7mmmg"
+          ]
+        }
+      },
+      "14.5mmhmg": {
+        "add": {
+          "component_groups": [
+            "14.5mmhmg"
+          ]
+        }
+      },
+      "20mmmc": {
+        "add": {
+          "component_groups": [
+            "20mmmc"
+          ]
+        }
+      },
+      "20mmmcheri": {
+        "add": {
+          "component_groups": [
+            "20mmmcheri"
+          ]
+        }
+      },
+      "23mmmc": {
+        "add": {
+          "component_groups": [
+            "23mmmc"
+          ]
+        }
+      },
+      "25mmmc": {
+        "add": {
+          "component_groups": [
+            "25mmmc"
+          ]
+        }
+      },
+      "30mmmc": {
+        "add": {
+          "component_groups": [
+            "30mmmc"
+          ]
+        }
+      },
+      "23mmmcair": {
+        "add": {
+          "component_groups": [
+            "23mmmcair"
+          ]
+        }
+      },
+      "20mmmcair": {
+        "add": {
+          "component_groups": [
+            "20mmmcair"
+          ]
+        }
+      },
+      "30mmmcair": {
+        "add": {
+          "component_groups": [
+            "30mmmcair"
           ]
         }
       }

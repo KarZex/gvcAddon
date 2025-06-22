@@ -184,7 +184,9 @@
         "is_pushable_by_piston": false
       },
       "minecraft:physics": {},
-      "minecraft:floats_in_liquid": {},
+      "minecraft:behavior.float": {
+        "priority": 1
+      },
       "minecraft:underwater_movement": {
         "value": 0.4
       }

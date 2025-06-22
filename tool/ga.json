@@ -8,7 +8,8 @@
       "is_summonable": true,
       "scripts": {
         "animate": [
-          "walk","para"
+          "walk",
+          "para"
         ]
       },
       "animations": {
@@ -17,7 +18,7 @@
       }
     },
     "component_groups": {
-      "is_raid":{
+      "is_raid": {
         "minecraft:damage_sensor": {
           "triggers": [
             {
@@ -89,7 +90,6 @@
         "minecraft:underwater_movement": {
           "value": 0.2
         }
-
       },
       "st1": {
         "minecraft:behavior.nearest_attackable_target": {
@@ -149,17 +149,20 @@
           "attack_interval_max": 8.0,
           "attack_radius": 64.0
         },
-        "minecraft:environment_sensor":{
-            "triggers":[
-              {
-                  "filters":{
-                    "all_of":[
-                        { "test": "is_riding","value":false }
-                    ]
-                  },
-                  "event":"despawning"
-              }
-            ]
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "despawning"
+            }
+          ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -231,17 +234,20 @@
           "attack_interval_max": 3.0,
           "attack_radius": 64.0
         },
-        "minecraft:environment_sensor":{
-            "triggers":[
-              {
-                  "filters":{
-                    "all_of":[
-                        { "test": "is_riding","value":false }
-                    ]
-                  },
-                  "event":"despawning"
-              }
-            ]
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "despawning"
+            }
+          ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -313,17 +319,20 @@
           "attack_interval_max": 10.0,
           "attack_radius": 100.0
         },
-        "minecraft:environment_sensor":{
-            "triggers":[
-              {
-                  "filters":{
-                    "all_of":[
-                        { "test": "is_riding","value":false }
-                    ]
-                  },
-                  "event":"despawning"
-              }
-            ]
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "despawning"
+            }
+          ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -395,17 +404,20 @@
           "attack_interval_max": 3.0,
           "attack_radius": 100.0
         },
-        "minecraft:environment_sensor":{
-            "triggers":[
-              {
-                  "filters":{
-                    "all_of":[
-                        { "test": "is_riding","value":false }
-                    ]
-                  },
-                  "event":"despawning"
-              }
-            ]
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "despawning"
+            }
+          ]
         },
         "minecraft:damage_sensor": {
           "triggers": [
@@ -426,7 +438,11 @@
       },
       "can_not_ride": {
         "minecraft:type_family": {
-          "family": [ "guerrillaii", "monster", "mob" ]
+          "family": [
+            "guerrillaii",
+            "monster",
+            "mob"
+          ]
         }
       },
       "army": {
@@ -445,17 +461,15 @@
         },
         "minecraft:transformation": {
           "into": "gvcv5:ga_freezed",
-          "transformation_sound" : "convert_to_stray",
+          "transformation_sound": "convert_to_stray",
           "keep_level": true,
           "drop_inventory": true,
           "preserve_equipment": true
         }
       }
     },
-
     "components": {
-      "minecraft:is_hidden_when_invisible": {
-      },
+      "minecraft:is_hidden_when_invisible": {},
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 10 + (query.equipment_count * Math.Random(1,3)) : 0"
       },
@@ -464,33 +478,36 @@
         "height": 1.8
       },
       "minecraft:type_family": {
-        "family": [ "guerrilla", "monster", "mob" ]
+        "family": [
+          "guerrilla",
+          "monster",
+          "mob"
+        ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0,
         "breathes_water": true
       },
-
       "minecraft:damage_sensor": {
         "triggers": [
           {
             "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_riding",
-                      "operator": "not"
-                    },
-                    {
-                      "test": "has_damage",
-                      "value": "projectile"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "damager",
-                      "value": "freeze"
-                    }
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding",
+                    "operator": "not"
+                  },
+                  {
+                    "test": "has_damage",
+                    "value": "projectile"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "value": "freeze"
+                  }
                 ]
               },
               "event": "gvcv5:ga_freezed"
@@ -508,7 +525,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -529,25 +551,21 @@
         "avoid_sun": false,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
+      "minecraft:movement.basic": {},
       "minecraft:behavior.float": {
         "priority": 0
       },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
-      "minecraft:nameable": {
-      },
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
       "minecraft:shooter": {
         "def": "minecraft:arrow"
       },
       "minecraft:behavior.find_mount": {
-          "priority": 1,
-          "within_radius": 16,
-          "start_delay": 15,
-          "max_failed_attempts": 20
+        "priority": 1,
+        "within_radius": 16,
+        "start_delay": 15,
+        "max_failed_attempts": 20
       },
       "minecraft:behavior.ranged_attack": {
         "priority": 0,
@@ -558,13 +576,13 @@
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
         "entity_types": {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "operator": "!=",
-              "value": "guerrilla"
-            }
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "guerrilla"
           }
+        }
       },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
@@ -616,39 +634,36 @@
       "minecraft:behavior.equip_item": {
         "priority": 3
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       },
-      "minecraft:conditional_bandwidth_optimization": {
-      }
+      "minecraft:conditional_bandwidth_optimization": {}
     },
-
     "events": {
       "gvcv5:entity_spawned_raid": {
         "sequence": [
           {
-          "add": {
-            "component_groups": [
-              "is_raid"
-            ]
+            "add": {
+              "component_groups": [
+                "is_raid"
+              ]
+            },
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
           },
-          "remove": {
-            "component_groups": [
-              "can_despawn"
-            ]
-          }
-        },
           {
-          "queue_command": {
-            "command": [
-              "tag @s add raid"
-            ]
-          }
-        },
-        {
+            "queue_command": {
+              "command": [
+                "tag @s add raid"
+              ]
+            }
+          },
+          {
             "filters": {
               "any_of": [
                 {
@@ -657,23 +672,27 @@
                 }
               ]
             },
-            "add": { "component_groups": [ "navy" ] }
-         },
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
           {
             "trigger": "gvcv5:set_have_gun"
           }
-          ]
+        ]
       },
       "minecraft:entity_spawned": {
         "sequence": [
           {
-          "add": {
-            "component_groups": [
-              "can_despawn"
-            ]
-          }
-        },
-        {
+            "add": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
+          {
             "filters": {
               "any_of": [
                 {
@@ -682,16 +701,20 @@
                 }
               ]
             },
-            "add": { "component_groups": [ "navy" ] }
-         },
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
           {
             "trigger": "gvcv5:set_have_gun"
           }
-          ]
+        ]
       },
       "minecraft:spawned_from_block": {
         "sequence": [
-        {
+          {
             "filters": {
               "any_of": [
                 {
@@ -700,29 +723,32 @@
                 }
               ]
             },
-            "add": { "component_groups": [ "navy" ] }
-         },
-         {
-          "remove": {
-            "component_groups": [
-              "can_despawn"
-            ]
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
           },
-          "queue_command": {
-            "command": [
-              "tag @s add cantriding"
-            ]
+          {
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            },
+            "queue_command": {
+              "command": [
+                "tag @s add cantriding"
+              ]
+            }
+          },
+          {
+            "trigger": "gvcv5:set_have_gun_nt"
           }
-
-         },
-         {
-           "trigger": "gvcv5:set_have_gun_nt"
-         }
-          ]
+        ]
       },
       "minecraft:spawned_from_spawner": {
         "sequence": [
-        {
+          {
             "filters": {
               "any_of": [
                 {
@@ -731,27 +757,30 @@
                 }
               ]
             },
-            "add": { "component_groups": [ "navy" ] }
-         },
-         {
-          "queue_command": {
-            "command": [
-              "tag @s add cantriding"
-            ]
+            "add": {
+              "component_groups": [
+                "navy"
+              ]
+            }
+          },
+          {
+            "queue_command": {
+              "command": [
+                "tag @s add cantriding"
+              ]
+            }
+          },
+          {
+            "trigger": "gvcv5:set_have_gun_nt"
           }
-
-         },
-         {
-           "trigger": "gvcv5:set_have_gun_nt"
-         }
-          ]
+        ]
       },
       "gvcv5:ga_freezed": {
-          "add": {
-            "component_groups": [
-              "freezed"
-            ]
-          }
+        "add": {
+          "component_groups": [
+            "freezed"
+          ]
+        }
       },
       "gvcv5:set_have_gun_nt": {
         "sequence": [
@@ -881,43 +910,41 @@
           }
         ]
       },
-      
       "gvcv5:set_have_gun": {
-        
         "sequence": [
           {
-              "filters": {
-                "any_of": [
-                  {
-                    "test": "is_difficulty",
-                    "value": "easy"
-                  }
-                ]
-              },
-              "randomize": [
+            "filters": {
+              "any_of": [
                 {
-                  "weight": 10,
-                  "trigger": "m1911"
-                },
-                {
-                  "weight": 20,
-                  "trigger": "ak47"
-                },
-                {
-                  "weight": 10,
-                  "trigger": "mp40"
-                },
-                {
-                  "weight": 10,
-                  "trigger": "uzi"
-                },
-                {
-                  "weight": 10,
-                  "trigger": "svd"
+                  "test": "is_difficulty",
+                  "value": "easy"
                 }
               ]
-           },
-        {
+            },
+            "randomize": [
+              {
+                "weight": 10,
+                "trigger": "m1911"
+              },
+              {
+                "weight": 20,
+                "trigger": "ak47"
+              },
+              {
+                "weight": 10,
+                "trigger": "mp40"
+              },
+              {
+                "weight": 10,
+                "trigger": "uzi"
+              },
+              {
+                "weight": 10,
+                "trigger": "svd"
+              }
+            ]
+          },
+          {
             "filters": {
               "any_of": [
                 {
@@ -961,125 +988,153 @@
               },
               {
                 "weight": 1,
+                "trigger": "vehicle:btr60"
+              },
+              {
+                "weight": 1,
                 "trigger": "vehicle:t34"
+              },
+              {
+                "weight": 1,
+                "trigger": "vehicle:r22"
+              },
+              {
+                "weight": 1,
+                "trigger": "vehicle:g_heri"
               },
               {
                 "weight": 1,
                 "trigger": "vehicle:pt76"
               }
             ]
-         },
-         {
-             "filters": {
-               "any_of": [
-                 {
-                   "test": "is_difficulty",
-                   "value": "hard"
-                 }
-               ]
-             },
-             "randomize": [
-               {
-                 "weight": 10,
-                 "trigger": "tt33"
-               },
-               {
-                 "weight": 20,
-                 "trigger": "an94"
-               },
-               {
-                 "weight": 10,
-                 "trigger": "ak12"
-               },
-               {
-                 "weight": 10,
-                 "trigger": "rpg"
-               },
-               {
-                 "weight": 10,
-                 "trigger": "p90"
-               },
-               {
-                 "weight": 10,
-                 "trigger": "mp5"
-               },
-               {
-                 "weight": 10,
-                 "trigger": "svd"
-               },
-               {
-                 "weight": 10,
-                 "trigger": "m79"
-               },
-               {
-                 "weight": 10,
-                 "trigger": "dp28"
-               },
-               {
-                 "weight": 5,
-                 "trigger": "vehicle:pt76"
-               },
-               {
-                 "weight": 5,
-                 "trigger": "vehicle:t55"
-               },
-               {
-                 "weight": 1,
-                 "trigger": "vehicle:t72"
-               }
-             ]
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_difficulty",
+                  "value": "hard"
+                }
+              ]
+            },
+            "randomize": [
+              {
+                "weight": 10,
+                "trigger": "tt33"
+              },
+              {
+                "weight": 20,
+                "trigger": "an94"
+              },
+              {
+                "weight": 10,
+                "trigger": "ak12"
+              },
+              {
+                "weight": 10,
+                "trigger": "rpg"
+              },
+              {
+                "weight": 10,
+                "trigger": "p90"
+              },
+              {
+                "weight": 10,
+                "trigger": "mp5"
+              },
+              {
+                "weight": 10,
+                "trigger": "svd"
+              },
+              {
+                "weight": 10,
+                "trigger": "m79"
+              },
+              {
+                "weight": 10,
+                "trigger": "dp28"
+              },
+              {
+                "weight": 5,
+                "trigger": "vehicle:btr60"
+              },
+              {
+                "weight": 5,
+                "trigger": "vehicle:r22"
+              },
+              {
+                "weight": 5,
+                "trigger": "vehicle:g_heri"
+              },
+              {
+                "weight": 1,
+                "trigger": "vehicle:mi24d"
+              },
+              {
+                "weight": 5,
+                "trigger": "vehicle:pt76"
+              },
+              {
+                "weight": 5,
+                "trigger": "vehicle:t55"
+              },
+              {
+                "weight": 1,
+                "trigger": "vehicle:t72"
+              }
+            ]
           }
         ]
       },
       "despawning": {
         "queue_command": {
-          "command":[
+          "command": [
             "kill @s"
           ]
         }
       },
       "char2c": {
-          "add": {
-            "component_groups": [
-              "char2c"
-            ]
-          },
-          "queue_command": {
-            "command":[
-              "effect @s invisibility 99999 1 true"
-            ]
-          }
+        "add": {
+          "component_groups": [
+            "char2c"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "effect @s invisibility 99999 1 true"
+          ]
+        }
       },
       "st1": {
-          "add": {
-            "component_groups": [
-              "st1"
-            ]
-          }
+        "add": {
+          "component_groups": [
+            "st1"
+          ]
+        }
       },
       "hauneb_main": {
-          "add": {
-            "component_groups": [
-              "hauneb_main"
-            ]
-          },
-          "queue_command": {
-            "command":[
-              "effect @s invisibility 99999 1 true"
-            ]
-          }
+        "add": {
+          "component_groups": [
+            "hauneb_main"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "effect @s invisibility 99999 1 true"
+          ]
+        }
       },
       "hauneb_sub": {
-          "add": {
-            "component_groups": [
-              "hauneb_sub"
-            ]
-          },
-          "queue_command": {
-            "command":[
-              "effect @s invisibility 99999 1 true"
-            ]
-          }
+        "add": {
+          "component_groups": [
+            "hauneb_sub"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "effect @s invisibility 99999 1 true"
+          ]
+        }
       }
     }
   }

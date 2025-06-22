@@ -113,7 +113,7 @@ for row in csv_reader:
         entity_json["minecraft:entity"]["components"]["minecraft:collision_box"]["width"] = v_sizew 
         entity_json["minecraft:entity"]["components"]["minecraft:collision_box"]["height"] = v_sizeh
         if v_water != "":
-            entity_json["minecraft:entity"]["components"]["minecraft:floats_in_liquid"] = {}
+            entity_json["minecraft:entity"]["components"]["minecraft:behavior.float"] = {   "priority": 1   }
             entity_json["minecraft:entity"]["components"]["minecraft:underwater_movement"] = { "value": float(v_water) }
         
         if v_antibullet == "T":
@@ -214,7 +214,7 @@ for row in csv_reader:
             s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players add @s[scores={{subWeapon=..{2}}}] subWeapon 1\n".format(v_id,v_sub,maxsubcool)
             s_func += "\nscoreboard players set @s maxsubcool {1}\n".format(v_id,maxsubcool)
             if v_subcool > 0:
-                s_func += "execute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s scool {1}\n".format(v_id,v_subcool)
+                s_func += "execute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s scool {1}\n".format(v_id,v_subcool+1)
             if v_main == "":
                 b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_sub)
 

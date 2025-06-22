@@ -11,6 +11,7 @@
             "/tag @s remove ride",
             "/tag @s remove heriRiding",
             "/tag @s remove HKE",
+            "/tag @s remove air",
             "/event entity @s gvcv5:set_have_gun_nt",
             "/effect @s clear"
           ]
@@ -19,6 +20,7 @@
           "on_entry": [
             "/tag @s[tag=!ride] add HKE",
             "/execute as @s[tag=!ride] run function b1",
+            "/execute if entity @e[r=4,family=heri] run tag @s add air",
             "/tag @s[tag=!ride] add ride"
           ],
           "transitions": [
