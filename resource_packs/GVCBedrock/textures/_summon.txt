@@ -41,3 +41,7 @@ vehicle:zu23;v
 vehicle:dp28set;v
 vehicle:m60set;v
 vehicle:pkmset;v
+vehicle:su27;v
+vehicle:f16;v
+vehicle:su25;v
+

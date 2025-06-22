@@ -381,6 +381,18 @@
     },
     "yellowspawn": {
       "textures": "textures/blocks/yellowspawn"
+    },
+    "spawn_vehicle_su27": {
+      "textures": "textures/spawn/vehicle_su27"
+    },
+    "spawn_vehicle_f16": {
+      "textures": "textures/spawn/vehicle_f16"
+    },
+    "spawn_vehicle_su25": {
+      "textures": "textures/spawn/vehicle_su25"
+    },
+    "spawn_": {
+      "textures": "textures/spawn/"
     }
   }
 }

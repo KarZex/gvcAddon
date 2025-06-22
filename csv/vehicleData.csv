@@ -17,7 +17,7 @@ vehicle,t72,tank,300,0.2,vmg,1,125mm,100,,0,,0,T,,3,2,1,F,"[ ""guerrilla"",""all
 vehicle,r22,heri,50,0.4,7.62mmmgs,1,,0,,0,,0,F,,3,2,2,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[0.5,0.6,-0.1]","[-0.5,0.6,-0.1]",,,,,30,7.62mmMG,NO,NO,NO,,r22
 vehicle,ah1s,heri,200,0.4,20mmmcheri,0,76mmrocket,20,,0,,0,F,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 0.65, 0.5 ]",,,,,,30,20mmMC,76mmRocket,NO,NO,,ah1s
 vehicle,ah6,heri,80,0.4,7.62mmmg,0,,0,,0,,0,F,,3,2,4,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.4, 0.85, 0.5 ]","[ -0.4, 0.85, 0.5 ]","[ 0.4, 0.85, 0.1 ]","[ -0.4, 0.85, 0.1 ]",,,30,7.62mmMG,NO,NO,NO,,ah6
-vehicle,g_heri,heri,160,0.4,vmg,1,,0,,0,,0,F,,3,2,4,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.5, 0.5, 0.5 ]","[ -0.5, 0.5, 0.5 ]","[ 0.5, 0.5, -1.2 ]","[ -0.5, 0.5, -1.2 ]",,,30,7.62mmMG,NO,NO,NO,9,g_heri
+vehicle,g_heri,heri,100,0.4,vmg,1,,0,,0,,0,F,,3,2,4,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.5, 0.5, 0.5 ]","[ -0.5, 0.5, 0.5 ]","[ 0.5, 0.5, -1.2 ]","[ -0.5, 0.5, -1.2 ]",,,30,7.62mmMG,NO,NO,NO,9,g_heri
 vehicle,ka50,heri,400,0.4,30mmmc,2,76mmrocket,20,aamissile,100,bomb,100,F,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 1.2, 0.6 ]",,,,,,30,30mmMC,76mmRocket,AAMissile,NO,,ka50
 vehicle,ka60,heri,400,0.4,vmg,1,,0,,0,,0,F,,3,2,6,F,"[ ""guerrilla"",""allied_soldier"",""player"",""unks""]","[ 0.5, 1.5, 2.5 ]","[ -0.5, 1.5, 2.5 ]","[ 0.5, 1.5, 0 ]","[ -0.5, 1.5, 0 ]","[ 0.5, 1.5, -1 ]","[ -0.5, 1.5, -1 ]",30,MachineGun,NO,NO,NO,27,ka60
 vehicle,mi24d,heri,400,0.4,12.7mmmg,1,agmissile,100,,0,,0,F,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 2.07, 1.25 ]",,,,,,30,12.7mmMG,agmissile,NO,NO,,mi24d

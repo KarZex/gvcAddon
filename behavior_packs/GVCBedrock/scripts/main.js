@@ -89,8 +89,7 @@ function summonAirbone(projectile,location,Radius,Height,Sigma,team ){
 		y: location.y + Height,
 		z: location.z + Radius * Math.cos(rad) 
 	};
-	const airbone = projectile.dimension.spawnEntity(`gvcv5:ca`,spawnPoint);
-	airbone.triggerEvent(`minecraft:spawned_from_air`);
+	const airbone = projectile.dimension.spawnEntity(`gvcv5:ca`,spawnPoint,{ spawnEvent:`minecraft:spawned_from_air`});
 	airbone.teleport( airbone.location, {rotation: projectile.getRotation() } )
 	if( team != `noteam` ){
 		airbone.triggerEvent(`gvcv5:become_${team}team`);
@@ -570,7 +569,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		}
 		else if( player.hasTag(`cantriding`) && vehicle.hasTag(`is_enemy`) ){
 			vehicle.remove();
-			player.remove();
+			player.removeTag(`cantriding`);
 		}
 	}
 	else if( e.id == "zex:vheri"){
@@ -586,7 +585,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		}
 		else if( player.hasTag(`cantriding`) && vehicle.hasTag(`is_enemy`) ){
 			vehicle.remove();
-			player.remove();
+			player.removeTag(`cantriding`);
 		}
 		else if( player.target != undefined ){
 			let abs_v = vehicle.getComponent(EntityComponentTypes.Movement).defaultValue;

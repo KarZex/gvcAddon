@@ -212,8 +212,8 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 160,
-        "max": 160
+        "value": 100,
+        "max": 100
       },
       "minecraft:scale": {
         "value": 1.0
