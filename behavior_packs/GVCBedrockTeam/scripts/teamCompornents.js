@@ -34,6 +34,13 @@ function gvcv5UseTPBlock( event ){
     }
 }
 
+async function setUp(){
+    await system.waitTicks(100);
+    if( world.getDynamicProperty(`teamJail`) == undefined ){
+        world.setDynamicProperty("teamJail",true);
+    }
+    await system.waitTicks(1);
+}
 
 system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:jail`,{onPlace: gvcv5JailSpawn});
@@ -43,9 +50,7 @@ system.beforeEvents.startup.subscribe( e => {
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:teamphone`,{onUse: gvcv5UseTeamPhone});
 });
 
-world.afterEvents.worldLoad.subscribe( e => {
-    world.sendMessage(`World loaded, setting up team properties...`);
-    if( world.getDynamicProperty(`teamJail`) == undefined ){
-        world.setDynamicProperty("teamJail",true);
-    }
+world.afterEvents.worldLoad.subscribe( async e => {
+    await setUp();
+    world.sendMessage(`§gGVCV5 Team: Components loaded successfully!`);
 } )

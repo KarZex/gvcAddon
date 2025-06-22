@@ -424,7 +424,7 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "vmg": {
-    "damage": 4,
+    "damage": 5,
     "damageType": "override"
   },
   "76mm": {
@@ -454,10 +454,6 @@ export const gunData = {
   "152mm": {
     "damage": 180,
     "damageType": "entityExplosion"
-  },
-  "20mmMC": {
-    "damage": 5,
-    "damageType": "override"
   },
   "20mm": {
     "damage": 10,
@@ -505,6 +501,70 @@ export const gunData = {
   },
   "bomb": {
     "damage": 60,
+    "damageType": "entityExplosion"
+  },
+  "HMG": {
+    "damage": 8,
+    "damageType": "override"
+  },
+  "7.62mmmgsr": {
+    "damage": 4,
+    "damageType": "override"
+  },
+  "7.62mmmgsl": {
+    "damage": 4,
+    "damageType": "override"
+  },
+  "7.62mmmg": {
+    "damage": 5,
+    "damageType": "override"
+  },
+  "12.7mmmg": {
+    "damage": 5,
+    "damageType": "override"
+  },
+  "14.5mmhmg": {
+    "damage": 6,
+    "damageType": "entityExplosion"
+  },
+  "20mmmc": {
+    "damage": 5,
+    "damageType": "entityExplosion"
+  },
+  "20mmmcheri": {
+    "damage": 10,
+    "damageType": "entityExplosion"
+  },
+  "23mmmc": {
+    "damage": 12,
+    "damageType": "entityExplosion"
+  },
+  "25mmmc": {
+    "damage": 20,
+    "damageType": "entityExplosion"
+  },
+  "30mmmc": {
+    "damage": 16,
+    "damageType": "entityExplosion"
+  },
+  "23mmmcairr": {
+    "damage": 25,
+    "damageType": "entityExplosion"
+  },
+  "23mmmcairl": {
+    "damage": 25,
+    "damageType": "entityExplosion"
+  },
+  "20mmmcairr": {
+    "damage": 20,
+    "damageType": "override"
+  },
+  "20mmmcairl": {
+    "damage": 20,
+    "damageType": "override"
+  },
+  "30mmmcair": {
+    "damage": 20,
     "damageType": "entityExplosion"
   }
 };

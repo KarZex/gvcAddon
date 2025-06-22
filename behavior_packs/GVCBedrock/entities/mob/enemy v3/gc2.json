@@ -7,8 +7,8 @@
       "is_summonable": true,
       "is_experimental": false
     },
-    "components": {
-      "is_raid":{
+    "component_groups": {
+      "is_raid": {
         "minecraft:damage_sensor": {
           "triggers": [
             {
@@ -80,30 +80,31 @@
         "minecraft:underwater_movement": {
           "value": 0.2
         }
-
+      }
+    },
+    "components": {
+      "minecraft:behavior.charge_held_item": {
+        "priority": 3,
+        "items": [
+          "minecraft:arrow"
+        ]
       },
-        "minecraft:behavior.charge_held_item": {
-          "priority": 3,
-          "items": [
-            "minecraft:arrow"
-          ]
-        },
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 10,
-          "burst_interval": 0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 2.0,
-          "attack_interval_max": 2.0,
-          "attack_radius": 30.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:ads_mg42"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/entities/gc2.json"
-        },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 3,
+        "burst_shots": 10,
+        "burst_interval": 0,
+        "charge_charged_trigger": 0.0,
+        "charge_shoot_trigger": 0.0,
+        "attack_interval_min": 2.0,
+        "attack_interval_max": 2.0,
+        "attack_radius": 30.0
+      },
+      "minecraft:shooter": {
+        "def": "fire:ads_mg42"
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/gc2.json"
+      },
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 10 : 0"
       },
@@ -129,14 +130,11 @@
       "minecraft:navigation.walk": {
         "can_path_over_water": true,
         "avoid_water": true,
-        "avoid_damage_blocks":  true
+        "avoid_damage_blocks": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:health": {
         "value": 160,
         "max": 160
@@ -144,23 +142,21 @@
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
         "entity_types": [
-		{
-          "filters": {
-            "test": "is_family",
-            "subject": "other",
-            "operator": "!=",
-            "value": "guerrilla"
-          },
-          "max_dist": 64
-		}
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "operator": "!=",
+              "value": "guerrilla"
+            },
+            "max_dist": 64
+          }
         ]
       },
-        "minecraft:follow_range": {
-          "value": 256
-        },
-      "minecraft:nameable": {
-
+      "minecraft:follow_range": {
+        "value": 256
       },
+      "minecraft:nameable": {},
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -171,66 +167,85 @@
         "within_radius": 25.0,
         "must_see_forget_duration": 17.0,
         "entity_types": [
-        {
+          {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                {"test" : "is_family", "subject" : "other", "value" :  "allied_soldier"},
-                { "test": "is_family", "subject": "other", "value": "irongolem" },
-				{ "test": "is_family", "subject": "other", "value": "player" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "allied_soldier"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                }
               ]
             },
-		     "max_dist": 35
-		}
+            "max_dist": 35
+          }
         ]
       },
       "minecraft:type_family": {
-        "family": [ "monster", "guerrilla", "mob" ]
+        "family": [
+          "monster",
+          "guerrilla",
+          "mob"
+        ]
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "gvcv5:entity_spawned_raid": {
         "sequence": [
           {
-          "add": {
-            "component_groups": [
-              "is_raid"
-            ]
-          },
-          "remove": {
-            "component_groups": [
-              "can_despawn"
-            ]
-          }
-        },
-          {
-          "queue_command": {
-            "command": [
-              "tag @s add raid"
-            ]
-          }
-        },
-        {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "has_biome_tag",
-                  "value": "ocean"
-                }
+            "add": {
+              "component_groups": [
+                "is_raid"
               ]
             },
-            "add": { "component_groups": [ "navy" ] }
-         }
-          ]
+            "remove": {
+              "component_groups": [
+                "can_despawn"
+              ]
+            }
+          },
+          {
+            "queue_command": {
+              "command": [
+                "tag @s add raid"
+              ]
+            }
+          },
+          {
+            "add": {
+              "component_groups": [
+                "D"
+              ]
+            }
+          }
+        ]
       },
       "minecraft:spawned_from_block": {
+        "add": {
+          "component_groups": [
+            "D"
+          ]
+        }
       },
       "minecraft:entity_spawned": {
         "add": {
@@ -239,10 +254,10 @@
           ]
         }
       },
-	   "S": {
+      "S": {
         "remove": {
           "component_groups": [
-			"D"
+            "D"
           ]
         },
         "add": {
@@ -254,7 +269,7 @@
       "D": {
         "remove": {
           "component_groups": [
-			"S"
+            "S"
           ]
         },
         "add": {
@@ -262,8 +277,7 @@
             "D"
           ]
         }
-      },	  
-	  
+      },
       "minecraft:entity_transformed": {
         "add": {
           "component_groups": [

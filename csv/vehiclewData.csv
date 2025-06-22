@@ -7,7 +7,6 @@ name,id,ƒ_ƒ[ƒW,’e‘¬,–½’†¸“x,˜AËŠÔŠu(tick),”š”­,ƒuƒƒbƒN”j‰ó,‰¹,ƒ_ƒ[ƒWƒ^ƒCƒ
 ,120mm,160,4,0,100,6,F,tankbullet,entityExplosion,
 ,125mm,160,4,0,100,6,F,tankbullet,entityExplosion,
 ,152mm,180,4,0,160,7,F,tankbullet,entityExplosion,
-,20mmMC,5,6,0,2,0,F,hmgbullet,override,
 ,20mm,10,6,0,5,3,F,hmgbullet,entityExplosion,
 ,23mm,12,6,0,6,3,F,hmgbullet,entityExplosion,
 ,ads_dp28,8,6,0,1,0,F,mgbullet,override,
@@ -19,3 +18,17 @@ name,id,ƒ_ƒ[ƒW,’e‘¬,–½’†¸“x,˜AËŠÔŠu(tick),”š”­,ƒuƒƒbƒN”j‰ó,‰¹,ƒ_ƒ[ƒWƒ^ƒCƒ
 ,vmgi,8,6,0,0,0,F,mgiibullet,override,
 ,aamissile,60,2,0,100,4,F,missilebullet,entityExplosion,H
 ,bomb,60,2,0,100,4,F,missilebullet,entityExplosion,HM
+,HMG,8,4,0,2,0,F,hmgbullet,override,
+,7.62mmmgs,4,4,0,1,0,F,mgiibullet,override,D
+,7.62mmmg,5,4,0,1,0,F,mgiibullet,override,
+,12.7mmmg,5,4,0,1,0,F,hmgbullet,override,
+,14.5mmhmg,6,4,0,2,1,F,hmgbullet,entityExplosion,
+,20mmmc,5,4,0,0,1,F,mgiibullet,entityExplosion,
+,20mmmcheri,10,4,0,1,1,F,mgiibullet,entityExplosion,
+,23mmmc,12,4,0,2,1,F,mgiibullet,entityExplosion,
+,25mmmc,20,4,0,9,1,F,hmgiibullet,entityExplosion,
+,30mmmc,16,4,0,2,1,F,hmgiibullet,entityExplosion,
+,vmg,5,4,0,1,0,F,mgiibullet,override,
+,23mmmcair,25,4,0,1,1,F,hmgiibullet,entityExplosion,D
+,20mmmcair,20,6,0,0,0,F,airbullet,override,D
+,30mmmcair,20,6,0,0,1,F,airbullet,entityExplosion,

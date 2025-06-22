@@ -246,7 +246,15 @@
         "is_pushable": true,
         "is_pushable_by_piston": false
       },
-      "minecraft:physics": {}
+      "minecraft:physics": {},
+      "minecraft:inventory": {
+        "additional_slots_per_strength": 0,
+        "can_be_siphoned_from": false,
+        "container_type": "container",
+        "inventory_size": 27,
+        "private": false,
+        "restrict_to_owner": false
+      }
     },
     "events": {
       "summon_enemy": {

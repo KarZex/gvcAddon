@@ -37,6 +37,18 @@
 			   "sounds/fire_hmg"
 		   ]
 	   },
+		"fire.hmgii": {
+		   "category": "hostile",
+		   "sounds": [
+			   "sounds/fire_hmgii"
+		   ]
+	   },
+		"fire.air": {
+		   "category": "hostile",
+		   "sounds": [
+			   "sounds/fire_air"
+		   ]
+	   },
 		"fire.mgii": {
 		   "category": "hostile",
 		   "sounds": [

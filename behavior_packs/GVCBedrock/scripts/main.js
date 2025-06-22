@@ -1118,7 +1118,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			} )
 		}
 		else if( e.message == `building`){
-			print(`${world.getDynamicProperty(`gvcv5:buildingSpawnS`)}`)
 			const form = new ModalFormData();
 			form.title(`Building Settings`);
 			form.toggle(`Small Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnS`),tooltip:`Small Building Spawn`});

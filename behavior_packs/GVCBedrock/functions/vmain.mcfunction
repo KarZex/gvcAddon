@@ -35,8 +35,14 @@ execute if entity @e[r=4,type=vehicle:t72] if entity @s[scores={mcool=0}] run sc
 execute if entity @e[r=4,type=vehicle:ah1s] if entity @s[scores={mcool=0}] run event entity @s[scores={mtype=0..}] fire:76mmrocket
 execute if entity @e[r=4,type=vehicle:ah1s] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0..}] mcool 20
 
-execute if entity @e[r=4,type=vehicle:ka50] if entity @s[scores={mcool=0}] run event entity @s[scores={mtype=0..}] fire:76mmrocket
-execute if entity @e[r=4,type=vehicle:ka50] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0..}] mcool 20
+execute if entity @e[r=4,type=vehicle:ka50] if entity @s[scores={mcoolii=0}] run event entity @s[scores={mtype=2..}] fire:bomb
+execute if entity @e[r=4,type=vehicle:ka50] if entity @s[scores={mcoolii=0}] run scoreboard players set @s[scores={mtype=2..}] mcoolii 100
+
+execute if entity @e[r=4,type=vehicle:ka50] if entity @s[scores={mcooli=0}] run event entity @s[scores={mtype=1}] fire:aamissile
+execute if entity @e[r=4,type=vehicle:ka50] if entity @s[scores={mcooli=0}] run scoreboard players set @s[scores={mtype=1}] mcooli 100
+
+execute if entity @e[r=4,type=vehicle:ka50] if entity @s[scores={mcool=0}] run event entity @s[scores={mtype=0}] fire:76mmrocket
+execute if entity @e[r=4,type=vehicle:ka50] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0}] mcool 20
 
 execute if entity @e[r=4,type=vehicle:mi24d] if entity @s[scores={mcool=0}] run event entity @s[scores={mtype=0..}] fire:agmissile
 execute if entity @e[r=4,type=vehicle:mi24d] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0..}] mcool 100
@@ -46,6 +52,9 @@ execute if entity @e[r=4,type=vehicle:flak18] if entity @s[scores={mcool=0}] run
 
 execute if entity @e[r=4,type=vehicle:pak40] if entity @s[scores={mcool=0}] run event entity @s[scores={mtype=0..}] fire:105mm
 execute if entity @e[r=4,type=vehicle:pak40] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0..}] mcool 100
+
+execute if entity @e[r=4,type=vehicle:mig17] if entity @s[scores={mcool=0}] run event entity @s[scores={mtype=0..}] fire:76mmrocket
+execute if entity @e[r=4,type=vehicle:mig17] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0..}] mcool 20
 
 execute if entity @e[r=4,type=vehicle:su27] if entity @s[scores={mcool=0}] run event entity @s[scores={mtype=0..}] fire:aamissile
 execute if entity @e[r=4,type=vehicle:su27] if entity @s[scores={mcool=0}] run scoreboard players set @s[scores={mtype=0..}] mcool 100

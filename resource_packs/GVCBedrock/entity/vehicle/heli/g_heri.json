@@ -18,10 +18,12 @@
 	  },
 			"scripts": {
 				"animate": [ 
-			{ "fly": "query.has_rider" }
+					{ "look_at_target": "query.has_rider"},
+					{ "fly": "query.has_rider" }
 				]
 			},
 			"animations": {
+        		"look_at_target": "animation.heriix",
 				"fly": "animation.heri.fly"
 			},
       "render_controllers": [ "controller.render.iron_golem" ]

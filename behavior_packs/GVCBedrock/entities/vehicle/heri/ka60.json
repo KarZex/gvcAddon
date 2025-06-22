@@ -68,7 +68,7 @@
         "table": "loot_tables/entities/tank.json"
       },
       "minecraft:rideable": {
-        "seat_count": 1,
+        "seat_count": 6,
         "family_types": [
           "guerrilla",
           "allied_soldier",
@@ -76,13 +76,50 @@
           "unks"
         ],
         "interact_text": "action.interact.ride.horse",
-        "seats": {
-          "position": [
-            0.5,
-            1.5,
-            2.5
-          ]
-        }
+        "seats": [
+          {
+            "position": [
+              0.5,
+              1.5,
+              2.5
+            ]
+          },
+          {
+            "position": [
+              -0.5,
+              1.5,
+              2.5
+            ]
+          },
+          {
+            "position": [
+              0.5,
+              1.5,
+              0
+            ]
+          },
+          {
+            "position": [
+              -0.5,
+              1.5,
+              0
+            ]
+          },
+          {
+            "position": [
+              0.5,
+              1.5,
+              -1
+            ]
+          },
+          {
+            "position": [
+              -0.5,
+              1.5,
+              -1
+            ]
+          }
+        ]
       },
       "minecraft:type_family": {
         "family": [
@@ -209,7 +246,15 @@
         "is_pushable": false,
         "is_pushable_by_piston": false
       },
-      "minecraft:physics": {}
+      "minecraft:physics": {},
+      "minecraft:inventory": {
+        "additional_slots_per_strength": 0,
+        "can_be_siphoned_from": false,
+        "container_type": "container",
+        "inventory_size": 27,
+        "private": false,
+        "restrict_to_owner": false
+      }
     },
     "events": {
       "despawning": {

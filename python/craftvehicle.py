@@ -18,10 +18,10 @@ for row in csv_reader:
 
     if( row_count >= 1 ):
         #from CSV
-        v_name = row[0]
-        v_id = row[1]
-        v_type = row[2]
-        v_health = int(row[3])
+        v_name = row[0] #A on excel
+        v_id = row[1] #B on excel
+        v_type = row[2] #C
+        v_health = int(row[3]) #D
         v_speed = float(row[4])
         v_sub = row[5]
         v_subcool = int(row[6])
@@ -44,13 +44,16 @@ for row in csv_reader:
         v_position4 = row[23]
         v_position5 = row[24]
         v_position6 = row[25]
-        maxsubcool = int(row[26])
+        maxsubcool = int(row[26]) # AA on excel
 
         #from Name CSV
         v_subname = row[27]
         v_mainname = row[28]
         v_main2name = row[29]
         v_main3name = row[30]
+
+        #inventory item
+        v_inventory = row[31] 
 
 
         if v_subname != "":
@@ -153,6 +156,17 @@ for row in csv_reader:
                     "yellow_flower"
                 ] 
             }
+
+        if v_inventory != "":
+            inventory_json = {
+                "additional_slots_per_strength": 0,
+                "can_be_siphoned_from": False,
+                "container_type": "container",
+                "inventory_size": int(v_inventory),
+                "private": False,
+                "restrict_to_owner": False
+            }
+            entity_json["minecraft:entity"]["components"]["minecraft:inventory"] = inventory_json
 
         with open("behavior_packs/GVCBedrock/entities/vehicle/{0}/{1}.json".format(v_type,v_id),"w") as f:
             json.dump(entity_json,f,indent=2)
