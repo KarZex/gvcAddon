@@ -29,6 +29,6 @@ name,id,ƒ_ƒ[ƒW,’e‘¬,–½’†¸“x,˜AËŠÔŠu(tick),”š”­,ƒuƒƒbƒN”j‰ó,‰¹,ƒ_ƒ[ƒWƒ^ƒCƒ
 ,25mmmc,20,4,0,9,1,F,hmgiibullet,entityExplosion,
 ,30mmmc,16,4,0,2,1,F,hmgiibullet,entityExplosion,
 ,vmg,5,4,0,1,0,F,mgiibullet,override,
-,23mmmcair,25,4,0,1,1,F,hmgiibullet,entityExplosion,D
-,20mmmcair,20,6,0,0,0,F,airbullet,override,D
-,30mmmcair,20,6,0,0,1,F,airbullet,entityExplosion,
+,23mmmcair,4,4,0,1,1,F,airbullet,override,D
+,20mmmcair,8,6,0,0,0,F,airbullet,override,D
+,30mmmcair,12,6,0,0,1,F,airbullet,override,

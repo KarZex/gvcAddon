@@ -65,7 +65,7 @@
         "table": "loot_tables/entities/a1.json"
       },
       "minecraft:type_family": {
-        "family": [ "allied_soldier_flag","allied_soldier","playerp","mob" ]
+        "family": [ "allied_soldier_flag","allied_soldier","playerp","noteam","mob" ]
       },
       "minecraft:breathable": {
         "total_supply": 15,

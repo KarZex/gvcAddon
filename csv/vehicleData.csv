@@ -20,7 +20,7 @@ vehicle,ah6,heri,80,0.4,7.62mmmg,0,,0,,0,,0,F,,3,2,4,F,"[ ""guerrilla"",""allied
 vehicle,g_heri,heri,100,0.4,vmg,1,,0,,0,,0,F,,3,2,4,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.5, 0.5, 0.5 ]","[ -0.5, 0.5, 0.5 ]","[ 0.5, 0.5, -1.2 ]","[ -0.5, 0.5, -1.2 ]",,,30,7.62mmMG,NO,NO,NO,9,g_heri
 vehicle,ka50,heri,400,0.4,30mmmc,2,76mmrocket,20,aamissile,100,bomb,100,F,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 1.2, 0.6 ]",,,,,,30,30mmMC,76mmRocket,AAMissile,NO,,ka50
 vehicle,ka60,heri,400,0.4,vmg,1,,0,,0,,0,F,,3,2,6,F,"[ ""guerrilla"",""allied_soldier"",""player"",""unks""]","[ 0.5, 1.5, 2.5 ]","[ -0.5, 1.5, 2.5 ]","[ 0.5, 1.5, 0 ]","[ -0.5, 1.5, 0 ]","[ 0.5, 1.5, -1 ]","[ -0.5, 1.5, -1 ]",30,MachineGun,NO,NO,NO,27,ka60
-vehicle,mi24d,heri,400,0.4,12.7mmmg,1,agmissile,100,,0,,0,F,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 2.07, 1.25 ]",,,,,,30,12.7mmMG,agmissile,NO,NO,,mi24d
+vehicle,mi24d,heri,400,0.4,12.7mmmg,1,agmissile,100,,0,,0,F,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 2.07, 1.25 ]",,,,,,30,12.7mmMG,AGmissile,NO,NO,,mi24d
 vehicle,20mmaa,set,50,0,20mmmc,4,,0,,0,,0,F,,1,1.8,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 0.5, -0.4 ]",,,,,,30,20mmMC,NO,NO,NO,,20mmaa
 vehicle,flak18,set,50,0,,5,125mm,100,,0,,0,F,,2,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.35, 0.25, -0.35 ]",,,,,,30,NO,105mmCannon,NO,NO,,flak18
 vehicle,pak40,set,50,0,,6,105mm,100,,0,,0,F,,2,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 0, -0.4 ]",,,,,,30,NO,76mmCannon,NO,NO,,pak40
@@ -31,4 +31,4 @@ vehicle,pkmset,set,50,0,7.62mmmg,1,,3,,0,,0,F,0.4,0.5,1,1,F,"[ ""guerrilla"",""a
 vehicle,mig17,air,100,1.5,23mmmcair,0,76mmrocket,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17
 vehicle,su27,air,200,2,20mmmcair,0,aamissile,100,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 2.45, 0.1 ]",,,,,,30,20mmMC,AAMissile,NO,NO,,su27
 vehicle,f16,air,200,2,20mmmcair,0,aamissile,100,bomb,100,,0,F,,5,4,1,F,[ "player"],"[ 0, 2.65, 0.1 ]",,,,,,30,20mmMC,AAMissile,Bomb,NO,,f16
-vehicle,su25,air,200,1.5,30mmmc,0,agmissile,100,bomb,100,,0,F,,5,4,1,F,[ "player"],"[ 0, 0.75, -0.3 ]",,,,,,30,30mmMC,agmissile,Bomb,,,su25
+vehicle,su25,air,200,1.5,30mmmcair,0,agmissile,100,bomb,100,,0,F,,5,4,1,F,[ "player"],"[ 0, 0.75, -0.3 ]",,,,,,30,30mmMC,AGmissile,Bomb,NO,,su25

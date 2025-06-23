@@ -548,23 +548,23 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "23mmmcairr": {
-    "damage": 25,
-    "damageType": "entityExplosion"
+    "damage": 4,
+    "damageType": "override"
   },
   "23mmmcairl": {
-    "damage": 25,
-    "damageType": "entityExplosion"
+    "damage": 4,
+    "damageType": "override"
   },
   "20mmmcairr": {
-    "damage": 20,
+    "damage": 8,
     "damageType": "override"
   },
   "20mmmcairl": {
-    "damage": 20,
+    "damage": 8,
     "damageType": "override"
   },
   "30mmmcair": {
-    "damage": 20,
-    "damageType": "entityExplosion"
+    "damage": 12,
+    "damageType": "override"
   }
 };

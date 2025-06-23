@@ -8,11 +8,11 @@
             { "riding": "query.is_riding" }
           ],
           "on_entry": [
+            "/event entity @s[tag=ride] gvcv5:set_have_gun_nt",
             "/tag @s remove ride",
             "/tag @s remove heriRiding",
             "/tag @s remove HKE",
             "/tag @s remove air",
-            "/event entity @s gvcv5:set_have_gun_nt",
             "/effect @s clear"
           ]
         },

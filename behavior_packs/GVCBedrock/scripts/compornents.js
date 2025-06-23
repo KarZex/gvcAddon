@@ -3,11 +3,55 @@ import { world, EquipmentSlot, system } from "@minecraft/server";
 function gvcv5SpawnEvent( event ){
     if( world.getDynamicProperty(`gvcv5:doSpawnFromBlock`)){
         let spawn = event.block.typeId;
+        const spawnBlock = event.block;
         const spawnLocation = event.block.location;
         if( spawn.includes(`addon`) ) {
             spawn = spawn.replace(`gvcv5:spawn_addon_`,`gvcv5:`);
-            const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z });
-            spawner.triggerEvent(`minecraft:spawned_from_block`);
+            /*
+            const aboveBlock = spawnBlock.above();
+            if( aboveBlock.typeId == `minecraft:chest` ){
+                try{
+                    const mainHand = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(0).getItem().typeId;
+                    if( mainHand.includes(`gun:`) ){
+                        const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`${mainHand.replace(`gun:`,``)}`});
+                        spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
+                        world.sendMessage(`${mainHand}`)
+                    }
+                    else{
+                        const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`melee`});
+                        spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
+                        spawner.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${mainHand}`);
+                    }
+                    try{
+                        const armorHead = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(1).getItem().typeId;
+                        spawner.runCommand(`replaceitem entity @s slot.armor.head 0 ${armorHead}`);
+                    }
+                    catch{}
+                    try{
+                        const armorChest = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(2).getItem().typeId;
+                        spawner.runCommand(`replaceitem entity @s slot.armor.chest 0 ${armorChest}`);
+                    }
+                    catch{}
+                    try{
+                        const armorLegs = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(3).getItem().typeId;
+                        spawner.runCommand(`replaceitem entity @s slot.armor.legs 0 ${armorLegs}`);
+                    }
+                    catch{}
+                    try{
+                        const armorFeet = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(4).getItem().typeId;
+                        spawner.runCommand(`replaceitem entity @s slot.armor.feet 0 ${armorFeet}`);
+                    }
+                    catch{}
+                }
+                catch{}
+                aboveBlock.dimension.setBlockType(aboveBlock.location,`minecraft:air`);
+            }
+            else{
+                const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`minecraft:spawned_from_block`});
+                spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
+            }
+            */
+            const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`minecraft:spawned_from_block`});
             spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
         }
         else if( spawn.includes(`vehicle`) ) {

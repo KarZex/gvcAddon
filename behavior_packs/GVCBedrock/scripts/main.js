@@ -8,7 +8,6 @@ import "./compornents";
 function print(text){
 	world.sendMessage(`§a[System]§r: ${text}`);
 }
-
 async function RaidSpawner(flag,type,wave) {
 	const R = 64;
 	const thita = Math.PI * 2 * Math.random();
