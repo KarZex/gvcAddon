@@ -5,8 +5,6 @@ import { craftData } from "./crafts";
 import { raidData } from "./raid";
 import "./compornents";
 
-const globalVarWW2Sides = [ `USA`,`SOV`,`GER`,`JAP` ] //using hoi4 tags
-
 function print(text){
 	world.sendMessage(`§a[System]§r: ${text}`);
 }
