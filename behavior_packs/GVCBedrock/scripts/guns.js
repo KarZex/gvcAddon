@@ -528,12 +528,12 @@ export const gunData = {
     "damageType": "override"
   },
   "20mmmc": {
-    "damage": 5,
+    "damage": 10,
     "damageType": "entityExplosion"
   },
   "20mmmcheri": {
     "damage": 10,
-    "damageType": "entityExplosion"
+    "damageType": "override"
   },
   "23mmmc": {
     "damage": 12,

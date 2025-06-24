@@ -5,8 +5,7 @@
       "identifier": "gvcv5:flag_cv_ga",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier": "minecraft:bat"
+      "is_experimental": false
     },
     "component_groups": {
       "despawning": {
@@ -217,10 +216,13 @@
         "must_see": true
       },
       "minecraft:persistent": {},
-      "minecraft:physics": {},
+      "minecraft:physics": {
+        "has_collision": true,
+        "has_gravity": true
+      },
       "minecraft:pushable": {
         "is_pushable": false,
-        "is_pushable_by_piston": true
+        "is_pushable_by_piston": false
       },
       "minecraft:follow_range": {
         "value": 64
@@ -231,14 +233,15 @@
         "queue_command": {
           "command": [
             "summon gvcv5:flag_cv_ca ~~1~",
-            "summon gvcv5:cv"
+            "kill @s"
           ]
         }
       },
       "become_GA": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_cv_ga ~~1~"
+            "summon gvcv5:flag_cv_ga ~~1~",
+            "kill @s"
           ]
         }
       }

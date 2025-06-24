@@ -1055,15 +1055,15 @@
                 "trigger": "dp28"
               },
               {
-                "weight": 5,
+                "weight": 1,
                 "trigger": "vehicle:btr60"
               },
               {
-                "weight": 5,
+                "weight": 1,
                 "trigger": "vehicle:r22"
               },
               {
-                "weight": 5,
+                "weight": 1,
                 "trigger": "vehicle:g_heri"
               },
               {
@@ -1071,11 +1071,11 @@
                 "trigger": "vehicle:mi24d"
               },
               {
-                "weight": 5,
+                "weight": 1,
                 "trigger": "vehicle:pt76"
               },
               {
-                "weight": 5,
+                "weight": 1,
                 "trigger": "vehicle:t55"
               },
               {

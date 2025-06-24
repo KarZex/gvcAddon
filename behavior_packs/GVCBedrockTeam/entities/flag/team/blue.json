@@ -251,11 +251,11 @@
         ]
       },
       "minecraft:behavior.send_event": {
-        "priority": 0,
+        "priority": 3,
         "event_choices": [
           {
             "min_activation_range": 0.0,
-            "max_activation_range": 3.0,
+            "max_activation_range": 32.0,
             "cooldown_time": 0,
             "cast_duration": 0,
             "particle_color": "#FF0000",

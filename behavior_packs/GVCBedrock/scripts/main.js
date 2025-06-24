@@ -17,7 +17,9 @@ async function RaidSpawner(flag,type,wave) {
 		y:L.y,
 		z:L.z + R * Math.sin(thita)
 	}
+	await flag.runCommand(`tickingarea remove raidSpawner`);
 	await flag.runCommand(`tickingarea add circle ${Math.floor(baseLocation.x)} ${Math.floor(baseLocation.y)} ${Math.floor(baseLocation.z)} 1 raidSpawner false`);
+	await system.waitTicks(2);
 	const d = flag.dimension;
 	const raid = raidData[`${type}`][`${wave}`];
 	for( let c of raid ){
@@ -61,7 +63,7 @@ async function RaidSpawner(flag,type,wave) {
 			}
 		}
 	}
-	await system.waitTicks(20);
+	await system.waitTicks(2);
 	flag.runCommand(`tickingarea remove raidSpawner`);
 }
 function setArmorValue( itemName ){

@@ -892,27 +892,27 @@
       "gvcv5:set_have_gun": {
         "randomize": [
           {
-            "weight": 2,
+            "weight": 20,
             "trigger": "m16a1"
           },
           {
-            "weight": 1,
+            "weight": 10,
             "trigger": "m4"
           },
           {
-            "weight": 1,
+            "weight": 10,
             "trigger": "m72"
           },
           {
-            "weight": 1,
+            "weight": 10,
             "trigger": "m110"
           },
           {
-            "weight": 1,
+            "weight": 10,
             "trigger": "mp5"
           },
           {
-            "weight": 1,
+            "weight": 10,
             "trigger": "m60"
           },
           {

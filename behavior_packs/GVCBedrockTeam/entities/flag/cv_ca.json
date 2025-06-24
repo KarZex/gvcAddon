@@ -5,171 +5,11 @@
       "identifier": "gvcv5:flag_cv_ca",
       "spawn_category": "creature",
       "is_spawnable": true,
-      "is_summonable": true,
-      "runtime_identifier": "minecraft:bat"
+      "is_summonable": true
     },
     "component_groups": {
       "despawning": {
         "minecraft:instant_despawn": {}
-      },
-      "end":{
-        "minecraft:interact": {
-          "interactions": [
-            {
-              "use_item": false,
-              "play_sounds": "enderchest.open",
-              "interact_text": "action.gvc.item",
-              "on_interact": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "redteam"
-                    },
-                    {
-                      "test": "has_equipment",
-                      "subject": "other",
-                      "domain": "hand",
-                      "value": "red_dye"
-                    }
-                  ]
-                },
-                "event": "gvcv5:become_redteam",
-                "target": "self"
-              }
-            },
-            {
-              "use_item": false,
-              "play_sounds": "enderchest.open",
-              "interact_text": "action.gvc.item",
-              "on_interact": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "blueteam"
-                    },
-                    {
-                      "test": "has_equipment",
-                      "subject": "other",
-                      "domain": "hand",
-                      "value": "blue_dye"
-                    }
-                  ]
-                },
-                "event": "gvcv5:become_blueteam",
-                "target": "self"
-              }
-            },
-            {
-              "use_item": false,
-              "play_sounds": "enderchest.open",
-              "interact_text": "action.gvc.item",
-              "on_interact": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "greenteam"
-                    },
-                    {
-                      "test": "has_equipment",
-                      "subject": "other",
-                      "domain": "hand",
-                      "value": "green_dye"
-                    }
-                  ]
-                },
-                "event": "gvcv5:become_greenteam",
-                "target": "self"
-              }
-            },
-            {
-              "use_item": false,
-              "play_sounds": "enderchest.open",
-              "interact_text": "action.gvc.item",
-              "on_interact": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "yellowteam"
-                    },
-                    {
-                      "test": "has_equipment",
-                      "subject": "other",
-                      "domain": "hand",
-                      "value": "yellow_dye"
-                    }
-                  ]
-                },
-                "event": "gvcv5:become_yellowteam",
-                "target": "self"
-              }
-            },
-            {
-              "hurt_item": 1,
-              "play_sounds": "irongolem.repair",
-              "interact_text": "action.interact.repair",
-              "health_amount": 10,
-              "on_interact": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "player"
-                    },
-                    {
-                      "test": "has_equipment",
-                      "subject": "other",
-                      "domain": "hand",
-                      "value": "zex:rep"
-                    },
-                    {
-                      "test": "is_missing_health"
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "hurt_item": 1,
-              "spawn_items": {
-                "table": "loot_tables/flag/flag_cv_ca.json"
-              },
-              "play_sounds": "enderchest.open",
-              "interact_text": "action.gvc.item",
-              "on_interact": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "player"
-                    },
-                    {
-                      "test": "has_equipment",
-                      "subject": "other",
-                      "domain": "hand",
-                      "value": "zex:rep"
-                    },
-                    {
-                      "test": "is_missing_health",
-                      "operator": "not"
-                    }
-                  ]
-                },
-                "event": "despawning",
-                "target": "self"
-              }
-            }
-          ]
-        }
       }
     },
     "components": {
@@ -185,38 +25,7 @@
         "triggers": [
           {
             "cause": "all",
-            "deals_damage": false,
-            "on_damage": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "playerp"
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "on_damage": {
-              "filters": {
-                "any_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "monster"
-                  }
-                ],
-                "all_of": [
-                  {
-                    "test": "has_damage",
-                    "value": "fatal"
-                  }
-                ]
-              },
-              "event": "become_GA"
-            }
+            "deals_damage": false
           }
         ]
       },
@@ -225,8 +34,6 @@
       },
       "minecraft:type_family": {
         "family": [
-          "allied_soldier",
-          "playerp",
           "mob"
         ]
       },
@@ -236,8 +43,8 @@
       },
       "minecraft:nameable": {},
       "minecraft:health": {
-        "value": 3000,
-        "max": 3000
+        "value": 400,
+        "max": 400
       },
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
@@ -260,20 +67,225 @@
       "minecraft:knockback_resistance": {
         "value": 1.0
       },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvcv5.team.dye",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "redteam"
+                  }
+                ]
+              },
+              "event": "become_R",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvcv5.team.dye",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  }
+                ]
+              },
+              "event": "become_B",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvcv5.team.dye",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "greenteam"
+                  }
+                ]
+              },
+              "event": "become_G",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvcv5.team.dye",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "yellowteam"
+                  }
+                ]
+              },
+              "event": "become_Y",
+              "target": "self"
+            }
+          },
+          {
+            "hurt_item": 1,
+            "play_sounds": "irongolem.repair",
+            "interact_text": "action.interact.repair",
+            "health_amount": 10,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "zex:rep"
+                  },
+                  {
+                    "test": "is_missing_health"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "hurt_item": 1,
+            "spawn_items": {
+              "table": "loot_tables/flag/flag_cv_ca.json"
+            },
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "zex:rep"
+                  },
+                  {
+                    "test": "is_missing_health",
+                    "operator": "not"
+                  }
+                ]
+              },
+              "event": "despawning",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "irongolem.repair",
+            "interact_text": "Start Invasion Mode",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gvcv5:infantry_i"
+                  }
+                ]
+              },
+              "event": "gvcv5:raid_mode_infantry_i",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "irongolem.repair",
+            "interact_text": "Start Invasion Mode",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gvcv5:infantry_ii"
+                  }
+                ]
+              },
+              "event": "gvcv5:raid_mode_infantry_ii",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": true,
+            "play_sounds": "irongolem.repair",
+            "interact_text": "Start Invasion Mode",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gvcv5:infantry_iii"
+                  }
+                ]
+              },
+              "event": "gvcv5:raid_mode_infantry_iii",
+              "target": "self"
+            }
+          }
+        ]
+      },
       "minecraft:behavior.summon_entity": {
         "priority": 2,
         "summon_choices": [
           {
             "weight": 1,
-            "cooldown_time": 5.0,
+            "cooldown_time": 1.0,
             "cast_duration": 0,
             "particle_color": "#FFB3B3CC",
             "sequence": [
               {
                 "shape": "circle",
                 "target": "self",
-                "base_delay": 0.0,
-                "num_entities_spawned": 8,
+                "base_delay": 5.0,
+                "num_entities_spawned": 5,
                 "entity_type": "gvcv5:ca",
                 "summon_cap": 8,
                 "summon_cap_radius": 32.0,
@@ -345,13 +357,47 @@
       "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": false,
-        "is_pushable_by_piston": true
+        "is_pushable_by_piston": false
       },
       "minecraft:follow_range": {
         "value": 64
       }
     },
     "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+            "scriptevent zex:flagstart CA a"
+          ]
+        }
+      },
+      "gvcv5:raid_mode_infantry_i": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_raid_ca ~~1~",
+            "summon gvcv5:raid_infantry_i ~~~",
+            "kill @s"
+          ]
+        }
+      },
+      "gvcv5:raid_mode_infantry_ii": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_raid_ca ~~1~",
+            "summon gvcv5:raid_infantry_ii ~~~",
+            "kill @s"
+          ]
+        }
+      },
+      "gvcv5:raid_mode_infantry_iii": {
+        "queue_command": {
+          "command": [
+            "summon gvcv5:flag_raid_ca ~~1~",
+            "summon gvcv5:raid_infantry_iii ~~~",
+            "kill @s"
+          ]
+        }
+      },
       "despawning": {
         "add": {
           "component_groups": [
@@ -359,41 +405,34 @@
           ]
         }
       },
-      "end": {
-        "add": {
-          "component_groups": [
-            "end"
-          ]
-        }
-      },
-      "gvcv5:become_redteam": {
+      "become_R": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_red ~~5~",
+            "summon gvcv5:flag_red ~~~",
             "kill @s"
           ]
         }
       },
-      "gvcv5:become_blueteam": {
+      "become_B": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_blue ~~5~",
+            "summon gvcv5:flag_blue ~~~",
             "kill @s"
           ]
         }
       },
-      "gvcv5:become_greenteam": {
+      "become_G": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_green ~~5~",
+            "summon gvcv5:flag_green ~~~",
             "kill @s"
           ]
         }
       },
-      "gvcv5:become_yellowteam": {
+      "become_Y": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_yellow ~~5~",
+            "summon gvcv5:flag_yellow ~~~",
             "kill @s"
           ]
         }
@@ -401,18 +440,16 @@
       "become_CA": {
         "queue_command": {
           "command": [
-            "summon gvcv5:flag_cv_ca ~~1~"
+            "summon gvcv5:flag_cv_ca ~~1~",
+            "kill @s"
           ]
         }
       },
       "become_GA": {
         "queue_command": {
           "command": [
-            "summon gvcv5:cv_lose",
-            "event entity @e[type=gvcv5:cv] despawning",
-            "event entity @e[type=gvcv5:cv1] despawning",
-            "event entity @e[type=gvcv5:cv2] despawning",
-            "event entity @e[type=gvcv5:cv3] despawning"
+            "summon gvcv5:flag_cv_ga ~~1~",
+            "kill @s"
           ]
         }
       }

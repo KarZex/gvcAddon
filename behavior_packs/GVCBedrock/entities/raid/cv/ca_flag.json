@@ -63,6 +63,7 @@
           "allied_soldier_flag",
           "allied_soldier",
           "playerp",
+          "noteam",
           "mob"
         ]
       },
