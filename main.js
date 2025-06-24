@@ -7,12 +7,9 @@ import { craftData } from "./crafts";
 import { raidData } from "./raid";
 import "./compornents";
 
-const globalVarWW2Sides = [ `USA`,`SOV`,`GER`,`JAP` ] //using hoi4 tags
-
 function print(text){
 	world.sendMessage(`§a[System]§r: ${text}`);
 }
-
 async function RaidSpawner(flag,type,wave) {
 	const R = 64;
 	const thita = Math.PI * 2 * Math.random();
@@ -22,7 +19,9 @@ async function RaidSpawner(flag,type,wave) {
 		y:L.y,
 		z:L.z + R * Math.sin(thita)
 	}
+	await flag.runCommand(`tickingarea remove raidSpawner`);
 	await flag.runCommand(`tickingarea add circle ${Math.floor(baseLocation.x)} ${Math.floor(baseLocation.y)} ${Math.floor(baseLocation.z)} 1 raidSpawner false`);
+	await system.waitTicks(2);
 	const d = flag.dimension;
 	const raid = raidData[`${type}`][`${wave}`];
 	for( let c of raid ){
@@ -66,7 +65,7 @@ async function RaidSpawner(flag,type,wave) {
 			}
 		}
 	}
-	await system.waitTicks(20);
+	await system.waitTicks(2);
 	flag.runCommand(`tickingarea remove raidSpawner`);
 }
 function setArmorValue( itemName ){
@@ -451,15 +450,6 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 
 system.runInterval( () => {
 	world.getDimension(`minecraft:overworld`).runCommand(`execute as @a[tag=MissileAlert] run function missileAlert`);
-	if ( world.getDynamicProperty(`gvcv5:worldLimit`) ){
-		const over = world.getDynamicProperty(`gvcv5:worldLimitO`);
-		const nether = world.getDynamicProperty(`gvcv5:worldLimitN`);
-		const end = world.getDynamicProperty(`gvcv5:worldLimitE`);
-		world.getDimension(`minecraft:overworld`).runCommand(`tag @a[x=-${over/2},y=-64,z=-${over/2},dx=${over},dy=384,dz=${over}] add noout`);
-		world.getDimension(`minecraft:overworld`).runCommand(`function out/over`);
-		world.getDimension(`minecraft:nether`).runCommand(`tag @a[x=-${nether/2},y=0,z=-${nether/2},dx=${nether},dy=128,dz=${nether}] add noout`);
-		world.getDimension(`the_end`).runCommand(`tag @a[x=0,y=0,z=0,r=512,tag=down] add noout`);
-	}
 },20)
 
 system.afterEvents.scriptEventReceive.subscribe( e => {

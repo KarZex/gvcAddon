@@ -38,7 +38,8 @@ with open(behavior, "r",encoding="utf-8") as f:
     behavior_manifest = json.load(f)
     behavior_manifest["header"]["name"] = name + " (Team)"
     behavior_manifest["header"]["version"] = ver
-    behavior_manifest["header"]["min_engine_version"] = ver
+    behavior_manifest["header"]["description"] = description
+    behavior_manifest["header"]["min_engine_version"] = min_engine_version
     behavior_manifest["header"]["uuid"] = generate_uuid()
 
     behavior_manifest["modules"][0]["uuid"] = generate_uuid()
@@ -51,7 +52,8 @@ with open(behaviorii, "r",encoding="utf-8") as f:
     behavior_manifest = json.load(f)
     behavior_manifest["header"]["name"] = name
     behavior_manifest["header"]["version"] = ver
-    behavior_manifest["header"]["min_engine_version"] = ver
+    behavior_manifest["header"]["description"] = description
+    behavior_manifest["header"]["min_engine_version"] = min_engine_version
     behavior_manifest["header"]["uuid"] = generate_uuid()
 
     behavior_manifest["modules"][0]["uuid"] = generate_uuid()
@@ -64,7 +66,8 @@ with open(resource, "r",encoding="utf-8") as f:
     resource_manifest = json.load(f)
     resource_manifest["header"]["name"] = name
     resource_manifest["header"]["version"] = ver
-    resource_manifest["header"]["min_engine_version"] = ver
+    behavior_manifest["header"]["description"] = description
+    resource_manifest["header"]["min_engine_version"] = min_engine_version
     resource_manifest["header"]["uuid"] = generate_uuid()
 
     resource_manifest["modules"][0]["uuid"] = generate_uuid()
