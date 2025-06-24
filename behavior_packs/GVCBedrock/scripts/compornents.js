@@ -241,6 +241,5 @@ system.beforeEvents.startup.subscribe( e => {
 
 world.afterEvents.worldLoad.subscribe( async e => {
     await setUp();
-    world.sendMessage(`§gGVCV5: Components loaded successfully!`);
     
 } )

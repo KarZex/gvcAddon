@@ -37,7 +37,7 @@ function gvcv5UseTPBlock( event ){
 async function setUp(){
     await system.waitTicks(100);
     if( world.getDynamicProperty(`teamJail`) == undefined ){
-        world.setDynamicProperty("teamJail",true);
+        world.setDynamicProperty("teamJail",false);
     }
     await system.waitTicks(1);
 }
@@ -52,5 +52,4 @@ system.beforeEvents.startup.subscribe( e => {
 
 world.afterEvents.worldLoad.subscribe( async e => {
     await setUp();
-    world.sendMessage(`§gGVCV5 Team: Components loaded successfully!`);
 } )
