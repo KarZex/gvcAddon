@@ -5,6 +5,12 @@ import { craftData } from "./crafts";
 import { raidData } from "./raid";
 import "./compornents";
 
+
+world.afterEvents.playerSpawn.subscribe( e => {
+	const player = e.player;
+	player.setDynamicProperty(`gvcv5:gunUsed`,0)
+} )
+
 function print(text){
 	world.sendMessage(`§a[System]§r: ${text}`);
 }
