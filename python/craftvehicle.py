@@ -54,6 +54,7 @@ for row in csv_reader:
 
         #inventory item
         v_inventory = row[31] 
+        v_camera = int(row[33])
 
 
         if v_subname != "":
@@ -94,9 +95,15 @@ for row in csv_reader:
         entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["family_types"] = v_ridef
         if v_menber == 1:
             entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"] = { "position" :ast.literal_eval(v_position1) }
+            if v_camera > 0:
+                entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"]["third_person_camera_radius"] = v_camera
         else:
             entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"] = []
-            entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position1) } )
+            if v_camera > 0:
+                entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position1),"third_person_camera_radius":v_camera} )
+            else:
+                entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position1) } )
+
             entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position2) } )
             if( v_menber >= 3 ):
                 entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position3) } )

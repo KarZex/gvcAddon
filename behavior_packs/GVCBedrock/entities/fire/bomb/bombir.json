@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "fire:bomb",
+      "identifier": "fire:bombir",
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
@@ -12,7 +12,7 @@
       "minecraft:type_family": {
         "family": [
           "bullet",
-          "gbullet"
+          "gbullet","ppbombbullet"
         ]
       },
       "minecraft:explode": {
@@ -20,9 +20,6 @@
         "fuse_lit": true,
         "power": 0,
         "causes_fire": false
-      },
-      "minecraft:despawn": {
-        "despawn_from_distance": {}
       },
       "minecraft:collision_box": {
         "width": 0.25,
@@ -44,7 +41,12 @@
           }
         },
         "power": 0,
-        "gravity": 0.1,
+        "offset": [
+          1,
+          0,
+          0
+        ],
+        "gravity": 0.05,
         "inertia": 1.5,
         "uncertainty_base": 10.0,
         "uncertainty_multiplier": 0,
@@ -65,7 +67,7 @@
     "component_groups": {
       "minecraft:exploding": {
         "minecraft:explode": {
-          "fuse_length": 0,
+          "fuse_length": 0,"causes_fire": true,
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
           "power": 4,

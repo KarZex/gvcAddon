@@ -103,7 +103,8 @@
               0.5,
               1.5,
               2.5
-            ]
+            ],
+            "third_person_camera_radius": 12
           },
           {
             "position": [

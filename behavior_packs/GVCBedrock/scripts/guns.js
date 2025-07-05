@@ -566,5 +566,9 @@ export const gunData = {
   "30mmmcair": {
     "damage": 12,
     "damageType": "override"
+  },
+  "bombii": {
+    "damage": 100,
+    "damageType": "entityExplosion"
   }
 };

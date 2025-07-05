@@ -510,6 +510,7 @@ for row in csv_reader2:
         gun_sound = row[8]
         gun_damage_type = row[9]
         gun_offset = row[10]
+        bombattack = "bomb"
 
         if(row[7] == "T"):
             gun_break_block = True
@@ -537,7 +538,8 @@ for row in csv_reader2:
                     ]
                 }
             }
-        elif( "M" in gun_offset ):
+
+        elif( "M" in gun_offset and not "MM" in gun_offset  ):
             spawn_entity = { 
                 "minecraft:spawn_entity":{
                     "entities": [
@@ -546,33 +548,96 @@ for row in csv_reader2:
                             "min_wait_time": 0,
                             "num_to_spawn": 1,
                             "single_use": True,
-                            "spawn_entity": "fire:{}".format(gun_id)
+                            "spawn_entity": "fire:{}ir".format(bombattack)
                         },
                         {
-                            "max_wait_time": 1,
-                            "min_wait_time": 1,
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
                             "num_to_spawn": 1,
                             "single_use": True,
-                            "spawn_entity": "fire:{}".format(gun_id)
+                            "spawn_entity": "fire:{}iiir".format(bombattack)
                         },
                         {
-                            "max_wait_time": 2,
-                            "min_wait_time": 2,
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
                             "num_to_spawn": 1,
                             "single_use": True,
-                            "spawn_entity": "fire:{}".format(gun_id)
+                            "spawn_entity": "fire:{}il".format(bombattack)
                         },
                         {
-                            "max_wait_time": 3,
-                            "min_wait_time": 3,
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
                             "num_to_spawn": 1,
                             "single_use": True,
-                            "spawn_entity": "fire:{}".format(gun_id)
+                            "spawn_entity": "fire:{}iiil".format(bombattack)
                         }
                     ]
                 }
             }
 
+        elif( "MM" in gun_offset ):
+            spawn_entity = { 
+                "minecraft:spawn_entity":{
+                    "entities": [
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}ir".format(bombattack)
+                        },
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}iir".format(bombattack)
+                        },
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}iiir".format(bombattack)
+                        },
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}ivr".format(bombattack)
+                        },
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}il".format(bombattack)
+                        },
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}iil".format(bombattack)
+                        },
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}iiil".format(bombattack)
+                        },
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}ivl".format(bombattack)
+                        }
+                    ]
+                }
+            }
         
         else:
             spawn_entity = { 

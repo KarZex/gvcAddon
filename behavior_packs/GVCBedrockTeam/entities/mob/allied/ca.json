@@ -2080,6 +2080,21 @@
         "minecraft:shooter": {
           "def": "fire:30mmmcair"
         }
+      },
+      "bombii": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:bombii"
+        }
       }
     },
     "components": {
@@ -3149,6 +3164,13 @@
           ]
         }
       },
+      "bombii": {
+        "add": {
+          "component_groups": [
+            "bombii"
+          ]
+        }
+      },
       "vehicle:aifv": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:aifv no_ride_change summon_enemy"
@@ -3312,6 +3334,11 @@
       "vehicle:su25": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:su25 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:f117": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:f117 no_ride_change summon_enemy"
         }
       }
     }

@@ -65,4 +65,6 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su27] run event entity @s
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f16] run event entity @s aamissile
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su25] run event entity @s agmissile
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su25] run event entity @s bomb
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f117] run event entity @s bombii

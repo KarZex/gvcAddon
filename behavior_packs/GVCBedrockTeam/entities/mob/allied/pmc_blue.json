@@ -1477,6 +1477,21 @@
         "minecraft:shooter": {
           "def": "fire:30mmmcair"
         }
+      },
+      "bombii": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:bombii"
+        }
       }
     },
     "components": {
@@ -3952,6 +3967,13 @@
         "add": {
           "component_groups": [
             "30mmmcair"
+          ]
+        }
+      },
+      "bombii": {
+        "add": {
+          "component_groups": [
+            "bombii"
           ]
         }
       }

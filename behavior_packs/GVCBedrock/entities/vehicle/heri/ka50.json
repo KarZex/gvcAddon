@@ -101,7 +101,8 @@
             0.0,
             1.2,
             0.6
-          ]
+          ],
+          "third_person_camera_radius": 8
         }
       },
       "minecraft:type_family": {
