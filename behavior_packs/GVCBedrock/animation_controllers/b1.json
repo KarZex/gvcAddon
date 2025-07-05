@@ -56,7 +56,6 @@
         },
         "riding": {
           "on_entry": [
-            "/event entity @s[tag=!ride] gvcv5:summon",
             "/tag @s[tag=!ride] add ride",
             "/effect @s resistance 99999 255 true",
             "/event entity @s[tag=ride] rider"

@@ -489,6 +489,9 @@
                 "ride @s summon_ride vehicle:ka60"
               ]
             }
+          },
+          {
+            "trigger": "gvcv5:summon"
           }
         ]
       },
