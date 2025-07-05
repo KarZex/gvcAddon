@@ -137,6 +137,7 @@ item.spawn_egg.entity.vehicle:flak18.name=対戦車砲Flak18
 item.spawn_egg.entity.vehicle:pak40.name=対戦車砲Pak40
 item.spawn_egg.entity.vehicle:zu23.name=Zu-23対空砲
 item.spawn_egg.entity.vehicle:g_heri.name=ゲリラヘリ
+item.spawn_egg.entity.vehicle:f117.name=F-117
 entity.vehicle:dp28set.name=固定機銃DP-28
 entity.vehicle:m60set.name=固定機銃M60
 entity.vehicle:pkmset.name=固定機銃PKM
@@ -144,6 +145,7 @@ entity.vehicle:20mmaa.name=20mm対空砲
 entity.vehicle:flak18.name=対戦車砲Flak18
 entity.vehicle:pak40.name=対戦車砲Pak40
 entity.vehicle:zu23.name=Zu-23対空砲
+entity.vehicle:f117.name=F-117
 
 item.spawn_egg.entity.gvcv5:st1.name=BOSS ST1
 item.spawn_egg.entity.gvcv5:merg08.name=BOSS MERG08
@@ -703,6 +705,7 @@ item.vehicle:su27_spawn_egg=Su-27
 item.vehicle:f16_spawn_egg=F-16
 item.vehicle:ka60_spawn_egg=Ka-60
 item.vehicle:r22_spawn_egg=ゲリラ小型ヘリ
+item.vehicle:f117_spawn_egg=F-117
 
 item.gvcv5:supplies_item=支援物資
 item.gvcv5:beacon_item=スポーンブロック_ゲリラ
