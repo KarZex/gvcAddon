@@ -541,7 +541,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			}
 			airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
 		}
-		player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[${airCraftlader(player)},{"text":"§f§rair.${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,airCraft)},${mainWeapon0(player,airCraft)},${mainWeapon1(player,airCraft)},${mainWeapon2(player,airCraft)}]}`);
+		player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[${airCraftlader(player)},{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,airCraft)},${mainWeapon0(player,airCraft)},${mainWeapon1(player,airCraft)},${mainWeapon2(player,airCraft)}]}`);
 	
 
 	}
@@ -558,7 +558,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		if( player.typeId == "minecraft:player" ){
 			let v = vehicle.getVelocity();
 			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
-			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"§f§rair.${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,vehicle)},${mainWeapon0(player,vehicle)},${mainWeapon1(player,vehicle)},${mainWeapon2(player,vehicle)}]}`);
+			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,vehicle)},${mainWeapon0(player,vehicle)},${mainWeapon1(player,vehicle)},${mainWeapon2(player,vehicle)}]}`);
 		}
 		else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
 			vehicle.remove();
@@ -574,7 +574,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		if( player.typeId == "minecraft:player" ){
 			let v = vehicle.getVelocity();
 			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
-			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"§f§rair.${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,vehicle)},${mainWeapon0(player,vehicle)},${mainWeapon1(player,vehicle)},${mainWeapon2(player,vehicle)}]}`);
+			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},${subWeapon(player,vehicle)},${mainWeapon0(player,vehicle)},${mainWeapon1(player,vehicle)},${mainWeapon2(player,vehicle)}]}`);
 		}
 		else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
 			vehicle.remove();
