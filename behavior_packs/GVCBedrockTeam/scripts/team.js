@@ -552,7 +552,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				const form = new ModalFormData()
 				const PreName = `${phone.getDynamicProperty(`slot${result.selection}_name`)}`
 				form.title(`script.gvcv5.phone_set_tp_block_name.name`)
-				form.textField(`script.gvcv5.phone_set_tp_block_name.name`,`${PreName}`,`${PreName}`);
+				form.textField(`script.gvcv5.phone_set_tp_block_name.name`,`${PreName}`, {defaultValue: `${PreName}`});
 				form.show(user).then( r => {
 					if (!r.canceled) {
 						locateName = r.formValues[0]

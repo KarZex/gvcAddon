@@ -36,5 +36,3 @@ item.spawn_egg.entity.gvcv5:flag_desertcity_ca.name=“¯–¿ŒR‹’“__»”™“ss
 item.spawn_egg.entity.gvcv5:flag_desertcity_ga.name=ƒQƒŠƒ‰‹’“__»”™“ss
 item.spawn_egg.entity.gvcv5:flag_triumphal_arch_ca.name=“¯–¿ŒR‹’“__ŠMù–å
 item.spawn_egg.entity.gvcv5:flag_triumphal_arch_ga.name=ƒQƒŠƒ‰‹’“__ŠMù–å
-item.spawn_egg.entity.gvcv5:flag_cv_ca.name=“¯–¿ŒR‹’“__‹­P—g—¤ŠÍ
-item.spawn_egg.entity.gvcv5:flag_cv_ga.name=ƒQƒŠƒ‰‹’“__‹­P—g—¤ŠÍ
