@@ -205,7 +205,7 @@
         ]
     },
     "hud_actionbar_text": {
-        "$actb_string": "§rzex.gvc.v",
+        "$actb_string": "§rzex",
         "$atext": "$actionbar_text",
 
         "type": "image",
