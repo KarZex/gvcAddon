@@ -30,7 +30,7 @@ for row in csv_reader:
         structure_loadz = int(row[5])
         structure_loady = int(row[6])
         structure_chance = float(row[7])
-        structure_flag_type = row[8]
+        structure_flag_type = row[8].replace("nf","")
         structure_is_ship = row[9]
         text += "tile.gvcv5:building_{0}.name={1}\n".format(structure_id,row[0])
         with open("behavior_packs/GVCBedrock/functions/structure/{}.mcfunction".format(structure_id),"w") as f:
@@ -94,7 +94,7 @@ for row in csv_reader:
         with open("behavior_packs/GVCBedrock/blocks/buildings/{}.json".format(structure_id),"w") as f:
             json.dump(structure_block_json,f,indent=2)
         
-        if structure_flag_type != "S":
+        if structure_flag_type != "S" and not "nf" in row[8]:
 
             e_text += "entity.gvcv5:flag_{0}_ca.name=§b{1}\n".format(structure_id,row[0].replace("ダンジョン","同盟軍拠点"))
             se_text += "item.spawn_egg.entity.gvcv5:flag_{0}_ca.name={1}\n".format(structure_id,row[0].replace("ダンジョン","同盟軍拠点"))
