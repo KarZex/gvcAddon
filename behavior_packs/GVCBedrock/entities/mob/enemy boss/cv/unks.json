@@ -495,8 +495,8 @@
       "gvcv5:summon": {
         "queue_command": {
           "command": [
-            "summon gvcv5:unks ~1~~-3~~ minecraft:spawned_from_air",
-            "summon gvcv5:unks ~-1~~-3~~ minecraft:spawned_from_air"
+            "summon gvcv5:unks ~1~~-6~~ minecraft:spawned_from_air",
+            "summon gvcv5:unks ~-1~~-6~~ minecraft:spawned_from_air"
           ]
         }
       },
