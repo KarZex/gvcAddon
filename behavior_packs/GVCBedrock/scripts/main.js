@@ -1,11 +1,14 @@
-import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 import { craftData } from "./crafts";
 import { raidData } from "./raid";
 import "./compornents";
-
-
+/*
+world.afterEvents.entityHurt.subscribe( e => {
+	print(`value:${e.damage} at:${e.hurtEntity.typeId} by:${e.damageSource.damagingEntity.typeId} type:${e.damageSource.cause}`)
+} )
+*/
 world.afterEvents.playerSpawn.subscribe( e => {
 	const player = e.player;
 	player.setDynamicProperty(`gvcv5:gunUsed`,0)
@@ -84,6 +87,7 @@ function setArmorValue( itemName ){
 	else if( itemName.includes("mghelmet") ){ return 0.15 }
 	else if( itemName.includes("firemask") ){ return 0.05 }
 	else if( itemName.includes("droneguided") ){ return 0.15 }
+	else if( itemName.includes("copper") ){ return 0.25 }
 	else if( itemName.includes("netherite") ){ return 0.25 }
 	else { return 0 }
 }
@@ -410,14 +414,28 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		else{
 			damage = damage * world.getDynamicProperty("gvcv5:mobDamage");
 		}
-        if( vict.getEffect("resistance") == undefined && vict.hasTag("antiBullet") == false ){
+        if( damageType == `override` && vict.getEffect("resistance") == undefined && vict.hasTag("antiBullet") == false ){
 			damage = damage * (1 - def);
-            vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
+			if( world.getDynamicProperty("gvcv5:nodiein1hit") && vict.typeId == "minecraft:player" && damage > 20 ){
+				vict.applyDamage(10,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source });
+			}
+			else if( world.getDynamicProperty("gvcv5:playerDamageCool") && vict.typeId == "minecraft:player" ){
+				vict.applyDamage(damage,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source });
+			}
+			else{
+				vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
+			}
             vict.applyKnockback({x:0,z:0},0);
         }
 		else if( damageType != `override` ){
 			damage = damage * (1 - (def/2));
-            vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
+			if( world.getDynamicProperty("gvcv5:nodiein1hit") && vict.typeId == "minecraft:player" ){
+				if(damage > 20 ){ vict.applyDamage(10,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source }); }
+				else{ vict.applyDamage(damage/2,{ cause: EntityDamageCause.entityAttack,damagingEntity: e.source }); }
+			}
+			else{
+				vict.applyDamage(damage,{ cause: damageType,damagingEntity: e.source });
+			}
             vict.applyKnockback({x:0,z:0},0);
 		}
 		try{
@@ -1099,6 +1117,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			form.textField(`Player Damage`,`${world.getDynamicProperty(`gvcv5:playerDamage`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:playerDamage`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:playerDamage`)}`});
 			form.textField(`Mob Damage`,`${world.getDynamicProperty(`gvcv5:mobDamage`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:mobDamage`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:mobDamage`)}`});
 			form.toggle(`Bullet Spend`, {defaultValue: world.getDynamicProperty(`gvcv5:doBulletSpend`),tooltip:`Bullet Spend`});
+			form.toggle(`Player damage cool time`, {defaultValue: world.getDynamicProperty(`gvcv5:playerDamageCool`),tooltip:`Player damage cool time`});
+			form.toggle(`no die in 1 hit`, {defaultValue: world.getDynamicProperty(`gvcv5:nodiein1hit`),tooltip:`Player no die in 1 hit`});
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
 					if( world.getDynamicProperty(`gvcv5:playerDamage`) != Number(result.formValues[0]) ){
@@ -1112,6 +1132,15 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					if( world.getDynamicProperty(`gvcv5:doBulletSpend`) != Boolean(result.formValues[2]) ){
 						world.setDynamicProperty(`gvcv5:doBulletSpend`,Boolean(result.formValues[2]));
 						world.sendMessage(`Bullet Spend is now ${result.formValues[2]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:playerDamageCool`) != Boolean(result.formValues[3]) ){
+						world.setDynamicProperty(`gvcv5:playerDamageCool`,Boolean(result.formValues[3]));
+						world.sendMessage(`Player damage cool is now ${result.formValues[3]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:nodiein1hit`) != Boolean(result.formValues[4]) ){
+						world.setDynamicProperty(`gvcv5:nodiein1hit`,Boolean(result.formValues[4]));
+						world.sendMessage(`no die in 1 hit is now ${result.formValues[4]}`);
+						world.scoreboard.getObjective(`building`).setScore(`P`,Number(result.formValues[4]));
 					}
 				}
 			} )

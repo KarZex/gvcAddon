@@ -176,6 +176,12 @@ async function setUp(){
     if( world.getDynamicProperty("gvcv5:doBulletSpend") == undefined ){
         world.setDynamicProperty("gvcv5:doBulletSpend",true);
     }
+    if( world.getDynamicProperty("gvcv5:playerDamageCool") == undefined ){
+        world.setDynamicProperty("gvcv5:playerDamageCool",true);
+    }
+    if( world.getDynamicProperty("gvcv5:nodiein1hit") == undefined ){
+        world.setDynamicProperty("gvcv5:nodiein1hit",true);
+    }
     
     if( world.getDynamicProperty("gvcv5:buildingSpawnS") == undefined ){
         world.setDynamicProperty("gvcv5:buildingSpawnS",true);
@@ -216,6 +222,8 @@ async function setUp(){
     const buildingM = Number(world.getDynamicProperty(`gvcv5:buildingSpawnM`))
     const buildingL = Number(world.getDynamicProperty(`gvcv5:buildingSpawnL`))
     const buildingA = Number(world.getDynamicProperty(`gvcv5:buildingSpawnA`))
+    const Expdamage = Number(world.getDynamicProperty(`gvcv5:nodiein1hit`))
+    world.scoreboard.getObjective(`building`).setScore(`P`, Expdamage);
     world.scoreboard.getObjective(`building`).setScore(`S`, buildingS);
     world.scoreboard.getObjective(`building`).setScore(`M`, buildingM);
     world.scoreboard.getObjective(`building`).setScore(`L`, buildingL);

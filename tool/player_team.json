@@ -68,6 +68,36 @@
         },
         "minecraft:damage_sensor": {
           "triggers": [
+          {
+            "cause": "entity_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "cause": "block_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
             {
               "cause": "all",
               "deals_damage": false,
@@ -175,6 +205,36 @@
         },
         "minecraft:damage_sensor": {
           "triggers": [
+          {
+            "cause": "entity_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "cause": "block_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
             {
               "cause": "entity_attack",
               "deals_damage": false,
@@ -323,6 +383,36 @@
         },
         "minecraft:damage_sensor": {
           "triggers": [
+          {
+            "cause": "entity_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "cause": "block_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
             {
               "cause": "entity_attack",
               "deals_damage": false,
@@ -471,6 +561,36 @@
         },
         "minecraft:damage_sensor": {
           "triggers": [
+          {
+            "cause": "entity_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "cause": "block_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
             {
               "cause": "entity_attack",
               "deals_damage": false,
@@ -619,6 +739,36 @@
         },
         "minecraft:damage_sensor": {
           "triggers": [
+          {
+            "cause": "entity_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "cause": "block_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
             {
               "cause": "entity_attack",
               "deals_damage": false,
@@ -798,6 +948,36 @@
 
       "minecraft:damage_sensor": {
         "triggers": [
+          {
+            "cause": "entity_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "cause": "block_explosion",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "nobomb"
+                  }
+                ]
+              }
+            }
+          },
           {
             "cause": "all",
             "deals_damage": false,

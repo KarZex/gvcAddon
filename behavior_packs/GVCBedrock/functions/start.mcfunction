@@ -20,6 +20,8 @@ execute as @a[tag=!subattack,scores={subWeapon=1..}] run scoreboard players remo
 
 function sounds
 
+execute if score P building matches 1 run tag @a[tag=!nobomb] add nobomb
+execute if score P building matches 0 run tag @a[tag=nobomb] remove nobomb
 
 #particle
 execute at @e[type=fire:hauneb] run particle gvcv5:fire_hauneb_particle ~~~
