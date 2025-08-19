@@ -241,7 +241,7 @@ for row in csv_reader:
                     "kill @s",
                     "scoreboard players remove §cRED ALLFlags 10"
                 ]
-                flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "flag","redteam","allied_soldier","inanimate" ]
+                flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "redflag","flag","redteam","allied_soldier","inanimate" ]
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
@@ -305,7 +305,7 @@ for row in csv_reader:
                     "kill @s",
                     "scoreboard players remove §9BLUE ALLFlags 10"
                 ]
-                flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "flag","blueteam","allied_soldier","inanimate" ]
+                flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "blueflag","flag","blueteam","allied_soldier","inanimate" ]
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
@@ -365,7 +365,7 @@ for row in csv_reader:
                     "kill @s",
                     "scoreboard players remove §aGREEN ALLFlags 10"
                 ]
-                flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "flag","greenteam","allied_soldier","inanimate" ]
+                flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "greenflag","flag","greenteam","allied_soldier","inanimate" ]
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
@@ -425,7 +425,7 @@ for row in csv_reader:
                     "kill @s",
                     "scoreboard players remove §eYELLOW ALLFlags 10"
                 ]
-                flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "flag","yellowteam","allied_soldier","inanimate" ]
+                flag_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = [ "yellowflag","flag","yellowteam","allied_soldier","inanimate" ]
                 if structure_flag_type == "L":
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = 400
                     flag_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = 400
