@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "gvcww2:sov_soldier_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "B",
+      "A"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:red_dye"
+      },
+      "B": {
+        "item": "minecraft:egg"
+      }
+    },
+    "result": {
+      "item": "gvcww2:sov_soldier_spawn_egg"
+    }
+  }
+  
+}
