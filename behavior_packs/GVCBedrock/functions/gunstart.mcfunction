@@ -141,4 +141,10 @@ scoreboard objectives add vz61 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s vz61 20
 scoreboard objectives add xm8 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s xm8 8
+scoreboard objectives add ptrd dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s ptrd 1
+scoreboard objectives add stg44 dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s stg44 30
+scoreboard objectives add lewis dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s lewis 47
 tag @a[tag=!startedv5] add startedv5

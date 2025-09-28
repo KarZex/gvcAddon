@@ -340,6 +340,24 @@
             },
             {
               "xm8_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:xm8') && (variable.attack_time > 0.0)"
+            },
+            {
+              "ptrd": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ptrd') && query.is_using_item"
+            },
+            {
+              "ptrd_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ptrd') && (variable.attack_time > 0.0)"
+            },
+            {
+              "stg44": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:stg44') && query.is_using_item"
+            },
+            {
+              "stg44_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:stg44') && (variable.attack_time > 0.0)"
+            },
+            {
+              "lewis": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:lewis') && query.is_using_item"
+            },
+            {
+              "lewis_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:lewis') && (variable.attack_time > 0.0)"
             }
           ]
         },
@@ -2225,6 +2243,108 @@
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 8 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "ptrd_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload ptrd"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "ptrd": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse ptrd"
+          ],
+          "transitions": [
+            {
+              "ptrd_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "ptrd_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 38 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "stg44_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload stg44"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "stg44": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse stg44"
+          ],
+          "transitions": [
+            {
+              "stg44ii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "stg44ii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse stg44"
+          ],
+          "transitions": [
+            {
+              "stg44": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "lewis_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload lewis"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "lewis": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse lewis"
+          ],
+          "transitions": [
+            {
+              "lewisii": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "lewisii": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse lewis"
+          ],
+          "transitions": [
+            {
+              "lewis": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 1 ? variable.cooltime + 1:0;return ( (query.is_using_item) && variable.cooltime == 0);"
+            },
+            {
+              "no_use": "(!query.is_using_item)"
             }
           ]
         }

@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+   "controller.render.scope": {
+      "arrays": {
+        "textures": {
+          "Array.base": [ 
+          ]
+        }
+      },
+      "geometry": "Geometry.scope",
+      "materials": [ { "*": "Material.scope" } ],
+      "textures": [ "Array.base[query.property('zex:sights')]" ]
+    }
+  }
+}

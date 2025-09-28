@@ -1,0 +1,35 @@
+name,id,type,health,speed,sub,sub_cool,main1,main_cool,main2,main_cool,main3,main_cool,antibullet,water,v_sizew,v_sizeh,v_menber,v_break,v_ridef,v_position1,v_position2,v_position3,v_position4,v_position5,v_position6,maxsubcool,sub,main1,main2,main3,inventory,id,third_person_camera_radius
+vehicle,aifv,apc,120,0.3,25mmmc,9,,0,,0,,0,T,,3,2,1,T,"[ ""guerrilla"",""allied_soldier"",""player""]","[ -0.5, 2.35, 0 ]",,,,,,30,25mmMC,NO,NO,NO,,aifv,0
+vehicle,lav25,apc,120,0.3,25mmmc,9,aamissile,50,,0,,0,T,0.1,3,3,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 2.25, -1.2 ]",,,,,,30,25mmMC,AAMissile,NO,NO,,lav25,0
+vehicle,m113,apc,120,0.3,hmg,2,,0,,0,,0,T,,3,2,1,T,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.2 ]",,,,,,30,HMG,NO,NO,NO,,m113,0
+vehicle,m1126,apc,120,0.2,hmg,2,,0,,0,,0,T,,3,3,6,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.6 ]","[ 1, 1.2, -1.5 ]","[ 0, 1.2, -2.1 ]","[ -1, 1.2, -0.6 ]","[ 1, 1.2, -0.6 ]","[ -1, 1.2, -1.5 ]",30,HMG,NO,NO,NO,27,m1126,0
+vehicle,m1128,apc,120,0.2,,0,105mm,50,,0,,0,T,,3,3,6,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 1.85, -0.6 ]","[ 1, 1.2, -1.5 ]","[ 0, 1.2, -2.1 ]","[ -1, 1.2, -0.6 ]","[ 1, 1.2, -0.6 ]","[ -1, 1.2, -1.5 ]",30,NO,105mmCannon,NO,NO,27,m1128,0
+vehicle,btr60,apc,100,0.3,14.5mmhmg,2,,0,,0,,0,T,,3,3,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ -0.5, 2.35, 0 ]",,,,,,30,14.5mmHMG,NO,NO,NO,,btr60,0
+vehicle,kv2,tank,400,0.1,,0,152mm,160,,0,,0,T,,3,3,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 2.5, -0.1 ]",,,,,,30,NO,152mmCannon,NO,NO,,kv2,0
+vehicle,m1a2,tank,300,0.2,vmg,1,120mm,60,,0,,0,T,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 1.7, -0.1 ]",,,,,,30,MachineGun,120mmHEAT,NO,NO,,m1a2,0
+vehicle,m41,stank,160,0.4,vmg,1,85mm,30,,0,,0,T,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 1.7, -0.1 ]",,,,,,30,MachineGun,76mmCannon,NO,NO,,m41,0
+vehicle,fv101,stank,120,0.3,vmg,1,76mm,30,,0,,0,T,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 1.9, -0.5 ]",,,,,,30,MachineGun,76mmCannon,NO,NO,,fv101,0
+vehicle,m60a1,tank,200,0.2,vmg,1,105mm,60,,0,,0,T,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 1.7, -0.1 ]",,,,,,30,MachineGun,100mmAP,NO,NO,,m60a1,0
+vehicle,pt76,stank,120,0.3,vmg,1,76mm,30,,0,,0,T,0.1,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 1.5, -0.1 ]",,,,,,30,MachineGun,76mmCannon,NO,NO,,pt76,0
+vehicle,t34,tank,160,0.2,vmg,1,85mm,50,,0,,0,T,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 2.4, -0.1 ]",,,,,,30,MachineGun,85mmAP,NO,NO,,t34,0
+vehicle,t55,tank,200,0.2,vmg,1,100mm,70,,0,,0,T,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 1.8, -0.1 ]",,,,,,30,MachineGun,100mmAP,NO,NO,,t55,0
+vehicle,t72,tank,300,0.2,vmg,1,125mm,90,,0,,0,T,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 1.4, -0.1 ]",,,,,,30,MachineGun,125mmCannon,NO,NO,,t72,0
+vehicle,r22,heri,50,0.4,7.62mmmgs,1,,0,,0,,0,F,,3,2,2,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[0.5,0.6,-0.1]","[-0.5,0.6,-0.1]",,,,,30,7.62mmMG,NO,NO,NO,,r22,0
+vehicle,ah1s,heri,200,0.4,20mmmcheri,0,76mmrocket,20,,0,,0,F,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 0.65, 0.5 ]",,,,,,30,20mmMC,76mmRocket,NO,NO,,ah1s,0
+vehicle,ah6,heri,80,0.4,7.62mmmg,0,,0,,0,,0,F,,3,2,4,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.4, 0.85, 0.5 ]","[ -0.4, 0.85, 0.5 ]","[ 0.4, 0.85, 0.1 ]","[ -0.4, 0.85, 0.1 ]",,,30,7.62mmMG,NO,NO,NO,,ah6,8
+vehicle,g_heri,heri,100,0.4,vmg,1,,0,,0,,0,F,,3,2,4,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.5, 0.5, 0.5 ]","[ -0.5, 0.5, 0.5 ]","[ 0.5, 0.5, -1.2 ]","[ -0.5, 0.5, -1.2 ]",,,30,7.62mmMG,NO,NO,NO,9,g_heri,8
+vehicle,ka50,heri,400,0.4,30mmmc,2,76mmrocket,20,aamissile,100,bomb,100,F,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 1.2, 0.6 ]",,,,,,30,30mmMC,76mmRocket,AAMissile,NO,,ka50,8
+vehicle,ka60,heri,400,0.4,vmg,1,,0,,0,,0,F,,3,2,6,F,"[ ""guerrilla"",""allied_soldier"",""player"",""unks""]","[ 0.5, 1.5, 2.5 ]","[ -0.5, 1.5, 2.5 ]","[ 0.5, 1.5, 0 ]","[ -0.5, 1.5, 0 ]","[ 0.5, 1.5, -1 ]","[ -0.5, 1.5, -1 ]",30,MachineGun,NO,NO,NO,27,ka60,12
+vehicle,mi24d,heri,400,0.4,12.7mmmg,1,agmissile,50,,0,,0,F,,3,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.0, 2.07, 1.25 ]",,,,,,30,12.7mmMG,AGmissile,NO,NO,,mi24d,12
+vehicle,20mmaa,set,50,0,20mmmc,4,,0,,0,,0,F,,1,1.8,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 0.5, -0.4 ]",,,,,,30,20mmMC,NO,NO,NO,,20mmaa,0
+vehicle,flak18,set,50,0,,5,125mm,60,,0,,0,F,,2,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0.35, 0.25, -0.35 ]",,,,,,30,NO,105mmCannon,NO,NO,,flak18,0
+vehicle,pak40,set,50,0,,6,105mm,50,,0,,0,F,,2,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 0, -0.4 ]",,,,,,30,NO,76mmCannon,NO,NO,,pak40,0
+vehicle,zu23,set,50,0,23mmmc,2,,0,,0,,0,F,,2,2,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 1.8, 0.1, -0.8 ]",,,,,,30,23mmMC,NO,NO,NO,,zu23,0
+vehicle,dp28set,set,50,0,7.62mmmg,1,,1,,0,,0,F,0.4,0.5,1,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 0, -1.4 ]",,,,,,30,7.62mmMG,NO,NO,NO,,dp28set,0
+vehicle,m60set,set,50,0,7.62mmmg,1,,2,,0,,0,F,0.4,0.5,1,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 0, -1.4 ]",,,,,,30,7.62mmMG,NO,NO,NO,,m60set,0
+vehicle,pkmset,set,50,0,7.62mmmg,1,,3,,0,,0,F,0.4,0.5,1,1,F,"[ ""guerrilla"",""allied_soldier"",""player""]","[ 0, 0, -1.4 ]",,,,,,30,7.62mmMG,NO,NO,NO,,pkmset,0
+vehicle,mig17,air,100,1.5,23mmmcair,0,76mmrocket,20,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 1.45, 0.1 ]",,,,,,30,23mmMC,76mmRocket,NO,NO,,mig17,10
+vehicle,su27,air,200,2,20mmmcair,0,aamissile,50,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 2.45, 0.1 ]",,,,,,30,20mmMC,AAMissile,NO,NO,,su27,15
+vehicle,f16,air,200,2,20mmmcair,0,aamissile,50,bomb,100,,0,F,,5,4,1,F,[ "player"],"[ 0, 2.65, 0.1 ]",,,,,,30,20mmMC,AAMissile,BombX4,NO,,f16,15
+vehicle,su25,air,200,1.5,30mmmcair,0,bomb,50,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 0.75, -0.3 ]",,,,,,30,30mmMC,AGmissile,BombX4,NO,,su25,12
+vehicle,f117,air,200,1.5,,0,bombii,100,,0,,0,F,,5,4,1,F,[ "player"],"[ 0, 2.95, 1.1 ]",,,,,,30,NO,BombX8,NO,NO,,f117,20

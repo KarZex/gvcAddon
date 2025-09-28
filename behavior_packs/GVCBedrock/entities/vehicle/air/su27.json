@@ -75,10 +75,10 @@
         "seats": {
           "position": [
             0,
-            2.45,
-            0.1
+            2.5,
+            0
           ],
-          "third_person_camera_radius": 15
+          "third_person_camera_radius": 24
         }
       },
       "minecraft:type_family": {

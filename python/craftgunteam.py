@@ -373,6 +373,27 @@ for row in csv_reader2:
                     ]
                 }
             }
+        elif( "N" in gun_offset  ):
+            spawn_entity = { 
+                "minecraft:spawn_entity":{
+                    "entities": [
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}ir".format(bombattack)
+                        },
+                        {
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}il".format(bombattack)
+                        }
+                    ]
+                }
+            }
         elif( "M" in gun_offset and not "MM" in gun_offset  ):
             spawn_entity = { 
                 "minecraft:spawn_entity":{

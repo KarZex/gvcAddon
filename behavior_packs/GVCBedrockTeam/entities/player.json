@@ -26,6 +26,22 @@
         "ads": "controller.animation.ads",
         "camera": "controller.animation.camera",
         "heri": "controller.animation.heri"
+      },
+      "properties": {
+        "zex:is_scoping": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "zex:sights": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
+        }
       }
     },
     "component_groups": {
@@ -3519,6 +3535,108 @@
           ]
         }
       },
+      "fire:ptrd": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ptrd"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_ptrd"
+            }
+          ]
+        }
+      },
+      "fire:stg44": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:stg44"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_stg44"
+            }
+          ]
+        }
+      },
+      "fire:lewis": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:lewis"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_lewis"
+            }
+          ]
+        }
+      },
       "fire:vmg": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -3528,6 +3646,45 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:vmg"
+            }
+          ]
+        }
+      },
+      "fire:37mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:37mm"
+            }
+          ]
+        }
+      },
+      "fire:47mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:47mm"
+            }
+          ]
+        }
+      },
+      "fire:57mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:57mm"
             }
           ]
         }
@@ -3554,6 +3711,19 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:85mm"
+            }
+          ]
+        }
+      },
+      "fire:88mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:88mm"
             }
           ]
         }
@@ -3688,6 +3858,19 @@
           ]
         }
       },
+      "fire:37mmrocket": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:37mmrocket"
+            }
+          ]
+        }
+      },
       "fire:76mmrocket": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -3761,6 +3944,26 @@
         }
       },
       "fire:bomb": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:bombir"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:bombil"
+            }
+          ]
+        }
+      },
+      "fire:bombii": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -3951,7 +4154,7 @@
           ]
         }
       },
-      "fire:20mmmcair": {
+      "fire:20mmmcaird": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -3959,14 +4162,27 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:20mmmcairr"
+              "spawn_entity": "fire:20mmmcairdr"
             },
             {
               "max_wait_time": 0,
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:20mmmcairl"
+              "spawn_entity": "fire:20mmmcairdl"
+            }
+          ]
+        }
+      },
+      "fire:20mmmcairw": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:20mmmcairw"
             }
           ]
         }
@@ -3984,7 +4200,20 @@
           ]
         }
       },
-      "fire:bombii": {
+      "fire:20mmmcair": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:20mmmcair"
+            }
+          ]
+        }
+      },
+      "fire:bombiii": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -4042,6 +4271,19 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:bombivl"
+            }
+          ]
+        }
+      },
+      "fire:37mmrocketkatyusya": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:37mmrocketkatyusya"
             }
           ]
         }
@@ -4435,6 +4677,16 @@
             "inputpermission set @s mount disabled",
             "scoreboard players set @s antiMining 999999"
           ]
+        }
+      },
+      "gvcv5:start_scope": {
+        "set_property": {
+          "zex:is_scoping": true
+        }
+      },
+      "gvcv5:stop_scope": {
+        "set_property": {
+          "zex:is_scoping": false
         }
       },
       "gvcv5:remove_down_true": {
@@ -4842,10 +5094,52 @@
           ]
         }
       },
+      "fire:ptrd": {
+        "add": {
+          "component_groups": [
+            "fire:ptrd"
+          ]
+        }
+      },
+      "fire:stg44": {
+        "add": {
+          "component_groups": [
+            "fire:stg44"
+          ]
+        }
+      },
+      "fire:lewis": {
+        "add": {
+          "component_groups": [
+            "fire:lewis"
+          ]
+        }
+      },
       "fire:vmg": {
         "add": {
           "component_groups": [
             "fire:vmg"
+          ]
+        }
+      },
+      "fire:37mm": {
+        "add": {
+          "component_groups": [
+            "fire:37mm"
+          ]
+        }
+      },
+      "fire:47mm": {
+        "add": {
+          "component_groups": [
+            "fire:47mm"
+          ]
+        }
+      },
+      "fire:57mm": {
+        "add": {
+          "component_groups": [
+            "fire:57mm"
           ]
         }
       },
@@ -4860,6 +5154,13 @@
         "add": {
           "component_groups": [
             "fire:85mm"
+          ]
+        }
+      },
+      "fire:88mm": {
+        "add": {
+          "component_groups": [
+            "fire:88mm"
           ]
         }
       },
@@ -4933,6 +5234,13 @@
           ]
         }
       },
+      "fire:37mmrocket": {
+        "add": {
+          "component_groups": [
+            "fire:37mmrocket"
+          ]
+        }
+      },
       "fire:76mmrocket": {
         "add": {
           "component_groups": [
@@ -4972,6 +5280,13 @@
         "add": {
           "component_groups": [
             "fire:bomb"
+          ]
+        }
+      },
+      "fire:bombii": {
+        "add": {
+          "component_groups": [
+            "fire:bombii"
           ]
         }
       },
@@ -5052,10 +5367,17 @@
           ]
         }
       },
-      "fire:20mmmcair": {
+      "fire:20mmmcaird": {
         "add": {
           "component_groups": [
-            "fire:20mmmcair"
+            "fire:20mmmcaird"
+          ]
+        }
+      },
+      "fire:20mmmcairw": {
+        "add": {
+          "component_groups": [
+            "fire:20mmmcairw"
           ]
         }
       },
@@ -5066,10 +5388,24 @@
           ]
         }
       },
-      "fire:bombii": {
+      "fire:20mmmcair": {
         "add": {
           "component_groups": [
-            "fire:bombii"
+            "fire:20mmmcair"
+          ]
+        }
+      },
+      "fire:bombiii": {
+        "add": {
+          "component_groups": [
+            "fire:bombiii"
+          ]
+        }
+      },
+      "fire:37mmrocketkatyusya": {
+        "add": {
+          "component_groups": [
+            "fire:37mmrocketkatyusya"
           ]
         }
       }

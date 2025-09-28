@@ -1,41 +1,58 @@
 {
-  "format_version": "1.16.100",
-  "minecraft:attachable": {
-    "description": {
-      "identifier": "gun:m79",
-      "materials": {
-        "default": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/models/m79.png"
-      },
-      "geometry": {
-        "default": "geometry.m79"
-      },
-      "animations": {
-        "first": "animation.ak47.first2",
-        "ads": "animation.ak47.ads3",
-        "third": "animation.item.third2"
-      },
-      "scripts": {
-        "pre_animation": [
-          "v.main_hand = c.item_slot == 'main_hand';"
-        ],
-        "animate": [
-          {
-            "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
-          },
-          {
-            "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
-          },
-          {
-            "third": "v.main_hand && !c.is_first_person"
-          }
-        ]
-      },
-      "render_controllers": [
-        "controller.render.default"
-      ]
+    "format_version": "1.16.100",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "gun:m79",
+            "materials": {
+                "default": "iron_golem",
+                "enchanted": "armor_enchanted"
+            },
+            "textures": {
+                "default": "textures/models/m79.png",
+                "none": "textures/models/leemk4.png",
+                "scope6x": "textures/models/scope6x.png",
+                "scope6x_scope": "textures/models/scope2.png",
+                "scope2x": "textures/models/leemk4.png",
+                "scope2x_scope": "textures/models/scope.png",
+                "enchanted": "textures/misc/enchanted_item_glint",
+                "acog": "textures/models/acog.png",
+                "coyote": "textures/models/coyote.png",
+                "horo": "textures/models/horo.png"
+            },
+            "geometry": {
+                "default": "geometry.m79",
+                "none": "geometry.sniperscope",
+                "scope6x": "geometry.scope6x",
+                "scope": "geometry.scope",
+                "scope2x": "geometry.scope2x",
+                "acog": "geometry.acog",
+                "coyote": "geometry.coyote",
+                "horo": "geometry.horo"
+            },
+            "animations": {
+                "first": "animation.ak47.first2",
+                "ads": "animation.ak47.ads3",
+                "third": "animation.item.third2"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "v.main_hand = c.item_slot == 'main_hand';"
+                ],
+                "animate": [
+                    {
+                        "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
+                    },
+                    {
+                        "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+                    },
+                    {
+                        "third": "v.main_hand && !c.is_first_person"
+                    }
+                ]
+            },
+            "render_controllers": [
+                "controller.render.armor"
+            ]
+        }
     }
-  }
 }

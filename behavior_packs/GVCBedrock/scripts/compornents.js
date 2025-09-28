@@ -118,6 +118,11 @@ function gvcv5UseCrafter( event ){
     const player = event.player;
     player.runCommand(`scriptevent gvcv5:craft ${type}`);
 }
+function gvcv5Attachtable( event ){
+    const player = event.player;
+    player.runCommand(`scriptevent gvcv5:attach_table`);
+}
+
 
 function gvcv5Scaffold( event ) {
     const L = event.block.location;
@@ -241,6 +246,7 @@ system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:crafter`,{onPlayerInteract: gvcv5UseCrafter});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:gasevent`,{onStepOn: gvcv5GasEvent,onPlayerBreak: gvcv5GasEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:mineevent`,{onStepOn: gvcv5MineEvent,onPlayerBreak: gvcv5MineEvent});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:attach_table`,{onPlayerInteract: gvcv5Attachtable});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:phone`,{onUse: gvcv5Phone});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:orderflag`,{onUse: gvcv5UseFlag});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:mtype`,{onUse: gvcv5UseMtype});

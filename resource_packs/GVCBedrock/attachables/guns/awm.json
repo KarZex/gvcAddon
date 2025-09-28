@@ -1,45 +1,65 @@
 {
-	"format_version": "1.16.100",
-	"minecraft:attachable": {
-		"description": {
-			"identifier": "gun:awm",
-			"materials": {
-				"default": "entity_alphablend",
-				"scope": "entity_alphablend"
-			},
-			"textures": {
-				"default": "textures/models/awm.png",
-				"scope": "textures/models/scope.png"
-			},
-			"geometry": {
-				"default": "geometry.awm",
-				"scope": "geometry.scope"
-			},
-			"animations": {
-				"first": "animation.awm.first",
-				"ads": "animation.mosin.ads",
-				"third": "animation.awm.third"
-			},
-			"scripts": {
-				"pre_animation": [
-					"v.main_hand = c.item_slot == 'main_hand';"
-				],
-				"animate": [
-					{
-						"first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
-					},
-					{
-						"ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
-					},
-					{
-						"third": "v.main_hand && !c.is_first_person"
-					}
-				]
-			},
-			"render_controllers": [
-				{"controller.render.default":"!query.is_sneaking || !c.is_first_person"},
-				{ "controller.render.scope": "query.is_sneaking && c.is_first_person" }
-			]
-		}
-	}
-} 
+    "format_version": "1.16.100",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "gun:awm",
+            "materials": {
+                "default": "iron_golem",
+                "scope": "entity_alphablend",
+                "enchanted": "armor_enchanted"
+            },
+            "textures": {
+                "default": "textures/models/awm.png",
+                "scope": "textures/models/scope.png",
+                "none": "textures/models/leemk4.png",
+                "scope6x": "textures/models/scope6x.png",
+                "scope6x_scope": "textures/models/scope2.png",
+                "scope2x": "textures/models/leemk4.png",
+                "scope2x_scope": "textures/models/scope.png",
+                "enchanted": "textures/misc/enchanted_item_glint",
+                "acog": "textures/models/acog.png",
+                "coyote": "textures/models/coyote.png",
+                "horo": "textures/models/horo.png"
+            },
+            "geometry": {
+                "default": "geometry.awm",
+                "scope": "geometry.scope",
+                "none": "geometry.sniperscope",
+                "scope6x": "geometry.scope6x",
+                "scope2x": "geometry.scope2x",
+                "acog": "geometry.acog",
+                "coyote": "geometry.coyote",
+                "horo": "geometry.horo"
+            },
+            "animations": {
+                "first": "animation.awm.first",
+                "ads": "animation.mosin.ads",
+                "third": "animation.awm.third"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "v.main_hand = c.item_slot == 'main_hand';"
+                ],
+                "animate": [
+                    {
+                        "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
+                    },
+                    {
+                        "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+                    },
+                    {
+                        "third": "v.main_hand && !c.is_first_person"
+                    }
+                ]
+            },
+            "render_controllers": [
+                {
+                    "controller.render.armor": "!query.is_sneaking || !c.is_first_person"
+                },
+                {
+                    "controller.render.scope": "query.is_sneaking && c.is_first_person"
+                }
+            ]
+        }
+    }
+}

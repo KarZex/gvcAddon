@@ -50,3 +50,6 @@ item.gun:tt33=˜dTT33˜r
 item.gun:uzi=˜aUZI˜r
 item.gun:vz61=˜bVz 61˜r
 item.gun:xm8=˜cXM25˜r
+item.gun:ptrd=˜dPTRD˜r
+item.gun:stg44=˜dStG44˜r
+item.gun:lewis=˜dƒ‹ƒCƒXŒy‹@ŠÖe˜r

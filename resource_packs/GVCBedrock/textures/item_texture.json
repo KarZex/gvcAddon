@@ -144,7 +144,7 @@
       "textures": "textures/items/k98"
     },
     "lewis": {
-      "textures": "textures/items/lewis"
+      "textures": "textures/items/gun/lewis"
     },
     "lewism": {
       "textures": "textures/items/lewis"
@@ -1048,6 +1048,36 @@
     },
     "ka60": {
       "textures": "textures/items/ka60"
+    },
+    "yak9": {
+      "textures": "textures/items/yak9"
+    },
+    "il2": {
+      "textures": "textures/items/il2"
+    },
+    "panzer": {
+      "textures": "textures/items/panzer"
+    },
+    "ptrd": {
+      "textures": "textures/items/gun/ptrd"
+    },
+    "stg44": {
+      "textures": "textures/items/gun/stg44"
+    },
+    "scope6x": {
+      "textures": "textures/items/attachment/scope6x"
+    },
+    "scope2x": {
+      "textures": "textures/items/attachment/scope2x"
+    },
+    "acog": {
+      "textures": "textures/items/attachment/acog"
+    },
+    "coyote": {
+      "textures": "textures/items/attachment/coyote"
+    },
+    "horo": {
+      "textures": "textures/items/attachment/horo"
     }
   }
 }

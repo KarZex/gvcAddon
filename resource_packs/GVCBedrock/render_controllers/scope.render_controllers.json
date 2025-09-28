@@ -1,25 +1,24 @@
 {
-  "format_version": "1.8.0",
-  "render_controllers": {
-   "controller.render.player.x1": {
-      "geometry": "Geometry.x1",
-      "materials": [ { "*": "Material.default" } ],
-      "textures": [ "Texture.ak47" ]
-    },
-   "controller.render.player.x3": {
-      "geometry": "Geometry.x3",
-      "materials": [ { "*": "Material.default" } ],
-      "textures": [ "Texture.ak47" ]
-    },
-   "controller.render.scope": {
-      "geometry": "Geometry.scope",
-      "materials": [ { "*": "Material.scope" } ],
-      "textures": [ "Texture.scope" ]
-    },
-	"controller.render.player.x0": {
-      "geometry": "Geometry.x0",
-      "materials": [ { "*": "Material.default" } ],
-      "textures": [ "Texture.ak47" ]
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.scope": {
+            "arrays": {
+                "textures": {
+                    "Array.base": [
+                        "Texture.scope",
+                        "Texture.scope6x_scope"
+                    ]
+                }
+            },
+            "geometry": "Geometry.scope",
+            "materials": [
+                {
+                    "*": "Material.scope"
+                }
+            ],
+            "textures": [
+                "Array.base[query.property('zex:sights')]"
+            ]
+        }
     }
-  }
 }

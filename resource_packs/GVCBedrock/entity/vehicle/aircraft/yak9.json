@@ -1,0 +1,56 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:yak9",
+			"materials": {
+				"default": "iron_golem",
+				"planeglass": "entity_alphablend"
+			},
+			"textures": {
+				"default": "textures/entity/yak9",
+				"planeglass": "textures/entity/planeglass"
+			},
+			"geometry": {
+				"default": "geometry.yak9",
+				"planeglass": "geometry.yak9_planeglass"
+			},
+			"spawn_egg": {
+				"texture": "yak9",
+				"texture_index": 0
+			},
+			"scripts": {
+				"pre_animation": [
+					"v.rotation = q.body_y_rotation - q.rider_head_y_rotation(0);",
+					"v.applyRotation = v.rotation;",
+					"(v.rotation > 180) ? { v.applyRotation = v.rotation - 360; };",
+					"(v.rotation < -180) ? { v.applyRotation = v.rotation + 360; };"
+				],
+				"animate": [
+					{
+						"look_at_target": "!query.is_on_ground && query.has_rider"
+					},
+					{
+						"fly": "query.has_rider && query.is_moving"
+					},
+					{
+						"flying": "!query.is_on_ground"
+					},
+					{
+						"land": "query.is_on_ground"
+					}
+				]
+			},
+			"animations": {
+				"look_at_target": "animation.airmig17",
+				"fly": "animation.herix",
+				"flying": "animation.flying",
+				"land": "animation.land.yak9"
+			},
+			"render_controllers": [
+				"controller.render.iron_golem",
+				"controller.render.planeglass"
+			]
+		}
+	}
+}

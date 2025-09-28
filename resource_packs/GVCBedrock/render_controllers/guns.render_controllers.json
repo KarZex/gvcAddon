@@ -1,0 +1,126 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+   "controller.render.planeglass": {
+      "geometry": "Geometry.planeglass",
+      "materials": [ { "*": "Material.planeglass" } ],
+      "textures": [ "Texture.planeglass" ]
+    },
+   "controller.render.player.k98": {
+      "geometry": "Geometry.k98",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.rpzb": {
+      "geometry": "Geometry.rpzb",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+	   "controller.render.player.m1b": {
+      "geometry": "Geometry.m1b",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+	   "controller.render.player.t89": {
+      "geometry": "Geometry.t89",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.m1": {
+      "geometry": "Geometry.m1",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.t38": {
+      "geometry": "Geometry.t38",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.mosins": {
+      "geometry": "Geometry.mosins",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.k98s": {
+      "geometry": "Geometry.k98s",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.spring": {
+      "geometry": "Geometry.spring",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.t99s": {
+      "geometry": "Geometry.t99s",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.ppsh": {
+      "geometry": "Geometry.ppsh",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.mp40": {
+      "geometry": "Geometry.mp40",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.thom": {
+      "geometry": "Geometry.thom",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.t100": {
+      "geometry": "Geometry.t100",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.bar": {
+      "geometry": "Geometry.bar",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+   "controller.render.player.dp28": {
+      "geometry": "Geometry.dp28",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+
+   "controller.render.player.fg42": {
+      "geometry": "Geometry.fg42",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+
+   "controller.render.player.t99": {
+      "geometry": "Geometry.t99",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+
+   "controller.render.player.tt33": {
+      "geometry": "Geometry.tt33",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+
+   "controller.render.player.p38": {
+      "geometry": "Geometry.p38",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+
+   "controller.render.player.m1911": {
+      "geometry": "Geometry.m1911",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    },
+
+   "controller.render.player.t14": {
+      "geometry": "Geometry.t14",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.an94" ]
+    }
+  }
+}

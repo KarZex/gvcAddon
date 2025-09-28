@@ -9,7 +9,10 @@ export const gunData = {
   },
   "aa12": {
     "damage": 2,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.0,
+    "fireOnReload": false,
     "maxGunAmmo": 24,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -17,7 +20,10 @@ export const gunData = {
   },
   "ak12": {
     "damage": 8,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.6,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -25,7 +31,10 @@ export const gunData = {
   },
   "ak47": {
     "damage": 6,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.2000000000000002,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -33,7 +42,10 @@ export const gunData = {
   },
   "ak102": {
     "damage": 7,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.4000000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -41,7 +53,10 @@ export const gunData = {
   },
   "an94": {
     "damage": 6,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.6,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -49,7 +64,10 @@ export const gunData = {
   },
   "awm": {
     "damage": 25,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 3.2,
+    "fireOnReload": false,
     "maxGunAmmo": 5,
     "reloadTime": 80,
     "bullet": "zex:762m",
@@ -57,7 +75,10 @@ export const gunData = {
   },
   "dp28": {
     "damage": 8,
+    "damageIgnoreDef": 0,
+    "slowness": 2,
     "speed": 1.2000000000000002,
+    "fireOnReload": false,
     "maxGunAmmo": 47,
     "reloadTime": 80,
     "bullet": "zex:762m",
@@ -65,7 +86,10 @@ export const gunData = {
   },
   "famas": {
     "damage": 30,
+    "damageIgnoreDef": 1,
+    "slowness": 1,
     "speed": 1.6,
+    "fireOnReload": false,
     "maxGunAmmo": 6,
     "reloadTime": 80,
     "bullet": "zex:40m",
@@ -73,7 +97,10 @@ export const gunData = {
   },
   "fgm148": {
     "damage": 80,
+    "damageIgnoreDef": 1,
+    "slowness": 2,
     "speed": 1.0,
+    "fireOnReload": false,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:missilem",
@@ -81,7 +108,10 @@ export const gunData = {
   },
   "fim92": {
     "damage": 50,
+    "damageIgnoreDef": 1,
+    "slowness": 2,
     "speed": 2.0,
+    "fireOnReload": false,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:missilem",
@@ -89,7 +119,10 @@ export const gunData = {
   },
   "g36": {
     "damage": 8,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.6,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -97,7 +130,10 @@ export const gunData = {
   },
   "g3a3": {
     "damage": 8,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.2000000000000002,
+    "fireOnReload": false,
     "maxGunAmmo": 20,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -105,7 +141,10 @@ export const gunData = {
   },
   "glock17": {
     "damage": 4,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.68,
+    "fireOnReload": false,
     "maxGunAmmo": 20,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -113,7 +152,10 @@ export const gunData = {
   },
   "glock18": {
     "damage": 4,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.68,
+    "fireOnReload": false,
     "maxGunAmmo": 20,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -121,7 +163,10 @@ export const gunData = {
   },
   "hk416": {
     "damage": 8,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.4000000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 50,
     "bullet": "zex:556m",
@@ -129,7 +174,10 @@ export const gunData = {
   },
   "lazer": {
     "damage": 50,
+    "damageIgnoreDef": 1,
+    "slowness": 1,
     "speed": 4.4,
+    "fireOnReload": false,
     "maxGunAmmo": 5,
     "reloadTime": 100,
     "bullet": "zex:1270m",
@@ -137,7 +185,10 @@ export const gunData = {
   },
   "m4": {
     "damage": 7,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.4000000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 50,
     "bullet": "zex:556m",
@@ -145,7 +196,10 @@ export const gunData = {
   },
   "m4a1": {
     "damage": 7,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.4000000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 50,
     "bullet": "zex:556m",
@@ -153,7 +207,10 @@ export const gunData = {
   },
   "m9": {
     "damage": 4,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.68,
+    "fireOnReload": false,
     "maxGunAmmo": 16,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -161,7 +218,10 @@ export const gunData = {
   },
   "m10": {
     "damage": 4,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.68,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 40,
     "bullet": "zex:mm9",
@@ -169,7 +229,10 @@ export const gunData = {
   },
   "m16a1": {
     "damage": 5,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.6,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -177,7 +240,10 @@ export const gunData = {
   },
   "m16a4": {
     "damage": 9,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.8,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -185,7 +251,10 @@ export const gunData = {
   },
   "m60": {
     "damage": 6,
+    "damageIgnoreDef": 0,
+    "slowness": 2,
     "speed": 1.2000000000000002,
+    "fireOnReload": false,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -193,7 +262,10 @@ export const gunData = {
   },
   "m72": {
     "damage": 40,
+    "damageIgnoreDef": 1,
+    "slowness": 1,
     "speed": 0.32000000000000006,
+    "fireOnReload": false,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:rocketm",
@@ -201,7 +273,10 @@ export const gunData = {
   },
   "m79": {
     "damage": 30,
+    "damageIgnoreDef": 1,
+    "slowness": 0,
     "speed": 0.32000000000000006,
+    "fireOnReload": false,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:40m",
@@ -209,7 +284,10 @@ export const gunData = {
   },
   "m82": {
     "damage": 80,
+    "damageIgnoreDef": 1,
+    "slowness": 1,
     "speed": 4.4,
+    "fireOnReload": false,
     "maxGunAmmo": 10,
     "reloadTime": 100,
     "bullet": "zex:1270m",
@@ -217,7 +295,10 @@ export const gunData = {
   },
   "m110": {
     "damage": 12,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 2.4000000000000004,
+    "fireOnReload": false,
     "maxGunAmmo": 20,
     "reloadTime": 80,
     "bullet": "zex:762m",
@@ -225,7 +306,10 @@ export const gunData = {
   },
   "m202": {
     "damage": 50,
+    "damageIgnoreDef": 1,
+    "slowness": 2,
     "speed": 1.8,
+    "fireOnReload": false,
     "maxGunAmmo": 4,
     "reloadTime": 100,
     "bullet": "zex:rocketm",
@@ -233,7 +317,10 @@ export const gunData = {
   },
   "m249": {
     "damage": 10,
+    "damageIgnoreDef": 0,
+    "slowness": 2,
     "speed": 1.6,
+    "fireOnReload": false,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -241,7 +328,10 @@ export const gunData = {
   },
   "m590": {
     "damage": 2,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.6000000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 8,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -249,7 +339,10 @@ export const gunData = {
   },
   "m870": {
     "damage": 2,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.6000000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 4,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -257,7 +350,10 @@ export const gunData = {
   },
   "m1014": {
     "damage": 3,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.0,
+    "fireOnReload": false,
     "maxGunAmmo": 8,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -265,7 +361,10 @@ export const gunData = {
   },
   "m1911": {
     "damage": 5,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.48,
+    "fireOnReload": false,
     "maxGunAmmo": 8,
     "reloadTime": 30,
     "bullet": "zex:mm9",
@@ -273,7 +372,10 @@ export const gunData = {
   },
   "mg36": {
     "damage": 8,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.6,
+    "fireOnReload": false,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:556m",
@@ -281,7 +383,10 @@ export const gunData = {
   },
   "mg42": {
     "damage": 8,
+    "damageIgnoreDef": 0,
+    "slowness": 3,
     "speed": 1.2000000000000002,
+    "fireOnReload": false,
     "maxGunAmmo": 75,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -289,7 +394,10 @@ export const gunData = {
   },
   "mosin": {
     "damage": 20,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 3.2,
+    "fireOnReload": false,
     "maxGunAmmo": 5,
     "reloadTime": 60,
     "bullet": "zex:762m",
@@ -297,7 +405,10 @@ export const gunData = {
   },
   "mp5": {
     "damage": 4,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.7200000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:mm9",
@@ -305,7 +416,10 @@ export const gunData = {
   },
   "mp7": {
     "damage": 5,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.2000000000000002,
+    "fireOnReload": false,
     "maxGunAmmo": 40,
     "reloadTime": 45,
     "bullet": "zex:mm9",
@@ -313,7 +427,10 @@ export const gunData = {
   },
   "mp40": {
     "damage": 4,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.7200000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 20,
     "reloadTime": 45,
     "bullet": "zex:mm9",
@@ -321,7 +438,10 @@ export const gunData = {
   },
   "p90": {
     "damage": 50,
+    "damageIgnoreDef": 1,
+    "slowness": 1,
     "speed": 1.8,
+    "fireOnReload": false,
     "maxGunAmmo": 1,
     "reloadTime": 60,
     "bullet": "zex:rocketm",
@@ -329,7 +449,10 @@ export const gunData = {
   },
   "pkm": {
     "damage": 8,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.2000000000000002,
+    "fireOnReload": false,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:762m",
@@ -337,7 +460,10 @@ export const gunData = {
   },
   "ppsh": {
     "damage": 5,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.7200000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 72,
     "reloadTime": 45,
     "bullet": "zex:mm9",
@@ -345,7 +471,10 @@ export const gunData = {
   },
   "qbz95": {
     "damage": 8,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.4000000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:556m",
@@ -353,7 +482,10 @@ export const gunData = {
   },
   "rpg": {
     "damage": 60,
+    "damageIgnoreDef": 1,
+    "slowness": 1,
     "speed": 1.8,
+    "fireOnReload": false,
     "maxGunAmmo": 1,
     "reloadTime": 80,
     "bullet": "zex:rocketm",
@@ -361,7 +493,10 @@ export const gunData = {
   },
   "rpk": {
     "damage": 6,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.2000000000000002,
+    "fireOnReload": false,
     "maxGunAmmo": 100,
     "reloadTime": 100,
     "bullet": "zex:556m",
@@ -369,7 +504,10 @@ export const gunData = {
   },
   "saiga12": {
     "damage": 2,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.6000000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 6,
     "reloadTime": 80,
     "bullet": "zex:12m",
@@ -377,7 +515,10 @@ export const gunData = {
   },
   "scar": {
     "damage": 10,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 1.2000000000000002,
+    "fireOnReload": false,
     "maxGunAmmo": 20,
     "reloadTime": 60,
     "bullet": "zex:762m",
@@ -385,7 +526,10 @@ export const gunData = {
   },
   "svd": {
     "damage": 13,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 2.4000000000000004,
+    "fireOnReload": false,
     "maxGunAmmo": 10,
     "reloadTime": 60,
     "bullet": "zex:762m",
@@ -393,7 +537,10 @@ export const gunData = {
   },
   "tt33": {
     "damage": 10,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.6000000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 8,
     "reloadTime": 50,
     "bullet": "zex:762m",
@@ -401,7 +548,10 @@ export const gunData = {
   },
   "uzi": {
     "damage": 3,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.6000000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 40,
     "bullet": "zex:mm9",
@@ -409,7 +559,10 @@ export const gunData = {
   },
   "vz61": {
     "damage": 4,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
     "speed": 0.6000000000000001,
+    "fireOnReload": false,
     "maxGunAmmo": 20,
     "reloadTime": 40,
     "bullet": "zex:mm9",
@@ -417,158 +570,398 @@ export const gunData = {
   },
   "xm8": {
     "damage": 20,
+    "damageIgnoreDef": 1,
+    "slowness": 0,
     "speed": 1.8,
+    "fireOnReload": false,
     "maxGunAmmo": 8,
     "reloadTime": 80,
     "bullet": "zex:40m",
     "damageType": "entityExplosion"
   },
-  "vmg": {
-    "damage": 5,
+  "ptrd": {
+    "damage": 50,
+    "damageIgnoreDef": 1,
+    "slowness": 0,
+    "speed": 3.2,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 30,
+    "bullet": "zex:1270m",
+    "damageType": "entityExplosion"
+  },
+  "stg44": {
+    "damage": 6,
+    "damageIgnoreDef": 0,
+    "slowness": 0,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:762m",
     "damageType": "override"
   },
-  "76mm": {
+  "lewis": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "slowness": 2,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 47,
+    "reloadTime": 80,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "vmg": {
+    "damage": 4,
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "37mm": {
+    "damage": 35,
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
+  },
+  "47mm": {
     "damage": 60,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s47m"
+  },
+  "57mm": {
+    "damage": 70,
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s57m"
+  },
+  "76mm": {
+    "damage": 80,
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s76m"
   },
   "85mm": {
-    "damage": 80,
-    "damageType": "entityExplosion"
+    "damage": 100,
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s85m"
+  },
+  "88mm": {
+    "damage": 110,
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s88m"
   },
   "100mm": {
-    "damage": 100,
-    "damageType": "entityExplosion"
+    "damage": 120,
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
   },
   "105mm": {
-    "damage": 100,
-    "damageType": "entityExplosion"
+    "damage": 150,
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
   },
   "120mm": {
     "damage": 180,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
   },
   "125mm": {
     "damage": 200,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
   },
   "152mm": {
     "damage": 250,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s152m"
   },
   "20mm": {
     "damage": 10,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
   },
   "23mm": {
     "damage": 12,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
   },
   "ads_dp28": {
     "damage": 8,
-    "damageType": "override"
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "ads_m60": {
     "damage": 8,
-    "damageType": "override"
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "ads_pkm": {
     "damage": 8,
-    "damageType": "override"
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "37mmrocket": {
+    "damage": 35,
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
   },
   "76mmrocket": {
     "damage": 60,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s76m"
   },
   "agmissile": {
     "damage": 120,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s152m"
   },
   "vmgiir": {
     "damage": 8,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
   },
   "vmgiil": {
     "damage": 8,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
+  },
+  "vmgii": {
+    "damage": 8,
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "vmgi": {
     "damage": 8,
-    "damageType": "override"
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "aamissile": {
     "damage": 100,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s152m"
   },
   "bomb": {
     "damage": 100,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 0.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:sbombm"
+  },
+  "bombii": {
+    "damage": 100,
+    "damageIgnoreDef": 0.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:sbombm"
   },
   "hmg": {
     "damage": 8,
-    "damageType": "override"
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
   },
   "7.62mmmgsr": {
     "damage": 4,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
   },
   "7.62mmmgsl": {
     "damage": 4,
+    "damageIgnoreDef": 0.0,
     "damageType": "override"
   },
+  "7.62mmmgs": {
+    "damage": 4,
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
   "7.62mmmg": {
-    "damage": 5,
+    "damage": 4,
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "12.7mmmgri": {
+    "damage": 6,
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "12.7mmmgli": {
+    "damage": 6,
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "12.7mmmgrii": {
+    "damage": 6,
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "12.7mmmglii": {
+    "damage": 6,
+    "damageIgnoreDef": 0.5,
     "damageType": "override"
   },
   "12.7mmmg": {
-    "damage": 5,
+    "damage": 6,
+    "damageIgnoreDef": 0.5,
+    "damageType": "override",
+    "ammoType": "zex:1270m"
+  },
+  "14.5mmhmgri": {
+    "damage": 6,
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "14.5mmhmgli": {
+    "damage": 6,
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "14.5mmhmgrii": {
+    "damage": 6,
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "14.5mmhmglii": {
+    "damage": 6,
+    "damageIgnoreDef": 0.5,
     "damageType": "override"
   },
   "14.5mmhmg": {
     "damage": 6,
-    "damageType": "override"
+    "damageIgnoreDef": 0.5,
+    "damageType": "override",
+    "ammoType": "zex:1450m"
   },
   "20mmmc": {
     "damage": 10,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
   },
   "20mmmcheri": {
     "damage": 10,
-    "damageType": "override"
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
   },
   "23mmmc": {
     "damage": 12,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 1.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
   },
   "25mmmc": {
     "damage": 20,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 1.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
   },
   "30mmmc": {
     "damage": 16,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 1.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
   },
   "23mmmcairr": {
     "damage": 4,
+    "damageIgnoreDef": 1.0,
     "damageType": "override"
   },
   "23mmmcairl": {
     "damage": 4,
+    "damageIgnoreDef": 1.0,
     "damageType": "override"
   },
-  "20mmmcairr": {
-    "damage": 8,
+  "23mmmcair": {
+    "damage": 4,
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
+  },
+  "20mmmcairdr": {
+    "damage": 12,
+    "damageIgnoreDef": 1.0,
     "damageType": "override"
   },
-  "20mmmcairl": {
-    "damage": 8,
+  "20mmmcairdl": {
+    "damage": 12,
+    "damageIgnoreDef": 1.0,
     "damageType": "override"
+  },
+  "20mmmcaird": {
+    "damage": 12,
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
+  },
+  "20mmmcairwri": {
+    "damage": 12,
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "20mmmcairwli": {
+    "damage": 12,
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "20mmmcairwrii": {
+    "damage": 12,
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "20mmmcairwlii": {
+    "damage": 12,
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "20mmmcairw": {
+    "damage": 12,
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
   },
   "30mmmcair": {
     "damage": 12,
-    "damageType": "override"
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
   },
-  "bombii": {
+  "20mmmcair": {
+    "damage": 12,
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
+  },
+  "bombiii": {
     "damage": 100,
-    "damageType": "entityExplosion"
+    "damageIgnoreDef": 0.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:sbombm"
+  },
+  "37mmrocketkatyusya": {
+    "damage": 35,
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
   }
 };

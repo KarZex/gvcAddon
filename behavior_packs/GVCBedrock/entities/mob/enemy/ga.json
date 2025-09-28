@@ -15,6 +15,22 @@
       "animations": {
         "walk": "controller.animation.riderb1",
         "para": "controller.animation.para"
+      },
+      "properties": {
+        "zex:is_scoping": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "zex:sights": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
+        }
       }
     },
     "component_groups": {
@@ -1403,6 +1419,60 @@
           "table": "loot_tables/gun/xm8.json"
         }
       },
+      "ptrd": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 2.0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 4.5,
+          "attack_interval_max": 4.5,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ptrd"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ptrd.json"
+        }
+      },
+      "stg44": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:stg44"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/stg44.json"
+        }
+      },
+      "lewis": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:lewis"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/lewis.json"
+        }
+      },
       "vmg": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -1416,6 +1486,51 @@
         },
         "minecraft:shooter": {
           "def": "fire:vmg"
+        }
+      },
+      "37mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:37mm"
+        }
+      },
+      "47mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:47mm"
+        }
+      },
+      "57mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:57mm"
         }
       },
       "76mm": {
@@ -1446,6 +1561,21 @@
         },
         "minecraft:shooter": {
           "def": "fire:85mm"
+        }
+      },
+      "88mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:88mm"
         }
       },
       "100mm": {
@@ -1598,6 +1728,21 @@
           "def": "fire:ads_pkm"
         }
       },
+      "37mmrocket": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:37mmrocket"
+        }
+      },
       "76mmrocket": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -1635,8 +1780,8 @@
           "burst_interval": 0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.0,
-          "attack_interval_max": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
@@ -1650,8 +1795,8 @@
           "burst_interval": 0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.0,
-          "attack_interval_max": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
@@ -1686,6 +1831,21 @@
         },
         "minecraft:shooter": {
           "def": "fire:bomb"
+        }
+      },
+      "bombii": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:bombii"
         }
       },
       "hmg": {
@@ -1745,7 +1905,7 @@
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:12.7mmmg"
+          "def": "fire:12.7mmmgl"
         }
       },
       "14.5mmhmg": {
@@ -1760,7 +1920,7 @@
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:14.5mmhmg"
+          "def": "fire:14.5mmhmgl"
         }
       },
       "20mmmc": {
@@ -1770,8 +1930,8 @@
           "burst_interval": 0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.0,
-          "attack_interval_max": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
@@ -1853,19 +2013,34 @@
           "def": "fire:23mmmcairl"
         }
       },
-      "20mmmcair": {
+      "20mmmcaird": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
           "burst_interval": 0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.0,
-          "attack_interval_max": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:20mmmcairl"
+          "def": "fire:20mmmcairdl"
+        }
+      },
+      "20mmmcairw": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mmmcairwl"
         }
       },
       "30mmmcair": {
@@ -1875,15 +2050,30 @@
           "burst_interval": 0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 0.0,
-          "attack_interval_max": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
           "def": "fire:30mmmcair"
         }
       },
-      "bombii": {
+      "20mmmcair": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mmmcair"
+        }
+      },
+      "bombiii": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
@@ -1895,7 +2085,22 @@
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:bombii"
+          "def": "fire:bombiii"
+        }
+      },
+      "37mmrocketkatyusya": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:37mmrocketkatyusya"
         }
       }
     },
@@ -2931,10 +3136,52 @@
           ]
         }
       },
+      "ptrd": {
+        "add": {
+          "component_groups": [
+            "ptrd"
+          ]
+        }
+      },
+      "stg44": {
+        "add": {
+          "component_groups": [
+            "stg44"
+          ]
+        }
+      },
+      "lewis": {
+        "add": {
+          "component_groups": [
+            "lewis"
+          ]
+        }
+      },
       "vmg": {
         "add": {
           "component_groups": [
             "vmg"
+          ]
+        }
+      },
+      "37mm": {
+        "add": {
+          "component_groups": [
+            "37mm"
+          ]
+        }
+      },
+      "47mm": {
+        "add": {
+          "component_groups": [
+            "47mm"
+          ]
+        }
+      },
+      "57mm": {
+        "add": {
+          "component_groups": [
+            "57mm"
           ]
         }
       },
@@ -2949,6 +3196,13 @@
         "add": {
           "component_groups": [
             "85mm"
+          ]
+        }
+      },
+      "88mm": {
+        "add": {
+          "component_groups": [
+            "88mm"
           ]
         }
       },
@@ -3022,6 +3276,13 @@
           ]
         }
       },
+      "37mmrocket": {
+        "add": {
+          "component_groups": [
+            "37mmrocket"
+          ]
+        }
+      },
       "76mmrocket": {
         "add": {
           "component_groups": [
@@ -3061,6 +3322,13 @@
         "add": {
           "component_groups": [
             "bomb"
+          ]
+        }
+      },
+      "bombii": {
+        "add": {
+          "component_groups": [
+            "bombii"
           ]
         }
       },
@@ -3141,10 +3409,17 @@
           ]
         }
       },
-      "20mmmcair": {
+      "20mmmcaird": {
         "add": {
           "component_groups": [
-            "20mmmcair"
+            "20mmmcaird"
+          ]
+        }
+      },
+      "20mmmcairw": {
+        "add": {
+          "component_groups": [
+            "20mmmcairw"
           ]
         }
       },
@@ -3155,10 +3430,24 @@
           ]
         }
       },
-      "bombii": {
+      "20mmmcair": {
         "add": {
           "component_groups": [
-            "bombii"
+            "20mmmcair"
+          ]
+        }
+      },
+      "bombiii": {
+        "add": {
+          "component_groups": [
+            "bombiii"
+          ]
+        }
+      },
+      "37mmrocketkatyusya": {
+        "add": {
+          "component_groups": [
+            "37mmrocketkatyusya"
           ]
         }
       },
@@ -3330,6 +3619,21 @@
       "vehicle:f117": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:f117 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:yak9": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:yak9 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:il2": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:il2 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:panzer": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:panzer no_ride_change summon_enemy"
         }
       }
     }

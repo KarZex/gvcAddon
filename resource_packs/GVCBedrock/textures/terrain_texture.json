@@ -7,6 +7,15 @@
     "miss": {
       "textures": "textures/craft/ds"
     },
+    "attach_table": {
+      "textures": "textures/blocks/attach_table"
+    },
+    "attach_table_top": {
+      "textures": "textures/blocks/attach_table_top"
+    },
+    "attach_table_bottom": {
+      "textures": "textures/blocks/attach_table_bottom"
+    },
     "mine": {
       "textures": "textures/blocks/spawng"
     },

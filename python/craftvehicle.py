@@ -47,24 +47,12 @@ for row in csv_reader:
         maxsubcool = int(row[26]) # AA on excel
 
         #from Name CSV
-        v_subname = row[27]
-        v_mainname = row[28]
-        v_main2name = row[29]
-        v_main3name = row[30]
+        v_gattack = int(row[27])
 
         #inventory item
         v_inventory = row[31] 
         v_camera = int(row[33])
 
-
-        if v_subname != "":
-            names += "gvcv5.{0}.subWeapon.name={1}\n".format(v_id,v_subname)
-        if v_mainname != "":
-            names += "gvcv5.{0}.mainWeapon.name={1}\n".format(v_id,v_mainname)
-        if v_main2name != "":
-            names += "gvcv5.{0}.mainWeaponi.name={1}\n".format(v_id,v_main2name)
-        if v_main3name != "":
-            names += "gvcv5.{0}.mainWeaponii.name={1}\n".format(v_id,v_main3name)
         if( v_type == "stank"):
             f_path = open("tool/fv101.json","r")
             entity_json = json.load(f_path)

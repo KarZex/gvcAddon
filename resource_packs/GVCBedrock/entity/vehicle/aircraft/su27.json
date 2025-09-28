@@ -11,11 +11,17 @@
         "default": "geometry.su27"
       },
 		"animations": {
-		  "fly": "animation.airmig17"
+		  "fly": "animation.airmig172"
 		},
 			"scripts": {
+				"pre_animation": [
+					"v.rotation = q.body_y_rotation - q.rider_head_y_rotation(0);",
+					"v.applyRotation = v.rotation;",
+					"(v.rotation > 180) ? { v.applyRotation = v.rotation - 360; };",
+					"(v.rotation < -180) ? { v.applyRotation = v.rotation + 360; };"
+				],
 				"animate": [ 
-			{ "fly": "query.has_rider" }
+			    { "fly": "query.has_rider" }
 				]
 			},
 	  "spawn_egg":{

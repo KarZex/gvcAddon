@@ -1,1150 +1,1166 @@
 {
-  "format_version": "1.21.0",
-  "minecraft:entity": {
-    "description": {
-      "identifier": "gvcv5:ca",
-      "spawn_category": "creature",
-      "is_spawnable": true,
-      "is_summonable": true,
-      "scripts": {
-        "animate": [
-          "walk",
-          "para"
-        ]
-      },
-      "animations": {
-        "walk": "controller.animation.riderb1",
-        "para": "controller.animation.para"
-      }
-    },
-    "component_groups": {
-      "can_despawn": {
-        "minecraft:despawn": {
-          "despawn_from_distance": {}
-        }
-      },
-      "army": {
-        "minecraft:variant": {
-          "value": 0
-        }
-      },
-      "navy": {
-        "minecraft:variant": {
-          "value": 1
-        }
-      },
-      "redteam": {
-        "minecraft:variant": {
-          "value": 2
-        },
-        "minecraft:type_family": {
-          "family": [
-            "allied_soldier",
-            "playerp",
-            "mob",
-            "redteam"
-          ]
-        },
-        "minecraft:behavior.send_event": {
-          "priority": 3,
-          "event_choices": [
-            {
-              "min_activation_range": 0.0,
-              "max_activation_range": 0.1,
-              "cooldown_time": 0,
-              "cast_duration": 0,
-              "particle_color": "#FFFF00",
-              "weight": 3,
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "noteam"
-                  }
+    "format_version": "1.21.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "gvcv5:ca",
+            "spawn_category": "creature",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "scripts": {
+                "animate": [
+                    "walk",
+                    "para"
                 ]
-              },
-              "start_sound_event": "cast.spell",
-              "sequence": [
-                {
-                  "base_delay": 0,
-                  "event": "gvcv5:become_redteam",
-                  "sound_event": "prepare.wololo"
+            },
+            "animations": {
+                "walk": "controller.animation.riderb1",
+                "para": "controller.animation.para"
+            },
+            "properties": {
+                "zex:is_scoping": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "zex:sights": {
+                    "client_sync": true,
+                    "type": "int",
+                    "range": [
+                        0,
+                        255
+                    ],
+                    "default": 0
                 }
-              ]
             }
-          ]
         },
-        "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "any_of": [
-                    {
-                      "all_of": [
+        "component_groups": {
+            "can_despawn": {
+                "minecraft:despawn": {
+                    "despawn_from_distance": {}
+                }
+            },
+            "army": {
+                "minecraft:variant": {
+                    "value": 0
+                }
+            },
+            "navy": {
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "redteam": {
+                "minecraft:variant": {
+                    "value": 2
+                },
+                "minecraft:type_family": {
+                    "family": [
+                        "allied_soldier",
+                        "playerp",
+                        "mob",
+                        "redteam"
+                    ]
+                },
+                "minecraft:behavior.send_event": {
+                    "priority": 3,
+                    "event_choices": [
                         {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "allied_soldier"
+                            "min_activation_range": 0.0,
+                            "max_activation_range": 0.1,
+                            "cooldown_time": 0,
+                            "cast_duration": 0,
+                            "particle_color": "#FFFF00",
+                            "weight": 3,
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "allied_soldier"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "noteam"
+                                    }
+                                ]
+                            },
+                            "start_sound_event": "cast.spell",
+                            "sequence": [
+                                {
+                                    "base_delay": 0,
+                                    "event": "gvcv5:become_redteam",
+                                    "sound_event": "prepare.wololo"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "all",
+                            "deals_damage": false,
+                            "on_damage": {
+                                "filters": {
+                                    "any_of": [
+                                        {
+                                            "all_of": [
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "allied_soldier"
+                                                },
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "redteam"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "all_of": [
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "player"
+                                                },
+                                                {
+                                                    "test": "has_tag",
+                                                    "operator": "==",
+                                                    "subject": "other",
+                                                    "value": "redSub"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 2,
+                    "must_see": true,
+                    "reselect_targets": true,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "redteam"
+                                    },
+                                    {
+                                        "test": "has_tag",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "redSub"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
                         },
                         {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "redteam"
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "allied_soldier"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "redteam"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "noteam"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
+                        },
+                        {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "monster"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
                         }
-                      ]
+                    ]
+                }
+            },
+            "blueteam": {
+                "minecraft:variant": {
+                    "value": 3
+                },
+                "minecraft:type_family": {
+                    "family": [
+                        "allied_soldier",
+                        "playerp",
+                        "mob",
+                        "blueteam"
+                    ]
+                },
+                "minecraft:behavior.send_event": {
+                    "priority": 3,
+                    "event_choices": [
+                        {
+                            "min_activation_range": 0.0,
+                            "max_activation_range": 0.1,
+                            "cooldown_time": 0,
+                            "cast_duration": 0,
+                            "particle_color": "#FFFF00",
+                            "weight": 3,
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "allied_soldier"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "noteam"
+                                    }
+                                ]
+                            },
+                            "start_sound_event": "cast.spell",
+                            "sequence": [
+                                {
+                                    "base_delay": 0,
+                                    "event": "gvcv5:become_blueteam",
+                                    "sound_event": "prepare.wololo"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "all",
+                            "deals_damage": false,
+                            "on_damage": {
+                                "filters": {
+                                    "any_of": [
+                                        {
+                                            "all_of": [
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "allied_soldier"
+                                                },
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "blueteam"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "all_of": [
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "player"
+                                                },
+                                                {
+                                                    "test": "has_tag",
+                                                    "operator": "==",
+                                                    "subject": "other",
+                                                    "value": "blueSub"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 2,
+                    "must_see": true,
+                    "reselect_targets": true,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "blueteam"
+                                    },
+                                    {
+                                        "test": "has_tag",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "blueSub"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
+                        },
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "allied_soldier"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "blueteam"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "noteam"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
+                        },
+                        {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "monster"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
+                        }
+                    ]
+                }
+            },
+            "greenteam": {
+                "minecraft:variant": {
+                    "value": 4
+                },
+                "minecraft:type_family": {
+                    "family": [
+                        "allied_soldier",
+                        "playerp",
+                        "mob",
+                        "greenteam"
+                    ]
+                },
+                "minecraft:behavior.send_event": {
+                    "priority": 3,
+                    "event_choices": [
+                        {
+                            "min_activation_range": 0.0,
+                            "max_activation_range": 0.1,
+                            "cooldown_time": 0,
+                            "cast_duration": 0,
+                            "particle_color": "#00FF00",
+                            "weight": 3,
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "allied_soldier"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "noteam"
+                                    }
+                                ]
+                            },
+                            "start_sound_event": "cast.spell",
+                            "sequence": [
+                                {
+                                    "base_delay": 0,
+                                    "event": "gvcv5:become_greenteam",
+                                    "sound_event": "prepare.wololo"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "all",
+                            "deals_damage": false,
+                            "on_damage": {
+                                "filters": {
+                                    "any_of": [
+                                        {
+                                            "all_of": [
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "allied_soldier"
+                                                },
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "greenteam"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "all_of": [
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "player"
+                                                },
+                                                {
+                                                    "test": "has_tag",
+                                                    "operator": "==",
+                                                    "subject": "other",
+                                                    "value": "greenSub"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 2,
+                    "must_see": true,
+                    "reselect_targets": true,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "greenteam"
+                                    },
+                                    {
+                                        "test": "has_tag",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "greenSub"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
+                        },
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "allied_soldier"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "greenteam"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "noteam"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
+                        },
+                        {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "monster"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
+                        }
+                    ]
+                }
+            },
+            "yellowteam": {
+                "minecraft:variant": {
+                    "value": 5
+                },
+                "minecraft:behavior.send_event": {
+                    "priority": 3,
+                    "event_choices": [
+                        {
+                            "min_activation_range": 0.0,
+                            "max_activation_range": 0.1,
+                            "cooldown_time": 0,
+                            "cast_duration": 0,
+                            "particle_color": "#FFFF00",
+                            "weight": 3,
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "allied_soldier"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "noteam"
+                                    }
+                                ]
+                            },
+                            "start_sound_event": "cast.spell",
+                            "sequence": [
+                                {
+                                    "base_delay": 0,
+                                    "event": "gvcv5:become_yellowteam",
+                                    "sound_event": "prepare.wololo"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "minecraft:type_family": {
+                    "family": [
+                        "allied_soldier",
+                        "playerp",
+                        "mob",
+                        "yellowteam"
+                    ]
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "all",
+                            "deals_damage": false,
+                            "on_damage": {
+                                "filters": {
+                                    "any_of": [
+                                        {
+                                            "all_of": [
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "allied_soldier"
+                                                },
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "yellowteam"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "all_of": [
+                                                {
+                                                    "test": "is_family",
+                                                    "subject": "other",
+                                                    "value": "player"
+                                                },
+                                                {
+                                                    "test": "has_tag",
+                                                    "operator": "==",
+                                                    "subject": "other",
+                                                    "value": "yellowSub"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 2,
+                    "must_see": true,
+                    "reselect_targets": true,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "yellowteam"
+                                    },
+                                    {
+                                        "test": "has_tag",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "yellowSub"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
+                        },
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "allied_soldier"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "yellowteam"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "noteam"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
+                        },
+                        {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "monster"
+                                    }
+                                ]
+                            },
+                            "max_dist": 42
+                        }
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:follow_range": {
+                "value": 48,
+                "max": 48
+            },
+            "minecraft:collision_box": {
+                "width": 0.5,
+                "height": 1.8
+            },
+            "minecraft:variant": {
+                "value": 0
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "allied_soldier",
+                    "playerp",
+                    "mob",
+                    "noteam"
+                ]
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": 0,
+                "breathes_water": true
+            },
+            "minecraft:interact": {
+                "interactions": [
+                    {
+                        "use_item": false,
+                        "play_sounds": "enderchest.open",
+                        "interact_text": "action.gvcv5.team.dye",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "self",
+                                        "value": "noteam"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "redteam"
+                                    }
+                                ]
+                            },
+                            "event": "gvcv5:become_redteam",
+                            "target": "self"
+                        }
                     },
                     {
-                      "all_of": [
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "player"
-                        },
-                        {
-                          "test": "has_tag",
-                          "operator": "==",
-                          "subject": "other",
-                          "value": "redSub"
+                        "use_item": false,
+                        "play_sounds": "enderchest.open",
+                        "interact_text": "action.gvcv5.team.dye",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "self",
+                                        "value": "noteam"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "blueteam"
+                                    }
+                                ]
+                            },
+                            "event": "gvcv5:become_blueteam",
+                            "target": "self"
                         }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "minecraft:behavior.nearest_attackable_target": {
-          "priority": 2,
-          "must_see": true,
-          "reselect_targets": true,
-          "entity_types": [
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "player"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "redteam"
-                  },
-                  {
-                    "test": "has_tag",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "redSub"
-                  }
-                ]
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "redteam"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "noteam"
-                  }
-                ]
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "any_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "monster"
-                  }
-                ]
-              },
-              "max_dist": 42
-            }
-          ]
-        }
-      },
-      "blueteam": {
-        "minecraft:variant": {
-          "value": 3
-        },
-        "minecraft:type_family": {
-          "family": [
-            "allied_soldier",
-            "playerp",
-            "mob",
-            "blueteam"
-          ]
-        },
-        "minecraft:behavior.send_event": {
-          "priority": 3,
-          "event_choices": [
-            {
-              "min_activation_range": 0.0,
-              "max_activation_range": 0.1,
-              "cooldown_time": 0,
-              "cast_duration": 0,
-              "particle_color": "#FFFF00",
-              "weight": 3,
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "noteam"
-                  }
-                ]
-              },
-              "start_sound_event": "cast.spell",
-              "sequence": [
-                {
-                  "base_delay": 0,
-                  "event": "gvcv5:become_blueteam",
-                  "sound_event": "prepare.wololo"
-                }
-              ]
-            }
-          ]
-        },
-        "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "any_of": [
-                    {
-                      "all_of": [
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "allied_soldier"
-                        },
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "blueteam"
-                        }
-                      ]
                     },
                     {
-                      "all_of": [
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "player"
-                        },
-                        {
-                          "test": "has_tag",
-                          "operator": "==",
-                          "subject": "other",
-                          "value": "blueSub"
+                        "use_item": false,
+                        "play_sounds": "enderchest.open",
+                        "interact_text": "action.gvcv5.team.dye",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "self",
+                                        "value": "noteam"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "greenteam"
+                                    }
+                                ]
+                            },
+                            "event": "gvcv5:become_greenteam",
+                            "target": "self"
                         }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "minecraft:behavior.nearest_attackable_target": {
-          "priority": 2,
-          "must_see": true,
-          "reselect_targets": true,
-          "entity_types": [
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "player"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "blueteam"
-                  },
-                  {
-                    "test": "has_tag",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "blueSub"
-                  }
-                ]
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "blueteam"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "noteam"
-                  }
-                ]
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "any_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "monster"
-                  }
-                ]
-              },
-              "max_dist": 42
-            }
-          ]
-        }
-      },
-      "greenteam": {
-        "minecraft:variant": {
-          "value": 4
-        },
-        "minecraft:type_family": {
-          "family": [
-            "allied_soldier",
-            "playerp",
-            "mob",
-            "greenteam"
-          ]
-        },
-        "minecraft:behavior.send_event": {
-          "priority": 3,
-          "event_choices": [
-            {
-              "min_activation_range": 0.0,
-              "max_activation_range": 0.1,
-              "cooldown_time": 0,
-              "cast_duration": 0,
-              "particle_color": "#00FF00",
-              "weight": 3,
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "noteam"
-                  }
-                ]
-              },
-              "start_sound_event": "cast.spell",
-              "sequence": [
-                {
-                  "base_delay": 0,
-                  "event": "gvcv5:become_greenteam",
-                  "sound_event": "prepare.wololo"
-                }
-              ]
-            }
-          ]
-        },
-        "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "any_of": [
-                    {
-                      "all_of": [
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "allied_soldier"
-                        },
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "greenteam"
-                        }
-                      ]
                     },
                     {
-                      "all_of": [
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "player"
-                        },
-                        {
-                          "test": "has_tag",
-                          "operator": "==",
-                          "subject": "other",
-                          "value": "greenSub"
+                        "use_item": false,
+                        "play_sounds": "enderchest.open",
+                        "interact_text": "action.gvcv5.team.dye",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "self",
+                                        "value": "noteam"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "yellowteam"
+                                    }
+                                ]
+                            },
+                            "event": "gvcv5:become_yellowteam",
+                            "target": "self"
                         }
-                      ]
                     }
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "minecraft:behavior.nearest_attackable_target": {
-          "priority": 2,
-          "must_see": true,
-          "reselect_targets": true,
-          "entity_types": [
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "player"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "greenteam"
-                  },
-                  {
-                    "test": "has_tag",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "greenSub"
-                  }
                 ]
-              },
-              "max_dist": 42
             },
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "greenteam"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "noteam"
-                  }
-                ]
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "any_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "monster"
-                  }
-                ]
-              },
-              "max_dist": 42
-            }
-          ]
-        }
-      },
-      "yellowteam": {
-        "minecraft:variant": {
-          "value": 5
-        },
-        "minecraft:behavior.send_event": {
-          "priority": 3,
-          "event_choices": [
-            {
-              "min_activation_range": 0.0,
-              "max_activation_range": 0.1,
-              "cooldown_time": 0,
-              "cast_duration": 0,
-              "particle_color": "#FFFF00",
-              "weight": 3,
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "noteam"
-                  }
-                ]
-              },
-              "start_sound_event": "cast.spell",
-              "sequence": [
-                {
-                  "base_delay": 0,
-                  "event": "gvcv5:become_yellowteam",
-                  "sound_event": "prepare.wololo"
-                }
-              ]
-            }
-          ]
-        },
-        "minecraft:type_family": {
-          "family": [
-            "allied_soldier",
-            "playerp",
-            "mob",
-            "yellowteam"
-          ]
-        },
-        "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "cause": "all",
-              "deals_damage": false,
-              "on_damage": {
-                "filters": {
-                  "any_of": [
+            "minecraft:damage_sensor": {
+                "triggers": [
                     {
-                      "all_of": [
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "allied_soldier"
-                        },
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "yellowteam"
+                        "cause": "all",
+                        "deals_damage": false,
+                        "on_damage": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "allied_soldier"
+                                    }
+                                ]
+                            }
                         }
-                      ]
+                    }
+                ]
+            },
+            "minecraft:health": {
+                "value": 20,
+                "max": 20
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:movement": {
+                "value": 0.25
+            },
+            "minecraft:navigation.walk": {
+                "is_amphibious": false,
+                "avoid_sun": false,
+                "avoid_water": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:nameable": {},
+            "minecraft:shooter": {
+                "def": "minecraft:arrow"
+            },
+            "minecraft:behavior.find_mount": {
+                "priority": 1,
+                "within_radius": 16,
+                "start_delay": 15,
+                "max_failed_attempts": 20
+            },
+            "minecraft:behavior.ranged_attack": {
+                "priority": 0,
+                "attack_interval_min": 1.0,
+                "attack_interval_max": 3.0,
+                "attack_radius": 15.0
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1,
+                "entity_types": {
+                    "filters": {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "playerp"
+                    }
+                }
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "must_see": true,
+                "reselect_targets": true,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "monster"
+                        },
+                        "max_dist": 42
+                    }
+                ]
+            },
+            "minecraft:behavior.equip_item": {
+                "priority": 3
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {}
+        },
+        "events": {
+            "gvcv5:set_have_gun": {
+                "randomize": [
+                    {
+                        "weight": 20,
+                        "trigger": "m16a1"
                     },
                     {
-                      "all_of": [
-                        {
-                          "test": "is_family",
-                          "subject": "other",
-                          "value": "player"
-                        },
-                        {
-                          "test": "has_tag",
-                          "operator": "==",
-                          "subject": "other",
-                          "value": "yellowSub"
-                        }
-                      ]
+                        "weight": 10,
+                        "trigger": "m4"
+                    },
+                    {
+                        "weight": 10,
+                        "trigger": "m72"
+                    },
+                    {
+                        "weight": 10,
+                        "trigger": "m110"
+                    },
+                    {
+                        "weight": 10,
+                        "trigger": "mp5"
+                    },
+                    {
+                        "weight": 10,
+                        "trigger": "m60"
+                    },
+                    {
+                        "weight": 1,
+                        "trigger": "vehicle:m113"
+                    },
+                    {
+                        "weight": 1,
+                        "trigger": "vehicle:m41"
+                    },
+                    {
+                        "weight": 1,
+                        "trigger": "vehicle:m60a1"
+                    },
+                    {
+                        "weight": 1,
+                        "trigger": "vehicle:ah1s"
+                    },
+                    {
+                        "weight": 1,
+                        "trigger": "vehicle:ah6"
                     }
-                  ]
+                ]
+            },
+            "gvcv5:set_have_gun_nt": {
+                "randomize": [
+                    {
+                        "weight": 2,
+                        "trigger": "m16a1"
+                    },
+                    {
+                        "weight": 1,
+                        "trigger": "m4"
+                    },
+                    {
+                        "weight": 1,
+                        "trigger": "m72"
+                    },
+                    {
+                        "weight": 1,
+                        "trigger": "m110"
+                    },
+                    {
+                        "weight": 1,
+                        "trigger": "mp5"
+                    },
+                    {
+                        "weight": 1,
+                        "trigger": "m60"
+                    }
+                ]
+            },
+            "gvcv5:become_redteam": {
+                "add": {
+                    "component_groups": [
+                        "redteam"
+                    ]
                 }
-              }
-            }
-          ]
-        },
-        "minecraft:behavior.nearest_attackable_target": {
-          "priority": 2,
-          "must_see": true,
-          "reselect_targets": true,
-          "entity_types": [
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "player"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "yellowteam"
-                  },
-                  {
-                    "test": "has_tag",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "yellowSub"
-                  }
-                ]
-              },
-              "max_dist": 42
             },
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "yellowteam"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": "noteam"
-                  }
-                ]
-              },
-              "max_dist": 42
-            },
-            {
-              "filters": {
-                "any_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "monster"
-                  }
-                ]
-              },
-              "max_dist": 42
-            }
-          ]
-        }
-      }
-    },
-    "components": {
-      "minecraft:is_hidden_when_invisible": {},
-      "minecraft:follow_range": {
-        "value": 48,
-        "max": 48
-      },
-      "minecraft:collision_box": {
-        "width": 0.5,
-        "height": 1.8
-      },
-      "minecraft:variant": {
-        "value": 0
-      },
-      "minecraft:type_family": {
-        "family": [
-          "allied_soldier",
-          "playerp",
-          "mob",
-          "noteam"
-        ]
-      },
-      "minecraft:breathable": {
-        "total_supply": 15,
-        "suffocate_time": 0,
-        "breathes_water": true
-      },
-      "minecraft:interact": {
-        "interactions": [
-          {
-            "use_item": false,
-            "play_sounds": "enderchest.open",
-            "interact_text": "action.gvcv5.team.dye",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "self",
-                    "value": "noteam"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "redteam"
-                  }
-                ]
-              },
-              "event": "gvcv5:become_redteam",
-              "target": "self"
-            }
-          },
-          {
-            "use_item": false,
-            "play_sounds": "enderchest.open",
-            "interact_text": "action.gvcv5.team.dye",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "self",
-                    "value": "noteam"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "blueteam"
-                  }
-                ]
-              },
-              "event": "gvcv5:become_blueteam",
-              "target": "self"
-            }
-          },
-          {
-            "use_item": false,
-            "play_sounds": "enderchest.open",
-            "interact_text": "action.gvcv5.team.dye",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "self",
-                    "value": "noteam"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "greenteam"
-                  }
-                ]
-              },
-              "event": "gvcv5:become_greenteam",
-              "target": "self"
-            }
-          },
-          {
-            "use_item": false,
-            "play_sounds": "enderchest.open",
-            "interact_text": "action.gvcv5.team.dye",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "self",
-                    "value": "noteam"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "yellowteam"
-                  }
-                ]
-              },
-              "event": "gvcv5:become_yellowteam",
-              "target": "self"
-            }
-          }
-        ]
-      },
-      "minecraft:damage_sensor": {
-        "triggers": [
-          {
-            "cause": "all",
-            "deals_damage": false,
-            "on_damage": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "allied_soldier"
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "minecraft:health": {
-        "value": 20,
-        "max": 20
-      },
-      "minecraft:hurt_on_condition": {
-        "damage_conditions": [
-          {
-            "filters": {
-              "test": "in_lava",
-              "subject": "self",
-              "operator": "==",
-              "value": true
-            },
-            "cause": "lava",
-            "damage_per_tick": 4
-          }
-        ]
-      },
-      "minecraft:movement": {
-        "value": 0.25
-      },
-      "minecraft:navigation.walk": {
-        "is_amphibious": false,
-        "avoid_sun": false,
-        "avoid_water": true
-      },
-      "minecraft:movement.basic": {},
-      "minecraft:jump.static": {},
-      "minecraft:can_climb": {},
-      "minecraft:nameable": {},
-      "minecraft:shooter": {
-        "def": "minecraft:arrow"
-      },
-      "minecraft:behavior.find_mount": {
-        "priority": 1,
-        "within_radius": 16,
-        "start_delay": 15,
-        "max_failed_attempts": 20
-      },
-      "minecraft:behavior.ranged_attack": {
-        "priority": 0,
-        "attack_interval_min": 1.0,
-        "attack_interval_max": 3.0,
-        "attack_radius": 15.0
-      },
-      "minecraft:behavior.hurt_by_target": {
-        "priority": 1,
-        "entity_types": {
-          "filters": {
-            "test": "is_family",
-            "subject": "other",
-            "operator": "!=",
-            "value": "playerp"
-          }
-        }
-      },
-      "minecraft:behavior.nearest_attackable_target": {
-        "priority": 2,
-        "must_see": true,
-        "reselect_targets": true,
-        "entity_types": [
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "monster"
-            },
-            "max_dist": 42
-          }
-        ]
-      },
-      "minecraft:behavior.equip_item": {
-        "priority": 3
-      },
-      "minecraft:physics": {},
-      "minecraft:pushable": {
-        "is_pushable": true,
-        "is_pushable_by_piston": true
-      },
-      "minecraft:conditional_bandwidth_optimization": {}
-    },
-    "events": {
-      "gvcv5:set_have_gun": {
-        "randomize": [
-          {
-            "weight": 20,
-            "trigger": "m16a1"
-          },
-          {
-            "weight": 10,
-            "trigger": "m4"
-          },
-          {
-            "weight": 10,
-            "trigger": "m72"
-          },
-          {
-            "weight": 10,
-            "trigger": "m110"
-          },
-          {
-            "weight": 10,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 10,
-            "trigger": "m60"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m113"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m41"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m60a1"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:ah1s"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:ah6"
-          }
-        ]
-      },
-      "gvcv5:set_have_gun_nt": {
-        "randomize": [
-          {
-            "weight": 2,
-            "trigger": "m16a1"
-          },
-          {
-            "weight": 1,
-            "trigger": "m4"
-          },
-          {
-            "weight": 1,
-            "trigger": "m72"
-          },
-          {
-            "weight": 1,
-            "trigger": "m110"
-          },
-          {
-            "weight": 1,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 1,
-            "trigger": "m60"
-          }
-        ]
-      },
-      "gvcv5:become_redteam": {
-        "add": {
-          "component_groups": [
-            "redteam"
-          ]
-        }
-      },
-      "gvcv5:become_blueteam": {
-        "add": {
-          "component_groups": [
-            "blueteam"
-          ]
-        }
-      },
-      "gvcv5:become_greenteam": {
-        "add": {
-          "component_groups": [
-            "greenteam"
-          ]
-        }
-      },
-      "gvcv5:become_yellowteam": {
-        "add": {
-          "component_groups": [
-            "yellowteam"
-          ]
-        }
-      },
-      "minecraft:entity_transformed": {
-        "sequence": [
-          {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "has_biome_tag",
-                  "value": "ocean"
+            "gvcv5:become_blueteam": {
+                "add": {
+                    "component_groups": [
+                        "blueteam"
+                    ]
                 }
-              ]
             },
-            "add": {
-              "component_groups": [
-                "navy"
-              ]
-            }
-          },
-          {
-            "trigger": "gvcv5:set_have_gun"
-          }
-        ]
-      },
-      "minecraft:entity_spawned": {
-        "sequence": [
-          {
-            "add": {
-              "component_groups": [
-                "can_despawn"
-              ]
-            }
-          },
-          {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "has_biome_tag",
-                  "value": "ocean"
+            "gvcv5:become_greenteam": {
+                "add": {
+                    "component_groups": [
+                        "greenteam"
+                    ]
                 }
-              ]
             },
-            "add": {
-              "component_groups": [
-                "navy"
-              ]
-            }
-          },
-          {
-            "trigger": "gvcv5:set_have_gun"
-          }
-        ]
-      },
-      "minecraft:spawned_from_block": {
-        "sequence": [
-          {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "has_biome_tag",
-                  "value": "ocean"
+            "gvcv5:become_yellowteam": {
+                "add": {
+                    "component_groups": [
+                        "yellowteam"
+                    ]
                 }
-              ]
             },
-            "add": {
-              "component_groups": [
-                "navy"
-              ]
-            }
-          },
-          {
-            "queue_command": {
-              "command": [
-                "tag @s add cantriding"
-              ]
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "can_despawn"
-              ]
-            }
-          },
-          {
-            "trigger": "gvcv5:set_have_gun_nt"
-          }
-        ]
-      },
-      "minecraft:spawned_from_spawner": {
-        "sequence": [
-          {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "has_biome_tag",
-                  "value": "ocean"
-                }
-              ]
+            "minecraft:entity_transformed": {
+                "sequence": [
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "has_biome_tag",
+                                    "value": "ocean"
+                                }
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "navy"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": "gvcv5:set_have_gun"
+                    }
+                ]
             },
-            "add": {
-              "component_groups": [
-                "navy"
-              ]
-            }
-          },
-          {
-            "queue_command": {
-              "command": [
-                "tag @s add cantriding"
-              ]
-            }
-          },
-          {
-            "trigger": "gvcv5:set_have_gun_nt"
-          }
-        ]
-      },
-      "minecraft:spawned_from_air": {
-        "sequence": [
-          {
-            "queue_command": {
-              "command": [
-                "replaceitem entity @s slot.armor.chest 0 gvcv5:parachute"
-              ]
-            }
-          },
-          {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "has_biome_tag",
-                  "value": "ocean"
-                }
-              ]
+            "minecraft:entity_spawned": {
+                "sequence": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "can_despawn"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "has_biome_tag",
+                                    "value": "ocean"
+                                }
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "navy"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": "gvcv5:set_have_gun"
+                    }
+                ]
             },
-            "add": {
-              "component_groups": [
-                "navy"
-              ]
+            "minecraft:spawned_from_block": {
+                "sequence": [
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "has_biome_tag",
+                                    "value": "ocean"
+                                }
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "navy"
+                            ]
+                        }
+                    },
+                    {
+                        "queue_command": {
+                            "command": [
+                                "tag @s add cantriding"
+                            ]
+                        }
+                    },
+                    {
+                        "remove": {
+                            "component_groups": [
+                                "can_despawn"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": "gvcv5:set_have_gun_nt"
+                    }
+                ]
+            },
+            "minecraft:spawned_from_spawner": {
+                "sequence": [
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "has_biome_tag",
+                                    "value": "ocean"
+                                }
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "navy"
+                            ]
+                        }
+                    },
+                    {
+                        "queue_command": {
+                            "command": [
+                                "tag @s add cantriding"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": "gvcv5:set_have_gun_nt"
+                    }
+                ]
+            },
+            "minecraft:spawned_from_air": {
+                "sequence": [
+                    {
+                        "queue_command": {
+                            "command": [
+                                "replaceitem entity @s slot.armor.chest 0 gvcv5:parachute"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "has_biome_tag",
+                                    "value": "ocean"
+                                }
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "navy"
+                            ]
+                        }
+                    },
+                    {
+                        "remove": {
+                            "component_groups": [
+                                "can_despawn"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": "gvcv5:set_have_gun_nt"
+                    }
+                ]
             }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "can_despawn"
-              ]
-            }
-          },
-          {
-            "trigger": "gvcv5:set_have_gun_nt"
-          }
-        ]
-      }
+        }
     }
-  }
 }
