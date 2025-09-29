@@ -1,0 +1,22 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.qbz.light": {
+			"loop": true,
+			"bones": {
+				"gunlight": {
+					"position": [-1, -18, 3]
+				}
+			}
+		},
+		"animation.glock.light": {
+			"loop": true,
+			"bones": {
+				"gunlight": {
+					"rotation": [0, 90, 0],
+					"position": [4, -20.75, 4.5]
+				}
+			}
+		}
+	}
+}

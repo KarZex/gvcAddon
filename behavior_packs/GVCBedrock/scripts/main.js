@@ -48,6 +48,50 @@ const headshotTypes = [
 	`gvcv5:pmc`
 ]
 
+function getrecoilResistance( id ){
+	if( id == 1 ){
+		return -0.5;
+	}
+	else if( id == 2 ){
+		return -1;
+	}
+	else if( id == 3 ){
+		return -1.5;
+	}
+	else if( id == 4 ){
+		return -2;
+	}
+	else{
+		return 0
+	}
+}
+
+function getRemvereloadTime( id ){
+	if( id == 1 ){
+		return -5;
+	}
+	else if( id == 2 ){
+		return -10;
+	}
+	else if( id == 3 ){
+		return -15;
+	}
+	else if( id == 4 ){
+		return -20;
+	}
+	else{
+		return 0
+	}
+}
+
+function recoil( player,recoil ){
+	player.runCommand(`camerashake add @s ${recoil/10} 0.05 rotational`);
+	//const V = player.getRotation();
+	//const D = player.getVelocity();
+	//player.teleport(player.location,{ rotation:{x:V.x-recoil,y:V.y  } });
+	//player.applyImpulse(D);
+}
+
 world.afterEvents.playerSpawn.subscribe( e => {
 	const player = e.player;
 	player.setDynamicProperty(`gvcv5:gunUsed`,0)
@@ -269,6 +313,15 @@ world.afterEvents.entitySpawn.subscribe( e => {
 		const projectile = e.entity;
 		
 		const player = projectile.getComponent(EntityComponentTypes.Projectile).owner;
+		if( player.getProperty(`zex:burrel`) == 1 ){
+			projectile.dimension.playSound(`fire.supu`,projectile.location,{ volume:0.5 });	
+		}
+		else{
+			let gunName;
+			if( projectile.typeId.includes("fire:ads_") ){ gunName = projectile.typeId.replace("fire:ads_",""); }
+			else if( projectile.typeId.includes("fire:") ){ gunName = projectile.typeId.replace("fire:",""); }
+			projectile.dimension.playSound(`fire.${gunData[`${gunName}`][`sound`]}`,projectile.location,{ volume:128 });	
+		}
 		if( player.typeId == `minecraft:player` && !player.hasTag("isRiding") ){
 			const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 			const ench = gun.getItem().getComponent(ItemComponentTypes.Enchantable);
@@ -616,6 +669,12 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			else{
 				player.setDynamicProperty(`gvcv5:gunUsed`,usedGun+1);
 			}
+			
+			const recoilValue = gunData[`${gunName}`][`recoil`] + getrecoilResistance(player.getProperty(`zex:grip`));
+			if( recoilValue > 0 ){
+				recoil(player,recoilValue);
+			}
+			
 			player.triggerEvent(`fire:${gunName}`);
 			try{
 				if( player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == `gun:${gunName}` ){
@@ -701,6 +760,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		let damage = dmgCom.damage;
 		let maxAmmo = dmgCom.maxDurability;
 		let usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
+		//print(`${(usingGun)}`)
 		if( gunSlot.getDynamicProperty("zex:sights") != undefined ){
 			const scope = gunSlot.getDynamicProperty("zex:sights");
 			player.setProperty(`zex:sights`,scope);
@@ -708,7 +768,28 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		else{
 			player.setProperty(`zex:sights`,0);
 		}
-		
+		if( gunSlot.getDynamicProperty("zex:burrel") != undefined ){
+			const scope = gunSlot.getDynamicProperty("zex:burrel");
+			player.setProperty(`zex:burrel`,scope);
+		}
+		else{
+			player.setProperty(`zex:burrel`,0);
+		}
+		if( gunSlot.getDynamicProperty("zex:light") != undefined ){
+			const scope = gunSlot.getDynamicProperty("zex:light");
+			player.setProperty(`zex:light`,scope);
+		}
+		else{
+			player.setProperty(`zex:light`,0);
+		}
+		if( gunSlot.getDynamicProperty("zex:grip") != undefined ){
+			const scope = gunSlot.getDynamicProperty("zex:grip");
+			player.setProperty(`zex:grip`,scope);
+		}
+		else{
+			player.setProperty(`zex:grip`,0);
+		}
+
 		try{
 			if( player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
 				let gunOff = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand);
@@ -734,6 +815,9 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		else if( damage >= maxAmmo ){
 			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
 		}
+		
+		
+
 	}
 	else if (e.id === "gvcv5:hgun"){
 		//tag=!reload,tag=!down
@@ -785,7 +869,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		const dmgCom = gun.getComponent(ItemComponentTypes.Durability)
 		const damage = dmgCom.damage;
 		const isOffhand = ( p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand) != undefined );
-		const reloadTime = gunData[`${gunName}`]["reloadTime"];
+		const reloadTime = gunData[`${gunName}`]["reloadTime"] + getRemvereloadTime(p.getProperty(`zex:grip`));
 		const Ammo = gunData[`${gunName}`]["bullet"];
 		const ench = gun.getComponent(ItemComponentTypes.Enchantable);
 		let c = 0;
@@ -921,15 +1005,15 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 						}
 						form.show(player).then( result => {
 							if ( !result.canceled ){
+								if( result.selection != 0 ){
+									print(`${phoneArray2[result.selection]}`)
+									player.runCommand(`clear @s zex:${phoneArray[result.selection-1]} 0 1` )
+								}
 								if( gun.getDynamicProperty(`zex:${attachType}`) != undefined && gun.getDynamicProperty(`zex:${attachType}`) != 0 ){
 									player.runCommand(`give @s zex:${attachmentData[`${attachType}`][gun.getDynamicProperty(`zex:${attachType}`)]}`)
 								}
 								gun.setDynamicProperty(`zex:${attachType}`,phoneArray2[result.selection]);
-								if( result.selection != 0 ){
-									print(`${phoneArray2[result.selection]}`)
-									player.runCommand(`clear @s zex:${phoneArray[result.selection-1]} 0 1` )
-									player.runCommand(`scriptevent gvcv5:attach_table` )
-								}
+								player.runCommand(`scriptevent gvcv5:attach_table` )
 							}
 						})
 					}

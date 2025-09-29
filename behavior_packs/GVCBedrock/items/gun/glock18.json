@@ -37,7 +37,8 @@
       },
       "minecraft:projectile": {
         "projectile_entity": "fire:ads_ak47"
-      }
+      },
+      "minecraft:allow_off_hand": false
     }
   }
 }

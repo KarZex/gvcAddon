@@ -1,0 +1,106 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.sight.ads": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 1, 0]
+				},
+				"gun": {
+					"rotation": [8.70544, -62.08157, 668.65107],
+					"position": [92.88638, -47.07552, -15.00227]
+				},
+				"guncube": {
+					"rotation": [-1, 0, -0.375]
+				}
+			}
+		},
+		"animation.m16a4.def": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"gunscope": {
+					"position": [0, 1, -3]
+				}
+			}
+		},
+		"animation.glock.def": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"gunscope": {
+					"position": [0, -10, 1]
+				}
+			}
+		},
+		"animation.qbz95.sight": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"gunscope": {
+					"position": [0, -19, -2]
+				}
+			}
+		},
+		"animation.sight.ads2": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 1, 0]
+				},
+				"gun": {
+					"rotation": [8.70544, -62.08157, 668.65107],
+					"position": [94.82588, -45.25488, -13.55909]
+				},
+				"guncube": {
+					"rotation": [-1, 0, -0.375]
+				},
+				"gunscope": {
+					"position": [-0.03972, -0.0007, 0.02055]
+				}
+			}
+		},
+		"animation.glock.ads": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 1, 0]
+				},
+				"gun": {
+					"rotation": [8.70544, -62.08157, 668.65107],
+					"position": [102.67263, -58.41447, -16.50708]
+				},
+				"guncube": {
+					"rotation": [-1, 0, -0.375]
+				}
+			}
+		},
+		"animation.qbz.sight.ads": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 1, 0]
+				},
+				"gun": {
+					"rotation": [8.70544, -62.08157, 668.65107],
+					"position": [107.98572, -60.27206, -15.4453]
+				},
+				"guncube": {
+					"rotation": [-1, 0, -0.375]
+				},
+				"gunscope": {
+					"position": [-0.03972, -0.0007, 0.02055]
+				}
+			}
+		}
+	}
+}

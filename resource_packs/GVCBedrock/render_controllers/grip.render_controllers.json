@@ -1,0 +1,36 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.grip": {
+            "geometry": "Array.item_geo[query.property('zex:grip')]",
+            "materials": [
+                {
+                    "*": "material.default"
+                }
+            ],
+            "textures": [
+                "Array.item_texture[query.property('zex:grip')]"
+            ],
+            "arrays": {
+                "geometries": {
+                    "Array.item_geo": [
+                        "geometry.none",
+                        "geometry.grip",
+                        "geometry.gripod",
+                        "geometry.bipod",
+                        "geometry.anglegrip"
+                    ]
+                },
+                "textures": {
+                    "Array.item_texture": [
+                        "texture.none",
+                        "texture.grip",
+                        "texture.gripod",
+                        "texture.bipod",
+                        "texture.anglegrip"
+                    ]
+                }
+            }
+        }
+    }
+}

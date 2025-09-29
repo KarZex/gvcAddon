@@ -17,7 +17,14 @@
                 "enchanted": "textures/misc/enchanted_item_glint",
                 "acog": "textures/models/acog.png",
                 "coyote": "textures/models/coyote.png",
-                "horo": "textures/models/horo.png"
+                "horo": "textures/models/horo.png",
+                "suppressor": "textures/models/suppressor.png",
+                "grip": "textures/models/grip.png",
+                "dotsight": "textures/models/dotsight.png",
+                "gripod": "textures/models/gripod.png",
+                "bipod": "textures/models/bipod.png",
+                "anglegrip": "textures/models/anglegrip.png",
+                "lasersight": "textures/models/lasersight.png"
             },
             "geometry": {
                 "default": "geometry.qbz95",
@@ -27,14 +34,25 @@
                 "scope2x": "geometry.scope2x",
                 "acog": "geometry.acog",
                 "coyote": "geometry.coyote",
-                "horo": "geometry.horo"
+                "horo": "geometry.horo",
+                "suppressor": "geometry.suppressor",
+                "grip": "geometry.grip",
+                "dotsight": "geometry.dotsight",
+                "gripod": "geometry.gripod",
+                "bipod": "geometry.bipod",
+                "anglegrip": "geometry.anglegrip",
+                "lasersight": "geometry.lasersight"
             },
             "animations": {
                 "first": "animation.rpg.first",
                 "ads": "animation.qbz.ads",
                 "third": "animation.item.third2",
                 "ads_scope": "animation.mosin.ads",
-                "ads_sight": "animation.sight.ads"
+                "ads_sight": "animation.qbz.sight.ads",
+                "def_sight": "animation.qbz95.sight",
+                "def_burrel": "animation.qbz.burrel",
+                "def_grips": "animation.qbz.grip",
+                "def_light": "animation.qbz.light"
             },
             "scripts": {
                 "pre_animation": [
@@ -51,10 +69,22 @@
                         "third": "v.main_hand && !c.is_first_person"
                     },
                     {
+                        "def_sight": "query.property('zex:sights') != 0"
+                    },
+                    {
                         "ads_scope": "query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
                     },
                     {
                         "ads_sight": "query.property('zex:sights') != 0 && !query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
+                    },
+                    {
+                        "def_burrel": "query.property('zex:burrel') != 0"
+                    },
+                    {
+                        "def_grips": "query.property('zex:grip') != 0"
+                    },
+                    {
+                        "def_light": "query.property('zex:light') != 0"
                     }
                 ]
             },
@@ -66,7 +96,16 @@
                     "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person"
                 },
                 {
-                    "controller.render.sights": "query.property('zex:sights') != 0 && ((!query.property('zex:is_scoping') || !c.is_first_person))"
+                    "controller.render.sights": "query.property('zex:sights') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
+                },
+                {
+                    "controller.render.burrel": "query.property('zex:burrel') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
+                },
+                {
+                    "controller.render.grip": "query.property('zex:grip') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
+                },
+                {
+                    "controller.render.light": "query.property('zex:light') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
                 }
             ]
         }

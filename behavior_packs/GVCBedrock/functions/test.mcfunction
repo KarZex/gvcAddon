@@ -1,0 +1,1 @@
+camerashake add @s 1 0.05 rotational 

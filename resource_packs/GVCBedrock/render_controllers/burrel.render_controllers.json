@@ -1,0 +1,30 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.burrel": {
+            "geometry": "Array.item_geo[query.property('zex:burrel')]",
+            "materials": [
+                {
+                    "*": "material.default"
+                }
+            ],
+            "textures": [
+                "Array.item_texture[query.property('zex:burrel')]"
+            ],
+            "arrays": {
+                "geometries": {
+                    "Array.item_geo": [
+                        "geometry.none",
+                        "geometry.suppressor"
+                    ]
+                },
+                "textures": {
+                    "Array.item_texture": [
+                        "texture.none",
+                        "texture.suppressor"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -30,6 +30,33 @@
             255
           ],
           "default": 0
+        },
+        "zex:burrel": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
+        },
+        "zex:grip": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
+        },
+        "zex:light": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
         }
       }
     },
@@ -200,8 +227,8 @@
           "burst_interval": 0.15000000000000002,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 7.0,
-          "attack_interval_max": 7.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -218,8 +245,8 @@
           "burst_interval": 0.15000000000000002,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 7.0,
-          "attack_interval_max": 7.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -470,8 +497,8 @@
           "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 7.0,
-          "attack_interval_max": 7.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -488,8 +515,8 @@
           "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 7.0,
-          "attack_interval_max": 7.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -758,8 +785,8 @@
           "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 6.0,
-          "attack_interval_max": 6.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -830,8 +857,8 @@
           "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 7.0,
-          "attack_interval_max": 7.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -992,8 +1019,8 @@
           "burst_interval": 2.0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 4.5,
-          "attack_interval_max": 4.5,
+          "attack_interval_min": 5.5,
+          "attack_interval_max": 5.5,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {

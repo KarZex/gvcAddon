@@ -650,53 +650,11 @@
 					"position": [0, 1, 0]
 				},
 				"gun": {
-					"rotation": [6.70544, -62.08157, 668.65107],
-					"position": [93.69377, -50.41737, -16.21982]
+					"rotation": [8.70544, -62.08157, 668.65107],
+					"position": [95.81509, -52.53062, -16.40471]
 				},
 				"guncube": {
 					"rotation": [0, 0, -0.18]
-				}
-			}
-		},
-		"animation.mosin.ads": {
-			"loop": true,
-			"animation_length": 3,
-			"bones": {
-				"rightArm": {
-					"rotation": [0, 0, 0],
-					"position": [0, 1, 0]
-				},
-				"gun": {
-					"rotation": [0, -60, -45],
-					"position": [107.91211, -71.73454, -3.71922]
-				},
-				"scope": {
-					"rotation": [-87.99758, 58.73635, -174.67058],
-					"position": [6.37318, 135.42766, -15.47872]
-				},
-				"awr": {
-					"position": [-0.0146, -0.02, 0]
-				},
-				"scope2": {
-					"rotation": [-94.39344, -29.17191, -41.74439],
-					"position": [18.07336, 3.29522, -41.23767]
-				}
-			}
-		},
-		"animation.ak47.first2": {
-			"loop": true,
-			"bones": {
-				"rightArm": {
-					"rotation": [0, 0, 0],
-					"position": [0, 0, 0]
-				},
-				"gun": {
-					"rotation": [-1.60171, -0.46672, 0.14013],
-					"position": [0, -8.6, 2],
-					"scale": 0.33
-				},
-				"guncube": {
-					"position": [0, 4, 0]
 				}
 			}
 		},
@@ -767,33 +725,6 @@
 				}
 			}
 		},
-		"animation.item.third2": {
-			"loop": true,
-			"animation_length": 0.5,
-			"bones": {
-				"gun": {
-					"position": [0.5, -8, -0.5],
-					"scale": 0.3
-				}
-			}
-		},
-		"animation.sight.ads": {
-			"loop": true,
-			"animation_length": 5,
-			"bones": {
-				"rightArm": {
-					"rotation": [0, 0, 0],
-					"position": [0, 1, 0]
-				},
-				"gun": {
-					"rotation": [8.70544, -62.08157, 668.65107],
-					"position": [87.95356, -42.12872, -14.55828]
-				},
-				"guncube": {
-					"rotation": [-1, 0, -0.375]
-				}
-			}
-		},
 		"animation.item.thirdoff": {
 			"loop": true,
 			"animation_length": 0.5,
@@ -804,23 +735,55 @@
 				}
 			}
 		},
-		"animation.sight.ads2": {
+		"animation.mosin.ads": {
 			"loop": true,
-			"animation_length": 5,
+			"animation_length": 3,
 			"bones": {
 				"rightArm": {
 					"rotation": [0, 0, 0],
 					"position": [0, 1, 0]
 				},
 				"gun": {
-					"rotation": [8.70544, -62.08157, 668.65107],
-					"position": [87.95356, -42.12872, -14.55828]
+					"rotation": [0, -60, -45],
+					"position": [107.91211, -71.73454, -3.71922]
+				},
+				"scope": {
+					"rotation": [-87.99758, 58.73635, -174.67058],
+					"position": [6.37318, 135.42766, -15.47872]
+				},
+				"awr": {
+					"position": [-0.0146, -0.02, 0]
+				},
+				"scope2": {
+					"rotation": [-94.39344, -29.17191, -41.74439],
+					"position": [18.07336, 3.29522, -41.23767]
+				}
+			}
+		},
+		"animation.ak47.first2": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"gun": {
+					"rotation": [-1.60171, -0.46672, 0.14013],
+					"position": [0, -8.6, 2],
+					"scale": 0.33
 				},
 				"guncube": {
-					"rotation": [-1.5, 0, -0.375]
-				},
-				"bone9": {
-					"rotation": [0, 0, 0]
+					"position": [0, 4, 0]
+				}
+			}
+		},
+		"animation.item.third2": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"gun": {
+					"position": [0.5, -8, -0.5],
+					"scale": 0.3
 				}
 			}
 		}

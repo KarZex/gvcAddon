@@ -24,8 +24,66 @@ def get_sights(gun_id):
 
     for row in csv_reader_w:
         if row[1] == gun_id:
-            print(row[2])
             return row[2]
+    
+    return "0"
+def get_sights_def_ani(gun_id):
+    csv_path_w = open("csv/gunAttachments.csv","r")
+    csv_reader_w = csv.reader(csv_path_w)
+
+    for row in csv_reader_w:
+        if row[1] == gun_id:
+            return row[3]
+    
+    return "0"
+def get_sights_ads_ani(gun_id):
+    csv_path_w = open("csv/gunAttachments.csv","r")
+    csv_reader_w = csv.reader(csv_path_w)
+
+    for row in csv_reader_w:
+        if row[1] == gun_id:
+            return row[4]
+    
+    return "0"
+
+def get_burrel(gun_id):
+    csv_path_w = open("csv/gunAttachments.csv","r")
+    csv_reader_w = csv.reader(csv_path_w)
+
+    for row in csv_reader_w:
+        if row[1] == gun_id:
+            return row[5]
+    
+    return "0"
+
+def get_grip(gun_id):
+    csv_path_w = open("csv/gunAttachments.csv","r")
+    csv_reader_w = csv.reader(csv_path_w)
+
+    for row in csv_reader_w:
+        if row[1] == gun_id:
+            return row[7]
+    
+    return "0"
+
+def get_light(gun_id):
+    csv_path_w = open("csv/gunAttachments.csv","r")
+    csv_reader_w = csv.reader(csv_path_w)
+
+    for row in csv_reader_w:
+        if row[1] == gun_id:
+            return row[9]
+    
+    return "0"
+
+
+def loadcsv(gun_id,inta):
+    csv_path_w = open("csv/gunAttachments.csv","r")
+    csv_reader_w = csv.reader(csv_path_w)
+
+    for row in csv_reader_w:
+        if row[1] == gun_id:
+            return row[inta]
     
     return "0"
 
@@ -130,8 +188,12 @@ for root, dirs, files in os.walk(attach_directory):
                     gun_id = data["minecraft:attachable"]["description"]["identifier"].split(":")[1]
                     sights = get_sights(gun_id)
                     if( "[" in sights ):
+                        def_ani = get_sights_def_ani(gun_id)
+                        ads_ani = get_sights_ads_ani(gun_id)
                         data["minecraft:attachable"]["description"]["animations"]["ads_scope"] = "animation.mosin.ads"
-                        data["minecraft:attachable"]["description"]["animations"]["ads_sight"] = "animation.sight.ads"
+                        data["minecraft:attachable"]["description"]["animations"]["ads_sight"] = "{}".format(ads_ani)
+                        if( def_ani != "" ):
+                            data["minecraft:attachable"]["description"]["animations"]["def_sight"] = "{}".format(def_ani)
                         for ani in data["minecraft:attachable"]["description"]["scripts"]["animate"]:
                             if( "ads" in ani ):
                                 ani["ads"] = "query.property('zex:sights') == 0 && !query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
@@ -139,9 +201,15 @@ for root, dirs, files in os.walk(attach_directory):
                                 del ani["ads_scope"]
                             if( "ads_sight" in ani ):
                                 del ani["ads_sight"]
+                            if( "def_sight" in ani ):
+                                del ani["def_sight"]
                         
                         data["minecraft:attachable"]["description"]["scripts"]["animate"] = [item for item in data["minecraft:attachable"]["description"]["scripts"]["animate"] if item != {}]
                         
+                        if( def_ani != "" ):
+                            data["minecraft:attachable"]["description"]["scripts"]["animate"].append({
+                                "def_sight": "query.property('zex:sights') != 0"
+                            })
                         data["minecraft:attachable"]["description"]["scripts"]["animate"].append({
                             "ads_scope": "query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
                         })
@@ -154,7 +222,7 @@ for root, dirs, files in os.walk(attach_directory):
                             { "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person" }
                         ]
                         for attach_type in attach_types:
-                            render = { "controller.render.{0}".format(attach_type):"query.property('zex:{0}') != 0 && ((!query.property('zex:is_scoping') || !c.is_first_person))".format(attach_type) }
+                            render = { "controller.render.{0}".format(attach_type):"query.property('zex:{0}') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))".format(attach_type) }
                             data["minecraft:attachable"]["description"]["render_controllers"].append(render)
 
                         gun_attach_json["{}".format(gun_id)] = {
@@ -204,6 +272,76 @@ for root, dirs, files in os.walk(attach_directory):
                         gun_attach_json["{}".format(gun_id)] = {
                             "sights": sight_number
                         }
+
+                    burrels = get_burrel(gun_id)
+                    if( "[" in burrels ):
+                        gun_attach_json["{}".format(gun_id)]["burrel"] = ast.literal_eval(burrels)
+
+                        def_ani = loadcsv(gun_id,6)
+                        if( def_ani != "" ):
+                            data["minecraft:attachable"]["description"]["animations"]["def_burrel"] = "{}".format(def_ani)
+                        for ani in data["minecraft:attachable"]["description"]["scripts"]["animate"]:
+                            if( "def_burrel" in ani ):
+                                del ani["def_burrel"]
+                        
+                        data["minecraft:attachable"]["description"]["scripts"]["animate"] = [item for item in data["minecraft:attachable"]["description"]["scripts"]["animate"] if item != {}]
+                        
+                        if( def_ani != "" ):
+                            data["minecraft:attachable"]["description"]["scripts"]["animate"].append({
+                                "def_burrel": "query.property('zex:burrel') != 0"
+                            })
+                    elif( sights != "" ):    
+                        gun_attach_json["{}".format(gun_id)]["burrel"] = 0
+                    else: 
+                        gun_attach_json["{}".format(gun_id)]["burrel"] = int(burrels)
+
+                        
+
+                    grips = get_grip(gun_id)
+                    if( "[" in grips ):
+                        def_ani = loadcsv(gun_id,8)
+                        if( def_ani != "" ):
+                            data["minecraft:attachable"]["description"]["animations"]["def_grips"] = "{}".format(def_ani)
+                        for ani in data["minecraft:attachable"]["description"]["scripts"]["animate"]:
+                            if( "def_grips" in ani ):
+                                del ani["def_grips"]
+                        
+                        data["minecraft:attachable"]["description"]["scripts"]["animate"] = [item for item in data["minecraft:attachable"]["description"]["scripts"]["animate"] if item != {}]
+                        
+                        if( def_ani != "" ):
+                            data["minecraft:attachable"]["description"]["scripts"]["animate"].append({
+                                "def_grips": "query.property('zex:grip') != 0"
+                            })
+                        gun_attach_json["{}".format(gun_id)]["grip"] = ast.literal_eval(grips)
+                    elif( sights != "" ):    
+                        gun_attach_json["{}".format(gun_id)]["grip"] = 0
+                    else: 
+                        gun_attach_json["{}".format(gun_id)]["grip"] = int(grips)
+                        
+
+                    lights = get_light(gun_id)
+                    if( "[" in lights ):
+                        gun_attach_json["{}".format(gun_id)]["light"] = ast.literal_eval(lights)
+                        def_ani = loadcsv(gun_id,10)
+                        if( def_ani != "" ):
+                            data["minecraft:attachable"]["description"]["animations"]["def_light"] = "{}".format(def_ani)
+                        for ani in data["minecraft:attachable"]["description"]["scripts"]["animate"]:
+                            if( "def_light" in ani ):
+                                del ani["def_light"]
+                        
+                        data["minecraft:attachable"]["description"]["scripts"]["animate"] = [item for item in data["minecraft:attachable"]["description"]["scripts"]["animate"] if item != {}]
+                        
+                        if( def_ani != "" ):
+                            data["minecraft:attachable"]["description"]["scripts"]["animate"].append({
+                                "def_light": "query.property('zex:light') != 0"
+                            })
+                    elif( lights != "" ):    
+                        gun_attach_json["{}".format(gun_id)]["light"] = 0
+                    else: 
+                        gun_attach_json["{}".format(gun_id)]["light"] = int(lights)
+
+
+
 
 
 

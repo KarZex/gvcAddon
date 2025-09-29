@@ -17,41 +17,102 @@
                 "enchanted": "textures/misc/enchanted_item_glint",
                 "acog": "textures/models/acog.png",
                 "coyote": "textures/models/coyote.png",
-                "horo": "textures/models/horo.png"
+                "horo": "textures/models/horo.png",
+                "suppressor": "textures/models/suppressor.png",
+                "grip": "textures/models/grip.png",
+                "dotsight": "textures/models/dotsight.png",
+                "gripod": "textures/models/gripod.png",
+                "bipod": "textures/models/bipod.png",
+                "anglegrip": "textures/models/anglegrip.png",
+                "lasersight": "textures/models/lasersight.png"
             },
             "geometry": {
                 "default": "geometry.glock17",
+                "off_hand": "geometry.glock17_left",
                 "none": "geometry.sniperscope",
                 "scope6x": "geometry.scope6x",
                 "scope": "geometry.scope",
                 "scope2x": "geometry.scope2x",
                 "acog": "geometry.acog",
                 "coyote": "geometry.coyote",
-                "horo": "geometry.horo"
+                "horo": "geometry.horo",
+                "suppressor": "geometry.suppressor",
+                "grip": "geometry.grip",
+                "dotsight": "geometry.dotsight",
+                "gripod": "geometry.gripod",
+                "bipod": "geometry.bipod",
+                "anglegrip": "geometry.anglegrip",
+                "lasersight": "geometry.lasersight"
             },
             "animations": {
                 "first": "animation.ak47.first2",
+                "first_off": "animation.ak47.firstoff",
                 "ads": "animation.m10.ads",
-                "third": "animation.item.third2"
+                "third": "animation.item.third2",
+                "third_off": "animation.item.thirdoff",
+                "ads_scope": "animation.mosin.ads",
+                "ads_sight": "animation.glock.ads",
+                "def_sight": "animation.glock.def",
+                "def_burrel": "animation.glock.burrel",
+                "def_light": "animation.glock.light"
             },
             "scripts": {
                 "pre_animation": [
-                    "v.main_hand = c.item_slot == 'main_hand';"
+                    "v.main_hand = c.item_slot == 'main_hand';",
+                    "v.off_hand = c.item_slot == 'off_hand';"
                 ],
                 "animate": [
                     {
                         "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
                     },
                     {
-                        "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+                        "first_off": "(v.off_hand && c.is_first_person) && !query.is_sneaking"
+                    },
+                    {
+                        "ads": "query.property('zex:sights') == 0 && !query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
                     },
                     {
                         "third": "v.main_hand && !c.is_first_person"
+                    },
+                    {
+                        "third_off": "v.off_hand && !c.is_first_person"
+                    },
+                    {
+                        "def_sight": "query.property('zex:sights') != 0"
+                    },
+                    {
+                        "ads_scope": "query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
+                    },
+                    {
+                        "ads_sight": "query.property('zex:sights') != 0 && !query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
+                    },
+                    {
+                        "def_burrel": "query.property('zex:burrel') != 0"
+                    },
+                    {
+                        "def_light": "query.property('zex:light') != 0"
                     }
                 ]
             },
             "render_controllers": [
-                "controller.render.armor"
+                {
+                    "controller.render.gun": "(!query.property('zex:is_scoping') || !c.is_first_person)"
+                },
+                {
+                    "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person"
+                },
+                {
+                    "controller.render.sights": "query.property('zex:sights') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
+                },
+                {
+                    "controller.render.burrel": "query.property('zex:burrel') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
+                },
+                {
+                    "controller.render.grip": "query.property('zex:grip') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
+                },
+                {
+                    "controller.render.light": "query.property('zex:light') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
+                }
             ]
         }
     }

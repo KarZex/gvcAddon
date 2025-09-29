@@ -1,0 +1,13 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.qbz.grip": {
+			"loop": true,
+			"bones": {
+				"gungrip": {
+					"position": [0, -17.75, 3.5]
+				}
+			}
+		}
+	}
+}

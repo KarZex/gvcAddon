@@ -18,7 +18,7 @@ execute as @a[m=a,scores={antiMining=1..}] run function antiMining
 
 execute as @a[tag=!subattack,scores={subWeapon=1..}] run scoreboard players remove @s subWeapon 1
 
-function sounds
+#function sounds
 
 execute if score P building matches 1 run tag @a[tag=!nobomb] add nobomb
 execute if score P building matches 0 run tag @a[tag=nobomb] remove nobomb

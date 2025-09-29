@@ -18,7 +18,8 @@
                         "geometry.scope6x",
                         "geometry.acog",
                         "geometry.coyote",
-                        "geometry.horo"
+                        "geometry.horo",
+                        "geometry.dotsight"
                     ]
                 },
                 "textures": {
@@ -27,7 +28,8 @@
                         "texture.scope6x",
                         "texture.acog",
                         "texture.coyote",
-                        "texture.horo"
+                        "texture.horo",
+                        "texture.dotsight"
                     ]
                 }
             }

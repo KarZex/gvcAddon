@@ -1078,6 +1078,27 @@
     },
     "horo": {
       "textures": "textures/items/attachment/horo"
+    },
+    "suppressor": {
+      "textures": "textures/items/attachment/suppressor"
+    },
+    "grip": {
+      "textures": "textures/items/attachment/grip"
+    },
+    "dotsight": {
+      "textures": "textures/items/attachment/dotsight"
+    },
+    "gripod": {
+      "textures": "textures/items/attachment/gripod"
+    },
+    "bipod": {
+      "textures": "textures/items/attachment/bipod"
+    },
+    "anglegrip": {
+      "textures": "textures/items/attachment/anglegrip"
+    },
+    "lasersight": {
+      "textures": "textures/items/attachment/lasersight"
     }
   }
 }

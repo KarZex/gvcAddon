@@ -28,6 +28,33 @@
                         255
                     ],
                     "default": 0
+                },
+                "zex:burrel": {
+                    "client_sync": true,
+                    "type": "int",
+                    "range": [
+                        0,
+                        255
+                    ],
+                    "default": 0
+                },
+                "zex:grip": {
+                    "client_sync": true,
+                    "type": "int",
+                    "range": [
+                        0,
+                        255
+                    ],
+                    "default": 0
+                },
+                "zex:light": {
+                    "client_sync": true,
+                    "type": "int",
+                    "range": [
+                        0,
+                        255
+                    ],
+                    "default": 0
                 }
             }
         },

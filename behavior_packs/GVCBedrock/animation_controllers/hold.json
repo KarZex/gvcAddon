@@ -51,10 +51,7 @@
               "glock17": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:glock17') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock17')"
             },
             {
-              "glock18ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:glock18') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock18')"
-            },
-            {
-              "glock18": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:glock18') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock18')"
+              "glock18": "query.get_equipped_item_name == 'glock18'"
             },
             {
               "hk416": "query.get_equipped_item_name == 'hk416'"
@@ -75,10 +72,7 @@
               "m9": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:m9') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m9')"
             },
             {
-              "m10ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:m10') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m10')"
-            },
-            {
-              "m10": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:m10') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m10')"
+              "m10": "query.get_equipped_item_name == 'm10'"
             },
             {
               "m16a1": "query.get_equipped_item_name == 'm16a1'"
@@ -135,10 +129,7 @@
               "mp5": "query.get_equipped_item_name == 'mp5'"
             },
             {
-              "mp7ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:mp7') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp7')"
-            },
-            {
-              "mp7": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:mp7') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mp7')"
+              "mp7": "query.get_equipped_item_name == 'mp7'"
             },
             {
               "mp40": "query.get_equipped_item_name == 'mp40'"
@@ -177,16 +168,10 @@
               "tt33": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:tt33') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tt33')"
             },
             {
-              "uziii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:uzi') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:uzi')"
+              "uzi": "query.get_equipped_item_name == 'uzi'"
             },
             {
-              "uzi": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:uzi') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:uzi')"
-            },
-            {
-              "vz61ii": "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:vz61') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:vz61')"
-            },
-            {
-              "vz61": "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:vz61') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:vz61')"
+              "vz61": "query.get_equipped_item_name == 'vz61'"
             },
             {
               "xm8": "query.get_equipped_item_name == 'xm8'"
@@ -352,16 +337,6 @@
             }
           ]
         },
-        "glock18ii": {
-          "on_entry": [
-            "/function hold/glock18iih"
-          ],
-          "transitions": [
-            {
-              "default": "(1.0)"
-            }
-          ]
-        },
         "glock18": {
           "on_entry": [
             "/function hold/glock18h"
@@ -425,16 +400,6 @@
         "m9": {
           "on_entry": [
             "/function hold/m9h"
-          ],
-          "transitions": [
-            {
-              "default": "(1.0)"
-            }
-          ]
-        },
-        "m10ii": {
-          "on_entry": [
-            "/function hold/m10iih"
           ],
           "transitions": [
             {
@@ -632,16 +597,6 @@
             }
           ]
         },
-        "mp7ii": {
-          "on_entry": [
-            "/function hold/mp7iih"
-          ],
-          "transitions": [
-            {
-              "default": "(1.0)"
-            }
-          ]
-        },
         "mp7": {
           "on_entry": [
             "/function hold/mp7h"
@@ -772,29 +727,9 @@
             }
           ]
         },
-        "uziii": {
-          "on_entry": [
-            "/function hold/uziiih"
-          ],
-          "transitions": [
-            {
-              "default": "(1.0)"
-            }
-          ]
-        },
         "uzi": {
           "on_entry": [
             "/function hold/uzih"
-          ],
-          "transitions": [
-            {
-              "default": "(1.0)"
-            }
-          ]
-        },
-        "vz61ii": {
-          "on_entry": [
-            "/function hold/vz61iih"
           ],
           "transitions": [
             {

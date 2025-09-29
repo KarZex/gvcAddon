@@ -45,6 +45,7 @@ for row in csv_reader:
         gun_break = int(row[19])
         gun_special = row[21]
         gun_slow = int(row[10])
+        gun_recoil = float(row[17])
 
         gun_break_block = False
 
@@ -89,8 +90,58 @@ for row in csv_reader:
         if( gun_damage_type != "override" ):
             gun_ignore = 1
 
+        gun_sound_true = "r3"
+        if( gun_sound == "arbullet" ):
+            gun_sound_true = "r3"
+        elif( gun_sound == "m82bullet" ):
+            gun_sound_true = "m82"
+        elif( gun_sound == "akbullet" ):
+            gun_sound_true = "r1"
+        elif( gun_sound == "srbullet" ):
+            gun_sound_true = "sg"
+        elif( gun_sound == "railbullet" ):
+            gun_sound_true = "rail"
+        elif( gun_sound == "sgbullet" ):
+            gun_sound_true = "sg"
+        elif( gun_sound == "psbullet" ):
+            gun_sound_true = "hg"
+        elif( gun_sound == "gbullet" ):
+            gun_sound_true = "famas"
+        elif( gun_sound == "mgiibullet" ):
+            gun_sound_true = "mgii"
+        elif( gun_sound == "mgbullet" ):
+            gun_sound_true = "mg2"
+        elif( gun_sound == "smgbullet" ):
+            gun_sound_true = "smg"
+        elif( gun_sound == "lmgbullet" ):
+            gun_sound_true = "lmg"
+        elif( gun_sound == "tankbullet" ):
+            gun_sound_true = "tank"
+        elif( gun_sound == "rpgbullet" ):
+            gun_sound_true = "p90"
+        elif( gun_sound == "hmgbullet" ):
+            gun_sound_true = "hmg"
+        elif( gun_sound == "hmgiibullet" ):
+            gun_sound_true = "hmgii"
+        elif( gun_sound == "airbullet" ):
+            gun_sound_true = "air"
+        elif( gun_sound == "missilebullet" ):
+            gun_sound_true = "missile"
+
         #Gundata fot JS
-        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef":gun_ignore, "slowness": gun_slow,"speed": gun_power * 0.2,"fireOnReload": bool( "P" in gun_special ), "maxGunAmmo": gun_maxammo, "reloadTime": gun_reload, "bullet": "{}".format(gun_ammo),"damageType": "{}".format(gun_damage_type) }
+        gundata_json["{}".format(gun_id)] = { 
+            "damage": gun_damage,
+            "damageIgnoreDef":gun_ignore,
+            "recoil":gun_recoil,
+            "sound": gun_sound_true,
+            "slowness": gun_slow,
+            "speed": gun_power * 0.2,
+            "fireOnReload": bool( "P" in gun_special ),
+            "maxGunAmmo": gun_maxammo,
+            "reloadTime": gun_reload,
+            "bullet": "{}".format(gun_ammo),
+            "damageType": "{}".format(gun_damage_type) 
+        }
 
         #player
         spawn_entity = { 
@@ -251,7 +302,7 @@ for row in csv_reader:
                 if( "P" in gun_special ):
                     BP_animation["animation_controllers"]["controller.animation.guns"]["states"]["{}".format(gun_id)] = {
                         "on_entry": [
-                            "/scriptevent gvcv5:pistolUse {}".format(gun_id)
+                            "/scriptevent gvcv5:gunUse {}".format(gun_id)
                         ],
                         "transitions": [
                             {
@@ -331,7 +382,7 @@ for row in csv_reader:
             }
 
         #hold Animation 
-        if gun_onehand:
+        if ( "P" in gun_special ):
             BP_animation_hold["animation_controllers"]["controller.animation.hold"]["states"]["default"]["transitions"].append( { "{}ii".format(gun_id): "query.is_item_name_any('slot.weapon.offhand', 0, 'gun:{0}') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{0}')".format(gun_id) } )
             BP_animation_hold["animation_controllers"]["controller.animation.hold"]["states"]["default"]["transitions"].append( { "{}".format(gun_id): "!query.is_item_name_any('slot.weapon.offhand', 0, 'gun:{0}') && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{0}')".format(gun_id) } )
             BP_animation_hold["animation_controllers"]["controller.animation.hold"]["states"]["{}ii".format(gun_id)] = {
@@ -406,7 +457,7 @@ for row in csv_reader:
             json.dump(gun_entity,f,indent=2)
 
         #function
-        if gun_onehand:
+        if ( "P" in gun_special ):
             with open("behavior_packs/GVCBedrock/functions/hold/{}iih.mcfunction".format(gun_id),"w",encoding="utf-8") as f:
                 if gun_special == "R":
                     f.write("scriptevent gvcv5:vgun {}\n".format(gun_id))
@@ -432,7 +483,7 @@ for row in csv_reader:
                 f.write("scriptevent gvcv5:vgun {}\n".format(gun_id))
             
             if(gun_onehand): 
-                f.write("playanimation @s animation.onehand.first none 0 \"!query.is_item_equipped\"\n")
+                f.write("playanimation @s[tag=!down] animation.onehand.first none 0 \"!query.is_item_equipped\"\n")
             else: 
                 f.write("playanimation @s[tag=!down] animation.item.first none 0 \"!query.is_item_equipped\"\n")
 
@@ -452,6 +503,7 @@ for row in csv_reader:
 
             gun_item["minecraft:item"]["components"]["minecraft:enchantable"]["value"] = 5 * int(row[23])
             gun_item["minecraft:item"]["components"]["minecraft:durability"]["max_durability"] = gun_maxammo
+            gun_item["minecraft:item"]["components"]["minecraft:allow_off_hand"] = bool( "P" in gun_special )
         
         with open("behavior_packs/GVCBedrock/items/gun/{}.json".format(gun_id),"w") as f:
             json.dump(gun_item,f,indent=2)
@@ -608,6 +660,46 @@ for row in csv_reader2:
         else:
             gun_break_block = False
         #player
+
+    
+        gun_sound_true = "r3"
+        if( gun_sound == "arbullet" ):
+            gun_sound_true = "r3"
+        elif( gun_sound == "m82bullet" ):
+            gun_sound_true = "m82"
+        elif( gun_sound == "akbullet" ):
+            gun_sound_true = "r1"
+        elif( gun_sound == "srbullet" ):
+            gun_sound_true = "sg"
+        elif( gun_sound == "railbullet" ):
+            gun_sound_true = "rail"
+        elif( gun_sound == "sgbullet" ):
+            gun_sound_true = "sg"
+        elif( gun_sound == "psbullet" ):
+            gun_sound_true = "hg"
+        elif( gun_sound == "gbullet" ):
+            gun_sound_true = "famas"
+        elif( gun_sound == "mgiibullet" ):
+            gun_sound_true = "mgii"
+        elif( gun_sound == "mgbullet" ):
+            gun_sound_true = "mg2"
+        elif( gun_sound == "smgbullet" ):
+            gun_sound_true = "smg"
+        elif( gun_sound == "lmgbullet" ):
+            gun_sound_true = "lmg"
+        elif( gun_sound == "tankbullet" ):
+            gun_sound_true = "tank"
+        elif( gun_sound == "rpgbullet" ):
+            gun_sound_true = "p90"
+        elif( gun_sound == "hmgbullet" ):
+            gun_sound_true = "hmg"
+        elif( gun_sound == "hmgiibullet" ):
+            gun_sound_true = "hmgii"
+        elif( gun_sound == "airbullet" ):
+            gun_sound_true = "air"
+        elif( gun_sound == "missilebullet" ):
+            gun_sound_true = "missile"
+
         if( "D" in gun_offset  ):
             spawn_entity = { 
                 "minecraft:spawn_entity":{
@@ -757,15 +849,15 @@ for row in csv_reader2:
         #Gundata fot JS
         #Gundata fot JS
         if( "D" in gun_offset ):
-            gundata_json["{}r".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
-            gundata_json["{}l".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}r".format(gun_id)] = { "damage": gun_damage,"sound": gun_sound_true,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}l".format(gun_id)] = { "damage": gun_damage,"sound": gun_sound_true,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
         elif( "Q" in gun_offset ):
-            gundata_json["{}ri".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
-            gundata_json["{}li".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
-            gundata_json["{}rii".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
-            gundata_json["{}lii".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}ri".format(gun_id)] = { "damage": gun_damage,"sound": gun_sound_true,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}li".format(gun_id)] = { "damage": gun_damage,"sound": gun_sound_true,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}rii".format(gun_id)] = { "damage": gun_damage,"sound": gun_sound_true,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
+            gundata_json["{}lii".format(gun_id)] = { "damage": gun_damage,"sound": gun_sound_true,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type) }
         
-        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type),"ammoType": "{}".format(gun_ammo) }
+        gundata_json["{}".format(gun_id)] = { "damage": gun_damage,"sound": gun_sound_true,"damageIgnoreDef": gun_ignore,"damageType": "{}".format(gun_damage_type),"ammoType": "{}".format(gun_ammo) }
 
         #Bullet 
         if( "H" not in gun_offset ):

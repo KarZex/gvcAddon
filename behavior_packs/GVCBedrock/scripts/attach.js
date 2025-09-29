@@ -5,9 +5,28 @@ export const attachmentData = {
     "scope6x",
     "acog",
     "coyote",
-    "horo"
+    "horo",
+    "dotsight"
+  ],
+  "burrel": [
+    "none",
+    "suppressor"
+  ],
+  "grip": [
+    "none",
+    "grip",
+    "gripod",
+    "bipod",
+    "anglegrip"
+  ],
+  "light": [
+    "none",
+    "lasersight"
   ],
   "attachTypes": [
-    "sights"
+    "sights",
+    "burrel",
+    "grip",
+    "light"
   ]
 };
