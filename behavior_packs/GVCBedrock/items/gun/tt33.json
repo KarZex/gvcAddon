@@ -29,7 +29,7 @@
           "min": 0,
           "max": 0
         },
-        "max_durability": 8
+        "max_durability": 6
       },
       "minecraft:use_modifiers": {
         "use_duration": 9999.0,

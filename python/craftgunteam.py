@@ -87,7 +87,8 @@ for row in csv_reader:
                 "entities": [
                     {
                         "filters": [
-                            {"test":"has_tag","operator":"!=","value":"scope"}
+                            {"test":"has_tag","operator":"!=","value":"scope"},
+                            { "test": "int_property", "domain": "zex:light","operator": "==", "value": 0 }
                         ],
                         "max_wait_time": 0,
                         "min_wait_time": 0,
@@ -97,7 +98,30 @@ for row in csv_reader:
                     },
                     {
                         "filters": [
-                            {"test":"has_tag","operator":"==","value":"scope"}
+                            {"test":"has_tag","operator":"!=","value":"scope"},
+                            { "test": "int_property", "domain": "zex:light","operator": "!=", "value": 0 }
+                        ],
+                        "max_wait_time": 0,
+                        "min_wait_time": 0,
+                        "num_to_spawn": gun_bullet_num,
+                        "single_use": True,
+                        "spawn_entity": "fire:adsh_{}".format(gun_id)
+                    },
+                    {
+                        "filters": [
+                            { "test":"has_tag","operator":"==","value":"scope" },
+                            { "test": "int_property", "domain": "zex:sights","operator": "==", "value": 0 }
+                        ],
+                        "max_wait_time": 0,
+                        "min_wait_time": 0,
+                        "num_to_spawn": gun_bullet_num,
+                        "single_use": True,
+                        "spawn_entity": "fire:adsh_{}".format(gun_id)
+                    },
+                    {
+                        "filters": [
+                            { "test":"has_tag","operator":"==","value":"scope" },
+                            { "test": "int_property", "domain": "zex:sights","operator": "!=", "value": 0 }
                         ],
                         "max_wait_time": 0,
                         "min_wait_time": 0,
@@ -117,6 +141,68 @@ for row in csv_reader:
         }
         player_json["minecraft:entity"]["component_groups"]["fire:{}".format(gun_id)] = spawn_entity
         player_json["minecraft:entity"]["events"]["fire:{}".format(gun_id)] = event
+
+        if( "P" in gun_special ):
+            
+            spawn_entity_l = { 
+                "minecraft:spawn_entity":{
+                    "entities": [
+                        {
+                            "filters": [
+                                {"test":"has_tag","operator":"!=","value":"scope"},
+                                { "test": "int_property", "domain": "zex:light","operator": "==", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": gun_bullet_num,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}l".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                {"test":"has_tag","operator":"!=","value":"scope"},
+                                { "test": "int_property", "domain": "zex:light","operator": "!=", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": gun_bullet_num,
+                            "single_use": True,
+                            "spawn_entity": "fire:adsh_{}l".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                { "test":"has_tag","operator":"==","value":"scope" },
+                                { "test": "int_property", "domain": "zex:sights","operator": "==", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": gun_bullet_num,
+                            "single_use": True,
+                            "spawn_entity": "fire:adsh_{}l".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                { "test":"has_tag","operator":"==","value":"scope" },
+                                { "test": "int_property", "domain": "zex:sights","operator": "!=", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": gun_bullet_num,
+                            "single_use": True,
+                            "spawn_entity": "fire:ads_{}l".format(gun_id)
+                        }
+                    ]
+                }
+            }
+            event_l = {
+                "add": {
+                    "component_groups": [
+                        "fire:{}_l".format(gun_id)
+                    ]
+                }
+            }
+            player_json["minecraft:entity"]["component_groups"]["fire:{}_l".format(gun_id)] = spawn_entity_l
+            player_json["minecraft:entity"]["events"]["fire:{}_l".format(gun_id)] = event_l
 
 
         #enemy and allieds

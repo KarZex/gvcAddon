@@ -16,7 +16,7 @@
 			"loop": true,
 			"bones": {
 				"bone19": {
-					"rotation": ["-query.target_x_rotation - 30", 0, 0]
+					"rotation": ["-math.clamp(q.rider_head_x_rotation(0),-60,60)", 0, 0]
 				}
 			}
 		},
@@ -24,7 +24,7 @@
 			"loop": true,
 			"bones": {
 				"bone19": {
-					"rotation": ["query.target_x_rotation + 30", 0, 0]
+					"rotation": ["math.clamp(q.rider_head_x_rotation(0),-60,60)", 0, 0]
 				}
 			}
 		},
@@ -32,7 +32,7 @@
 			"loop": true,
 			"bones": {
 				"head": {
-					"rotation": ["query.target_x_rotation + 30", 0, 0]
+					"rotation": ["math.clamp(q.rider_head_x_rotation(0),-60,60)", 0, 0]
 				}
 			}
 		},

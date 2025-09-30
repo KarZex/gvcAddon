@@ -522,6 +522,87 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			player.removeTag(`cantriding`);
 		}
 	}
+	else if( e.id == "zex:vheri"){
+		let vehicle = e.sourceEntity;
+		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+		if( player.typeId == "minecraft:player" ){
+			const v = vehicle.getVelocity();
+            const d = player.getRotation();
+            let yup = 0;
+            const V = 1.0;
+            if( absVector2(v) / Math.abs(vehicle.getDynamicProperty(`gvcv5:herispeed`)) > V +0.03 ){
+                yup = 0.5;
+            }
+            else if( absVector2(v) / Math.abs(vehicle.getDynamicProperty(`gvcv5:herispeed`)) < V -0.01 ){
+                yup = -0.5;
+            }
+            //print(`${yup}`)
+
+            vehicle.clearVelocity();
+            let this_v = V;
+            if( player.hasTag(`subattack`) ){
+                //this_v = 0;
+            }
+
+            vehicle.applyImpulse({
+                x:-Math.sin(d.y*Math.PI/180) * this_v * Math.sin(d.x*Math.PI/180),
+                y:yup,
+                z:Math.cos(d.y*Math.PI/180) * this_v * Math.sin(d.x*Math.PI/180),
+            })
+            vehicle.setDynamicProperty(`gvcv5:herispeed`,Math.sin(d.x*Math.PI/180));
+			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+			player.runCommand(
+                `titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[
+                {"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
+                ${subWeapon(player,vehicle)},
+                ${mainWeapon0(player,vehicle)},
+                ${mainWeapon1(player,vehicle)},
+                ${mainWeapon2(player,vehicle)}]}`
+            );
+		}
+		else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
+			vehicle.remove();
+		}
+		else if( player.hasTag(`cantriding`) && vehicle.hasTag(`is_enemy`) ){
+			vehicle.remove();
+			player.removeTag(`cantriding`);
+		}
+		else if( player.target != undefined ){
+			let abs_v = vehicle.getComponent(EntityComponentTypes.Movement).defaultValue;
+			vehicle.clearVelocity();
+			const P_t = player.target.location;
+			const P_v = vehicle.location;
+			const target = {
+				x: P_t.x - P_v.x,
+				y: P_t.y - P_v.y,
+				z: P_t.z - P_v.z
+			}
+			const distance = Math.sqrt(target.x*target.x + target.y*target.y + target.z*target.z);
+			const E_target = {
+				x: (P_t.x - P_v.x)/distance,
+				y: (P_t.y - P_v.y)/distance,
+				z: (P_t.z - P_v.z)/distance
+			}
+			const H = Math.sqrt(E_target.x*E_target.x + E_target.z*E_target.z);
+			const rotate = {
+				x: -Math.asin(E_target.y) * 180 / Math.PI,
+				y: Math.atan2(E_target.z/H, E_target.x/H) * 180 / Math.PI
+			}
+			player.setRotation({x: rotate.x, y: rotate.y-90});
+			if( distance > 16 ){
+				let fly = 0.25;
+				if( vehicle.isOnGround ){ fly = 10; }
+				vehicle.applyImpulse({x:E_target.x*abs_v,y:E_target.y*abs_v+fly,z:E_target.z*abs_v});
+			}
+
+		}
+		else if( player.target == undefined ){
+			vehicle.clearVelocity();
+			let fly = 0;
+			if( vehicle.isOnGround ){ fly = 10; }
+			vehicle.applyImpulse({x:0,y:fly,z:0});
+		}
+	}
 	else if( e.id == "zex:test" ){
 		const player = e.sourceEntity;
 		const a = Infinity;

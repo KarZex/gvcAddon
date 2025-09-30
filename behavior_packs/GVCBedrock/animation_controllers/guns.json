@@ -421,7 +421,7 @@
         },
         "mgj_1": {
           "on_entry": [
-            "/execute unless entity @e[r=4,family=heri] as @s[tag=!reload,scores={scool=0}] run function vsub"
+            "/execute as @s[tag=!reload,scores={scool=0}] run function vsub"
           ],
           "transitions": [
             {
@@ -434,7 +434,7 @@
         },
         "mgj_2": {
           "on_entry": [
-            "/execute unless entity @e[r=4,family=heri] as @s[tag=!reload,scores={scool=0}] run function vsub"
+            "/execute as @s[tag=!reload,scores={scool=0}] run function vsub"
           ],
           "transitions": [
             {

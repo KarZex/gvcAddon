@@ -10,6 +10,7 @@ scoreboard objectives add flag dummy
 scoreboard objectives add antiMining dummy
 scoreboard objectives add mtype dummy
 scoreboard objectives add maxsubcool dummy
+scoreboard objectives add printDamage dummy
 
 scoreboard objectives add DeathTime dummy
 scoreboard objectives add rise dummy
@@ -28,6 +29,7 @@ execute as @s[tag=!startedv5] run scoreboard players set @s out 10
 execute as @s[tag=!startedv5] run scoreboard players set @s antiMining 0
 execute as @s[tag=!startedv5] run scoreboard players set @s DeathTime 0
 execute as @s[tag=!startedv5] run scoreboard players set @s mtype 0
+execute as @s[tag=!startedv5] run scoreboard players set @s printDamage 30
 execute as @s run scoreboard players set @s reloading 0
 scoreboard objectives add fire dummy
 execute as @s[tag=!startedv5] run scoreboard players set @s fire 30

@@ -20,6 +20,9 @@ execute as @a[tag=!subattack,scores={subWeapon=1..}] run scoreboard players remo
 
 #function sounds
 
+execute as @a[scores={printDamage=-5..}] run scriptevent gvcv5:printDamage
+scoreboard players remove @a[scores={printDamage=-5..}] printDamage 1
+
 execute if score P building matches 1 run tag @a[tag=!nobomb] add nobomb
 execute if score P building matches 0 run tag @a[tag=nobomb] remove nobomb
 

@@ -19,17 +19,6 @@
                     ],
                     "controls": [
                         {
-                            "title_background": {
-                                "type": "image",
-                                "size": [
-                                    "100%sm + 30px",
-                                    "100%sm + 6px"
-                                ],
-                                "texture": "textures/ui/hud_tip_text_background",
-                                "alpha": "@hud.anim_title_background_alpha_in"
-                            }
-                        },
-                        {
                             "title": {
                                 "type": "label",
                                 "anchor_from": "top_middle",
@@ -52,7 +41,6 @@
                                 ],
                                 "shadow": "$show_shadow",
                                 "text_alignment": "center",
-                                "ignored": "(not($title_text=($title_text-'§rzex.gvc.v')))",
                                 "offset": [
                                     0,
                                     6
@@ -77,31 +65,6 @@
                         "100%cm"
                     ],
                     "controls": [
-                        {
-                            "subtitle_background": {
-                                "type": "image",
-                                "size": [
-                                    "100%sm + 20px",
-                                    "100%sm + 5px"
-                                ],
-                                "offset": [
-                                    0,
-                                    16
-                                ],
-                                "texture": "textures/ui/hud_tip_text_background",
-                                "variables": [
-                                    {
-                                        "requires": "$subtitle_initially_visible",
-                                        "$subtitle_bg": "@hud.anim_title_background_alpha_in"
-                                    },
-                                    {
-                                        "requires": "(not $subtitle_initially_visible)",
-                                        "$subtitle_bg": "@hud.anim_subtitle_background_alpha_in"
-                                    }
-                                ],
-                                "alpha": "$subtitle_bg"
-                            }
-                        },
                         {
                             "subtitle": {
                                 "type": "label",
@@ -183,7 +146,7 @@
         }
     },
     "hud_actionbar_text_talk_tip@hud.hud_actionbar_text": {
-        "offset": [ "200px","120px" ],
+        "offset": [ "32.0%","32.0%" ],
         "visible" : "(not ($atext - $actb_string = $atext))",
         "controls": [
             {

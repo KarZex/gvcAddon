@@ -164,11 +164,22 @@ export const gunData = {
     "damageType": "override"
   },
   "glock17": {
-    "damage": 4,
+    "damage": 7,
     "damageIgnoreDef": 0,
     "recoil": 1.5,
     "sound": "hg",
     "slowness": 0,
+    "speed": 0.68,
+    "fireOnReload": true,
+    "maxGunAmmo": 20,
+    "reloadTime": 50,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "glock17l": {
+    "damage": 7,
+    "damageIgnoreDef": 0,
+    "sound": "hg",
     "speed": 0.68,
     "fireOnReload": true,
     "maxGunAmmo": 20,
@@ -242,11 +253,22 @@ export const gunData = {
     "damageType": "override"
   },
   "m9": {
-    "damage": 4,
+    "damage": 5,
     "damageIgnoreDef": 0,
     "recoil": 2.0,
     "sound": "hg",
     "slowness": 0,
+    "speed": 0.68,
+    "fireOnReload": true,
+    "maxGunAmmo": 16,
+    "reloadTime": 50,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "m9l": {
+    "damage": 5,
+    "damageIgnoreDef": 0,
+    "sound": "hg",
     "speed": 0.68,
     "fireOnReload": true,
     "maxGunAmmo": 16,
@@ -424,11 +446,22 @@ export const gunData = {
     "damageType": "override"
   },
   "m1911": {
-    "damage": 5,
+    "damage": 6,
     "damageIgnoreDef": 0,
     "recoil": 2.0,
     "sound": "hg",
     "slowness": 0,
+    "speed": 0.48,
+    "fireOnReload": true,
+    "maxGunAmmo": 8,
+    "reloadTime": 50,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "m1911l": {
+    "damage": 6,
+    "damageIgnoreDef": 0,
+    "sound": "hg",
     "speed": 0.48,
     "fireOnReload": true,
     "maxGunAmmo": 8,
@@ -639,7 +672,18 @@ export const gunData = {
     "slowness": 0,
     "speed": 0.6000000000000001,
     "fireOnReload": true,
-    "maxGunAmmo": 8,
+    "maxGunAmmo": 6,
+    "reloadTime": 70,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "tt33l": {
+    "damage": 10,
+    "damageIgnoreDef": 0,
+    "sound": "sg",
+    "speed": 0.6000000000000001,
+    "fireOnReload": true,
+    "maxGunAmmo": 6,
     "reloadTime": 70,
     "bullet": "zex:762m",
     "damageType": "override"

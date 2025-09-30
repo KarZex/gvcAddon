@@ -128,6 +128,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -140,8 +146,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_aa12"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_aa12"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -162,6 +214,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -174,8 +232,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ak12"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ak12"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -196,6 +300,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -208,8 +318,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ak47"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ak47"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -230,6 +386,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -242,8 +404,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ak102"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ak102"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -264,6 +472,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -276,8 +490,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_an94"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_an94"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -298,6 +558,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -310,8 +576,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_awm"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_awm"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -332,6 +644,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -344,8 +662,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_dp28"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_dp28"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -366,6 +730,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -378,8 +748,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_famas"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_famas"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -400,6 +816,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -412,8 +834,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_fgm148"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_fgm148"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -434,6 +902,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -446,8 +920,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_fim92"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_fim92"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -468,6 +988,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -480,8 +1006,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_g36"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_g36"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -502,6 +1074,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -514,8 +1092,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_g3a3"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_g3a3"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -536,6 +1160,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -548,8 +1178,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_glock17"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_glock17"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -557,6 +1233,92 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_glock17"
+            }
+          ]
+        }
+      },
+      "fire:glock17_l": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:glock17l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_glock17l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_glock17l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_glock17l"
             }
           ]
         }
@@ -570,6 +1332,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -582,8 +1350,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_glock18"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_glock18"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -604,6 +1418,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -616,8 +1436,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_hk416"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_hk416"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -638,6 +1504,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -650,8 +1522,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_lazer"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_lazer"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -672,6 +1590,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -684,8 +1608,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m4"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m4"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -706,6 +1676,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -718,8 +1694,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m4a1"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m4a1"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -740,6 +1762,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -752,8 +1780,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m9"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m9"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -761,6 +1835,92 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_m9"
+            }
+          ]
+        }
+      },
+      "fire:m9_l": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m9l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m9l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m9l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m9l"
             }
           ]
         }
@@ -774,6 +1934,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -786,8 +1952,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m10"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m10"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -808,6 +2020,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -820,8 +2038,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m16a1"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m16a1"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -842,6 +2106,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -854,8 +2124,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m16a4"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m16a4"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -876,6 +2192,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -888,8 +2210,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m60"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m60"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -910,6 +2278,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -922,8 +2296,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m72"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m72"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -944,6 +2364,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -956,8 +2382,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m79"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m79"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -978,6 +2450,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -990,8 +2468,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m82"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m82"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1012,6 +2536,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1024,8 +2554,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m110"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m110"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1046,6 +2622,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1058,8 +2640,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m202"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m202"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1080,6 +2708,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1092,8 +2726,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m249"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m249"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1114,6 +2794,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1126,8 +2812,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m590"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m590"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1148,6 +2880,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1160,8 +2898,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m870"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m870"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1182,6 +2966,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1194,8 +2984,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1014"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1014"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1216,6 +3052,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1228,8 +3070,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1911"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1911"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1237,6 +3125,92 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_m1911"
+            }
+          ]
+        }
+      },
+      "fire:m1911_l": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m1911l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1911l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1911l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m1911l"
             }
           ]
         }
@@ -1250,6 +3224,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1262,8 +3242,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mg36"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mg36"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1284,6 +3310,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1296,8 +3328,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mg42"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mg42"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1318,6 +3396,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1330,8 +3414,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mosin"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mosin"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1352,6 +3482,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1364,8 +3500,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mp5"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mp5"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1386,6 +3568,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1398,8 +3586,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mp7"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mp7"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1420,6 +3654,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1432,8 +3672,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mp40"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_mp40"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1454,6 +3740,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1466,8 +3758,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_p90"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_p90"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1488,6 +3826,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1500,8 +3844,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_pkm"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_pkm"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1522,6 +3912,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1534,8 +3930,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ppsh"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ppsh"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1556,6 +3998,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1568,8 +4016,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_qbz95"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_qbz95"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1590,6 +4084,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1602,8 +4102,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_rpg"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_rpg"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1624,6 +4170,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1636,8 +4188,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_rpk"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_rpk"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1658,6 +4256,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1670,8 +4274,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_saiga12"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 12,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_saiga12"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1692,6 +4342,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1704,8 +4360,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_scar"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_scar"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1726,6 +4428,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1738,8 +4446,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_svd"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_svd"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1760,6 +4514,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1772,8 +4532,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_tt33"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_tt33"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1781,6 +4587,92 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_tt33"
+            }
+          ]
+        }
+      },
+      "fire:tt33_l": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:tt33l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_tt33l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_tt33l"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_tt33l"
             }
           ]
         }
@@ -1794,6 +4686,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1806,8 +4704,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_uzi"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_uzi"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1828,6 +4772,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1840,8 +4790,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_vz61"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_vz61"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1862,6 +4858,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1874,8 +4876,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_xm8"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_xm8"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1896,6 +4944,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1908,8 +4962,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ptrd"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ptrd"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1930,6 +5030,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1942,8 +5048,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_stg44"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_stg44"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1964,6 +5116,12 @@
                   "test": "has_tag",
                   "operator": "!=",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -1976,8 +5134,54 @@
               "filters": [
                 {
                   "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_lewis"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
                   "operator": "==",
                   "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_lewis"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
                 }
               ],
               "max_wait_time": 0,
@@ -2967,6 +6171,13 @@
           ]
         }
       },
+      "fire:glock17_l": {
+        "add": {
+          "component_groups": [
+            "fire:glock17_l"
+          ]
+        }
+      },
       "fire:glock18": {
         "add": {
           "component_groups": [
@@ -3006,6 +6217,13 @@
         "add": {
           "component_groups": [
             "fire:m9"
+          ]
+        }
+      },
+      "fire:m9_l": {
+        "add": {
+          "component_groups": [
+            "fire:m9_l"
           ]
         }
       },
@@ -3104,6 +6322,13 @@
         "add": {
           "component_groups": [
             "fire:m1911"
+          ]
+        }
+      },
+      "fire:m1911_l": {
+        "add": {
+          "component_groups": [
+            "fire:m1911_l"
           ]
         }
       },
@@ -3216,6 +6441,13 @@
         "add": {
           "component_groups": [
             "fire:tt33"
+          ]
+        }
+      },
+      "fire:tt33_l": {
+        "add": {
+          "component_groups": [
+            "fire:tt33_l"
           ]
         }
       },

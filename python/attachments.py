@@ -112,42 +112,42 @@ for row in csv_reader:
         with open("behavior_packs/GVCBedrock/items/attachment/{0}.json".format(attach_id),"w") as f:
             json.dump(attach_json,f,indent=4)
 
-        
-        if attach_is_2d_scope != "":
-            array_length = len(scope_render["render_controllers"]["controller.render.scope"]["arrays"]["textures"]["Array.base"])
-            if( array_length-1 < attach_number ):
-                for i in range( attach_number - array_length+1 ):
-                    scope_render["render_controllers"]["controller.render.scope"]["arrays"]["textures"]["Array.base"].append("Texture.scope")
+        if( attach_type != "bullet" ):
+            if attach_is_2d_scope != "":
+                array_length = len(scope_render["render_controllers"]["controller.render.scope"]["arrays"]["textures"]["Array.base"])
+                if( array_length-1 < attach_number ):
+                    for i in range( attach_number - array_length+1 ):
+                        scope_render["render_controllers"]["controller.render.scope"]["arrays"]["textures"]["Array.base"].append("Texture.scope")
 
-            scope_render["render_controllers"]["controller.render.scope"]["arrays"]["textures"]["Array.base"][attach_number] = "Texture.{}_scope".format(attach_id)
-
-
+                scope_render["render_controllers"]["controller.render.scope"]["arrays"]["textures"]["Array.base"][attach_number] = "Texture.{}_scope".format(attach_id)
 
 
-        for root, dirs, files in os.walk(attach_directory):
-            for file in files:
-                if file.endswith('.json'):
-                    file_path = os.path.join(root, file)
-                    with open(file_path, 'r', encoding='utf-8') as f:
-                        try:
-                            data = json.load(f)
-                            gun_id = data["minecraft:attachable"]["description"]["identifier"]
-                            data["minecraft:attachable"]["description"]["materials"]["default"] = "iron_golem"
-                            data["minecraft:attachable"]["description"]["textures"]["enchanted"] = "textures/misc/enchanted_item_glint"
-                            data["minecraft:attachable"]["description"]["materials"]["enchanted"] = "armor_enchanted"
-                            data["minecraft:attachable"]["description"]["textures"]["none".format(attach_id)] = "textures/models/leemk4.png"
-                            data["minecraft:attachable"]["description"]["geometry"]["none".format(attach_id)] = "geometry.sniperscope"
-                            data["minecraft:attachable"]["description"]["textures"]["{}".format(attach_id)] = "textures/models/{}.png".format(attach_id)
-                            data["minecraft:attachable"]["description"]["geometry"]["{}".format(attach_id)] = "geometry.{}".format(attach_id)
-                            if attach_is_2d_scope != "":
-                                data["minecraft:attachable"]["description"]["textures"]["{}_scope".format(attach_id)] = "textures/models/{}.png".format(attach_is_2d_scope)
-                                data["minecraft:attachable"]["description"]["geometry"]["scope"] = "geometry.scope"
 
-                            with open(file_path, 'w', encoding='utf-8') as f:
-                                json.dump(data, f, ensure_ascii=False, indent=4)
 
-                        except json.JSONDecodeError as e:
-                            print(f"Error decoding JSON from {file_path}: {e}")
+            for root, dirs, files in os.walk(attach_directory):
+                for file in files:
+                    if file.endswith('.json'):
+                        file_path = os.path.join(root, file)
+                        with open(file_path, 'r', encoding='utf-8') as f:
+                            try:
+                                data = json.load(f)
+                                gun_id = data["minecraft:attachable"]["description"]["identifier"]
+                                data["minecraft:attachable"]["description"]["materials"]["default"] = "iron_golem"
+                                data["minecraft:attachable"]["description"]["textures"]["enchanted"] = "textures/misc/enchanted_item_glint"
+                                data["minecraft:attachable"]["description"]["materials"]["enchanted"] = "armor_enchanted"
+                                data["minecraft:attachable"]["description"]["textures"]["none".format(attach_id)] = "textures/models/leemk4.png"
+                                data["minecraft:attachable"]["description"]["geometry"]["none".format(attach_id)] = "geometry.sniperscope"
+                                data["minecraft:attachable"]["description"]["textures"]["{}".format(attach_id)] = "textures/models/{}.png".format(attach_id)
+                                data["minecraft:attachable"]["description"]["geometry"]["{}".format(attach_id)] = "geometry.{}".format(attach_id)
+                                if attach_is_2d_scope != "":
+                                    data["minecraft:attachable"]["description"]["textures"]["{}_scope".format(attach_id)] = "textures/models/{}.png".format(attach_is_2d_scope)
+                                    data["minecraft:attachable"]["description"]["geometry"]["scope"] = "geometry.scope"
+
+                                with open(file_path, 'w', encoding='utf-8') as f:
+                                    json.dump(data, f, ensure_ascii=False, indent=4)
+
+                            except json.JSONDecodeError as e:
+                                print(f"Error decoding JSON from {file_path}: {e}")
         
         item_json["texture_data"]["{}".format(attach_id)] = { "textures": "textures/items/attachment/{}".format(attach_id) }
 
@@ -221,9 +221,9 @@ for root, dirs, files in os.walk(attach_directory):
                             {"controller.render.gun":"(!query.property('zex:is_scoping') || !c.is_first_person)"},
                             { "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person" }
                         ]
-                        for attach_type in attach_types:
-                            render = { "controller.render.{0}".format(attach_type):"query.property('zex:{0}') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))".format(attach_type) }
-                            data["minecraft:attachable"]["description"]["render_controllers"].append(render)
+                        attach_type = "sights"
+                        render = { "controller.render.{0}".format(attach_type):"query.property('zex:{0}') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))".format(attach_type) }
+                        data["minecraft:attachable"]["description"]["render_controllers"].append(render)
 
                         gun_attach_json["{}".format(gun_id)] = {
                             "sights": ast.literal_eval(sights)
@@ -290,6 +290,9 @@ for root, dirs, files in os.walk(attach_directory):
                             data["minecraft:attachable"]["description"]["scripts"]["animate"].append({
                                 "def_burrel": "query.property('zex:burrel') != 0"
                             })
+                        attach_type = "burrel"
+                        render = { "controller.render.{0}".format(attach_type):"query.property('zex:{0}') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))".format(attach_type) }
+                        data["minecraft:attachable"]["description"]["render_controllers"].append(render)
                     elif( sights != "" ):    
                         gun_attach_json["{}".format(gun_id)]["burrel"] = 0
                     else: 
@@ -312,6 +315,9 @@ for root, dirs, files in os.walk(attach_directory):
                             data["minecraft:attachable"]["description"]["scripts"]["animate"].append({
                                 "def_grips": "query.property('zex:grip') != 0"
                             })
+                        attach_type = "grip"
+                        render = { "controller.render.{0}".format(attach_type):"query.property('zex:{0}') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))".format(attach_type) }
+                        data["minecraft:attachable"]["description"]["render_controllers"].append(render)
                         gun_attach_json["{}".format(gun_id)]["grip"] = ast.literal_eval(grips)
                     elif( sights != "" ):    
                         gun_attach_json["{}".format(gun_id)]["grip"] = 0
@@ -335,10 +341,23 @@ for root, dirs, files in os.walk(attach_directory):
                             data["minecraft:attachable"]["description"]["scripts"]["animate"].append({
                                 "def_light": "query.property('zex:light') != 0"
                             })
+                        attach_type = "light"
+                        render = { "controller.render.{0}".format(attach_type):"query.property('zex:{0}') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))".format(attach_type) }
+                        data["minecraft:attachable"]["description"]["render_controllers"].append(render)
                     elif( lights != "" ):    
                         gun_attach_json["{}".format(gun_id)]["light"] = 0
                     else: 
                         gun_attach_json["{}".format(gun_id)]["light"] = int(lights)
+
+                        
+                    bullets = loadcsv(gun_id,11)
+                    if( "[" in bullets ):
+                        gun_attach_json["{}".format(gun_id)]["bullet"] = ast.literal_eval(bullets)
+                    elif( bullets != "" ):    
+                        gun_attach_json["{}".format(gun_id)]["bullet"] = 0
+                    else: 
+                        gun_attach_json["{}".format(gun_id)]["bullet"] = int(bullets)
+                    
 
 
 
@@ -356,42 +375,43 @@ with open("resource_packs/GVCBedrock/render_controllers/scope.render_controllers
     json.dump(scope_render,f,indent=4)
 
 for attach_type in attach_types:
-    render_controller = {
-        "format_version": "1.8.0",
-        "render_controllers": {
-            "controller.render.{0}".format(attach_type): {
-                    "geometry": "Array.item_geo[query.property('zex:{0}')]".format(attach_type),
-                    "materials": [{"*":"material.default"}],
-                    "textures": ["Array.item_texture[query.property('zex:{0}')]".format(attach_type)],
-                    "arrays": {
-                        "geometries": {
-                            "Array.item_geo": []
-                        },
-                        "textures": {
-                            "Array.item_texture": []
-                        }
-                    } 
+    if( attach_type != "bullet" ):
+        render_controller = {
+            "format_version": "1.8.0",
+            "render_controllers": {
+                "controller.render.{0}".format(attach_type): {
+                        "geometry": "Array.item_geo[query.property('zex:{0}')]".format(attach_type),
+                        "materials": [{"*":"material.default"}],
+                        "textures": ["Array.item_texture[query.property('zex:{0}')]".format(attach_type)],
+                        "arrays": {
+                            "geometries": {
+                                "Array.item_geo": []
+                            },
+                            "textures": {
+                                "Array.item_texture": []
+                            }
+                        } 
+                }
             }
         }
-    }
-    for attach_number in range(len(attachdata_json["{}".format(attach_type)])):
-        attach_id = attachdata_json["{}".format(attach_type)][attach_number]
-        array_length = len(render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["geometries"]["Array.item_geo"])
-        if( array_length-1 < attach_number ):
-            for i in range( attach_number - array_length+1 ):
-                render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["geometries"]["Array.item_geo"].append("Texture.default")
-        
-        render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["geometries"]["Array.item_geo"][attach_number] = "geometry.{}".format(attach_id)
+        for attach_number in range(len(attachdata_json["{}".format(attach_type)])):
+            attach_id = attachdata_json["{}".format(attach_type)][attach_number]
+            array_length = len(render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["geometries"]["Array.item_geo"])
+            if( array_length-1 < attach_number ):
+                for i in range( attach_number - array_length+1 ):
+                    render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["geometries"]["Array.item_geo"].append("Texture.default")
+            
+            render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["geometries"]["Array.item_geo"][attach_number] = "geometry.{}".format(attach_id)
 
-        array_length = len(render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["textures"]["Array.item_texture"])
-        if( array_length-1 < attach_number ):
-            for i in range( attach_number - array_length+1 ):
-                render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["textures"]["Array.item_texture"].append("Texture.default")
+            array_length = len(render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["textures"]["Array.item_texture"])
+            if( array_length-1 < attach_number ):
+                for i in range( attach_number - array_length+1 ):
+                    render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["textures"]["Array.item_texture"].append("Texture.default")
+            
+            render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["textures"]["Array.item_texture"][attach_number] = "texture.{}".format(attach_id)
         
-        render_controller["render_controllers"]["controller.render.{0}".format(attach_type)]["arrays"]["textures"]["Array.item_texture"][attach_number] = "texture.{}".format(attach_id)
-    
-    with open( "resource_packs/GVCBedrock/render_controllers/{0}.render_controllers.json".format(attach_type), "w" ) as f:
-        json.dump(render_controller,f,indent=4)
+        with open( "resource_packs/GVCBedrock/render_controllers/{0}.render_controllers.json".format(attach_type), "w" ) as f:
+            json.dump(render_controller,f,indent=4)
 
 
 with open("behavior_packs/GVCBedrock/scripts/attach.json","w") as f:

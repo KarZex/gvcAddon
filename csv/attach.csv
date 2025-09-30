@@ -10,3 +10,6 @@ name,id,type,attach_number,attach_is_2d_scope
 ,bipod,grip,3,
 ,anglegrip,grip,4,
 ,lasersight,light,1,
+,bullet_hp,bullet,1,
+,bullet_ap,bullet,2,
+,bullet_at,bullet,3,
