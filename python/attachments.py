@@ -17,6 +17,33 @@ csv_path = open("csv/attach.csv","r")
 csv_reader = csv.reader(csv_path)
 row_count = 0
 
+def can_offhand( gun_id ):
+    csv_path_w = open("csv/gunData.csv","r")
+    csv_reader_w = csv.reader(csv_path_w)
+
+    for row in csv_reader_w:
+        if row[1] == gun_id:
+            if( "P" in row[21] ):
+                return True
+            else:
+                return False
+    
+    return False
+
+def get_attachment( gun_id,attach,atype ):
+    csv_path_w = open("csv/gunAttachments.csv","r")
+    csv_reader_w = csv.reader(csv_path_w)
+    position = attach.index(atype)
+    print(3+2*position)
+
+    for row in csv_reader_w:
+        if row[1] == gun_id:
+            if( position == 0 ):
+                return row[2]
+            else:
+                return row[3+2*position]
+    
+    return "0"
 
 def get_sights(gun_id):
     csv_path_w = open("csv/gunAttachments.csv","r")
@@ -100,7 +127,7 @@ for row in csv_reader:
 
         if( not attach_type in attach_types  ):
             attach_types.append(attach_type)
-            attachdata_json["{}".format(attach_type)] = [ "none" ]
+            attachdata_json["{}".format(attach_type)] = [ "undefined" ]
 
         attachdata_json["{}".format(attach_type)].append(attach_id)
         
@@ -131,17 +158,31 @@ for row in csv_reader:
                         with open(file_path, 'r', encoding='utf-8') as f:
                             try:
                                 data = json.load(f)
-                                gun_id = data["minecraft:attachable"]["description"]["identifier"]
+                                gun_id = data["minecraft:attachable"]["description"]["identifier"].split(":")[1]
+                                attach = get_attachment(gun_id,attach_types,attach_type)
                                 data["minecraft:attachable"]["description"]["materials"]["default"] = "iron_golem"
                                 data["minecraft:attachable"]["description"]["textures"]["enchanted"] = "textures/misc/enchanted_item_glint"
                                 data["minecraft:attachable"]["description"]["materials"]["enchanted"] = "armor_enchanted"
                                 data["minecraft:attachable"]["description"]["textures"]["none".format(attach_id)] = "textures/models/leemk4.png"
                                 data["minecraft:attachable"]["description"]["geometry"]["none".format(attach_id)] = "geometry.sniperscope"
-                                data["minecraft:attachable"]["description"]["textures"]["{}".format(attach_id)] = "textures/models/{}.png".format(attach_id)
-                                data["minecraft:attachable"]["description"]["geometry"]["{}".format(attach_id)] = "geometry.{}".format(attach_id)
+                                print(attach)
+                                #tex
+                                if( not "{}".format(attach_id) in data["minecraft:attachable"]["description"]["textures"] and str(attach_number) in attach and "[" in attach ):
+                                    data["minecraft:attachable"]["description"]["textures"]["{}".format(attach_id)] = "textures/models/{}.png".format(attach_id)
+                                elif( "{}".format(attach_id) in data["minecraft:attachable"]["description"]["textures"] and not (str(attach_number) in attach and "[" in attach) ):
+                                    del data["minecraft:attachable"]["description"]["textures"]["{}".format(attach_id)]
+
+                                #geo
+                                if( not "{}".format(attach_id) in data["minecraft:attachable"]["description"]["geometry"] and str(attach_number) in attach and "[" in attach):
+                                    data["minecraft:attachable"]["description"]["geometry"]["{}".format(attach_id)] = "geometry.{}".format(attach_id)
+                                elif( "{}".format(attach_id) in data["minecraft:attachable"]["description"]["geometry"] and not (str(attach_number) in attach and "[" in attach) ):
+                                    del data["minecraft:attachable"]["description"]["geometry"]["{}".format(attach_id)]
+
+                                #scope
                                 if attach_is_2d_scope != "":
                                     data["minecraft:attachable"]["description"]["textures"]["{}_scope".format(attach_id)] = "textures/models/{}.png".format(attach_is_2d_scope)
                                     data["minecraft:attachable"]["description"]["geometry"]["scope"] = "geometry.scope"
+                                    data["minecraft:attachable"]["description"]["materials"]["scope"] = "entity_alphablend"
 
                                 with open(file_path, 'w', encoding='utf-8') as f:
                                     json.dump(data, f, ensure_ascii=False, indent=4)
@@ -217,10 +258,16 @@ for root, dirs, files in os.walk(attach_directory):
                             "ads_sight": "query.property('zex:sights') != 0 && !query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
                         })
 
-                        data["minecraft:attachable"]["description"]["render_controllers"] = [
-                            {"controller.render.gun":"(!query.property('zex:is_scoping') || !c.is_first_person)"},
-                            { "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person" }
-                        ]
+                        if can_offhand(gun_id):
+                            data["minecraft:attachable"]["description"]["render_controllers"] = [
+                                { "controller.render.gun":"query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && (!query.is_sneaking || !c.is_first_person)".format(gun_id)},
+                                { "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person" }
+                            ]
+                        else:
+                            data["minecraft:attachable"]["description"]["render_controllers"] = [
+                                { "controller.render.armor":"(!query.property('zex:is_scoping') || !c.is_first_person)"},
+                                { "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person" }
+                            ]
                         attach_type = "sights"
                         render = { "controller.render.{0}".format(attach_type):"query.property('zex:{0}') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))".format(attach_type) }
                         data["minecraft:attachable"]["description"]["render_controllers"].append(render)
@@ -236,18 +283,21 @@ for root, dirs, files in os.walk(attach_directory):
                             sight_number = int(int(sights))
                         else:
                             sight_number = 0
+                        render = "controller.render.armor"
+                        if( can_offhand(gun_id) ):
+                            render = "controller.render.gun"
+
                         if( sight_number > 0 ):
                             data["minecraft:attachable"]["description"]["animations"]["ads"] = "animation.mosin.ads"
                             data["minecraft:attachable"]["description"]["render_controllers"] = [
-                                {"controller.render.armor":"!query.is_sneaking || !c.is_first_person"},
+                                {"{}".format(render):"query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && (!query.is_sneaking || !c.is_first_person)".format(gun_id)},
                                 { "controller.render.scope": "query.is_sneaking && c.is_first_person" }
                             ]
                         else:   
                             data["minecraft:attachable"]["description"]["render_controllers"] = [
-                                "controller.render.armor"
+                                {"{}".format(render):"query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}')".format(gun_id)},
                             ]
-
-                        data["minecraft:attachable"]["description"]["scripts"] = {
+                        mainhand = {
                             "pre_animation": [
                                 "v.main_hand = c.item_slot == 'main_hand';"
                             ],
@@ -263,6 +313,33 @@ for root, dirs, files in os.walk(attach_directory):
                                 }
                             ]
                         }
+                        offhand = {
+                            "pre_animation": [
+                                "v.main_hand = c.item_slot == 'main_hand';",
+                                "v.off_hand = c.item_slot == 'off_hand';"
+                            ],
+                            "animate": [
+                                {
+                                    "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
+                                },
+                                {
+                                    "first_off": "(v.off_hand && c.is_first_person) && !query.is_sneaking"
+                                },
+                                {
+                                    "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+                                },
+                                {
+                                    "third": "v.main_hand && !c.is_first_person"
+                                },
+                                {
+                                    "third_off": "v.off_hand && !c.is_first_person"
+                                }
+                            ]
+                        }
+                        if can_offhand(gun_id):
+                            data["minecraft:attachable"]["description"]["scripts"] = offhand
+                        else:
+                            data["minecraft:attachable"]["description"]["scripts"] = mainhand
                         try:
                             del data["minecraft:attachable"]["description"]["animations"]["ads_scope"]
                             del data["minecraft:attachable"]["description"]["animations"]["ads_sight"]

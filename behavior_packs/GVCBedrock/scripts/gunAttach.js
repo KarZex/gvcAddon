@@ -11,10 +11,18 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
+    ],
+    "bullet": [
+      4,
+      5,
+      6
     ]
   },
   "ak102": {
@@ -28,11 +36,15 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "ak12": {
     "sights": [
@@ -45,11 +57,15 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "ak47": {
     "sights": [
@@ -62,11 +78,15 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "an94": {
     "sights": [
@@ -79,53 +99,66 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "awm": {
     "sights": 1,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": [
+      2
+    ]
   },
   "dp28": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "famas": {
     "sights": 1,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "fgm148": {
     "sights": 1,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "fim92": {
     "sights": 1,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "fire": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "g36": {
     "sights": 2,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "g3a3": {
     "sights": [
@@ -138,11 +171,15 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "glock17": {
     "sights": [
@@ -157,6 +194,10 @@ export const gunAttach = {
     "grip": 0,
     "light": [
       1
+    ],
+    "bullet": [
+      1,
+      3
     ]
   },
   "glock18": {
@@ -172,6 +213,10 @@ export const gunAttach = {
     "grip": 0,
     "light": [
       1
+    ],
+    "bullet": [
+      1,
+      3
     ]
   },
   "hk416": {
@@ -185,29 +230,38 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "lazer": {
     "sights": 1,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "lewis": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "m10": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": [
+      1
+    ]
   },
   "m1014": {
     "sights": [
@@ -220,17 +274,42 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
+    ],
+    "bullet": [
+      4,
+      5,
+      6
     ]
   },
   "m110": {
     "sights": 1,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": [
+      2
+    ]
+  },
+  "m14": {
+    "sights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "burrel": 0,
+    "grip": 0,
+    "light": 0,
+    "bullet": [
+      2
+    ]
   },
   "m16a1": {
     "sights": [
@@ -243,11 +322,15 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "m16a4": {
     "sights": [
@@ -260,23 +343,32 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "m1911": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": [
+      1,
+      3
+    ]
   },
   "m202": {
     "sights": 1,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "m249": {
     "sights": [
@@ -289,11 +381,15 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "m4": {
     "sights": [
@@ -306,11 +402,15 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "m4a1": {
     "sights": [
@@ -323,11 +423,15 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "m590": {
     "sights": [
@@ -340,10 +444,18 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
+    ],
+    "bullet": [
+      4,
+      5,
+      6
     ]
   },
   "m60": {
@@ -357,29 +469,36 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "m72": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "m79": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "m82": {
     "sights": 1,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "m870": {
     "sights": [
@@ -392,10 +511,18 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
+    ],
+    "bullet": [
+      4,
+      5,
+      6
     ]
   },
   "m9": {
@@ -409,31 +536,41 @@ export const gunAttach = {
       1
     ],
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": [
+      1,
+      3
+    ]
   },
   "mg36": {
     "sights": 1,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "mg42": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "mosin": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": [
+      2
+    ]
   },
   "mp40": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "mp5": {
     "sights": [
@@ -446,10 +583,17 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
+    ],
+    "bullet": [
+      1,
+      3
     ]
   },
   "mp7": {
@@ -463,35 +607,46 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
+    ],
+    "bullet": [
+      1,
+      3
     ]
   },
   "p90": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "pkm": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "ppsh": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "ptrd": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "qbz95": {
     "sights": [
@@ -504,17 +659,22 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "rpg": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "rpk": {
     "sights": [
@@ -527,11 +687,15 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "saiga12": {
     "sights": [
@@ -544,10 +708,18 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
+    ],
+    "bullet": [
+      4,
+      5,
+      6
     ]
   },
   "scar": {
@@ -561,46 +733,61 @@ export const gunAttach = {
       1
     ],
     "grip": [
-      1
+      1,
+      2,
+      3,
+      4
     ],
     "light": [
       1
-    ]
+    ],
+    "bullet": 0
   },
   "stg44": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "svd": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": [
+      2
+    ]
   },
   "tt33": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "uzi": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": [
+      1,
+      3
+    ]
   },
   "vz61": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   },
   "xm8": {
     "sights": 0,
     "burrel": 0,
     "grip": 0,
-    "light": 0
+    "light": 0,
+    "bullet": 0
   }
 };

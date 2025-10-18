@@ -141,6 +141,190 @@ for row in csv_reader:
         }
         player_json["minecraft:entity"]["component_groups"]["fire:{}".format(gun_id)] = spawn_entity
         player_json["minecraft:entity"]["events"]["fire:{}".format(gun_id)] = event
+        if( "Sga" in gun_special ):
+           
+            #player
+            spawn_entity = { 
+                "minecraft:spawn_entity":{
+                    "entities": [
+                        {
+                            "filters": [
+                                {"test":"has_tag","operator":"!=","value":"scope"},
+                                { "test": "int_property", "domain": "zex:light","operator": "==", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}_frag".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                {"test":"has_tag","operator":"!=","value":"scope"},
+                                { "test": "int_property", "domain": "zex:light","operator": "!=", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:adsh_{}_frag".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                { "test":"has_tag","operator":"==","value":"scope" },
+                                { "test": "int_property", "domain": "zex:sights","operator": "==", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:adsh_{}_frag".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                { "test":"has_tag","operator":"==","value":"scope" },
+                                { "test": "int_property", "domain": "zex:sights","operator": "!=", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:ads_{}_frag".format(gun_id)
+                        }
+                    ]
+                }
+            }
+            event = {
+                "add": {
+                    "component_groups": [
+                        "fire:{}_frag".format(gun_id)
+                    ]
+                }
+            }
+            player_json["minecraft:entity"]["component_groups"]["fire:{}_frag".format(gun_id)] = spawn_entity
+            player_json["minecraft:entity"]["events"]["fire:{}_frag".format(gun_id)] = event 
+           
+            #player
+            spawn_entity = { 
+                "minecraft:spawn_entity":{
+                    "entities": [
+                        {
+                            "filters": [
+                                {"test":"has_tag","operator":"!=","value":"scope"},
+                                { "test": "int_property", "domain": "zex:light","operator": "==", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}_srag".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                {"test":"has_tag","operator":"!=","value":"scope"},
+                                { "test": "int_property", "domain": "zex:light","operator": "!=", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:adsh_{}_srag".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                { "test":"has_tag","operator":"==","value":"scope" },
+                                { "test": "int_property", "domain": "zex:sights","operator": "==", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:adsh_{}_srag".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                { "test":"has_tag","operator":"==","value":"scope" },
+                                { "test": "int_property", "domain": "zex:sights","operator": "!=", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 1,
+                            "single_use": True,
+                            "spawn_entity": "fire:ads_{}_srag".format(gun_id)
+                        }
+                    ]
+                }
+            }
+            event = {
+                "add": {
+                    "component_groups": [
+                        "fire:{}_srag".format(gun_id)
+                    ]
+                }
+            }
+            player_json["minecraft:entity"]["component_groups"]["fire:{}_srag".format(gun_id)] = spawn_entity
+            player_json["minecraft:entity"]["events"]["fire:{}_srag".format(gun_id)] = event 
+            
+            #player
+            spawn_entity = { 
+                "minecraft:spawn_entity":{
+                    "entities": [
+                        {
+                            "filters": [
+                                {"test":"has_tag","operator":"!=","value":"scope"},
+                                { "test": "int_property", "domain": "zex:light","operator": "==", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 16,
+                            "single_use": True,
+                            "spawn_entity": "fire:{}_db".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                {"test":"has_tag","operator":"!=","value":"scope"},
+                                { "test": "int_property", "domain": "zex:light","operator": "!=", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 16,
+                            "single_use": True,
+                            "spawn_entity": "fire:adsh_{}_db".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                { "test":"has_tag","operator":"==","value":"scope" },
+                                { "test": "int_property", "domain": "zex:sights","operator": "==", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 16,
+                            "single_use": True,
+                            "spawn_entity": "fire:adsh_{}_db".format(gun_id)
+                        },
+                        {
+                            "filters": [
+                                { "test":"has_tag","operator":"==","value":"scope" },
+                                { "test": "int_property", "domain": "zex:sights","operator": "!=", "value": 0 }
+                            ],
+                            "max_wait_time": 0,
+                            "min_wait_time": 0,
+                            "num_to_spawn": 16,
+                            "single_use": True,
+                            "spawn_entity": "fire:ads_{}_db".format(gun_id)
+                        }
+                    ]
+                }
+            }
+            event = {
+                "add": {
+                    "component_groups": [
+                        "fire:{}_db".format(gun_id)
+                    ]
+                }
+            }
+            player_json["minecraft:entity"]["component_groups"]["fire:{}_db".format(gun_id)] = spawn_entity
+            player_json["minecraft:entity"]["events"]["fire:{}_db".format(gun_id)] = event 
 
         if( "P" in gun_special ):
             

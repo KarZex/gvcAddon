@@ -37,6 +37,12 @@ entity.gvcv5:pmc_blue.name=PMC兵士
 entity.gvcv5:pmc_green.name=PMC兵士
 entity.gvcv5:pmc_yellow.name=PMC兵士
 
+## ww3
+entity.gvcv5:prc_soldier.name=中国軍兵士
+entity.gvcv5:usa_soldier.name=アメリカ軍兵士
+entity.gvcv5:rus_soldier.name=ロシア軍兵士
+entity.gvcv5:eur_soldier.name=ヨーロッパ軍兵士
+
 item.spawn_egg.entity.gvcv5:gb1.name=ベテランゲリラ-マシンガン
 item.spawn_egg.entity.gvcv5:gb2.name=ベテランゲリラ-強襲
 item.spawn_egg.entity.gvcv5:gb3.name=ベテランゲリラ-スナイパー
@@ -52,6 +58,8 @@ item.spawn_egg.entity.gvcv5:mg2.name=機関銃（同盟軍）
 entity.gvcv5:arr.name=大砲
 entity.gvcv5:mg.name=機関銃
 entity.gvcv5:mg2.name=機関銃（同盟軍）
+
+
 
 item.spawn_egg.entity.zex:iceblaze.name=フロストを出現させる
 item.spawn_egg.entity.zex:icezombie.name=ゾンビを出現させる

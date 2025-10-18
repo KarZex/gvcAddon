@@ -60,6 +60,9 @@
               "lazer": "query.get_equipped_item_name == 'lazer'"
             },
             {
+              "lewis": "query.get_equipped_item_name == 'lewis'"
+            },
+            {
               "m4": "query.get_equipped_item_name == 'm4'"
             },
             {
@@ -73,6 +76,9 @@
             },
             {
               "m10": "query.get_equipped_item_name == 'm10'"
+            },
+            {
+              "m14": "query.get_equipped_item_name == 'm14'"
             },
             {
               "m16a1": "query.get_equipped_item_name == 'm16a1'"
@@ -144,6 +150,9 @@
               "ppsh": "query.get_equipped_item_name == 'ppsh'"
             },
             {
+              "ptrd": "query.get_equipped_item_name == 'ptrd'"
+            },
+            {
               "qbz95": "query.get_equipped_item_name == 'qbz95'"
             },
             {
@@ -157,6 +166,9 @@
             },
             {
               "scar": "query.get_equipped_item_name == 'scar'"
+            },
+            {
+              "stg44": "query.get_equipped_item_name == 'stg44'"
             },
             {
               "svd": "query.get_equipped_item_name == 'svd'"
@@ -175,15 +187,6 @@
             },
             {
               "xm8": "query.get_equipped_item_name == 'xm8'"
-            },
-            {
-              "ptrd": "query.get_equipped_item_name == 'ptrd'"
-            },
-            {
-              "stg44": "query.get_equipped_item_name == 'stg44'"
-            },
-            {
-              "lewis": "query.get_equipped_item_name == 'lewis'"
             }
           ]
         },
@@ -367,6 +370,16 @@
             }
           ]
         },
+        "lewis": {
+          "on_entry": [
+            "/function hold/lewish"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
         "m4": {
           "on_entry": [
             "/function hold/m4h"
@@ -410,6 +423,16 @@
         "m10": {
           "on_entry": [
             "/function hold/m10h"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "m14": {
+          "on_entry": [
+            "/function hold/m14h"
           ],
           "transitions": [
             {
@@ -647,6 +670,16 @@
             }
           ]
         },
+        "ptrd": {
+          "on_entry": [
+            "/function hold/ptrdh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
         "qbz95": {
           "on_entry": [
             "/function hold/qbz95h"
@@ -690,6 +723,16 @@
         "scar": {
           "on_entry": [
             "/function hold/scarh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "stg44": {
+          "on_entry": [
+            "/function hold/stg44h"
           ],
           "transitions": [
             {
@@ -750,36 +793,6 @@
         "xm8": {
           "on_entry": [
             "/function hold/xm8h"
-          ],
-          "transitions": [
-            {
-              "default": "(1.0)"
-            }
-          ]
-        },
-        "ptrd": {
-          "on_entry": [
-            "/function hold/ptrdh"
-          ],
-          "transitions": [
-            {
-              "default": "(1.0)"
-            }
-          ]
-        },
-        "stg44": {
-          "on_entry": [
-            "/function hold/stg44h"
-          ],
-          "transitions": [
-            {
-              "default": "(1.0)"
-            }
-          ]
-        },
-        "lewis": {
-          "on_entry": [
-            "/function hold/lewish"
           ],
           "transitions": [
             {

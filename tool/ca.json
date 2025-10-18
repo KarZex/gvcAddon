@@ -57,6 +57,15 @@
                         255
                     ],
                     "default": 0
+                },
+                "zex:bullet": {
+                    "client_sync": true,
+                    "type": "int",
+                    "range": [
+                        0,
+                        255
+                    ],
+                    "default": 0
                 }
             }
         },

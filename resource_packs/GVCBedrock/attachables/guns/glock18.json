@@ -5,7 +5,8 @@
             "identifier": "gun:glock18",
             "materials": {
                 "default": "iron_golem",
-                "enchanted": "armor_enchanted"
+                "enchanted": "armor_enchanted",
+                "scope": "entity_alphablend"
             },
             "textures": {
                 "default": "textures/models/glock18.png",
@@ -19,11 +20,6 @@
                 "coyote": "textures/models/coyote.png",
                 "horo": "textures/models/horo.png",
                 "suppressor": "textures/models/suppressor.png",
-                "grip": "textures/models/grip.png",
-                "dotsight": "textures/models/dotsight.png",
-                "gripod": "textures/models/gripod.png",
-                "bipod": "textures/models/bipod.png",
-                "anglegrip": "textures/models/anglegrip.png",
                 "lasersight": "textures/models/lasersight.png"
             },
             "geometry": {
@@ -36,11 +32,6 @@
                 "coyote": "geometry.coyote",
                 "horo": "geometry.horo",
                 "suppressor": "geometry.suppressor",
-                "grip": "geometry.grip",
-                "dotsight": "geometry.dotsight",
-                "gripod": "geometry.gripod",
-                "bipod": "geometry.bipod",
-                "anglegrip": "geometry.anglegrip",
                 "lasersight": "geometry.lasersight"
             },
             "animations": {
@@ -86,7 +77,7 @@
             },
             "render_controllers": [
                 {
-                    "controller.render.gun": "(!query.property('zex:is_scoping') || !c.is_first_person)"
+                    "controller.render.armor": "(!query.property('zex:is_scoping') || !c.is_first_person)"
                 },
                 {
                     "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person"
@@ -96,9 +87,6 @@
                 },
                 {
                     "controller.render.burrel": "query.property('zex:burrel') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
-                },
-                {
-                    "controller.render.grip": "query.property('zex:grip') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
                 },
                 {
                     "controller.render.light": "query.property('zex:light') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"

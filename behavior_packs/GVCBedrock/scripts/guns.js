@@ -20,6 +20,45 @@ export const gunData = {
     "bullet": "zex:12m",
     "damageType": "override"
   },
+  "aa12_frag": {
+    "damage": 3.6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 24,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "aa12_srag": {
+    "damage": 28,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 24,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "aa12_db": {
+    "damage": 1.5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 24,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
   "ak12": {
     "damage": 8,
     "damageIgnoreDef": 0,
@@ -34,7 +73,7 @@ export const gunData = {
     "damageType": "override"
   },
   "ak47": {
-    "damage": 6,
+    "damage": 7,
     "damageIgnoreDef": 0,
     "recoil": 2.0,
     "sound": "r1",
@@ -43,7 +82,7 @@ export const gunData = {
     "fireOnReload": false,
     "maxGunAmmo": 30,
     "reloadTime": 80,
-    "bullet": "zex:556m",
+    "bullet": "zex:762m",
     "damageType": "override"
   },
   "ak102": {
@@ -164,7 +203,7 @@ export const gunData = {
     "damageType": "override"
   },
   "glock17": {
-    "damage": 7,
+    "damage": 6,
     "damageIgnoreDef": 0,
     "recoil": 1.5,
     "sound": "hg",
@@ -177,7 +216,7 @@ export const gunData = {
     "damageType": "override"
   },
   "glock17l": {
-    "damage": 7,
+    "damage": 6,
     "damageIgnoreDef": 0,
     "sound": "hg",
     "speed": 0.68,
@@ -225,6 +264,19 @@ export const gunData = {
     "reloadTime": 120,
     "bullet": "zex:1270m",
     "damageType": "entityExplosion"
+  },
+  "lewis": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "recoil": 2.5,
+    "sound": "mg2",
+    "slowness": 2,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 47,
+    "reloadTime": 100,
+    "bullet": "zex:762m",
+    "damageType": "override"
   },
   "m4": {
     "damage": 7,
@@ -287,6 +339,19 @@ export const gunData = {
     "maxGunAmmo": 30,
     "reloadTime": 60,
     "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "m14": {
+    "damage": 12,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 2.4000000000000004,
+    "fireOnReload": false,
+    "maxGunAmmo": 10,
+    "reloadTime": 80,
+    "bullet": "zex:762m",
     "damageType": "override"
   },
   "m16a1": {
@@ -419,6 +484,45 @@ export const gunData = {
     "bullet": "zex:12m",
     "damageType": "override"
   },
+  "m590_frag": {
+    "damage": 3.6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m590_srag": {
+    "damage": 28,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m590_db": {
+    "damage": 1.5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
   "m870": {
     "damage": 2,
     "damageIgnoreDef": 0,
@@ -432,8 +536,86 @@ export const gunData = {
     "bullet": "zex:12m",
     "damageType": "override"
   },
+  "m870_frag": {
+    "damage": 3.6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 4,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m870_srag": {
+    "damage": 28,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 4,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m870_db": {
+    "damage": 1.5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 4,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
   "m1014": {
-    "damage": 3,
+    "damage": 2,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m1014_frag": {
+    "damage": 3.6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m1014_srag": {
+    "damage": 28,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m1014_db": {
+    "damage": 1.5,
     "damageIgnoreDef": 0,
     "recoil": 2.0,
     "sound": "sg",
@@ -586,6 +768,19 @@ export const gunData = {
     "bullet": "zex:mm9",
     "damageType": "override"
   },
+  "ptrd": {
+    "damage": 50,
+    "damageIgnoreDef": 1,
+    "recoil": 5.0,
+    "sound": "m82",
+    "slowness": 0,
+    "speed": 3.2,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 50,
+    "bullet": "zex:1270m",
+    "damageType": "entityExplosion"
+  },
   "qbz95": {
     "damage": 8,
     "damageIgnoreDef": 0,
@@ -638,6 +833,45 @@ export const gunData = {
     "bullet": "zex:12m",
     "damageType": "override"
   },
+  "saiga12_frag": {
+    "damage": 3.6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 6,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "saiga12_srag": {
+    "damage": 28,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 6,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "saiga12_db": {
+    "damage": 1.5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 6,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
   "scar": {
     "damage": 10,
     "damageIgnoreDef": 0,
@@ -647,6 +881,19 @@ export const gunData = {
     "speed": 1.2000000000000002,
     "fireOnReload": false,
     "maxGunAmmo": 20,
+    "reloadTime": 80,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "stg44": {
+    "damage": 6,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "r1",
+    "slowness": 0,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
     "reloadTime": 80,
     "bullet": "zex:762m",
     "damageType": "override"
@@ -726,45 +973,6 @@ export const gunData = {
     "reloadTime": 100,
     "bullet": "zex:40m",
     "damageType": "entityExplosion"
-  },
-  "ptrd": {
-    "damage": 50,
-    "damageIgnoreDef": 1,
-    "recoil": 5.0,
-    "sound": "m82",
-    "slowness": 0,
-    "speed": 3.2,
-    "fireOnReload": false,
-    "maxGunAmmo": 1,
-    "reloadTime": 50,
-    "bullet": "zex:1270m",
-    "damageType": "entityExplosion"
-  },
-  "stg44": {
-    "damage": 6,
-    "damageIgnoreDef": 0,
-    "recoil": 1.5,
-    "sound": "r1",
-    "slowness": 0,
-    "speed": 1.2000000000000002,
-    "fireOnReload": false,
-    "maxGunAmmo": 30,
-    "reloadTime": 80,
-    "bullet": "zex:762m",
-    "damageType": "override"
-  },
-  "lewis": {
-    "damage": 8,
-    "damageIgnoreDef": 0,
-    "recoil": 2.5,
-    "sound": "mg2",
-    "slowness": 2,
-    "speed": 1.2000000000000002,
-    "fireOnReload": false,
-    "maxGunAmmo": 47,
-    "reloadTime": 100,
-    "bullet": "zex:762m",
-    "damageType": "override"
   },
   "vmg": {
     "damage": 4,

@@ -57,10 +57,30 @@
             255
           ],
           "default": 0
+        },
+        "zex:bullet": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
         }
       }
     },
     "component_groups": {
+      "timer": {
+        "minecraft:timer": {
+          "time": 2,
+          "time_down_event": {
+            "event": "fly_despawn"
+          }
+        }
+      },
+      "despawn": {
+        "minecraft:instant_despawn": {}
+      },
       "is_raid": {
         "minecraft:damage_sensor": {
           "triggers": [
@@ -798,6 +818,24 @@
           "table": "loot_tables/gun/lazer.json"
         }
       },
+      "lewis": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:lewis"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/lewis.json"
+        }
+      },
       "m4": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -868,6 +906,24 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/m10.json"
+        }
+      },
+      "m14": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m14"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m14.json"
         }
       },
       "m16a1": {
@@ -1266,6 +1322,24 @@
           "table": "loot_tables/gun/ppsh.json"
         }
       },
+      "ptrd": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 2.0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.5,
+          "attack_interval_max": 5.5,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ptrd"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ptrd.json"
+        }
+      },
       "qbz95": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -1356,6 +1430,24 @@
           "table": "loot_tables/gun/scar.json"
         }
       },
+      "stg44": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:stg44"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/stg44.json"
+        }
+      },
       "svd": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -1444,60 +1536,6 @@
         },
         "minecraft:equipment": {
           "table": "loot_tables/gun/xm8.json"
-        }
-      },
-      "ptrd": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 1,
-          "burst_interval": 2.0,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.5,
-          "attack_interval_max": 5.5,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:ptrd"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/gun/ptrd.json"
-        }
-      },
-      "stg44": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 10,
-          "burst_interval": 0.1,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:stg44"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/gun/stg44.json"
-        }
-      },
-      "lewis": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 3,
-          "burst_shots": 10,
-          "burst_interval": 0.1,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 3.0,
-          "attack_interval_max": 3.0,
-          "attack_radius": 20.0
-        },
-        "minecraft:shooter": {
-          "def": "fire:lewis"
-        },
-        "minecraft:equipment": {
-          "table": "loot_tables/gun/lewis.json"
         }
       },
       "vmg": {
@@ -2136,6 +2174,38 @@
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 10 + (query.equipment_count * Math.Random(1,3)) : 0"
       },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_mob_effect",
+                    "subject": "self",
+                    "value": "blindness",
+                    "operator": "=="
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "domain": "hand",
+                    "subject": "other",
+                    "value": "zex:stars"
+                  }
+                ]
+              },
+              "event": "flying",
+              "target": "self"
+            },
+            "use_item": true
+          }
+        ]
+      },
       "minecraft:collision_box": {
         "width": 0.5,
         "height": 1.8
@@ -2305,6 +2375,31 @@
       "minecraft:conditional_bandwidth_optimization": {}
     },
     "events": {
+      "flying": {
+        "queue_command": {
+          "command": [
+            "effect @s levitation 5 8 true",
+            "replaceitem entity @s slot.armor.head 0 gvcv5:stars_fly"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "timer"
+          ]
+        }
+      },
+      "fly_despawn": {
+        "queue_command": {
+          "command": [
+            "loot spawn ~~~ loot \"entities/ga_pow\""
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "despawn"
+          ]
+        }
+      },
       "gvcv5:entity_spawned_raid": {
         "sequence": [
           {
@@ -2911,6 +3006,13 @@
           ]
         }
       },
+      "lewis": {
+        "add": {
+          "component_groups": [
+            "lewis"
+          ]
+        }
+      },
       "m4": {
         "add": {
           "component_groups": [
@@ -2936,6 +3038,13 @@
         "add": {
           "component_groups": [
             "m10"
+          ]
+        }
+      },
+      "m14": {
+        "add": {
+          "component_groups": [
+            "m14"
           ]
         }
       },
@@ -3093,6 +3202,13 @@
           ]
         }
       },
+      "ptrd": {
+        "add": {
+          "component_groups": [
+            "ptrd"
+          ]
+        }
+      },
       "qbz95": {
         "add": {
           "component_groups": [
@@ -3128,6 +3244,13 @@
           ]
         }
       },
+      "stg44": {
+        "add": {
+          "component_groups": [
+            "stg44"
+          ]
+        }
+      },
       "svd": {
         "add": {
           "component_groups": [
@@ -3160,27 +3283,6 @@
         "add": {
           "component_groups": [
             "xm8"
-          ]
-        }
-      },
-      "ptrd": {
-        "add": {
-          "component_groups": [
-            "ptrd"
-          ]
-        }
-      },
-      "stg44": {
-        "add": {
-          "component_groups": [
-            "stg44"
-          ]
-        }
-      },
-      "lewis": {
-        "add": {
-          "component_groups": [
-            "lewis"
           ]
         }
       },

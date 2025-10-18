@@ -1,0 +1,4400 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gvcv5:pmc_blue",
+      "spawn_category": "creature",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "scripts": {
+        "animate": [
+          "walk"
+        ]
+      },
+      "animations": {
+        "walk": "controller.animation.riderb1"
+      },
+      "properties": {
+        "zex:bullet_resistance": {
+          "client_sync": true,
+          "type": "float",
+          "range": [0,1],
+          "default": 0.8
+        },
+        "zex:is_scoping": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "zex:sights": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
+        },
+        "zex:burrel": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
+        },
+        "zex:grip": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
+        },
+        "zex:light": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
+        },
+        "zex:bullet": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
+        }
+      }
+    },
+    "component_groups": {
+      "attack": {
+        "minecraft:movement": {
+          "value": 0.25
+        },
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:behavior.find_mount": {
+          "priority": 1,
+          "within_radius": 16,
+          "start_delay": 15,
+          "max_failed_attempts": 20
+        }
+      },
+      "wait": {
+        "minecraft:movement": {
+          "value": 0
+        },
+        "minecraft:variant": {
+          "value": 2
+        }
+      },
+      "follow": {
+        "minecraft:movement": {
+          "value": 0.25
+        },
+        "minecraft:behavior.tempt": {
+          "priority": 0,
+          "speed_multiplier": 1.2,
+          "within_radius": 16,
+          "items": [
+            "zex:commandradio"
+          ]
+        },
+        "minecraft:variant": {
+          "value": 3
+        }
+      },
+      "default": {
+        "minecraft:movement": {
+          "value": 0.25
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "aa12": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:aa12"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/aa12.json"
+        }
+      },
+      "ak12": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ak12"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ak12.json"
+        }
+      },
+      "ak47": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ak47"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ak47.json"
+        }
+      },
+      "ak102": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ak102"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ak102.json"
+        }
+      },
+      "an94": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:an94"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/an94.json"
+        }
+      },
+      "awm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:awm"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/awm.json"
+        }
+      },
+      "dp28": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:dp28"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/dp28.json"
+        }
+      },
+      "famas": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:famas"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/famas.json"
+        }
+      },
+      "fgm148": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0.15000000000000002,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:fgm148"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/fgm148.json"
+        }
+      },
+      "fim92": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0.15000000000000002,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:fim92"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/fim92.json"
+        }
+      },
+      "g36": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:g36"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/g36.json"
+        }
+      },
+      "g3a3": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.2,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:g3a3"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/g3a3.json"
+        }
+      },
+      "glock17": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:glock17"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/glock17.json"
+        }
+      },
+      "glock18": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:glock18"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/glock18.json"
+        }
+      },
+      "hk416": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:hk416"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/hk416.json"
+        }
+      },
+      "lazer": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:lazer"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/lazer.json"
+        }
+      },
+      "lewis": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:lewis"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/lewis.json"
+        }
+      },
+      "m4": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 3,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.55,
+          "attack_interval_max": 0.55,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m4"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m4.json"
+        }
+      },
+      "m4a1": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m4a1"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m4a1.json"
+        }
+      },
+      "m9": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m9"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m9.json"
+        }
+      },
+      "m10": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m10"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m10.json"
+        }
+      },
+      "m16a1": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m16a1"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m16a1.json"
+        }
+      },
+      "m16a4": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 3,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.55,
+          "attack_interval_max": 0.55,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m16a4"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m16a4.json"
+        }
+      },
+      "m60": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m60"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m60.json"
+        }
+      },
+      "m72": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m72"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m72.json"
+        }
+      },
+      "m79": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m79"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m79.json"
+        }
+      },
+      "m82": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 2.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m82"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m82.json"
+        }
+      },
+      "m110": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.4,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m110"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m110.json"
+        }
+      },
+      "m202": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.25,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m202"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m202.json"
+        }
+      },
+      "m249": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m249"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m249.json"
+        }
+      },
+      "m590": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m590"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m590.json"
+        }
+      },
+      "m870": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m870"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m870.json"
+        }
+      },
+      "m1014": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m1014"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m1014.json"
+        }
+      },
+      "m1911": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:m1911"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/m1911.json"
+        }
+      },
+      "mg36": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mg36"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mg36.json"
+        }
+      },
+      "mg42": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mg42"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mg42.json"
+        }
+      },
+      "mosin": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mosin"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mosin.json"
+        }
+      },
+      "mp5": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mp5"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mp5.json"
+        }
+      },
+      "mp7": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mp7"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mp7.json"
+        }
+      },
+      "mp40": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:mp40"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/mp40.json"
+        }
+      },
+      "p90": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:p90"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/p90.json"
+        }
+      },
+      "pkm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:pkm"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/pkm.json"
+        }
+      },
+      "ppsh": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ppsh"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ppsh.json"
+        }
+      },
+      "ptrd": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 2.0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.5,
+          "attack_interval_max": 5.5,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ptrd"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/ptrd.json"
+        }
+      },
+      "qbz95": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:qbz95"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/qbz95.json"
+        }
+      },
+      "rpg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 1.55,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:rpg"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/rpg.json"
+        }
+      },
+      "rpk": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:rpk"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/rpk.json"
+        }
+      },
+      "saiga12": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:saiga12"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/saiga12.json"
+        }
+      },
+      "scar": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.2,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:scar"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/scar.json"
+        }
+      },
+      "stg44": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:stg44"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/stg44.json"
+        }
+      },
+      "svd": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.4,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:svd"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/svd.json"
+        }
+      },
+      "tt33": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.25,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:tt33"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/tt33.json"
+        }
+      },
+      "uzi": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:uzi"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/uzi.json"
+        }
+      },
+      "vz61": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.05,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:vz61"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/vz61.json"
+        }
+      },
+      "xm8": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.5,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:xm8"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/xm8.json"
+        }
+      },
+      "vmg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:vmg"
+        }
+      },
+      "37mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:37mm"
+        }
+      },
+      "47mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:47mm"
+        }
+      },
+      "57mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:57mm"
+        }
+      },
+      "76mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:76mm"
+        }
+      },
+      "85mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:85mm"
+        }
+      },
+      "88mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:88mm"
+        }
+      },
+      "100mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:100mm"
+        }
+      },
+      "105mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:105mm"
+        }
+      },
+      "120mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:120mm"
+        }
+      },
+      "125mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:125mm"
+        }
+      },
+      "152mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 8.0,
+          "attack_interval_max": 8.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:152mm"
+        }
+      },
+      "20mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.25,
+          "attack_interval_max": 0.25,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mm"
+        }
+      },
+      "23mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.30000000000000004,
+          "attack_interval_max": 0.30000000000000004,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:23mm"
+        }
+      },
+      "ads_dp28": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_dp28"
+        }
+      },
+      "ads_m60": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_m60"
+        }
+      },
+      "ads_pkm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_pkm"
+        }
+      },
+      "37mmrocket": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:37mmrocket"
+        }
+      },
+      "76mmrocket": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:76mmrocket"
+        }
+      },
+      "agmissile": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:agmissile"
+        }
+      },
+      "vmgii": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:vmgii"
+        }
+      },
+      "vmgi": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:vmgi"
+        }
+      },
+      "aamissile": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:aamissile"
+        }
+      },
+      "bomb": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:bomb"
+        }
+      },
+      "bombii": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:bombii"
+        }
+      },
+      "hmg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.1,
+          "attack_interval_max": 0.1,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:hmg"
+        }
+      },
+      "7.62mmmgs": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:7.62mmmgs"
+        }
+      },
+      "7.62mmmg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:7.62mmmg"
+        }
+      },
+      "12.7mmmg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:12.7mmmg"
+        }
+      },
+      "14.5mmhmg": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.1,
+          "attack_interval_max": 0.1,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:14.5mmhmg"
+        }
+      },
+      "20mmmc": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mmmc"
+        }
+      },
+      "20mmmcheri": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mmmcheri"
+        }
+      },
+      "23mmmc": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.1,
+          "attack_interval_max": 0.1,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:23mmmc"
+        }
+      },
+      "25mmmc": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.45,
+          "attack_interval_max": 0.45,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:25mmmc"
+        }
+      },
+      "30mmmc": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.1,
+          "attack_interval_max": 0.1,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:30mmmc"
+        }
+      },
+      "23mmmcair": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:23mmmcair"
+        }
+      },
+      "20mmmcaird": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mmmcaird"
+        }
+      },
+      "20mmmcairw": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mmmcairw"
+        }
+      },
+      "30mmmcair": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:30mmmcair"
+        }
+      },
+      "20mmmcair": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.05,
+          "attack_interval_max": 0.05,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:20mmmcair"
+        }
+      },
+      "bombiii": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:bombiii"
+        }
+      },
+      "37mmrocketkatyusya": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:37mmrocketkatyusya"
+        }
+      }
+    },
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:skin_id": {
+        "value": 0
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 10 + (query.equipment_count * Math.Random(1,3)) : 0"
+      },
+      "minecraft:follow_range": {
+        "value": 48,
+        "max": 48
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1.8
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "pmc",
+          "playerp",
+          "blueteam",
+          "allied_soldier",
+          "mob"
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": false
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  }
+                ]
+              },
+              "event": "gvcv5:order",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:aa12"
+                  }
+                ]
+              },
+              "event": "aa12",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:ak12"
+                  }
+                ]
+              },
+              "event": "ak12",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:ak47"
+                  }
+                ]
+              },
+              "event": "ak47",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:ak102"
+                  }
+                ]
+              },
+              "event": "ak102",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:an94"
+                  }
+                ]
+              },
+              "event": "an94",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:awm"
+                  }
+                ]
+              },
+              "event": "awm",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:dp28"
+                  }
+                ]
+              },
+              "event": "dp28",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:famas"
+                  }
+                ]
+              },
+              "event": "famas",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:fgm148"
+                  }
+                ]
+              },
+              "event": "fgm148",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:fim92"
+                  }
+                ]
+              },
+              "event": "fim92",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:g36"
+                  }
+                ]
+              },
+              "event": "g36",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:g3a3"
+                  }
+                ]
+              },
+              "event": "g3a3",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:glock17"
+                  }
+                ]
+              },
+              "event": "glock17",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:glock18"
+                  }
+                ]
+              },
+              "event": "glock18",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:hk416"
+                  }
+                ]
+              },
+              "event": "hk416",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:lazer"
+                  }
+                ]
+              },
+              "event": "lazer",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:lewis"
+                  }
+                ]
+              },
+              "event": "lewis",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m4"
+                  }
+                ]
+              },
+              "event": "m4",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m4a1"
+                  }
+                ]
+              },
+              "event": "m4a1",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m9"
+                  }
+                ]
+              },
+              "event": "m9",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m10"
+                  }
+                ]
+              },
+              "event": "m10",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m16a1"
+                  }
+                ]
+              },
+              "event": "m16a1",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m16a4"
+                  }
+                ]
+              },
+              "event": "m16a4",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m60"
+                  }
+                ]
+              },
+              "event": "m60",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m72"
+                  }
+                ]
+              },
+              "event": "m72",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m79"
+                  }
+                ]
+              },
+              "event": "m79",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m82"
+                  }
+                ]
+              },
+              "event": "m82",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m110"
+                  }
+                ]
+              },
+              "event": "m110",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m202"
+                  }
+                ]
+              },
+              "event": "m202",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m249"
+                  }
+                ]
+              },
+              "event": "m249",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m590"
+                  }
+                ]
+              },
+              "event": "m590",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m870"
+                  }
+                ]
+              },
+              "event": "m870",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m1014"
+                  }
+                ]
+              },
+              "event": "m1014",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:m1911"
+                  }
+                ]
+              },
+              "event": "m1911",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mg36"
+                  }
+                ]
+              },
+              "event": "mg36",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mg42"
+                  }
+                ]
+              },
+              "event": "mg42",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mosin"
+                  }
+                ]
+              },
+              "event": "mosin",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mp5"
+                  }
+                ]
+              },
+              "event": "mp5",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mp7"
+                  }
+                ]
+              },
+              "event": "mp7",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:mp40"
+                  }
+                ]
+              },
+              "event": "mp40",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:p90"
+                  }
+                ]
+              },
+              "event": "p90",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:pkm"
+                  }
+                ]
+              },
+              "event": "pkm",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:ppsh"
+                  }
+                ]
+              },
+              "event": "ppsh",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:ptrd"
+                  }
+                ]
+              },
+              "event": "ptrd",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:qbz95"
+                  }
+                ]
+              },
+              "event": "qbz95",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:rpg"
+                  }
+                ]
+              },
+              "event": "rpg",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:rpk"
+                  }
+                ]
+              },
+              "event": "rpk",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:saiga12"
+                  }
+                ]
+              },
+              "event": "saiga12",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:scar"
+                  }
+                ]
+              },
+              "event": "scar",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:stg44"
+                  }
+                ]
+              },
+              "event": "stg44",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:svd"
+                  }
+                ]
+              },
+              "event": "svd",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:tt33"
+                  }
+                ]
+              },
+              "event": "tt33",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:uzi"
+                  }
+                ]
+              },
+              "event": "uzi",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:vz61"
+                  }
+                ]
+              },
+              "event": "vz61",
+              "target": "self"
+            }
+          },
+          {
+            "use_item": false,
+            "play_sounds": "enderchest.open",
+            "interact_text": "action.gvc.item",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_sneaking",
+                    "subject": "other",
+                    "value": true
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "blueteam"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "gun:xm8"
+                  }
+                ]
+              },
+              "event": "xm8",
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": false,
+        "avoid_sun": false,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
+      "minecraft:shooter": {
+        "def": "minecraft:arrow"
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 0,
+        "attack_interval_min": 1.0,
+        "attack_interval_max": 3.0,
+        "attack_radius": 15.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "all_of": [
+                      {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "allied_soldier"
+                      },
+                      {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "blueteam"
+                      }
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "player"
+                      },
+                      {
+                        "test": "has_tag",
+                        "operator": "==",
+                        "subject": "other",
+                        "value": "blueSub"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "operator": "!=",
+              "value": "playerp"
+            }
+          }
+        ]
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "blueteam"
+                },
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "subject": "other",
+                  "value": "blueSub"
+                }
+              ]
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "allied_soldier"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "blueteam"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "noteam"
+                }
+              ]
+            },
+            "max_dist": 42
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "monster"
+                }
+              ]
+            },
+            "max_dist": 42
+          }
+        ]
+      },
+      "minecraft:behavior.equip_item": {
+        "priority": 3
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        },
+        "trigger": "m4a1"
+      },
+      "minecraft:entity_transformed": {
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        },
+        "trigger": "m4a1"
+      },
+      "attack": {
+        "remove": {
+          "component_groups": [
+            "wait",
+            "follow",
+            "default"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "attack"
+          ]
+        }
+      },
+      "wait": {
+        "remove": {
+          "component_groups": [
+            "attack",
+            "follow",
+            "default"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "wait"
+          ]
+        }
+      },
+      "follow": {
+        "remove": {
+          "component_groups": [
+            "attack",
+            "wait",
+            "default"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "follow"
+          ]
+        }
+      },
+      "free": {
+        "remove": {
+          "component_groups": [
+            "attack",
+            "wait",
+            "follow"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "default"
+          ]
+        }
+      },
+      "gvcv5:order": {
+        "sequence": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_variant",
+                  "subject": "self",
+                  "operator": "equals",
+                  "value": 0
+                }
+              ]
+            },
+            "trigger": "attack",
+            "queue_command": {
+              "command": [
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
+              ],
+              "target": "other"
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "subject": "self",
+              "operator": "equals",
+              "value": 3
+            },
+            "trigger": "attack",
+            "queue_command": {
+              "command": [
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.attack.name\"}]}"
+              ],
+              "target": "other"
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "subject": "self",
+              "operator": "equals",
+              "value": 1
+            },
+            "trigger": "wait",
+            "queue_command": {
+              "command": [
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.wait.name\"}]}"
+              ],
+              "target": "other"
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "subject": "self",
+              "operator": "equals",
+              "value": 2
+            },
+            "trigger": "follow",
+            "queue_command": {
+              "command": [
+                "tellraw @s {\"rawtext\":[{\"translate\":\"gvcv5.order.follow.name\"}]}"
+              ],
+              "target": "other"
+            }
+          }
+        ]
+      },
+      "aa12": {
+        "add": {
+          "component_groups": [
+            "aa12"
+          ]
+        }
+      },
+      "ak12": {
+        "add": {
+          "component_groups": [
+            "ak12"
+          ]
+        }
+      },
+      "ak47": {
+        "add": {
+          "component_groups": [
+            "ak47"
+          ]
+        }
+      },
+      "ak102": {
+        "add": {
+          "component_groups": [
+            "ak102"
+          ]
+        }
+      },
+      "an94": {
+        "add": {
+          "component_groups": [
+            "an94"
+          ]
+        }
+      },
+      "awm": {
+        "add": {
+          "component_groups": [
+            "awm"
+          ]
+        }
+      },
+      "dp28": {
+        "add": {
+          "component_groups": [
+            "dp28"
+          ]
+        }
+      },
+      "famas": {
+        "add": {
+          "component_groups": [
+            "famas"
+          ]
+        }
+      },
+      "fgm148": {
+        "add": {
+          "component_groups": [
+            "fgm148"
+          ]
+        }
+      },
+      "fim92": {
+        "add": {
+          "component_groups": [
+            "fim92"
+          ]
+        }
+      },
+      "g36": {
+        "add": {
+          "component_groups": [
+            "g36"
+          ]
+        }
+      },
+      "g3a3": {
+        "add": {
+          "component_groups": [
+            "g3a3"
+          ]
+        }
+      },
+      "glock17": {
+        "add": {
+          "component_groups": [
+            "glock17"
+          ]
+        }
+      },
+      "glock18": {
+        "add": {
+          "component_groups": [
+            "glock18"
+          ]
+        }
+      },
+      "hk416": {
+        "add": {
+          "component_groups": [
+            "hk416"
+          ]
+        }
+      },
+      "lazer": {
+        "add": {
+          "component_groups": [
+            "lazer"
+          ]
+        }
+      },
+      "lewis": {
+        "add": {
+          "component_groups": [
+            "lewis"
+          ]
+        }
+      },
+      "m4": {
+        "add": {
+          "component_groups": [
+            "m4"
+          ]
+        }
+      },
+      "m4a1": {
+        "add": {
+          "component_groups": [
+            "m4a1"
+          ]
+        }
+      },
+      "m9": {
+        "add": {
+          "component_groups": [
+            "m9"
+          ]
+        }
+      },
+      "m10": {
+        "add": {
+          "component_groups": [
+            "m10"
+          ]
+        }
+      },
+      "m16a1": {
+        "add": {
+          "component_groups": [
+            "m16a1"
+          ]
+        }
+      },
+      "m16a4": {
+        "add": {
+          "component_groups": [
+            "m16a4"
+          ]
+        }
+      },
+      "m60": {
+        "add": {
+          "component_groups": [
+            "m60"
+          ]
+        }
+      },
+      "m72": {
+        "add": {
+          "component_groups": [
+            "m72"
+          ]
+        }
+      },
+      "m79": {
+        "add": {
+          "component_groups": [
+            "m79"
+          ]
+        }
+      },
+      "m82": {
+        "add": {
+          "component_groups": [
+            "m82"
+          ]
+        }
+      },
+      "m110": {
+        "add": {
+          "component_groups": [
+            "m110"
+          ]
+        }
+      },
+      "m202": {
+        "add": {
+          "component_groups": [
+            "m202"
+          ]
+        }
+      },
+      "m249": {
+        "add": {
+          "component_groups": [
+            "m249"
+          ]
+        }
+      },
+      "m590": {
+        "add": {
+          "component_groups": [
+            "m590"
+          ]
+        }
+      },
+      "m870": {
+        "add": {
+          "component_groups": [
+            "m870"
+          ]
+        }
+      },
+      "m1014": {
+        "add": {
+          "component_groups": [
+            "m1014"
+          ]
+        }
+      },
+      "m1911": {
+        "add": {
+          "component_groups": [
+            "m1911"
+          ]
+        }
+      },
+      "mg36": {
+        "add": {
+          "component_groups": [
+            "mg36"
+          ]
+        }
+      },
+      "mg42": {
+        "add": {
+          "component_groups": [
+            "mg42"
+          ]
+        }
+      },
+      "mosin": {
+        "add": {
+          "component_groups": [
+            "mosin"
+          ]
+        }
+      },
+      "mp5": {
+        "add": {
+          "component_groups": [
+            "mp5"
+          ]
+        }
+      },
+      "mp7": {
+        "add": {
+          "component_groups": [
+            "mp7"
+          ]
+        }
+      },
+      "mp40": {
+        "add": {
+          "component_groups": [
+            "mp40"
+          ]
+        }
+      },
+      "p90": {
+        "add": {
+          "component_groups": [
+            "p90"
+          ]
+        }
+      },
+      "pkm": {
+        "add": {
+          "component_groups": [
+            "pkm"
+          ]
+        }
+      },
+      "ppsh": {
+        "add": {
+          "component_groups": [
+            "ppsh"
+          ]
+        }
+      },
+      "ptrd": {
+        "add": {
+          "component_groups": [
+            "ptrd"
+          ]
+        }
+      },
+      "qbz95": {
+        "add": {
+          "component_groups": [
+            "qbz95"
+          ]
+        }
+      },
+      "rpg": {
+        "add": {
+          "component_groups": [
+            "rpg"
+          ]
+        }
+      },
+      "rpk": {
+        "add": {
+          "component_groups": [
+            "rpk"
+          ]
+        }
+      },
+      "saiga12": {
+        "add": {
+          "component_groups": [
+            "saiga12"
+          ]
+        }
+      },
+      "scar": {
+        "add": {
+          "component_groups": [
+            "scar"
+          ]
+        }
+      },
+      "stg44": {
+        "add": {
+          "component_groups": [
+            "stg44"
+          ]
+        }
+      },
+      "svd": {
+        "add": {
+          "component_groups": [
+            "svd"
+          ]
+        }
+      },
+      "tt33": {
+        "add": {
+          "component_groups": [
+            "tt33"
+          ]
+        }
+      },
+      "uzi": {
+        "add": {
+          "component_groups": [
+            "uzi"
+          ]
+        }
+      },
+      "vz61": {
+        "add": {
+          "component_groups": [
+            "vz61"
+          ]
+        }
+      },
+      "xm8": {
+        "add": {
+          "component_groups": [
+            "xm8"
+          ]
+        }
+      },
+      "vmg": {
+        "add": {
+          "component_groups": [
+            "vmg"
+          ]
+        }
+      },
+      "37mm": {
+        "add": {
+          "component_groups": [
+            "37mm"
+          ]
+        }
+      },
+      "47mm": {
+        "add": {
+          "component_groups": [
+            "47mm"
+          ]
+        }
+      },
+      "57mm": {
+        "add": {
+          "component_groups": [
+            "57mm"
+          ]
+        }
+      },
+      "76mm": {
+        "add": {
+          "component_groups": [
+            "76mm"
+          ]
+        }
+      },
+      "85mm": {
+        "add": {
+          "component_groups": [
+            "85mm"
+          ]
+        }
+      },
+      "88mm": {
+        "add": {
+          "component_groups": [
+            "88mm"
+          ]
+        }
+      },
+      "100mm": {
+        "add": {
+          "component_groups": [
+            "100mm"
+          ]
+        }
+      },
+      "105mm": {
+        "add": {
+          "component_groups": [
+            "105mm"
+          ]
+        }
+      },
+      "120mm": {
+        "add": {
+          "component_groups": [
+            "120mm"
+          ]
+        }
+      },
+      "125mm": {
+        "add": {
+          "component_groups": [
+            "125mm"
+          ]
+        }
+      },
+      "152mm": {
+        "add": {
+          "component_groups": [
+            "152mm"
+          ]
+        }
+      },
+      "20mm": {
+        "add": {
+          "component_groups": [
+            "20mm"
+          ]
+        }
+      },
+      "23mm": {
+        "add": {
+          "component_groups": [
+            "23mm"
+          ]
+        }
+      },
+      "ads_dp28": {
+        "add": {
+          "component_groups": [
+            "ads_dp28"
+          ]
+        }
+      },
+      "ads_m60": {
+        "add": {
+          "component_groups": [
+            "ads_m60"
+          ]
+        }
+      },
+      "ads_pkm": {
+        "add": {
+          "component_groups": [
+            "ads_pkm"
+          ]
+        }
+      },
+      "37mmrocket": {
+        "add": {
+          "component_groups": [
+            "37mmrocket"
+          ]
+        }
+      },
+      "76mmrocket": {
+        "add": {
+          "component_groups": [
+            "76mmrocket"
+          ]
+        }
+      },
+      "agmissile": {
+        "add": {
+          "component_groups": [
+            "agmissile"
+          ]
+        }
+      },
+      "vmgii": {
+        "add": {
+          "component_groups": [
+            "vmgii"
+          ]
+        }
+      },
+      "vmgi": {
+        "add": {
+          "component_groups": [
+            "vmgi"
+          ]
+        }
+      },
+      "aamissile": {
+        "add": {
+          "component_groups": [
+            "aamissile"
+          ]
+        }
+      },
+      "bomb": {
+        "add": {
+          "component_groups": [
+            "bomb"
+          ]
+        }
+      },
+      "bombii": {
+        "add": {
+          "component_groups": [
+            "bombii"
+          ]
+        }
+      },
+      "hmg": {
+        "add": {
+          "component_groups": [
+            "hmg"
+          ]
+        }
+      },
+      "7.62mmmgs": {
+        "add": {
+          "component_groups": [
+            "7.62mmmgs"
+          ]
+        }
+      },
+      "7.62mmmg": {
+        "add": {
+          "component_groups": [
+            "7.62mmmg"
+          ]
+        }
+      },
+      "12.7mmmg": {
+        "add": {
+          "component_groups": [
+            "12.7mmmg"
+          ]
+        }
+      },
+      "14.5mmhmg": {
+        "add": {
+          "component_groups": [
+            "14.5mmhmg"
+          ]
+        }
+      },
+      "20mmmc": {
+        "add": {
+          "component_groups": [
+            "20mmmc"
+          ]
+        }
+      },
+      "20mmmcheri": {
+        "add": {
+          "component_groups": [
+            "20mmmcheri"
+          ]
+        }
+      },
+      "23mmmc": {
+        "add": {
+          "component_groups": [
+            "23mmmc"
+          ]
+        }
+      },
+      "25mmmc": {
+        "add": {
+          "component_groups": [
+            "25mmmc"
+          ]
+        }
+      },
+      "30mmmc": {
+        "add": {
+          "component_groups": [
+            "30mmmc"
+          ]
+        }
+      },
+      "23mmmcair": {
+        "add": {
+          "component_groups": [
+            "23mmmcair"
+          ]
+        }
+      },
+      "20mmmcaird": {
+        "add": {
+          "component_groups": [
+            "20mmmcaird"
+          ]
+        }
+      },
+      "20mmmcairw": {
+        "add": {
+          "component_groups": [
+            "20mmmcairw"
+          ]
+        }
+      },
+      "30mmmcair": {
+        "add": {
+          "component_groups": [
+            "30mmmcair"
+          ]
+        }
+      },
+      "20mmmcair": {
+        "add": {
+          "component_groups": [
+            "20mmmcair"
+          ]
+        }
+      },
+      "bombiii": {
+        "add": {
+          "component_groups": [
+            "bombiii"
+          ]
+        }
+      },
+      "37mmrocketkatyusya": {
+        "add": {
+          "component_groups": [
+            "37mmrocketkatyusya"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -14,13 +14,13 @@
             "arrays": {
                 "geometries": {
                     "Array.item_geo": [
-                        "geometry.none",
+                        "geometry.undefined",
                         "geometry.suppressor"
                     ]
                 },
                 "textures": {
                     "Array.item_texture": [
-                        "texture.none",
+                        "texture.undefined",
                         "texture.suppressor"
                     ]
                 }

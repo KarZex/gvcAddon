@@ -567,6 +567,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			vehicle.remove();
 			player.removeTag(`cantriding`);
 		}
+        /*
 		else if( player.target != undefined ){
 			let abs_v = vehicle.getComponent(EntityComponentTypes.Movement).defaultValue;
 			vehicle.clearVelocity();
@@ -596,6 +597,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			}
 
 		}
+        */
 		else if( player.target == undefined ){
 			vehicle.clearVelocity();
 			let fly = 0;

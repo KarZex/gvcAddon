@@ -5,7 +5,8 @@
             "identifier": "gun:ak47",
             "materials": {
                 "default": "iron_golem",
-                "enchanted": "armor_enchanted"
+                "enchanted": "armor_enchanted",
+                "scope": "entity_alphablend"
             },
             "textures": {
                 "default": "textures/models/ak47.png",
@@ -20,11 +21,10 @@
                 "horo": "textures/models/horo.png",
                 "suppressor": "textures/models/suppressor.png",
                 "grip": "textures/models/grip.png",
-                "dotsight": "textures/models/dotsight.png",
+                "lasersight": "textures/models/lasersight.png",
                 "gripod": "textures/models/gripod.png",
                 "bipod": "textures/models/bipod.png",
-                "anglegrip": "textures/models/anglegrip.png",
-                "lasersight": "textures/models/lasersight.png"
+                "anglegrip": "textures/models/anglegrip.png"
             },
             "geometry": {
                 "default": "geometry.ak47",
@@ -37,11 +37,10 @@
                 "horo": "geometry.horo",
                 "suppressor": "geometry.suppressor",
                 "grip": "geometry.grip",
-                "dotsight": "geometry.dotsight",
+                "lasersight": "geometry.lasersight",
                 "gripod": "geometry.gripod",
                 "bipod": "geometry.bipod",
-                "anglegrip": "geometry.anglegrip",
-                "lasersight": "geometry.lasersight"
+                "anglegrip": "geometry.anglegrip"
             },
             "animations": {
                 "first": "animation.ak47.first2",
@@ -75,7 +74,7 @@
             },
             "render_controllers": [
                 {
-                    "controller.render.gun": "(!query.property('zex:is_scoping') || !c.is_first_person)"
+                    "controller.render.armor": "(!query.property('zex:is_scoping') || !c.is_first_person)"
                 },
                 {
                     "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person"

@@ -68,6 +68,15 @@
             255
           ],
           "default": 0
+        },
+        "zex:bullet": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 0
         }
       }
     },
@@ -115,6 +124,264 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:fire"
+            }
+          ]
+        }
+      },
+      "fire:frag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_frag"
+            }
+          ]
+        }
+      },
+      "fire:srag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_srag"
+            }
+          ]
+        }
+      },
+      "fire:db": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:ads_db"
             }
           ]
         }
@@ -201,6 +468,264 @@
               "num_to_spawn": 12,
               "single_use": true,
               "spawn_entity": "fire:ads_aa12"
+            }
+          ]
+        }
+      },
+      "fire:aa12_frag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:aa12_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_aa12_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_aa12_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_aa12_frag"
+            }
+          ]
+        }
+      },
+      "fire:aa12_srag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:aa12_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_aa12_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_aa12_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_aa12_srag"
+            }
+          ]
+        }
+      },
+      "fire:aa12_db": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:aa12_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_aa12_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_aa12_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:ads_aa12_db"
             }
           ]
         }
@@ -1581,6 +2106,92 @@
           ]
         }
       },
+      "fire:lewis": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:lewis"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_lewis"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_lewis"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_lewis"
+            }
+          ]
+        }
+      },
       "fire:m4": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -2007,6 +2618,92 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_m10"
+            }
+          ]
+        }
+      },
+      "fire:m14": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m14"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m14"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m14"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m14"
             }
           ]
         }
@@ -2871,6 +3568,264 @@
           ]
         }
       },
+      "fire:m590_frag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m590_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m590_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m590_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m590_frag"
+            }
+          ]
+        }
+      },
+      "fire:m590_srag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m590_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m590_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m590_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m590_srag"
+            }
+          ]
+        }
+      },
+      "fire:m590_db": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:m590_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m590_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m590_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m590_db"
+            }
+          ]
+        }
+      },
       "fire:m870": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -2957,6 +3912,264 @@
           ]
         }
       },
+      "fire:m870_frag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m870_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m870_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m870_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m870_frag"
+            }
+          ]
+        }
+      },
+      "fire:m870_srag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m870_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m870_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m870_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m870_srag"
+            }
+          ]
+        }
+      },
+      "fire:m870_db": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:m870_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m870_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m870_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m870_db"
+            }
+          ]
+        }
+      },
       "fire:m1014": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -3039,6 +4252,264 @@
               "num_to_spawn": 12,
               "single_use": true,
               "spawn_entity": "fire:ads_m1014"
+            }
+          ]
+        }
+      },
+      "fire:m1014_frag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m1014_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1014_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1014_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m1014_frag"
+            }
+          ]
+        }
+      },
+      "fire:m1014_srag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:m1014_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1014_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1014_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m1014_srag"
+            }
+          ]
+        }
+      },
+      "fire:m1014_db": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:m1014_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1014_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_m1014_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:ads_m1014_db"
             }
           ]
         }
@@ -3989,6 +5460,92 @@
           ]
         }
       },
+      "fire:ptrd": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ptrd"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ptrd"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_ptrd"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_ptrd"
+            }
+          ]
+        }
+      },
       "fire:qbz95": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -4333,6 +5890,264 @@
           ]
         }
       },
+      "fire:saiga12_frag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:saiga12_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_saiga12_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_saiga12_frag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_saiga12_frag"
+            }
+          ]
+        }
+      },
+      "fire:saiga12_srag": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:saiga12_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_saiga12_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_saiga12_srag"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_saiga12_srag"
+            }
+          ]
+        }
+      },
+      "fire:saiga12_db": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:saiga12_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_saiga12_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_saiga12_db"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 16,
+              "single_use": true,
+              "spawn_entity": "fire:ads_saiga12_db"
+            }
+          ]
+        }
+      },
       "fire:scar": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -4415,6 +6230,92 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_scar"
+            }
+          ]
+        }
+      },
+      "fire:stg44": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:stg44"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:light",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_stg44"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "==",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:adsh_stg44"
+            },
+            {
+              "filters": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "value": "scope"
+                },
+                {
+                  "test": "int_property",
+                  "domain": "zex:sights",
+                  "operator": "!=",
+                  "value": 0
+                }
+              ],
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:ads_stg44"
             }
           ]
         }
@@ -4931,264 +6832,6 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:ads_xm8"
-            }
-          ]
-        }
-      },
-      "fire:ptrd": {
-        "minecraft:spawn_entity": {
-          "entities": [
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:light",
-                  "operator": "==",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ptrd"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:light",
-                  "operator": "!=",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:adsh_ptrd"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:sights",
-                  "operator": "==",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:adsh_ptrd"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:sights",
-                  "operator": "!=",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ads_ptrd"
-            }
-          ]
-        }
-      },
-      "fire:stg44": {
-        "minecraft:spawn_entity": {
-          "entities": [
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:light",
-                  "operator": "==",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:stg44"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:light",
-                  "operator": "!=",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:adsh_stg44"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:sights",
-                  "operator": "==",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:adsh_stg44"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:sights",
-                  "operator": "!=",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ads_stg44"
-            }
-          ]
-        }
-      },
-      "fire:lewis": {
-        "minecraft:spawn_entity": {
-          "entities": [
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:light",
-                  "operator": "==",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:lewis"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "!=",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:light",
-                  "operator": "!=",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:adsh_lewis"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:sights",
-                  "operator": "==",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:adsh_lewis"
-            },
-            {
-              "filters": [
-                {
-                  "test": "has_tag",
-                  "operator": "==",
-                  "value": "scope"
-                },
-                {
-                  "test": "int_property",
-                  "domain": "zex:sights",
-                  "operator": "!=",
-                  "value": 0
-                }
-              ],
-              "max_wait_time": 0,
-              "min_wait_time": 0,
-              "num_to_spawn": 1,
-              "single_use": true,
-              "spawn_entity": "fire:ads_lewis"
             }
           ]
         }
@@ -6080,10 +7723,52 @@
           ]
         }
       },
+      "fire:frag": {
+        "add": {
+          "component_groups": [
+            "fire:frag"
+          ]
+        }
+      },
+      "fire:srag": {
+        "add": {
+          "component_groups": [
+            "fire:srag"
+          ]
+        }
+      },
+      "fire:db": {
+        "add": {
+          "component_groups": [
+            "fire:db"
+          ]
+        }
+      },
       "fire:aa12": {
         "add": {
           "component_groups": [
             "fire:aa12"
+          ]
+        }
+      },
+      "fire:aa12_frag": {
+        "add": {
+          "component_groups": [
+            "fire:aa12_frag"
+          ]
+        }
+      },
+      "fire:aa12_srag": {
+        "add": {
+          "component_groups": [
+            "fire:aa12_srag"
+          ]
+        }
+      },
+      "fire:aa12_db": {
+        "add": {
+          "component_groups": [
+            "fire:aa12_db"
           ]
         }
       },
@@ -6199,6 +7884,13 @@
           ]
         }
       },
+      "fire:lewis": {
+        "add": {
+          "component_groups": [
+            "fire:lewis"
+          ]
+        }
+      },
       "fire:m4": {
         "add": {
           "component_groups": [
@@ -6231,6 +7923,13 @@
         "add": {
           "component_groups": [
             "fire:m10"
+          ]
+        }
+      },
+      "fire:m14": {
+        "add": {
+          "component_groups": [
+            "fire:m14"
           ]
         }
       },
@@ -6304,6 +8003,27 @@
           ]
         }
       },
+      "fire:m590_frag": {
+        "add": {
+          "component_groups": [
+            "fire:m590_frag"
+          ]
+        }
+      },
+      "fire:m590_srag": {
+        "add": {
+          "component_groups": [
+            "fire:m590_srag"
+          ]
+        }
+      },
+      "fire:m590_db": {
+        "add": {
+          "component_groups": [
+            "fire:m590_db"
+          ]
+        }
+      },
       "fire:m870": {
         "add": {
           "component_groups": [
@@ -6311,10 +8031,52 @@
           ]
         }
       },
+      "fire:m870_frag": {
+        "add": {
+          "component_groups": [
+            "fire:m870_frag"
+          ]
+        }
+      },
+      "fire:m870_srag": {
+        "add": {
+          "component_groups": [
+            "fire:m870_srag"
+          ]
+        }
+      },
+      "fire:m870_db": {
+        "add": {
+          "component_groups": [
+            "fire:m870_db"
+          ]
+        }
+      },
       "fire:m1014": {
         "add": {
           "component_groups": [
             "fire:m1014"
+          ]
+        }
+      },
+      "fire:m1014_frag": {
+        "add": {
+          "component_groups": [
+            "fire:m1014_frag"
+          ]
+        }
+      },
+      "fire:m1014_srag": {
+        "add": {
+          "component_groups": [
+            "fire:m1014_srag"
+          ]
+        }
+      },
+      "fire:m1014_db": {
+        "add": {
+          "component_groups": [
+            "fire:m1014_db"
           ]
         }
       },
@@ -6395,6 +8157,13 @@
           ]
         }
       },
+      "fire:ptrd": {
+        "add": {
+          "component_groups": [
+            "fire:ptrd"
+          ]
+        }
+      },
       "fire:qbz95": {
         "add": {
           "component_groups": [
@@ -6423,10 +8192,38 @@
           ]
         }
       },
+      "fire:saiga12_frag": {
+        "add": {
+          "component_groups": [
+            "fire:saiga12_frag"
+          ]
+        }
+      },
+      "fire:saiga12_srag": {
+        "add": {
+          "component_groups": [
+            "fire:saiga12_srag"
+          ]
+        }
+      },
+      "fire:saiga12_db": {
+        "add": {
+          "component_groups": [
+            "fire:saiga12_db"
+          ]
+        }
+      },
       "fire:scar": {
         "add": {
           "component_groups": [
             "fire:scar"
+          ]
+        }
+      },
+      "fire:stg44": {
+        "add": {
+          "component_groups": [
+            "fire:stg44"
           ]
         }
       },
@@ -6469,27 +8266,6 @@
         "add": {
           "component_groups": [
             "fire:xm8"
-          ]
-        }
-      },
-      "fire:ptrd": {
-        "add": {
-          "component_groups": [
-            "fire:ptrd"
-          ]
-        }
-      },
-      "fire:stg44": {
-        "add": {
-          "component_groups": [
-            "fire:stg44"
-          ]
-        }
-      },
-      "fire:lewis": {
-        "add": {
-          "component_groups": [
-            "fire:lewis"
           ]
         }
       },

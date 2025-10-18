@@ -14,7 +14,7 @@
             "arrays": {
                 "geometries": {
                     "Array.item_geo": [
-                        "geometry.none",
+                        "geometry.undefined",
                         "geometry.scope6x",
                         "geometry.acog",
                         "geometry.coyote",
@@ -24,7 +24,7 @@
                 },
                 "textures": {
                     "Array.item_texture": [
-                        "texture.none",
+                        "texture.undefined",
                         "texture.scope6x",
                         "texture.acog",
                         "texture.coyote",

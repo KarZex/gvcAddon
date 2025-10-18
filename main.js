@@ -50,6 +50,14 @@ const headshotTypes = [
 	`gvcv5:pmc`
 ]
 
+function getGunProjectlie( id ){
+	let gunName = id;
+	if( gunName.includes("fire:adsh_") ){ gunName = gunName.replace("fire:adsh_",""); }
+	else if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
+	else if( gunName.includes("fire:") ){ gunName = gunName.replace("fire:",""); }
+	return gunName
+}
+
 function getrecoilResistance( id ){
 	if( id == 1 ){
 		return -0.5;
@@ -101,12 +109,14 @@ world.afterEvents.playerSpawn.subscribe( e => {
 
 function printDamage(player,damage,victim){
 	if( player.getDynamicProperty(`gvcv5:hitEntityId`) != victim.id ){
-		player.setDynamicProperty(`gvcv5:hitEntityId`,victim.id)
-		player.setDynamicProperty(`gvcv5:hitdamage`, 0 )
+		player.setDynamicProperty(`gvcv5:hitEntityId`,victim.id);
+		player.setDynamicProperty(`gvcv5:hitdamage`, 0 );
+		//print(`${victim.id}`);
 	}
 	const hitDamage = player.getDynamicProperty(`gvcv5:hitdamage`);
 	if( hitDamage == undefined ){ player.setDynamicProperty(`gvcv5:hitdamage`, 0 ); }
 	player.setDynamicProperty(`gvcv5:hitdamage`, hitDamage + damage);
+	//print(`${player.getDynamicProperty(`gvcv5:hitdamage`)}`);
 	world.scoreboard.getObjective(`printDamage`).setScore(player,40);
 	
 }
@@ -310,19 +320,23 @@ async function airstrike(projectile,level,team){
 	}
 }
 
-world.afterEvents.entitySpawn.subscribe( e => {
+world.afterEvents.entitySpawn.subscribe( async e => {
 	if( e.entity.typeId.includes("fire")  ){
 		const projectile = e.entity;
-		
 		const player = projectile.getComponent(EntityComponentTypes.Projectile).owner;
-		if( player.getProperty(`zex:burrel`) == 1 ){
+		//print(`${player.getDynamicProperty(`lastFire`)}`)
+		if( player.getProperty(`zex:burrel`) == 1 && !player.hasTag(`isRiding`) && !player.hasTag(`ride`) && !player.getDynamicProperty(`lastFire`) ){
+			player.setDynamicProperty(`lastFire`,true)
 			projectile.dimension.playSound(`fire.supu`,projectile.location,{ volume:0.5 });	
+			await system.waitTicks(1);
+			player.setDynamicProperty(`lastFire`,false)
 		}
-		else{
-			let gunName;
-			if( projectile.typeId.includes("fire:ads_") ){ gunName = projectile.typeId.replace("fire:ads_",""); }
-			else if( projectile.typeId.includes("fire:") ){ gunName = projectile.typeId.replace("fire:",""); }
+		else if( !player.getDynamicProperty(`lastFire`)){
+			player.setDynamicProperty(`lastFire`,true)
+			const gunName = getGunProjectlie(projectile.typeId);
 			projectile.dimension.playSound(`fire.${gunData[`${gunName}`][`sound`]}`,projectile.location,{ volume:128 });	
+			await system.waitTicks(1);
+			player.setDynamicProperty(`lastFire`,false)
 		}
 		if( player.typeId == `minecraft:player` && !player.hasTag("isRiding") ){
 			const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
@@ -337,7 +351,7 @@ world.afterEvents.entitySpawn.subscribe( e => {
 			}
 		}
 
-		if( player.typeId != `minecraft:player` ){
+		if( player.typeId != `minecraft:player` && player.hasTag(`ride`) ){
 			const ride = player.dimension.getEntities({location:player.location,families:[ `air` ],maxDistance:4,closest:1})[0];
 			if( ride != undefined ){
 				const V = projectile.getVelocity()
@@ -350,6 +364,9 @@ world.afterEvents.entitySpawn.subscribe( e => {
 				//print(`b`)
 			}
 		}
+		if( player.typeId != `minecraft:player` && player.getEffect(`blindness`) != undefined ){
+			projectile.remove();
+		}
 	}
 } )
 
@@ -357,14 +374,17 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 	if( e.projectile.typeId.includes("fire")){
 		let vict = e.getEntityHit().entity;
 		let def = 0;
-		let gunName = e.projectile.typeId;
+		const gunName = getGunProjectlie(e.projectile.typeId);
 		const owner = e.source;
-		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
-		else if( gunName.includes("fire:") ){ gunName = gunName.replace("fire:",""); }
 
-		const damageType = gunData[`${gunName}`][`damageType`];
-		const damageIgnoreDef = gunData[`${gunName}`][`damageIgnoreDef`];
+		let damageType = gunData[`${gunName}`][`damageType`];
+		let damageIgnoreDef = gunData[`${gunName}`][`damageIgnoreDef`];
 		const equipmentComp = vict.getComponent(EntityComponentTypes.Equippable)
+
+		if(  owner.getProperty(`zex:bullet`) == 2  ){
+			damageType = EntityDamageCause.entityExplosion;
+			damageIgnoreDef = 1;
+		}
 
 		if( equipmentComp && vict.typeId == "minecraft:player" ){
 			const slots = [ EquipmentSlot.Head,EquipmentSlot.Chest,EquipmentSlot.Legs,EquipmentSlot.Feet ];
@@ -412,7 +432,9 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		
 		if (def > 1){ def = 1 }
 
+		//get Damage
 		let damage = gunData[`${gunName}`][`damage`];
+
 		//Ench
 		if( owner.typeId == `minecraft:player` && !owner.hasTag("isRiding") ){
 			const gun = owner.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
@@ -430,6 +452,22 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		else{
 			damage = damage * world.getDynamicProperty("gvcv5:mobDamage");
 		}
+
+		//final damage
+		//print(`${owner.getProperty(`zex:bullet`)}`)
+		if( owner.getProperty(`zex:bullet`) == 1 && !owner.hasTag("isRiding") ){
+			damage = 2 * damage * (1 - def) * (1 - def);
+		}
+		else if( owner.getProperty(`zex:bullet`) == 3 && !owner.hasTag("isRiding") ){
+			damage = 0;
+			vict.addEffect("slowness", 200,{ amplifier: 10 });
+			vict.addEffect("blindness", 200,{ amplifier: 1 });
+			vict.addEffect("weakness", 200,{ amplifier: 255 });
+		}
+		else{
+			damage = damage * (1 - def);
+		}
+		
 		
 		//Override
         if( damageType == `override` && vict.getEffect("resistance") == undefined && vict.hasTag("antiBullet") == false ){
@@ -446,7 +484,6 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			}
             vict.applyKnockback({x:0,z:0},0);
         }
-		
 		else if( damageType != `override` ){
 			if( e.source.typeId == "minecraft:player" ){ printDamage(e.source,damage,vict); }
 			if( world.getDynamicProperty("gvcv5:nodiein1hit") && vict.typeId == "minecraft:player" ){
@@ -562,9 +599,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 	}
 	else if( e.id == "zex:horming"){
 		const missile = e.sourceEntity;
-		let gunName = missile.typeId
-		if( gunName.includes("fire:ads_") ){ gunName = gunName.replace("fire:ads_",""); }
-		else if( gunName.includes("fire:") ){ gunName = gunName.replace("fire:",""); }
+		const gunName = getGunProjectlie(missile.typeId);
 		const maxSpeed = gunData[`${gunName}`]["speed"];
 		if( missile.isValid ){
 			if( missile.getDynamicProperty(`age`) == undefined ){
@@ -660,7 +695,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		if( usedGun == undefined ){
 			usedGun = 0;
 		}
-		if( damage + usedGun < maxAmmo && !player.hasTag(`reload`) && !player.hasTag(`down`) && player.hasTag(`gun_already`) ){
+		if( damage + usedGun < maxAmmo && !player.hasTag(`reload`) && !player.hasTag(`down`) ){
 			
 			if( ench.hasEnchantment(`minecraft:unbreaking`) ){
 				const level = ench.getEnchantment(`minecraft:unbreaking`).level;
@@ -681,7 +716,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			try{
 				if( player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == `gun:${gunName}` ){
 					await system.waitTicks(2);
-					player.triggerEvent(`fire:${gunName}`);
+					player.triggerEvent(`fire:${gunName}_l`);
 				}
 			}catch{}
 		}
@@ -762,67 +797,67 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		let damage = dmgCom.damage;
 		let maxAmmo = dmgCom.maxDurability;
 		let usedGun = player.getDynamicProperty(`gvcv5:gunUsed`);
-		const holdTime = (Number(gunData[`${gunName}`]["reloadTime"]) - 40) / (5 - getrecoilResistance(player.getProperty(`zex:grip`)))
-		const usingGun = player.getDynamicProperty(`gvcv5:usingGun`);
-		if(gunSlot.getDynamicProperty(`gvcv5:gunId`) == undefined ){
-			gunSlot.setDynamicProperty(`gvcv5:gunId`,Math.floor(Math.random()*Math.pow(10,14)))
-		}
-		const gunId = gunSlot.getDynamicProperty(`gvcv5:gunId`)
 		//print(`${(usingGun)}`)
-		if( usingGun != gunId ){
-			player.removeTag(`gun_already`)
-			player.setDynamicProperty(`gvcv5:usingGun`,gunId);
-			if( gunSlot.getDynamicProperty("zex:sights") != undefined ){
-				const scope = gunSlot.getDynamicProperty("zex:sights");
-				player.setProperty(`zex:sights`,scope);
-			}
-			else{
-				player.setProperty(`zex:sights`,0);
-			}
-			if( gunSlot.getDynamicProperty("zex:burrel") != undefined ){
-				const scope = gunSlot.getDynamicProperty("zex:burrel");
-				player.setProperty(`zex:burrel`,scope);
-			}
-			else{
-				player.setProperty(`zex:burrel`,0);
-			}
-			if( gunSlot.getDynamicProperty("zex:grip") != undefined ){
-				const scope = gunSlot.getDynamicProperty("zex:grip");
-				player.setProperty(`zex:grip`,scope);
-			}
-			else{
-				player.setProperty(`zex:grip`,0);
-			}
-			await system.waitTicks(holdTime);
-			player.addTag(`gun_already`)
+		if( gunSlot.getDynamicProperty("zex:sights") != undefined ){
+			const scope = gunSlot.getDynamicProperty("zex:sights");
+			player.setProperty(`zex:sights`,scope);
+		}
+		else{
+			player.setProperty(`zex:sights`,0);
+		}
+		if( gunSlot.getDynamicProperty("zex:burrel") != undefined ){
+			const scope = gunSlot.getDynamicProperty("zex:burrel");
+			player.setProperty(`zex:burrel`,scope);
+		}
+		else{
+			player.setProperty(`zex:burrel`,0);
+		}
+		if( gunSlot.getDynamicProperty("zex:light") != undefined ){
+			const scope = gunSlot.getDynamicProperty("zex:light");
+			player.setProperty(`zex:light`,scope);
+		}
+		else{
+			player.setProperty(`zex:light`,0);
+		}
+		if( gunSlot.getDynamicProperty("zex:grip") != undefined ){
+			const scope = gunSlot.getDynamicProperty("zex:grip");
+			player.setProperty(`zex:grip`,scope);
+		}
+		else{
+			player.setProperty(`zex:grip`,0);
+		}
+		if( gunSlot.getDynamicProperty("zex:bullet") != undefined ){
+			const scope = gunSlot.getDynamicProperty("zex:bullet");
+			player.setProperty(`zex:bullet`,scope);
+		}
+		else{
+			player.setProperty(`zex:bullet`,0);
 		}
 
-		if( usingGun == gunId && player.hasTag(`gun_already`) ){
-			try{
-				if( player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
-					let gunOff = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand);
-					const dmgComOff = gunOff.getComponent(ItemComponentTypes.Durability);
-					damage = damage + dmgComOff.damage;
-					maxAmmo = maxAmmo * 2;
-				}
-			}catch{}
+		try{
+			if( player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
+				let gunOff = player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand);
+				const dmgComOff = gunOff.getComponent(ItemComponentTypes.Durability);
+				damage = damage + dmgComOff.damage;
+				maxAmmo = maxAmmo * 2;
+			}
+		}catch{}
 
-			if( usedGun == undefined ){
-				usedGun = 0;
-			}
-			if( slow > 0 ){
-				player.addEffect("slowness", 5,{ amplifier: slow });
-			}
-			if( !player.hasTag(`reload`) && !player.hasTag(`down`) ){
-				player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcv5:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo} ${getInventoryItem(player, Ammo)}\"}]}`)
-			}
-			if( damage >= maxAmmo && gunData[`${gunName}`]["fireOnReload"] == true ){
-				player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
-				player.addTag(`pistolreload`);
-			}
-			else if( damage >= maxAmmo ){
-				player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
-			}
+		if( usedGun == undefined ){
+			usedGun = 0;
+		}
+		if( slow > 0 ){
+			player.addEffect("slowness", 5,{ amplifier: slow });
+		}
+		if( !player.hasTag(`reload`) && !player.hasTag(`down`) ){
+			player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcv5:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo} ${getInventoryItem(player, Ammo)}\"}]}`)
+		}
+		if( damage >= maxAmmo && gunData[`${gunName}`]["fireOnReload"] == true ){
+			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
+			player.addTag(`pistolreload`);
+		}
+		else if( damage >= maxAmmo ){
+			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
 		}
 		
 		
@@ -897,14 +932,24 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 				p.addTag("reload")
 				gun.getComponent(ItemComponentTypes.Durability).damage = 0;
 				p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
+				if( isOffhand && p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
+					let gunOff = p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand);
+					gunOff.getComponent(ItemComponentTypes.Durability).damage = 0
+					p.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Offhand).setItem(gunOff);
+				}
 				world.scoreboard.getObjective("reloading").setScore(p,Number(reloadTime));
 				p.runCommand("playsound reload.ak47 @s ~~~ ");
 			}
-			if( ench.hasEnchantment(`minecraft:infinity`) ){
+			else if( ench.hasEnchantment(`minecraft:infinity`) ){
 				p.addEffect("slowness", reloadTime,{ amplifier: 2 });
 				p.addTag("reload")
 				gun.getComponent(ItemComponentTypes.Durability).damage = 0;
 				p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
+				if( isOffhand && p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
+					let gunOff = p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand);
+					gunOff.getComponent(ItemComponentTypes.Durability).damage = 0
+					p.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Offhand).setItem(gunOff);
+				}
 				world.scoreboard.getObjective("reloading").setScore(p,Number(reloadTime));
 				p.runCommand("playsound reload.ak47 @s ~~~ ");
 			}
@@ -912,14 +957,22 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 				if( c > damage ){
 					gun.getComponent(ItemComponentTypes.Durability).damage = 0;
 					p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
-					p.runCommand(`clear @s ${Ammo} 0 ${damage}`);
+
+					if( isOffhand && p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
+						p.runCommand(`clear @s ${Ammo} 0 ${damage*2}`);
+					}
+					else{
+						p.runCommand(`clear @s ${Ammo} 0 ${damage}`);
+					}
+						
 				}
 				else{
 					gun.getComponent(ItemComponentTypes.Durability).damage = damage - c;
 					p.getComponent(EntityComponentTypes.Equippable).setEquipment(EquipmentSlot.Mainhand,gun);
-					p.runCommand(`clear @s ${Ammo} 0 ${c}`);
+					p.runCommand(`clear @s ${Ammo} 0 9999`);
 				}
-				if( isOffhand &&p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
+				//print(`${isOffhand}`)
+				if( isOffhand && p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand).typeId == gun.typeId ){
 					let gunOff = p.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Offhand);
 					gunOff.getComponent(ItemComponentTypes.Durability).damage = gun.getComponent(ItemComponentTypes.Durability).damage;
 					p.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Offhand).setItem(gunOff);
@@ -991,7 +1044,12 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			Iform.title(`Attachment Table`);
 			Iform.body(`Attachment Table body`);
 			for( const attachType of attachTypes ){
-				Iform.button(`${attachType}`);
+				if(Array.isArray(gunAttach[`${gunId}`][`${attachType}`])){
+					Iform.button(`${attachType}`,`textures/items/attachment/${attachmentData[`${attachType}`][gun.getDynamicProperty(`zex:${attachType}`)]}`);
+				}
+				else{
+					Iform.button(`${attachType}`,`textures/items/attachment/not`);
+				}
 				attachTypes2.push(attachType)
 			}
 			Iform.show(player).then( r => {
@@ -1007,7 +1065,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 						phoneArray2.push(0);
 						for( let i = 1; i < attachmentData[`${attachType}`].length; i++ ){
 							if( getInventoryItem(player,`zex:${attachmentData[`${attachType}`][i]}`) > 0 && gun.getDynamicProperty(`zex:${attachType}`) != i ){
-								form.button(`item.zex:${attachmentData[`${attachType}`][i]}`);
+								form.button(`item.zex:${attachmentData[`${attachType}`][i]}`,`textures/items/attachment/${attachmentData[`${attachType}`][i]}`);
 								phoneArray.push(attachmentData[`${attachType}`][i])
 								phoneArray2.push(i);
 							}
@@ -1015,7 +1073,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 						form.show(player).then( result => {
 							if ( !result.canceled ){
 								if( result.selection != 0 ){
-									print(`${phoneArray2[result.selection]}`)
+									//print(`${phoneArray2[result.selection]}`)
 									player.runCommand(`clear @s zex:${phoneArray[result.selection-1]} 0 1` )
 								}
 								if( gun.getDynamicProperty(`zex:${attachType}`) != undefined && gun.getDynamicProperty(`zex:${attachType}`) != 0 ){
@@ -1105,6 +1163,22 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 				}
 			}
 		},)
+	}
+	else if( e.id == "gvcv5:printDamage" && !e.sourceEntity.hasTag(`no_print`) ){
+		const user = e.sourceEntity;
+		if( world.scoreboard.getObjective(`printDamage`).getScore(user) > 0 ){
+			if( user.getDynamicProperty(`gvcww2:headshot`) == 1 ){
+				user.runCommand(`title @s subtitle §4HEADSHOT§r`);
+			}
+			else{
+				user.runCommand(`title @s subtitle ""`);
+			}
+			user.runCommand(`titleraw @s title {"rawtext":[{"text":"\n\n\n\n\n${user.getDynamicProperty(`gvcv5:hitdamage`)}"}]}`);
+		}
+		else{
+			user.setDynamicProperty(`gvcv5:hitdamage`,0);
+			user.runCommand(`title @s clear`);
+		}
 	}
 	else if( e.id == `gvcv5:admin` ){
 		if( e.message== `guns` ){

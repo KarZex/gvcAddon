@@ -5,43 +5,22 @@
             "identifier": "gun:mg42",
             "materials": {
                 "default": "iron_golem",
-                "enchanted": "armor_enchanted"
+                "enchanted": "armor_enchanted",
+                "scope": "entity_alphablend"
             },
             "textures": {
                 "default": "textures/models/mg42.png",
                 "none": "textures/models/leemk4.png",
-                "scope6x": "textures/models/scope6x.png",
                 "scope6x_scope": "textures/models/scope2.png",
                 "scope2x": "textures/models/leemk4.png",
                 "scope2x_scope": "textures/models/scope.png",
-                "enchanted": "textures/misc/enchanted_item_glint",
-                "acog": "textures/models/acog.png",
-                "coyote": "textures/models/coyote.png",
-                "horo": "textures/models/horo.png",
-                "suppressor": "textures/models/suppressor.png",
-                "grip": "textures/models/grip.png",
-                "dotsight": "textures/models/dotsight.png",
-                "gripod": "textures/models/gripod.png",
-                "bipod": "textures/models/bipod.png",
-                "anglegrip": "textures/models/anglegrip.png",
-                "lasersight": "textures/models/lasersight.png"
+                "enchanted": "textures/misc/enchanted_item_glint"
             },
             "geometry": {
                 "default": "geometry.mg42",
                 "none": "geometry.sniperscope",
-                "scope6x": "geometry.scope6x",
                 "scope": "geometry.scope",
-                "scope2x": "geometry.scope2x",
-                "acog": "geometry.acog",
-                "coyote": "geometry.coyote",
-                "horo": "geometry.horo",
-                "suppressor": "geometry.suppressor",
-                "grip": "geometry.grip",
-                "dotsight": "geometry.dotsight",
-                "gripod": "geometry.gripod",
-                "bipod": "geometry.bipod",
-                "anglegrip": "geometry.anglegrip",
-                "lasersight": "geometry.lasersight"
+                "scope2x": "geometry.scope2x"
             },
             "animations": {
                 "first": "animation.mg42.first",
@@ -65,7 +44,9 @@
                 ]
             },
             "render_controllers": [
-                "controller.render.armor"
+                {
+                    "controller.render.armor": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mg42')"
+                }
             ]
         }
     }

@@ -13,3 +13,6 @@ name,id,type,attach_number,attach_is_2d_scope
 ,bullet_hp,bullet,1,
 ,bullet_ap,bullet,2,
 ,bullet_at,bullet,3,
+,bullet_srag,bullet,4,
+,bullet_frag,bullet,5,
+,bullet_db,bullet,6,

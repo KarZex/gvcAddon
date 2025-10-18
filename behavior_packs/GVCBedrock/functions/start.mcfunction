@@ -31,6 +31,7 @@ execute at @e[type=fire:hauneb] run particle gvcv5:fire_hauneb_particle ~~~
 execute at @e[type=fire:ads_lazer] run particle minecraft:redstone_wire_dust_particle ~~~
 execute at @e[type=fire:lazer] run particle minecraft:redstone_wire_dust_particle ~~~
 execute at @e[type=fire:fire] run particle minecraft:basic_flame_particle ~~~
+execute at @e[family=db] run particle minecraft:basic_flame_particle ~~~
 execute at @e[type=fire:famas] run particle minecraft:basic_smoke_particle ~~~
 execute at @e[family=ppbombbullet] run particle minecraft:basic_smoke_particle ~~~
 

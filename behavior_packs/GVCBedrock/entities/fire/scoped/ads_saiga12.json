@@ -34,12 +34,19 @@
             "damage": 0,
             "knockback": false
           },
-          "stick_in_ground": {}
+          "stick_in_ground": {},
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          }
         },
-        "power": 0.6000000000000001,
+        "power": 0.06,
         "gravity": 0,
         "inertia": 1.5,
-        "uncertainty_base": 5.0,
+        "uncertainty_base": 0.025,
         "uncertainty_multiplier": 0,
         "catch_fire": false,
         "anchor": 1
@@ -61,7 +68,7 @@
           "fuse_length": 0,
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
-          "power": 0,
+          "power": 2,
           "breaks_blocks": false
         }
       }

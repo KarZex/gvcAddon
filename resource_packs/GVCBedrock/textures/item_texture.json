@@ -1099,6 +1099,27 @@
     },
     "lasersight": {
       "textures": "textures/items/attachment/lasersight"
+    },
+    "bullet_hp": {
+      "textures": "textures/items/attachment/bullet_hp"
+    },
+    "bullet_ap": {
+      "textures": "textures/items/attachment/bullet_ap"
+    },
+    "bullet_at": {
+      "textures": "textures/items/attachment/bullet_at"
+    },
+    "bullet_srag": {
+      "textures": "textures/items/attachment/bullet_srag"
+    },
+    "bullet_frag": {
+      "textures": "textures/items/attachment/bullet_frag"
+    },
+    "bullet_db": {
+      "textures": "textures/items/attachment/bullet_db"
+    },
+    "m14": {
+      "textures": "textures/items/gun/m14"
     }
   }
 }
