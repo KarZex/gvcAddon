@@ -181,22 +181,22 @@ function mainWeapon2( player,vehicle ){
 }
 
 system.runInterval( () => {
-	const overTanks = world.getDimension(`minecraft:overworld`).getEntities({families:[`tank`]});
-	const netherTanks = world.getDimension(`minecraft:nether`).getEntities({families:[`tank`]});
-	const endTanks = world.getDimension(`minecraft:the_end`).getEntities({families:[`tank`]});
+	const overTanks = world.getDimension(`minecraft:overworld`).getEntities({families:[`plate`]});
+	const netherTanks = world.getDimension(`minecraft:nether`).getEntities({families:[`plate`]});
+	const endTanks = world.getDimension(`minecraft:the_end`).getEntities({families:[`plate`]});
 	for( let t of overTanks ){
 		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
-			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcww2.tank`,t.location,{ volume:8 })
+			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.tank`,t.location,{ volume:8 })
 		}
 	}
 	for( let t of netherTanks ){
 		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
-			world.getDimension(`minecraft:nether`).playSound(`sound.gvcww2.tank`,t.location,{ volume:8 })
+			world.getDimension(`minecraft:nether`).playSound(`sound.gvcv5.tank`,t.location,{ volume:8 })
 		}
 	}
 	for( let t of endTanks ){
 		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
-			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcww2.tank`,t.location,{ volume:8 })
+			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.tank`,t.location,{ volume:8 })
 		}
 	}
 },16)
@@ -493,7 +493,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
 		if( player.typeId == "minecraft:player" ){
 			const attack = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`gattack`];
-			const V = vehicle.dimension.getEntities({maxDistance:3,location:vehicle.location,excludeTypes:tankImmuneEntities,excludeNames:[`${player.nameTag}`],excludeFamilies:[`bullet`,`tank`]});
+			const V = vehicle.dimension.getEntities({maxDistance:3,location:vehicle.location,excludeTypes:tankImmuneEntities,excludeNames:[`${player.nameTag}`],excludeFamilies:[`bullet`,`vehicle`]});
 			if( V.length > 0 ){
 				for( let vict of V ){
 					vict.applyDamage(attack,{damagingEntity:player,cause:EntityDamageCause.entityAttack});

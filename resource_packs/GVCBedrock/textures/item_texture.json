@@ -1120,6 +1120,9 @@
     },
     "m14": {
       "textures": "textures/items/gun/m14"
+    },
+    "m1_abrams": {
+      "textures": "textures/items/m1_abrams"
     }
   }
 }

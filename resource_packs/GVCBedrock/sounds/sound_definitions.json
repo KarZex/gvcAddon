@@ -7,6 +7,15 @@
 				"sounds/reload_cannon"
 			]
 		},
+		"sound.gvcv5.tank": {
+         "__use_legacy_max_distance" : true,
+         "category" : "player",
+         "max_distance" : 48.0,
+         "min_distance" : null,
+		   "sounds": [
+			   "sounds/sound_tank"
+		   ]
+	   },
 		"sound.alert1": {
 			"category": "player",
 			"sounds": [

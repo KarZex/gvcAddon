@@ -368,7 +368,7 @@ for row in csv_reader:
             player_json["minecraft:entity"]["events"]["fire:{}_srag".format(gun_id)] = event 
 
             gundata_json["{}_db".format(gun_id)] = { 
-                "damage": gun_damage * 0.75,
+                "damage": float(gun_damage * 0.75),
                 "damageIgnoreDef":gun_ignore,
                 "recoil":gun_recoil,
                 "sound": gun_sound_true,
@@ -776,50 +776,64 @@ for row in csv_reader:
         with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"w") as f:
             json.dump(gun_entity,f,indent=2)
 
-        gun_entity_base = gun_entity
 
         if( "Sga" in gun_special ):
-            gun_entity_db = gun_entity_base
+
+            with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"r") as f:
+                gun_entity_base = json.load(f)
             gun_entity_srag = gun_entity_base
-            gun_entity_frag = gun_entity_base
             with open("behavior_packs/GVCBedrock/entities/fire/{}_srag.json".format(gun_id),"w") as f:
                 gun_entity_srag["minecraft:entity"]["description"]["identifier"] = "fire:{}_srag".format(gun_id)
                 json.dump(gun_entity_srag,f,indent=2)
-            with open("behavior_packs/GVCBedrock/entities/fire/{}_db.json".format(gun_id),"w") as f:
-                gun_entity_db["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append("db")
-                gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.02
-                gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
-                gun_entity_db["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": 0, "breaks_blocks": gun_break_block } }
-                gun_entity_db["minecraft:entity"]["description"]["identifier"] = "fire:{}_db".format(gun_id)
-                json.dump(gun_entity_db,f,indent=2)
-            with open("behavior_packs/GVCBedrock/entities/fire/{}_frag.json".format(gun_id),"w") as f:
-                gun_entity_frag["minecraft:entity"]["components"]["minecraft:type_family"]["family"].remove("db")
-                gun_entity_frag["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
-                gun_entity_frag["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": 2, "breaks_blocks": gun_break_block } }
-                gun_entity_frag["minecraft:entity"]["description"]["identifier"] = "fire:{}_frag".format(gun_id)
-                json.dump(gun_entity_frag,f,indent=2)
 
             with open("behavior_packs/GVCBedrock/entities/fire/scoped/{}_srag.json".format(gun_id),"w") as f:
                 gun_entity_srag["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = 0
                 gun_entity_srag["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}_srag".format(gun_id)
                 json.dump(gun_entity_srag,f,indent=2)
-            with open("behavior_packs/GVCBedrock/entities/fire/scoped/{}_db.json".format(gun_id),"w") as f:
-                gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 1
-                gun_entity_db["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}_db".format(gun_id)
-                json.dump(gun_entity_db,f,indent=2)
-            with open("behavior_packs/GVCBedrock/entities/fire/scoped/{}_frag.json".format(gun_id),"w") as f:
-                gun_entity_frag["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = 0
-                gun_entity_frag["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}_frag".format(gun_id)
-                json.dump(gun_entity_frag,f,indent=2)
 
             with open("behavior_packs/GVCBedrock/entities/fire/scoped2/{}_srag.json".format(gun_id),"w") as f:
                 gun_entity_srag["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
                 gun_entity_srag["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}_srag".format(gun_id)
                 json.dump(gun_entity_srag,f,indent=2)
+
+            
+            with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"r") as f:
+                gun_entity_base = json.load(f)
+            gun_entity_db = gun_entity_base
+            with open("behavior_packs/GVCBedrock/entities/fire/{}_db.json".format(gun_id),"w") as f:
+                gun_entity_db["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append("db")
+                gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.01
+                gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["catch_fire"] = True
+                gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["catch_fire"] = True
+                gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+                gun_entity_db["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": 0, "breaks_blocks": gun_break_block } }
+                gun_entity_db["minecraft:entity"]["description"]["identifier"] = "fire:{}_db".format(gun_id)
+                json.dump(gun_entity_db,f,indent=2)
+
+            with open("behavior_packs/GVCBedrock/entities/fire/scoped/{}_db.json".format(gun_id),"w") as f:
+                gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 1
+                gun_entity_db["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}_db".format(gun_id)
+                json.dump(gun_entity_db,f,indent=2)
+
             with open("behavior_packs/GVCBedrock/entities/fire/scoped2/{}_db.json".format(gun_id),"w") as f:
                 gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 4
                 gun_entity_db["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}_db".format(gun_id)
                 json.dump(gun_entity_db,f,indent=2)
+
+            with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"r") as f:
+                gun_entity_base = json.load(f)
+            gun_entity_frag = gun_entity_base
+            with open("behavior_packs/GVCBedrock/entities/fire/{}_frag.json".format(gun_id),"w") as f:
+                gun_entity_frag["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+                gun_entity_frag["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": 2, "breaks_blocks": gun_break_block } }
+                gun_entity_frag["minecraft:entity"]["description"]["identifier"] = "fire:{}_frag".format(gun_id)
+                json.dump(gun_entity_frag,f,indent=2)
+
+            with open("behavior_packs/GVCBedrock/entities/fire/scoped/{}_frag.json".format(gun_id),"w") as f:
+                gun_entity_frag["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = 0
+                gun_entity_frag["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}_frag".format(gun_id)
+                json.dump(gun_entity_frag,f,indent=2)
+
             with open("behavior_packs/GVCBedrock/entities/fire/scoped2/{}_frag.json".format(gun_id),"w") as f:
                 gun_entity_frag["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
                 gun_entity_frag["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}_frag".format(gun_id)

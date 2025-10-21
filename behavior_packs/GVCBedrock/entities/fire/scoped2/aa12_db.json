@@ -12,7 +12,8 @@
       "minecraft:type_family": {
         "family": [
           "bullet",
-          "sgbullet"
+          "sgbullet",
+          "db"
         ]
       },
       "minecraft:explode": {
@@ -35,6 +36,7 @@
             "knockback": false
           },
           "stick_in_ground": {},
+          "catch_fire": true,
           "definition_event": {
             "affectProjectile": true,
             "eventTrigger": {
@@ -43,12 +45,12 @@
             }
           }
         },
-        "power": 0.1,
+        "power": 0.05,
         "gravity": 0,
         "inertia": 1.5,
         "uncertainty_base": 10.0,
         "uncertainty_multiplier": 0,
-        "catch_fire": false,
+        "catch_fire": true,
         "anchor": 1
       },
       "minecraft:physics": {}
@@ -68,7 +70,7 @@
           "fuse_length": 0,
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
-          "power": 2,
+          "power": 0,
           "breaks_blocks": false
         }
       }

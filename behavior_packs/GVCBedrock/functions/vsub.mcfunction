@@ -217,3 +217,10 @@ execute if entity @e[r=4,type=vehicle:panzer] run scoreboard players add @s[scor
 
 scoreboard players set @s maxsubcool 20
 execute if entity @e[r=4,type=vehicle:panzer] run scoreboard players set @s scool 2
+
+execute if entity @e[r=4,type=vehicle:m1_abrams] run event entity @s[scores={subWeapon=..30}] fire:vmg
+
+execute if entity @e[r=4,type=vehicle:m1_abrams] run scoreboard players add @s[scores={subWeapon=..30}] subWeapon 1
+
+scoreboard players set @s maxsubcool 30
+execute if entity @e[r=4,type=vehicle:m1_abrams] run scoreboard players set @s scool 2

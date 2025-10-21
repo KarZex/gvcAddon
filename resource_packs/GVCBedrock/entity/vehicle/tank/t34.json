@@ -11,17 +11,19 @@
         "default": "geometry.t34"
       },
       "animations": {
-        "look_at_target": "animation.tank"
+        "look_at_target": "animation.tankaim"
       },
       "scripts": {
         "animate": [
-          "look_at_target"
+					{
+						"look_at_target": "query.has_rider"
+					}
         ]
       },
-	  "spawn_egg":{
-	  "texture":"t34",
-	  "texture_index":0
-	  },
+      "spawn_egg":{
+      "texture":"t34",
+      "texture_index":0
+      },
       "render_controllers": [ "controller.render.iron_golem" ]
     }
   }

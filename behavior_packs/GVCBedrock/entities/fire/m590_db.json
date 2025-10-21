@@ -36,6 +36,7 @@
             "knockback": false
           },
           "stick_in_ground": {},
+          "catch_fire": true,
           "definition_event": {
             "affectProjectile": true,
             "eventTrigger": {
@@ -44,12 +45,12 @@
             }
           }
         },
-        "power": 0.06,
+        "power": 0.03,
         "gravity": 0,
         "inertia": 1.5,
         "uncertainty_base": 7.5,
         "uncertainty_multiplier": 0,
-        "catch_fire": false,
+        "catch_fire": true,
         "anchor": 1
       },
       "minecraft:physics": {}

@@ -3705,6 +3705,11 @@
         "queue_command": {
           "command": "ride @s summon_ride vehicle:panzer no_ride_change summon_enemy"
         }
+      },
+      "vehicle:m1_abrams": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m1_abrams no_ride_change summon_enemy"
+        }
       }
     }
   }

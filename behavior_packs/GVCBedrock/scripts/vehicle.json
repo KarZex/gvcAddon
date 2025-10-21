@@ -405,5 +405,16 @@
     "turn": 1.0,
     "gattack": 0,
     "FuelPerSecond": 0
+  },
+  "m1_abrams": {
+    "type": "tank",
+    "speed": 0.2,
+    "sub": "vmg",
+    "main1": "120mm",
+    "main2": "",
+    "main3": "",
+    "turn": 0.0,
+    "gattack": 20,
+    "FuelPerSecond": 0
   }
 }

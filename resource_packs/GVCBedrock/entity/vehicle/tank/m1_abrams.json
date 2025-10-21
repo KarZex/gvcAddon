@@ -2,13 +2,13 @@
   "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
-      "identifier": "vehicle:t55",
+      "identifier": "vehicle:m1_abrams",
       "materials": { "default": "iron_golem" },
       "textures": {
-        "default": "textures/entity/t55"
+        "default": "textures/entity/m1_abrams"
       },
       "geometry": {
-        "default": "geometry.t55"
+        "default": "geometry.m1_abrams"
       },
       "animations": {
         "look_at_target": "animation.tankaim"
@@ -21,7 +21,7 @@
         ]
       },
       "spawn_egg":{
-      "texture":"t55",
+      "texture":"m1_abrams",
       "texture_index":0
       },
       "render_controllers": [ "controller.render.iron_golem" ]

@@ -52,6 +52,14 @@
 				}
 			}
 		},
+		"animation.tankaim": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [0, "360 + q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				}
+			}
+		},
 		"animation.airmig172": {
 			"loop": true,
 			"bones": {
