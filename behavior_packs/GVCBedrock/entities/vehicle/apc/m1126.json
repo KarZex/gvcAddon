@@ -188,7 +188,8 @@
         "family": [
           "vehicle",
           "playerfire",
-          "plate"
+          "plate",
+          "tank"
         ]
       },
       "minecraft:fire_immune": {},

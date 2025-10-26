@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:vads",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/vads"
+      },
+      "geometry": {
+        "default": "geometry.vads"
+      },
+      "animations": {
+        "look_at_target": "animation.apcgunaim"
+      },
+      "scripts": {
+        "animate": [
+					{
+						"look_at_target": "query.has_rider"
+					}
+        ]
+      },
+      "spawn_egg":{
+      "texture":"vads",
+      "texture_index":0
+      },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

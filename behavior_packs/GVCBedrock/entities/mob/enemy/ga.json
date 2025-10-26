@@ -681,8 +681,8 @@
           "burst_interval": 0.15000000000000002,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 8.0,
-          "attack_interval_max": 8.0,
+          "attack_interval_min": 6.0,
+          "attack_interval_max": 6.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -699,8 +699,8 @@
           "burst_interval": 0.15000000000000002,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 8.0,
-          "attack_interval_max": 8.0,
+          "attack_interval_min": 6.0,
+          "attack_interval_max": 6.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -987,8 +987,8 @@
           "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 8.0,
-          "attack_interval_max": 8.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -1005,8 +1005,8 @@
           "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 8.0,
-          "attack_interval_max": 8.0,
+          "attack_interval_min": 6.0,
+          "attack_interval_max": 6.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -1329,8 +1329,8 @@
           "burst_interval": 2.0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.5,
-          "attack_interval_max": 5.5,
+          "attack_interval_min": 4.5,
+          "attack_interval_max": 4.5,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -1365,8 +1365,8 @@
           "burst_interval": 1.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 8.0,
-          "attack_interval_max": 8.0,
+          "attack_interval_min": 7.0,
+          "attack_interval_max": 7.0,
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
@@ -3590,9 +3590,19 @@
           "command": "ride @s summon_ride vehicle:lav25 no_ride_change summon_enemy"
         }
       },
+      "vehicle:lav25aa": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:lav25aa no_ride_change summon_enemy"
+        }
+      },
       "vehicle:m113": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:m113 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:m113aa": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m113aa no_ride_change summon_enemy"
         }
       },
       "vehicle:m1126": {
@@ -3613,6 +3623,11 @@
       "vehicle:kv2": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:kv2 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:m1_abrams": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:m1_abrams no_ride_change summon_enemy"
         }
       },
       "vehicle:m1a2": {
@@ -3710,6 +3725,11 @@
           "command": "ride @s summon_ride vehicle:zu23 no_ride_change summon_enemy"
         }
       },
+      "vehicle:vads": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:vads no_ride_change summon_enemy"
+        }
+      },
       "vehicle:dp28set": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:dp28set no_ride_change summon_enemy"
@@ -3763,11 +3783,6 @@
       "vehicle:panzer": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:panzer no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:m1_abrams": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:m1_abrams no_ride_change summon_enemy"
         }
       }
     }

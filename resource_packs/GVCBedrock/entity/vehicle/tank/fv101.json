@@ -18,11 +18,15 @@
 	  },
     "scripts": {
       "animate": [ 
+					{
+						"look_at_target": "query.has_rider"
+					},
         { "fly": "query.skin_id == 1" }
       ]
     },
     "animations": {
-      "fly": "animation.fv101.para"
+      "fly": "animation.fv101.para",
+        "look_at_target": "animation.tankaim"
     },
       "render_controllers": [ 
         "controller.render.iron_golem",

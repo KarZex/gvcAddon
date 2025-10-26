@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "gvcv5:attach_table_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BBB",
+      "BAB",
+      "BBB"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:crafting_table",
+        "data": 0
+      },
+      "B": {
+        "item": "minecraft:oak_planks"
+      },
+      "C": {
+        "item": "minecraft:oak_planks"
+      },
+      "D": {
+        "item": "minecraft:book",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "gvcv5:attach_table",
+      "count": 1
+    }
+  }
+  
+}

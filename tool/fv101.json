@@ -123,7 +123,7 @@
         ]
       },
       "minecraft:type_family": {
-        "family": [ "vehicle","playerfire","plate" ]
+        "family": [ "vehicle","playerfire","plate","tank" ]
       },
       "minecraft:fire_immune": {
       },
@@ -141,7 +141,7 @@
         "max": 140
       },
       "minecraft:scale": {
-        "value": 0.8
+        "value": 0.9
       },
       "minecraft:movement": {
         "value": 0.25

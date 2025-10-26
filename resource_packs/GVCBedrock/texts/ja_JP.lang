@@ -73,14 +73,18 @@ item.spawn_egg.entity.gvcv5:a1.name=旗（同盟軍）
 item.spawn_egg.entity.gvcv5:a2.name=旗（ゲリラ）
 
 item.spawn_egg.entity.vehicle:m113.name=M113装甲車
+item.spawn_egg.entity.vehicle:m113aa.name=M113自走対空砲
 item.spawn_egg.entity.vehicle:aifv.name=AIFV
 item.spawn_egg.entity.vehicle:m1126.name=M1126装甲車
 item.spawn_egg.entity.vehicle:m1128.name=M1128戦車駆逐車
 item.spawn_egg.entity.vehicle:lav25.name=LAV25歩兵戦闘車
+item.spawn_egg.entity.vehicle:lav25aa.name=LAV25自走対空砲
 item.spawn_egg.entity.vehicle:btr60.name=BTR-60
 item.spawn_egg.entity.vehicle:t34.name=T-34
+item.spawn_egg.entity.vehicle:panzer.name=IV号戦車
 item.spawn_egg.entity.vehicle:fv101.name=FV101
 item.spawn_egg.entity.vehicle:m41.name=M41A3
+item.spawn_egg.entity.vehicle:m1_abrams.name=M1 エイブラムス
 item.spawn_egg.entity.vehicle:m1a2.name=M1A2
 item.spawn_egg.entity.vehicle:t72.name=T-72
 item.spawn_egg.entity.vehicle:m60a1.name=M60A1
@@ -91,15 +95,19 @@ item.spawn_egg.entity.vehicle:tech.name=テクニカルトラック
 
 entity.vehicle:btr60.name=BTR-60
 entity.vehicle:m113.name=M113装甲車
+entity.vehicle:m113aa.name=M113自走対空砲
 entity.vehicle:aifv.name=AIFV
 entity.vehicle:m1126.name=M1126装甲車
 entity.vehicle:m1128.name=M1128戦車駆逐車
 entity.vehicle:lav25.name=LAV25歩兵戦闘車
+entity.vehicle:lav25aa.name=LAV25自走対空砲
 entity.vehicle:t34.name=T-34
+entity.vehicle:panzer.name=IV号戦車
 entity.vehicle:g_heri.name=ゲリラヘリ
 entity.vehicle:r22.name=ゲリラ小型ヘリ
 entity.vehicle:ka60.name=Ka-60
 entity.vehicle:m41.name=M41A3
+entity.vehicle:m1_abrams.name=M1 エイブラムス
 entity.vehicle:m1a2.name=M1A2
 entity.vehicle:fv101.name=FV101
 entity.vehicle:t72.name=T-72
@@ -114,6 +122,8 @@ entity.vehicle:ah6.name=AH-6
 entity.vehicle:mi24d.name=Mi-24D
 entity.vehicle:ka50.name=Ka-50
 
+entity.vehicle:yak9.name=Yak-9
+entity.vehicle:il2.name=Il-2
 entity.vehicle:f16.name=F-16
 entity.vehicle:mig17.name=MiG-17
 entity.vehicle:su25.name=Su-25
@@ -127,7 +137,8 @@ item.spawn_egg.entity.vehicle:ka50.name=Ka-50
 item.spawn_egg.entity.vehicle:ka60.name=Ka-60
 item.spawn_egg.entity.vehicle:r22.name=ゲリラ小型ヘリ
 
-
+item.spawn_egg.entity.vehicle:yak9.name=Yak-9
+item.spawn_egg.entity.vehicle:il2.name=Il-2
 item.spawn_egg.entity.vehicle:f16.name=F-16
 item.spawn_egg.entity.vehicle:mig17.name=MiG-17
 item.spawn_egg.entity.vehicle:su25.name=Su-25
@@ -138,6 +149,7 @@ entity.vehicle:f18.name=F/A-18
 entity.vehicle:ah1s.name=AH-1S
 
 item.spawn_egg.entity.vehicle:20mmaa.name=20mm対空砲
+item.spawn_egg.entity.vehicle:vads.name=VADS対空砲
 item.spawn_egg.entity.vehicle:dp28set.name=固定機銃DP-28
 item.spawn_egg.entity.vehicle:m60set.name=固定機銃M60
 item.spawn_egg.entity.vehicle:pkmset.name=固定機銃PKM
@@ -146,6 +158,7 @@ item.spawn_egg.entity.vehicle:pak40.name=対戦車砲Pak40
 item.spawn_egg.entity.vehicle:zu23.name=Zu-23対空砲
 item.spawn_egg.entity.vehicle:g_heri.name=ゲリラヘリ
 item.spawn_egg.entity.vehicle:f117.name=F-117
+entity.vehicle:vads.name=VADS対空砲
 entity.vehicle:dp28set.name=固定機銃DP-28
 entity.vehicle:m60set.name=固定機銃M60
 entity.vehicle:pkmset.name=固定機銃PKM
@@ -284,22 +297,39 @@ action.gvc.ef=§cゲリラ拠点
 
 action.gvc.gc1=エリートゲリラ_強襲突撃兵
 
+### Guns name ###
+### History
+
+### From V1 Mar 14th 2021
 item.gun:ak47=AK47
-item.gun:m249=M249
-item.gun:lazer=レールガン
+item.gun:aug=AUG §4deleted
+##item.gun:lazer=Lazer §4deleted
 item.gun:m4=M4
 item.gun:m16a4=M16A4
 item.gun:scar=SCAR-H
 item.gun:awm=AWM
+
+### From V2 Mar 25th 2021
 item.gun:hk416=HK416
-item.gun:an94=AKS-74U
+item.gun:tt33=TT33
+item.gun:m1911=M1911
+##item.gun:p90=P90 §4deleted
+item.gun:mp5=MP5
+item.gun:m249=M249
+item.gun:bar=M1918 BAR §4deleted
+item.gun:g36=H&K G36
+item.gun:scarh=SCAR-H §4deleted
+
+### From V3 Apr 18th 2021
+item.gun:rpg=RPG-7
+##item.gun:an94=AN-94 §4deleted
 item.gun:dp28=DP-28
-item.gun:famas=MGL140
+##item.gun:famas=FA-MAS §4deleted
 item.gun:fire=火炎放射器
 item.gun:glock17=Glock17
 item.gun:glock18=Glock18c
 item.gun:k98=Karabiner 98 §4deleted
-item.gun:lewis=Lewis Gun §4deleted
+##item.gun:lewis=Lewis Gun §4deleted
 item.gun:m9=M9A1
 item.gun:m10=MAC-10
 item.gun:m82=Barrett M82
@@ -312,15 +342,16 @@ item.gun:svd=SVD
 item.gun:thom=Thompson SMG §4deleted
 item.gun:uzi=UZI
 item.gun:vz61=Vz 61
-item.gun:xm8=XM25
+##item.gun:xm8=H&K XM8 §4deleted
 item.gun:mp40=MP40
-item.gun:rpg=RPG-7
 item.gun:mosin=モシン・ナガン
 item.gun:l86=L85A2 §4deleted
-item.gun:tt33=TT33
-item.gun:m1911=M1911
+
+### From V4-1 (GVCReversion Addon V1.0) Dec 26th 2021
 item.gun:p90=パンツァーファウスト
-item.gun:mp5=MP5
+item.gun:famas=MGL140
+
+### From V4-2 (GVCReversion Addon V2.0) Dec 31th 2021
 item.gun:p38=P38 §4deleted
 item.gun:p226=P226 §4deleted
 item.gun:t100=TYPE100 §4deleted
@@ -329,8 +360,10 @@ item.gun:ump9=UMP9 §4deleted
 item.gun:mp7=MP7
 item.gun:t89=TYPE89 §4deleted
 item.gun:ak12=AK12
-item.gun:bar=M1918 BAR §4deleted
-item.gun:g36=H&K G36
+
+## From V5-1 (GVCBedrock Addon V1.0) Aug 24th 2024
+item.gun:lazer=レールガン
+item.gun:an94=AKS-74U
 item.gun:m870=M870
 item.gun:m590=M590
 item.gun:pkm=PKM
@@ -342,14 +375,54 @@ item.gun:m16a2=M16A2
 item.gun:m4a1=M4A1
 item.gun:m1014=M1014
 item.gun:ak102=AK102
+item.gun:xm8=XM25
 item.gun:saiga12=Saiga-12
 item.gun:m72=M72LAW
 item.gun:aa12=AA12
 item.gun:m202=M202
 item.gun:mg36=MG36
+
+## From V5-4 (GVCBedrock Addon V4.0) Jun 24th 2025
 item.gun:fgm148=FGM-148
 item.gun:fim92=FIM-92
 item.gun:qbz95=95式自動歩槍
+
+## From V5-5 (GVCBedrock Addon V5.0)
+item.gun:stg44=StG44
+item.gun:lewis=ルイス軽機関銃
+item.gun:ptrd=PTRD
+item.gun:m14=M14
+
+### Attachments
+tile.gvcv5:attach_table.name=アタッチメント台
+script.gvcv5.attachment_table.name=アタッチメント台
+script.gvcv5.attachment_table.body.name=装備したいアタッチメントを選択してください
+script.gvcv5.sights.name=SIGHTS
+script.gvcv5.burrel.name=BURREL
+script.gvcv5.grip.name=UNDERBARREL
+script.gvcv5.light.name=LASER/FLASHLIGHT
+script.gvcv5.bullet.name=BULLET
+script.gvcv5.remove_attach.name=アタッチメントを外す
+script.gvcv5.cant_attach.name=§cこの銃にはこのアタッチメントを適用できません!
+script.gvcv5.hold_gun.name=§c銃を保持してください!§r
+item.zex:scope6x=アタッチメント_高倍率スコープ
+item.zex:acog=アタッチメント_ACOG
+item.zex:coyote=アタッチメント_Coyote
+item.zex:horo=アタッチメント_ホロサイト
+item.zex:dotsight=アタッチメント_ドットサイト
+item.zex:suppressor=アタッチメント_サプレッサー
+item.zex:grip=アタッチメント_グリップ
+item.zex:gripod=アタッチメント_グリポッド
+item.zex:bipod=アタッチメント_バイポッド
+item.zex:anglegrip=アタッチメント_アングルグリップ
+item.zex:lasersight=アタッチメント_レーザーサイト
+item.zex:bullet_hp=アタッチメント_HP弾
+item.zex:bullet_ap=アタッチメント_AP弾
+item.zex:bullet_at=アタッチメント_麻酔弾
+item.zex:bullet_srag=アタッチメント_スラグ弾
+item.zex:bullet_frag=アタッチメント_フラグ弾
+item.zex:bullet_db=アタッチメント_ドラゴンブレス弾
+
 
 script.gvcv5:zex:12m.name=§412Gauge§r
 script.gvcv5:zex:556m.name=§6.22Cal§r
@@ -688,14 +761,21 @@ item.vehicle:pak40_spawn_egg=対戦車砲Pak40
 item.vehicle:zu23_spawn_egg=Zu-23対空砲
 item.vehicle:btr60_spawn_egg=BTR-60
 item.vehicle:m113_spawn_egg=M113装甲車
+item.vehicle:m113aa_spawn_egg=M113自走対空砲
+item.vehicle:vads_spawn_egg=VADS対空砲
+item.vehicle:panzer_spawn_egg=IV号戦車
+item.vehicle:yak9_spawn_egg=Yak-9
+item.vehicle:il2_spawn_egg=Il-2
 item.vehicle:aifv_spawn_egg=AIFV
 item.vehicle:m1126_spawn_egg=M1126装甲車
 item.vehicle:m1128_spawn_egg=M1128戦車駆逐車
 item.vehicle:lav25_spawn_egg=LAV25歩兵戦闘車
+item.vehicle:lav25aa_spawn_egg=LAV25自走対空砲
 item.vehicle:t34_spawn_egg=T-34
 item.vehicle:g_heri_spawn_egg=ゲリラヘリ
 item.vehicle:fv101_spawn_egg=FV101
 item.vehicle:m41_spawn_egg=M41A3
+item.vehicle:m1_abrams_spawn_egg=M1エイブラムス
 item.vehicle:m1a2_spawn_egg=M1A2
 item.vehicle:t72_spawn_egg=T-72
 item.vehicle:tech_spawn_egg=テクニカルトラック
@@ -856,6 +936,7 @@ script.gvcv5.downedbyblue.name=は§9青チーム§rによってダウンしま�
 script.gvcv5.downedbygreen.name=は§a緑チーム§rによってダウンしました
 script.gvcv5.downedbyyellow.name=は§e黄チーム§rによってダウンしました
 
+gvcv5..name=-----
 gvcv5.vmg.name=7.62mmMG
 gvcv5.37mm.name=37mmCannon
 gvcv5.47mm.name=47mmCannon

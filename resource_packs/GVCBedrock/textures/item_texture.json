@@ -35,8 +35,8 @@
     "km": {
       "textures": "textures/items/km"
     },
-    "an94": {
-      "textures": "textures/items/gun/an94"
+    "guerrilla_gb6": {
+      "textures": "textures/items/guerrilla_gb6"
     },
     "trenchclub": {
       "textures": "textures/items/trenchclub"
@@ -708,7 +708,7 @@
       "textures": "textures/items/f3"
     },
     "ah1s": {
-      "textures": "textures/items/ah1s"
+      "textures": "textures/items/vehicle/ah1s"
     },
     "f18": {
       "textures": "textures/items/f18"
@@ -729,43 +729,43 @@
       "textures": "textures/items/tech"
     },
     "m1a2": {
-      "textures": "textures/items/m1a2"
+      "textures": "textures/items/vehicle/m1a2"
     },
     "t72": {
-      "textures": "textures/items/t72"
+      "textures": "textures/items/vehicle/t72"
     },
     "m41": {
-      "textures": "textures/items/m41"
+      "textures": "textures/items/vehicle/m41"
     },
     "m60": {
       "textures": "textures/items/gun/m60"
     },
     "kv2": {
-      "textures": "textures/items/kv2"
+      "textures": "textures/items/vehicle/kv2"
     },
     "pt76": {
-      "textures": "textures/items/pt76"
+      "textures": "textures/items/vehicle/pt76"
     },
     "t55": {
-      "textures": "textures/items/t55"
+      "textures": "textures/items/vehicle/t55"
     },
     "t34": {
-      "textures": "textures/items/t34"
+      "textures": "textures/items/vehicle/t34"
     },
     "m113": {
-      "textures": "textures/items/m113"
+      "textures": "textures/items/vehicle/m113"
     },
     "m1128": {
-      "textures": "textures/items/m1128"
+      "textures": "textures/items/vehicle/m1128"
     },
     "lav25": {
-      "textures": "textures/items/lav25"
+      "textures": "textures/items/vehicle/lav25"
     },
     "m1126": {
-      "textures": "textures/items/m1126"
+      "textures": "textures/items/vehicle/m1126"
     },
     "aifv": {
-      "textures": "textures/items/aifv"
+      "textures": "textures/items/vehicle/aifv"
     },
     "ga_pow": {
       "textures": "textures/items/ga_pow"
@@ -810,46 +810,46 @@
       "textures": "textures/items/gun/m590"
     },
     "g_heri": {
-      "textures": "textures/items/g_heri"
+      "textures": "textures/items/vehicle/g_heri"
     },
     "ah6": {
-      "textures": "textures/items/ah6"
+      "textures": "textures/items/vehicle/ah6"
     },
     "mi24d": {
-      "textures": "textures/items/mi24d"
+      "textures": "textures/items/vehicle/mi24d"
     },
     "ka50": {
-      "textures": "textures/items/ka50"
+      "textures": "textures/items/vehicle/ka50"
     },
     "btr60": {
-      "textures": "textures/items/btr60"
+      "textures": "textures/items/vehicle/btr60"
     },
     "20mmaa": {
-      "textures": "textures/items/20mmaa"
+      "textures": "textures/items/vehicle/20mmaa"
     },
     "flak18": {
-      "textures": "textures/items/flak18"
+      "textures": "textures/items/vehicle/flak18"
     },
     "pak40": {
-      "textures": "textures/items/pak40"
+      "textures": "textures/items/vehicle/pak40"
     },
     "zu23": {
-      "textures": "textures/items/zu23"
+      "textures": "textures/items/vehicle/zu23"
     },
     "pkm": {
       "textures": "textures/items/gun/pkm"
     },
     "m60a1": {
-      "textures": "textures/items/m60a1"
+      "textures": "textures/items/vehicle/m60a1"
     },
     "dp28set": {
-      "textures": "textures/items/dp28set"
+      "textures": "textures/items/vehicle/dp28set"
     },
     "m60set": {
-      "textures": "textures/items/m60set"
+      "textures": "textures/items/vehicle/m60set"
     },
     "pkmset": {
-      "textures": "textures/items/pkmset"
+      "textures": "textures/items/vehicle/pkmset"
     },
     "beacon_item": {
       "textures": "textures/items/block/beacon"
@@ -936,7 +936,7 @@
       "textures": "textures/items/block/supplies"
     },
     "fv101": {
-      "textures": "textures/items/fv101"
+      "textures": "textures/items/vehicle/fv101"
     },
     "g3a3": {
       "textures": "textures/items/gun/g3a3"
@@ -1011,19 +1011,19 @@
       "textures": "textures/items/f35"
     },
     "mig17": {
-      "textures": "textures/items/mig17"
+      "textures": "textures/items/vehicle/mig17"
     },
     "su27": {
-      "textures": "textures/items/su27"
+      "textures": "textures/items/vehicle/su27"
     },
     "f16": {
-      "textures": "textures/items/f16"
+      "textures": "textures/items/vehicle/f16"
     },
     "su25": {
-      "textures": "textures/items/su25"
+      "textures": "textures/items/vehicle/su25"
     },
     "f117": {
-      "textures": "textures/items/f117"
+      "textures": "textures/items/vehicle/f117"
     },
     "fgm148": {
       "textures": "textures/items/gun/fgm148"
@@ -1044,19 +1044,19 @@
       "textures": "textures/items/gun/qbz95"
     },
     "r22": {
-      "textures": "textures/items/r22"
+      "textures": "textures/items/vehicle/r22"
     },
     "ka60": {
-      "textures": "textures/items/ka60"
+      "textures": "textures/items/vehicle/ka60"
     },
     "yak9": {
-      "textures": "textures/items/yak9"
+      "textures": "textures/items/vehicle/yak9"
     },
     "il2": {
-      "textures": "textures/items/il2"
+      "textures": "textures/items/vehicle/il2"
     },
     "panzer": {
-      "textures": "textures/items/panzer"
+      "textures": "textures/items/vehicle/panzer"
     },
     "ptrd": {
       "textures": "textures/items/gun/ptrd"
@@ -1122,7 +1122,19 @@
       "textures": "textures/items/gun/m14"
     },
     "m1_abrams": {
-      "textures": "textures/items/m1_abrams"
+      "textures": "textures/items/vehicle/m1_abrams"
+    },
+    "lav25aa": {
+      "textures": "textures/items/vehicle/lav25aa"
+    },
+    "vads": {
+      "textures": "textures/items/vehicle/vads"
+    },
+    "m113aa": {
+      "textures": "textures/items/vehicle/m113aa"
+    },
+    "an94": {
+      "textures": "textures/items/gun/an94"
     }
   }
 }

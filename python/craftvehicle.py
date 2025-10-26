@@ -213,7 +213,7 @@ for row in csv_reader:
             if v_main == "":
                 b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_sub)
 
-        item_json["texture_data"]["{}".format(v_id)] = { "textures": "textures/items/{}".format(v_id) }
+        item_json["texture_data"]["{}".format(v_id)] = { "textures": "textures/items/vehicle/{}".format(v_id) }
         print("created {}".format(v_id))
     row_count += 1
 

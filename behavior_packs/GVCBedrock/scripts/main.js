@@ -340,15 +340,15 @@ world.afterEvents.entitySpawn.subscribe( async e => {
 			await system.waitTicks(1);
 			player.setDynamicProperty(`lastFire`,false)
 		}
-		if( player.typeId == `minecraft:player` && !player.hasTag("isRiding") ){
+		if( player.typeId == `minecraft:player` && !player.hasTag("isRiding") && !player.hasTag(`ride`) ){
 			const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
 			const ench = gun.getItem().getComponent(ItemComponentTypes.Enchantable);
-			if( ench.hasEnchantment(`minecraft:flame`) || player.getProperty(`zex:bullet`) == 6 ){
+			if( ench.hasEnchantment(`minecraft:flame`) || player.getProperty(`zex:bullet`) == 6 && !player.hasTag("isRiding") ){
 				projectile.setOnFire(10,true);
 			}
 		}
 		else {
-			if( player.getDynamicProperty(`Ench_flame`) != undefined || player.getProperty(`zex:bullet`) == 6 ){
+			if( (player.getDynamicProperty(`Ench_flame`) != undefined || player.getProperty(`zex:bullet`) == 6)  && !player.hasTag(`isRiding`) ){
 				projectile.setOnFire(10,true);
 			}
 		}
@@ -1065,8 +1065,8 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			let attachTypes2 = []
 			const attachTypes = attachmentData[`attachTypes`];
 			const Iform = new ActionFormData();
-			Iform.title(`Attachment Table`);
-			Iform.body(`Attachment Table body`);
+			Iform.title(`script.gvcv5.attachment_table.name`);
+			Iform.body(`script.gvcv5.attachment_table.body.name`);
 			for( const attachType of attachTypes ){
 				if(Array.isArray(gunAttach[`${gunId}`][`${attachType}`])){
 					Iform.button(`${attachType}`,`textures/items/attachment/${attachmentData[`${attachType}`][gun.getDynamicProperty(`zex:${attachType}`)]}`);
@@ -1083,9 +1083,9 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 						let phoneArray = [  ]
 						let phoneArray2 = [  ]
 						const form = new ActionFormData();
-						form.title(`${attachType} Table`);
-						form.body(`${attachType} Table body`);
-						form.button(`none`);
+						form.title(`script.gvcv5.${attachType}.name`);
+						//form.body(`script.gvcv5.${attachType}.body.name`);
+						form.button(`script.gvcv5.remove_attach.name`);
 						phoneArray2.push(0);
 						for( let i of gunAttach[`${gunId}`][`${attachType}`] ){
 							if( getInventoryItem(player,`zex:${attachmentData[`${attachType}`][i]}`) > 0 && gun.getDynamicProperty(`zex:${attachType}`) != i ){
@@ -1109,7 +1109,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 						})
 					}
 					else{
-						player.sendMessage(`this gun can not apply this attachment!`);
+						player.sendMessage({translate:`script.gvcv5.cant_attach.name`});
 						player.runCommand(`scriptevent gvcv5:attach_table` );
 					}
 				}
@@ -1117,7 +1117,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 
 		}
 		else{
-			player.sendMessage(`Hold Gun!`)
+			player.sendMessage({ translate:`script.gvcv5.hold_gun.name`});
 		}
 		
 	}

@@ -17,6 +17,9 @@
             "/clear @s[tag=onAir] zex:mtype",
             "/clear @s[tag=onAir] spyglass",
             "/clear @s[tag=onAir] gun:no",
+            "/inputpermission set @s[tag=tank] move_left enabled",
+            "/inputpermission set @s[tag=tank] move_right enabled",
+            "/tag @s remove tank",
             "/tag @s remove onAir",
             "/tag @s remove air",
             "/tag @s remove heri"
@@ -26,6 +29,9 @@
           "on_entry": [
             "/tag @s add isRiding",
             "/effect @s resistance 99999 7 true",
+            "/execute if entity @e[r=4,family=tank] run tag @s add tank",
+            "/execute if entity @e[r=4,family=tank] run inputpermission set @s move_left disabled",
+            "/execute if entity @e[r=4,family=tank] run inputpermission set @s move_right disabled",
             "/execute if entity @e[r=4,family=heri] run tag @s add heri",
             "/execute if entity @e[r=4,family=heri] run tag @s add air",
             "/execute if entity @e[r=4,family=air] run tag @s add air"

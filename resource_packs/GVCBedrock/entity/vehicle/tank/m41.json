@@ -1,20 +1,37 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "vehicle:m41",
       "materials": { "default": "iron_golem" },
       "textures": {
-        "default": "textures/entity/m41"
+        "default": "textures/entity/m41",
+        "para": "textures/entity/tankpara"
       },
       "geometry": {
-        "default": "geometry.m41"
+        "default": "geometry.m41",
+        "para": "geometry.tankair"
       },
 	  "spawn_egg":{
 	  "texture":"m41",
 	  "texture_index":0
 	  },
-      "render_controllers": [ "controller.render.iron_golem" ]
+    "scripts": {
+      "animate": [ 
+					{
+						"look_at_target": "query.has_rider"
+					},
+        { "fly": "query.skin_id == 1" }
+      ]
+    },
+    "animations": {
+      "fly": "animation.fv101.para",
+        "look_at_target": "animation.tankaim"
+    },
+      "render_controllers": [ 
+        "controller.render.iron_golem",
+        {"controller.render.tankpara":"query.skin_id == 1"}
+      ]
     }
   }
 }

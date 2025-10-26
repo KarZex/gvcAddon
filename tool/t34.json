@@ -109,7 +109,7 @@
         ]
       },
       "minecraft:type_family": {
-        "family": [ "vehicle","playerfire","plate" ]
+        "family": [ "vehicle","playerfire","plate","tank" ]
       },
       "minecraft:fire_immune": {
       },

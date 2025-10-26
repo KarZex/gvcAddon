@@ -74,8 +74,8 @@
         "interact_text": "action.interact.ride.horse",
         "seats": {
           "position": [
-            -0.5,
-            2.35,
+            0,
+            2.2,
             0
           ]
         }
@@ -151,7 +151,8 @@
         "family": [
           "vehicle",
           "playerfire",
-          "plate"
+          "plate",
+          "tank"
         ]
       },
       "minecraft:fire_immune": {},

@@ -34,10 +34,10 @@ hmg,hmg,8,4,0,2,0,F,hmgbullet,override,,1,zex:762m,1
 23mmmc,23mmmc,12,4,0,2,1,F,mgiibullet,entityExplosion,,1,zex:20mmc,1
 25mmmc,25mmmc,20,4,0,9,1,F,hmgiibullet,entityExplosion,,1,zex:20mmc,1
 30mmmc,30mmmc,16,4,0,2,1,F,hmgiibullet,entityExplosion,,1,zex:20mmc,1
-23mmMCx2,23mmmcair,4,4,0,1,0,F,hmgbullet,override,D,4,zex:20mmc,1
-20mmMCx2,20mmmcaird,12,12,0,1,1,F,hmgbullet,override,D,4,zex:20mmc,1
-20mmMCx4,20mmmcairw,12,12,0,1,1,F,hmgbullet,override,Qw,4,zex:20mmc,1
-30mmMC,30mmmcair,12,12,0,1,0,F,hmgbullet,override,,1,zex:20mmc,1
-20mmMC,20mmmcair,12,12,0,1,1,F,hmgbullet,override,,4,zex:20mmc,1
+23mmMCx2,23mmmcair,4,4,0,1,0,F,airbullet,override,D,4,zex:20mmc,1
+20mmMCx2,20mmmcaird,12,12,0,1,1,F,airbullet,override,D,4,zex:20mmc,1
+20mmMCx4,20mmmcairw,12,12,0,1,1,F,airbullet,override,Qw,4,zex:20mmc,1
+30mmMC,30mmmcair,12,12,0,1,0,F,airbullet,override,,1,zex:20mmc,1
+20mmMC,20mmmcair,12,12,0,1,1,F,airbullet,override,,4,zex:20mmc,1
 bombii,bombiii,100,2,0,100,4,F,missilebullet,entityExplosion,HMM,1,zex:sbombm,0
 37mmRocket,37mmrocketkatyusya,35,4,0,20,3,F,rpgbullet,entityExplosion,H,2,zex:s37m,2

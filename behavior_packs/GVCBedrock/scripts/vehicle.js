@@ -15,6 +15,17 @@ export const vehicleData = {
     "type": "apc",
     "speed": 0.3,
     "sub": "25mmmc",
+    "main1": "76mmrocket",
+    "main2": "",
+    "main3": "",
+    "turn": 0.0,
+    "gattack": 7,
+    "FuelPerSecond": 0
+  },
+  "lav25aa": {
+    "type": "apc",
+    "speed": 0.3,
+    "sub": "20mmmcair",
     "main1": "aamissile",
     "main2": "",
     "main3": "",
@@ -26,6 +37,17 @@ export const vehicleData = {
     "type": "apc",
     "speed": 0.3,
     "sub": "hmg",
+    "main1": "",
+    "main2": "",
+    "main3": "",
+    "turn": 0.0,
+    "gattack": 7,
+    "FuelPerSecond": 0
+  },
+  "m113aa": {
+    "type": "apc",
+    "speed": 0.3,
+    "sub": "20mmmcair",
     "main1": "",
     "main2": "",
     "main3": "",
@@ -71,6 +93,17 @@ export const vehicleData = {
     "speed": 0.1,
     "sub": "",
     "main1": "152mm",
+    "main2": "",
+    "main3": "",
+    "turn": 0.0,
+    "gattack": 20,
+    "FuelPerSecond": 0
+  },
+  "m1_abrams": {
+    "type": "tank",
+    "speed": 0.2,
+    "sub": "vmg",
+    "main1": "120mm",
     "main2": "",
     "main3": "",
     "turn": 0.0,
@@ -286,6 +319,17 @@ export const vehicleData = {
     "gattack": 0,
     "FuelPerSecond": 0
   },
+  "vads": {
+    "type": "set",
+    "speed": 0.0,
+    "sub": "20mmmcair",
+    "main1": "",
+    "main2": "",
+    "main3": "",
+    "turn": 0.0,
+    "gattack": 0,
+    "FuelPerSecond": 0
+  },
   "dp28set": {
     "type": "set",
     "speed": 0.0,
@@ -405,17 +449,6 @@ export const vehicleData = {
     "main3": "",
     "turn": 1.0,
     "gattack": 0,
-    "FuelPerSecond": 0
-  },
-  "m1_abrams": {
-    "type": "tank",
-    "speed": 0.2,
-    "sub": "vmg",
-    "main1": "120mm",
-    "main2": "",
-    "main3": "",
-    "turn": 0.0,
-    "gattack": 20,
     "FuelPerSecond": 0
   }
 };

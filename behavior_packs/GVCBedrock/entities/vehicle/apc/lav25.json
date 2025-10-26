@@ -75,7 +75,7 @@
         "seats": {
           "position": [
             0,
-            2.25,
+            2.2,
             -1.2
           ]
         }
@@ -151,7 +151,8 @@
         "family": [
           "vehicle",
           "playerfire",
-          "plate"
+          "plate",
+          "tank"
         ]
       },
       "minecraft:fire_immune": {},

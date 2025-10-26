@@ -68,7 +68,7 @@ export const gunData = {
     "speed": 1.6,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -81,7 +81,7 @@ export const gunData = {
     "speed": 1.2000000000000002,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:762m",
     "damageType": "override"
   },
@@ -94,7 +94,7 @@ export const gunData = {
     "speed": 1.4000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -107,7 +107,7 @@ export const gunData = {
     "speed": 1.6,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -120,7 +120,7 @@ export const gunData = {
     "speed": 3.2,
     "fireOnReload": false,
     "maxGunAmmo": 5,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:762m",
     "damageType": "override"
   },
@@ -146,7 +146,7 @@ export const gunData = {
     "speed": 1.6,
     "fireOnReload": false,
     "maxGunAmmo": 6,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:40m",
     "damageType": "entityExplosion"
   },
@@ -159,7 +159,7 @@ export const gunData = {
     "speed": 1.0,
     "fireOnReload": false,
     "maxGunAmmo": 1,
-    "reloadTime": 100,
+    "reloadTime": 60,
     "bullet": "zex:missilem",
     "damageType": "entityExplosion"
   },
@@ -172,7 +172,7 @@ export const gunData = {
     "speed": 2.0,
     "fireOnReload": false,
     "maxGunAmmo": 1,
-    "reloadTime": 100,
+    "reloadTime": 60,
     "bullet": "zex:missilem",
     "damageType": "entityExplosion"
   },
@@ -185,7 +185,7 @@ export const gunData = {
     "speed": 1.6,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -198,7 +198,7 @@ export const gunData = {
     "speed": 1.2000000000000002,
     "fireOnReload": false,
     "maxGunAmmo": 20,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -211,7 +211,7 @@ export const gunData = {
     "speed": 0.68,
     "fireOnReload": true,
     "maxGunAmmo": 20,
-    "reloadTime": 50,
+    "reloadTime": 30,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -222,7 +222,7 @@ export const gunData = {
     "speed": 0.68,
     "fireOnReload": true,
     "maxGunAmmo": 20,
-    "reloadTime": 50,
+    "reloadTime": 30,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -235,7 +235,7 @@ export const gunData = {
     "speed": 0.68,
     "fireOnReload": false,
     "maxGunAmmo": 20,
-    "reloadTime": 50,
+    "reloadTime": 30,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -248,7 +248,7 @@ export const gunData = {
     "speed": 1.4000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 70,
+    "reloadTime": 50,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -261,7 +261,7 @@ export const gunData = {
     "speed": 4.4,
     "fireOnReload": false,
     "maxGunAmmo": 5,
-    "reloadTime": 120,
+    "reloadTime": 100,
     "bullet": "zex:1270m",
     "damageType": "entityExplosion"
   },
@@ -287,7 +287,7 @@ export const gunData = {
     "speed": 1.4000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 70,
+    "reloadTime": 50,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -300,7 +300,7 @@ export const gunData = {
     "speed": 1.4000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 70,
+    "reloadTime": 50,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -313,7 +313,7 @@ export const gunData = {
     "speed": 0.68,
     "fireOnReload": true,
     "maxGunAmmo": 16,
-    "reloadTime": 50,
+    "reloadTime": 30,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -324,7 +324,7 @@ export const gunData = {
     "speed": 0.68,
     "fireOnReload": true,
     "maxGunAmmo": 16,
-    "reloadTime": 50,
+    "reloadTime": 30,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -337,7 +337,7 @@ export const gunData = {
     "speed": 0.68,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 60,
+    "reloadTime": 40,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -350,7 +350,7 @@ export const gunData = {
     "speed": 2.4000000000000004,
     "fireOnReload": false,
     "maxGunAmmo": 10,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:762m",
     "damageType": "override"
   },
@@ -363,7 +363,7 @@ export const gunData = {
     "speed": 1.6,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -376,7 +376,7 @@ export const gunData = {
     "speed": 1.8,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -402,7 +402,7 @@ export const gunData = {
     "speed": 0.32000000000000006,
     "fireOnReload": false,
     "maxGunAmmo": 1,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:rocketm",
     "damageType": "entityExplosion"
   },
@@ -415,7 +415,7 @@ export const gunData = {
     "speed": 0.32000000000000006,
     "fireOnReload": false,
     "maxGunAmmo": 1,
-    "reloadTime": 100,
+    "reloadTime": 60,
     "bullet": "zex:40m",
     "damageType": "entityExplosion"
   },
@@ -428,7 +428,7 @@ export const gunData = {
     "speed": 4.4,
     "fireOnReload": false,
     "maxGunAmmo": 10,
-    "reloadTime": 120,
+    "reloadTime": 80,
     "bullet": "zex:1270m",
     "damageType": "entityExplosion"
   },
@@ -441,7 +441,7 @@ export const gunData = {
     "speed": 2.4000000000000004,
     "fireOnReload": false,
     "maxGunAmmo": 20,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:762m",
     "damageType": "override"
   },
@@ -454,7 +454,7 @@ export const gunData = {
     "speed": 1.8,
     "fireOnReload": false,
     "maxGunAmmo": 4,
-    "reloadTime": 120,
+    "reloadTime": 100,
     "bullet": "zex:rocketm",
     "damageType": "entityExplosion"
   },
@@ -480,7 +480,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 8,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -493,7 +493,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 8,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -506,7 +506,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 8,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -519,7 +519,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 8,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -532,7 +532,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 4,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -545,7 +545,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 4,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -558,7 +558,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 4,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -571,7 +571,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 4,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -584,7 +584,7 @@ export const gunData = {
     "speed": 1.0,
     "fireOnReload": false,
     "maxGunAmmo": 8,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -597,7 +597,7 @@ export const gunData = {
     "speed": 1.0,
     "fireOnReload": false,
     "maxGunAmmo": 8,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -610,7 +610,7 @@ export const gunData = {
     "speed": 1.0,
     "fireOnReload": false,
     "maxGunAmmo": 8,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -623,7 +623,7 @@ export const gunData = {
     "speed": 1.0,
     "fireOnReload": false,
     "maxGunAmmo": 8,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -636,7 +636,7 @@ export const gunData = {
     "speed": 0.48,
     "fireOnReload": true,
     "maxGunAmmo": 8,
-    "reloadTime": 50,
+    "reloadTime": 30,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -647,7 +647,7 @@ export const gunData = {
     "speed": 0.48,
     "fireOnReload": true,
     "maxGunAmmo": 8,
-    "reloadTime": 50,
+    "reloadTime": 30,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -686,7 +686,7 @@ export const gunData = {
     "speed": 3.2,
     "fireOnReload": false,
     "maxGunAmmo": 5,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:762m",
     "damageType": "override"
   },
@@ -699,7 +699,7 @@ export const gunData = {
     "speed": 0.7200000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -712,7 +712,7 @@ export const gunData = {
     "speed": 1.2000000000000002,
     "fireOnReload": false,
     "maxGunAmmo": 40,
-    "reloadTime": 65,
+    "reloadTime": 35,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -725,7 +725,7 @@ export const gunData = {
     "speed": 0.7200000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 20,
-    "reloadTime": 65,
+    "reloadTime": 35,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -764,7 +764,7 @@ export const gunData = {
     "speed": 0.7200000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 72,
-    "reloadTime": 65,
+    "reloadTime": 45,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -777,7 +777,7 @@ export const gunData = {
     "speed": 3.2,
     "fireOnReload": false,
     "maxGunAmmo": 1,
-    "reloadTime": 50,
+    "reloadTime": 30,
     "bullet": "zex:1270m",
     "damageType": "entityExplosion"
   },
@@ -790,7 +790,7 @@ export const gunData = {
     "speed": 1.4000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:556m",
     "damageType": "override"
   },
@@ -803,7 +803,7 @@ export const gunData = {
     "speed": 1.8,
     "fireOnReload": false,
     "maxGunAmmo": 1,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:rocketm",
     "damageType": "entityExplosion"
   },
@@ -829,7 +829,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 6,
-    "reloadTime": 100,
+    "reloadTime": 60,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -842,7 +842,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 6,
-    "reloadTime": 100,
+    "reloadTime": 60,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -855,7 +855,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 6,
-    "reloadTime": 100,
+    "reloadTime": 60,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -868,7 +868,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 6,
-    "reloadTime": 100,
+    "reloadTime": 60,
     "bullet": "zex:12m",
     "damageType": "override"
   },
@@ -881,7 +881,7 @@ export const gunData = {
     "speed": 1.2000000000000002,
     "fireOnReload": false,
     "maxGunAmmo": 20,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:762m",
     "damageType": "override"
   },
@@ -894,7 +894,7 @@ export const gunData = {
     "speed": 1.2000000000000002,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:762m",
     "damageType": "override"
   },
@@ -907,7 +907,7 @@ export const gunData = {
     "speed": 2.4000000000000004,
     "fireOnReload": false,
     "maxGunAmmo": 10,
-    "reloadTime": 80,
+    "reloadTime": 60,
     "bullet": "zex:762m",
     "damageType": "override"
   },
@@ -920,7 +920,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": true,
     "maxGunAmmo": 6,
-    "reloadTime": 70,
+    "reloadTime": 50,
     "bullet": "zex:762m",
     "damageType": "override"
   },
@@ -931,7 +931,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": true,
     "maxGunAmmo": 6,
-    "reloadTime": 70,
+    "reloadTime": 50,
     "bullet": "zex:762m",
     "damageType": "override"
   },
@@ -944,7 +944,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 30,
-    "reloadTime": 60,
+    "reloadTime": 40,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -957,7 +957,7 @@ export const gunData = {
     "speed": 0.6000000000000001,
     "fireOnReload": false,
     "maxGunAmmo": 20,
-    "reloadTime": 60,
+    "reloadTime": 40,
     "bullet": "zex:mm9",
     "damageType": "override"
   },
@@ -970,7 +970,7 @@ export const gunData = {
     "speed": 1.8,
     "fireOnReload": false,
     "maxGunAmmo": 8,
-    "reloadTime": 100,
+    "reloadTime": 80,
     "bullet": "zex:40m",
     "damageType": "entityExplosion"
   },
@@ -1293,83 +1293,83 @@ export const gunData = {
   },
   "23mmmcairr": {
     "damage": 4,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override"
   },
   "23mmmcairl": {
     "damage": 4,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override"
   },
   "23mmmcair": {
     "damage": 4,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override",
     "ammoType": "zex:20mmc"
   },
   "20mmmcairdr": {
     "damage": 12,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override"
   },
   "20mmmcairdl": {
     "damage": 12,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override"
   },
   "20mmmcaird": {
     "damage": 12,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override",
     "ammoType": "zex:20mmc"
   },
   "20mmmcairwri": {
     "damage": 12,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override"
   },
   "20mmmcairwli": {
     "damage": 12,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override"
   },
   "20mmmcairwrii": {
     "damage": 12,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override"
   },
   "20mmmcairwlii": {
     "damage": 12,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override"
   },
   "20mmmcairw": {
     "damage": 12,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override",
     "ammoType": "zex:20mmc"
   },
   "30mmmcair": {
     "damage": 12,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override",
     "ammoType": "zex:20mmc"
   },
   "20mmmcair": {
     "damage": 12,
-    "sound": "hmg",
+    "sound": "air",
     "damageIgnoreDef": 1.0,
     "damageType": "override",
     "ammoType": "zex:20mmc"

@@ -1,5 +1,5 @@
 {
-	"format_version": "1.10.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "vehicle:btr60",
@@ -10,10 +10,20 @@
       "geometry": {
         "default": "geometry.btr60"
       },
-	  "spawn_egg":{
-	  "texture":"btr60",
-	  "texture_index":0
-	  },
+      "animations": {
+        "look_at_target": "animation.tankaim"
+      },
+      "scripts": {
+        "animate": [
+					{
+						"look_at_target": "query.has_rider"
+					}
+        ]
+      },
+      "spawn_egg":{
+      "texture":"btr60",
+      "texture_index":0
+      },
       "render_controllers": [ "controller.render.iron_golem" ]
     }
   }
