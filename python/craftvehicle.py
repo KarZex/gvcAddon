@@ -77,15 +77,15 @@ for row in csv_reader:
         vehicledata_json["{}".format(v_id)] = { "type": v_type,"speed": v_speed,"Weapon1": v_weapon1,"Weapon2": v_weapon2,"Weapon3": v_weapon3,"Weapon4": v_weapon4,"turn": v_turn,"gattack":v_gattack }
     
 
-        text += "entity.vehicle:{0}.name={1}§r\n".format(v_id,v_name)
-        text += "item.spawn_egg.entity.vehicle:{0}.name={1}§r\n".format(v_id,v_name)
-        text += "tile.gvcv5:spawn_vehicle_{0}.name={1}§r\n".format(v_id,v_name)
-        text += "item.vehicle:{0}_spawn_egg={1}§r\n".format(v_id,v_name)
+        text += "entity.vehicle:{0}.name={1}\n".format(v_id,v_name)
+        text += "item.spawn_egg.entity.vehicle:{0}.name={1}\n".format(v_id,v_name)
+        text += "tile.gvcv5:spawn_vehicle_{0}.name={1}\n".format(v_id,v_name)
+        text += "item.vehicle:{0}_spawn_egg={1}\n".format(v_id,v_name)
 
-        eng_text += "entity.vehicle:{0}.name={1}§r\n".format(v_id,v_engname)
-        eng_text += "item.spawn_egg.entity.vehicle:{0}.name={1}§r\n".format(v_id,v_engname)
-        eng_text += "tile.gvcv5:spawn_vehicle_{0}.name={1}§r\n".format(v_id,v_engname)
-        eng_text += "item.vehicle:{0}_spawn_egg={1}§r\n".format(v_id,v_engname)
+        eng_text += "entity.vehicle:{0}.name={1}\n".format(v_id,v_engname)
+        eng_text += "item.spawn_egg.entity.vehicle:{0}.name={1}\n".format(v_id,v_engname)
+        eng_text += "tile.gvcv5:spawn_vehicle_{0}.name={1}\n".format(v_id,v_engname)
+        eng_text += "item.vehicle:{0}_spawn_egg={1}\n".format(v_id,v_engname)
 
 
         ## Block spawn_vehicle_lav25

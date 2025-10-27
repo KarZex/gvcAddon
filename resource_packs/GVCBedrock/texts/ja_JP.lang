@@ -1,6 +1,27 @@
+### From V1 Mar 14th 2021
 entity.gvcv5:ga.name=ゲリラ
-entity.zex:iceblaze.name=フロスト
+item.spawn_egg.entity.gvcv5:ga.name=ゲリラ
 
+### From V2 Mar 25th 2021
+entity.gvcv5:ca.name=同盟軍兵士
+entity.gvcv5:pmc.name=PMC兵士
+item.spawn_egg.entity.gvcv5:arr.name=大砲 §4deleted
+item.spawn_egg.entity.gvcv5:mg1.name=機関銃 §4deleted
+item.spawn_egg.entity.gvcv5:mg2.name=機関銃（同盟軍）§4deleted
+entity.gvcv5:arr.name=大砲 §4deleted
+entity.gvcv5:mg.name=機関銃 §4deleted
+entity.gvcv5:mg2.name=機関銃（同盟軍）§4deleted
+item.spawn_egg.entity.gvcv5:pmc.name=PMC兵士
+item.spawn_egg.entity.gvcv5:ca.name=同盟軍兵士
+item.spawn_egg.entity.gvcv5:a1.name=旗（同盟軍）
+item.spawn_egg.entity.gvcv5:a2.name=旗（ゲリラ）
+
+### From V3 Apr 18th 2021
+entity.zex:iceblaze.name=フロスト
+item.spawn_egg.entity.zex:iceblaze.name=フロストを出現させる
+item.spawn_egg.entity.zex:icezombie.name=ゾンビを出現させる
+item.spawn_egg.entity.zex:g_illager.name=グラハムを出現させる
+item.spawn_egg.entity.zex:iceologer.name=氷使いを出現させる
 entity.gvcv5:gb1.name=ベテランゲリラ
 entity.gvcv5:gb2.name=ベテランゲリラ
 entity.gvcv5:gb3.name=ベテランゲリラ
@@ -8,34 +29,52 @@ entity.gvcv5:gb4.name=ベテランゲリラ
 entity.gvcv5:gb5.name=ベテランゲリラ
 entity.gvcv5:gb6.name=ベテランゲリラ
 entity.gvcv5:gb6_drone.name=ドローン
+item.spawn_egg.entity.gvcv5:gb1.name=ベテランゲリラ-マシンガン
+item.spawn_egg.entity.gvcv5:gb2.name=ベテランゲリラ-強襲
+item.spawn_egg.entity.gvcv5:gb3.name=ベテランゲリラ-スナイパー
+item.spawn_egg.entity.gvcv5:gb4.name=ベテランゲリラ-火炎放射
+item.spawn_egg.entity.gvcv5:gb5.name=ベテランゲリラ-ドローン誘導
+item.spawn_egg.entity.gvcv5:gb6.name=ベテランゲリラ-対戦車ライフル
 
+### From V4-1 (GVCReversion Addon V1.0) Dec 26th 2021
+item.spawn_egg.entity.zex:stand.name=スタンド
+item.spawn_egg.entity.gvcv5:st1.name=BOSS ST1
+item.spawn_egg.entity.gvcv5:merg08.name=BOSS MERG08
+item.spawn_egg.entity.gvcv5:merg08b.name=BOSS MERG08SN
+entity.gvcv5:st1.name=BOSS ST1
+entity.gvcv5:merg08.name=BOSS MERG08
+entity.gvcv5:merg08b.name=BOSS MERG08SN
+
+### From V4-3 (GVCReversion Addon V3.0) Mar 28th 2022
 entity.gvcv5:gc1.name=エリートゲリラ
 entity.gvcv5:gc2.name=エリートゲリラ
 entity.gvcv5:gc3.name=エリートゲリラ
 entity.gvcv5:gc4.name=エリートゲリラ
 entity.gvcv5:gc5.name=ゲリラ海軍士官
-
 item.spawn_egg.entity.gvcv5:gc1.name=エリートゲリラ_強襲突撃兵
 item.spawn_egg.entity.gvcv5:gc2.name=エリートゲリラ_ケルベロス
 item.spawn_egg.entity.gvcv5:gc3.name=エリートゲリラ_HACS
 item.spawn_egg.entity.gvcv5:gc4.name=エリートゲリラ_ククリ
 item.spawn_egg.entity.gvcv5:gc5.name=ゲリラ海軍士官
 
-entity.gvcv5:ca.name=同盟軍兵士
+### From 5-1 (GVCBedrock Addon V1.0) Aug 24th 2024
 item.spawn_egg.entity.gvcv5:af_cpt.name=同盟軍空軍士官
 item.spawn_egg.entity.gvcv5:mr_cpt.name=同盟軍海軍士官
 entity.gvcv5:af_cpt.name=同盟軍空軍士官
 entity.gvcv5:mr_cpt.name=同盟軍海軍士官
-
-gvcv5.order.attack.name=各個迎撃！
-gvcv5.order.wait.name=待機！
-gvcv5.order.follow.name=ついてこい！
-
-entity.gvcv5:pmc.name=PMC兵士
 entity.gvcv5:pmc_red.name=PMC兵士
 entity.gvcv5:pmc_blue.name=PMC兵士
 entity.gvcv5:pmc_green.name=PMC兵士
 entity.gvcv5:pmc_yellow.name=PMC兵士
+item.spawn_egg.entity.gvcv5:hauneb.name=BOSS HAUNEB
+item.spawn_egg.entity.gvcv5:char2c.name=BOSS char2C
+item.spawn_egg.entity.gvcv5:unks.name=所属不明兵士
+item.spawn_egg.entity.gvcv5:cv.name=BOSS CV
+entity.gvcv5:hauneb.name=BOSS HAUNEB
+entity.gvcv5:char2c.name=BOSS char2C
+entity.gvcv5:unks.name=所属不明兵士
+entity.gvcv5:cv.name=BOSS CV
+entity.gvcv5:jamming.name=ジャミング発生装置
 
 ## ww3
 entity.gvcv5:prc_soldier.name=中国軍兵士
@@ -43,184 +82,10 @@ entity.gvcv5:usa_soldier.name=アメリカ軍兵士
 entity.gvcv5:rus_soldier.name=ロシア軍兵士
 entity.gvcv5:eur_soldier.name=ヨーロッパ軍兵士
 
-item.spawn_egg.entity.gvcv5:gb1.name=ベテランゲリラ-マシンガン
-item.spawn_egg.entity.gvcv5:gb2.name=ベテランゲリラ-強襲
-item.spawn_egg.entity.gvcv5:gb3.name=ベテランゲリラ-スナイパー
-item.spawn_egg.entity.gvcv5:gb4.name=ベテランゲリラ-火炎放射
-item.spawn_egg.entity.gvcv5:gb5.name=ベテランゲリラ-ドローン誘導
 
-item.spawn_egg.entity.zex:stand.name=スタンド
-
-item.spawn_egg.entity.gvcv5:arr.name=大砲
-item.spawn_egg.entity.gvcv5:mg1.name=機関銃
-item.spawn_egg.entity.gvcv5:mg2.name=機関銃（同盟軍）
-
-entity.gvcv5:arr.name=大砲
-entity.gvcv5:mg.name=機関銃
-entity.gvcv5:mg2.name=機関銃（同盟軍）
-
-
-
-item.spawn_egg.entity.zex:iceblaze.name=フロストを出現させる
-item.spawn_egg.entity.zex:icezombie.name=ゾンビを出現させる
-item.spawn_egg.entity.zex:g_illager.name=グラハムを出現させる
-item.spawn_egg.entity.zex:iceologer.name=氷使いを出現させる
-
-item.spawn_egg.entity.gvcv5:ga.name=ゲリラ
-item.spawn_egg.entity.gvcv5:pmc.name=PMC兵士
-item.spawn_egg.entity.gvcv5:ca.name=同盟軍兵士
-item.spawn_egg.entity.gvcv5:a1.name=旗（同盟軍）
-item.spawn_egg.entity.gvcv5:a2.name=旗（ゲリラ）
-
-item.spawn_egg.entity.vehicle:m113.name=M113装甲車
-item.spawn_egg.entity.vehicle:m113aa.name=M113自走対空砲
-item.spawn_egg.entity.vehicle:aifv.name=AIFV
-item.spawn_egg.entity.vehicle:m1126.name=M1126装甲車
-item.spawn_egg.entity.vehicle:m1128.name=M1128戦車駆逐車
-item.spawn_egg.entity.vehicle:lav25.name=LAV25歩兵戦闘車
-item.spawn_egg.entity.vehicle:lav25aa.name=LAV25自走対空砲
-item.spawn_egg.entity.vehicle:btr60.name=BTR-60
-item.spawn_egg.entity.vehicle:t34.name=T-34
-item.spawn_egg.entity.vehicle:panzer.name=IV号戦車
-item.spawn_egg.entity.vehicle:fv101.name=FV101
-item.spawn_egg.entity.vehicle:m41.name=M41A3
-item.spawn_egg.entity.vehicle:m1_abrams.name=M1 エイブラムス
-item.spawn_egg.entity.vehicle:m1a2.name=M1A2
-item.spawn_egg.entity.vehicle:t72.name=T-72
-item.spawn_egg.entity.vehicle:m60a1.name=M60A1
-item.spawn_egg.entity.vehicle:kv2.name=KV-2
-item.spawn_egg.entity.vehicle:pt76.name=PT-76
-item.spawn_egg.entity.vehicle:t55.name=T-55
-item.spawn_egg.entity.vehicle:tech.name=テクニカルトラック
-
-entity.vehicle:btr60.name=BTR-60
-entity.vehicle:m113.name=M113装甲車
-entity.vehicle:m113aa.name=M113自走対空砲
-entity.vehicle:aifv.name=AIFV
-entity.vehicle:m1126.name=M1126装甲車
-entity.vehicle:m1128.name=M1128戦車駆逐車
-entity.vehicle:lav25.name=LAV25歩兵戦闘車
-entity.vehicle:lav25aa.name=LAV25自走対空砲
-entity.vehicle:t34.name=T-34
-entity.vehicle:panzer.name=IV号戦車
-entity.vehicle:g_heri.name=ゲリラヘリ
-entity.vehicle:r22.name=ゲリラ小型ヘリ
-entity.vehicle:ka60.name=Ka-60
-entity.vehicle:m41.name=M41A3
-entity.vehicle:m1_abrams.name=M1 エイブラムス
-entity.vehicle:m1a2.name=M1A2
-entity.vehicle:fv101.name=FV101
-entity.vehicle:t72.name=T-72
-entity.vehicle:tech.name=テクニカルトラック
-entity.vehicle:m60a1.name=M60A1
-entity.vehicle:kv2.name=KV-2
-entity.vehicle:pt76.name=PT-76
-entity.vehicle:t55.name=T-55
-entity.gvcv5:jamming.name=ジャミング発生装置
-
-entity.vehicle:ah6.name=AH-6
-entity.vehicle:mi24d.name=Mi-24D
-entity.vehicle:ka50.name=Ka-50
-
-entity.vehicle:yak9.name=Yak-9
-entity.vehicle:il2.name=Il-2
-entity.vehicle:f16.name=F-16
-entity.vehicle:mig17.name=MiG-17
-entity.vehicle:su25.name=Su-25
-entity.vehicle:su27.name=Su-27
-
-item.spawn_egg.entity.vehicle:f18.name=F/A-18
-item.spawn_egg.entity.vehicle:ah1s.name=AH-1S
-item.spawn_egg.entity.vehicle:ah6.name=AH-6
-item.spawn_egg.entity.vehicle:mi24d.name=Mi-24D
-item.spawn_egg.entity.vehicle:ka50.name=Ka-50
-item.spawn_egg.entity.vehicle:ka60.name=Ka-60
-item.spawn_egg.entity.vehicle:r22.name=ゲリラ小型ヘリ
-
-item.spawn_egg.entity.vehicle:yak9.name=Yak-9
-item.spawn_egg.entity.vehicle:il2.name=Il-2
-item.spawn_egg.entity.vehicle:f16.name=F-16
-item.spawn_egg.entity.vehicle:mig17.name=MiG-17
-item.spawn_egg.entity.vehicle:su25.name=Su-25
-item.spawn_egg.entity.vehicle:su27.name=Su-27
-
-
-entity.vehicle:f18.name=F/A-18
-entity.vehicle:ah1s.name=AH-1S
-
-item.spawn_egg.entity.vehicle:20mmaa.name=20mm対空砲
-item.spawn_egg.entity.vehicle:vads.name=VADS対空砲
-item.spawn_egg.entity.vehicle:dp28set.name=固定機銃DP-28
-item.spawn_egg.entity.vehicle:m60set.name=固定機銃M60
-item.spawn_egg.entity.vehicle:pkmset.name=固定機銃PKM
-item.spawn_egg.entity.vehicle:flak18.name=対戦車砲Flak18
-item.spawn_egg.entity.vehicle:pak40.name=対戦車砲Pak40
-item.spawn_egg.entity.vehicle:zu23.name=Zu-23対空砲
-item.spawn_egg.entity.vehicle:g_heri.name=ゲリラヘリ
-item.spawn_egg.entity.vehicle:f117.name=F-117
-entity.vehicle:vads.name=VADS対空砲
-entity.vehicle:dp28set.name=固定機銃DP-28
-entity.vehicle:m60set.name=固定機銃M60
-entity.vehicle:pkmset.name=固定機銃PKM
-entity.vehicle:20mmaa.name=20mm対空砲
-entity.vehicle:flak18.name=対戦車砲Flak18
-entity.vehicle:pak40.name=対戦車砲Pak40
-entity.vehicle:zu23.name=Zu-23対空砲
-entity.vehicle:f117.name=F-117
-
-item.spawn_egg.entity.gvcv5:st1.name=BOSS ST1
-item.spawn_egg.entity.gvcv5:merg08.name=BOSS MERG08
-item.spawn_egg.entity.gvcv5:merg08b.name=BOSS MERG08SN
-item.spawn_egg.entity.gvcv5:hauneb.name=BOSS HAUNEB
-item.spawn_egg.entity.gvcv5:char2c.name=BOSS char2C
-item.spawn_egg.entity.gvcv5:unks.name=所属不明兵士
-item.spawn_egg.entity.gvcv5:cv.name=BOSS CV
-
-entity.gvcv5:st1.name=BOSS ST1
-entity.gvcv5:merg08.name=BOSS MERG08
-entity.gvcv5:merg08b.name=BOSS MERG08SN
-entity.gvcv5:hauneb.name=BOSS HAUNEB
-entity.gvcv5:char2c.name=BOSS char2C
-entity.gvcv5:unks.name=所属不明兵士
-entity.gvcv5:cv.name=BOSS CV
-
-gvcv5.mr_cpt.crashed0.name=S.O.S......S.O.S.....
-gvcv5.mr_cpt.crashed1.name=付近...味方部隊に連r...、救援...求m...
-gvcv5.mr_cpt.crashed2.name=こちら...残存.....は少ない...救..援を..
-gvcv5.mr_cpt.crashed3.name=救援部隊か！我々は艦首に立てこもっている
-gvcv5.mr_cpt.talk0.name=同盟軍士官:救援部隊か！....成程....
-gvcv5.mr_cpt.talk1.name=同盟軍士官:現在我が艦はゲリラによるシー・ジャックを受け壊滅した
-gvcv5.mr_cpt.talk2.name=同盟軍士官:生き残りは我々だけだ
-gvcv5.mr_cpt.talk3.name=同盟軍士官:君たちには残存兵力を率いて艦内の6つのジャミング装置を破壊してもらいたい
-gvcv5.mr_cpt.talk4.name=同盟軍士官:ゲリラどもがジャミング装置を設置したことで長距離通信が不可能となっている
-gvcv5.mr_cpt.talk5.name=同盟軍士官:全てのジャミング装置を破壊すれば救援部隊を要請出来るだろう
-gvcv5.mr_cpt.talk6.name=同盟軍士官:救援部隊到着後、ゲリラを掃討する
-gvcv5.mr_cpt.talk7.name=同盟軍士官:君たちしか頼れない、頼むぞ
-gvcv5.mr_cpt.jamming_destroy0.name=同盟軍士官:よし！ジャミング装置を全て破壊したぞ!
-gvcv5.mr_cpt.jamming_destroy1.name=同盟軍士官:すぐに救援部隊を要請する!
-gvcv5.mr_cpt.jamming_destroy2.name=同盟軍士官:よし！味方の空挺部隊だ!
-gvcv5.precv.crashed0.name=同盟軍士官:よし！船を奪還したぞ！
-gvcv5.precv.crashed1.name=同盟軍兵士:!?...レーダーに所属不明機を確認！
-gvcv5.precv.crashed2.name=同盟軍士官:ゲリラの新手か!?
-gvcv5.precv.crashed3.name=同盟軍兵士:いえこれは...未確認の機体です!   IFFにも応答ありません!
-gvcv5.precv.crashed4.name=同盟軍士官:ええいっ、迎撃準備だ!
-gvcv5.precv.crashed5.name=同盟軍兵士:あと1分で接敵します!12時方向です!
-gvcv5.mr_cpt.wave1.name=同盟軍士官:来たぞ!向かい撃て!!
-gvcv5.mr_cpt.wave1_new_enemy.name=同盟軍士官:くそ!、また来たぞ!
-gvcv5.mr_cpt.wave2_cool.name=同盟軍兵士:所属不明部隊、6時方向よりさらに接近中!
-gvcv5.mr_cpt.wave2.name=同盟軍士官:ええいっ、キリがないぞ!
-gvcv5.mr_cpt.wave2_new_enemy.name=同盟軍兵士:所属不明部隊、さらに接近中!
-gvcv5.mr_cpt.wave3_cool.name=同盟軍兵士:所属不明部隊、12時と6時方向より接近中!
-gvcv5.mr_cpt.wave3.name=同盟軍士官:耐えろ!、なんとしても耐え抜くんだ!
-gvcv5.mr_cpt.wave3_new_enemy.name=同盟軍兵士:所属不明部隊、さらに接近中!
-gvcv5.endcv.crashed0.name=同盟軍士官:終わったのか...?
-gvcv5.endcv.crashed1.name=同盟軍兵士:付近に敵影無しです
-gvcv5.endcv.crashed2.name=同盟軍士官:君たちには助けられたな
-gvcv5.endcv.crashed3.name=同盟軍士官:少ないかもしれないが報酬だ、持って行ってくれ
-gvcv5.losecv.crashed0.name=同盟軍士官:くそ!、旗が奪われたか!
-gvcv5.losecv.crashed1.name=同盟軍兵士:付近に敵影大勢あり、危険な状態だ!
-gvcv5.losecv.crashed2.name=同盟軍士官:こうなったら仕方ない!、我々は船から撤退する!
-
+gvcv5.order.attack.name=各個迎撃！
+gvcv5.order.wait.name=待機！
+gvcv5.order.follow.name=ついてこい！
 
 item.zex:km=カロリーメイト
 item.zex:sp=スクラップ
@@ -423,7 +288,7 @@ item.zex:bullet_srag=アタッチメント_スラグ弾
 item.zex:bullet_frag=アタッチメント_フラグ弾
 item.zex:bullet_db=アタッチメント_ドラゴンブレス弾
 
-
+### Ammo name ###
 script.gvcv5:zex:12m.name=§412Gauge§r
 script.gvcv5:zex:556m.name=§6.22Cal§r
 script.gvcv5:zex:762m.name=§3.30Cal§r
@@ -435,7 +300,189 @@ script.gvcv5:zex:missilem.name=§576mmMissile§r
 script.gvcv5:zex:40m.name=§e40mmGrenade§r
 script.gvcv5:zex:12m.name=§412Gauge§r
 
+### Vehicle name ###
+### History
+### From V4-1 (GVCReversion Addon V1.0) Dec 26th 2021
+entity.vehicle:m113.name=M113装甲車
+item.spawn_egg.entity.vehicle:m113.name=M113装甲車
+tile.gvcv5:spawn_vehicle_m113.name=M113装甲車
+item.vehicle:m113_spawn_egg=M113装甲車
+entity.vehicle:t34.name=T-34
+item.spawn_egg.entity.vehicle:t34.name=T-34
+tile.gvcv5:spawn_vehicle_t34.name=T-34
+item.vehicle:t34_spawn_egg=T-34
+entity.vehicle:m41.name=M41A3
+item.spawn_egg.entity.vehicle:m41.name=M41A3
+tile.gvcv5:spawn_vehicle_m41.name=M41A3
+item.vehicle:m41_spawn_egg=M41A3
+entity.vehicle:m1a2.name=M1A2
+item.spawn_egg.entity.vehicle:m1a2.name=M1A2
+tile.gvcv5:spawn_vehicle_m1a2.name=M1A2
+item.vehicle:m1a2_spawn_egg=M1A2
+entity.vehicle:t72.name=T-72
+item.spawn_egg.entity.vehicle:t72.name=T-72
+tile.gvcv5:spawn_vehicle_t72.name=T-72
+item.vehicle:t72_spawn_egg=T-72
 
+entity.vehicle:dp28set.name=固定機銃DP-28
+item.spawn_egg.entity.vehicle:dp28set.name=固定機銃DP-28
+tile.gvcv5:spawn_vehicle_dp28set.name=固定機銃DP-28
+item.vehicle:dp28set_spawn_egg=固定機銃DP-28
+entity.vehicle:m60set.name=固定機銃M60
+item.spawn_egg.entity.vehicle:m60set.name=固定機銃M60
+tile.gvcv5:spawn_vehicle_m60set.name=固定機銃M60
+item.vehicle:m60set_spawn_egg=固定機銃M60
+entity.vehicle:pkmset.name=固定機銃PKM
+item.spawn_egg.entity.vehicle:pkmset.name=固定機銃PKM
+tile.gvcv5:spawn_vehicle_pkmset.name=固定機銃PKM
+item.vehicle:pkmset_spawn_egg=固定機銃PKM
+
+entity.vehicle:ah1s.name=AH-1S
+item.spawn_egg.entity.vehicle:ah1s.name=AH-1S
+tile.gvcv5:spawn_vehicle_ah1s.name=AH-1S
+item.vehicle:ah1s_spawn_egg=AH-1S
+
+### From V4-4 (GVCReversion Addon V4.0) Jun 5th 2022
+entity.vehicle:aifv.name=AIFV
+item.spawn_egg.entity.vehicle:aifv.name=AIFV
+tile.gvcv5:spawn_vehicle_aifv.name=AIFV
+item.vehicle:aifv_spawn_egg=AIFV
+entity.vehicle:lav25.name=LAV25歩兵戦闘車
+item.spawn_egg.entity.vehicle:lav25.name=LAV25歩兵戦闘車
+tile.gvcv5:spawn_vehicle_lav25.name=LAV25歩兵戦闘車
+item.vehicle:lav25_spawn_egg=LAV25歩兵戦闘車
+entity.vehicle:m1126.name=M1126装甲車
+item.spawn_egg.entity.vehicle:m1126.name=M1126装甲車
+tile.gvcv5:spawn_vehicle_m1126.name=M1126装甲車
+item.vehicle:m1126_spawn_egg=M1126装甲車
+entity.vehicle:m1128.name=M1128戦車駆逐車
+item.spawn_egg.entity.vehicle:m1128.name=M1128戦車駆逐車
+tile.gvcv5:spawn_vehicle_m1128.name=M1128戦車駆逐車
+item.vehicle:m1128_spawn_egg=M1128戦車駆逐車
+entity.vehicle:kv2.name=KV-2
+item.spawn_egg.entity.vehicle:kv2.name=KV-2
+tile.gvcv5:spawn_vehicle_kv2.name=KV-2
+item.vehicle:kv2_spawn_egg=KV-2
+entity.vehicle:m60a1.name=M60A1
+item.spawn_egg.entity.vehicle:m60a1.name=M60A1
+tile.gvcv5:spawn_vehicle_m60a1.name=M60A1
+item.vehicle:m60a1_spawn_egg=M60A1
+entity.vehicle:pt76.name=PT-76
+item.spawn_egg.entity.vehicle:pt76.name=PT-76
+tile.gvcv5:spawn_vehicle_pt76.name=PT-76
+item.vehicle:pt76_spawn_egg=PT-76
+entity.vehicle:t55.name=T-55
+item.spawn_egg.entity.vehicle:t55.name=T-55
+tile.gvcv5:spawn_vehicle_t55.name=T-55
+item.vehicle:t55_spawn_egg=T-55
+
+### From V5-1 (GVCBedrock Addon V1.0) Aug 24th 2024
+entity.vehicle:btr60.name=BTR-60
+item.spawn_egg.entity.vehicle:btr60.name=BTR-60
+tile.gvcv5:spawn_vehicle_btr60.name=BTR-60
+item.vehicle:btr60_spawn_egg=BTR-60
+entity.vehicle:fv101.name=FV101
+item.spawn_egg.entity.vehicle:fv101.name=FV101
+tile.gvcv5:spawn_vehicle_fv101.name=FV101
+item.vehicle:fv101_spawn_egg=FV101
+
+entity.vehicle:ah6.name=AH-6
+item.spawn_egg.entity.vehicle:ah6.name=AH-6
+tile.gvcv5:spawn_vehicle_ah6.name=AH-6
+item.vehicle:ah6_spawn_egg=AH-6
+entity.vehicle:g_heri.name=ゲリラヘリ
+item.spawn_egg.entity.vehicle:g_heri.name=ゲリラヘリ
+tile.gvcv5:spawn_vehicle_g_heri.name=ゲリラヘリ
+item.vehicle:g_heri_spawn_egg=ゲリラヘリ
+entity.vehicle:ka50.name=Ka-50
+item.spawn_egg.entity.vehicle:ka50.name=Ka-50
+tile.gvcv5:spawn_vehicle_ka50.name=Ka-50
+item.vehicle:ka50_spawn_egg=Ka-50
+entity.vehicle:mi24d.name=Mi-24D
+item.spawn_egg.entity.vehicle:mi24d.name=Mi-24D
+tile.gvcv5:spawn_vehicle_mi24d.name=Mi-24D
+item.vehicle:mi24d_spawn_egg=Mi-24D
+
+entity.vehicle:20mmaa.name=20mm対空砲
+item.spawn_egg.entity.vehicle:20mmaa.name=20mm対空砲
+tile.gvcv5:spawn_vehicle_20mmaa.name=20mm対空砲
+item.vehicle:20mmaa_spawn_egg=20mm対空砲
+entity.vehicle:flak18.name=対戦車砲Flak18
+item.spawn_egg.entity.vehicle:flak18.name=対戦車砲Flak18
+tile.gvcv5:spawn_vehicle_flak18.name=対戦車砲Flak18
+item.vehicle:flak18_spawn_egg=対戦車砲Flak18
+entity.vehicle:zu23.name=Zu-23対空砲
+item.spawn_egg.entity.vehicle:zu23.name=Zu-23対空砲
+tile.gvcv5:spawn_vehicle_zu23.name=Zu-23対空砲
+item.vehicle:zu23_spawn_egg=Zu-23対空砲
+
+
+### From V5-4 (GVCBedrock Addon V4.0) Jun 24th 2025
+entity.vehicle:r22.name=ゲリラ小型ヘリ
+item.spawn_egg.entity.vehicle:r22.name=ゲリラ小型ヘリ
+tile.gvcv5:spawn_vehicle_r22.name=ゲリラ小型ヘリ
+item.vehicle:r22_spawn_egg=ゲリラ小型ヘリ
+entity.vehicle:ka60.name=Ka-60
+item.spawn_egg.entity.vehicle:ka60.name=Ka-60
+tile.gvcv5:spawn_vehicle_ka60.name=Ka-60
+item.vehicle:ka60_spawn_egg=Ka-60
+
+entity.vehicle:mig17.name=MiG-17
+item.spawn_egg.entity.vehicle:mig17.name=MiG-17
+tile.gvcv5:spawn_vehicle_mig17.name=MiG-17
+item.vehicle:mig17_spawn_egg=MiG-17
+entity.vehicle:su27.name=Su-27
+item.spawn_egg.entity.vehicle:su27.name=Su-27
+tile.gvcv5:spawn_vehicle_su27.name=Su-27
+item.vehicle:su27_spawn_egg=Su-27
+entity.vehicle:f16.name=F-16
+item.spawn_egg.entity.vehicle:f16.name=F-16
+tile.gvcv5:spawn_vehicle_f16.name=F-16
+item.vehicle:f16_spawn_egg=F-16
+entity.vehicle:su25.name=Su-25
+item.spawn_egg.entity.vehicle:su25.name=Su-25
+tile.gvcv5:spawn_vehicle_su25.name=Su-25
+item.vehicle:su25_spawn_egg=Su-25
+
+### From V5-4.1 (GVCBedrock Addon V4.1) Jul 5th 2025
+entity.vehicle:f117.name=F-117
+item.spawn_egg.entity.vehicle:f117.name=F-117
+tile.gvcv5:spawn_vehicle_f117.name=F-117
+item.vehicle:f117_spawn_egg=F-117
+
+### From V5-5 (GVCBedrock Addon V5.0) 
+entity.vehicle:lav25aa.name=LAV25自走対空砲
+item.spawn_egg.entity.vehicle:lav25aa.name=LAV25自走対空砲
+tile.gvcv5:spawn_vehicle_lav25aa.name=LAV25自走対空砲
+item.vehicle:lav25aa_spawn_egg=LAV25自走対空砲
+entity.vehicle:m113aa.name=M113自走対空砲
+item.spawn_egg.entity.vehicle:m113aa.name=M113自走対空砲
+tile.gvcv5:spawn_vehicle_m113aa.name=M113自走対空砲
+item.vehicle:m113aa_spawn_egg=M113自走対空砲
+
+entity.vehicle:panzer.name=IV号戦車
+item.spawn_egg.entity.vehicle:panzer.name=IV号戦車
+tile.gvcv5:spawn_vehicle_panzer.name=IV号戦車
+item.vehicle:panzer_spawn_egg=IV号戦車
+entity.vehicle:m1_abrams.name=M1 エイブラムス
+item.spawn_egg.entity.vehicle:m1_abrams.name=M1 エイブラムス
+tile.gvcv5:spawn_vehicle_m1_abrams.name=M1 エイブラムス
+item.vehicle:m1_abrams_spawn_egg=M1 エイブラムス
+
+entity.vehicle:vads.name=VADS対空砲
+item.spawn_egg.entity.vehicle:vads.name=VADS対空砲
+tile.gvcv5:spawn_vehicle_vads.name=VADS対空砲
+item.vehicle:vads_spawn_egg=VADS対空砲
+entity.vehicle:yak9.name=Yak-9
+item.spawn_egg.entity.vehicle:yak9.name=Yak-9
+tile.gvcv5:spawn_vehicle_yak9.name=Yak-9
+item.vehicle:yak9_spawn_egg=Yak-9
+entity.vehicle:il2.name=Il-2
+item.spawn_egg.entity.vehicle:il2.name=Il-2
+tile.gvcv5:spawn_vehicle_il2.name=Il-2
+item.vehicle:il2_spawn_egg=Il-2
+
+### Tile name ###
 tile.gvcv5:good1.name=死体
 tile.gvcv5:good2.name=スクラップ
 tile.gvcv5:good3.name=段ボール
@@ -489,33 +536,6 @@ tile.gvcv5:vc1.name=ビークル製造機Tier1
 tile.gvcv5:vc2.name=ビークル製造機Tier2
 tile.gvcv5:vc3.name=ビークル製造機Tier3
 
-tile.gvcv5:spawn_vehicle_20mmaa.name=20mm対空砲
-tile.gvcv5:spawn_vehicle_ah1s.name=AH-1S
-tile.gvcv5:spawn_vehicle_ah6.name=AH-6
-tile.gvcv5:spawn_vehicle_aifv.name=AIFV
-tile.gvcv5:spawn_vehicle_btr60.name=BTR-60
-tile.gvcv5:spawn_vehicle_dp28set.name=固定機銃DP-28
-tile.gvcv5:spawn_vehicle_flak18.name=対戦車砲Flak18
-tile.gvcv5:spawn_vehicle_g_heri.name=ゲリラヘリ
-tile.gvcv5:spawn_vehicle_ka50.name=Ka-50
-tile.gvcv5:spawn_vehicle_kv2.name=KV-2
-tile.gvcv5:spawn_vehicle_lav25.name=LAV25歩兵戦闘車
-tile.gvcv5:spawn_vehicle_m1a2.name=M1A2
-tile.gvcv5:spawn_vehicle_m41.name=M41A3
-tile.gvcv5:spawn_vehicle_m60a1.name=M60A1
-tile.gvcv5:spawn_vehicle_m60set.name=固定機銃M60
-tile.gvcv5:spawn_vehicle_m113.name=M113装甲車
-tile.gvcv5:spawn_vehicle_m1126.name=M1126装甲車
-tile.gvcv5:spawn_vehicle_m1128.name=M1128戦車駆逐車
-tile.gvcv5:spawn_vehicle_mi24d.name=Mi-24D
-tile.gvcv5:spawn_vehicle_pak40.name=対戦車砲Pak40
-tile.gvcv5:spawn_vehicle_pkmset.name=固定機銃PKM
-tile.gvcv5:spawn_vehicle_pt76.name=PT-76
-tile.gvcv5:spawn_vehicle_t34.name=T-34
-tile.gvcv5:spawn_vehicle_t55.name=T-55
-tile.gvcv5:spawn_vehicle_t72.name=T-72
-tile.gvcv5:spawn_vehicle_zu23.name=Zu-23対空砲
-
 tile.gvcv5:structure_end.name=構造物終端ブロック
 
 tile.gvcv5:l0.name=ダンジョン用_空チェスト
@@ -524,6 +544,43 @@ tile.gvcv5:l2.name=ダンジョン用_銃_1
 tile.gvcv5:l3.name=ダンジョン用_銃_2
 tile.gvcv5:l4.name=ダンジョン用_銃_3
 tile.gvcv5:l5.name=ダンジョン用_銃_4
+
+gvcv5.mr_cpt.crashed0.name=S.O.S......S.O.S.....
+gvcv5.mr_cpt.crashed1.name=付近...味方部隊に連r...、救援...求m...
+gvcv5.mr_cpt.crashed2.name=こちら...残存.....は少ない...救..援を..
+gvcv5.mr_cpt.crashed3.name=救援部隊か！我々は艦首に立てこもっている
+gvcv5.mr_cpt.talk0.name=同盟軍士官:救援部隊か！....成程....
+gvcv5.mr_cpt.talk1.name=同盟軍士官:現在我が艦はゲリラによるシー・ジャックを受け壊滅した
+gvcv5.mr_cpt.talk2.name=同盟軍士官:生き残りは我々だけだ
+gvcv5.mr_cpt.talk3.name=同盟軍士官:君たちには残存兵力を率いて艦内の6つのジャミング装置を破壊してもらいたい
+gvcv5.mr_cpt.talk4.name=同盟軍士官:ゲリラどもがジャミング装置を設置したことで長距離通信が不可能となっている
+gvcv5.mr_cpt.talk5.name=同盟軍士官:全てのジャミング装置を破壊すれば救援部隊を要請出来るだろう
+gvcv5.mr_cpt.talk6.name=同盟軍士官:救援部隊到着後、ゲリラを掃討する
+gvcv5.mr_cpt.talk7.name=同盟軍士官:君たちしか頼れない、頼むぞ
+gvcv5.mr_cpt.jamming_destroy0.name=同盟軍士官:よし！ジャミング装置を全て破壊したぞ!
+gvcv5.mr_cpt.jamming_destroy1.name=同盟軍士官:すぐに救援部隊を要請する!
+gvcv5.mr_cpt.jamming_destroy2.name=同盟軍士官:よし！味方の空挺部隊だ!
+gvcv5.precv.crashed0.name=同盟軍士官:よし！船を奪還したぞ！
+gvcv5.precv.crashed1.name=同盟軍兵士:!?...レーダーに所属不明機を確認！
+gvcv5.precv.crashed2.name=同盟軍士官:ゲリラの新手か!?
+gvcv5.precv.crashed3.name=同盟軍兵士:いえこれは...未確認の機体です!   IFFにも応答ありません!
+gvcv5.precv.crashed4.name=同盟軍士官:ええいっ、迎撃準備だ!
+gvcv5.precv.crashed5.name=同盟軍兵士:あと1分で接敵します!12時方向です!
+gvcv5.mr_cpt.wave1.name=同盟軍士官:来たぞ!向かい撃て!!
+gvcv5.mr_cpt.wave1_new_enemy.name=同盟軍士官:くそ!、また来たぞ!
+gvcv5.mr_cpt.wave2_cool.name=同盟軍兵士:所属不明部隊、6時方向よりさらに接近中!
+gvcv5.mr_cpt.wave2.name=同盟軍士官:ええいっ、キリがないぞ!
+gvcv5.mr_cpt.wave2_new_enemy.name=同盟軍兵士:所属不明部隊、さらに接近中!
+gvcv5.mr_cpt.wave3_cool.name=同盟軍兵士:所属不明部隊、12時と6時方向より接近中!
+gvcv5.mr_cpt.wave3.name=同盟軍士官:耐えろ!、なんとしても耐え抜くんだ!
+gvcv5.mr_cpt.wave3_new_enemy.name=同盟軍兵士:所属不明部隊、さらに接近中!
+gvcv5.endcv.crashed0.name=同盟軍士官:終わったのか...?
+gvcv5.endcv.crashed1.name=同盟軍兵士:付近に敵影無しです
+gvcv5.endcv.crashed2.name=同盟軍士官:君たちには助けられたな
+gvcv5.endcv.crashed3.name=同盟軍士官:少ないかもしれないが報酬だ、持って行ってくれ
+gvcv5.losecv.crashed0.name=同盟軍士官:くそ!、旗が奪われたか!
+gvcv5.losecv.crashed1.name=同盟軍兵士:付近に敵影大勢あり、危険な状態だ!
+gvcv5.losecv.crashed2.name=同盟軍士官:こうなったら仕方ない!、我々は船から撤退する!
 
 tile.gvcv5:building_camp.name=ダンジョン_キャンプ
 tile.gvcv5:building_camp_sn.name=ダンジョン_雪原キャンプ
@@ -751,49 +808,6 @@ script.gvcv5.phone_set_subleader.name=サブリーダーに設定
 script.gvcv5.phone_remove_subleader.name=サブリーダーを削除
 script.gvcv5.phone_new_subleader.name=あなたは新しいサブリーダーになりました!
 script.gvcv5.phone_remove_subleader_m.name=あなたはサブリーダーを削除されました
-
-item.vehicle:dp28set_spawn_egg=固定機銃DP-28
-item.vehicle:m60set_spawn_egg=固定機銃M60
-item.vehicle:pkmset_spawn_egg=固定機銃PKM
-item.vehicle:20mmaa_spawn_egg=20mm対空砲
-item.vehicle:flak18_spawn_egg=対戦車砲Flak18
-item.vehicle:pak40_spawn_egg=対戦車砲Pak40
-item.vehicle:zu23_spawn_egg=Zu-23対空砲
-item.vehicle:btr60_spawn_egg=BTR-60
-item.vehicle:m113_spawn_egg=M113装甲車
-item.vehicle:m113aa_spawn_egg=M113自走対空砲
-item.vehicle:vads_spawn_egg=VADS対空砲
-item.vehicle:panzer_spawn_egg=IV号戦車
-item.vehicle:yak9_spawn_egg=Yak-9
-item.vehicle:il2_spawn_egg=Il-2
-item.vehicle:aifv_spawn_egg=AIFV
-item.vehicle:m1126_spawn_egg=M1126装甲車
-item.vehicle:m1128_spawn_egg=M1128戦車駆逐車
-item.vehicle:lav25_spawn_egg=LAV25歩兵戦闘車
-item.vehicle:lav25aa_spawn_egg=LAV25自走対空砲
-item.vehicle:t34_spawn_egg=T-34
-item.vehicle:g_heri_spawn_egg=ゲリラヘリ
-item.vehicle:fv101_spawn_egg=FV101
-item.vehicle:m41_spawn_egg=M41A3
-item.vehicle:m1_abrams_spawn_egg=M1エイブラムス
-item.vehicle:m1a2_spawn_egg=M1A2
-item.vehicle:t72_spawn_egg=T-72
-item.vehicle:tech_spawn_egg=テクニカルトラック
-item.vehicle:m60a1_spawn_egg=M60A1
-item.vehicle:kv2_spawn_egg=KV-2
-item.vehicle:pt76_spawn_egg=PT-76
-item.vehicle:t55_spawn_egg=T-55
-item.vehicle:ah1s_spawn_egg=AH-1S
-item.vehicle:ah6_spawn_egg=AH-6
-item.vehicle:mi24d_spawn_egg=Mi-24D
-item.vehicle:ka50_spawn_egg=Ka-50
-item.vehicle:mig17_spawn_egg=MiG-17
-item.vehicle:su25_spawn_egg=Su-25
-item.vehicle:su27_spawn_egg=Su-27
-item.vehicle:f16_spawn_egg=F-16
-item.vehicle:ka60_spawn_egg=Ka-60
-item.vehicle:r22_spawn_egg=ゲリラ小型ヘリ
-item.vehicle:f117_spawn_egg=F-117
 
 item.gvcv5:supplies_item=支援物資
 item.gvcv5:beacon_item=スポーンブロック_ゲリラ
