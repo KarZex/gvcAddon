@@ -336,6 +336,10 @@ entity.vehicle:pkmset.name=固定機銃PKM
 item.spawn_egg.entity.vehicle:pkmset.name=固定機銃PKM
 tile.gvcv5:spawn_vehicle_pkmset.name=固定機銃PKM
 item.vehicle:pkmset_spawn_egg=固定機銃PKM
+entity.vehicle:pak40.name=対戦車砲Pak40
+item.spawn_egg.entity.vehicle:pak40.name=対戦車砲Pak40
+tile.gvcv5:spawn_vehicle_pak40.name=対戦車砲Pak40
+item.vehicle:pak40_spawn_egg=対戦車砲Pak40
 
 entity.vehicle:ah1s.name=AH-1S
 item.spawn_egg.entity.vehicle:ah1s.name=AH-1S

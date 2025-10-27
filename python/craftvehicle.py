@@ -285,7 +285,7 @@ with open("behavior_packs/GVCBedrock/scripts/vehicle.js","w") as f:
     f.write(export)
 
 
-with open("terrain_texture.json","w") as f:
+with open("resource_packs/GVCBedrock/textures/terrain_texture.json","w") as f:
     json.dump(terrain_texture,f,indent=2)
 
 with open("behavior_packs/GVCBedrock/functions/b1.mcfunction","w") as f:
@@ -294,6 +294,8 @@ with open("behavior_packs/GVCBedrock/functions/b1.mcfunction","w") as f:
 with open("resource_packs/GVCBedrock/texts/vehicle_name.lang","w") as f:
     f.write(names)
 
+with open("resource_packs/GVCBedrock/textures/item_texture.json","w") as f:
+    json.dump(item_json,f,indent=2)
 with open("resource_packs/GVCBedrock/textures/item_texture.json","w") as f:
     json.dump(item_json,f,indent=2)
 

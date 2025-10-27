@@ -40,6 +40,7 @@ tile.gvcv5:building_city.name=ダンジョン_街
 tile.gvcv5:building_abandoned_factory.name=ダンジョン_廃工場
 tile.gvcv5:building_ruins.name=ダンジョン_廃墟
 tile.gvcv5:building_trench.name=ダンジョン_旧塹壕跡
+tile.gvcv5:building_snowcastle.name=ダンジョン_城跡
 tile.gvcv5:building_ship.name=ダンジョン_貨物船
 tile.gvcv5:building_trainstation.name=ダンジョン_鉄道拠点跡
 tile.gvcv5:building_reichstag.name=ダンジョン_ライヒスターク

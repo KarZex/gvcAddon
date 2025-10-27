@@ -402,6 +402,42 @@
     },
     "spawn_": {
       "textures": "textures/spawn/"
+    },
+    "spawn_vehicle_lav25aa": {
+      "textures": "textures/spawn/vehicle_lav25aa"
+    },
+    "spawn_vehicle_m113aa": {
+      "textures": "textures/spawn/vehicle_m113aa"
+    },
+    "spawn_vehicle_panzer": {
+      "textures": "textures/spawn/vehicle_panzer"
+    },
+    "spawn_vehicle_m1_abrams": {
+      "textures": "textures/spawn/vehicle_m1_abrams"
+    },
+    "spawn_vehicle_fv101": {
+      "textures": "textures/spawn/vehicle_fv101"
+    },
+    "spawn_vehicle_r22": {
+      "textures": "textures/spawn/vehicle_r22"
+    },
+    "spawn_vehicle_ka60": {
+      "textures": "textures/spawn/vehicle_ka60"
+    },
+    "spawn_vehicle_vads": {
+      "textures": "textures/spawn/vehicle_vads"
+    },
+    "spawn_vehicle_mig17": {
+      "textures": "textures/spawn/vehicle_mig17"
+    },
+    "spawn_vehicle_f117": {
+      "textures": "textures/spawn/vehicle_f117"
+    },
+    "spawn_vehicle_yak9": {
+      "textures": "textures/spawn/vehicle_yak9"
+    },
+    "spawn_vehicle_il2": {
+      "textures": "textures/spawn/vehicle_il2"
     }
   }
 }
