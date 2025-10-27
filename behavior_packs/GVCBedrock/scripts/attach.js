@@ -30,7 +30,9 @@ export const attachmentData = {
     "bullet_at",
     "bullet_srag",
     "bullet_frag",
-    "bullet_db"
+    "bullet_db",
+    "bullet_gas",
+    "bullet_emp"
   ],
   "attachTypes": [
     "sights",

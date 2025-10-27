@@ -130,7 +130,10 @@ export const gunAttach = {
     "burrel": 0,
     "grip": 0,
     "light": 0,
-    "bullet": 0
+    "bullet": [
+      7,
+      8
+    ]
   },
   "fgm148": {
     "sights": 1,
@@ -196,8 +199,7 @@ export const gunAttach = {
       1
     ],
     "bullet": [
-      1,
-      3
+      1
     ]
   },
   "glock18": {
@@ -215,8 +217,7 @@ export const gunAttach = {
       1
     ],
     "bullet": [
-      1,
-      3
+      1
     ]
   },
   "hk416": {
@@ -491,7 +492,10 @@ export const gunAttach = {
     "burrel": 0,
     "grip": 0,
     "light": 0,
-    "bullet": 0
+    "bullet": [
+      7,
+      8
+    ]
   },
   "m82": {
     "sights": 1,
@@ -592,8 +596,7 @@ export const gunAttach = {
       1
     ],
     "bullet": [
-      1,
-      3
+      1
     ]
   },
   "mp7": {
@@ -616,8 +619,7 @@ export const gunAttach = {
       1
     ],
     "bullet": [
-      1,
-      3
+      1
     ]
   },
   "p90": {
@@ -772,8 +774,7 @@ export const gunAttach = {
     "grip": 0,
     "light": 0,
     "bullet": [
-      1,
-      3
+      1
     ]
   },
   "vz61": {
@@ -788,6 +789,9 @@ export const gunAttach = {
     "burrel": 0,
     "grip": 0,
     "light": 0,
-    "bullet": 0
+    "bullet": [
+      7,
+      8
+    ]
   }
 };

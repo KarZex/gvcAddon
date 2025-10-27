@@ -36,17 +36,10 @@
             "knockback": false
           },
           "stick_in_ground": {},
-          "catch_fire": true,
-          "definition_event": {
-            "affectProjectile": true,
-            "eventTrigger": {
-              "event": "minecraft:explode",
-              "target": "self"
-            }
-          }
+          "catch_fire": true
         },
         "power": 0.03,
-        "gravity": 0,
+        "gravity": 0.01,
         "inertia": 1.5,
         "uncertainty_base": 2.5,
         "uncertainty_multiplier": 0,

@@ -1,0 +1,443 @@
+{
+  "resource_pack_name": "GVC",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "miss": {
+      "textures": "textures/craft/ds"
+    },
+    "attach_table": {
+      "textures": "textures/blocks/attach_table"
+    },
+    "attach_table_top": {
+      "textures": "textures/blocks/attach_table_top"
+    },
+    "attach_table_bottom": {
+      "textures": "textures/blocks/attach_table_bottom"
+    },
+    "mine": {
+      "textures": "textures/blocks/spawng"
+    },
+    "firstitem": {
+      "textures": "textures/blocks/firstitem"
+    },
+    "supplies": {
+      "textures": "textures/blocks/supplies"
+    },
+    "l0": {
+      "textures": "textures/blocks/l0"
+    },
+    "l1": {
+      "textures": "textures/blocks/l1"
+    },
+    "l2": {
+      "textures": "textures/blocks/l2"
+    },
+    "l3": {
+      "textures": "textures/blocks/l3"
+    },
+    "l4": {
+      "textures": "textures/blocks/l4"
+    },
+    "l5": {
+      "textures": "textures/blocks/l5"
+    },
+    "spawn_red": {
+      "textures": "textures/blocks/spawn_red"
+    },
+    "spawn_blue": {
+      "textures": "textures/blocks/spawn_blue"
+    },
+    "spawn_green": {
+      "textures": "textures/blocks/spawn_green"
+    },
+    "spawn_yellow": {
+      "textures": "textures/blocks/spawn_yellow"
+    },
+    "firstbase": {
+      "textures": "textures/blocks/firstbase"
+    },
+    "spawn_ca": {
+      "textures": "textures/blocks/spawn/ca"
+    },
+    "spawn_gb1": {
+      "textures": "textures/blocks/spawn/gb1"
+    },
+    "spawn_gb2": {
+      "textures": "textures/blocks/spawn/gb2"
+    },
+    "spawn_gb3": {
+      "textures": "textures/blocks/spawn/gb3"
+    },
+    "spawn_gb4": {
+      "textures": "textures/blocks/spawn/gb4"
+    },
+    "spawn_gb5": {
+      "textures": "textures/blocks/spawn/gb5"
+    },
+    "spawn_gb6": {
+      "textures": "textures/blocks/spawn/gb6"
+    },
+    "spawn_gb": {
+      "textures": "textures/blocks/spawn/gb"
+    },
+    "spawn_gc1": {
+      "textures": "textures/blocks/spawn/gc1"
+    },
+    "spawn_gc2": {
+      "textures": "textures/blocks/spawn/gc2"
+    },
+    "spawn_gc3": {
+      "textures": "textures/blocks/spawn/gc3"
+    },
+    "spawn_gc4": {
+      "textures": "textures/blocks/spawn/gc4"
+    },
+    "spawn_gc5": {
+      "textures": "textures/blocks/spawn/gc5"
+    },
+    "spawn_gc6": {
+      "textures": "textures/blocks/spawn/gc6"
+    },
+    "spawn_b1": {
+      "textures": "textures/blocks/spawn/b1"
+    },
+    "spawn_b2": {
+      "textures": "textures/blocks/spawn/b2"
+    },
+    "spawn_b3": {
+      "textures": "textures/blocks/spawn/b3"
+    },
+    "spawn_b4": {
+      "textures": "textures/blocks/spawn/b4"
+    },
+    "spawn_b5": {
+      "textures": "textures/blocks/spawn/b5"
+    },
+    "spawn_b6": {
+      "textures": "textures/blocks/spawn/b6"
+    },
+    "spawn_e1": {
+      "textures": "textures/blocks/spawn/e1"
+    },
+    "spawn_e2": {
+      "textures": "textures/blocks/spawn/e2"
+    },
+    "spawn_e3": {
+      "textures": "textures/blocks/spawn/e3"
+    },
+    "spawn_e4": {
+      "textures": "textures/blocks/spawn/e4"
+    },
+    "spawn_e5": {
+      "textures": "textures/blocks/spawn/e5"
+    },
+    "spawn_e6": {
+      "textures": "textures/blocks/spawn/e6"
+    },
+    "spawn_g1": {
+      "textures": "textures/blocks/spawn/g1"
+    },
+    "spawn_g2": {
+      "textures": "textures/blocks/spawn/g2"
+    },
+    "spawn_g3": {
+      "textures": "textures/blocks/spawn/g3"
+    },
+    "spawn_g4": {
+      "textures": "textures/blocks/spawn/g4"
+    },
+    "spawn_a1": {
+      "textures": "textures/blocks/spawn/a1"
+    },
+    "spawn_a2": {
+      "textures": "textures/blocks/spawn/a2"
+    },
+    "spawn_a3": {
+      "textures": "textures/blocks/spawn/a3"
+    },
+    "spawn_a4": {
+      "textures": "textures/blocks/spawn/a4"
+    },
+    "good1": {
+      "textures": "textures/blocks/good1"
+    },
+    "good2": {
+      "textures": "textures/blocks/good2"
+    },
+    "good3": {
+      "textures": "textures/blocks/good3"
+    },
+    "good5": {
+      "textures": "textures/blocks/good5"
+    },
+    "bc": {
+      "textures": "textures/blocks/bc"
+    },
+    "gc1": {
+      "textures": "textures/blocks/gc1"
+    },
+    "gc2": {
+      "textures": "textures/blocks/gc2"
+    },
+    "gc3": {
+      "textures": "textures/blocks/gc3"
+    },
+    "vc1": {
+      "textures": "textures/blocks/vc1"
+    },
+    "vc2": {
+      "textures": "textures/blocks/vc2"
+    },
+    "vc3": {
+      "textures": "textures/blocks/vc3"
+    },
+    "good4": {
+      "textures": "textures/blocks/good4"
+    },
+    "spawn_g": {
+      "textures": "textures/blocks/spawn_g"
+    },
+    "spawn_c": {
+      "textures": "textures/blocks/spawn_c"
+    },
+    "radio": {
+      "textures": "textures/blocks/radio"
+    },
+    "radio_big": {
+      "textures": "textures/blocks/radio_big"
+    },
+    "mil_cont": {
+      "textures": "textures/blocks/mil_cont"
+    },
+    "mil_cont2": {
+      "textures": "textures/blocks/mil_cont2_gc"
+    },
+    "monitor": {
+      "textures": "textures/blocks/monitor"
+    },
+    "odunit_gc": {
+      "textures": "textures/blocks/odunit_gc"
+    },
+    "toughbook": {
+      "textures": "textures/blocks/toughbook"
+    },
+    "laptop": {
+      "textures": "textures/blocks/laptop"
+    },
+    "t_wall": {
+      "textures": "textures/blocks/t_wall"
+    },
+    "t_wall2": {
+      "textures": "textures/blocks/t_wall2"
+    },
+    "fire_exti": {
+      "textures": "textures/blocks/fire_exti"
+    },
+    "fslight": {
+      "textures": "textures/blocks/fslight"
+    },
+    "gas": {
+      "textures": "textures/blocks/gas"
+    },
+    "spawn_addon_ga": {
+      "textures": "textures/spawn/addon_ga"
+    },
+    "spawn_addon_ca": {
+      "textures": "textures/spawn/addon_ca"
+    },
+    "spawn_addon_pmc": {
+      "textures": "textures/spawn/addon_pmc"
+    },
+    "spawn_addon_gb1": {
+      "textures": "textures/spawn/addon_gb1"
+    },
+    "spawn_addon_gb2": {
+      "textures": "textures/spawn/addon_gb2"
+    },
+    "spawn_addon_gb3": {
+      "textures": "textures/spawn/addon_gb3"
+    },
+    "spawn_addon_gb4": {
+      "textures": "textures/spawn/addon_gb4"
+    },
+    "spawn_addon_gb5": {
+      "textures": "textures/spawn/addon_gb5"
+    },
+    "spawn_addon_gc1": {
+      "textures": "textures/spawn/addon_gc1"
+    },
+    "spawn_addon_gc2": {
+      "textures": "textures/spawn/addon_gc2"
+    },
+    "spawn_addon_gc3": {
+      "textures": "textures/spawn/addon_gc3"
+    },
+    "spawn_addon_gc4": {
+      "textures": "textures/spawn/addon_gc4"
+    },
+    "spawn_addon_gc5": {
+      "textures": "textures/spawn/addon_gc5"
+    },
+    "spawn_vehicle_aifv": {
+      "textures": "textures/spawn/vehicle_aifv"
+    },
+    "spawn_vehicle_lav25": {
+      "textures": "textures/spawn/vehicle_lav25"
+    },
+    "spawn_vehicle_m113": {
+      "textures": "textures/spawn/vehicle_m113"
+    },
+    "spawn_vehicle_m1126": {
+      "textures": "textures/spawn/vehicle_m1126"
+    },
+    "spawn_vehicle_m1128": {
+      "textures": "textures/spawn/vehicle_m1128"
+    },
+    "spawn_vehicle_btr60": {
+      "textures": "textures/spawn/vehicle_btr60"
+    },
+    "spawn_vehicle_ah1s": {
+      "textures": "textures/spawn/vehicle_ah1s"
+    },
+    "spawn_vehicle_ah6": {
+      "textures": "textures/spawn/vehicle_ah6"
+    },
+    "spawn_vehicle_g_heri": {
+      "textures": "textures/spawn/vehicle_g_heri"
+    },
+    "spawn_vehicle_ka50": {
+      "textures": "textures/spawn/vehicle_ka50"
+    },
+    "spawn_vehicle_mi24d": {
+      "textures": "textures/spawn/vehicle_mi24d"
+    },
+    "spawn_vehicle_kv2": {
+      "textures": "textures/spawn/vehicle_kv2"
+    },
+    "spawn_vehicle_m1a2": {
+      "textures": "textures/spawn/vehicle_m1a2"
+    },
+    "spawn_vehicle_m41": {
+      "textures": "textures/spawn/vehicle_m41"
+    },
+    "spawn_vehicle_m60": {
+      "textures": "textures/spawn/vehicle_m60"
+    },
+    "spawn_vehicle_pt76": {
+      "textures": "textures/spawn/vehicle_pt76"
+    },
+    "spawn_vehicle_t34": {
+      "textures": "textures/spawn/vehicle_t34"
+    },
+    "spawn_vehicle_t55": {
+      "textures": "textures/spawn/vehicle_t55"
+    },
+    "spawn_vehicle_t72": {
+      "textures": "textures/spawn/vehicle_t72"
+    },
+    "spawn_vehicle_20mmaa": {
+      "textures": "textures/spawn/vehicle_20mmaa"
+    },
+    "spawn_vehicle_flak18": {
+      "textures": "textures/spawn/vehicle_flak18"
+    },
+    "spawn_vehicle_pak40": {
+      "textures": "textures/spawn/vehicle_pak40"
+    },
+    "spawn_vehicle_zu23": {
+      "textures": "textures/spawn/vehicle_zu23"
+    },
+    "spawn_vehicle_dp28set": {
+      "textures": "textures/spawn/vehicle_dp28set"
+    },
+    "spawn_vehicle_m60set": {
+      "textures": "textures/spawn/vehicle_m60set"
+    },
+    "spawn_vehicle_pkmset": {
+      "textures": "textures/spawn/vehicle_pkmset"
+    },
+    "spawn_vehicle_m60a1": {
+      "textures": "textures/spawn/vehicle_m60a1"
+    },
+    "spawn_addon_unks": {
+      "textures": "textures/spawn/addon_unks"
+    },
+    "spawn_addon_af_cpt": {
+      "textures": "textures/spawn/addon_af_cpt"
+    },
+    "spawn_addon_mr_cpt": {
+      "textures": "textures/spawn/addon_mr_cpt"
+    },
+    "gvcv5_scaffold_top": {
+      "textures": "textures/blocks/gvcv5_scaffold_top"
+    },
+    "gvcv5_scaffold_side": {
+      "textures": "textures/blocks/gvcv5_scaffold_side"
+    },
+    "spawn_addon_jamming": {
+      "textures": "textures/spawn/addon_jamming"
+    },
+    "redspawn": {
+      "textures": "textures/blocks/redspawn"
+    },
+    "bluespawn": {
+      "textures": "textures/blocks/bluespawn"
+    },
+    "greenspawn": {
+      "textures": "textures/blocks/greenspawn"
+    },
+    "yellowspawn": {
+      "textures": "textures/blocks/yellowspawn"
+    },
+    "spawn_vehicle_su27": {
+      "textures": "textures/spawn/vehicle_su27"
+    },
+    "spawn_vehicle_f16": {
+      "textures": "textures/spawn/vehicle_f16"
+    },
+    "spawn_vehicle_su25": {
+      "textures": "textures/spawn/vehicle_su25"
+    },
+    "spawn_": {
+      "textures": "textures/spawn/"
+    },
+    "spawn_vehicle_lav25aa": {
+      "textures": "textures/spawn/vehicle_lav25aa"
+    },
+    "spawn_vehicle_m113aa": {
+      "textures": "textures/spawn/vehicle_m113aa"
+    },
+    "spawn_vehicle_panzer": {
+      "textures": "textures/spawn/vehicle_panzer"
+    },
+    "spawn_vehicle_m1_abrams": {
+      "textures": "textures/spawn/vehicle_m1_abrams"
+    },
+    "spawn_vehicle_fv101": {
+      "textures": "textures/spawn/vehicle_fv101"
+    },
+    "spawn_vehicle_r22": {
+      "textures": "textures/spawn/vehicle_r22"
+    },
+    "spawn_vehicle_ka60": {
+      "textures": "textures/spawn/vehicle_ka60"
+    },
+    "spawn_vehicle_vads": {
+      "textures": "textures/spawn/vehicle_vads"
+    },
+    "spawn_vehicle_mig17": {
+      "textures": "textures/spawn/vehicle_mig17"
+    },
+    "spawn_vehicle_f117": {
+      "textures": "textures/spawn/vehicle_f117"
+    },
+    "spawn_vehicle_yak9": {
+      "textures": "textures/spawn/vehicle_yak9"
+    },
+    "spawn_vehicle_il2": {
+      "textures": "textures/spawn/vehicle_il2"
+    }
+  }
+}

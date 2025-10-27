@@ -1,0 +1,29 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+      "description": {
+          "identifier": "gvcv5:spawn_",
+          "menu_category":{
+              "category": "construction"
+          }
+      },
+      "components": {
+          "minecraft:material_instances": {
+              "*": {
+                  "texture": "spawn_",
+                  "render_method": "alpha_test",
+                  "ambient_occlusion": false
+              }
+          },
+          "minecraft:geometry": "minecraft:geometry.full_block",
+          "minecraft:selection_box": {
+              "origin": [-8, 0, -8],
+              "size": [16, 16, 16]
+          },
+          "minecraft:custom_components": [ "gvcv5:spawn" ],
+          "minecraft:light_emission":15,
+          "minecraft:light_dampening": 0,
+          "minecraft:map_color": "#00ff00"
+      }
+  }
+}

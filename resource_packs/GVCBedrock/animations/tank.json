@@ -48,7 +48,29 @@
 			"loop": true,
 			"bones": {
 				"bone19": {
-					"rotation": ["query.target_x_rotation * 3", 0, 0]
+					"rotation": ["q.rider_head_x_rotation(0)", 0, "Math.cos(q.rider_head_x_rotation(0)) * Math.clamp(v.applyRotation,-90,90)"]
+				}
+			}
+		},
+		"animation.herix": {
+			"loop": true,
+			"animation_length": 0.1667,
+			"bones": {
+				"bone5": {
+					"rotation": {
+						"0.0": [0, 0, -180],
+						"0.0833": [0, 0, 0],
+						"0.1667": [0, 0, 180]
+					}
+				}
+			}
+		},
+		"animation.flying": {
+			"loop": true,
+			"animation_length": 0.1667,
+			"bones": {
+				"roll": {
+					"scale": [0, 0, 0]
 				}
 			}
 		},
@@ -77,19 +99,29 @@
 				}
 			}
 		},
+		"animation.land.yak9": {
+			"loop": true,
+			"bones": {
+				"bone19": {
+					"rotation": [-8.5, 0, 0],
+					"position": [0, -6, 0]
+				}
+			}
+		},
+		"animation.land.il2": {
+			"loop": true,
+			"bones": {
+				"bone19": {
+					"rotation": [-7.5, 0, 0],
+					"position": [0, -6, 0]
+				}
+			}
+		},
 		"animation.airmig172": {
 			"loop": true,
 			"bones": {
 				"bone19": {
 					"rotation": ["q.rider_head_x_rotation(0)", 0, "Math.cos(q.rider_head_x_rotation(0)) * Math.clamp(v.applyRotation,-90,90)"]
-				}
-			}
-		},
-		"animation.herix": {
-			"loop": true,
-			"bones": {
-				"bone19": {
-					"rotation": ["query.target_x_rotation + 30", 0, 0]
 				}
 			}
 		}

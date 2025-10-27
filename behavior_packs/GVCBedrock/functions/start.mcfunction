@@ -6,7 +6,10 @@ execute as @a[scores={mcooli=1..}] run function mcooli
 execute as @a[scores={mcoolii=1..}] run function mcoolii
 
 
-execute as @a run function scool
+execute as @a run function weaponi_cool
+execute as @a run function weaponii_cool
+execute as @a run function weaponiii_cool
+execute as @a run function weaponiv_cool
 
 execute as @a[tag=!startedv5] run function gunstart
 execute as @a[tag=down] run function down
@@ -15,8 +18,6 @@ execute as @e[tag=raid] run function raid/zombietarget
 
 gamemode a @a[m=s,scores={antiMining=1..}]
 execute as @a[m=a,scores={antiMining=1..}] run function antiMining
-
-execute as @a[tag=!subattack,scores={subWeapon=1..}] run scoreboard players remove @s subWeapon 1
 
 #function sounds
 
@@ -32,10 +33,8 @@ execute at @e[type=fire:ads_lazer] run particle minecraft:redstone_wire_dust_par
 execute at @e[type=fire:lazer] run particle minecraft:redstone_wire_dust_particle ~~~
 execute at @e[type=fire:fire] run particle minecraft:basic_flame_particle ~~~
 execute at @e[family=db] run particle minecraft:basic_flame_particle ~~~
-execute at @e[type=fire:famas] run particle minecraft:basic_smoke_particle ~~~
-execute at @e[family=ppbombbullet] run particle minecraft:basic_smoke_particle ~~~
-
-execute at @e[type=fire:ads_famas] run particle minecraft:basic_smoke_particle ~~~
+execute at @e[family=gbullet] run particle gvcv5:gvc_smoke_particle ~~~
+execute at @e[family=ppbombbullet] run particle gvcv5:gvc_smoke_particle ~~~
 
 execute at @e[family=drop] run particle minecraft:basic_flame_particle ~~~
 

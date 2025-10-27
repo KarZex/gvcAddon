@@ -1135,6 +1135,12 @@
     },
     "an94": {
       "textures": "textures/items/gun/an94"
+    },
+    "bullet_gas": {
+      "textures": "textures/items/attachment/bullet_gas"
+    },
+    "bullet_emp": {
+      "textures": "textures/items/attachment/bullet_emp"
     }
   }
 }

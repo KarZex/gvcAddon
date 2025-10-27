@@ -9,7 +9,6 @@ row_count = 0
 
 text = ""
 
-vehicledata_json = {}
 gundata_json = json.load(open("tool/gundata.json","r"))
 BP_animation = json.load(open("tool/animation_controllers_guns.json","r"))
 BP_animation_hold = json.load(open("tool/animation_controllers_hold.json","r"))
@@ -759,7 +758,22 @@ for row in csv_reader:
                 gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
-                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                if(gun_ammo == "zex:556m"):
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
+                elif(gun_ammo == "zex:762m"):
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.02
+                elif(gun_ammo == "zex:mm9"):
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.005
+                elif(gun_ammo == "zex:btm"):
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                elif(gun_ammo == "zex:1270m"):
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
+                elif(gun_ammo == "zex:rocketm"):
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
+                elif(gun_ammo == "zex:12m"):
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
+                elif(gun_ammo == "zex:40m"):
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
                 #gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ -0.2,0,-0.5 ]
                 if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
                 gun_entity["minecraft:entity"]["events"] = {}
@@ -767,9 +781,16 @@ for row in csv_reader:
                 gun_entity["minecraft:entity"]["component_groups"] = {}
                 gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
 
-                if gun_bomb > 0:
+                if gun_bomb > 0 and (gun_ammo != "zex:40m"):
                     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
-
+                elif gun_bomb > 0 and (gun_ammo == "zex:40m"):
+                    gun_entity["minecraft:entity"]["components"]["minecraft:timer"] = {
+                        "time": 4,
+                        "time_down_event": {
+                        "event": "minecraft:explode",
+                        "target": "self"
+                        }
+                    }
                 if gun_wallbreak:
                     del gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["stick_in_ground"]
                    
@@ -805,7 +826,7 @@ for row in csv_reader:
                 gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.01
                 gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["catch_fire"] = True
                 gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["catch_fire"] = True
-                gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+                #gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
                 gun_entity_db["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": 0, "breaks_blocks": gun_break_block } }
                 gun_entity_db["minecraft:entity"]["description"]["identifier"] = "fire:{}_db".format(gun_id)
                 json.dump(gun_entity_db,f,indent=2)
@@ -824,7 +845,7 @@ for row in csv_reader:
                 gun_entity_base = json.load(f)
             gun_entity_frag = gun_entity_base
             with open("behavior_packs/GVCBedrock/entities/fire/{}_frag.json".format(gun_id),"w") as f:
-                gun_entity_frag["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+                #gun_entity_frag["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
                 gun_entity_frag["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": 2, "breaks_blocks": gun_break_block } }
                 gun_entity_frag["minecraft:entity"]["description"]["identifier"] = "fire:{}_frag".format(gun_id)
                 json.dump(gun_entity_frag,f,indent=2)
@@ -1509,18 +1530,8 @@ for row in csv_reader3:
     if( row_count >= 1 ):
         #from CSV
         v_id = row[1]
-        v_type = row[2]
-        v_speed = float(row[4])
-        v_sub = row[5]
-        v_main1 = row[7]
-        v_main2 = row[9]
-        v_main3 = row[11]
-        v_gattack = int(row[27])
-        v_fuelPerSec = int(row[28])
-        v_turn = float(row[34])
 
-        vehicledata_json["{}".format(v_id)] = { "type": v_type,"speed": v_speed,"sub": v_sub,"main1": v_main1,"main2": v_main2,"main3": v_main3,"turn": v_turn,"gattack":v_gattack,"FuelPerSecond":v_fuelPerSec }
-    
+
         ga_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{} no_ride_change summon_enemy".format(v_id) } }
         ca_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{} no_ride_change summon_enemy".format(v_id) } }
         pmc_json["minecraft:entity"]["events"]["vehicle:{}".format(v_id)] = { "queue_command": { "command": "ride @s summon_ride vehicle:{} no_ride_change summon_enemy".format(v_id) } }
@@ -1554,8 +1565,6 @@ with open("behavior_packs/GVCBedrock/entities/mob/allied/pmc.json","w") as f:
 with open("resource_packs/GVCBedrock/textures/item_texture.json","w") as f:
     json.dump(item_json,f,indent=2)
 
-with open("behavior_packs/GVCBedrock/scripts/vehicle.json","w") as f:
-    json.dump(vehicledata_json,f,indent=2)
 
 with open("behavior_packs/GVCBedrock/scripts/gun.json","r") as f:
     export = "import { EntityDamageCause } from \"@minecraft/server\";\nexport const gunData = " 
@@ -1567,14 +1576,6 @@ with open("behavior_packs/GVCBedrock/scripts/guns.js","w") as f:
     f.write(export)
 
 
-with open("behavior_packs/GVCBedrock/scripts/vehicle.json","r") as f:
-    export = "import { EntityDamageCause } from \"@minecraft/server\";\nexport const vehicleData = " 
-    export += f.read()
-    export += ";"
-
-
-with open("behavior_packs/GVCBedrock/scripts/vehicle.js","w") as f:
-    f.write(export)
 
 
 a_func += "tag @a[tag=!startedv5] add startedv5\n"

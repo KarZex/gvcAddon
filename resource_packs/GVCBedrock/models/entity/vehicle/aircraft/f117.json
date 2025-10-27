@@ -13,7 +13,7 @@
 			"bones": [
 				{
 					"name": "bone19",
-					"pivot": [0, 68.016, -17.0625],
+					"pivot": [0, 69.2, -16],
 					"poly_mesh": {
 						"normalized_uvs": true,
 						"positions": [
@@ -1760,7 +1760,7 @@
 					}
 				},
 				{
-					"name": "bone2",
+					"name": "roll",
 					"parent": "bone19",
 					"pivot": [-25.875, 20.9, 171.91],
 					"cubes": [

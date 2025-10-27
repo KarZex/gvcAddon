@@ -37,7 +37,7 @@
           "stick_in_ground": {}
         },
         "power": 0.6000000000000001,
-        "gravity": 0,
+        "gravity": 0.01,
         "inertia": 1.5,
         "uncertainty_base": 3.0,
         "uncertainty_multiplier": 0,

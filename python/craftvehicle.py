@@ -1,18 +1,27 @@
 import json
 import csv
 import ast
+from PIL import Image
 
 item_json = json.load(open("resource_packs/GVCBedrock/textures/item_texture.json","r"))
 row_count = 0
 
-m_func = ""
-s_func = "tag @s add subattack\n"
-b_func = "effect @s[tag=!ride] health_boost 99999 70 true\neffect @s[tag=!ride] instant_health 1 255 true\n"
+
+text = ""
+eng_text = ""
+
+vehicledata_json = {}
+v_weapon1_func = "tag @s add weaponiattack\n"
+v_weapon2_func = "tag @s add weaponiiattack\n"
+v_weapon3_func = "tag @s add weaponiiiattack\n"
+v_weapon4_func = "tag @s add weaponivattack\n"
+b_func = "effect @s[tag=!ride] resistance 99999 70 true\neffect @s[tag=!ride] instant_health 1 255 true\n"
 
 names = ""
 
 #aasdasd
 csv_path = open("csv/vehicleData.csv","r")
+terrain_texture = json.load(open("resource_packs/GVCBedrock/textures/terrain_texture.json","r"))
 csv_reader = csv.reader(csv_path)
 for row in csv_reader:
 
@@ -23,35 +32,79 @@ for row in csv_reader:
         v_type = row[2] #C
         v_health = int(row[3]) #D
         v_speed = float(row[4])
-        v_sub = row[5]
-        v_subcool = int(row[6])
-        v_main = row[7]
-        v_maincool = int(row[8])
-        v_main2 = row[9]
-        v_maincool2 = int(row[10])
-        v_main3 = row[11]
-        v_maincool3 = int(row[12])
-        v_antibullet = row[13]
-        v_water = row[14]
-        v_sizew = float(row[15])
-        v_sizeh = float(row[16])
-        v_menber = int(row[17])
-        v_break = row[18]
-        v_ridef = ast.literal_eval(row[19])
-        v_position1 = row[20]
-        v_position2 = row[21]
-        v_position3 = row[22]
-        v_position4 = row[23]
-        v_position5 = row[24]
-        v_position6 = row[25]
-        maxsubcool = int(row[26]) # AA on excel
+        v_weapon1 = row[5]
+        v_weapon1_cool = int(row[6])
+        v_weapon1_ammo = int(row[7])
+        v_weapon2 = row[8]
+        v_weapon2_cool = int(row[9])
+        v_weapon2_ammo = int(row[10])
+        v_weapon3 = row[11]
+        v_weapon3_cool = int(row[12])
+        v_weapon3_ammo = int(row[13])
+        v_weapon4 = row[14]
+        v_weapon4_cool = int(row[15])
+        v_weapon4_ammo = int(row[16])
+        v_antibullet = row[17]
+        v_water = row[18]
+        v_sizew = float(row[19])
+        v_sizeh = float(row[20])
+        v_menber = int(row[21])
+        v_break = row[22]
+        v_ridef = ast.literal_eval(row[23])
+        v_position1 = row[24]
+        v_position2 = row[25]
+        v_position3 = row[26]
+        v_position4 = row[27]
+        v_position5 = row[28]
+        v_position6 = row[29]
+
+    
 
         #from Name CSV
-        v_gattack = int(row[27])
+        v_gattack = int(row[30])
 
         #inventory item
         v_inventory = row[31] 
-        v_camera = int(row[33])
+        v_camera = int(row[32])
+        v_turn = int(row[33])
+
+        v_family = ast.literal_eval(row[34])
+        v_engname = row[35]
+
+
+        ##DATA START
+
+        vehicledata_json["{}".format(v_id)] = { "type": v_type,"speed": v_speed,"Weapon1": v_weapon1,"Weapon2": v_weapon2,"Weapon3": v_weapon3,"Weapon4": v_weapon4,"turn": v_turn,"gattack":v_gattack }
+    
+
+        text += "entity.vehicle:{0}.name={1}§r\n".format(v_id,v_name)
+        text += "item.spawn_egg.entity.vehicle:{0}.name={1}§r\n".format(v_id,v_name)
+        text += "tile.gvcv5:spawn_vehicle_{0}.name={1}§r\n".format(v_id,v_name)
+        text += "item.vehicle:{0}_spawn_egg={1}§r\n".format(v_id,v_name)
+
+        eng_text += "entity.vehicle:{0}.name={1}§r\n".format(v_id,v_engname)
+        eng_text += "item.spawn_egg.entity.vehicle:{0}.name={1}§r\n".format(v_id,v_engname)
+        eng_text += "tile.gvcv5:spawn_vehicle_{0}.name={1}§r\n".format(v_id,v_engname)
+        eng_text += "item.vehicle:{0}_spawn_egg={1}§r\n".format(v_id,v_engname)
+
+
+        ## Block spawn_vehicle_lav25
+        block_json = json.load(open("tool/_spawn.json","r"))
+        block_json["minecraft:block"]["description"]["identifier"] = "gvcv5:spawn_vehicle_{}".format(v_id.replace(":","_"))
+        block_json["minecraft:block"]["components"]["minecraft:material_instances"]["*"]["texture"] = "spawn_vehicle_{}".format(v_id.replace(":","_"))
+        block_json["minecraft:block"]["components"]["minecraft:material_instances"]["*"]["texture"] = "spawn_vehicle_{}".format(v_id.replace(":","_"))
+        block_json["minecraft:block"]["components"]["minecraft:loot"] = "loot_tables/empty.json"
+
+        with open("behavior_packs/GVCBedrock/blocks/spawns/spawn_vehicle_{}.json".format(v_id.replace(":","_")),"w") as s:
+            json.dump(block_json,s,indent=2)
+
+        overlay_image = Image.open("resource_packs/GVCBedrock/textures/items/vehicle/{}.png".format(v_id)).convert("RGBA")
+        base_image = Image.open("resource_packs/GVCBedrock/textures/spawn/base.png").convert("RGBA")
+        combined = Image.alpha_composite(base_image, overlay_image)
+        combined.save("resource_packs/GVCBedrock/textures/spawn/vehicle_{}.png".format(v_id) )
+
+        terrain_texture["texture_data"]["spawn_vehicle_{}".format(v_id)] = { "textures": "textures/spawn/vehicle_{}".format(v_id) }
+
 
         if( v_type == "stank"):
             f_path = open("tool/fv101.json","r")
@@ -79,8 +132,11 @@ for row in csv_reader:
         entity_json["minecraft:entity"]["description"]["identifier"] = "vehicle:{}".format(v_id)
         entity_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.vehicle:{}.name".format(v_id)
         entity_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][1]["spawn_items"]["table"] = "loot_tables/entities/{}.json".format(v_id)
+        entity_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = v_family
+
         entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seat_count"] = v_menber
         entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["family_types"] = v_ridef
+        
         if v_menber == 1:
             entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"] = { "position" :ast.literal_eval(v_position1) }
             if v_camera > 0:
@@ -173,55 +229,64 @@ for row in csv_reader:
         
         with open("behavior_packs/GVCBedrock/loot_tables/entities/{}.json".format(v_id),"w") as f:
             json.dump(loot_table,f,indent=2)
-
-        if v_main3 != "":
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcoolii=0}}] run event entity @s[scores={{mtype=2..}}] fire:{1}\n".format(v_id,v_main3)
-            if v_maincool3 > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcoolii=0}}] run scoreboard players set @s[scores={{mtype=2..}}] mcoolii {1}\n".format(v_id,v_maincool3)
-
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}}] run event entity @s[scores={{mtype=1}}] fire:{1}\n".format(v_id,v_main2)
-            if v_maincool2 > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}}] run scoreboard players set @s[scores={{mtype=1}}] mcooli {1}\n".format(v_id,v_maincool2)
-            
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run event entity @s[scores={{mtype=0}}] fire:{1}\n".format(v_id,v_main)
-            b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_main)
-            if v_maincool > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run scoreboard players set @s[scores={{mtype=0}}] mcool {1}\n".format(v_id,v_maincool)
-        
-        elif v_main2 != "":
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}}] run event entity @s[scores={{mtype=1..}}] fire:{1}\n".format(v_id,v_main2)
-            if v_maincool2 > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcooli=0}}] run scoreboard players set @s[scores={{mtype=1..}}] mcooli {1}\n".format(v_id,v_maincool2)
-
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run event entity @s[scores={{mtype=0}}] fire:{1}\n".format(v_id,v_main)
-            b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_main)
-            if v_maincool > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run scoreboard players set @s[scores={{mtype=0}}] mcool {1}\n".format(v_id,v_maincool)
-
-        elif v_main != "":
-            m_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run event entity @s[scores={{mtype=0..}}] fire:{1}\n".format(v_id,v_main)
-            b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_main)
-            if v_maincool > 0:
-                m_func += "execute if entity @e[r=4,type=vehicle:{0}] if entity @s[scores={{mcool=0}}] run scoreboard players set @s[scores={{mtype=0..}}] mcool {1}\n".format(v_id,v_maincool)
                 
-        if v_sub != "":
-            s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run event entity @s[scores={{subWeapon=..{2}}}] fire:{1}\n".format(v_id,v_sub,maxsubcool)
-            s_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players add @s[scores={{subWeapon=..{2}}}] subWeapon 1\n".format(v_id,v_sub,maxsubcool)
-            s_func += "\nscoreboard players set @s maxsubcool {1}\n".format(v_id,maxsubcool)
-            if v_subcool > 0:
-                s_func += "execute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s scool {1}\n".format(v_id,v_subcool+1)
-            if v_main == "":
-                b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_sub)
+        if v_weapon1 != "":
+            v_weapon1_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run event entity @s[scores={{weaponi=..{2}}}] fire:{1}\n".format(v_id,v_weapon1,v_weapon1_ammo)
+            v_weapon1_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players add @s[scores={{weaponi=..{2}}}] weaponi 1\n".format(v_id,v_weapon1,v_weapon1_ammo)
+            v_weapon1_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s weaponi_max {1}\n".format(v_id,v_weapon1_ammo)
+            if v_weapon1_cool > 0:
+                v_weapon1_func += "execute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s weaponi_cool {1}\n".format(v_id,v_weapon1_cool+1)
+            b_func += "\nexecute as @s[tag=!ride] if entity @e[r=4,type=vehicle:{0}] run event entity @s {1}\n".format(v_id,v_weapon1)
+
+        if v_weapon2 != "":
+            v_weapon2_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run event entity @s[scores={{weaponii=..{2}}}] fire:{1}\n".format(v_id,v_weapon2,v_weapon2_ammo)
+            v_weapon2_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players add @s[scores={{weaponii=..{2}}}] weaponii 1\n".format(v_id,v_weapon2,v_weapon2_ammo)
+            v_weapon2_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s weaponii_max {1}\n".format(v_id,v_weapon2_ammo)
+            if v_weapon2_cool > 0:
+                v_weapon2_func += "execute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s weaponii_cool {1}\n".format(v_id,v_weapon2_cool+1)
+        
+        if v_weapon3 != "":
+            v_weapon3_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run event entity @s[scores={{weaponiii=..{2}}}] fire:{1}\n".format(v_id,v_weapon3,v_weapon3_ammo)
+            v_weapon3_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players add @s[scores={{weaponiii=..{2}}}] weaponiii 1\n".format(v_id,v_weapon3,v_weapon3_ammo)
+            v_weapon3_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s weaponiii_max {1}\n".format(v_id,v_weapon3_ammo)
+            if v_weapon3_cool > 0:
+                v_weapon3_func += "execute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s weaponiii_cool {1}\n".format(v_id,v_weapon3_cool+1)
+
+        if v_weapon4 != "":
+            v_weapon4_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run event entity @s[scores={{weaponiv=..{2}}}] fire:{1}\n".format(v_id,v_weapon4,v_weapon4_ammo)
+            v_weapon4_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players add @s[scores={{weaponiv=..{2}}}] weaponiv 1\n".format(v_id,v_weapon4,v_weapon4_ammo)
+            v_weapon4_func += "\nexecute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s weaponiv_max {1}\n".format(v_id,v_weapon4_ammo)
+            if v_weapon4_cool > 0:
+                v_weapon4_func += "execute if entity @e[r=4,type=vehicle:{0}] run scoreboard players set @s weaponiv_cool {1}\n".format(v_id,v_weapon4_cool+1)
+
 
         item_json["texture_data"]["{}".format(v_id)] = { "textures": "textures/items/vehicle/{}".format(v_id) }
         print("created {}".format(v_id))
     row_count += 1
 
-with open("behavior_packs/GVCBedrock/functions/vmain.mcfunction","w") as f:
-    f.write(m_func)
+with open("behavior_packs/GVCBedrock/functions/weaponi.mcfunction","w") as f:
+    f.write(v_weapon1_func)
+with open("behavior_packs/GVCBedrock/functions/weaponii.mcfunction","w") as f:
+    f.write(v_weapon2_func)
+with open("behavior_packs/GVCBedrock/functions/weaponiii.mcfunction","w") as f:
+    f.write(v_weapon3_func)
+with open("behavior_packs/GVCBedrock/functions/weaponiv.mcfunction","w") as f:
+    f.write(v_weapon4_func)
 
-with open("behavior_packs/GVCBedrock/functions/vsub.mcfunction","w") as f:
-    f.write(s_func)
+with open("behavior_packs/GVCBedrock/scripts/vehicle.json","w") as f:
+    json.dump(vehicledata_json,f,indent=2)
+
+with open("behavior_packs/GVCBedrock/scripts/vehicle.json","r") as f:
+    export = "import { EntityDamageCause } from \"@minecraft/server\";\nexport const vehicleData = " 
+    export += f.read()
+    export += ";"
+
+with open("behavior_packs/GVCBedrock/scripts/vehicle.js","w") as f:
+    f.write(export)
+
+
+with open("terrain_texture.json","w") as f:
+    json.dump(terrain_texture,f,indent=2)
 
 with open("behavior_packs/GVCBedrock/functions/b1.mcfunction","w") as f:
     f.write(b_func)
@@ -231,3 +296,9 @@ with open("resource_packs/GVCBedrock/texts/vehicle_name.lang","w") as f:
 
 with open("resource_packs/GVCBedrock/textures/item_texture.json","w") as f:
     json.dump(item_json,f,indent=2)
+
+with open("resource_packs/GVCBedrock/texts/vech.txt","w") as f:
+    f.write(text)
+
+with open("resource_packs/GVCBedrock/texts/evech.txt","w") as f:
+    f.write(eng_text)

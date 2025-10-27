@@ -10,12 +10,24 @@
       "geometry": {
         "default": "geometry.f117"
       },
-		"animations": {
-		  "fly": "animation.airmig17"
-		},
+			"animations": {
+				"fly": "animation.airmig172",
+				"flying": "animation.flying"
+			},
 			"scripts": {
-				"animate": [ 
-			{ "fly": "query.has_rider" }
+				"pre_animation": [
+					"v.rotation = q.body_y_rotation - q.rider_head_y_rotation(0);",
+					"v.applyRotation = v.rotation;",
+					"(v.rotation > 180) ? { v.applyRotation = v.rotation - 360; };",
+					"(v.rotation < -180) ? { v.applyRotation = v.rotation + 360; };"
+				],
+				"animate": [
+					{
+						"flying": "!query.is_on_ground"
+					},
+					{
+						"fly": "query.has_rider && query.is_moving"
+					}
 				]
 			},
 	  "spawn_egg":{

@@ -1,18 +1,24 @@
 {
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "vehicle:su27",
-      "materials": { "default": "entity_alphablend" },
-      "textures": {
-        "default": "textures/entity/su27"
-      },
-      "geometry": {
-        "default": "geometry.su27"
-      },
-		"animations": {
-		  "fly": "animation.airmig172"
-		},
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:su27",
+			"materials": {
+				"default": "iron_golem",
+				"planeglass": "entity_alphablend"
+			},
+			"textures": {
+				"default": "textures/entity/su27",
+				"planeglass": "textures/entity/su27"
+			},
+			"geometry": {
+				"default": "geometry.su27",
+				"planeglass": "geometry.su27_planeglass"
+			},
+			"animations": {
+				"fly": "animation.airmig172",
+				"flying": "animation.flying"
+			},
 			"scripts": {
 				"pre_animation": [
 					"v.rotation = q.body_y_rotation - q.rider_head_y_rotation(0);",
@@ -20,15 +26,23 @@
 					"(v.rotation > 180) ? { v.applyRotation = v.rotation - 360; };",
 					"(v.rotation < -180) ? { v.applyRotation = v.rotation + 360; };"
 				],
-				"animate": [ 
-			    { "fly": "query.has_rider" }
+				"animate": [
+					{
+						"flying": "!query.is_on_ground"
+					},
+					{
+						"fly": "query.has_rider && query.is_moving"
+					}
 				]
 			},
-	  "spawn_egg":{
-	  "texture":"su27",
-	  "texture_index":0
-	  },
-      "render_controllers": [ "controller.render.iron_golem" ]
-    }
-  }
+			"spawn_egg": {
+				"texture": "su27",
+				"texture_index": 0
+			},
+			"render_controllers": [
+				"controller.render.iron_golem",
+				"controller.render.planeglass"
+			]
+		}
+	}
 }

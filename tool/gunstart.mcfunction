@@ -1,10 +1,17 @@
 #values definistion
 scoreboard objectives add cooldown dummy
-scoreboard objectives add mcool dummy
-scoreboard objectives add mcooli dummy
-scoreboard objectives add mcoolii dummy
-scoreboard objectives add scool dummy
-scoreboard objectives add subWeapon dummy
+scoreboard objectives add weaponi dummy
+scoreboard objectives add weaponi_cool dummy
+scoreboard objectives add weaponi_max dummy
+scoreboard objectives add weaponii dummy
+scoreboard objectives add weaponii_cool dummy
+scoreboard objectives add weaponii_max dummy
+scoreboard objectives add weaponiii dummy
+scoreboard objectives add weaponiii_cool dummy
+scoreboard objectives add weaponiii_max dummy
+scoreboard objectives add weaponiv dummy
+scoreboard objectives add weaponiv_cool dummy
+scoreboard objectives add weaponiv_max dummy
 scoreboard objectives add reloading dummy
 scoreboard objectives add flag dummy
 scoreboard objectives add antiMining dummy
@@ -17,12 +24,18 @@ scoreboard objectives add rise dummy
 scoreboard objectives add out dummy
 scoreboard objectives add building dummy
 #initialize
-execute as @s[tag=!startedv5] run scoreboard players set @s mcool 20
-execute as @s[tag=!startedv5] run scoreboard players set @s mcooli 0
-execute as @s[tag=!startedv5] run scoreboard players set @s mcoolii 0
-execute as @s[tag=!startedv5] run scoreboard players set @s scool 0
-execute as @s[tag=!startedv5] run scoreboard players set @s subWeapon 30
-execute as @s[tag=!startedv5] run scoreboard players set @s maxsubcool 0
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponi_cool 20
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponi 0
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponi_max 0
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponii_cool 20
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponii 0
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponii_max 0
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponiii_cool 20
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponiii 0
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponiii_max 0
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponiv_cool 20
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponiv 0
+execute as @s[tag=!startedv5] run scoreboard players set @s weaponiv_max 0
 execute as @s[tag=!startedv5] run scoreboard players set @s flag 0
 execute as @s[tag=!startedv5] run scoreboard players set @s rise 0
 execute as @s[tag=!startedv5] run scoreboard players set @s out 10
