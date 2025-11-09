@@ -2,7 +2,7 @@
   "format_version": "1.18.10",
   "minecraft:entity": {
     "description": {
-      "identifier": "vehicle:m1128",
+      "identifier": "vehicle:bmp3",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
@@ -46,7 +46,7 @@
     },
     "components": {
       "minecraft:boss": {
-        "name": "entity.vehicle:m1128.name",
+        "name": "entity.vehicle:bmp3.name",
         "should_darken_sky": false,
         "hud_range": 4
       },
@@ -65,57 +65,20 @@
         }
       },
       "minecraft:rideable": {
-        "seat_count": 6,
+        "seat_count": 1,
         "family_types": [
           "guerrilla",
           "allied_soldier",
           "player"
         ],
         "interact_text": "action.interact.ride.horse",
-        "seats": [
-          {
-            "position": [
-              0.45,
-              1.1,
-              0.7
-            ]
-          },
-          {
-            "position": [
-              1,
-              1.2,
-              -1.5
-            ]
-          },
-          {
-            "position": [
-              0,
-              1.2,
-              -2.1
-            ]
-          },
-          {
-            "position": [
-              -1,
-              1.2,
-              -0.6
-            ]
-          },
-          {
-            "position": [
-              1,
-              1.2,
-              -0.6
-            ]
-          },
-          {
-            "position": [
-              -1,
-              1.2,
-              -1.5
-            ]
-          }
-        ]
+        "seats": {
+          "position": [
+            0,
+            1.8,
+            0
+          ]
+        }
       },
       "minecraft:interact": {
         "interactions": [
@@ -148,7 +111,7 @@
           {
             "hurt_item": 1,
             "spawn_items": {
-              "table": "loot_tables/entities/m1128.json"
+              "table": "loot_tables/entities/bmp3.json"
             },
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
@@ -207,7 +170,7 @@
         "value": 1.0
       },
       "minecraft:movement": {
-        "value": 0.2
+        "value": 0.3
       },
       "minecraft:knockback_resistance": {
         "value": 1.0
@@ -223,7 +186,7 @@
       "minecraft:balloonable": {},
       "minecraft:collision_box": {
         "width": 3.0,
-        "height": 3.0
+        "height": 2.0
       },
       "minecraft:damage_sensor": {
         "triggers": [
@@ -248,13 +211,11 @@
         "is_pushable_by_piston": false
       },
       "minecraft:physics": {},
-      "minecraft:inventory": {
-        "additional_slots_per_strength": 0,
-        "can_be_siphoned_from": false,
-        "container_type": "container",
-        "inventory_size": 27,
-        "private": false,
-        "restrict_to_owner": false
+      "minecraft:behavior.float": {
+        "priority": 1
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.1
       }
     },
     "events": {

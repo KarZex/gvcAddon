@@ -1141,6 +1141,12 @@
     },
     "bullet_emp": {
       "textures": "textures/items/attachment/bullet_emp"
+    },
+    "bmp3": {
+      "textures": "textures/items/vehicle/bmp3"
+    },
+    "st1_pmc": {
+      "textures": "textures/items/vehicle/st1_pmc"
     }
   }
 }

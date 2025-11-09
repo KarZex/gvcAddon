@@ -438,6 +438,12 @@
     },
     "spawn_vehicle_il2": {
       "textures": "textures/spawn/vehicle_il2"
+    },
+    "spawn_vehicle_bmp3": {
+      "textures": "textures/spawn/vehicle_bmp3"
+    },
+    "spawn_vehicle_st1_pmc": {
+      "textures": "textures/spawn/vehicle_st1_pmc"
     }
   }
 }

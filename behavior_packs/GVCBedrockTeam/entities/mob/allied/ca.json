@@ -3561,6 +3561,11 @@
           "command": "ride @s summon_ride vehicle:btr60 no_ride_change summon_enemy"
         }
       },
+      "vehicle:bmp3": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:bmp3 no_ride_change summon_enemy"
+        }
+      },
       "vehicle:panzer": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:panzer no_ride_change summon_enemy"
@@ -3724,6 +3729,11 @@
       "vehicle:il2": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:il2 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:st1_pmc": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:st1_pmc no_ride_change summon_enemy"
         }
       }
     }

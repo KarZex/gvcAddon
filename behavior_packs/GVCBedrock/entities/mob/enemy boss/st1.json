@@ -34,9 +34,9 @@
         ],
         "interact_text": "action.interact.ride.horse",
         "seats": [
-          { "position": [ 0, 7, 0 ] },
-          { "position": [ 1.5, 5.5, 0 ] },
-          { "position": [ -1.5, 5.5, 0 ] }
+          { "position": [0, 5.4, 0] },
+          { "position": [ 1.5, 4.5, 0 ] },
+          { "position": [ -1.5, 4.5, 0 ] }
         ]
       }, 
       "minecraft:nameable": {},

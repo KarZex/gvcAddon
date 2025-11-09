@@ -2,18 +2,18 @@
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "gvcv5:st1",
+			"identifier": "vehicle:st1_pmc",
 			"materials": {
 				"default": "iron_golem"
 			},
 			"textures": {
-				"default": "textures/entity/st1"
+				"default": "textures/entity/st1_pmc"
 			},
 			"geometry": {
-				"default": "geometry.st1"
+				"default": "geometry.st1_pmc"
 			},
 			"spawn_egg": {
-				"texture": "st1",
+				"texture": "st1_pmc",
 				"texture_index": 0
 			},
 			"scripts": {

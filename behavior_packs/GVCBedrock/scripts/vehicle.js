@@ -80,6 +80,16 @@ export const vehicleData = {
     "turn": 0,
     "gattack": 7
   },
+  "bmp3": {
+    "type": "apc",
+    "speed": 0.3,
+    "Weapon1": "100mm",
+    "Weapon2": "25mmmc",
+    "Weapon3": "",
+    "Weapon4": "",
+    "turn": 0,
+    "gattack": 7
+  },
   "panzer": {
     "type": "tank",
     "speed": 0.25,
@@ -409,5 +419,15 @@ export const vehicleData = {
     "Weapon4": "",
     "turn": 6,
     "gattack": 0
+  },
+  "st1_pmc": {
+    "type": "tank",
+    "speed": 0.2,
+    "Weapon1": "152mm",
+    "Weapon2": "7.62mmmgs",
+    "Weapon3": "20mmmcaird",
+    "Weapon4": "",
+    "turn": 0,
+    "gattack": 7
   }
 };

@@ -2,7 +2,7 @@
   "format_version": "1.18.10",
   "minecraft:entity": {
     "description": {
-      "identifier": "vehicle:m1128",
+      "identifier": "vehicle:st1_pmc",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
@@ -23,7 +23,7 @@
           "despawn_from_distance": {}
         },
         "minecraft:loot": {
-          "table": "loot_tables/entities/t55_enemy.json"
+          "table": "loot_tables/entities/st1_pmc_enemy.json"
         },
         "minecraft:environment_sensor": {
           "triggers": [
@@ -46,7 +46,7 @@
     },
     "components": {
       "minecraft:boss": {
-        "name": "entity.vehicle:m1128.name",
+        "name": "entity.vehicle:st1_pmc.name",
         "should_darken_sky": false,
         "hud_range": 4
       },
@@ -65,57 +65,18 @@
         }
       },
       "minecraft:rideable": {
-        "seat_count": 6,
+        "seat_count": 1,
         "family_types": [
-          "guerrilla",
-          "allied_soldier",
           "player"
         ],
         "interact_text": "action.interact.ride.horse",
-        "seats": [
-          {
-            "position": [
-              0.45,
-              1.1,
-              0.7
-            ]
-          },
-          {
-            "position": [
-              1,
-              1.2,
-              -1.5
-            ]
-          },
-          {
-            "position": [
-              0,
-              1.2,
-              -2.1
-            ]
-          },
-          {
-            "position": [
-              -1,
-              1.2,
-              -0.6
-            ]
-          },
-          {
-            "position": [
-              1,
-              1.2,
-              -0.6
-            ]
-          },
-          {
-            "position": [
-              -1,
-              1.2,
-              -1.5
-            ]
-          }
-        ]
+        "seats": {
+          "position": [
+            0,
+            5.4,
+            0
+          ]
+        }
       },
       "minecraft:interact": {
         "interactions": [
@@ -148,7 +109,7 @@
           {
             "hurt_item": 1,
             "spawn_items": {
-              "table": "loot_tables/entities/m1128.json"
+              "table": "loot_tables/entities/st1_pmc.json"
             },
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
@@ -200,8 +161,8 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 120,
-        "max": 120
+        "value": 1000,
+        "max": 1000
       },
       "minecraft:scale": {
         "value": 1.0
@@ -222,8 +183,8 @@
       "minecraft:behavior.player_ride_tamed": {},
       "minecraft:balloonable": {},
       "minecraft:collision_box": {
-        "width": 3.0,
-        "height": 3.0
+        "width": 5.0,
+        "height": 8.0
       },
       "minecraft:damage_sensor": {
         "triggers": [
@@ -235,10 +196,6 @@
           {
             "cause": "fall",
             "deals_damage": false
-          },
-          {
-            "cause": "override",
-            "deals_damage": false
           }
         ]
       },
@@ -247,15 +204,7 @@
         "is_pushable": true,
         "is_pushable_by_piston": false
       },
-      "minecraft:physics": {},
-      "minecraft:inventory": {
-        "additional_slots_per_strength": 0,
-        "can_be_siphoned_from": false,
-        "container_type": "container",
-        "inventory_size": 27,
-        "private": false,
-        "restrict_to_owner": false
-      }
+      "minecraft:physics": {}
     },
     "events": {
       "summon_enemy": {
