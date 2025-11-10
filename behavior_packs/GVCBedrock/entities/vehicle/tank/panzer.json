@@ -42,6 +42,22 @@
       },
       "despawning": {
         "minecraft:instant_despawn": {}
+      },
+      "gvcv5:vehicle_lock": {
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "player"
+          ],
+          "interact_text": "action.interact.ride.horse",
+          "seats": {
+            "position": [
+              0.0,
+              1.8,
+              0.0
+            ]
+          }
+        }
       }
     },
     "components": {
@@ -144,6 +160,27 @@
               "event": "despawning",
               "target": "self"
             }
+          },
+          {
+            "interact_text": "action.gvc.lock",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "has.rider"
+                  }
+                ]
+              },
+              "event": "vehicle_lock",
+              "target": "self"
+            }
           }
         ]
       },
@@ -230,6 +267,25 @@
           "component_groups": [
             "despawning"
           ]
+        }
+      },
+      "vehicle_lock": {
+        "remove": {
+          "component_groups": [
+            "summon_enemy"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "gvcv5:vehicle_lock"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tellraw @s {\"rawtext\":[{\"text\":\"Vehicle Lock\"}]}",
+            "ride @e[c=1,family=vehicle] evict_riders"
+          ],
+          "target": "other"
         }
       }
     }

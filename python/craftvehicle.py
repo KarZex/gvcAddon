@@ -135,28 +135,40 @@ for row in csv_reader:
         entity_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = v_family
 
         entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seat_count"] = v_menber
+        entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["seat_count"] = v_menber
         entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["family_types"] = v_ridef
+        entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["family_types"] = [ "player" ]
         
         if v_menber == 1:
             entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"] = { "position" :ast.literal_eval(v_position1) }
+            entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["seats"] = { "position" :ast.literal_eval(v_position1) }
             if v_camera > 0:
                 entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"]["third_person_camera_radius"] = v_camera
+                entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["seats"]["third_person_camera_radius"] = v_camera
         else:
             entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"] = []
+            entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["seats"] = []
             if v_camera > 0:
                 entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position1),"third_person_camera_radius":v_camera} )
+                entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position1),"third_person_camera_radius":v_camera} )
             else:
                 entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position1) } )
+                entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position1) } )
 
             entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position2) } )
+            entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position2) } )
             if( v_menber >= 3 ):
                 entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position3) } )
+                entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position3) } )
             if( v_menber >= 4 ):
                 entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position4) } )
+                entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position4) } )
             if( v_menber >= 5 ):
                 entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position5) } )
+                entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position5) } )
             if( v_menber >= 6 ):
                 entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position6) } )
+                entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:rideable"]["seats"].append( { "position" :ast.literal_eval(v_position6) } )
 
         entity_json["minecraft:entity"]["components"]["minecraft:health"]["value"] = v_health
         entity_json["minecraft:entity"]["components"]["minecraft:health"]["max"] = v_health
