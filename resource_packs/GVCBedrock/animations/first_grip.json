@@ -8,6 +8,14 @@
 					"position": [0, -17.75, 3.5]
 				}
 			}
+		},
+		"animation.m249.grip": {
+			"loop": true,
+			"bones": {
+				"gungrip": {
+					"position": [0, -7, 0]
+				}
+			}
 		}
 	}
 }

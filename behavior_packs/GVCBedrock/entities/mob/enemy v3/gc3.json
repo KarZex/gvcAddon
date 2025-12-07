@@ -6,7 +6,15 @@
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
-	  "runtime_identifier": "minecraft:blaze"
+	  "runtime_identifier": "minecraft:blaze",
+      "properties": {
+        "zex:anti_bullet": {
+          "client_sync": true,
+          "type": "float",
+          "range": [ 0.0, 1.0 ],
+          "default": 0.6
+        }
+      }
     },
     "components": {
         "minecraft:behavior.charge_held_item": {
@@ -71,8 +79,8 @@
       "minecraft:can_climb": {
       },
       "minecraft:health": {
-        "value": 100,
-        "max": 100
+        "value": 200,
+        "max": 200
       },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,

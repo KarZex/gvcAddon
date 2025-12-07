@@ -5,7 +5,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -30,7 +31,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -51,7 +53,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -72,7 +75,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -93,7 +97,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -168,7 +173,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -189,7 +195,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -207,7 +214,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -225,7 +233,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -269,7 +278,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -303,7 +313,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": 0,
     "grip": 0,
@@ -317,7 +328,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -338,7 +350,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -376,11 +389,10 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
-    "burrel": [
-      1
-    ],
+    "burrel": 0,
     "grip": [
       1,
       2,
@@ -397,7 +409,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -418,7 +431,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -439,7 +453,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -460,24 +475,10 @@ export const gunAttach = {
     ]
   },
   "m60": {
-    "sights": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "burrel": [
-      1
-    ],
-    "grip": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "light": [
-      1
-    ],
+    "sights": 0,
+    "burrel": 0,
+    "grip": 0,
+    "light": 0,
     "bullet": 0
   },
   "m72": {
@@ -509,7 +510,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -534,7 +536,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -581,7 +584,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -604,17 +608,13 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
     ],
-    "grip": [
-      1,
-      2,
-      3,
-      4
-    ],
+    "grip": 0,
     "light": [
       1
     ],
@@ -630,11 +630,21 @@ export const gunAttach = {
     "bullet": 0
   },
   "pkm": {
-    "sights": 0,
+    "sights": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
     "burrel": 0,
     "grip": 0,
-    "light": 0,
-    "bullet": 0
+    "light": [
+      1
+    ],
+    "bullet": [
+      1
+    ]
   },
   "ppsh": {
     "sights": 0,
@@ -655,7 +665,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -683,7 +694,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -704,7 +716,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1
@@ -729,7 +742,8 @@ export const gunAttach = {
       1,
       2,
       3,
-      4
+      4,
+      5
     ],
     "burrel": [
       1

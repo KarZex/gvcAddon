@@ -704,7 +704,7 @@ export const gunData = {
     "damageType": "override"
   },
   "mp7": {
-    "damage": 5,
+    "damage": 4,
     "damageIgnoreDef": 0,
     "recoil": 1.25,
     "sound": "hg",

@@ -1,6 +1,14 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.mp7.light": {
+			"loop": true,
+			"bones": {
+				"gunlight": {
+					"position": [0, -22, 1.5]
+				}
+			}
+		},
 		"animation.qbz.light": {
 			"loop": true,
 			"bones": {

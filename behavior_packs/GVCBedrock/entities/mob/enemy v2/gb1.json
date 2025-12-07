@@ -5,7 +5,15 @@
       "identifier": "gvcv5:gb1",
       "spawn_category": "monster",
       "is_spawnable": true,
-      "is_summonable": true
+      "is_summonable": true,
+      "properties": {
+        "zex:anti_bullet": {
+          "client_sync": true,
+          "type": "float",
+          "range": [ 0.0, 1.0 ],
+          "default": 0.6
+        }
+      }
     },
     "component_groups": {
       "is_raid":{
@@ -124,8 +132,8 @@
       },
 
       "minecraft:health": {
-        "value": 90,
-        "max": 90
+        "value": 40,
+        "max": 40
       },
       "minecraft:hurt_on_condition": {
         "damage_conditions": [

@@ -24,7 +24,8 @@
                 "lasersight": "textures/models/lasersight.png",
                 "gripod": "textures/models/gripod.png",
                 "bipod": "textures/models/bipod.png",
-                "anglegrip": "textures/models/anglegrip.png"
+                "anglegrip": "textures/models/anglegrip.png",
+                "dotsight": "textures/models/dotsight.png"
             },
             "geometry": {
                 "default": "geometry.g3a3",
@@ -40,7 +41,8 @@
                 "lasersight": "geometry.lasersight",
                 "gripod": "geometry.gripod",
                 "bipod": "geometry.bipod",
-                "anglegrip": "geometry.anglegrip"
+                "anglegrip": "geometry.anglegrip",
+                "dotsight": "geometry.dotsight"
             },
             "animations": {
                 "first": "animation.ak47.first2",

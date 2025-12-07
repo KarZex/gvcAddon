@@ -5,7 +5,15 @@
       "identifier": "gvcv5:gb6",
       "spawn_category": "monster",
       "is_spawnable": true,
-      "is_summonable": true
+      "is_summonable": true,
+      "properties": {
+        "zex:anti_bullet": {
+          "client_sync": true,
+          "type": "float",
+          "range": [ 0.0, 1.0 ],
+          "default": 0.0
+        }
+      }
     },
     "component_groups": {
       "is_raid":{

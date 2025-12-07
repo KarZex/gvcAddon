@@ -44,6 +44,17 @@ const headshotTypes = [
 	`minecraft:blaze`,
 	`minecraft:breeze`,
 	`gvcv5:ga`,
+	`gvcv5:gb1`,
+	`gvcv5:gb2`,
+	`gvcv5:gb3`,
+	`gvcv5:gb4`,
+	`gvcv5:gb5`,
+	`gvcv5:gb6`,
+	`gvcv5:gc1`,
+	`gvcv5:gc2`,
+	`gvcv5:gc3`,
+	`gvcv5:gc4`,
+	`gvcv5:gc5`,
 	`gvcv5:ca`,
 	`gvcv5:pmc`,
 	`gvcv5:pmc_red`,
@@ -412,10 +423,16 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 				}
 			}
 		}
-		//print(`${vict.getProperty(`zex:bullet_resistance`)}`);
-		if( vict.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`pmc`) ){
-			def += 0.8;
+		
+		else if( vict.getProperty(`zex:anti_bullet`) != undefined ){
+			def += vict.getProperty(`zex:anti_bullet`);
+			//print(`${vict.getProperty(`zex:anti_bullet`)}`)
 		}
+		//print(`${vict.getProperty(`zex:anti_bullet`)}`)
+		//print(`${vict.getProperty(`zex:bullet_resistance`)}`);
+		//if( vict.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`pmc`) ){
+		//	def += 0.8;
+		//}
 		if( vict.getEffect("resistance") != undefined ){
 			def = def + (1 + vict.getEffect("resistance").amplifier) * 0.5;
 		}

@@ -136,7 +136,7 @@ for row in csv_reader:
             attach_json["minecraft:item"]["description"]["identifier"] = "zex:{}".format(attach_id)
             attach_json["minecraft:item"]["components"]["minecraft:icon"] = "{}".format(attach_id)
 
-        with open("behavior_packs/GVCBedrock/items/attachment/{0}.json".format(attach_id),"w") as f:
+        with open("behavior_packs/GVCBedrock/items/item/attachment/{0}.json".format(attach_id),"w") as f:
             json.dump(attach_json,f,indent=4)
 
         if( attach_type != "bullet" ):
@@ -260,7 +260,7 @@ for root, dirs, files in os.walk(attach_directory):
 
                         if can_offhand(gun_id):
                             data["minecraft:attachable"]["description"]["render_controllers"] = [
-                                { "controller.render.gun":"query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && (!query.is_sneaking || !c.is_first_person)".format(gun_id)},
+                                { "controller.render.gun":"query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && (!query.property('zex:is_scoping') || !c.is_first_person)".format(gun_id)},
                                 { "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person" }
                             ]
                         else:

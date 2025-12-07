@@ -18,14 +18,17 @@
             },
             "geometry": {
                 "default": "geometry.m1911",
+                "off_hand": "geometry.m1911_left",
                 "none": "geometry.sniperscope",
                 "scope": "geometry.scope",
                 "scope2x": "geometry.scope2x"
             },
             "animations": {
                 "first": "animation.ak47.first2",
+                "first_off": "animation.ak47.firstoff",
                 "ads": "animation.m10.ads",
-                "third": "animation.item.third2"
+                "third": "animation.item.third2",
+                "third_off": "animation.item.thirdoff"
             },
             "scripts": {
                 "pre_animation": [

@@ -5,7 +5,15 @@
       "identifier": "gvcv5:gc2",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false
+      "is_experimental": false,
+      "properties": {
+        "zex:anti_bullet": {
+          "client_sync": true,
+          "type": "float",
+          "range": [ 0.0, 1.0 ],
+          "default": 0.5
+        }
+      }
     },
     "component_groups": {
       "is_raid": {
@@ -136,8 +144,8 @@
       "minecraft:jump.static": {},
       "minecraft:can_climb": {},
       "minecraft:health": {
-        "value": 160,
-        "max": 160
+        "value": 200,
+        "max": 200
       },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,

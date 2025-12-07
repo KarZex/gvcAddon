@@ -20,7 +20,8 @@
                 "coyote": "textures/models/coyote.png",
                 "horo": "textures/models/horo.png",
                 "suppressor": "textures/models/suppressor.png",
-                "lasersight": "textures/models/lasersight.png"
+                "lasersight": "textures/models/lasersight.png",
+                "dotsight": "textures/models/dotsight.png"
             },
             "geometry": {
                 "default": "geometry.glock17",
@@ -33,7 +34,8 @@
                 "coyote": "geometry.coyote",
                 "horo": "geometry.horo",
                 "suppressor": "geometry.suppressor",
-                "lasersight": "geometry.lasersight"
+                "lasersight": "geometry.lasersight",
+                "dotsight": "geometry.dotsight"
             },
             "animations": {
                 "first": "animation.ak47.first2",
@@ -87,7 +89,7 @@
             },
             "render_controllers": [
                 {
-                    "controller.render.gun": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock17') && (!query.is_sneaking || !c.is_first_person)"
+                    "controller.render.gun": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:glock17') && (!query.property('zex:is_scoping') || !c.is_first_person)"
                 },
                 {
                     "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person"
