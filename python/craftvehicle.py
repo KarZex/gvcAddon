@@ -181,7 +181,7 @@ for row in csv_reader:
         
         entity_json["minecraft:entity"]["description"]["properties"]["zex:tank"]["default"] = v_antibullet
 
-        if v_antibullet > 0:
+        if v_antibullet > 1:
             entity_json["minecraft:entity"]["components"]["minecraft:damage_sensor"]["triggers"].append( {  "cause": "override","deals_damage": False } )
         if v_break == "T":
             entity_json["minecraft:entity"]["components"]["minecraft:break_blocks"] = { 

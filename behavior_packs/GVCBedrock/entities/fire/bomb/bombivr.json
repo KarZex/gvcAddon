@@ -70,7 +70,7 @@
           "fuse_length": 0,"causes_fire": true,
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
-          "power": 4,
+          "power": 6,
           "breaks_blocks": false
         }
       }

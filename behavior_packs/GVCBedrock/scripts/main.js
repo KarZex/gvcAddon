@@ -461,7 +461,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		if( vict.getEffect("resistance") != undefined ){
 			def = def + (1 + vict.getEffect("resistance").amplifier) * 0.5;
 		}
-		if( owner.getProperty(`zex:tank`) > damageIgnoreDef ){
+		if( vict.getProperty(`zex:tank`) > damageIgnoreDef ){
 			def = 1;
 		}
 		if (def > 1){ def = 1 }
@@ -616,7 +616,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			excludeTags:[ `${team}` ],
 			excludeFamilies:allies,
 			location:missile.location,
-			maxDistance:64,
+			maxDistance:128,
 			closest: 1
 		 } );
 
