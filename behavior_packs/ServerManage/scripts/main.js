@@ -18,6 +18,34 @@ const ChatMuteList = [
 	"CagyMovie112339", 
 	"MAGINASU"
 ];
+/*
+world.afterEvents.entityHurt.subscribe( (arg) => {
+	const entity = arg.hurtEntity;
+	const d = 9999e68;
+	world.sendMessage(`${entity.typeId} was hurt ${arg.damage}`);
+} );
+*/
+system.runInterval(() => {
+	const players = world.getAllPlayers();
+	const arrows = world.getDimension("overworld").getEntities({type:"minecraft:arrow"});
+	for( const arrow of arrows ){
+		const V = arrow.getVelocity();
+		if( V.x === 0 && V.y === 0 && V.z === 0 ) continue;
+		const V_abs = Math.sqrt( V.x**2 + V.y**2 + V.z**2 );
+		const V_E = {x: V.x / V_abs, y: V.y / V_abs, z: V.z / V_abs};
+		const speed = 320;
+		arrow.applyImpulse( {x: V_E.x * speed, y: V_E.y * speed, z: V_E.z * speed} );
+	}
+	for( const player of players ){
+		if( player.hasTag("SpeedMeter") ){
+			const velocity = player.getVelocity();
+			const speed = Math.sqrt( velocity.x**2 + velocity.y**2 + velocity.z**2 );
+			const speedKmh = (speed * 20).toFixed(2);
+			player.runCommand(`title @s actionbar §aSpeed: §e${speedKmh} m/s`);
+		}
+	}
+}, 1);
+
 world.afterEvents.playerJoin.subscribe(async (arg) => {
 
 	const playerName = arg.playerName;
@@ -43,15 +71,7 @@ world.afterEvents.playerJoin.subscribe(async (arg) => {
 	}
 });
 
-world.beforeEvents.chatSend.subscribe((arg) => {
-	const player = arg.sender;
-	const message = arg.message;
-	if( player.hasTag("ChatMute") ){
-		arg.cancel = true;
-		player.sendMessage("§cYou are muted and cannot send messages on this server.");
-		player.runCommand(`/w Kimekun920 ${message}`);
-	}
-});
+
 
 system.afterEvents.scriptEventReceive.subscribe((arg) => {
 	if( arg.id === "ServerManage:mode" ){

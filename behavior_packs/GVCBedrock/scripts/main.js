@@ -333,6 +333,29 @@ async function airstrike(projectile,level,team){
 	}
 }
 
+function haunebBeam(projectile,level,team){
+	const dimension = projectile.dimension;
+	projectile.dimension.spawnParticle(`zex:${team}_ring1`,projectile.location);
+	const location = { 
+		x: projectile.location.x,
+		y: projectile.location.y + 24,
+		z: projectile.location.z
+	}
+	let spawnPointLocation = location;
+	const hauneb = dimension.spawnEntity(`gvcv5:hauneb_allied`,spawnPointLocation);
+	if( team != `noteam` ){
+		for( let i = 0; i < 5; i++ ){
+			hauneb.runCommand(`ride @s summon_rider gvcv5:pmc_${team} hauneb_main aaa`);
+		}
+	}
+	else{
+		for( let i = 0; i < 5; i++ ){
+			hauneb.runCommand(`ride @s summon_rider gvcv5:pmc hauneb_main aaa`);
+		}
+	}
+	
+}
+
 world.afterEvents.entitySpawn.subscribe( async e => {
 	if( e.entity.typeId.includes("fire")  ){
 		const projectile = e.entity;
@@ -398,21 +421,23 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		const gunName = getGunProjectlie(e.projectile.typeId);
 		const owner = e.source;
 
+		//print(`e:${e.projectile.typeId}`)
+		//print(`o:${getGunProjectlie(e.projectile.typeId)}`)
 		let damageType = gunData[`${gunName}`][`damageType`];
 		let damageIgnoreDef = gunData[`${gunName}`][`damageIgnoreDef`];
 		const equipmentComp = vict.getComponent(EntityComponentTypes.Equippable)
 
 		if(  owner.getProperty(`zex:bullet`) == 2  ){
 			damageType = EntityDamageCause.entityExplosion;
-			damageIgnoreDef = 1;
+			damageIgnoreDef = 2;
 		}
 		if(  owner.getProperty(`zex:bullet`) == 5  ){
 			damageType = EntityDamageCause.entityExplosion;
-			damageIgnoreDef = 1;
+			damageIgnoreDef = 2;
 		}
 		if(  owner.getProperty(`zex:bullet`) == 6  ){
 			damageType = EntityDamageCause.selfDestruct;
-			damageIgnoreDef = 1;
+			damageIgnoreDef = 3;
 		}
 
 		if( equipmentComp && vict.typeId == "minecraft:player" ){
@@ -436,17 +461,8 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		if( vict.getEffect("resistance") != undefined ){
 			def = def + (1 + vict.getEffect("resistance").amplifier) * 0.5;
 		}
-		if( vict.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`air`) ){
-			def = def + 1;
-		}
-		if( vict.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`tank`) ){
-			def = def + 2;
-		}
-		if( damageIgnoreDef > 0 ){
-			def = def - damageIgnoreDef
-		}
-		if( damageType != `override` ){
-			def = def/2;
+		if( owner.getProperty(`zex:tank`) > damageIgnoreDef ){
+			def = 1;
 		}
 		if (def > 1){ def = 1 }
 
@@ -572,6 +588,7 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 			else if( projectile.typeId == `gre:airstrike1` ){ airstrike( projectile,1,team ); }
 			else if( projectile.typeId == `gre:airstrike2` ){ airstrike( projectile,2,team ); }
 			else if( projectile.typeId == `gre:airstrike3` ){ airstrike( projectile,3,team ); }
+			else if( projectile.typeId == `gre:hauneb_beam` ){ haunebBeam( projectile,3,team ); }
 		}
 	}
 })
@@ -592,14 +609,14 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		else if( player.hasTag(`blue`) ){ team = `blue`; }
 		else if( player.hasTag(`green`) ){ team = `green`; }
 		else if( player.hasTag(`yellow`) ){ team = `yellow`; }
-		
+
 		const target = missile.dimension.getEntities( { 
 			tags:[ `air` ],
 			excludeNames:[ `${player.nameTag}` ],
 			excludeTags:[ `${team}` ],
 			excludeFamilies:allies,
 			location:missile.location,
-			maxDistance:32,
+			maxDistance:64,
 			closest: 1
 		 } );
 
@@ -615,7 +632,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			const dy = (Pi.y - P0.y) / ri;
 			const dz = (Pi.z - P0.z) / ri;
 			const v = missile.getVelocity();
-			const abs_v = 2;
+			const abs_v = 2.5;
 			missile.clearVelocity();
 			missile.applyImpulse( { 
 				x: dx * abs_v,
@@ -626,22 +643,13 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		else{
 			const V_m = missile.getVelocity();
 			const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
-			if( V_ma < 0.5 ){
-				const V = player.getViewDirection();
-				missile.clearVelocity();
-				missile.applyImpulse( { 
-					x: V.x * 2,
-					y: V.y * 2,
-					z: V.z * 2
-				} )
-			}
-			else{
-				missile.applyImpulse( { 
-					x: V_m.x,
-					y: V_m.y,
-					z: V_m.z
-				} )
-			}
+			const V = player.getViewDirection();
+			missile.clearVelocity();
+			missile.applyImpulse( { 
+				x: V.x * 2.5,
+				y: V.y * 2.5,
+				z: V.z * 2.5
+			} )
 
 		}
 	}

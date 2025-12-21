@@ -15,6 +15,17 @@
       "animations": {
         "walk": "controller.animation.vehicle",
         "vheri": "controller.animation.air"
+      },
+      "properties": {
+        "zex:tank": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 1
+        }
       }
     },
     "component_groups": {
@@ -182,8 +193,8 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 360,
-        "max": 360
+        "value": 100,
+        "max": 100
       },
       "minecraft:scale": {
         "value": 1.0
@@ -214,6 +225,10 @@
         "triggers": [
           {
             "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "cause": "override",
             "deals_damage": false
           }
         ]

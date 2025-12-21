@@ -44,7 +44,7 @@ for row in csv_reader:
         v_weapon4 = row[14]
         v_weapon4_cool = int(row[15])
         v_weapon4_ammo = int(row[16])
-        v_antibullet = row[17]
+        v_antibullet = int(row[17])
         v_water = row[18]
         v_sizew = float(row[19])
         v_sizeh = float(row[20])
@@ -179,7 +179,9 @@ for row in csv_reader:
             entity_json["minecraft:entity"]["components"]["minecraft:behavior.float"] = {   "priority": 1   }
             entity_json["minecraft:entity"]["components"]["minecraft:underwater_movement"] = { "value": float(v_water) }
         
-        if v_antibullet == "T":
+        entity_json["minecraft:entity"]["description"]["properties"]["zex:tank"]["default"] = v_antibullet
+
+        if v_antibullet > 0:
             entity_json["minecraft:entity"]["components"]["minecraft:damage_sensor"]["triggers"].append( {  "cause": "override","deals_damage": False } )
         if v_break == "T":
             entity_json["minecraft:entity"]["components"]["minecraft:break_blocks"] = { 

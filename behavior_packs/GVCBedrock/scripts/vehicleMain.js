@@ -118,8 +118,8 @@ function vehicleHp( HP,HPMax ){
 	return hpbar;
 }
 
-function Weapon1( player,vehicle ){
-	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
+function Weapon1( player,vehicle,mtype ){
+	//world.sendMessage(`§aSelected Slot Index: ${mtype}`);
 	const Weapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`Weapon1`];
 	const WeaponName = `{"translate":"gvcv5.${Weapon}.name"}`;
 	const WeaponScore = world.scoreboard.getObjective(`weaponi`).getScore(player);
@@ -138,8 +138,7 @@ function Weapon1( player,vehicle ){
 	}
 	return `${TypeData}${WeaponName},${WeaponData}`;
 }
-function Weapon2( player,vehicle ){
-	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
+function Weapon2( player,vehicle,mtype ){
 	const Weapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`Weapon2`];
 	const WeaponName = `{"translate":"gvcv5.${Weapon}.name"}`;
 	const WeaponScore = world.scoreboard.getObjective(`weaponii`).getScore(player);
@@ -161,8 +160,7 @@ function Weapon2( player,vehicle ){
 	}
 	return `${TypeData}${WeaponName},${WeaponData}`;
 }
-function Weapon3( player,vehicle ){
-	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
+function Weapon3( player,vehicle,mtype ){
 	const Weapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`Weapon3`];
 	const WeaponName = `{"translate":"gvcv5.${Weapon}.name"}`;
 	const WeaponScore = world.scoreboard.getObjective(`weaponiii`).getScore(player);
@@ -184,8 +182,7 @@ function Weapon3( player,vehicle ){
 	}
 	return `${TypeData}${WeaponName},${WeaponData}`;
 }
-function Weapon4( player,vehicle ){
-	const mtype = world.scoreboard.getObjective(`mtype`).getScore(player);
+function Weapon4( player,vehicle,mtype ){
 	const Weapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`Weapon4`];
 	const WeaponName = `{"translate":"gvcv5.${Weapon}.name"}`;
 	const WeaponScore = world.scoreboard.getObjective(`weaponiv`).getScore(player);
@@ -262,6 +259,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
                 const turnRad = Number(vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["turn"]) * Math.PI / 180;
                 const HP = airCraft.getComponent(EntityComponentTypes.Health).currentValue;
                 const HPMax = airCraft.getComponent(EntityComponentTypes.Health).defaultValue;
+				const selectedItemSlot = player.selectedSlotIndex;
                 let r = {
                     x:v.x/abs_v,
                     y:v.y/abs_v,
@@ -327,10 +325,10 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
                         actionbar {"rawtext":[${airCraftlader(player)},
                         {"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
                         {"text":"HP: ${vehicleHp(HP,HPMax)}"},
-                        ${Weapon1(player,airCraft)},
-                        ${Weapon2(player,airCraft)},
-                        ${Weapon3(player,airCraft)},
-                        ${Weapon4(player,airCraft)}
+                        ${Weapon1(player,airCraft,selectedItemSlot)},
+                        ${Weapon2(player,airCraft,selectedItemSlot)},
+                        ${Weapon3(player,airCraft,selectedItemSlot)},
+                        ${Weapon4(player,airCraft,selectedItemSlot)}
                         ]}
                     `);
                 }
@@ -516,9 +514,29 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		player.setRotation({x: Number(rotation[0]), y: Number(rotation[1])});
 		//player.teleport( player.location, {rotation: {x: Number(rotation[0]), y: Number(rotation[1])} } );
 	}
+	else if( e.id == "zex:playerVfire" ){
+		const player = e.sourceEntity;
+		const selectedItemSlot = player.selectedSlotIndex;
+		if( !player.hasTag(`reload`) ){
+			if( selectedItemSlot == 0 && world.scoreboard.getObjective(`weaponi_cool`).getScore(player) <= 0 ){
+				player.runCommand(`function weaponi`);
+			}
+			else if( selectedItemSlot == 1 && world.scoreboard.getObjective(`weaponii_cool`).getScore(player) <= 0 ){
+				player.runCommand(`function weaponii`);
+			}
+			else if( selectedItemSlot == 2 && world.scoreboard.getObjective(`weaponiii_cool`).getScore(player) <= 0 ){
+				player.runCommand(`function weaponiii`);
+			}
+			else if( selectedItemSlot == 3 && world.scoreboard.getObjective(`weaponiv_cool`).getScore(player) <= 0 ){
+				player.runCommand(`function weaponiv`);
+			}
+		}
+	}
 	else if( e.id == "zex:vtext"){
 		const vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+		const selectedItemSlot = player.selectedSlotIndex;
+		//world.sendMessage(`§aSelected Slot Index: ${selectedItemSlot}`);
 		if( player.typeId == "minecraft:player" ){
 			const attack = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`gattack`];
 			const V = vehicle.dimension.getEntities({maxDistance:3,location:vehicle.location,excludeTypes:tankImmuneEntities,excludeNames:[`${player.nameTag}`],excludeFamilies:[`bullet`,`vehicle`]});
@@ -536,10 +554,10 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			player.runCommand(`titleraw @s[tag=!reload,tag=!down] actionbar 
 				{"rawtext":[{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
 				{"text":"HP: ${vehicleHp(HP,HPMax)}"},
-				${Weapon1(player,vehicle)},
-				${Weapon2(player,vehicle)},
-				${Weapon3(player,vehicle)},
-				${Weapon4(player,vehicle)}
+				${Weapon1(player,vehicle,selectedItemSlot)},
+				${Weapon2(player,vehicle,selectedItemSlot)},
+				${Weapon3(player,vehicle,selectedItemSlot)},
+				${Weapon4(player,vehicle,selectedItemSlot)}
 				]}`
 			);
 		}

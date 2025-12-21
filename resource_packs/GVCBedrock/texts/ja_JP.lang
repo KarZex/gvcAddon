@@ -103,6 +103,9 @@ item.zex:btm=バッテリー(削除済み)
 item.zex:rep=修理用レンチ
 item.zex:ps=プラスチック
 item.zex:aidkit=応急処置キット
+item.zex:aidkit2=医療キット
+item.zex:selfkit=自己蘇生キット
+
 item.gun:bomb=破片手榴弾
 item.zex:aidkit.name=応急処置キット
 item.gun:bomb.name=破片手榴弾

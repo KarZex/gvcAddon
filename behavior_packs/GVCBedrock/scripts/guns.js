@@ -7,6 +7,10 @@ export const gunData = {
     "bullet": "zex:556m",
     "damageType": "override"
   },
+  "fire:hauneb": {
+    "damage": 60,
+    "damageType": "entityExplosion"
+  },
   "aa12": {
     "damage": 2,
     "damageIgnoreDef": 0,
@@ -139,7 +143,7 @@ export const gunData = {
   },
   "famas": {
     "damage": 30,
-    "damageIgnoreDef": 1,
+    "damageIgnoreDef": 3,
     "recoil": 4.0,
     "sound": "famas",
     "slowness": 1,
@@ -151,8 +155,8 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "fgm148": {
-    "damage": 80,
-    "damageIgnoreDef": 1,
+    "damage": 50,
+    "damageIgnoreDef": 3,
     "recoil": 2.0,
     "sound": "missile",
     "slowness": 2,
@@ -164,8 +168,8 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "fim92": {
-    "damage": 50,
-    "damageIgnoreDef": 1,
+    "damage": 30,
+    "damageIgnoreDef": 3,
     "recoil": 2.0,
     "sound": "missile",
     "slowness": 2,
@@ -253,8 +257,8 @@ export const gunData = {
     "damageType": "override"
   },
   "lazer": {
-    "damage": 50,
-    "damageIgnoreDef": 1,
+    "damage": 100,
+    "damageIgnoreDef": 3,
     "recoil": 1.0,
     "sound": "rail",
     "slowness": 1,
@@ -395,7 +399,7 @@ export const gunData = {
   },
   "m72": {
     "damage": 40,
-    "damageIgnoreDef": 1,
+    "damageIgnoreDef": 3,
     "recoil": 2.0,
     "sound": "p90",
     "slowness": 1,
@@ -408,7 +412,7 @@ export const gunData = {
   },
   "m79": {
     "damage": 30,
-    "damageIgnoreDef": 1,
+    "damageIgnoreDef": 3,
     "recoil": 4.0,
     "sound": "famas",
     "slowness": 0,
@@ -420,8 +424,8 @@ export const gunData = {
     "damageType": "entityExplosion"
   },
   "m82": {
-    "damage": 80,
-    "damageIgnoreDef": 1,
+    "damage": 50,
+    "damageIgnoreDef": 3,
     "recoil": 4.0,
     "sound": "m82",
     "slowness": 1,
@@ -446,8 +450,8 @@ export const gunData = {
     "damageType": "override"
   },
   "m202": {
-    "damage": 50,
-    "damageIgnoreDef": 1,
+    "damage": 30,
+    "damageIgnoreDef": 3,
     "recoil": 2.0,
     "sound": "p90",
     "slowness": 2,
@@ -730,8 +734,8 @@ export const gunData = {
     "damageType": "override"
   },
   "p90": {
-    "damage": 50,
-    "damageIgnoreDef": 1,
+    "damage": 20,
+    "damageIgnoreDef": 3,
     "recoil": 1.6,
     "sound": "p90",
     "slowness": 1,
@@ -770,7 +774,7 @@ export const gunData = {
   },
   "ptrd": {
     "damage": 50,
-    "damageIgnoreDef": 1,
+    "damageIgnoreDef": 3,
     "recoil": 5.0,
     "sound": "m82",
     "slowness": 0,
@@ -795,8 +799,8 @@ export const gunData = {
     "damageType": "override"
   },
   "rpg": {
-    "damage": 60,
-    "damageIgnoreDef": 1,
+    "damage": 25,
+    "damageIgnoreDef": 3,
     "recoil": 2.0,
     "sound": "p90",
     "slowness": 1,
@@ -962,8 +966,8 @@ export const gunData = {
     "damageType": "override"
   },
   "xm8": {
-    "damage": 20,
-    "damageIgnoreDef": 1,
+    "damage": 16,
+    "damageIgnoreDef": 3,
     "recoil": 2.0,
     "sound": "famas",
     "slowness": 0,
@@ -982,79 +986,100 @@ export const gunData = {
     "ammoType": "zex:762m"
   },
   "37mm": {
-    "damage": 35,
+    "damage": 20,
     "sound": "tank",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s37m"
   },
   "47mm": {
-    "damage": 60,
+    "damage": 20,
     "sound": "tank",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s47m"
   },
   "57mm": {
-    "damage": 70,
+    "damage": 20,
     "sound": "tank",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s57m"
   },
   "76mm": {
-    "damage": 80,
+    "damage": 20,
     "sound": "tank",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s76m"
   },
   "85mm": {
-    "damage": 100,
+    "damage": 40,
     "sound": "tank",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s85m"
   },
   "88mm": {
-    "damage": 110,
+    "damage": 20,
     "sound": "tank",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s88m"
   },
   "100mm": {
-    "damage": 120,
+    "damage": 50,
     "sound": "tank",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s105m"
   },
-  "105mm": {
+  "105mmap": {
+    "damage": 140,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "105mmhe": {
+    "damage": 50,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "120mmheat": {
     "damage": 150,
     "sound": "tank",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s105m"
   },
-  "120mm": {
-    "damage": 180,
-    "sound": "tank",
-    "damageIgnoreDef": 2.0,
-    "damageType": "entityExplosion",
-    "ammoType": "zex:s105m"
-  },
-  "125mm": {
+  "120mmapfsds": {
     "damage": 200,
     "sound": "tank",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "125mmheat": {
+    "damage": 150,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "125mmapfsds": {
+    "damage": 200,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s105m"
   },
   "152mm": {
-    "damage": 250,
+    "damage": 50,
     "sound": "tank",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s152m"
   },
@@ -1096,14 +1121,14 @@ export const gunData = {
   "37mmrocket": {
     "damage": 35,
     "sound": "p90",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s37m"
   },
   "76mmrocket": {
     "damage": 60,
     "sound": "p90",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s76m"
   },
@@ -1164,7 +1189,7 @@ export const gunData = {
   "hmg": {
     "damage": 8,
     "sound": "hmg",
-    "damageIgnoreDef": 1.0,
+    "damageIgnoreDef": 0.0,
     "damageType": "override",
     "ammoType": "zex:762m"
   },
@@ -1383,6 +1408,13 @@ export const gunData = {
   },
   "37mmrocketkatyusya": {
     "damage": 35,
+    "sound": "p90",
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
+  },
+  "flare": {
+    "damage": 0,
     "sound": "p90",
     "damageIgnoreDef": 2.0,
     "damageType": "entityExplosion",

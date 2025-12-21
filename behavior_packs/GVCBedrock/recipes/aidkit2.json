@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "gvcv5:aidkit2_recipe"
+    "identifier": "gvcv5:aidkit_recipeii"
     },
     "tags": [ "crafting_table" ],
     "pattern": [

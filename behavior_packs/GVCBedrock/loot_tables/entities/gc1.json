@@ -6,13 +6,7 @@
         {
           "type": "item",
           "name": "gun:m82",
-          "weight": 1,
-          "functions": [
-              {
-                "function": "set_name",
-                "name": "83a5bfca04b6b421d23c"
-              }
-          ]
+          "weight": 1
         }
       ]
     },

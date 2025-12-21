@@ -32,6 +32,7 @@ execute at @e[type=fire:hauneb] run particle gvcv5:fire_hauneb_particle ~~~
 execute at @e[type=fire:ads_lazer] run particle minecraft:redstone_wire_dust_particle ~~~
 execute at @e[type=fire:lazer] run particle minecraft:redstone_wire_dust_particle ~~~
 execute at @e[type=fire:fire] run particle minecraft:basic_flame_particle ~~~
+execute at @e[type=fire:flare] run particle minecraft:basic_flame_particle ~~~
 execute at @e[family=db] run particle minecraft:basic_flame_particle ~~~
 execute at @e[family=gbullet] run particle gvcv5:gvc_smoke_particle ~~~
 execute at @e[family=ppbombbullet] run particle gvcv5:gvc_smoke_particle ~~~
@@ -44,6 +45,8 @@ execute at @e[type=gvcv5:airstrike_green] run particle zex:green_strike ~~~
 execute at @e[type=gvcv5:airstrike_yellow] run particle zex:yellow_strike ~~~
 execute at @e[type=gvcv5:airstrike_noteam] run particle zex:noteam_strike ~~~
 execute at @e[type=fire:agmissile] run particle minecraft:basic_flame_particle ~~~
+
+tag @e[type=fire:flare,tag=!air] add air
 
 kill @e[type=item,name=83a5bfca04b6b421d23c]
 

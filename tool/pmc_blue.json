@@ -113,6 +113,111 @@
                 "minecraft:variant": {
                     "value": 0
                 }
+            },
+            "hauneb_main": {
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 2,
+                    "must_see": true,
+                    "reselect_targets": true,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "blueteam"
+                                    },
+                                    {
+                                        "test": "has_tag",
+                                        "operator": "!=",
+                                        "subject": "other",
+                                        "value": "blueSub"
+                                    }
+                                ]
+                            },
+                            "max_dist": 160
+                        },
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "allied_soldier"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "blueteam"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "noteam"
+                                    }
+                                ]
+                            },
+                            "max_dist": 160
+                        },
+                        {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "monster"
+                                    }
+                                ]
+                            },
+                            "max_dist": 160
+                        }
+                    ]
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 3,
+                    "burst_shots": 16,
+                    "burst_interval": 0.1,
+                    "charge_charged_trigger": 0.0,
+                    "charge_shoot_trigger": 0.0,
+                    "attack_interval_min": 0.1,
+                    "attack_interval_max": 0.1,
+                    "attack_radius": 160.0
+                },
+                "minecraft:environment_sensor": {
+                    "triggers": [
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_riding",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "despawning"
+                        }
+                    ]
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "all",
+                            "deals_damage": false
+                        }
+                    ]
+                },
+                "minecraft:shooter": {
+                    "def": "fire:hauneb"
+                }
             }
         },
         "components": {
@@ -370,6 +475,25 @@
                     ]
                 },
                 "trigger": "ak102"
+            },
+            "despawning": {
+                "queue_command": {
+                    "command": [
+                        "kill @s"
+                    ]
+                }
+            },
+            "hauneb_main": {
+                "add": {
+                    "component_groups": [
+                        "hauneb_main"
+                    ]
+                },
+                "queue_command": {
+                    "command": [
+                        "effect @s invisibility 99999 1 true"
+                    ]
+                }
             },
             "attack": {
                 "remove": {

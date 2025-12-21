@@ -8357,7 +8357,7 @@
           ]
         }
       },
-      "fire:105mm": {
+      "fire:105mmap": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -8365,12 +8365,12 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:105mm"
+              "spawn_entity": "fire:105mmap"
             }
           ]
         }
       },
-      "fire:120mm": {
+      "fire:105mmhe": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -8378,12 +8378,12 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:120mm"
+              "spawn_entity": "fire:105mmhe"
             }
           ]
         }
       },
-      "fire:125mm": {
+      "fire:120mmheat": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -8391,7 +8391,46 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:125mm"
+              "spawn_entity": "fire:120mmheat"
+            }
+          ]
+        }
+      },
+      "fire:120mmapfsds": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:120mmapfsds"
+            }
+          ]
+        }
+      },
+      "fire:125mmheat": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:125mmheat"
+            }
+          ]
+        }
+      },
+      "fire:125mmapfsds": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:125mmapfsds"
             }
           ]
         }
@@ -8900,6 +8939,19 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:37mmrocketkatyusya"
+            }
+          ]
+        }
+      },
+      "fire:flare": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:flare"
             }
           ]
         }
@@ -9927,24 +9979,45 @@
           ]
         }
       },
-      "fire:105mm": {
+      "fire:105mmap": {
         "add": {
           "component_groups": [
-            "fire:105mm"
+            "fire:105mmap"
           ]
         }
       },
-      "fire:120mm": {
+      "fire:105mmhe": {
         "add": {
           "component_groups": [
-            "fire:120mm"
+            "fire:105mmhe"
           ]
         }
       },
-      "fire:125mm": {
+      "fire:120mmheat": {
         "add": {
           "component_groups": [
-            "fire:125mm"
+            "fire:120mmheat"
+          ]
+        }
+      },
+      "fire:120mmapfsds": {
+        "add": {
+          "component_groups": [
+            "fire:120mmapfsds"
+          ]
+        }
+      },
+      "fire:125mmheat": {
+        "add": {
+          "component_groups": [
+            "fire:125mmheat"
+          ]
+        }
+      },
+      "fire:125mmapfsds": {
+        "add": {
+          "component_groups": [
+            "fire:125mmapfsds"
           ]
         }
       },
@@ -10162,6 +10235,13 @@
         "add": {
           "component_groups": [
             "fire:37mmrocketkatyusya"
+          ]
+        }
+      },
+      "fire:flare": {
+        "add": {
+          "component_groups": [
+            "fire:flare"
           ]
         }
       }

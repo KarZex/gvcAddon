@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "gvcv5:selfkit_recipe"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CAC",
+      "BCB",
+      "CDC"
+    ],
+    "key": {
+      "A": {
+        "item": "zex:aidkit2"
+      },
+      "B": {
+        "item": "minecraft:diamond_block"
+      },
+      "C": {
+        "item": "zex:icerod"
+      },
+      "D": {
+        "item": "minecraft:netherite_ingot"
+      }
+    },
+    "result": {
+      "item": "zex:selfkit",
+      "count": 1
+    }
+  }
+  
+}

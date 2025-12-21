@@ -114,6 +114,111 @@
           "value": 0
         }
       },
+      "hauneb_main": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "greenteam"
+                  },
+                  {
+                    "test": "has_tag",
+                    "operator": "!=",
+                    "subject": "other",
+                    "value": "greenSub"
+                  }
+                ]
+              },
+              "max_dist": 160
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "allied_soldier"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "greenteam"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "noteam"
+                  }
+                ]
+              },
+              "max_dist": 160
+            },
+            {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "monster"
+                  }
+                ]
+              },
+              "max_dist": 160
+            }
+          ]
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 16,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.1,
+          "attack_interval_max": 0.1,
+          "attack_radius": 160.0
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "despawning"
+            }
+          ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:shooter": {
+          "def": "fire:hauneb"
+        }
+      },
       "aa12": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -1242,7 +1347,7 @@
           "def": "fire:100mm"
         }
       },
-      "105mm": {
+      "105mmap": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
@@ -1254,10 +1359,10 @@
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
-          "def": "fire:105mm"
+          "def": "fire:105mmap"
         }
       },
-      "120mm": {
+      "105mmhe": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
@@ -1269,10 +1374,10 @@
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
-          "def": "fire:120mm"
+          "def": "fire:105mmhe"
         }
       },
-      "125mm": {
+      "120mmheat": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
@@ -1284,7 +1389,52 @@
           "attack_radius": 20.0
         },
         "minecraft:shooter": {
-          "def": "fire:125mm"
+          "def": "fire:120mmheat"
+        }
+      },
+      "120mmapfsds": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:120mmapfsds"
+        }
+      },
+      "125mmheat": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:125mmheat"
+        }
+      },
+      "125mmapfsds": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:125mmapfsds"
         }
       },
       "152mm": {
@@ -1750,6 +1900,21 @@
         },
         "minecraft:shooter": {
           "def": "fire:37mmrocketkatyusya"
+        }
+      },
+      "flare": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:flare"
         }
       }
     },
@@ -3633,6 +3798,25 @@
         },
         "trigger": "ak102"
       },
+      "hauneb_main": {
+        "add": {
+          "component_groups": [
+            "hauneb_main"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "effect @s invisibility 99999 1 true"
+          ]
+        }
+      },
+      "despawning": {
+        "queue_command": {
+          "command": [
+            "kill @s"
+          ]
+        }
+      },
       "attack": {
         "remove": {
           "component_groups": [
@@ -4205,24 +4389,45 @@
           ]
         }
       },
-      "105mm": {
+      "105mmap": {
         "add": {
           "component_groups": [
-            "105mm"
+            "105mmap"
           ]
         }
       },
-      "120mm": {
+      "105mmhe": {
         "add": {
           "component_groups": [
-            "120mm"
+            "105mmhe"
           ]
         }
       },
-      "125mm": {
+      "120mmheat": {
         "add": {
           "component_groups": [
-            "125mm"
+            "120mmheat"
+          ]
+        }
+      },
+      "120mmapfsds": {
+        "add": {
+          "component_groups": [
+            "120mmapfsds"
+          ]
+        }
+      },
+      "125mmheat": {
+        "add": {
+          "component_groups": [
+            "125mmheat"
+          ]
+        }
+      },
+      "125mmapfsds": {
+        "add": {
+          "component_groups": [
+            "125mmapfsds"
           ]
         }
       },
@@ -4440,6 +4645,13 @@
         "add": {
           "component_groups": [
             "37mmrocketkatyusya"
+          ]
+        }
+      },
+      "flare": {
+        "add": {
+          "component_groups": [
+            "flare"
           ]
         }
       }

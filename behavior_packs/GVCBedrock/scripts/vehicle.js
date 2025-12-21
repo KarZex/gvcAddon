@@ -63,7 +63,7 @@ export const vehicleData = {
   "m1128": {
     "type": "apc",
     "speed": 0.2,
-    "Weapon1": "105mm",
+    "Weapon1": "105mmap",
     "Weapon2": "",
     "Weapon3": "",
     "Weapon4": "",
@@ -113,7 +113,7 @@ export const vehicleData = {
   "m1_abrams": {
     "type": "tank",
     "speed": 0.2,
-    "Weapon1": "120mm",
+    "Weapon1": "120mmheat",
     "Weapon2": "vmg",
     "Weapon3": "",
     "Weapon4": "",
@@ -123,7 +123,7 @@ export const vehicleData = {
   "m1a2": {
     "type": "tank",
     "speed": 0.2,
-    "Weapon1": "120mm",
+    "Weapon1": "120mmapfsds",
     "Weapon2": "vmg",
     "Weapon3": "",
     "Weapon4": "",
@@ -153,7 +153,7 @@ export const vehicleData = {
   "m60a1": {
     "type": "tank",
     "speed": 0.2,
-    "Weapon1": "105mm",
+    "Weapon1": "105mmhe",
     "Weapon2": "vmg",
     "Weapon3": "",
     "Weapon4": "",
@@ -193,7 +193,7 @@ export const vehicleData = {
   "t72": {
     "type": "tank",
     "speed": 0.2,
-    "Weapon1": "125mm",
+    "Weapon1": "125mmheat",
     "Weapon2": "vmg",
     "Weapon3": "",
     "Weapon4": "",
@@ -215,7 +215,7 @@ export const vehicleData = {
     "speed": 0.4,
     "Weapon1": "20mmmcheri",
     "Weapon2": "76mmrocket",
-    "Weapon3": "",
+    "Weapon3": "flare",
     "Weapon4": "",
     "turn": 0,
     "gattack": 0
@@ -224,7 +224,7 @@ export const vehicleData = {
     "type": "heri",
     "speed": 0.4,
     "Weapon1": "7.62mmmg",
-    "Weapon2": "",
+    "Weapon2": "flare",
     "Weapon3": "",
     "Weapon4": "",
     "turn": 0,
@@ -245,8 +245,8 @@ export const vehicleData = {
     "speed": 0.4,
     "Weapon1": "30mmmc",
     "Weapon2": "76mmrocket",
-    "Weapon3": "aamissile",
-    "Weapon4": "bomb",
+    "Weapon3": "bomb",
+    "Weapon4": "flare",
     "turn": 0,
     "gattack": 0
   },
@@ -254,7 +254,7 @@ export const vehicleData = {
     "type": "heri",
     "speed": 0.4,
     "Weapon1": "vmg",
-    "Weapon2": "",
+    "Weapon2": "flare",
     "Weapon3": "",
     "Weapon4": "",
     "turn": 0,
@@ -264,8 +264,8 @@ export const vehicleData = {
     "type": "heri",
     "speed": 0.4,
     "Weapon1": "12.7mmmg",
-    "Weapon2": "agmissile",
-    "Weapon3": "",
+    "Weapon2": "76mmrocket",
+    "Weapon3": "flare",
     "Weapon4": "",
     "turn": 0,
     "gattack": 0
@@ -365,7 +365,7 @@ export const vehicleData = {
     "speed": 2.0,
     "Weapon1": "20mmmcaird",
     "Weapon2": "aamissile",
-    "Weapon3": "",
+    "Weapon3": "flare",
     "Weapon4": "",
     "turn": 15,
     "gattack": 0
@@ -376,7 +376,7 @@ export const vehicleData = {
     "Weapon1": "20mmmcair",
     "Weapon2": "aamissile",
     "Weapon3": "bomb",
-    "Weapon4": "",
+    "Weapon4": "flare",
     "turn": 15,
     "gattack": 0
   },
@@ -385,7 +385,7 @@ export const vehicleData = {
     "speed": 1.5,
     "Weapon1": "30mmmcair",
     "Weapon2": "bomb",
-    "Weapon3": "",
+    "Weapon3": "flare",
     "Weapon4": "",
     "turn": 15,
     "gattack": 0

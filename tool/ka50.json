@@ -12,7 +12,18 @@
 	  "animations": {
 	    "walk": "controller.animation.vehicle",
 	    "heri": "controller.animation.vheri"
-	  }
+	  },
+      "properties": {
+        "zex:tank": {
+            "client_sync": true,
+            "type": "int",
+            "range": [
+                0,
+                255
+            ],
+            "default": 0
+        }
+      }
     },
     "component_groups": {
 			"summon_enemy": {

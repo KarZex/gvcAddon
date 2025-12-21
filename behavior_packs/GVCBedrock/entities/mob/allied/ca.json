@@ -1213,7 +1213,7 @@
           "def": "fire:100mm"
         }
       },
-      "105mm": {
+      "105mmap": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
@@ -1225,10 +1225,10 @@
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:105mm"
+          "def": "fire:105mmap"
         }
       },
-      "120mm": {
+      "105mmhe": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
@@ -1240,10 +1240,10 @@
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:120mm"
+          "def": "fire:105mmhe"
         }
       },
-      "125mm": {
+      "120mmheat": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
@@ -1255,7 +1255,52 @@
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:125mm"
+          "def": "fire:120mmheat"
+        }
+      },
+      "120mmapfsds": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:120mmapfsds"
+        }
+      },
+      "125mmheat": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:125mmheat"
+        }
+      },
+      "125mmapfsds": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5.0,
+          "attack_interval_max": 5.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:125mmapfsds"
         }
       },
       "152mm": {
@@ -1721,6 +1766,21 @@
         },
         "minecraft:shooter": {
           "def": "fire:37mmrocketkatyusya"
+        }
+      },
+      "flare": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:flare"
         }
       }
     },
@@ -2562,24 +2622,45 @@
           ]
         }
       },
-      "105mm": {
+      "105mmap": {
         "add": {
           "component_groups": [
-            "105mm"
+            "105mmap"
           ]
         }
       },
-      "120mm": {
+      "105mmhe": {
         "add": {
           "component_groups": [
-            "120mm"
+            "105mmhe"
           ]
         }
       },
-      "125mm": {
+      "120mmheat": {
         "add": {
           "component_groups": [
-            "125mm"
+            "120mmheat"
+          ]
+        }
+      },
+      "120mmapfsds": {
+        "add": {
+          "component_groups": [
+            "120mmapfsds"
+          ]
+        }
+      },
+      "125mmheat": {
+        "add": {
+          "component_groups": [
+            "125mmheat"
+          ]
+        }
+      },
+      "125mmapfsds": {
+        "add": {
+          "component_groups": [
+            "125mmapfsds"
           ]
         }
       },
@@ -2797,6 +2878,13 @@
         "add": {
           "component_groups": [
             "37mmrocketkatyusya"
+          ]
+        }
+      },
+      "flare": {
+        "add": {
+          "component_groups": [
+            "flare"
           ]
         }
       },

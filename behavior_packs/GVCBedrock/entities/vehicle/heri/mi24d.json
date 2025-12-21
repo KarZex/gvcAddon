@@ -15,6 +15,17 @@
       "animations": {
         "walk": "controller.animation.vehicle",
         "heri": "controller.animation.vheri"
+      },
+      "properties": {
+        "zex:tank": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 1
+        }
       }
     },
     "component_groups": {
@@ -238,6 +249,10 @@
         "triggers": [
           {
             "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "cause": "override",
             "deals_damage": false
           }
         ]

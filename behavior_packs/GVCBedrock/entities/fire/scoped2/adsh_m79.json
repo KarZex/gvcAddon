@@ -34,7 +34,14 @@
             "damage": 0,
             "knockback": false
           },
-          "stick_in_ground": {}
+          "stick_in_ground": {},
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          }
         },
         "power": 0.1,
         "gravity": 0.01,
@@ -44,14 +51,7 @@
         "catch_fire": false,
         "anchor": 1
       },
-      "minecraft:physics": {},
-      "minecraft:timer": {
-        "time": 4,
-        "time_down_event": {
-          "event": "minecraft:explode",
-          "target": "self"
-        }
-      }
+      "minecraft:physics": {}
     },
     "events": {
       "minecraft:explode": {
@@ -68,7 +68,7 @@
           "fuse_length": 0,
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
-          "power": 3,
+          "power": 2,
           "breaks_blocks": false
         }
       }

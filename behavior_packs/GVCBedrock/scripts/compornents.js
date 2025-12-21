@@ -184,6 +184,13 @@ function gvcv5UseMtype( event ){
 function gvcv5UseAidKit( event ){
     event.source.addEffect("regeneration",14,{ amplifier: 4 })
 }
+function gvcv5UseAidKitii( event ){
+    event.source.addEffect("regeneration",14,{ amplifier: 12 })
+}
+function gvcv5UseSelfRise( event ){
+    event.source.addEffect("regeneration",14,{ amplifier: 12 })
+    event.source.runCommand(`event entity @s gvcv5:become_rise`);
+}
 async function setUp(){
     await system.waitTicks(100);
     if( world.getDynamicProperty("gvcv5:playerDamage") == undefined ){
@@ -196,10 +203,10 @@ async function setUp(){
         world.setDynamicProperty("gvcv5:doBulletSpend",true);
     }
     if( world.getDynamicProperty("gvcv5:playerDamageCool") == undefined ){
-        world.setDynamicProperty("gvcv5:playerDamageCool",true);
+        world.setDynamicProperty("gvcv5:playerDamageCool",false);
     }
     if( world.getDynamicProperty("gvcv5:nodiein1hit") == undefined ){
-        world.setDynamicProperty("gvcv5:nodiein1hit",true);
+        world.setDynamicProperty("gvcv5:nodiein1hit",false);
     }
     
     if( world.getDynamicProperty("gvcv5:buildingSpawnS") == undefined ){
@@ -265,6 +272,8 @@ system.beforeEvents.startup.subscribe( e => {
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:orderflag`,{onUse: gvcv5UseFlag});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:mtype`,{onUse: gvcv5UseMtype});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:aid`,{onConsume: gvcv5UseAidKit});
+    e.itemComponentRegistry.registerCustomComponent(`gvcv5:aid2`,{onConsume: gvcv5UseAidKitii});
+    e.itemComponentRegistry.registerCustomComponent(`gvcv5:selfkit`,{onConsume: gvcv5UseSelfRise});
 });
 
 world.afterEvents.worldLoad.subscribe( async e => {

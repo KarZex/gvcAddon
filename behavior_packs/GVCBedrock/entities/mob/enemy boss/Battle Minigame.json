@@ -1,0 +1,152 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+
+    "description": {
+      "identifier": "gvcv5:hauneb_allied",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "components": {
+       "minecraft:damage_sensor": {
+         "triggers": [
+          {
+                "cause": "all",
+                "deals_damage": false
+          }
+         ]
+       },
+      "minecraft:type_family": {
+        "family": [ "hauneb_allied" ]
+      },
+      "minecraft:is_hidden_when_invisible": {
+      },
+      "minecraft:experience_reward": {
+        "on_death": 12000
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+        "within_radius": 25.0,
+        "must_see_forget_duration": 17.0,
+        "entity_types": [
+        {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "monster" }
+              ]
+            },
+		     "max_dist": 35
+		}
+        ]
+      },
+      "minecraft:health": {
+        "value": 1000,
+        "max": 1000
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+	   "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 0,
+        "burst_shots": 16,
+        "burst_interval": 0,
+        "charge_charged_trigger": 0.0,
+        "charge_shoot_trigger": 0.0,
+        "attack_interval_min": 1,
+        "attack_interval_max": 1,
+        "target_in_sight_time":0,
+        "attack_radius": 100.0
+      },
+      "minecraft:shooter": {
+        "def": "fire:hauneb"
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_air": true,
+        "breathes_water": false
+      },
+      "minecraft:movement": {
+        "value": 1.8
+      },
+      "minecraft:movement.glide": {
+        "start_speed": 0.1,
+        "speed_when_turning": 0.2
+      },
+        "minecraft:explode": {
+          "fuse_length": 30,
+          "fuse_lit": true,
+          "power": 0,
+          "causes_fire": true,
+          "destroy_affected_by_griefing": true
+        },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+        "minecraft:rideable": {
+          "seat_count": 5,
+          "family_types": [
+            "allied_soldier"
+          ],
+          "interact_text": "action.interact.ride.horse",
+          "seats": [
+            {"position": [ 0.0, -0.5, 0.0 ]},
+            {"position": [ 2.8, -0.5, 0.0 ]},
+            {"position": [ -2.8, -0.5, 0.0 ]},
+            {"position": [ 0.0, -0.5, -2.8 ]},
+            {"position": [ 0.0, -0.5, 2.8 ]}
+          ]
+        }
+    },
+    "events": {
+      "gvcv5:spawn_loot": {
+        "queue_command": {
+          "command":[
+            "structure load bosschest3 ~~~"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command":[
+            "ride @s summon_rider gvcv5:ga hauneb_main",
+            "ride @s summon_rider gvcv5:ga hauneb_sub",
+            "ride @s summon_rider gvcv5:ga hauneb_sub",
+            "ride @s summon_rider gvcv5:ga hauneb_sub",
+            "ride @s summon_rider gvcv5:ga hauneb_sub"
+          ]
+        }
+      }
+    }
+  }
+}

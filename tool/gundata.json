@@ -5,5 +5,9 @@
       "reloadTime": 60,
       "bullet": "zex:556m",
       "damageType": "override"
+    },
+    "fire:hauneb":{
+      "damage": 60,
+      "damageType": "entityExplosion"
     }
 }

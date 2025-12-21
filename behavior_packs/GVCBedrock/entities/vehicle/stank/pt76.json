@@ -17,6 +17,17 @@
         "walk": "controller.animation.vehicle",
         "para": "controller.animation.tankpara",
         "vtext": "controller.animation.vtext"
+      },
+      "properties": {
+        "zex:tank": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            0,
+            255
+          ],
+          "default": 2
+        }
       }
     },
     "component_groups": {
@@ -219,8 +230,8 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 120,
-        "max": 120
+        "value": 100,
+        "max": 100
       },
       "minecraft:scale": {
         "value": 0.9

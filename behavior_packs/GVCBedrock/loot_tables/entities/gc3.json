@@ -6,13 +6,7 @@
         {
           "type": "item",
           "name": "gun:famas",
-          "weight": 1,
-          "functions": [
-            {
-              "function": "set_name",
-              "name": "Dummy"
-            }
-          ]
+          "weight": 1
         }
       ]
     }

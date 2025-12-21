@@ -13,7 +13,7 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m113aa] run event entity 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1126] run event entity @s hmg
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1128] run event entity @s 105mm
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1128] run event entity @s 105mmap
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:btr60] run event entity @s 14.5mmhmg
 
@@ -23,15 +23,15 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:panzer] run event entity 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:kv2] run event entity @s 152mm
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1_abrams] run event entity @s 120mm
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1_abrams] run event entity @s 120mmheat
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1a2] run event entity @s 120mm
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1a2] run event entity @s 120mmapfsds
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m41] run event entity @s 85mm
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:fv101] run event entity @s 76mm
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m60a1] run event entity @s 105mm
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m60a1] run event entity @s 105mmhe
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pt76] run event entity @s 76mm
 
@@ -39,7 +39,7 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t34] run event entity @s 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t55] run event entity @s 100mm
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t72] run event entity @s 125mm
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t72] run event entity @s 125mmheat
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:r22] run event entity @s 7.62mmmgs
 

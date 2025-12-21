@@ -128,17 +128,17 @@
     "glock17": {
       "textures": "textures/items/gun/glock17"
     },
-    "glock17m": {
-      "textures": "textures/items/glock17"
+    "aidkit2": {
+      "textures": "textures/items/aidkit2"
     },
     "glock18": {
       "textures": "textures/items/gun/glock18"
     },
-    "glock18m": {
-      "textures": "textures/items/glock18"
+    "selfkit": {
+      "textures": "textures/items/selfkit"
     },
-    "k98": {
-      "textures": "textures/items/k98"
+    "hauneb_beam": {
+      "textures": "textures/items/hauneb_beam"
     },
     "k98m": {
       "textures": "textures/items/k98"

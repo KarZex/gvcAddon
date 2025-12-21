@@ -15,7 +15,19 @@
       "animations": {
         "walk": "controller.animation.vehicle",
         "vtext": "controller.animation.vtext"
+      },
+      "properties": {
+        "zex:tank": {
+            "client_sync": true,
+            "type": "int",
+            "range": [
+                0,
+                255
+            ],
+            "default": 0
+        }
       }
+
     },
     "component_groups": {
       "despawning": {

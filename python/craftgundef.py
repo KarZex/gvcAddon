@@ -87,7 +87,7 @@ for row in csv_reader:
 
         gun_ignore = 0
         if( gun_damage_type != "override" ):
-            gun_ignore = 1
+            gun_ignore = 3
 
         gun_sound_true = "r3"
         if( gun_sound == "arbullet" ):
@@ -781,16 +781,17 @@ for row in csv_reader:
                 gun_entity["minecraft:entity"]["component_groups"] = {}
                 gun_entity["minecraft:entity"]["component_groups"]["minecraft:exploding"] = {  "minecraft:explode": { "fuse_length": 0,"destroy_affected_by_griefing":True, "fuse_lit": True, "power": gun_bomb, "breaks_blocks": gun_break_block } }
 
-                if gun_bomb > 0 and (gun_ammo != "zex:40m"):
+                if gun_bomb > 0:
                     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
-                elif gun_bomb > 0 and (gun_ammo == "zex:40m"):
-                    gun_entity["minecraft:entity"]["components"]["minecraft:timer"] = {
-                        "time": 4,
-                        "time_down_event": {
-                        "event": "minecraft:explode",
-                        "target": "self"
-                        }
-                    }
+                
+                #elif gun_bomb > 0 and (gun_ammo == "zex:40m"):
+                #    gun_entity["minecraft:entity"]["components"]["minecraft:timer"] = {
+                #        "time": 4,
+                #        "time_down_event": {
+                #        "event": "minecraft:explode",
+                #        "target": "self"
+                #        }
+                #    }
                 if gun_wallbreak:
                     del gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["stick_in_ground"]
                    
