@@ -132,7 +132,7 @@ export const vehicleData = {
   },
   "m41": {
     "type": "stank",
-    "speed": 0.4,
+    "speed": 0.2,
     "Weapon1": "85mm",
     "Weapon2": "vmg",
     "Weapon3": "",
@@ -142,7 +142,7 @@ export const vehicleData = {
   },
   "fv101": {
     "type": "stank",
-    "speed": 0.3,
+    "speed": 0.2,
     "Weapon1": "76mm",
     "Weapon2": "vmg",
     "Weapon3": "",
@@ -162,7 +162,7 @@ export const vehicleData = {
   },
   "pt76": {
     "type": "stank",
-    "speed": 0.3,
+    "speed": 0.2,
     "Weapon1": "76mm",
     "Weapon2": "vmg",
     "Weapon3": "",

@@ -10,6 +10,7 @@ execute as @a run function weaponi_cool
 execute as @a run function weaponii_cool
 execute as @a run function weaponiii_cool
 execute as @a run function weaponiv_cool
+execute as @a run scriptevent zex:chkattack
 
 execute as @a[tag=!startedv5] run function gunstart
 execute as @a[tag=down] run function down

@@ -573,6 +573,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		let vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
 		if( player.typeId == "minecraft:player" ){
+			const selectedItemSlot = player.selectedSlotIndex;
 			const v = vehicle.getVelocity();
             const d = player.getRotation();
             let yup = 0;
@@ -602,10 +603,10 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			player.runCommand(
                 `titleraw @s[tag=!reload,tag=!down] actionbar {"rawtext":[
                 {"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
-				${Weapon1(player,vehicle)},
-				${Weapon2(player,vehicle)},
-				${Weapon3(player,vehicle)},
-				${Weapon4(player,vehicle)}
+				${Weapon1(player,vehicle,selectedItemSlot)},
+				${Weapon2(player,vehicle,selectedItemSlot)},
+				${Weapon3(player,vehicle,selectedItemSlot)},
+				${Weapon4(player,vehicle,selectedItemSlot)}
 				]}`
             );
 		}

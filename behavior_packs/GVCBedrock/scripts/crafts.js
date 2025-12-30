@@ -5,6 +5,7 @@ export const craftData = {
       { "give":"zex:mm9","texture":"textures/items/9m", "count":32, "cost":[ 1, 1, 0 ] },
       { "give":"zex:556m","texture":"textures/items/556m", "count":32, "cost":[ 2, 2, 0 ] },
       { "give":"zex:762m","texture":"textures/items/762m", "count":16, "cost":[ 2, 2, 0 ] },
+      { "give":"zex:1270m","texture":"textures/items/1270m", "count":8, "cost":[ 4, 4, 0 ] },
       { "give":"zex:12m","texture":"textures/items/12m", "count":32, "cost":[ 2, 2, 0 ] },
       { "give":"zex:40m","texture":"textures/items/40m", "count":16, "cost":[ 2, 4, 0 ] },
       { "give":"zex:rocketm","texture":"textures/items/rocketm", "count":16, "cost":[ 4, 4, 0 ] },
@@ -19,6 +20,7 @@ export const craftData = {
       { "give":"gun:m1911","texture":"textures/items/gun/m1911", "count":1, "cost":[ 3, 1, 1 ] },
       { "give":"gun:m9","texture":"textures/items/gun/m9", "count":1, "cost":[ 3, 1, 1 ] },
       { "give":"gun:mp40","texture":"textures/items/gun/mp40", "count":1, "cost":[ 3, 1, 1 ] },
+      { "give":"gun:stg44","texture":"textures/items/gun/stg44", "count":1, "cost":[ 1, 2, 1 ] },
       { "give":"gun:ak47","texture":"textures/items/gun/ak47", "count":1, "cost":[ 2, 3, 1 ] },
       { "give":"gun:m16a1","texture":"textures/items/gun/m16a1", "count":1, "cost":[ 2, 3, 1 ] },
       { "give":"gun:m60","texture":"textures/items/gun/m60", "count":1, "cost":[ 6, 3, 6 ] },
@@ -26,6 +28,7 @@ export const craftData = {
       { "give":"gun:g3a3","texture":"textures/items/gun/g3a3", "count":1, "cost":[ 2, 4, 1 ] },
       { "give":"gun:m870","texture":"textures/items/gun/m870", "count":1, "cost":[ 2, 4, 1 ] },
       { "give":"gun:p90","texture":"textures/items/gun/p90", "count":1, "cost":[ 2, 4, 1 ] },
+      { "give":"gun:m14","texture":"textures/items/gun/m14", "count":1, "cost":[ 6, 1, 1 ] },
       { "give":"gvcv5:infantry_i","texture":"textures/items/infantry_i", "count":1, "cost":[ 8, 8, 8 ] }
     ]
   },
@@ -42,6 +45,7 @@ export const craftData = {
       { "give":"gun:m590","texture":"textures/items/gun/m590", "count":1, "cost":[ 2, 6, 2 ] },
       { "give":"gun:saiga12","texture":"textures/items/gun/saiga12", "count":1, "cost":[ 2, 4, 3 ] },
       { "give":"gun:rpg","texture":"textures/items/gun/rpg", "count":1, "cost":[ 2, 4, 12 ] },
+      { "give":"gun:ptrd","texture":"textures/items/gun/ptrd", "count":1, "cost":[ 4, 4, 12 ] },
       { "give":"gun:m79","texture":"textures/items/gun/m79", "count":1, "cost":[ 2, 6, 6 ] },
       { "give":"gvcv5:infantry_ii","texture":"textures/items/infantry_ii", "count":1, "cost":[ 8, 8, 8 ] }
     ]
@@ -75,8 +79,12 @@ export const craftData = {
       { "give":"vehicle:r22_spawn_egg","texture":"textures/items/vehicle/r22", "count":1, "cost":[ 1, 1, 8 ] },
       { "give":"vehicle:ah6_spawn_egg","texture":"textures/items/vehicle/ah6", "count":1, "cost":[ 3, 3, 16 ] },
       { "give":"vehicle:g_heri_spawn_egg","texture":"textures/items/vehicle/g_heri", "count":1, "cost":[ 3, 9, 16 ] },
+      { "give":"vehicle:yak9_spawn_egg","texture":"textures/items/vehicle/yak9", "count":1, "cost":[ 9, 9, 24 ] },
+      { "give":"vehicle:il2_spawn_egg","texture":"textures/items/vehicle/il2", "count":1, "cost":[ 24, 24, 24 ] },
       { "give":"vehicle:m41_spawn_egg","texture":"textures/items/vehicle/m41", "count":1, "cost":[ 3, 9, 6 ] },
+      { "give":"vehicle:panzer_spawn_egg","texture":"textures/items/vehicle/panzer", "count":1, "cost":[ 4, 4, 4 ] },
       { "give":"vehicle:t34_spawn_egg","texture":"textures/items/vehicle/t34", "count":1, "cost":[ 2, 9, 4 ] },
+      { "give":"vehicle:20mmaa_spawn_egg","texture":"textures/items/vehicle/20mmaa", "count":1, "cost":[ 4, 4, 4 ] },
       { "give":"vehicle:pt76_spawn_egg","texture":"textures/items/vehicle/pt76", "count":1, "cost":[ 2, 6, 6 ] },
       { "give":"vehicle:dp28set_spawn_egg","texture":"textures/items/vehicle/dp28set", "count":1, "cost":[ 2, 2, 2 ] },
       { "give":"vehicle:m60set_spawn_egg","texture":"textures/items/vehicle/m60set", "count":1, "cost":[ 2, 2, 2 ] }
@@ -85,16 +93,19 @@ export const craftData = {
   "vc2": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
+      { "give":"vehicle:m113aa_spawn_egg","texture":"textures/items/vehicle/m113aa", "count":1, "cost":[ 3, 9, 9 ] },
       { "give":"vehicle:aifv_spawn_egg","texture":"textures/items/vehicle/aifv", "count":1, "cost":[ 3, 9, 9 ] },
       { "give":"vehicle:ah1s_spawn_egg","texture":"textures/items/vehicle/ah1s", "count":1, "cost":[ 9, 9, 24 ] },
       { "give":"vehicle:mig17_spawn_egg","texture":"textures/items/vehicle/mig17", "count":1, "cost":[ 9, 9, 24 ] },
       { "give":"vehicle:mi24d_spawn_egg","texture":"textures/items/vehicle/mi24d", "count":1, "cost":[ 9, 9, 24 ] },
+      { "give":"vehicle:lav25_spawn_egg","texture":"textures/items/vehicle/lav25", "count":1, "cost":[ 9, 9, 24 ] },
+      { "give":"vehicle:lav25aa_spawn_egg","texture":"textures/items/vehicle/lav25aa", "count":1, "cost":[ 9, 9, 24 ] },
       { "give":"vehicle:m60a1_spawn_egg","texture":"textures/items/vehicle/m60a1", "count":1, "cost":[ 9, 18, 12 ] },
       { "give":"vehicle:t55_spawn_egg","texture":"textures/items/vehicle/t55", "count":1, "cost":[ 9, 16, 9 ] },
-      { "give":"vehicle:20mmaa_spawn_egg","texture":"textures/items/vehicle/20mmaa", "count":1, "cost":[ 4, 4, 4 ] },
       { "give":"vehicle:pkmset_spawn_egg","texture":"textures/items/vehicle/pkmset", "count":1, "cost":[ 2, 2, 2 ] },
       { "give":"vehicle:pak40_spawn_egg","texture":"textures/items/vehicle/pak40", "count":1, "cost":[ 4, 4, 4 ] },
-      { "give":"vehicle:flak18_spawn_egg","texture":"textures/items/vehicle/flak18", "count":1, "cost":[ 8, 8, 8 ] }
+      { "give":"vehicle:flak18_spawn_egg","texture":"textures/items/vehicle/flak18", "count":1, "cost":[ 8, 8, 8 ] },
+      { "give":"vehicle:zu23_spawn_egg","texture":"textures/items/vehicle/zu23", "count":1, "cost":[ 4, 4, 4 ] }
     ]
   },
   "vc3": {
@@ -102,16 +113,16 @@ export const craftData = {
     "buy":[ 
       { "give":"vehicle:m1126_spawn_egg","texture":"textures/items/vehicle/m1126", "count":1, "cost":[ 12, 12, 12 ] },
       { "give":"vehicle:m1128_spawn_egg","texture":"textures/items/vehicle/m1128", "count":1, "cost":[ 12, 12, 12 ] },
-      { "give":"vehicle:lav25_spawn_egg","texture":"textures/items/vehicle/lav25", "count":1, "cost":[ 27, 27, 27 ] },
       { "give":"vehicle:ka50_spawn_egg","texture":"textures/items/vehicle/ka50", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:ka60_spawn_egg","texture":"textures/items/vehicle/ka60", "count":1, "cost":[ 9, 24, 24 ] },
-      { "give":"vehicle:m1a2_spawn_egg","texture":"textures/items/vehicle/m1a2", "count":1, "cost":[ 16, 64, 32 ] },
+      { "give":"vehicle:m1a2_spawn_egg","texture":"textures/items/vehicle/m1a2", "count":1, "cost":[ 48, 64, 48 ] },
+      { "give":"vehicle:m1_abrams_spawn_egg","texture":"textures/items/vehicle/m1_abrams", "count":1, "cost":[ 16, 64, 32 ] },
       { "give":"vehicle:t72_spawn_egg","texture":"textures/items/vehicle/t72", "count":1, "cost":[ 16, 32, 24 ] },
       { "give":"vehicle:su25_spawn_egg","texture":"textures/items/vehicle/su25", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:su27_spawn_egg","texture":"textures/items/vehicle/su27", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:f16_spawn_egg","texture":"textures/items/vehicle/f16", "count":1, "cost":[ 32, 16, 32 ] },
       { "give":"vehicle:f117_spawn_egg","texture":"textures/items/vehicle/f117", "count":1, "cost":[ 48, 32, 48 ] },
-      { "give":"vehicle:zu23_spawn_egg","texture":"textures/items/vehicle/zu23", "count":1, "cost":[ 4, 4, 4 ] }
+      { "give":"vehicle:vads_spawn_egg","texture":"textures/items/vehicle/vads", "count":1, "cost":[ 4, 4, 4 ] }
     ]
   }
 };

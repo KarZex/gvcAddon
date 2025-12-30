@@ -46,7 +46,10 @@
             },
             "render_controllers": [
                 {
-                    "controller.render.armor": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mosin')"
+                    "controller.render.armor": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mosin') && (!query.is_sneaking || !c.is_first_person)"
+                },
+                {
+                    "controller.render.scope2": "query.is_sneaking && c.is_first_person"
                 }
             ]
         }

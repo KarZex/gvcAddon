@@ -11,7 +11,6 @@
             "textures": {
                 "default": "textures/models/glock17.png",
                 "none": "textures/models/leemk4.png",
-                "scope6x": "textures/models/scope6x.png",
                 "scope6x_scope": "textures/models/scope2.png",
                 "scope2x": "textures/models/leemk4.png",
                 "scope2x_scope": "textures/models/scope.png",
@@ -27,7 +26,6 @@
                 "default": "geometry.glock17",
                 "off_hand": "geometry.glock17_left",
                 "none": "geometry.sniperscope",
-                "scope6x": "geometry.scope6x",
                 "scope": "geometry.scope",
                 "scope2x": "geometry.scope2x",
                 "acog": "geometry.acog",

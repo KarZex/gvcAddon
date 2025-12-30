@@ -291,7 +291,7 @@ for root, dirs, files in os.walk(attach_directory):
                             data["minecraft:attachable"]["description"]["animations"]["ads"] = "animation.mosin.ads"
                             data["minecraft:attachable"]["description"]["render_controllers"] = [
                                 {"{}".format(render):"query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && (!query.is_sneaking || !c.is_first_person)".format(gun_id)},
-                                { "controller.render.scope": "query.is_sneaking && c.is_first_person" }
+                                { "controller.render.scope2": "query.is_sneaking && c.is_first_person" }
                             ]
                         else:   
                             data["minecraft:attachable"]["description"]["render_controllers"] = [

@@ -591,10 +591,6 @@
                             "filters": {
                                 "all_of": [
                                     {
-                                        "test": "is_riding",
-                                        "operator": "not"
-                                    },
-                                    {
                                         "test": "has_damage",
                                         "value": "projectile"
                                     },

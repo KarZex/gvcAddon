@@ -489,6 +489,11 @@ item.spawn_egg.entity.vehicle:il2.name=Il-2
 tile.gvcv5:spawn_vehicle_il2.name=Il-2
 item.vehicle:il2_spawn_egg=Il-2
 
+entity.vehicle:st1_pmc.name=ST1
+item.spawn_egg.entity.vehicle:st1_pmc.name=ST1
+tile.gvcv5:spawn_vehicle_st1_pmc.name=ST1
+item.vehicle:st1_pmc_spawn_egg=ST1
+
 ### Tile name ###
 tile.gvcv5:good1.name=死体
 tile.gvcv5:good2.name=スクラップ
@@ -534,6 +539,7 @@ tile.gvcv5:spawn_addon_pmc.name=PMC兵士
 tile.gvcv5:spawn_addon_unks.name=UNKSolider_TypeC
 tile.gvcv5:spawn_addon_af_cpt.name=同盟軍空軍士官
 tile.gvcv5:spawn_addon_mr_cpt.name=同盟軍海軍士官
+item.gvcv5:hauneb_beam=R.O.G
 
 tile.gvcv5:bc.name=弾薬製造機
 tile.gvcv5:gc1.name=銃製造機Tier1
@@ -765,7 +771,7 @@ script.gvcv5.phone_left_red.name=§cは赤チームから脱退しました§r
 script.gvcv5.phone_left_blue.name=§9は青チームから脱退しました§r
 script.gvcv5.phone_left_green.name=§aは緑チームから脱退しました§r
 script.gvcv5.phone_left_yellow.name=§eは黄チームから脱退しました§r
-script.gvcv5.phone_tp_block.name=テレポートブロックにテレポート
+script.gvcv5.phone_tp_block.name=テレポートブロック
 script.gvcv5.phone_set_tp_block.name=テレポートブロックを追加
 script.gvcv5.phone_set_tp_block_name.name=テレポート場所の名前設定
 script.gvcv5.phone_dismantle_red.name=§c赤チームは解散しました§r
@@ -779,24 +785,35 @@ script.gvcv5.newMessage_green.name=§a
 script.gvcv5.newMessage_yellow.name=§e
 script.gvcv5.phone_new_leader.name=あなたは新しいリーダーになりました!
 script.gvcv5.wantToBe_deny.name=あなたの加盟要請は拒否されました
-script.gvcv5.howToGun.name=銃の使い方	#
+script.gvcv5.howToGun.name=銃の使い方
 script.gvcv5.howToGunDesc0.name=銃を撃つ:  :_input_key.use:
 script.gvcv5.howToGunDesc1.name=スコープを覗く:  :_input_key.sneak:
 script.gvcv5.howToGunDesc2.name=リロード:  :_input_key.attack:
-script.gvcv5.howToGunDesc3.name=(タップの場合,何かのブロックに向ける)	#
+script.gvcv5.howToGunDesc3.name=(タップの場合,何かのブロックに向ける)
 script.gvcv5.autoReloadOn.name=自動リロードをON
 script.gvcv5.autoReloadOff.name=自動リロードをOFF
 script.gvcv5.downableOn.name=ダウンをON
 script.gvcv5.downableOff.name=ダウンをOFF
-script.gvcv5.howToVechile.name=乗り物の使い方	#
-script.gvcv5.howToVechileDesc0.name=機関銃発射:  :_input_key.jump: OR 機関銃を持って:_input_key.use:
-script.gvcv5.howToVechileDesc1.name=(ただし、ヘリに乗った場合、機関銃発射に  :_input_key.jump:  は使用できない)
+script.gvcv5.howToVechile.name=乗り物の使い方
+script.gvcv5.howToVechileDesc0.name=ホットバーで武装を選択
+script.gvcv5.howToVechileDesc1.name=発射: :_input_key.jump:  OR 「機関銃」アイテムを持って:_input_key.use:
+
+script.gvcv5.howToAirDesc0.name=ホットバーで武装を選択
+script.gvcv5.howToAirDesc1.name=視点を変更し、進行方向を調整
+script.gvcv5.howToAirDesc2.name=浮上(ヘリ):  :_input_key.jump:
+script.gvcv5.howToAirDesc3.name=主砲発射:  :_input_key.attack: OR 主砲を持って:_input_key.use:
+
+script.gvcv5.howToHeliDesc0.name=ホットバーで武装を選択
+script.gvcv5.howToHeliDesc1.name=発射: :_input_key.jump:  OR 「機関銃」アイテムを持って:_input_key.use:
+script.gvcv5.howToHeliDesc2.name=:_input_key.forward:で上昇、:_input_key.back:で下降
+script.gvcv5.howToHeliDesc3.name=上を向くと後ろに進み、下を向くと前に進む
+
 script.gvcv5.howToVechileDesc2.name=浮上(ヘリ):  :_input_key.jump:
 script.gvcv5.howToVechileDesc3.name=主砲発射:  :_input_key.attack: OR 主砲を持って:_input_key.use:
-script.gvcv5.phone_down.name=ダウン状態について	#
+script.gvcv5.phone_down.name=ダウン状態について
 script.gvcv5.phone_down0.name=チームに入ると、HPが0になっても死亡にはならず、ダウン状態になる。
 script.gvcv5.phone_down1.name=ダウン状態の味方に:_input_key.attack:することで、蘇生できる。
-script.gvcv5.phone_howToTeam.name=チームについて	#
+script.gvcv5.phone_howToTeam.name=チームについて
 script.gvcv5.phone_howToTeamDesc.name=このモードでは, チームに分かれて戦争となる。他のチームに襲撃されないようにし, 自分の勢力を強化せよ。
 script.gvcv5.phone_howToTeam1.name=情報端末について
 script.gvcv5.phone_howToTeam1Desc.name=情報端末は, チームの作戦を手助けする強力なツールである。これを使うと、テレポートや情報共有が可能になる。§c他のチームに取られると、圧倒的に不利になるだろう。§rパスワードをかけ、他人が開けないようにしよう。
@@ -956,4 +973,21 @@ script.gvcv5.downedbyred.name=は§c赤チーム§rによってダウンしま�
 script.gvcv5.downedbyblue.name=は§9青チーム§rによってダウンしました
 script.gvcv5.downedbygreen.name=は§a緑チーム§rによってダウンしました
 script.gvcv5.downedbyyellow.name=は§e黄チーム§rによってダウンしました
+
+script.gvcv5.phone_tp_block_team.name=チーム拠点
+script.gvcv5.phone_set_tp_block_team.name=チーム共用テレポート地点
+script.gvcv5.phone_set_tp_block_user.name=個人用テレポート地点
+script.gvcv5.phone_noteam_setting.name=プレイヤー設定
+script.gvcv5.phone_noteam_setting_is_down.name=HPが0の時ダウンする
+script.gvcv5.phone_noteam_setting_do_print_damage.name=ダメージを表示する
+script.gvcv5.phone_noteam_setting_do_autoreload.name=自動リロードを行う
+script.gvcv5.phone_noteam_setting_now_down.name=HPが0になるとダウン状態になります。
+script.gvcv5.phone_noteam_setting_dont_down.name=HPが0になると死亡します。
+script.gvcv5.phone_noteam_setting_now_print.name=攻撃を受けるとダメージが表示されます。
+script.gvcv5.phone_noteam_setting_dont_print.name=ダメージは表示されません
+script.gvcv5.phone_noteam_setting_now_autoreload.name=自動リロードが有効です。
+script.gvcv5.phone_noteam_setting_dont_autoreload.name=自動リロードが無効です。
+script.gvcv5.phone_noteam_setting_spawn_with_phone.name=リスポーン時に情報端末を所持する
+script.gvcv5.phone_noteam_setting_now_withphone.name=リスポーン時に情報端末を所持する設定を変更しました
+script.gvcv5.phone_noteam_setting_dont_withphone.name=リスポーン時に情報端末を所持しない設定を変更しました
 

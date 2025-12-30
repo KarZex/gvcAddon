@@ -1038,7 +1038,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.4,
+          "burst_interval": 0.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -2288,10 +2288,6 @@
             "on_damage": {
               "filters": {
                 "all_of": [
-                  {
-                    "test": "is_riding",
-                    "operator": "not"
-                  },
                   {
                     "test": "has_damage",
                     "value": "projectile"

@@ -16,12 +16,12 @@
                 {"default":"!query.is_sneaking"}
             ],
             "on_entry": [
-              "/effect @s slowness 1000 8 true",
+              "/camera @s fov_set 30.0 0.25 linear",
               "/event entity @s gvcv5:start_scope",
               "/tag @s add scope"
             ],
             "on_exit": [
-              "/effect @s slowness 0 0 true",
+              "/camera @s fov_clear 0.25 linear",
               "/event entity @s gvcv5:stop_scope",
               "/tag @s remove scope",
               "/hud @s reset crosshair"
@@ -32,11 +32,11 @@
                 {"default":"!query.is_sneaking"}
             ],
             "on_entry": [
-              "/effect @s slowness 1000 6 true",
+              "/camera @s fov_set 45.0 0.1 linear",
               "/tag @s add scope"
             ],
             "on_exit": [
-              "/effect @s slowness 0 0 true",
+              "/camera @s fov_clear 0.25 linear",
               "/tag @s remove scope",
               "/hud @s reset crosshair"
             ]
@@ -46,11 +46,11 @@
                 {"default":" !query.is_sneaking"}
             ],
             "on_entry": [
-              "/effect @s slowness 1000 3 true",
+              "/camera @s fov_set 60.0 0.05 linear",
               "/tag @s add scope"
             ],
             "on_exit": [
-              "/effect @s slowness 0 0 true",
+              "/camera @s fov_clear 0.25 linear",
               "/tag @s remove scope",
               "/hud @s reset crosshair"
             ]

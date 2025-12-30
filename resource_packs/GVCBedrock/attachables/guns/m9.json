@@ -11,7 +11,6 @@
             "textures": {
                 "default": "textures/models/m9.png",
                 "none": "textures/models/leemk4.png",
-                "scope6x": "textures/models/scope6x.png",
                 "scope6x_scope": "textures/models/scope2.png",
                 "scope2x": "textures/models/leemk4.png",
                 "scope2x_scope": "textures/models/scope.png",
@@ -26,7 +25,6 @@
                 "default": "geometry.m9",
                 "off_hand": "geometry.m9_left",
                 "none": "geometry.sniperscope",
-                "scope6x": "geometry.scope6x",
                 "scope": "geometry.scope",
                 "scope2x": "geometry.scope2x",
                 "acog": "geometry.acog",
@@ -42,8 +40,8 @@
                 "third": "animation.item.third2",
                 "third_off": "animation.item.thirdoff",
                 "ads_scope": "animation.mosin.ads",
-                "ads_sight": "animation.sight.ads",
-                "def_sight": "animation.burrel.m9",
+                "ads_sight": "animation.glock.ads",
+                "def_sight": "animation.glock.def",
                 "def_burrel": "animation.m9.burrel"
             },
             "scripts": {
@@ -66,6 +64,9 @@
                     },
                     {
                         "third_off": "v.off_hand && !c.is_first_person"
+                    },
+                    {
+                        "def_sight": "query.property('zex:sights') != 0"
                     },
                     {
                         "ads_scope": "query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"

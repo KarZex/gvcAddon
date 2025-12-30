@@ -22,8 +22,7 @@ export const gunAttach = {
     ],
     "bullet": [
       4,
-      5,
-      6
+      5
     ]
   },
   "ak102": {
@@ -192,7 +191,6 @@ export const gunAttach = {
   },
   "glock17": {
     "sights": [
-      1,
       2,
       3,
       4,
@@ -211,7 +209,6 @@ export const gunAttach = {
   },
   "glock18": {
     "sights": [
-      1,
       2,
       3,
       4,
@@ -533,7 +530,6 @@ export const gunAttach = {
   },
   "m9": {
     "sights": [
-      1,
       2,
       3,
       4,
@@ -564,13 +560,11 @@ export const gunAttach = {
     "bullet": 0
   },
   "mosin": {
-    "sights": 0,
+    "sights": 1,
     "burrel": 0,
     "grip": 0,
     "light": 0,
-    "bullet": [
-      2
-    ]
+    "bullet": 0
   },
   "mp40": {
     "sights": 0,
@@ -733,8 +727,7 @@ export const gunAttach = {
     ],
     "bullet": [
       4,
-      5,
-      6
+      5
     ]
   },
   "scar": {

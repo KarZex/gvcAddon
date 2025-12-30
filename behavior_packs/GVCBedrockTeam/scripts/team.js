@@ -159,6 +159,34 @@ world.afterEvents.playerJoin.subscribe( e => {
 	}
 } )
 
+world.afterEvents.playerSpawn.subscribe( e => {
+	const player = e.player;
+	if( player.hasTag(`withphone`) ){
+		player.runCommand(`give @s zex:phone_noteam`);
+	}
+});
+
+//Colored nameTags
+system.runInterval( () => {
+	const players = world.getAllPlayers();
+	for( const player of players ){
+		if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`redteam`) ){
+			player.nameTag = `§c${player.name}§r`;
+		}
+		else if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`blueteam`) ){
+			player.nameTag = `§9${player.name}§r`;
+		}
+		else if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`greenteam`) ){
+			player.nameTag = `§a${player.name}§r`;
+		}
+		else if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`yellowteam`) ){
+			player.nameTag = `§e${player.name}§r`;
+		}
+		else{
+			player.nameTag = `${player.name}`;
+		}
+	}
+},20 );
 
 system.afterEvents.scriptEventReceive.subscribe( e => {
 	if( e.id === "gvcv5:TeamList" ){
@@ -272,17 +300,20 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const team = e.message;
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
 		const form = new ActionFormData();
-		form.title(`script.gvcv5.phone_noteam.name`);
-		form.button(`script.gvcv5.howToGun.name`);
-		form.button(`script.gvcv5.howToVechile.name`);
-		form.button(`script.gvcv5.phone_down.name`);
-		form.button(`script.gvcv5.phone_howToTeam.name`);
-		form.button(`script.gvcv5.phone_teamList.name`);
+		form.title(`.debug Home Menu`);
+		form.button(`script.gvcv5.howToGun.name`,`textures/ui/phone/ak47`);
+		form.button(`script.gvcv5.howToVechile.name`,`textures/ui/phone/t34`);
+		form.button(`script.gvcv5.howToAir.name`,`textures/ui/phone/f16`);
+		form.button(`script.gvcv5.howToHeli.name`,`textures/ui/phone/ah6`);
+		form.button(`script.gvcv5.phone_howToTeam.name`,`textures/ui/phone/missing_item`);
+		form.button(`script.gvcv5.phone_teamList.name`,`textures/ui/phone/icon_multiplayer`);
+		form.button(`script.gvcv5.phone_noteam_setting.name`,`textures/ui/phone/settings_glyph_color_2x`);
 		if( team == `noteam` ){
-			form.button(`script.gvcv5.select_team.name`);
+			form.button(`script.gvcv5.select_team.name`,`textures/ui/phone/team`);
 		}
 		form.show(user).then( r => {
 			if (!r.canceled) {
+				// Gun
 				if( r.selection == 0 ){
 					const form = new ActionFormData();
 					form.title(`script.gvcv5.howToGun.name`);
@@ -296,23 +327,14 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					itemRawText.push({ translate: `script.gvcv5.howToGunDesc3.name` });
 					itemRawText.push({ text: `\n\n` });
 					form.body({ rawtext: itemRawText});
-					form.button(`script.gvcv5.autoReloadOn.name`);
-					form.button(`script.gvcv5.autoReloadOff.name`);
 					form.button(`script.gvcv5.phone_back.name`);
 					form.show(user).then( result => {
 						if ( !result.canceled ){
-							if( result.selection == 0 ){
-								user.addTag(`autoReload`)
-								user.sendMessage({ translate: `script.gvcv5.autoReloadOn.name` });
-							}
-							if( result.selection == 1 ){
-								user.removeTag(`autoReload`)
-								user.sendMessage({ translate: `script.gvcv5.autoReloadOff.name` });
-							}
 							user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
 						}
 					} )
 				}
+				// Vechile
 				else if( r.selection == 1 ){
 					const form = new ActionFormData();
 					form.title(`script.gvcv5.howToVechile.name`);
@@ -321,10 +343,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					itemRawText.push({ text: `\n\n` });
 					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc1.name` });
 					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc2.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc3.name` });
-					itemRawText.push({ text: `\n\n` });
 					form.body({ rawtext: itemRawText});
 					form.button(`script.gvcv5.phone_back.name`);
 					form.show(user).then( result => {
@@ -333,36 +351,54 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
+				// Air
 				else if( r.selection == 2 ){
 					const form = new ActionFormData();
 					form.title(`script.gvcv5.phone_down.name`);
 					let itemRawText = []
-					itemRawText.push({ translate: `script.gvcv5.phone_down0.name` });
+					itemRawText.push({ translate: `script.gvcv5.howToAirDesc0.name` });
 					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.phone_down1.name` });
+					itemRawText.push({ translate: `script.gvcv5.howToAirDesc1.name` });
+					itemRawText.push({ text: `\n\n` });
+					itemRawText.push({ translate: `script.gvcv5.howToAirDesc2.name` });
+					itemRawText.push({ text: `\n\n` });
+					itemRawText.push({ translate: `script.gvcv5.howToAirDesc3.name` });
 					itemRawText.push({ text: `\n\n` });
 					form.body({ rawtext: itemRawText});
-					form.button(`script.gvcv5.downableOn.name`);
-					form.button(`script.gvcv5.downableOff.name`);
 					form.button(`script.gvcv5.phone_back.name`);
 					form.show(user).then( result => {
 						if ( !result.canceled ){
-							if( result.selection == 0 ){
-								user.removeTag(`nodownable`)
-								user.sendMessage({ translate: `script.gvcv5.downableOn.name` });
-							}
-							if( result.selection == 1 ){
-								user.addTag(`nodownable`)
-								user.sendMessage({ translate: `script.gvcv5.downableOff.name` });
-							}
 							user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
 						}
 					} )
 				}
+				// Heli
 				else if( r.selection == 3 ){
+					const form = new ActionFormData();
+					form.title(`script.gvcv5.phone_down.name`);
+					let itemRawText = []
+					itemRawText.push({ translate: `script.gvcv5.howToHeliDesc0.name` });
+					itemRawText.push({ text: `\n\n` });
+					itemRawText.push({ translate: `script.gvcv5.howToHeliDesc1.name` });
+					itemRawText.push({ text: `\n\n` });
+					itemRawText.push({ translate: `script.gvcv5.howToHeliDesc2.name` });
+					itemRawText.push({ text: `\n\n` });
+					itemRawText.push({ translate: `script.gvcv5.howToHeliDesc3.name` });
+					itemRawText.push({ text: `\n\n` });
+					form.body({ rawtext: itemRawText});
+					form.button(`script.gvcv5.phone_back.name`);
+					form.show(user).then( result => {
+						if ( !result.canceled ){
+							user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
+						}
+					} )
+				}
+				// Team
+				else if( r.selection == 4 ){
 					user.runCommand(`scriptevent gvcv5:phone_howToTeam ${team}`);
 				}
-				else if( r.selection == 4 ){
+				// Team List
+				else if( r.selection == 5 ){
 					const form = new ActionFormData();
 					form.title(`script.gvcv5.phone_teamList.name`);
 					let itemRawText = []
@@ -389,6 +425,53 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
+				// Settings
+				else if( r.selection == 6 ){
+					const form = new ModalFormData();
+					const user = e.sourceEntity;
+					form.title(`script.gvcv5.phone_noteam_setting.name`);
+					form.toggle(`script.gvcv5.phone_noteam_setting_is_down.name`, {defaultValue: ( !user.hasTag(`nodownable`) )});
+					form.toggle(`script.gvcv5.phone_noteam_setting_do_print_damage.name`, {defaultValue: ( !user.hasTag(`no_print`) )});
+					form.toggle(`script.gvcv5.phone_noteam_setting_do_autoreload.name`, {defaultValue: ( user.hasTag(`autoReload`) )});
+					form.toggle(`script.gvcv5.phone_noteam_setting_spawn_with_phone.name`, {defaultValue: ( user.hasTag(`withphone`) )});
+					form.show(e.sourceEntity).then( result => {
+						if ( !result.canceled ){
+							if( user.hasTag(`nodownable`) && Boolean(result.formValues[0]) == true ){
+								user.removeTag(`nodownable`);
+								user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_now_down.name` }]});
+							}
+							if( !user.hasTag(`nodownable`) && Boolean(result.formValues[0]) == false ){
+								user.addTag(`nodownable`);
+								user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_dont_down.name` }]});
+							}
+							if( user.hasTag(`no_print`) && Boolean(result.formValues[1]) == true ){
+								user.removeTag(`no_print`);
+								user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_now_print.name` }]});
+							}
+							if( !user.hasTag(`no_print`) && Boolean(result.formValues[1]) == false ){
+								user.addTag(`no_print`);
+								user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_dont_print.name` }]});
+							}
+							if( !user.hasTag(`autoReload`) && Boolean(result.formValues[2]) == true ){
+								user.addTag(`autoReload`);
+								user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_now_autoreload.name` }]});
+							}
+							if( user.hasTag(`autoReload`) && Boolean(result.formValues[2]) == false ){
+								user.removeTag(`autoReload`);
+								user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_dont_autoreload.name` }]});
+							}
+							if( !user.hasTag(`withphone`) && Boolean(result.formValues[3]) == true ){
+								user.addTag(`withphone`);
+								user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_now_withphone.name` }]});
+							}
+							if( user.hasTag(`withphone`) && Boolean(result.formValues[3]) == false ){
+								user.removeTag(`withphone`);
+								user.sendMessage({ rawtext: [{ translate: `script.gvcv5.phone_noteam_setting_dont_withphone.name` }]});
+							}
+						}
+					} )
+				}
+				// Select Team
 				else if( r.selection == 5 ){
 					user.runCommand(`scriptevent gvcv5:phone_noteam_selectteam`);
 				}
@@ -519,14 +602,14 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
 		const userFamily = e.message;
 		const form = new ActionFormData();
-		form.title(`script.gvcv5.phone_tp_block.name`);
-		for( let i = 0; i < 5; i++ ){
-			form.button(`${phone.getDynamicProperty(`slot${i}_name`)}`);
+		form.title(`.debug Home Menu`);
+		for( let i = 0; i < 9; i++ ){
+			form.button(`${phone.getDynamicProperty(`slot${i}_name`)}`,`textures/ui/phone/number${i}`);
 		}
-		form.button(`script.gvcv5.phone_back.name`);
+		form.button(`script.gvcv5.phone_back.name`,`textures/ui/phone/crossout`);
 		form.show(user).then( result => {
 			if ( !result.canceled ){
-				if( result.selection == 5 ){
+				if( result.selection == 9 ){
 					user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
 				}
 				else if( phone.getDynamicProperty(`slot${result.selection}`) != undefined ){
@@ -537,15 +620,63 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			}
 		},)
 	}
+	else if( e.id == "gvcv5:phone_tp_teamblock" && !e.sourceEntity.hasTag(`down`)  ){
+		const user = e.sourceEntity;
+		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
+		const userFamily = e.message;
+		const form = new ActionFormData();
+		form.title(`.debug Home Menu`);
+		for( let i = 0; i < 9; i++ ){
+			form.button(`${world.getDynamicProperty(`${userFamily}_slot${i}_name`)}`,`textures/ui/phone/number${i}`);
+		}
+		form.button(`script.gvcv5.phone_back.name`,`textures/ui/phone/crossout`);
+		form.show(user).then( result => {
+			if ( !result.canceled ){
+				if( result.selection == 9 ){
+					user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
+				}
+				else if( world.getDynamicProperty(`${userFamily}_slot${result.selection}`) != undefined ){
+					let location = world.getDynamicProperty(`${userFamily}_slot${result.selection}`);
+					let dimension = world.getDimension(world.getDynamicProperty(`${userFamily}_slot${result.selection}_dimension`));
+					tpWithDelay(user, location, dimension, 100);
+				}
+			}
+		},)
+	}
 	else if( e.id == "gvcv5:phone_set_tp_block" && !e.sourceEntity.hasTag(`down`)  ){
+		const user = e.sourceEntity;
+		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
+		const userFamily = e.message;
+		
+		let locateName = `unnamed`
+		if( user.hasTag(`${userFamily}Leader`) || user.nameTag == world.getDynamicProperty(`${userFamily}Leader`) ){
+			const form = new ActionFormData();
+			form.button(`script.gvcv5.phone_set_tp_block_team.name`);
+			form.button(`script.gvcv5.phone_set_tp_block_user.name`);
+			form.show(user).then( result => {
+				if ( !result.canceled ){
+					if( result.selection == 0 ){
+						user.runCommand(`scriptevent gvcv5:phone_set_tp_block_team ${userFamily}`);
+					}
+					else if( result.selection == 1 ){
+						user.runCommand(`scriptevent gvcv5:phone_set_tp_block_user ${userFamily}`);
+					}
+				}
+			},)
+		}
+		else{
+			user.runCommand(`scriptevent gvcv5:phone_set_tp_block_user ${userFamily}`);
+		}
+	}
+	else if( e.id == "gvcv5:phone_set_tp_block_user" && !e.sourceEntity.hasTag(`down`)  ){
 		const user = e.sourceEntity;
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
 		const userFamily = e.message;
 		const form = new ActionFormData();
 		let locateName = `unnamed`
-		form.title(`script.gvcv5.phone_set_tp_block.name`);
-		for( let i = 0; i < 5; i++ ){
-			form.button(`${phone.getDynamicProperty(`slot${i}_name`)}`);
+		form.title(`.debug Home Menu`);	
+		for( let i = 0; i < 9; i++ ){
+			form.button(`${phone.getDynamicProperty(`slot${i}_name`)}`,`textures/ui/phone/number${i}`);
 		}
 		form.show(user).then( result => {
 			if ( !result.canceled ){
@@ -559,6 +690,33 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						phone.setDynamicProperty(`slot${result.selection}`,user.location);
 						phone.setDynamicProperty(`slot${result.selection}_dimension`,user.dimension.id);
 						phone.setDynamicProperty(`slot${result.selection}_name`,locateName);
+					}
+				},)
+			}
+		},)
+	}
+	else if( e.id == "gvcv5:phone_set_tp_block_team" && !e.sourceEntity.hasTag(`down`)  ){
+		const user = e.sourceEntity;
+		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
+		const userFamily = e.message;
+		const form = new ActionFormData();
+		let locateName = `unnamed`
+		form.title(`.debug Home Menu`);	
+		for( let i = 0; i < 9; i++ ){
+			form.button(`${world.getDynamicProperty(`${userFamily}_slot${i}_name`)}`,`textures/ui/phone/number${i}`);
+		}
+		form.show(user).then( result => {
+			if ( !result.canceled ){
+				const form = new ModalFormData()
+				const PreName = `${world.getDynamicProperty(`${userFamily}_slot${result.selection}_name`)}`
+				form.title(`script.gvcv5.phone_set_tp_block_name.name`)
+				form.textField(`script.gvcv5.phone_set_tp_block_name.name`,`${PreName}`, {defaultValue: `${PreName}`});
+				form.show(user).then( r => {
+					if (!r.canceled) {
+						locateName = r.formValues[0]
+						world.setDynamicProperty(`${userFamily}_slot${result.selection}`,user.location);
+						world.setDynamicProperty(`${userFamily}_slot${result.selection}_dimension`,user.dimension.id);
+						world.setDynamicProperty(`${userFamily}_slot${result.selection}_name`,locateName);
 					}
 				},)
 			}
@@ -647,20 +805,21 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
 		let phoneArray = [];
 		const form = new ActionFormData();
-		form.title(`script.gvcv5.phone.name`);
-		form.button(`script.gvcv5.phone_tp.name`);
-		form.button(`script.gvcv5.phone_tp_block.name`);
-		form.button(`script.gvcv5.phone_teamChat.name`);
-		form.button(`script.gvcv5.phone_menber_list.name`);
-		form.button(`script.gvcv5.phone_password.name`);
-		form.button(`script.gvcv5.phone_leave.name`);
-		form.button(`script.gvcv5.phone_howTo.name`);
+		form.title(`.debug Home Menu`);
+		form.button(`script.gvcv5.phone_tp.name`,`textures/ui/phone/icon_alex`);
+		form.button(`script.gvcv5.phone_tp_block.name`,`textures/ui/phone/spawn_${userFamily}`);
+		form.button(`script.gvcv5.phone_tp_block_team.name`,`textures/ui/phone/flag_${userFamily}`);
+		form.button(`script.gvcv5.phone_teamChat.name`,`textures/ui/phone/message`);
+		form.button(`script.gvcv5.phone_menber_list.name`,`textures/ui/phone/jail`);
+		form.button(`script.gvcv5.phone_password.name`,`textures/ui/phone/icon_lock`);
+		form.button(`script.gvcv5.phone_leave.name`,`textures/ui/phone/crossout`);
+		form.button(`script.gvcv5.phone_howTo.name`,`textures/ui/phone/missing_item`);
 		if( user.hasTag(`${userFamily}Leader`) ){
-			form.button(`script.gvcv5.phone_accept_to_join.name`);
-			form.button(`script.gvcv5.phone_kick_member.name`);
+			form.button(`script.gvcv5.phone_accept_to_join.name`,`textures/ui/phone/confirm`);
+			form.button(`script.gvcv5.phone_kick_member.name`,`textures/ui/phone/hammer_l`);
 		}
 		if( user.nameTag == world.getDynamicProperty(`${userFamily}Leader`) ){
-			form.button(`script.gvcv5.phone_transfer_leader.name`);
+			form.button(`script.gvcv5.phone_transfer_leader.name`,`textures/ui/phone/permissions_op_crown`);
 		}
 		form.show(user).then( result => {
 			if ( !result.canceled ){
@@ -703,10 +862,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				else if( result.selection == 1 ){ // teleport to block
 					user.runCommand(`scriptevent gvcv5:phone_tp_block ${userFamily}`);
 				}
-				else if( result.selection == 2 ){ // team chat
+				else if( result.selection == 2 ){ // teleport to Team Base
+					user.runCommand(`scriptevent gvcv5:phone_tp_teamblock ${userFamily}`);
+				}
+				else if( result.selection == 3 ){ // team chat
 					user.runCommand(`scriptevent gvcv5:phone_teamChat ${userFamily}`);
 				}
-				else if( result.selection == 3 ){ //menber list
+				else if( result.selection == 4 ){ //menber list
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_menber_list.name`);
 					for( const myAlly of world.getPlayers({ tags:[ `${userFamily}Sub` ] }) ){
@@ -740,7 +902,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				else if( result.selection == 4 ){ //change password
+				else if( result.selection == 5 ){ //change password
 					const form = new ModalFormData()
 					form.title(`script.gvcv5.phone_password.name`)
 					form.textField(`script.gvcv5.input_password.name`,`${phone.getDynamicProperty("password")}`);
@@ -751,7 +913,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					},)
 				}
-				else if( result.selection == 5 ){ //leave team
+				else if( result.selection == 6 ){ //leave team
 					const form = new ActionFormData();
 					form.title(`script.gvcv5.phone_leave.name`);
 					form.body(`script.gvcv5.leave_team_body.name`);
@@ -777,10 +939,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				else if( result.selection == 6 ){ //how to use phone
+				else if( result.selection == 7 ){ //how to use phone
 					user.runCommand(`scriptevent gvcv5:phone_noteam ${userFamily}`);
 				}
-				else if( result.selection == 7 ){ //accept to join team
+				else if( result.selection == 8 ){ //accept to join team
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_accept_to_join.name`);
 					for( const myAlly of world.getPlayers({ tags: [ `wantToBe${userFamily}` ],families: [ `noteam` ] }) ){
@@ -818,7 +980,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				else if( result.selection == 8 ){ //kick member
+				else if( result.selection == 9 ){ //kick member
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_kick_member.name`);
 					for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){
@@ -845,7 +1007,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					} )
 				}
-				else if( result.selection == 9 ){ //transfer leader
+				else if( result.selection == 10 ){ //transfer leader
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_transfer_leader.name`);
 					for( const myAlly of world.getPlayers({ families: [ userFamily ] }) ){

@@ -213,6 +213,112 @@
               "id": "vehicle:t34"
             }
           ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:spawn_egg",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_actor_id",
+              "id": "vehicle:pt76"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "zex:scope6x",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:acog",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:coyote",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:horo",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:dotsight",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:suppressor",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:grip",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:gripod",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:bipod",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:anglegrip",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:lasersight",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:bullet_hp",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:bullet_hp",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:bullet_ap",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:bullet_at",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:bullet_srag",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:bullet_frag",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:bullet_srag",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "zex:bullet_db",
+          "weight": 1
         }
       ]
     }
