@@ -1195,6 +1195,8 @@ for row in csv_reader2:
             gun_sound_true = "air"
         elif( gun_sound == "missilebullet" ):
             gun_sound_true = "missile"
+        elif( gun_sound == "heavycannonbullet" ):
+            gun_sound_true = "heavycannon"
 
         if( "D" in gun_offset  ):
             spawn_entity = { 

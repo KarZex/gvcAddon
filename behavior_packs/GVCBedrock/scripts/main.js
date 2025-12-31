@@ -362,51 +362,53 @@ world.afterEvents.entitySpawn.subscribe( async e => {
 		try {
 			const player = projectile.getComponent(EntityComponentTypes.Projectile).owner;
 			//print(`${player.getDynamicProperty(`lastFire`)}`)
-			if( player.getProperty(`zex:burrel`) == 1 && !player.hasTag(`isRiding`) && !player.hasTag(`ride`) && !player.getDynamicProperty(`lastFire`) ){
-				player.setDynamicProperty(`lastFire`,true)
-				projectile.dimension.playSound(`fire.supu`,projectile.location,{ volume:0.5 });	
-				await system.waitTicks(1);
-				player.setDynamicProperty(`lastFire`,false);
-			}
-			else if( !player.getDynamicProperty(`lastFire`)){
-				player.setDynamicProperty(`lastFire`,true)
-				const gunName = getGunProjectlie(projectile.typeId);
-				projectile.dimension.playSound(`fire.${gunData[`${gunName}`][`sound`]}`,projectile.location,{ volume:128 });	
-				await system.waitTicks(1);
-				player.setDynamicProperty(`lastFire`,false);
-			}
-			else if( player.getDynamicProperty(`lastFire`)){
-				await system.waitTicks(1);
-				player.setDynamicProperty(`lastFire`,false);
-			}
-			if( player.typeId == `minecraft:player` && !player.hasTag("isRiding") && !player.hasTag(`ride`) ){
-				const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-				const ench = gun.getItem().getComponent(ItemComponentTypes.Enchantable);
-				if( ench.hasEnchantment(`minecraft:flame`) || player.getProperty(`zex:bullet`) == 6 && !player.hasTag("isRiding") ){
-					projectile.setOnFire(10,true);
-				}
-			}
-			else {
-				if( (player.getDynamicProperty(`Ench_flame`) != undefined || player.getProperty(`zex:bullet`) == 6)  && !player.hasTag(`isRiding`) ){
-					projectile.setOnFire(10,true);
-				}
-			}
-
-			if( player.typeId != `minecraft:player` && player.hasTag(`ride`) ){
-				const ride = player.dimension.getEntities({location:player.location,families:[ `air` ],maxDistance:4,closest:1})[0];
-				if( ride != undefined ){
-					const V = projectile.getVelocity()
-					let vx = turning2( getVector3E(V),getVector3E(ride.getViewDirection()),Math.PI/12 )
-					//print(`a`)
-					projectile.applyImpulse(vx);
-
-				}
-				else{
-					//print(`b`)
-				}
-			}
 			if( player.typeId != `minecraft:player` && player.getEffect(`blindness`) != undefined ){
 				projectile.remove();
+			}
+			else{
+				if( player.getProperty(`zex:burrel`) == 1 && !player.hasTag(`isRiding`) && !player.hasTag(`ride`) && !player.getDynamicProperty(`lastFire`) ){
+					player.setDynamicProperty(`lastFire`,true)
+					projectile.dimension.playSound(`fire.supu`,projectile.location,{ volume:0.5 });	
+					await system.waitTicks(1);
+					player.setDynamicProperty(`lastFire`,false);
+				}
+				else if( !player.getDynamicProperty(`lastFire`)){
+					player.setDynamicProperty(`lastFire`,true)
+					const gunName = getGunProjectlie(projectile.typeId);
+					projectile.dimension.playSound(`fire.${gunData[`${gunName}`][`sound`]}`,projectile.location,{ volume:128 });	
+					await system.waitTicks(1);
+					player.setDynamicProperty(`lastFire`,false);
+				}
+				else if( player.getDynamicProperty(`lastFire`)){
+					await system.waitTicks(1);
+					player.setDynamicProperty(`lastFire`,false);
+				}
+				if( player.typeId == `minecraft:player` && !player.hasTag("isRiding") && !player.hasTag(`ride`) ){
+					const gun = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+					const ench = gun.getItem().getComponent(ItemComponentTypes.Enchantable);
+					if( ench.hasEnchantment(`minecraft:flame`) || player.getProperty(`zex:bullet`) == 6 && !player.hasTag("isRiding") ){
+						projectile.setOnFire(10,true);
+					}
+				}
+				else {
+					if( (player.getDynamicProperty(`Ench_flame`) != undefined || player.getProperty(`zex:bullet`) == 6)  && !player.hasTag(`isRiding`) ){
+						projectile.setOnFire(10,true);
+					}
+				}
+
+				if( player.typeId != `minecraft:player` && player.hasTag(`ride`) ){
+					const ride = player.dimension.getEntities({location:player.location,families:[ `air` ],maxDistance:4,closest:1})[0];
+					if( ride != undefined ){
+						const V = projectile.getVelocity()
+						let vx = turning2( getVector3E(V),getVector3E(ride.getViewDirection()),Math.PI/12 )
+						//print(`a`)
+						projectile.applyImpulse(vx);
+
+					}
+					else{
+						//print(`b`)
+					}
+				}
 			}
 		}
 		catch{}
@@ -444,7 +446,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			const slots = [ EquipmentSlot.Head,EquipmentSlot.Chest,EquipmentSlot.Legs,EquipmentSlot.Feet ];
 			for( const slot of slots ){
 				if( equipmentComp.getEquipment(slot) != undefined ){ 
-					def = def + setArmorValue(equipmentComp.getEquipmentSlot(slot).typeId) 
+					def = def + setArmorValue(equipmentComp.getEquipmentSlot(slot).typeId)
 				}
 			}
 		}
@@ -462,15 +464,19 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			def = def + (1 + vict.getEffect("resistance").amplifier) * 0.5;
 		}
 		if( vict.getProperty(`zex:tank`) > damageIgnoreDef ){
-			def = 1;
+			def = 999;
 		}
-		if (def > 1){ def = 1 }
+		//if (def > 1){ def = 1 }
 
 		//headshot (1.5 times)
 		if( e.location.y - vict.location.y > 1.5 && headshotTypes.includes(vict.typeId) ){
-			def = def - 0.5;//armor ignore 50% on headshot
+			def = def - 0.5;//armor ignore
+
 			if( e.source.typeId == "minecraft:player" ){
 				e.dimension.playSound(`note.bell`,e.source.location,{ volume:1, pitch:2 });
+			}
+			if(  vict.typeId == "minecraft:player" ){
+				def = def + (1.8*setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Head).typeId)); //head armor effect
 			}
 			e.source.setDynamicProperty(`gvcv5:headshot`,1);
 			e.source.runCommand(`title @s subtitle §4HEADSHOT§r`);
@@ -506,6 +512,9 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		}
 		else{
 			damage = damage * world.getDynamicProperty("gvcv5:mobDamage");
+		}
+		if( owner.typeId != `minecraft:player` && owner.getEffect(`blindness`) != undefined ){
+			damage = 0;
 		}
 
 		//final damage
@@ -933,7 +942,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		if( slow > 0 ){
 			player.addEffect("slowness", 5,{ amplifier: slow });
 		}
-		if( !player.hasTag(`reload`) && !player.hasTag(`down`) ){
+		if( !player.hasTag(`reload`) && !player.hasTag(`down`) && !player.hasTag(`isRiding`) ){
 			player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcv5:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo} ${getInventoryItem(player, Ammo)}\"}]}`)
 		}
 		if( damage >= maxAmmo && gunData[`${gunName}`]["fireOnReload"] == true ){
@@ -963,7 +972,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		if( usedGun == undefined ){
 			usedGun = 0;
 		}
-		if( player.isSneaking && !player.hasTag(`reload`) && !player.hasTag(`down`) ){
+		if( player.isSneaking && !player.hasTag(`reload`) && !player.hasTag(`down`) && !player.hasTag(`isRiding`) ){
 			const Targetv = player.getEntitiesFromViewDirection( {families:[ `vehicle` ],ignoreBlockCollision:false} );
 			const Targetm = player.getEntitiesFromViewDirection( {families:[ `mob` ],ignoreBlockCollision:false} );
 			const Targetp = player.getEntitiesFromViewDirection( {families:[ `player` ],ignoreBlockCollision:false} );
@@ -983,7 +992,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 				player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§cNo Target\"}]}`);
 			}
 		}
-		else if( !player.hasTag(`reload`) && !player.hasTag(`down`) ){
+		else if( !player.hasTag(`reload`) && !player.hasTag(`down`) && !player.hasTag(`isRiding`) ){
 			player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcv5:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo} ${getInventoryItem(player, Ammo)}\"}]}`)
 		}
 		if( damage >= maxAmmo ){

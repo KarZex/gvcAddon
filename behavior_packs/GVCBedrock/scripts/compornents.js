@@ -189,7 +189,7 @@ function gvcv5UseAidKitii( event ){
 }
 function gvcv5UseSelfRise( event ){
     event.source.addEffect("regeneration",14,{ amplifier: 12 })
-    event.source.runCommand(`event entity @s gvcv5:become_rise`);
+    event.source.runCommand(`event entity @s gvcv5:remove_down_true`);
 }
 async function setUp(){
     await system.waitTicks(100);

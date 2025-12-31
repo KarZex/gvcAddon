@@ -170,6 +170,9 @@ world.afterEvents.playerSpawn.subscribe( e => {
 system.runInterval( () => {
 	const players = world.getAllPlayers();
 	for( const player of players ){
+		if( player.hasTag(`down`) ){
+			player.runCommand(`camera @s fade time 1 0 1 color 128 0 0`);
+		}
 		if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`redteam`) ){
 			player.nameTag = `§c${player.name}§r`;
 		}
@@ -186,7 +189,7 @@ system.runInterval( () => {
 			player.nameTag = `${player.name}`;
 		}
 	}
-},20 );
+},40 );
 
 system.afterEvents.scriptEventReceive.subscribe( e => {
 	if( e.id === "gvcv5:TeamList" ){
@@ -354,15 +357,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				// Air
 				else if( r.selection == 2 ){
 					const form = new ActionFormData();
-					form.title(`script.gvcv5.phone_down.name`);
+					form.title(`script.gvcv5.howToAir.name`);
 					let itemRawText = []
 					itemRawText.push({ translate: `script.gvcv5.howToAirDesc0.name` });
 					itemRawText.push({ text: `\n\n` });
 					itemRawText.push({ translate: `script.gvcv5.howToAirDesc1.name` });
 					itemRawText.push({ text: `\n\n` });
 					itemRawText.push({ translate: `script.gvcv5.howToAirDesc2.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToAirDesc3.name` });
 					itemRawText.push({ text: `\n\n` });
 					form.body({ rawtext: itemRawText});
 					form.button(`script.gvcv5.phone_back.name`);
@@ -375,7 +376,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				// Heli
 				else if( r.selection == 3 ){
 					const form = new ActionFormData();
-					form.title(`script.gvcv5.phone_down.name`);
+					form.title(`script.gvcv5.howToHeli.name`);
 					let itemRawText = []
 					itemRawText.push({ translate: `script.gvcv5.howToHeliDesc0.name` });
 					itemRawText.push({ text: `\n\n` });
@@ -472,7 +473,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					} )
 				}
 				// Select Team
-				else if( r.selection == 5 ){
+				else if( r.selection == 7 ){
 					user.runCommand(`scriptevent gvcv5:phone_noteam_selectteam`);
 				}
 			}

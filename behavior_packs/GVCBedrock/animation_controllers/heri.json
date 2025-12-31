@@ -28,7 +28,7 @@
         "ride":{
           "on_entry": [
             "/tag @s add isRiding",
-            "/effect @s resistance 99999 7 true",
+            "/effect @s resistance 99999 255 true",
             "/execute if entity @e[r=4,family=tank] run tag @s add tank",
             "/execute if entity @e[r=4,family=tank] run inputpermission set @s move_left disabled",
             "/execute if entity @e[r=4,family=tank] run inputpermission set @s move_right disabled",

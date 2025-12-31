@@ -7,6 +7,15 @@
 				"sounds/reload_cannon"
 			]
 		},
+		"sound.player.down": {
+         "__use_legacy_max_distance" : true,
+         "category" : "player",
+         "max_distance" : 48.0,
+         "min_distance" : null,
+		   "sounds": [
+			   "sounds/hurtold"
+		   ]
+	   },
 		"sound.gvcv5.tank": {
          "__use_legacy_max_distance" : true,
          "category" : "player",
@@ -34,6 +43,14 @@
 			"category": "player",
 			"sounds": [
 				"sounds/sound_call"
+			]
+		},
+		"fire.heavycannon": {
+			"category": "player",
+			"max_distance": 64,
+			"min_distance": 32,
+			"sounds": [
+				"sounds/fire_havrycannon"
 			]
 		},
 		"fire.gre": {

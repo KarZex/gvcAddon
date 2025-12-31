@@ -20,11 +20,7 @@
                 "coyote": "textures/models/coyote.png",
                 "horo": "textures/models/horo.png",
                 "suppressor": "textures/models/suppressor.png",
-                "grip": "textures/models/grip.png",
                 "lasersight": "textures/models/lasersight.png",
-                "gripod": "textures/models/gripod.png",
-                "bipod": "textures/models/bipod.png",
-                "anglegrip": "textures/models/anglegrip.png",
                 "dotsight": "textures/models/dotsight.png"
             },
             "geometry": {
@@ -37,11 +33,7 @@
                 "coyote": "geometry.coyote",
                 "horo": "geometry.horo",
                 "suppressor": "geometry.suppressor",
-                "grip": "geometry.grip",
                 "lasersight": "geometry.lasersight",
-                "gripod": "geometry.gripod",
-                "bipod": "geometry.bipod",
-                "anglegrip": "geometry.anglegrip",
                 "dotsight": "geometry.dotsight"
             },
             "animations": {
@@ -86,9 +78,6 @@
                 },
                 {
                     "controller.render.burrel": "query.property('zex:burrel') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
-                },
-                {
-                    "controller.render.grip": "query.property('zex:grip') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
                 },
                 {
                     "controller.render.light": "query.property('zex:light') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"

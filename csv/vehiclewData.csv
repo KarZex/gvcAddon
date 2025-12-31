@@ -13,7 +13,7 @@ name,id,É_ÉÅÅ[ÉW,íeë¨,ñΩíÜê∏ìx,òAéÀä‘äu(tick),îöî≠,ÉuÉçÉbÉNîjâÛ,âπ,É_ÉÅÅ[ÉWÉ^ÉCÉ
 120mm-APFSDS Cannon,120mmapfsds,200,4,0,100,2,F,tankbullet,entityExplosion,,6,zex:s105m,3
 125mm-HEAT Cannon,125mmheat,150,4,0,100,3,F,tankbullet,entityExplosion,,6,zex:s105m,3
 125mm-APFSDS Cannon,125mmapfsds,200,4,0,100,2,F,tankbullet,entityExplosion,,6,zex:s105m,3
-152mmCannon,152mm,50,4,0,160,4,F,tankbullet,entityExplosion,,6,zex:s152m,3
+152mmCannon,152mm,50,4,0,160,4,F,heavycannonbullet,entityExplosion,,6,zex:s152m,3
 20mm,20mm,10,6,0,5,3,F,hmgbullet,entityExplosion,,1,zex:20mmc,2
 23mm,23mm,12,6,0,6,3,F,hmgbullet,entityExplosion,,1,zex:20mmc,2
 ads_dp28,ads_dp28,8,6,0,1,0,F,mgbullet,override,,1,zex:762m,0

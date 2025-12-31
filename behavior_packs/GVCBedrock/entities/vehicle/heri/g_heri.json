@@ -348,7 +348,7 @@
         "queue_command": {
           "command": [
             "tellraw @s {\"rawtext\":[{\"text\":\"Vehicle Lock\"}]}",
-            "ride @e[c=1,family=vehicle] evict_riders"
+            "ride @e[r=6,family=allied_soldier] stop_riding"
           ],
           "target": "other"
         }
