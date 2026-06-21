@@ -74,8 +74,24 @@ for row in csv_reader:
 
         ##DATA START
 
-        vehicledata_json["{}".format(v_id)] = { "type": v_type,"speed": v_speed,"Weapon1": v_weapon1,"Weapon2": v_weapon2,"Weapon3": v_weapon3,"Weapon4": v_weapon4,"turn": v_turn,"gattack":v_gattack }
-    
+        vehicledata_json["{}".format(v_id)] = { 
+            "type": v_type,
+            "speed": v_speed,
+            "Weapon1": v_weapon1,
+            "Weapon1_cool": v_weapon1_cool,
+            "Weapon1_ammo": v_weapon1_ammo,
+            "Weapon2": v_weapon2,
+            "Weapon2_cool": v_weapon2_cool,
+            "Weapon2_ammo": v_weapon2_ammo,
+            "Weapon3": v_weapon3,
+            "Weapon3_cool": v_weapon3_cool,
+            "Weapon3_ammo": v_weapon3_ammo,
+            "Weapon4": v_weapon4,
+            "Weapon4_cool": v_weapon4_cool,
+            "Weapon4_ammo": v_weapon4_ammo,
+            "turn": v_turn,
+            "gattack": v_gattack
+        }
 
         text += "entity.vehicle:{0}.name={1}\n".format(v_id,v_name)
         text += "item.spawn_egg.entity.vehicle:{0}.name={1}\n".format(v_id,v_name)
@@ -107,23 +123,23 @@ for row in csv_reader:
 
 
         if( v_type == "stank"):
-            f_path = open("tool/fv101.json","r")
+            f_path = open("tool/vehicle/fv101.json","r")
             entity_json = json.load(f_path)
 
         if( v_type == "tank" or v_type == "apc" ):
-            f_path = open("tool/t34.json","r")
+            f_path = open("tool/vehicle/t34.json","r")
             entity_json = json.load(f_path)
 
         if( v_type == "set" ):
-            f_path = open("tool/20mmaa.json","r")
+            f_path = open("tool/vehicle/20mmaa.json","r")
             entity_json = json.load(f_path)
 
         if( v_type == "heri" ):
-            f_path = open("tool/ka50.json","r")
+            f_path = open("tool/vehicle/ka50.json","r")
             entity_json = json.load(f_path)
 
         if( v_type == "air" ):
-            f_path = open("tool/f16.json","r")
+            f_path = open("tool/vehicle/f16.json","r")
             entity_json = json.load(f_path)
 
         if( v_type == "tank" or v_type == "stank"  ):
@@ -131,7 +147,7 @@ for row in csv_reader:
 
         entity_json["minecraft:entity"]["description"]["identifier"] = "vehicle:{}".format(v_id)
         entity_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.vehicle:{}.name".format(v_id)
-        entity_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][1]["spawn_items"]["table"] = "loot_tables/entities/{}.json".format(v_id)
+        entity_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][2]["spawn_items"]["table"] = "loot_tables/entities/{}.json".format(v_id)
         entity_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = v_family
 
         entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seat_count"] = v_menber

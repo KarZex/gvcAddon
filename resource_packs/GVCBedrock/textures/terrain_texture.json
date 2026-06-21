@@ -444,6 +444,15 @@
     },
     "spawn_vehicle_st1_pmc": {
       "textures": "textures/spawn/vehicle_st1_pmc"
+    },
+    "spawn_vehicle_zex_cluiser": {
+      "textures": "textures/spawn/vehicle_zex_cluiser"
+    },
+    "spawn_vehicle_zex_cluiser_pkm": {
+      "textures": "textures/spawn/vehicle_zex_cluiser_pkm"
+    },
+    "spawn_vehicle_zex_cluiser_20mmmc": {
+      "textures": "textures/spawn/vehicle_zex_cluiser_20mmmc"
     }
   }
 }

@@ -3,6 +3,10 @@ effect @s[tag=!ride] instant_health 1 255 true
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:aifv] run event entity @s 25mmmc
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:zex_cluiser_pkm] run event entity @s 7.62mmmg
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:zex_cluiser_20mmmc] run event entity @s 20mmmc
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:lav25] run event entity @s 25mmmc
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:lav25aa] run event entity @s 20mmmcair

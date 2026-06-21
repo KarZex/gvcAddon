@@ -88,6 +88,33 @@
       "minecraft:interact": {
         "interactions": [
           {
+            "interact_text": "action.gvc.lock",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "operator": "not",
+                    "value": "vehicle_lock"
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "has.rider"
+                  }
+                ]
+              },
+              "event": "vehicle_lock",
+              "target": "self"
+            }
+          },
+          {
             "hurt_item": 1,
             "play_sounds": "irongolem.repair",
             "interact_text": "action.interact.repair",
@@ -147,27 +174,6 @@
                 ]
               },
               "event": "despawning",
-              "target": "self"
-            }
-          },
-          {
-            "interact_text": "action.gvc.lock",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "player"
-                  },
-                  {
-                    "test": "has_tag",
-                    "subject": "self",
-                    "value": "has.rider"
-                  }
-                ]
-              },
-              "event": "vehicle_lock",
               "target": "self"
             }
           }
@@ -255,7 +261,8 @@
         "queue_command": {
           "command": [
             "tellraw @s {\"rawtext\":[{\"text\":\"Vehicle Lock\"}]}",
-            "ride @e[r=6,family=allied_soldier] stop_riding"
+            "ride @e[r=6,family=allied_soldier] stop_riding",
+            "tag @s add vehicle_lock"
           ],
           "target": "other"
         }

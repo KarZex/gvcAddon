@@ -1374,12 +1374,16 @@ for row in csv_reader2:
 
                 if gun_bomb > 0:
                     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["definition_event"] = { "affectProjectile": True, "eventTrigger": { "event": "minecraft:explode", "target": "self" } }
+                
+                if( "A" in gun_offset ):
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["hit_sound"] = "random.explode"
+                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["on_hit"]["particle_on_hit"] = { "on_other_hit": True, "on_entity_hit": True, "num_particles": 1, "particle_type": "minecraft:large_explosion" }
 
             with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"w") as f:
                 json.dump(gun_entity,f,indent=2)
 
         if( "H" not in gun_offset):
-            if( gun_offset == "D" ):
+            if( "D" in gun_offset ):
                 gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}r".format(gun_id)
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ 0.5,0,0 ]
                 gun_entity["minecraft:entity"]["components"]["minecraft:scale"] = {   "value": gun_scale  }
@@ -1390,7 +1394,7 @@ for row in csv_reader2:
                 with open("behavior_packs/GVCBedrock/entities/fire/{}l.json".format(gun_id),"w") as f:
                     json.dump(gun_entity,f,indent=2)
 
-            elif( gun_offset == "Q" ):
+            elif( "Q" in gun_offset ):
                 gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}ri".format(gun_id)
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ 0.5,0,0 ]
                 gun_entity["minecraft:entity"]["components"]["minecraft:scale"] = {   "value": gun_scale  }
@@ -1409,7 +1413,7 @@ for row in csv_reader2:
                 with open("behavior_packs/GVCBedrock/entities/fire/{}lii.json".format(gun_id),"w") as f:
                     json.dump(gun_entity,f,indent=2)
 
-            elif( gun_offset == "Qw" ):
+            elif( "Qw" in gun_offset ):
                 gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}ri".format(gun_id)
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ 0.5,0,0 ]
                 gun_entity["minecraft:entity"]["components"]["minecraft:scale"] = {   "value": gun_scale  }

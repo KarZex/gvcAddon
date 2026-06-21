@@ -4,3 +4,5 @@ ride @s summon_rider minecraft:allay hauneb_main aaa[""
 
 
 camera @s fade time 1 0 0 color 128 0 0
+
+playsound ambient.basalt_deltas.additions @s 

@@ -6,11 +6,12 @@ execute as @a[scores={mcooli=1..}] run function mcooli
 execute as @a[scores={mcoolii=1..}] run function mcoolii
 
 
-execute as @a run function weaponi_cool
-execute as @a run function weaponii_cool
-execute as @a run function weaponiii_cool
-execute as @a run function weaponiv_cool
+#execute as @a run function weaponi_cool
+#execute as @a run function weaponii_cool
+#execute as @a run function weaponiii_cool
+#execute as @a run function weaponiv_cool
 execute as @a run scriptevent zex:chkattack
+execute as @e[scores={maxsubcool=0..}] run function mtypea
 
 execute as @a[tag=!startedv5] run function gunstart
 execute as @a[tag=down] run function down
@@ -39,6 +40,9 @@ execute at @e[family=gbullet] run particle gvcv5:gvc_smoke_particle ~~~
 execute at @e[family=ppbombbullet] run particle gvcv5:gvc_smoke_particle ~~~
 
 execute at @e[family=drop] run particle minecraft:basic_flame_particle ~~~
+
+execute at @e[family=tankbullet] run particle zex:endrod_flame ~~~
+execute at @e[family=heavycannonbullet] run particle zex:endrod_flame ~~~
 
 execute at @e[type=gvcv5:airstrike_red] run particle zex:red_strike ~~~
 execute at @e[type=gvcv5:airstrike_blue] run particle zex:blue_strike ~~~

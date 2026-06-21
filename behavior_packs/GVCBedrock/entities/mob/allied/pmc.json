@@ -4311,6 +4311,21 @@
           "command": "ride @s summon_ride vehicle:aifv no_ride_change summon_enemy"
         }
       },
+      "vehicle:zex_cluiser": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:zex_cluiser no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:zex_cluiser_pkm": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:zex_cluiser_pkm no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:zex_cluiser_20mmmc": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:zex_cluiser_20mmmc no_ride_change summon_enemy"
+        }
+      },
       "vehicle:lav25": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:lav25 no_ride_change summon_enemy"

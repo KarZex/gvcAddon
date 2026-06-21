@@ -1147,6 +1147,15 @@
     },
     "st1_pmc": {
       "textures": "textures/items/vehicle/st1_pmc"
+    },
+    "zex_cluiser": {
+      "textures": "textures/items/vehicle/zex_cluiser"
+    },
+    "zex_cluiser_pkm": {
+      "textures": "textures/items/vehicle/zex_cluiser_pkm"
+    },
+    "zex_cluiser_20mmmc": {
+      "textures": "textures/items/vehicle/zex_cluiser_20mmmc"
     }
   }
 }

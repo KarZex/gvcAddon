@@ -356,6 +356,75 @@ function haunebBeam(projectile,level,team){
 	
 }
 
+
+function attachMentCheck(player){
+
+	const gunId = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand).typeId;
+	const gunName = gunId.split(`:`)[1];
+	const gunSlot = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+	//print(`${gunName},${gunId}`);
+	if( gunId.split(`:`)[0] != `gun` ){
+		player.setProperty(`zex:sights`,0);
+		player.setProperty(`zex:burrel`,0);
+		player.setProperty(`zex:light`,0);
+		player.setProperty(`zex:grip`,0);
+		player.setProperty(`zex:bullet`,0);
+		return;
+	}
+
+	if( gunSlot.getDynamicProperty("zex:sights") != undefined ){
+		const scope = gunSlot.getDynamicProperty("zex:sights");
+		player.setProperty(`zex:sights`,scope);
+	}
+	else if( gunAttach[`${gunName}`][`sights`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`sights`]) && gunAttach[`${gunName}`][`sights`] != 0  ){
+		player.setProperty(`zex:sights`,gunAttach[`${gunName}`][`sights`]);
+	}
+	else{
+		player.setProperty(`zex:sights`,0);
+	}
+	if( gunSlot.getDynamicProperty("zex:burrel") != undefined ){
+		const scope = gunSlot.getDynamicProperty("zex:burrel");
+		player.setProperty(`zex:burrel`,scope);
+	}
+	else if( gunAttach[`${gunName}`][`burrel`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`burrel`]) && gunAttach[`${gunName}`][`burrel`] != 0  ){
+		player.setProperty(`zex:burrel`,gunAttach[`${gunName}`][`burrel`]);
+	}
+	else{
+		player.setProperty(`zex:burrel`,0);
+	}
+	if( gunSlot.getDynamicProperty("zex:light") != undefined ){
+		const scope = gunSlot.getDynamicProperty("zex:light");
+		player.setProperty(`zex:light`,scope);
+	}
+	else if( gunAttach[`${gunName}`][`light`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`light`]) && gunAttach[`${gunName}`][`light`] != 0  ){
+		player.setProperty(`zex:light`,gunAttach[`${gunName}`][`light`]);
+	}
+	else{
+		player.setProperty(`zex:light`,0);
+	}
+	if( gunSlot.getDynamicProperty("zex:grip") != undefined ){
+		const scope = gunSlot.getDynamicProperty("zex:grip");
+		player.setProperty(`zex:grip`,scope);
+	}
+	else if( gunAttach[`${gunName}`][`grip`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`grip`]) && gunAttach[`${gunName}`][`grip`] != 0  ){
+		player.setProperty(`zex:grip`,gunAttach[`${gunName}`][`grip`]);
+	}
+	else{
+		player.setProperty(`zex:grip`,0);
+	}
+	if( gunSlot.getDynamicProperty("zex:bullet") != undefined ){
+		const scope = gunSlot.getDynamicProperty("zex:bullet");
+		player.setProperty(`zex:bullet`,scope);
+	}
+	else if( gunAttach[`${gunName}`][`bullet`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`bullet`]) && gunAttach[`${gunName}`][`bullet`] != 0  ){
+		player.setProperty(`zex:bullet`,gunAttach[`${gunName}`][`bullet`]);
+	}
+	else{
+		player.setProperty(`zex:bullet`,0);
+	}
+}
+
+
 world.afterEvents.entitySpawn.subscribe( async e => {
 	if( e.entity.typeId.includes("fire")  ){
 		const projectile = e.entity;
@@ -464,8 +533,15 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			def = def + (1 + vict.getEffect("resistance").amplifier) * 0.5;
 		}
 		if( vict.getProperty(`zex:tank`) > damageIgnoreDef ){
+			vict.dimension.playSound(`random.anvil_land`,vict.location);
 			def = 999;
 		}
+		try{
+			if(world.scoreboard.getObjective(`maxsubcool`).getScore(vict) > 0){
+				vict.dimension.playSound(`random.anvil_land`,vict.location);
+				def = 999;
+			}
+		}catch{}
 		//if (def > 1){ def = 1 }
 
 		//headshot (1.5 times)
@@ -847,73 +923,6 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			}
 		}catch{}
 	}
-	else if (e.id === "zex:chkattack"){
-		const player = e.sourceEntity;
-
-		const gunId = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand).typeId;
-		const gunName = gunId.split(`:`)[1];
-		const gunSlot = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-		//print(`${gunName},${gunId}`);
-		if( gunId.split(`:`)[0] != `gun` ){
-			player.setProperty(`zex:sights`,0);
-			player.setProperty(`zex:burrel`,0);
-			player.setProperty(`zex:light`,0);
-			player.setProperty(`zex:grip`,0);
-			player.setProperty(`zex:bullet`,0);
-			return;
-		}
-
-		if( gunSlot.getDynamicProperty("zex:sights") != undefined ){
-			const scope = gunSlot.getDynamicProperty("zex:sights");
-			player.setProperty(`zex:sights`,scope);
-		}
-		else if( gunAttach[`${gunName}`][`sights`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`sights`]) && gunAttach[`${gunName}`][`sights`] != 0  ){
-			player.setProperty(`zex:sights`,gunAttach[`${gunName}`][`sights`]);
-		}
-		else{
-			player.setProperty(`zex:sights`,0);
-		}
-		if( gunSlot.getDynamicProperty("zex:burrel") != undefined ){
-			const scope = gunSlot.getDynamicProperty("zex:burrel");
-			player.setProperty(`zex:burrel`,scope);
-		}
-		else if( gunAttach[`${gunName}`][`burrel`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`burrel`]) && gunAttach[`${gunName}`][`burrel`] != 0  ){
-			player.setProperty(`zex:burrel`,gunAttach[`${gunName}`][`burrel`]);
-		}
-		else{
-			player.setProperty(`zex:burrel`,0);
-		}
-		if( gunSlot.getDynamicProperty("zex:light") != undefined ){
-			const scope = gunSlot.getDynamicProperty("zex:light");
-			player.setProperty(`zex:light`,scope);
-		}
-		else if( gunAttach[`${gunName}`][`light`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`light`]) && gunAttach[`${gunName}`][`light`] != 0  ){
-			player.setProperty(`zex:light`,gunAttach[`${gunName}`][`light`]);
-		}
-		else{
-			player.setProperty(`zex:light`,0);
-		}
-		if( gunSlot.getDynamicProperty("zex:grip") != undefined ){
-			const scope = gunSlot.getDynamicProperty("zex:grip");
-			player.setProperty(`zex:grip`,scope);
-		}
-		else if( gunAttach[`${gunName}`][`grip`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`grip`]) && gunAttach[`${gunName}`][`grip`] != 0  ){
-			player.setProperty(`zex:grip`,gunAttach[`${gunName}`][`grip`]);
-		}
-		else{
-			player.setProperty(`zex:grip`,0);
-		}
-		if( gunSlot.getDynamicProperty("zex:bullet") != undefined ){
-			const scope = gunSlot.getDynamicProperty("zex:bullet");
-			player.setProperty(`zex:bullet`,scope);
-		}
-		else if( gunAttach[`${gunName}`][`bullet`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`bullet`]) && gunAttach[`${gunName}`][`bullet`] != 0  ){
-			player.setProperty(`zex:bullet`,gunAttach[`${gunName}`][`bullet`]);
-		}
-		else{
-			player.setProperty(`zex:bullet`,0);
-		}
-	}
 	else if (e.id === "gvcv5:vgun"){
 		let player = e.sourceEntity;
 		const gunName = e.message;
@@ -998,6 +1007,74 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		if( damage >= maxAmmo ){
 			player.runCommand(`execute if entity @s[tag=autoReload,tag=!reload,tag=!down,hasitem={item=${Ammo}}] run scriptevent gvcv5:reload ${gunName}`);
 		}
+	}
+	else if (e.id === "zex:chkattack"){
+		const player = e.sourceEntity;
+		try{
+			const gunId = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand).typeId;
+			const gunName = gunId.split(`:`)[1];
+			const gunSlot = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+			//print(`${gunName},${gunId}`);
+			if( gunId.split(`:`)[0] != `gun` ){
+				player.setProperty(`zex:sights`,0);
+				player.setProperty(`zex:burrel`,0);
+				player.setProperty(`zex:light`,0);
+				player.setProperty(`zex:grip`,0);
+				player.setProperty(`zex:bullet`,0);
+				return;
+			}
+
+			if( gunSlot.getDynamicProperty("zex:sights") != undefined ){
+				const scope = gunSlot.getDynamicProperty("zex:sights");
+				player.setProperty(`zex:sights`,scope);
+			}
+			else if( gunAttach[`${gunName}`][`sights`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`sights`]) && gunAttach[`${gunName}`][`sights`] != 0  ){
+				player.setProperty(`zex:sights`,gunAttach[`${gunName}`][`sights`]);
+			}
+			else{
+				player.setProperty(`zex:sights`,0);
+			}
+			if( gunSlot.getDynamicProperty("zex:burrel") != undefined ){
+				const scope = gunSlot.getDynamicProperty("zex:burrel");
+				player.setProperty(`zex:burrel`,scope);
+			}
+			else if( gunAttach[`${gunName}`][`burrel`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`burrel`]) && gunAttach[`${gunName}`][`burrel`] != 0  ){
+				player.setProperty(`zex:burrel`,gunAttach[`${gunName}`][`burrel`]);
+			}
+			else{
+				player.setProperty(`zex:burrel`,0);
+			}
+			if( gunSlot.getDynamicProperty("zex:light") != undefined ){
+				const scope = gunSlot.getDynamicProperty("zex:light");
+				player.setProperty(`zex:light`,scope);
+			}
+			else if( gunAttach[`${gunName}`][`light`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`light`]) && gunAttach[`${gunName}`][`light`] != 0  ){
+				player.setProperty(`zex:light`,gunAttach[`${gunName}`][`light`]);
+			}
+			else{
+				player.setProperty(`zex:light`,0);
+			}
+			if( gunSlot.getDynamicProperty("zex:grip") != undefined ){
+				const scope = gunSlot.getDynamicProperty("zex:grip");
+				player.setProperty(`zex:grip`,scope);
+			}
+			else if( gunAttach[`${gunName}`][`grip`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`grip`]) && gunAttach[`${gunName}`][`grip`] != 0  ){
+				player.setProperty(`zex:grip`,gunAttach[`${gunName}`][`grip`]);
+			}
+			else{
+				player.setProperty(`zex:grip`,0);
+			}
+			if( gunSlot.getDynamicProperty("zex:bullet") != undefined ){
+				const scope = gunSlot.getDynamicProperty("zex:bullet");
+				player.setProperty(`zex:bullet`,scope);
+			}
+			else if( gunAttach[`${gunName}`][`bullet`] != undefined && !Array.isArray(gunAttach[`${gunName}`][`bullet`]) && gunAttach[`${gunName}`][`bullet`] != 0  ){
+				player.setProperty(`zex:bullet`,gunAttach[`${gunName}`][`bullet`]);
+			}
+			else{
+				player.setProperty(`zex:bullet`,0);
+			}
+		}catch{}
 	}
 	else if (e.id === "gvcv5:reload"){
 		const p = e.sourceEntity;

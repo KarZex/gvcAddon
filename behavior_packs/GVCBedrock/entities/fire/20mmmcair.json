@@ -35,12 +35,11 @@
             "knockback": false
           },
           "stick_in_ground": {},
-          "definition_event": {
-            "affectProjectile": true,
-            "eventTrigger": {
-              "event": "minecraft:explode",
-              "target": "self"
-            }
+          "particle_on_hit": {
+            "on_other_hit": true,
+            "on_entity_hit": true,
+            "num_particles": 1,
+            "particle_type": "minecraft:large_explosion"
           }
         },
         "power": 2.4000000000000004,
@@ -49,7 +48,8 @@
         "uncertainty_base": 0.0,
         "uncertainty_multiplier": 0,
         "catch_fire": false,
-        "anchor": 1
+        "anchor": 1,
+        "hit_sound": "random.explode"
       },
       "minecraft:physics": {}
     },
@@ -68,7 +68,7 @@
           "fuse_length": 0,
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
-          "power": 1,
+          "power": 0,
           "breaks_blocks": false
         }
       }

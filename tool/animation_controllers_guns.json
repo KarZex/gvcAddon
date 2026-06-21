@@ -5,10 +5,10 @@
       "states": {
         "default": {
           "on_entry": [
-            "/tag @s remove weaponiattack",
-            "/tag @s remove weaponiiattack",
-            "/tag @s remove weaponiiiattack",
-            "/tag @s remove weaponivattack"
+            "/tag @s remove weapon1attack",
+            "/tag @s remove weapon2attack",
+            "/tag @s remove weapon3attack",
+            "/tag @s remove weapon4attack"
           ],
           "transitions": [
             { "mtype": "query.is_riding && (variable.attack_time > 0.0)" },

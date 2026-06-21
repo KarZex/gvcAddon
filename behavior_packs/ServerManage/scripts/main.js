@@ -18,13 +18,13 @@ const ChatMuteList = [
 	"CagyMovie112339", 
 	"MAGINASU"
 ];
-/*
-world.afterEvents.entityHurt.subscribe( (arg) => {
-	const entity = arg.hurtEntity;
-	const d = 9999e68;
-	world.sendMessage(`${entity.typeId} was hurt ${arg.damage}`);
-} );
-*/
+
+// world.afterEvents.entityHurt.subscribe( (arg) => {
+// 	const entity = arg.hurtEntity;
+// 	const d = 9999e68;
+// 	world.sendMessage(`${entity.typeId} was hurt ${arg.damage}`);
+// } );
+
 system.runInterval(() => {
 	const players = world.getAllPlayers();
 	const arrows = world.getDimension("overworld").getEntities({type:"minecraft:arrow"});
