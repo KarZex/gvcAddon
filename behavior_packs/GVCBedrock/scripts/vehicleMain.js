@@ -568,12 +568,19 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			let xz = 0; //left:-1 right:1
             const V = 1.0;
 			const v_dt = Math.atan2(-v.x,v.z) * 180 / Math.PI;
-			//print(`v_dt:${v_dt} d.y:${d.y}, d.y sin:${Math.sin(d.y*Math.PI/180)} d.y cos:${Math.cos(d.y*Math.PI/180)} abs2:${absVector2(v)}`); 
-			let x1,x2,z1,z2;
-			if( v_dt > d.y + 90 && v_dt < d.y + 270 ){
+			const jdt = v_dt - d.y;
+			let x1=0,x2=0,z1=0,z2=0;
+
+            let this_v = 0;
+
+			if( vehicle.getDynamicProperty(`gvcv5:herispeed`) !== undefined ){
+				this_v = vehicle.getDynamicProperty(`gvcv5:herispeed`);
+			}
+			print(`jdt:${this_v} d.y:${d.y} v_dt:${v_dt}`); 
+			if( player.inputInfo.getMovementVector().x > 0.5 ){
 				xz = 1;
 			}
-			else if( v_dt < d.y + 90 && v_dt > d.y - 90 ){
+			else if( player.inputInfo.getMovementVector().x < -0.5 ){
 				xz = -1;
 			}
 			else{
@@ -582,31 +589,44 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				z2 = 0;
 			}
 
-            if( absVector2(v) / Math.abs(vehicle.getDynamicProperty(`gvcv5:herispeed`)) > V +0.03 ){
+			//up and fast
+            if( player.inputInfo.getMovementVector().y > 0.5 ){
                 yup = 0.5;
+				if( d.x > 45 || d.x < -45 ){
+					this_v = this_v + Math.sin(d.x*Math.PI/180)*0.01;
+				}
             }
-            else if( absVector2(v) / Math.abs(vehicle.getDynamicProperty(`gvcv5:herispeed`)) < V -0.01 ){
+
+			//down and slow
+            else if( player.inputInfo.getMovementVector().y < -0.5 ){
                 yup = -0.5;
+				if( d.x > 45 || d.x < -45 ){
+					this_v = this_v + Math.sin(d.x*Math.PI/180)*-0.01;
+				}
             }
 			else{
 				yup = 0;
 				x1 = 0;
 				z1 = 0;
 			}
-            print(`${yup} ${xz}`)
+
+			if( this_v > 1 ){
+				this_v = 1;
+			}
+			else if( this_v < 0 ){
+				this_v = 0;
+			}
+            //print(`${player.inputInfo.getMovementVector().x} ${player.inputInfo.getMovementVector().y}`);
 
             vehicle.clearVelocity();
-            let this_v = V;
 
 			if( xz != 0 ){
-				x2 = -Math.sin(d.y*Math.PI/180) * this_v * Math.cos(d.x*Math.PI/180);
-				z2 = Math.cos(d.y*Math.PI/180) * this_v * Math.cos(d.x*Math.PI/180);
+				x2 = xz * this_v * Math.cos(d.y*Math.PI/180);
+				z2 = xz * this_v * Math.sin(d.y*Math.PI/180);
 			}
 
-			if( yup != 0 ){
-				x1 = -Math.sin(d.y*Math.PI/180) * this_v * Math.sin(d.x*Math.PI/180);
-				z1 = Math.cos(d.y*Math.PI/180) * this_v * Math.sin(d.x*Math.PI/180);
-			}
+			x1 = -Math.sin(d.y*Math.PI/180) * this_v * Math.sin(d.x*Math.PI/180);
+			z1 = Math.cos(d.y*Math.PI/180) * this_v * Math.sin(d.x*Math.PI/180);
 
             if( player.hasTag(`subattack`) ){
                 this_v = 0;
@@ -617,7 +637,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 					y:yup,
 					z:z1+z2
 				})
-				vehicle.setDynamicProperty(`gvcv5:herispeed`,Math.sin(d.x*Math.PI/180));
+				vehicle.setDynamicProperty(`gvcv5:herispeed`,this_v);
 			}
 			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
 			player.runCommand(`scriptevent zex:playerVreload`);
