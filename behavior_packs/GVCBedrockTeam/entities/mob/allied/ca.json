@@ -2414,6 +2414,21 @@
         "minecraft:shooter": {
           "def": "fire:flare"
         }
+      },
+      "76mmrocketd": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:76mmrocketd"
+        }
       }
     },
     "components": {
@@ -3609,6 +3624,13 @@
           ]
         }
       },
+      "76mmrocketd": {
+        "add": {
+          "component_groups": [
+            "76mmrocketd"
+          ]
+        }
+      },
       "vehicle:aifv": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:aifv no_ride_change summon_enemy"
@@ -3732,6 +3754,11 @@
       "vehicle:ah1s": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:ah1s no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:ah1z": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:ah1z no_ride_change summon_enemy"
         }
       },
       "vehicle:ah6": {

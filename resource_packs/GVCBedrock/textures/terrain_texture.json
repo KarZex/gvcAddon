@@ -453,6 +453,9 @@
     },
     "spawn_vehicle_zex_cluiser_20mmmc": {
       "textures": "textures/spawn/vehicle_zex_cluiser_20mmmc"
+    },
+    "spawn_vehicle_ah1z": {
+      "textures": "textures/spawn/vehicle_ah1z"
     }
   }
 }

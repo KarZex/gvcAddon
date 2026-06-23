@@ -1419,5 +1419,24 @@ export const gunData = {
     "damageIgnoreDef": 2.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s37m"
+  },
+  "76mmrocketdr": {
+    "damage": 60,
+    "sound": "p90",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion"
+  },
+  "76mmrocketdl": {
+    "damage": 60,
+    "sound": "p90",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion"
+  },
+  "76mmrocketd": {
+    "damage": 60,
+    "sound": "p90",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s76m"
   }
 };

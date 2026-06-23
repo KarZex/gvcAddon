@@ -2,7 +2,7 @@
   "format_version": "1.18.10",
   "minecraft:entity": {
     "description": {
-      "identifier": "vehicle:ah6",
+      "identifier": "vehicle:ah1z",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
@@ -67,48 +67,25 @@
       },
       "gvcv5:vehicle_lock": {
         "minecraft:rideable": {
-          "seat_count": 4,
+          "seat_count": 1,
           "family_types": [
             "player"
           ],
           "interact_text": "action.interact.ride.horse",
-          "seats": [
-            {
-              "position": [
-                0.4,
-                0.85,
-                0.5
-              ],
-              "third_person_camera_radius": 12
-            },
-            {
-              "position": [
-                -0.4,
-                0.85,
-                0.5
-              ]
-            },
-            {
-              "position": [
-                0.4,
-                0.85,
-                0.1
-              ]
-            },
-            {
-              "position": [
-                -0.4,
-                0.85,
-                0.1
-              ]
-            }
-          ]
+          "seats": {
+            "position": [
+              0.0,
+              0.65,
+              0.5
+            ],
+            "third_person_camera_radius": 12
+          }
         }
       }
     },
     "components": {
       "minecraft:boss": {
-        "name": "entity.vehicle:ah6.name",
+        "name": "entity.vehicle:ah1z.name",
         "should_darken_sky": false,
         "hud_range": 4
       },
@@ -127,44 +104,21 @@
         "table": "loot_tables/entities/tank.json"
       },
       "minecraft:rideable": {
-        "seat_count": 4,
+        "seat_count": 1,
         "family_types": [
           "guerrilla",
           "allied_soldier",
           "player"
         ],
         "interact_text": "action.interact.ride.horse",
-        "seats": [
-          {
-            "position": [
-              0.4,
-              0.85,
-              0.5
-            ],
-            "third_person_camera_radius": 12
-          },
-          {
-            "position": [
-              -0.4,
-              0.85,
-              0.5
-            ]
-          },
-          {
-            "position": [
-              0.4,
-              0.85,
-              0.1
-            ]
-          },
-          {
-            "position": [
-              -0.4,
-              0.85,
-              0.1
-            ]
-          }
-        ]
+        "seats": {
+          "position": [
+            0.0,
+            0.65,
+            0.5
+          ],
+          "third_person_camera_radius": 12
+        }
       },
       "minecraft:type_family": {
         "family": [
@@ -235,7 +189,7 @@
           {
             "hurt_item": 1,
             "spawn_items": {
-              "table": "loot_tables/entities/ah6.json"
+              "table": "loot_tables/entities/ah1z.json"
             },
             "play_sounds": "enderchest.open",
             "interact_text": "action.gvc.item",
@@ -278,8 +232,8 @@
         "breathes_water": true
       },
       "minecraft:health": {
-        "value": 80,
-        "max": 80
+        "value": 300,
+        "max": 300
       },
       "minecraft:scale": {
         "value": 1.0

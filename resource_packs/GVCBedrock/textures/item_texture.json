@@ -1156,6 +1156,9 @@
     },
     "zex_cluiser_20mmmc": {
       "textures": "textures/items/vehicle/zex_cluiser_20mmmc"
+    },
+    "ah1z": {
+      "textures": "textures/items/vehicle/ah1z"
     }
   }
 }

@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:ah1z",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/entity/ah1z"
+			},
+			"geometry": {
+        "default": "geometry.ah1z"
+			},
+	  "spawn_egg":{
+	  "texture":"ah1z",
+	  "texture_index":0
+	  },
+			"scripts": {
+				"animate": [ 
+					{ "look_at_target": "query.has_rider"},
+					{ "fly2l": "query.has_rider && query.property('zex:move') == -1" },
+					{ "fly2r": "query.has_rider && query.property('zex:move') == 1" },
+					{ "fly": "query.has_rider" }
+				]
+			},
+			"animations": {
+        		"look_at_target": "animation.heriix",
+				"fly2l": "animation.heri.left",
+				"fly2r": "animation.heri.right",
+				"fly": "animation.heri.fly"
+			},
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

@@ -25,6 +25,24 @@
 			   "sounds/sound_tank"
 		   ]
 	   },
+		"sound.gvcv5.air": {
+         "__use_legacy_max_distance" : true,
+         "category" : "player",
+         "max_distance" : 48.0,
+         "min_distance" : null,
+		   "sounds": [
+			   "sounds/sound_air"
+		   ]
+	   },
+		"sound.gvcv5.heri": {
+         "__use_legacy_max_distance" : true,
+         "category" : "player",
+         "max_distance" : 48.0,
+         "min_distance" : null,
+		   "sounds": [
+			   "sounds/sound_heri"
+		   ]
+	   },
 		"sound.alert1": {
 			"category": "player",
 			"sounds": [

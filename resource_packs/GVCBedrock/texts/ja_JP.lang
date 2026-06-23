@@ -494,6 +494,12 @@ item.spawn_egg.entity.vehicle:st1_pmc.name=ST1
 tile.gvcv5:spawn_vehicle_st1_pmc.name=ST1
 item.vehicle:st1_pmc_spawn_egg=ST1
 
+### From V5-5.1 (GVCBedrock Addon V5.0) Jul 5th 2026
+entity.vehicle:ah1z.name=AH-1Z
+item.spawn_egg.entity.vehicle:ah1z.name=AH-1Z
+tile.gvcv5:spawn_vehicle_ah1z.name=AH-1Z
+item.vehicle:ah1z_spawn_egg=AH-1Z
+
 ### Tile name ###
 tile.gvcv5:good1.name=死体
 tile.gvcv5:good2.name=スクラップ

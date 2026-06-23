@@ -45,3 +45,4 @@ hmg,hmg,8,4,0,2,0,F,hmgbullet,override,,1,zex:762m,0
 bombii,bombiii,100,2,0,100,4,F,missilebullet,entityExplosion,HMM,1,zex:sbombm,0
 37mmRocket,37mmrocketkatyusya,35,4,0,20,3,F,rpgbullet,entityExplosion,H,2,zex:s37m,2
 Flare,flare,0,0,0,20,3,F,rpgbullet,entityExplosion,H,2,zex:s37m,2
+76mmrocketx2,76mmrocketd,60,4,0,20,3,F,rpgbullet,entityExplosion,D,4,zex:s76m,3

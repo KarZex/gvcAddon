@@ -34,6 +34,24 @@
 					"rotation": [0, 0, 45]
 				}
 			}
+		},
+		"animation.heri.fly2": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"p": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 360, 0]
+					}
+				},
+				"p2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -360, 0]
+					}
+				}
+			}
 		}
 	}
 }

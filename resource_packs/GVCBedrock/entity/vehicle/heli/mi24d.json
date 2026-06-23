@@ -4,29 +4,39 @@
 		"description": {
 			"identifier": "vehicle:mi24d",
 			"materials": {
-				"default": "iron_golem"
+				"default": "iron_golem",
+				"planeglass": "entity_alphablend"
 			},
 			"textures": {
-        "default": "textures/entity/mi_24d"
+				"default": "textures/entity/mi24d",
+				"planeglass": "textures/entity/mi24d"
 			},
 			"geometry": {
-        "default": "geometry.mi24d"
+				"default": "geometry.mi24d",
+				"planeglass": "geometry.mi24d_planeglass"
 			},
-	  "spawn_egg":{
-	  "texture":"mi24d",
-	  "texture_index":0
-	  },
+			"spawn_egg": {
+				"texture": "mi24d",
+				"texture_index": 0
+			},
 			"scripts": {
-				"animate": [ 
-					{ "look_at_target": "query.has_rider"},
-					{ "fly": "query.has_rider" }
+				"animate": [
+					{
+						"look_at_target": "query.has_rider"
+					},
+					{
+						"fly": "query.has_rider"
+					}
 				]
 			},
 			"animations": {
-        		"look_at_target": "animation.herix",
-				"fly": "animation.heri.fly"
+				"look_at_target": "animation.herii",
+				"fly": "animation.heri.fly2"
 			},
-      "render_controllers": [ "controller.render.iron_golem" ]
+			"render_controllers": [
+				"controller.render.iron_golem",
+				"controller.render.planeglass"
+			]
 		}
 	}
 }

@@ -44,3 +44,4 @@ gvcv5.20mmmcair.name=20mmMC
 gvcv5.bombiii.name=bombii
 gvcv5.37mmrocketkatyusya.name=37mmRocket
 gvcv5.flare.name=Flare
+gvcv5.76mmrocketd.name=76mmrocketx2

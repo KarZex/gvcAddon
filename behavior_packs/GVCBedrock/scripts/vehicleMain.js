@@ -171,21 +171,41 @@ system.runInterval( () => {
 	const netherAirs = world.getDimension(`minecraft:nether`).getEntities({families:[`air`]});
 	const endAirs = world.getDimension(`minecraft:the_end`).getEntities({families:[`air`]});
 	for( let t of overAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
-			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcww2.air`,t.location,{ volume:8 })
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.air`,t.location,{ volume:8 })
 		}
 	}
 	for( let t of netherAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t)  ){
-			world.getDimension(`minecraft:nether`).playSound(`sound.gvcww2.air`,t.location,{ volume:8 })
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0  ){
+			world.getDimension(`minecraft:nether`).playSound(`sound.gvcv5.air`,t.location,{ volume:8 })
 		}
 	}
 	for( let t of endAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t)  ){
-			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcww2.air`,t.location,{ volume:8 })
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0  ){
+			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.air`,t.location,{ volume:8 })
 		}
 	}
-},7)
+},5)
+system.runInterval( () => {
+	const overAirs = world.getDimension(`minecraft:overworld`).getEntities({families:[`heri`]});
+	const netherAirs = world.getDimension(`minecraft:nether`).getEntities({families:[`heri`]});
+	const endAirs = world.getDimension(`minecraft:the_end`).getEntities({families:[`heri`]});
+	for( let t of overAirs ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.heri`,t.location,{ volume:8 })
+		}
+	}
+	for( let t of netherAirs ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0  ){
+			world.getDimension(`minecraft:nether`).playSound(`sound.gvcv5.heri`,t.location,{ volume:8 })
+		}
+	}
+	for( let t of endAirs ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.heri`,t.location,{ volume:8 })
+		}
+	}
+},5)
 
 system.afterEvents.scriptEventReceive.subscribe( async e => {
 	if( e.id == "zex:air"){
@@ -463,7 +483,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			//world.sendMessage(`§aSelected Slot Index: ${selectedItemSlot}`);
 			const weapon = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`Weapon${weaponNumber}`];
 
-			if( weapon != `` ){
+			if( weapon != `` && weaponNumber < 5 ){
 				//world.sendMessage(`Fire Weapon${weaponNumber}!`);
 				const weaponCool = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`Weapon${weaponNumber}_cool`];
 				const weaponAmmo = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`Weapon${weaponNumber}_ammo`];
@@ -519,6 +539,17 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			}
 		}
 	}
+	else if( e.id == "zex:playerNoRide" ){
+		const player = e.sourceEntity;
+		const isRide = player.getComponent(EntityComponentTypes.Riding) != undefined;
+		if( !isRide ){
+			for( let i = 1; i < 5; i++ ){
+				world.scoreboard.getObjective(`weapon${i}_reload`).setScore(player,0);
+				world.scoreboard.getObjective(`weapon${i}`).setScore(player,0);
+				world.scoreboard.getObjective(`weapon${i}_cool`).setScore(player,0);
+			}
+		}
+	}
 	else if( e.id == "zex:vtext"){
 		const vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
@@ -556,7 +587,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		}
 	}
 	else if( e.id == "zex:vheri"){
-		let vehicle = e.sourceEntity;
+		const vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
 		if( player.typeId == "minecraft:player" ){
 			const selectedItemSlot = player.selectedSlotIndex;
@@ -566,7 +597,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
             const d = player.getRotation();
             let yup = 0;
 			let xz = 0; //left:-1 right:1
-            const V = 1.0;
+            const V = vehicle.getComponent(EntityComponentTypes.Movement).defaultValue;
 			const v_dt = Math.atan2(-v.x,v.z) * 180 / Math.PI;
 			const jdt = v_dt - d.y;
 			let x1=0,x2=0,z1=0,z2=0;
@@ -618,8 +649,8 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				z1 = 0;
 			}
 
-			if( this_v > 1 ){
-				this_v = 1;
+			if( this_v > V ){
+				this_v = V;
 			}
 			else if( this_v < 0 ){
 				this_v = 0;

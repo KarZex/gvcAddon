@@ -49,6 +49,8 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:r22] run event entity @s 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah1s] run event entity @s 20mmmcheri
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah1z] run event entity @s 20mmmcheri
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ah6] run event entity @s 7.62mmmg
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:g_heri] run event entity @s vmg
