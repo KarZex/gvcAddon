@@ -25,6 +25,15 @@
             255
           ],
           "default": 1
+        },
+        "zex:move": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            -1,
+            1
+          ],
+          "default": 0
         }
       }
     },
@@ -69,7 +78,7 @@
               2.07,
               1.25
             ],
-            "third_person_camera_radius": 12
+            "third_person_camera_radius": 16
           }
         }
       }
@@ -108,7 +117,7 @@
             2.07,
             1.25
           ],
-          "third_person_camera_radius": 12
+          "third_person_camera_radius": 16
         }
       },
       "minecraft:type_family": {

@@ -16,7 +16,7 @@
 			"loop": true,
 			"bones": {
 				"bone19": {
-					"rotation": ["-math.clamp(q.rider_head_x_rotation(0),-60,60)", 0, 0]
+					"rotation": ["-math.clamp(q.rider_head_x_rotation(0),-60,60)", 0, "45 * query.property('zex:move')"]
 				}
 			}
 		},
@@ -24,7 +24,7 @@
 			"loop": true,
 			"bones": {
 				"bone19": {
-					"rotation": ["math.clamp(q.rider_head_x_rotation(0),-60,60)", 0, 0]
+					"rotation": ["math.clamp(q.rider_head_x_rotation(0),-60,60)", 0, "45 * query.property('zex:move')"]
 				}
 			}
 		},
@@ -32,7 +32,7 @@
 			"loop": true,
 			"bones": {
 				"head": {
-					"rotation": ["math.clamp(q.rider_head_x_rotation(0),-60,60)", 0, 0]
+					"rotation": ["math.clamp(q.rider_head_x_rotation(0),-60,60)", 0, "45 * query.property('zex:move')"]
 				}
 			}
 		},

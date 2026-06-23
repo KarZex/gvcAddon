@@ -18,6 +18,22 @@
 					}
 				}
 			}
+		},
+		"animation.heri.right": {
+			"loop": true,
+			"bones": {
+				"bone19": {
+					"rotation": [0, 0, -45]
+				}
+			}
+		},
+		"animation.heri.left": {
+			"loop": true,
+			"bones": {
+				"bone19": {
+					"rotation": [0, 0, 45]
+				}
+			}
 		}
 	}
 }

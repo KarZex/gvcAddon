@@ -54,6 +54,33 @@
         }
       }
     },
+    "controller.animation.vtank": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "vtank": "query.has_rider" }
+          ]
+        },
+        "vtank": {
+          "transitions": [
+            { "default": "!query.has_rider" },
+            { "vtankii": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/scriptevent zex:vtank"
+          ]
+        },
+        "vtankii": {
+          "transitions": [
+            { "default": "!query.has_rider" },
+            { "vtank": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/scriptevent zex:vtank"
+          ]
+        }
+      }
+    },
     "controller.animation.vheri": {
       "states": {
         "default": {

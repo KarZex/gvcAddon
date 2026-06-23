@@ -522,9 +522,9 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 	else if( e.id == "zex:vtext"){
 		const vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
-		const selectedItemSlot = player.selectedSlotIndex;
 		//world.sendMessage(`§aSelected Slot Index: ${selectedItemSlot}`);
 		if( player.typeId == "minecraft:player" ){
+			const selectedItemSlot = player.selectedSlotIndex;
 			const attack = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`gattack`];
 			const V = vehicle.dimension.getEntities({maxDistance:3,location:vehicle.location,excludeTypes:tankImmuneEntities,excludeNames:[`${player.nameTag}`],excludeFamilies:[`bullet`,`vehicle`]});
 			if( V.length > 0 ){
@@ -576,32 +576,40 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			if( vehicle.getDynamicProperty(`gvcv5:herispeed`) !== undefined ){
 				this_v = vehicle.getDynamicProperty(`gvcv5:herispeed`);
 			}
-			print(`jdt:${this_v} d.y:${d.y} v_dt:${v_dt}`); 
+			//print(`jdt:${this_v} d.y:${d.y} v_dt:${v_dt}`); 
 			if( player.inputInfo.getMovementVector().x > 0.5 ){
 				xz = 1;
+				vehicle.setProperty(`zex:move`, 1);
 			}
 			else if( player.inputInfo.getMovementVector().x < -0.5 ){
 				xz = -1;
+				vehicle.setProperty(`zex:move`, -1);
 			}
 			else{
 				xz = 0;
 				x2 = 0;
 				z2 = 0;
+				vehicle.setProperty(`zex:move`, 0);
 			}
 
+			//print(`${vehicle.getProperty(`zex:move`)} ${player.inputInfo.getMovementVector().x} ${player.inputInfo.getMovementVector().y}`);
 			//up and fast
             if( player.inputInfo.getMovementVector().y > 0.5 ){
-                yup = 0.5;
 				if( d.x > 45 || d.x < -45 ){
-					this_v = this_v + Math.sin(d.x*Math.PI/180)*0.01;
+					this_v = this_v + Math.sin(d.x*Math.PI/180)*0.1;
+				}
+				else{
+					yup = 0.5
 				}
             }
 
 			//down and slow
             else if( player.inputInfo.getMovementVector().y < -0.5 ){
-                yup = -0.5;
 				if( d.x > 45 || d.x < -45 ){
-					this_v = this_v + Math.sin(d.x*Math.PI/180)*-0.01;
+					this_v = this_v + Math.sin(d.x*Math.PI/180)*-0.1;
+				}
+				else{
+					yup = -0.5
 				}
             }
 			else{
@@ -621,8 +629,8 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
             vehicle.clearVelocity();
 
 			if( xz != 0 ){
-				x2 = xz * this_v * Math.cos(d.y*Math.PI/180);
-				z2 = xz * this_v * Math.sin(d.y*Math.PI/180);
+				x2 = 0.75 * xz * this_v * Math.cos(d.y*Math.PI/180);
+				z2 = 0.75 * xz * this_v * Math.sin(d.y*Math.PI/180);
 			}
 
 			x1 = -Math.sin(d.y*Math.PI/180) * this_v * Math.sin(d.x*Math.PI/180);

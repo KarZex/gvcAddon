@@ -43,6 +43,7 @@ execute at @e[family=drop] run particle minecraft:basic_flame_particle ~~~
 
 execute at @e[family=tankbullet] run particle zex:endrod_flame ~~~
 execute at @e[family=heavycannonbullet] run particle zex:endrod_flame ~~~
+execute at @e[type=fire:76mmrocket] run particle zex:endrod_flame ~~~
 
 execute at @e[type=gvcv5:airstrike_red] run particle zex:red_strike ~~~
 execute at @e[type=gvcv5:airstrike_blue] run particle zex:blue_strike ~~~

@@ -22,6 +22,15 @@
                 255
             ],
             "default": 0
+        },
+        "zex:move": {
+            "client_sync": true,
+            "type": "int",
+            "range": [
+                -1,
+                1
+            ],
+            "default": 0
         }
       }
     },

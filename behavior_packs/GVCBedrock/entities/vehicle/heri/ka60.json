@@ -25,6 +25,15 @@
             255
           ],
           "default": 1
+        },
+        "zex:move": {
+          "client_sync": true,
+          "type": "int",
+          "range": [
+            -1,
+            1
+          ],
+          "default": 0
         }
       }
     },
@@ -70,7 +79,7 @@
                 1.5,
                 2.5
               ],
-              "third_person_camera_radius": 12
+              "third_person_camera_radius": 16
             },
             {
               "position": [
@@ -147,7 +156,7 @@
               1.5,
               2.5
             ],
-            "third_person_camera_radius": 12
+            "third_person_camera_radius": 16
           },
           {
             "position": [
