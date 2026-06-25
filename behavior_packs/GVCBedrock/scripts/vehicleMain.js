@@ -2,7 +2,7 @@ import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInit
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 import { vehicleData } from "./vehicle";
-import { absVector2,getVector2E,absVector3,isMoving,DistanceVector3,getUnderBlocksTo,Vector3Sub,getVector3E,Vector3Add,turning,turning2,DistanceVector3in2dim} from "./usefulFunction"
+import { absVector2,getVector2E,absVector3,Vector2Sub,isMoving,DistanceVector3,getUnderBlocksTo,Vector3Sub,getVector3E,Vector3Add,turning,turning2,DistanceVector3in2dim} from "./usefulFunction"
 
 export const tankImmuneEntities = [
     `armor_stand`,
@@ -138,6 +138,25 @@ function Weapon( player,vehicle,selectedItemSlot ){
 		else if( WeaponCool > 20 ){
 			WeaponData = `{"text":": §cCOOL ${WeaponCool}§r\n"}`;
 		}
+
+		if( Weapon == "aamissile" && selectedItemSlot == i-1 ){
+			const targets = world.getDimension("overworld").getEntitiesFromRay( player.location,player.getViewDirection(),{ maxDistance:128,closest:1,families:["TofAA"] });
+			const P_0 = player.location;
+			const v_0 = player.getRotation();
+			if( targets.length > 0 ){
+				WeaponData = `{"text":": §eFIND TARGET§r\n"}`
+			}
+			else{
+				WeaponData = `{"text":": §cNO TARGET§r\n"}`
+			}
+			// if( targets.length > 0 ){
+			// 	WeaponData = `{"text":": §eFIND TARGET§r\n"}`
+			// }
+			// else{
+			// 	WeaponData = `{"text":": §cNO TARGET§r\n"}`
+			// }
+		}
+
 		weapontext += `${TypeData}${WeaponName},${WeaponData}`;
 		if( i != 4 ){
 			weapontext += `,`;
