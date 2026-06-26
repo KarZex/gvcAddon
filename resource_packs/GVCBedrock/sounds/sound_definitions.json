@@ -49,6 +49,12 @@
 				"sounds/sound_alert1"
 			]
 		},
+		"sound.alert2": {
+			"category": "player",
+			"sounds": [
+				"sounds/sound_alert2"
+			]
+		},
 		"fire.missile": {
 			"category": "player",
 			"max_distance": 64,

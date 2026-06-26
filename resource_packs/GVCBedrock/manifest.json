@@ -5,14 +5,14 @@
     "name": "§l§gGVCBedrock Addon V3.0",
     "min_engine_version": [1, 21, 90 ],
     "uuid": "947fee76-6c2c-4d83-9afa-eefdb78c8509",
-    "version": [1, 21, 90]
+    "version": [1, 21, 100]
   },
   "modules": [
     {
       "description": "resources Module",
       "type": "resources",
       "uuid": "5f5666f4-a2f2-4b68-87d2-7004ff5d7992",
-      "version": [1, 0, 1]
+      "version": [1, 0, 2]
     }
   ]
 }

@@ -665,63 +665,106 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 })
 
 system.runInterval( () => {
-	world.getDimension(`minecraft:overworld`).runCommand(`execute as @a[tag=MissileAlert] run function missileAlert`);
-},20)
+	for( const p of world.getPlayers({ tags:[ `MissileAlert` ] })){
+		p.runCommand(`title @s times 0 4 0`);
+		p.runCommand(`title @s title §4Missile Alert`);
+		p.dimension.playSound(`sound.alert2`,p.location,{ volume:3 })
+		p.removeTag(`MissileAlert`);
+	}
+},5)
+system.runInterval( () => {
+	for( const p of world.getPlayers({ tags:[ `MissileLockon` ],excludeTags:[`MissileAlert`] })){
+		p.runCommand(`title @s times 0 4 0`);
+		p.runCommand(`title @s title §6Missile Lockon`);
+		p.dimension.playSound(`sound.alert1`,p.location,{ volume:3 })
+		p.removeTag(`MissileLockon`);
+	}
+},10)
 
 system.afterEvents.scriptEventReceive.subscribe( async  e => {
 	if( e.id == "zex:aamissile"){
 		const missile = e.sourceEntity;
 		const player = missile.getComponent("projectile").owner;
-		const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
-		const excludeList = [ "player","playerp","mod","mob" ];
-		const allies = intFamily.filter(char => !excludeList.includes(char));
-		let team = `noteam`;
-		if( player.hasTag(`red`) ){ team = `red`; }
-		else if( player.hasTag(`blue`) ){ team = `blue`; }
-		else if( player.hasTag(`green`) ){ team = `green`; }
-		else if( player.hasTag(`yellow`) ){ team = `yellow`; }
 
-		const target = missile.dimension.getEntities( { 
-			tags:[ `air` ],
-			excludeNames:[ `${player.nameTag}` ],
-			excludeTags:[ `${team}` ],
-			excludeFamilies:allies,
-			location:missile.location,
-			maxDistance:128,
-			closest: 1
-		 } );
-
-		if( target.length > 0 ){
-			const P0 = missile.location;
-			const Pi = target[0].location;
-			target[0].runCommand(`tag @s add MissileAlert`);
-			target[0].runCommand(`playsound sound.alert1 @s`);
+		if( player.getDynamicProperty(`missileTarget`) != undefined || missile.getDynamicProperty(`missileTarget`) != undefined ){
+			if( missile.getDynamicProperty(`missileTarget`) == undefined ){
+				missile.setDynamicProperty(`missileTarget`,player.getDynamicProperty(`missileTarget`));
+			}
+			const targeta = world.getEntity(missile.getDynamicProperty(`missileTarget`));
+			if( targeta != undefined && world.scoreboard.getObjective(`maxsubcool`).getScore(targeta) <= 0 ){
+				const P0 = missile.location;
+				const Pi = targeta.location;
+				targeta.runCommand(`tag @s add MissileAlert`);
 
 
-			const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
-			const dx = (Pi.x - P0.x) / ri;
-			const dy = (Pi.y - P0.y) / ri;
-			const dz = (Pi.z - P0.z) / ri;
-			const v = missile.getVelocity();
-			const abs_v = 2.5;
-			missile.clearVelocity();
-			missile.applyImpulse( { 
-				x: dx * abs_v,
-				y: dy * abs_v,
-				z: dz * abs_v
-			 } )
+				const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
+				const dx = (Pi.x - P0.x) / ri;
+				const dy = (Pi.y - P0.y) / ri;
+				const dz = (Pi.z - P0.z) / ri;
+				const v = missile.getVelocity();
+				const abs_v = 4.0;
+				missile.clearVelocity();
+				missile.applyImpulse( { 
+					x: dx * abs_v,
+					y: dy * abs_v,
+					z: dz * abs_v
+				} )
+
+			}
+
 		}
 		else{
-			const V_m = missile.getVelocity();
-			const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
-			const V = player.getViewDirection();
-			missile.clearVelocity();
-			missile.applyImpulse( { 
-				x: V.x * 2.5,
-				y: V.y * 2.5,
-				z: V.z * 2.5
-			} )
+			const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
+			const excludeList = [ "player","playerp","mod","mob" ];
+			const allies = intFamily.filter(char => !excludeList.includes(char));
+			let team = `noteam`;
+			if( player.hasTag(`red`) ){ team = `red`; }
+			else if( player.hasTag(`blue`) ){ team = `blue`; }
+			else if( player.hasTag(`green`) ){ team = `green`; }
+			else if( player.hasTag(`yellow`) ){ team = `yellow`; }
 
+			const target = missile.dimension.getEntities( { 
+				tags:[ `air` ],
+				excludeNames:[ `${player.nameTag}` ],
+				excludeTags:[ `${team}` ],
+				excludeFamilies:allies,
+				location:missile.location,
+				maxDistance:128,
+				closest: 1
+			} );
+
+			if( target.length > 0 ){
+				const P0 = missile.location;
+				const Pi = target[0].location;
+				target[0].runCommand(`tag @s add MissileAlert`);
+				target[0].runCommand(`playsound sound.alert1 @s`);
+
+
+				const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
+				const dx = (Pi.x - P0.x) / ri;
+				const dy = (Pi.y - P0.y) / ri;
+				const dz = (Pi.z - P0.z) / ri;
+				const v = missile.getVelocity();
+				const abs_v = 2.5;
+				missile.clearVelocity();
+				missile.applyImpulse( { 
+					x: dx * abs_v,
+					y: dy * abs_v,
+					z: dz * abs_v
+				} )
+			}
+			else{
+				const V_m = missile.getVelocity();
+				const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
+				const V = player.getViewDirection();
+				missile.clearVelocity();
+				missile.applyImpulse( { 
+					x: V.x * 2.5,
+					y: V.y * 2.5,
+					z: V.z * 2.5
+				} )
+
+			}
 		}
 	}
 	else if( e.id == "zex:horming"){
@@ -759,7 +802,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 				const P0 = missile.location;
 				const Pi = target[0].location;
 				target[0].runCommand(`tag @s add MissileAlert`);
-				target[0].runCommand(`playsound sound.alert1 @s`);
+				//target[0].runCommand(`playsound sound.alert1 @s`);
 				const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
 				const dx = (Pi.x - P0.x) / ri;
 				const dy = (Pi.y - P0.y) / ri;

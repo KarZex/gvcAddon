@@ -3,6 +3,15 @@ import { world, system, Entity,ItemComponentTypes,EntityComponentTypes,Equipment
 
 //world.getEntity(`a`).getVelocity()
 
+export function getEntityName( entity ){
+    if( entity.nameTag == undefined || entity.nameTag == `` ){
+        return `{\"translate\":\"entity.${entity.typeId.replace(`minecraft:`,``)}.name\"}`;
+    }
+    else{
+        return `{\"text\":\"${entity.nameTag}\"}`;
+    }
+}
+
 export function absVector3( V ){
     let abs_x = V.x * V.x;
     let abs_y = V.y * V.y;

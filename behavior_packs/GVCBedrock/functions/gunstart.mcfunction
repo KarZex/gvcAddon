@@ -27,6 +27,7 @@ scoreboard objectives add DeathTime dummy
 scoreboard objectives add rise dummy
 scoreboard objectives add out dummy
 scoreboard objectives add building dummy
+scoreboard objectives add lockon dummy
 #initialize
 execute as @s[tag=!startedv5] run scoreboard players set @s weapon1_cool 20
 execute as @s[tag=!startedv5] run scoreboard players set @s weapon1 0
@@ -51,6 +52,7 @@ execute as @s[tag=!startedv5] run scoreboard players set @s antiMining 0
 execute as @s[tag=!startedv5] run scoreboard players set @s DeathTime 0
 execute as @s[tag=!startedv5] run scoreboard players set @s mtype 0
 execute as @s[tag=!startedv5] run scoreboard players set @s printDamage 30
+execute as @s[tag=!startedv5] run scoreboard players set @s lockon 0
 execute as @s run scoreboard players set @s reloading 0
 scoreboard objectives add fire dummy
 execute as @s[tag=!startedv5] run scoreboard players set @s fire 30

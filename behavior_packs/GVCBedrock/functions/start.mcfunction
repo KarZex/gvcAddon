@@ -12,7 +12,8 @@ execute as @a[scores={mcoolii=1..}] run function mcoolii
 #execute as @a run function weaponiv_cool
 execute as @a run scriptevent zex:chkattack
 execute as @a run scriptevent zex:playerNoRide
-execute as @e[scores={maxsubcool=0..}] run function mtypea
+scoreboard players remove @e[scores={maxsubcool=1..}] maxsubcool 1
+execute at @e[type=fire:flare] run kill @e[r=60,type=fire:aamissile]
 
 execute as @a[tag=!startedv5] run function gunstart
 execute as @a[tag=down] run function down

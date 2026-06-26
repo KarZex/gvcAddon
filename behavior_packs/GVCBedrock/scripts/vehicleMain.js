@@ -2,7 +2,7 @@ import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInit
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 import { vehicleData } from "./vehicle";
-import { absVector2,getVector2E,absVector3,Vector2Sub,isMoving,DistanceVector3,getUnderBlocksTo,Vector3Sub,getVector3E,Vector3Add,turning,turning2,DistanceVector3in2dim} from "./usefulFunction"
+import { absVector2,getVector2E,getEntityName,absVector3,Vector2Sub,isMoving,DistanceVector3,getUnderBlocksTo,Vector3Sub,getVector3E,Vector3Add,turning,turning2,DistanceVector3in2dim} from "./usefulFunction"
 
 export const tankImmuneEntities = [
     `armor_stand`,
@@ -104,6 +104,51 @@ function airCraftlader( player ){
 	return `{"text":"${print[0]}|${print[1]}|${print[2]}|${print[3]}|${print[4]}|${print[5]}|${print[6]}|${print[7]}|${print[8]}|${print[9]}| ${print[10]}${Math.floor(-180*d0/Math.PI)} ${print[11]}|${print[12]}|${print[13]}|${print[14]}|${print[15]}|${print[16]}|${print[17]}|${print[18]}|${print[19]}|${print[20]}|\n"}`;
 }
 
+// 視線方向のコーン（円錐）範囲内のターゲットを探す
+function findTargetInCone(player,entityOption) {
+    const headLocation = player.getHeadLocation();
+    const viewDir = player.getViewDirection(); // 正規化されたベクトル (x, y, z)
+	const DETECTION_ANGLE = Math.PI / 12; // ±30度 (約0.523ラジアン)
+
+    // 周囲のエンティティを全取得（負荷軽減のため次元ベースで距離制限をかける）
+    const entities = player.dimension.getEntities(entityOption)
+
+    let closestTarget = null;
+
+    for (const entity of entities) {
+        // ターゲットへのベクトルを計算
+        const entityLoc = entity.location;
+        const toEntity = {
+            x: entityLoc.x - headLocation.x,
+            y: entityLoc.y - headLocation.y,
+            z: entityLoc.z - headLocation.z
+        };
+
+        const distance = Math.sqrt(toEntity.x ** 2 + toEntity.y ** 2 + toEntity.z ** 2);
+        if (distance === 0 ) continue;
+
+        // ターゲットへの方向ベクトルを正規化
+        const toEntityProj = {
+            x: toEntity.x / distance,
+            y: toEntity.y / distance,
+            z: toEntity.z / distance
+        };
+
+        // 視線ベクトルとターゲットへのベクトルの内積を計算 (cosθ)
+        const dotProduct = (viewDir.x * toEntityProj.x) + (viewDir.y * toEntityProj.y) + (viewDir.z * toEntityProj.z);
+        
+        // 内積から角度(ラジアン)を逆算
+        const angle = Math.acos(Math.min(Math.max(dotProduct, -1), 1));
+
+        // 角度が ±π/6 の範囲内か判定
+        if (angle <= DETECTION_ANGLE) {
+            closestTarget = entity;
+        }
+    }
+
+    return closestTarget;
+}
+
 function vehicleHp( HP,HPMax ){
 	let hpbar = ``;
 	if( HP >= HPMax * 0.5 ){
@@ -139,15 +184,30 @@ function Weapon( player,vehicle,selectedItemSlot ){
 			WeaponData = `{"text":": §cCOOL ${WeaponCool}§r\n"}`;
 		}
 
-		if( Weapon == "aamissile" && selectedItemSlot == i-1 ){
-			const targets = world.getDimension("overworld").getEntitiesFromRay( player.location,player.getViewDirection(),{ maxDistance:128,closest:1,families:["TofAA"] });
-			const P_0 = player.location;
-			const v_0 = player.getRotation();
-			if( targets.length > 0 ){
-				WeaponData = `{"text":": §eFIND TARGET§r\n"}`
+		if( Weapon == "aamissile" && selectedItemSlot == i-1 && WeaponCool == 0 && WeaponScore < WeaponScoreMax ){
+			const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
+			const excludeList = [ "player","playerp","mod","mob" ];
+			const allies = intFamily.filter(char => !excludeList.includes(char));
+			const target = findTargetInCone(player,{excludeFamilies:allies,location:player.location,maxDistance:128,tags:[ `air` ],scoreOptions:[{exclude:false,maxScore:0,objective:`maxsubcool`}]});
+			if( target != null ){
+				//maxsubcool
+				if( world.scoreboard.getObjective(`lockon`).getScore(player) < 20 ){
+					world.scoreboard.getObjective(`lockon`).addScore(player,1);
+					WeaponData = `{"text":": §eLockOn.."},{"text":"${world.scoreboard.getObjective(`lockon`).getScore(player)}§r\n"}`
+				}
+				else{
+					player.setDynamicProperty(`missileTarget`,target.id);
+					WeaponData = `{"text":": §6TARGET FOUND§r"},{"text":"\n"}`
+				}
+				if( target.typeId == "minecraft:player" && !target.hasTag(`MissileAlert`) ){
+					target.addTag(`MissileLockon`)
+				}
+
 			}
 			else{
 				WeaponData = `{"text":": §cNO TARGET§r\n"}`
+				world.scoreboard.getObjective(`lockon`).setScore(player,0);
+				player.setDynamicProperty(`missileTarget`,undefined);
 			}
 			// if( targets.length > 0 ){
 			// 	WeaponData = `{"text":": §eFIND TARGET§r\n"}`
@@ -191,17 +251,17 @@ system.runInterval( () => {
 	const endAirs = world.getDimension(`minecraft:the_end`).getEntities({families:[`air`]});
 	for( let t of overAirs ){
 		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
-			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.air`,t.location,{ volume:8 })
+			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.air`,t.location,{ volume:3 })
 		}
 	}
 	for( let t of netherAirs ){
 		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0  ){
-			world.getDimension(`minecraft:nether`).playSound(`sound.gvcv5.air`,t.location,{ volume:8 })
+			world.getDimension(`minecraft:nether`).playSound(`sound.gvcv5.air`,t.location,{ volume:3 })
 		}
 	}
 	for( let t of endAirs ){
 		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0  ){
-			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.air`,t.location,{ volume:8 })
+			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.air`,t.location,{ volume:3 })
 		}
 	}
 },5)
@@ -211,17 +271,17 @@ system.runInterval( () => {
 	const endAirs = world.getDimension(`minecraft:the_end`).getEntities({families:[`heri`]});
 	for( let t of overAirs ){
 		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
-			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.heri`,t.location,{ volume:8 })
+			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.heri`,t.location,{ volume:3 })
 		}
 	}
 	for( let t of netherAirs ){
 		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0  ){
-			world.getDimension(`minecraft:nether`).playSound(`sound.gvcv5.heri`,t.location,{ volume:8 })
+			world.getDimension(`minecraft:nether`).playSound(`sound.gvcv5.heri`,t.location,{ volume:3 })
 		}
 	}
 	for( let t of endAirs ){
 		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
-			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.heri`,t.location,{ volume:8 })
+			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.heri`,t.location,{ volume:3 })
 		}
 	}
 },5)
@@ -497,6 +557,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		const vehicle = player.getComponent(EntityComponentTypes.Riding).entityRidingOn;
 		const selectedItemSlot = player.selectedSlotIndex;
 		let weaponNumber = 0;
+		let bulletSpawn = false
 		if( !player.hasTag(`reload`) ){
 			weaponNumber = selectedItemSlot + 1;
 			//world.sendMessage(`§aSelected Slot Index: ${selectedItemSlot}`);
@@ -513,14 +574,31 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 						player.dimension.playSound(`random.anvil_land`,vehicle.location);
 						vehicle.addEffect(`resistance`,100,{ amplifier:255, showParticles:true });
 						world.scoreboard.getObjective(`maxsubcool`).setScore(vehicle,100);
+						bulletSpawn = true;
+					}
+					else if( weapon == `aamissile` ){
+						if( player.getDynamicProperty(`missileTarget`) != undefined ){
+							player.triggerEvent(`fire:${weapon}`);
+							bulletSpawn = true;
+						}
+					}
+					else if( weapon == `flare` ){
+						world.scoreboard.getObjective(`maxsubcool`).setScore(player,40);
+						world.scoreboard.getObjective(`maxsubcool`).setScore(vehicle,40);
+						player.triggerEvent(`fire:${weapon}`);
+						bulletSpawn = true;
 					}
 					else{
 						player.triggerEvent(`fire:${weapon}`);
+						bulletSpawn = true;
 					}
-					world.scoreboard.getObjective(`weapon${weaponNumber}`).addScore(player,1);
-					player.addTag(`weapon${weaponNumber}attack`);
-					if( weaponCool > 0 ){
-						world.scoreboard.getObjective(`weapon${weaponNumber}_cool`).setScore(player,weaponCool);
+
+					if( bulletSpawn ){
+						world.scoreboard.getObjective(`weapon${weaponNumber}`).addScore(player,1);
+						player.addTag(`weapon${weaponNumber}attack`);
+						if( weaponCool > 0 ){
+							world.scoreboard.getObjective(`weapon${weaponNumber}_cool`).setScore(player,weaponCool);
+						}
 					}
 				}
 			}
