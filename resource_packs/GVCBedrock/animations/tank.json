@@ -12,6 +12,40 @@
 				}
 			}
 		},
+		"animation.shipaim": {
+			"loop": true,
+			"bones": {
+				"main": {
+					"rotation": [0, "query.target_y_rotation", 0]
+				},
+				"gun1": {
+					"rotation": [0, "q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				},
+				"gun2": {
+					"rotation": [0, "q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				},
+				"gun3": {
+					"rotation": [0, "q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				}
+			}
+		},
+		"animation.shipaim2": {
+			"loop": true,
+			"bones": {
+				"main": {
+					"rotation": [0, "query.target_y_rotation", 0]
+				},
+				"gun1": {
+					"rotation": [0, "q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				},
+				"gun2": {
+					"rotation": [0, "q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				},
+				"gun3": {
+					"rotation": [0, "q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				}
+			}
+		},
 		"animation.herii": {
 			"loop": true,
 			"bones": {

@@ -34,13 +34,7 @@
             "damage": 0,
             "knockback": false
           },
-          "stick_in_ground": {},
-          "particle_on_hit": {
-            "on_other_hit": true,
-            "on_entity_hit": true,
-            "num_particles": 1,
-            "particle_type": "minecraft:large_explosion"
-          }
+          "stick_in_ground": {}
         },
         "power": 2.4000000000000004,
         "gravity": 0,
@@ -49,7 +43,6 @@
         "uncertainty_multiplier": 0,
         "catch_fire": false,
         "anchor": 1,
-        "hit_sound": "random.explode",
         "offset": [
           -2,
           0,

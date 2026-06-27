@@ -1,4 +1,4 @@
-import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause, InputButton, ButtonState, LiquidType  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 import { vehicleData } from "./vehicle";
@@ -105,13 +105,15 @@ function airCraftlader( player ){
 }
 
 // 視線方向のコーン（円錐）範囲内のターゲットを探す
-function findTargetInCone(player,entityOption) {
+function findTargetInCone(player,entityOption,allies) {
     const headLocation = player.getHeadLocation();
     const viewDir = player.getViewDirection(); // 正規化されたベクトル (x, y, z)
 	const DETECTION_ANGLE = Math.PI / 12; // ±30度 (約0.523ラジアン)
 
     // 周囲のエンティティを全取得（負荷軽減のため次元ベースで距離制限をかける）
-    const entities = player.dimension.getEntities(entityOption)
+    
+	//const entities = player.dimension.getEntities(entityOption)
+	const entities = world.getDimension("overworld").getEntities(entityOption)
 
     let closestTarget = null;
 
@@ -142,7 +144,13 @@ function findTargetInCone(player,entityOption) {
 
         // 角度が ±π/6 の範囲内か判定
         if (angle <= DETECTION_ANGLE) {
-            closestTarget = entity;
+			const riders = entity.getComponent(EntityComponentTypes.Rideable).getRiders();
+			if( riders.length > 0  ){
+				print(`${riders[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies()} vs ${allies} `)
+				if( !riders[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().some( v => allies.includes(v) ) ){
+					closestTarget = entity;
+				}
+			}
         }
     }
 
@@ -188,7 +196,7 @@ function Weapon( player,vehicle,selectedItemSlot ){
 			const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
 			const excludeList = [ "player","playerp","mod","mob" ];
 			const allies = intFamily.filter(char => !excludeList.includes(char));
-			const target = findTargetInCone(player,{excludeFamilies:allies,location:player.location,maxDistance:128,tags:[ `air` ],scoreOptions:[{exclude:false,maxScore:0,objective:`maxsubcool`}]});
+			const target = findTargetInCone(player,{families:["TofAA"],location:player.location,maxDistance:128},allies);
 			if( target != null ){
 				//maxsubcool
 				if( world.scoreboard.getObjective(`lockon`).getScore(player) < 20 ){
@@ -200,7 +208,54 @@ function Weapon( player,vehicle,selectedItemSlot ){
 					WeaponData = `{"text":": §6TARGET FOUND§r"},{"text":"\n"}`
 				}
 				if( target.typeId == "minecraft:player" && !target.hasTag(`MissileAlert`) ){
-					target.addTag(`MissileLockon`)
+					target.addTag(`MissileLockon`);
+				}
+
+				if( target.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+					const p = target.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+					if( p.typeId == "minecraft:player" ){
+						p.addTag("MissileLockon")
+					}
+				}
+
+			}
+			else{
+				WeaponData = `{"text":": §cNO TARGET§r\n"}`
+				world.scoreboard.getObjective(`lockon`).setScore(player,0);
+				player.setDynamicProperty(`missileTarget`,undefined);
+			}
+			// if( targets.length > 0 ){
+			// 	WeaponData = `{"text":": §eFIND TARGET§r\n"}`
+			// }
+			// else{
+			// 	WeaponData = `{"text":": §cNO TARGET§r\n"}`
+			// }
+		}
+
+		if( Weapon == "agmissile" && selectedItemSlot == i-1 && WeaponCool == 0 && WeaponScore < WeaponScoreMax ){
+			const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
+			const excludeList = [ "player","playerp","mod","mob" ];
+			const allies = intFamily.filter(char => !excludeList.includes(char));
+			const target = findTargetInCone(player,{families:["tank"],location:player.location,maxDistance:128},allies);
+			if( target != null ){
+				//maxsubcool
+				if( world.scoreboard.getObjective(`lockon`).getScore(player) < 20 ){
+					world.scoreboard.getObjective(`lockon`).addScore(player,1);
+					WeaponData = `{"text":": §eLockOn.."},{"text":"${world.scoreboard.getObjective(`lockon`).getScore(player)}§r\n"}`
+				}
+				else{
+					player.setDynamicProperty(`missileTarget`,target.id);
+					WeaponData = `{"text":": §6TARGET FOUND§r"},{"text":"\n"}`
+				}
+				if( target.typeId == "minecraft:player" && !target.hasTag(`MissileAlert`) ){
+					target.addTag(`MissileLockon`);
+				}
+
+				if( target.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+					const p = target.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+					if( p.typeId == "minecraft:player" ){
+						p.addTag("MissileLockon")
+					}
 				}
 
 			}
@@ -282,6 +337,27 @@ system.runInterval( () => {
 	for( let t of endAirs ){
 		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
 			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.heri`,t.location,{ volume:3 })
+		}
+	}
+},5)
+
+system.runInterval( () => {
+	const overAirs = world.getDimension(`minecraft:overworld`).getEntities({families:[`ship`]});
+	const netherAirs = world.getDimension(`minecraft:nether`).getEntities({families:[`ship`]});
+	const endAirs = world.getDimension(`minecraft:the_end`).getEntities({families:[`ship`]});
+	for( let t of overAirs ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.car`,t.location,{ volume:3 })
+		}
+	}
+	for( let t of netherAirs ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0  ){
+			world.getDimension(`minecraft:nether`).playSound(`sound.gvcv5.car`,t.location,{ volume:3 })
+		}
+	}
+	for( let t of endAirs ){
+		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.car`,t.location,{ volume:3 })
 		}
 	}
 },5)
@@ -576,7 +652,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 						world.scoreboard.getObjective(`maxsubcool`).setScore(vehicle,100);
 						bulletSpawn = true;
 					}
-					else if( weapon == `aamissile` ){
+					else if( weapon == `aamissile` || weapon == `agmissile` ){
 						if( player.getDynamicProperty(`missileTarget`) != undefined ){
 							player.triggerEvent(`fire:${weapon}`);
 							bulletSpawn = true;
@@ -615,6 +691,9 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			if( weapon != `` ){
 				if( world.scoreboard.getObjective(`weapon${i}_cool`).getScore(player) > 0 ){
 					world.scoreboard.getObjective(`weapon${i}_cool`).addScore(player,-1);
+				}
+				if( player.inputInfo.getButtonState(InputButton.Jump) == ButtonState.Released ){
+					player.removeTag(`weapon${i}attack`);
 				}
 				if( !player.hasTag(`weapon${i}attack`) && world.scoreboard.getObjective(`weapon${i}`).getScore(player) > 0 ){
 					//world.sendMessage(`§aReloading Weapon${world.scoreboard.getObjective(`weapon${i}_reload`).getScore(player)}...`);
@@ -659,6 +738,59 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				for( let vict of V ){
 					vict.applyDamage(attack,{damagingEntity:player,cause:EntityDamageCause.entityAttack});
 				}
+			}
+			let v = vehicle.getVelocity();
+			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+			const HP = vehicle.getComponent(EntityComponentTypes.Health).currentValue;
+			const HPMax = vehicle.getComponent(EntityComponentTypes.Health).defaultValue;
+			let fuel = 0;
+			let fuelSpendonThisTick = false;
+			player.runCommand(`scriptevent zex:playerVreload`);
+			player.runCommand(`
+				titleraw @s[tag=!reload,tag=!down] 
+				actionbar {"rawtext":[{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
+				{"text":"HP: ${vehicleHp(HP,HPMax)}"},
+				${Weapon(player,vehicle,selectedItemSlot)}
+				]}`
+			);
+		}
+		else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
+			vehicle.remove();
+		}
+		else if( player.hasTag(`cantriding`) && vehicle.hasTag(`is_enemy`) ){
+			vehicle.remove();
+			player.removeTag(`cantriding`);
+		}
+	}
+	else if( e.id == "zex:vship"){
+		const vehicle = e.sourceEntity;
+		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+		//world.sendMessage(`§aSelected Slot Index: ${selectedItemSlot}`);
+		if( player.typeId == "minecraft:player" ){
+			const selectedItemSlot = player.selectedSlotIndex;
+			const attack = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`gattack`];
+			
+			//print(`jdt:${this_v} d.y:${d.y} v_dt:${v_dt}`); 
+			//print(`${vehicle.dimension.getBlock({ x:vehicle.location.x,y:vehicle.location.y-1,z:vehicle.location.z }).typeId}`)
+			if( vehicle.dimension.getBlock(vehicle.location).isLiquid || vehicle.dimension.getBlock(vehicle.location).isWaterlogged){
+
+				vehicle.setRotation({ x:0,y:vehicle.getRotation().y-5*player.inputInfo.getMovementVector().x })
+
+				const r = vehicle.getRotation().y + 90;
+				const Vi =  player.inputInfo.getMovementVector().y;
+				const speed = vehicle.getComponent(EntityComponentTypes.Movement).defaultValue;
+				//print(`${r}`);
+
+				vehicle.clearVelocity();
+
+				vehicle.applyImpulse({
+					x: Math.cos(r*Math.PI/180) * Vi * speed,
+					y:0,
+					z: Math.sin(r*Math.PI/180) * Vi * speed
+				})
+			}
+			else{
+				vehicle.applyDamage(1)
 			}
 			let v = vehicle.getVelocity();
 			let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);

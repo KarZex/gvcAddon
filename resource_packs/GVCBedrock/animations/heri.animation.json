@@ -5,7 +5,7 @@
 			"loop": true,
 			"animation_length": 0.25,
 			"bones": {
-				"p": {
+				"asdasdd": {
 					"rotation": {
 						"0.0": [0, 0, 0],
 						"0.25": [0, 360, 0]
@@ -39,7 +39,7 @@
 			"loop": true,
 			"animation_length": 0.25,
 			"bones": {
-				"p": {
+				"asdasdd": {
 					"rotation": {
 						"0.0": [0, 0, 0],
 						"0.25": [0, 360, 0]
@@ -49,6 +49,42 @@
 					"rotation": {
 						"0.0": [0, 0, 0],
 						"0.25": [0, -360, 0]
+					}
+				}
+			}
+		},
+		"animation.heri.fly4": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"p2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -360, 0]
+					}
+				},
+				"m2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0, 360]
+					}
+				},
+				"m1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0, 360]
+					}
+				}
+			}
+		},
+		"animation.heri.fly3": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"asdasdd": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [0, 360, 0]
 					}
 				}
 			}

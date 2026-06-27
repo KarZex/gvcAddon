@@ -3881,6 +3881,11 @@
           "command": "ride @s summon_ride vehicle:pkmset no_ride_change summon_enemy"
         }
       },
+      "vehicle:tow2": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:tow2 no_ride_change summon_enemy"
+        }
+      },
       "vehicle:mig17": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:mig17 no_ride_change summon_enemy"
@@ -3919,6 +3924,31 @@
       "vehicle:st1_pmc": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:st1_pmc no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:cruiser": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:cruiser no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:rcb90": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:rcb90 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:rhib": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:rhib no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:pr1204": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:pr1204 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:hamina": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:hamina no_ride_change summon_enemy"
         }
       }
     }

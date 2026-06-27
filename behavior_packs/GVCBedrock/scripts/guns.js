@@ -173,7 +173,7 @@ export const gunData = {
     "recoil": 2.0,
     "sound": "missile",
     "slowness": 2,
-    "speed": 2.0,
+    "speed": 6.0,
     "fireOnReload": false,
     "maxGunAmmo": 1,
     "reloadTime": 60,
@@ -1135,7 +1135,7 @@ export const gunData = {
   "agmissile": {
     "damage": 120,
     "sound": "missile",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s152m"
   },

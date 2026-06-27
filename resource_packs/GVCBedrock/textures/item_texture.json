@@ -1159,6 +1159,24 @@
     },
     "ah1z": {
       "textures": "textures/items/vehicle/ah1z"
+    },
+    "cruiser": {
+      "textures": "textures/items/vehicle/cruiser"
+    },
+    "tow2": {
+      "textures": "textures/items/vehicle/tow2"
+    },
+    "rcb90": {
+      "textures": "textures/items/vehicle/rcb90"
+    },
+    "rhib": {
+      "textures": "textures/items/vehicle/rhib"
+    },
+    "pr1204": {
+      "textures": "textures/items/vehicle/pr1204"
+    },
+    "hamina": {
+      "textures": "textures/items/vehicle/hamina"
     }
   }
 }

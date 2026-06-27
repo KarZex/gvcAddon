@@ -30,7 +30,7 @@
         "causes_fire": false
       },
       "minecraft:movement": {
-        "value": 2.0
+        "value": 6.0
       },
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -53,7 +53,7 @@
             }
           }
         },
-        "power": 2.0,
+        "power": 6.0,
         "gravity": 0,
         "inertia": 1.5,
         "uncertainty_base": 4.0,

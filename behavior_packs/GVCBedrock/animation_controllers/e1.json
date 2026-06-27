@@ -54,29 +54,29 @@
         }
       }
     },
-    "controller.animation.vtank": {
+    "controller.animation.vship": {
       "states": {
         "default": {
           "transitions": [
-            { "vtank": "query.has_rider" }
+            { "vship": "query.has_rider" }
           ]
         },
-        "vtank": {
+        "vship": {
           "transitions": [
             { "default": "!query.has_rider" },
-            { "vtankii": "query.has_rider" }
+            { "vshipii": "query.has_rider" }
           ],
           "on_entry": [
-            "/scriptevent zex:vtank"
+            "/scriptevent zex:vship"
           ]
         },
-        "vtankii": {
+        "vshipii": {
           "transitions": [
             { "default": "!query.has_rider" },
-            { "vtank": "query.has_rider" }
+            { "vship": "query.has_rider" }
           ],
           "on_entry": [
-            "/scriptevent zex:vtank"
+            "/scriptevent zex:vship"
           ]
         }
       }

@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:pr1204",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/pr1204"
+      },
+      "geometry": {
+        "default": "geometry.pr1204"
+      },
+      "animations": {
+        "look_at_target": "animation.shipaim",
+				"fly2": "animation.heri.fly4"
+      },
+      "scripts": {
+        "animate": [
+					{
+						"look_at_target": "query.has_rider"
+					},
+          { "fly2": "query.has_rider" }
+        ]
+      },
+      "spawn_egg":{
+      "texture":"pr1204",
+      "texture_index":0
+      },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

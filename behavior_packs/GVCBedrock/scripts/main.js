@@ -115,6 +115,52 @@ function recoil( player,recoil ){
 	//player.applyImpulse(D);
 }
 
+function findTargetInCone(player,entityOption) {
+    const headLocation = player.getHeadLocation();
+    const viewDir = player.getViewDirection(); // 正規化されたベクトル (x, y, z)
+	const DETECTION_ANGLE = Math.PI / 12; // ±30度 (約0.523ラジアン)
+
+    // 周囲のエンティティを全取得（負荷軽減のため次元ベースで距離制限をかける）
+    const entities = player.dimension.getEntities(entityOption)
+
+    let closestTarget = null;
+
+    for (const entity of entities) {
+        // ターゲットへのベクトルを計算
+        const entityLoc = entity.location;
+        const toEntity = {
+            x: entityLoc.x - headLocation.x,
+            y: entityLoc.y - headLocation.y,
+            z: entityLoc.z - headLocation.z
+        };
+
+        const distance = Math.sqrt(toEntity.x ** 2 + toEntity.y ** 2 + toEntity.z ** 2);
+        if (distance === 0 ) continue;
+
+        // ターゲットへの方向ベクトルを正規化
+        const toEntityProj = {
+            x: toEntity.x / distance,
+            y: toEntity.y / distance,
+            z: toEntity.z / distance
+        };
+
+        // 視線ベクトルとターゲットへのベクトルの内積を計算 (cosθ)
+        const dotProduct = (viewDir.x * toEntityProj.x) + (viewDir.y * toEntityProj.y) + (viewDir.z * toEntityProj.z);
+        
+        // 内積から角度(ラジアン)を逆算
+        const angle = Math.acos(Math.min(Math.max(dotProduct, -1), 1));
+
+        // 角度が ±π/6 の範囲内か判定
+        if (angle <= DETECTION_ANGLE) {
+			if( entity.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+				closestTarget = entity;
+			}
+        }
+    }
+
+    return closestTarget;
+}
+
 world.afterEvents.playerSpawn.subscribe( e => {
 	const player = e.player;
 	player.setDynamicProperty(`gvcv5:gunUsed`,0)
@@ -691,7 +737,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 				missile.setDynamicProperty(`missileTarget`,player.getDynamicProperty(`missileTarget`));
 			}
 			const targeta = world.getEntity(missile.getDynamicProperty(`missileTarget`));
-			if( targeta != undefined && world.scoreboard.getObjective(`maxsubcool`).getScore(targeta) <= 0 ){
+			if( targeta != undefined &&  (!world.scoreboard.getObjective(`maxsubcool`).hasParticipant(targeta) || world.scoreboard.getObjective(`maxsubcool`).getScore(targeta) <= 0 )){
 				const P0 = missile.location;
 				const Pi = targeta.location;
 				targeta.runCommand(`tag @s add MissileAlert`);
@@ -702,7 +748,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 				const dy = (Pi.y - P0.y) / ri;
 				const dz = (Pi.z - P0.z) / ri;
 				const v = missile.getVelocity();
-				const abs_v = 4.0;
+				const abs_v = 4;
 				missile.clearVelocity();
 				missile.applyImpulse( { 
 					x: dx * abs_v,
@@ -714,95 +760,48 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 
 		}
 		else{
-			const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
-			const excludeList = [ "player","playerp","mod","mob" ];
-			const allies = intFamily.filter(char => !excludeList.includes(char));
-			let team = `noteam`;
-			if( player.hasTag(`red`) ){ team = `red`; }
-			else if( player.hasTag(`blue`) ){ team = `blue`; }
-			else if( player.hasTag(`green`) ){ team = `green`; }
-			else if( player.hasTag(`yellow`) ){ team = `yellow`; }
+			const V_m = missile.getVelocity();
+			const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
+			const V = player.getViewDirection();
+			missile.clearVelocity();
+			missile.applyImpulse( { 
+				x: V.x * 2.5,
+				y: V.y * 2.5,
+				z: V.z * 2.5
+			} )
 
-			const target = missile.dimension.getEntities( { 
-				tags:[ `air` ],
-				excludeNames:[ `${player.nameTag}` ],
-				excludeTags:[ `${team}` ],
-				excludeFamilies:allies,
-				location:missile.location,
-				maxDistance:128,
-				closest: 1
-			} );
-
-			if( target.length > 0 ){
-				const P0 = missile.location;
-				const Pi = target[0].location;
-				target[0].runCommand(`tag @s add MissileAlert`);
-				target[0].runCommand(`playsound sound.alert1 @s`);
-
-
-				const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
-				const dx = (Pi.x - P0.x) / ri;
-				const dy = (Pi.y - P0.y) / ri;
-				const dz = (Pi.z - P0.z) / ri;
-				const v = missile.getVelocity();
-				const abs_v = 2.5;
-				missile.clearVelocity();
-				missile.applyImpulse( { 
-					x: dx * abs_v,
-					y: dy * abs_v,
-					z: dz * abs_v
-				} )
-			}
-			else{
-				const V_m = missile.getVelocity();
-				const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
-				const V = player.getViewDirection();
-				missile.clearVelocity();
-				missile.applyImpulse( { 
-					x: V.x * 2.5,
-					y: V.y * 2.5,
-					z: V.z * 2.5
-				} )
-
-			}
 		}
 	}
 	else if( e.id == "zex:horming"){
 		const missile = e.sourceEntity;
 		const gunName = getGunProjectlie(missile.typeId);
 		const maxSpeed = gunData[`${gunName}`]["speed"];
-		if( missile.isValid ){
-			if( missile.getDynamicProperty(`age`) == undefined ){
-				missile.setDynamicProperty(`age`,0);
-			}
-			else if( missile.getDynamicProperty(`age`) <= 20 ){
-				missile.setDynamicProperty(`age`,1+missile.getDynamicProperty(`age`));
-			}
-			const age = missile.getDynamicProperty(`age`);
-			const entity = missile.getComponent("projectile").owner;
-			let target = [];
-			let team = `noteam`;
-			if( entity.hasTag(`red`) ){ team = `red`; }
-			else if( entity.hasTag(`blue`) ){ team = `blue`; }
-			else if( entity.hasTag(`green`) ){ team = `green`; }
-			else if( entity.hasTag(`yellow`) ){ team = `yellow`; }
-			if( entity.typeId == "minecraft:player" ){
-				target = missile.dimension.getEntities( { 
-					tags:[ `Tof${entity.nameTag}` ]
-				} );
-			}
-			else{
-				world.sendMessage(`${entity.target.typeId}`)
-				if( entity.target != undefined ){ 
-					target.push(entity.target); 
-				}
-			}
+		const player = missile.getComponent("projectile").owner;
+		if( missile.getDynamicProperty(`age`) == undefined ){
+			missile.setDynamicProperty(`age`,0);
+		}
+		else if( missile.getDynamicProperty(`age`) <= 20 ){
+			missile.setDynamicProperty(`age`,1+missile.getDynamicProperty(`age`));
+		}
+		const age = missile.getDynamicProperty(`age`);
 
-			if( target.length > 0 ){
+		if( player.getDynamicProperty(`missileTarget`) != undefined || missile.getDynamicProperty(`missileTarget`) != undefined ){
+			if( missile.getDynamicProperty(`missileTarget`) == undefined ){
+				missile.setDynamicProperty(`missileTarget`,player.getDynamicProperty(`missileTarget`));
+			}
+			const targeta = world.getEntity(missile.getDynamicProperty(`missileTarget`));
+			if( targeta != undefined && (!world.scoreboard.getObjective(`maxsubcool`).hasParticipant(targeta) || world.scoreboard.getObjective(`maxsubcool`).getScore(targeta) <= 0 )){
 				const P0 = missile.location;
-				const Pi = target[0].location;
-				target[0].runCommand(`tag @s add MissileAlert`);
-				//target[0].runCommand(`playsound sound.alert1 @s`);
+				const Pi = targeta.location;
+				targeta.runCommand(`tag @s add MissileAlert`);
+				if( targeta.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+					const p = targeta.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+					if( p.typeId == "minecraft:player" ){
+						p.addTag("MissileAlert")
+					}
+				}
+
+
 				const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
 				const dx = (Pi.x - P0.x) / ri;
 				const dy = (Pi.y - P0.y) / ri;
@@ -815,19 +814,21 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 					y: dy * abs_v + ( 20 - age ) * 0.05,
 					z: dz * abs_v
 				} )
-			}
-			else{
-				const V_m = missile.getVelocity();
-				const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
-				const V = entity.getViewDirection();
-				missile.clearVelocity();
-				missile.applyImpulse( { 
-					x: V.x * maxSpeed * 0.5,
-					y: V.y * maxSpeed * 0.5,
-					z: V.z * maxSpeed * 0.5
-				} )
 
 			}
+
+		}
+		else{
+			const V_m = missile.getVelocity();
+			const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
+			const V = player.getViewDirection();
+			missile.clearVelocity();
+			missile.applyImpulse( { 
+				x: V.x * maxSpeed * 0.5,
+				y: V.y * maxSpeed * 0.5 + ( 20 - age ) * 0.05,
+				z: V.z * maxSpeed * 0.5
+			} )
+
 		}
 	}
 	else if( e.id == "zex:view"){
@@ -873,6 +874,11 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 					player.setDynamicProperty(`gvcv5:gunUsed`,usedGun+1);
 				}
 			}
+			else if( gunData[`${gunName}`][`bullet`] == "zex:missilem" ){
+				if( player.getDynamicProperty(`missileTarget`) != undefined ){
+					player.setDynamicProperty(`gvcv5:gunUsed`,usedGun+1);
+				}
+			}
 			else{
 				player.setDynamicProperty(`gvcv5:gunUsed`,usedGun+1);
 			}
@@ -889,6 +895,11 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			}
 			else if( player.getProperty(`zex:bullet`) == 6 ){
 				player.triggerEvent(`fire:${gunName}_db`);
+			}
+			else if( gunData[`${gunName}`][`bullet`] == "zex:missilem" ){
+				if( player.getDynamicProperty(`missileTarget`) != undefined ){
+					player.triggerEvent(`fire:${gunName}`);
+				}
 			}
 			else{
 				player.triggerEvent(`fire:${gunName}`);
@@ -1024,27 +1035,62 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		if( usedGun == undefined ){
 			usedGun = 0;
 		}
-		if( player.isSneaking && !player.hasTag(`reload`) && !player.hasTag(`down`) && !player.hasTag(`isRiding`) ){
-			const Targetv = player.getEntitiesFromViewDirection( {families:[ `vehicle` ],ignoreBlockCollision:false} );
-			const Targetm = player.getEntitiesFromViewDirection( {families:[ `mob` ],ignoreBlockCollision:false} );
-			const Targetp = player.getEntitiesFromViewDirection( {families:[ `player` ],ignoreBlockCollision:false} );
-			const Target = Targetm.concat(Targetp).concat(Targetv)
-			if( Target[0] != undefined ){
-				const name = player.nameTag;
-				player.runCommand(`tag @e remove "Tof${name}"`);
-				Target[0].entity.addTag(`Tof${name}`);
-				if( Target[0].entity.nameTag == undefined || Target[0].entity.nameTag == `` ){
-					player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§eFind target:\"},{\"translate\":\"entity.${Target[0].entity.typeId.replace(`minecraft:`,``)}.name\"}]}`);
+		if( player.isSneaking && !player.hasTag(`reload`) && !player.hasTag(`down`) && !player.hasTag(`isRiding`) && damage < maxAmmo ){
+			//const Targetv = player.getEntitiesFromViewDirection( {families:[ `vehicle` ],ignoreBlockCollision:false} );
+			//const Targetm = player.getEntitiesFromViewDirection( {families:[ `mob` ],ignoreBlockCollision:false} );
+			//const Targetp = player.getEntitiesFromViewDirection( {families:[ `player` ],ignoreBlockCollision:false} );
+			//const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
+			//const excludeList = [ "player","playerp","mod","mob" ];
+			//const allies = intFamily.filter(char => !excludeList.includes(char));
+			const target = findTargetInCone(player,{families:[ `vehicle` ],location:player.location,maxDistance:128});
+			if( target != null ){
+				//maxsubcool
+				if( world.scoreboard.getObjective(`lockon`).getScore(player) < 10 ){
+					world.scoreboard.getObjective(`lockon`).addScore(player,1);
+					//WeaponData = `{"text":": §eLockOn.."},{"text":"${world.scoreboard.getObjective(`lockon`).getScore(player)}§r\n"}`
+					player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§eLockOn..\"},{\"text\":\"${world.scoreboard.getObjective(`lockon`).getScore(player)}§r\n\"}]}`);
 				}
 				else{
-					player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§eFind target:${Target[0].entity.nameTag}\"}]}`);
+					player.setDynamicProperty(`missileTarget`,target.id);
+					//WeaponData = `{"text":": §6TARGET FOUND§r"},{"text":"\n"}`
+					player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§6TARGET FOUND§r\"}]}`);
 				}
+				if( target.typeId == "minecraft:player" && !target.hasTag(`MissileAlert`) ){
+					target.addTag(`MissileLockon`);
+				}
+
+				if( target.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+					const p = target.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+					if( p.typeId == "minecraft:player" ){
+						p.addTag("MissileLockon")
+					}
+				}
+
 			}
 			else{
 				player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§cNo Target\"}]}`);
+				world.scoreboard.getObjective(`lockon`).setScore(player,0);
+				player.setDynamicProperty(`missileTarget`,undefined);
 			}
+			// const Target = Targetv;
+			// if( Target[0] != undefined ){
+			// 	const name = player.nameTag;
+			// 	player.runCommand(`tag @e remove "Tof${name}"`);
+			// 	Target[0].entity.addTag(`Tof${name}`);
+			// 	if( Target[0].entity.nameTag == undefined || Target[0].entity.nameTag == `` ){
+			// 		player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§eFind target:\"},{\"translate\":\"entity.${Target[0].entity.typeId.replace(`minecraft:`,``)}.name\"}]}`);
+			// 	}
+			// 	else{
+			// 		player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§eFind target:${Target[0].entity.nameTag}\"}]}`);
+			// 	}
+			// }
+			// else{
+			// 	player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§cNo Target\"}]}`);
+			// }
 		}
 		else if( !player.hasTag(`reload`) && !player.hasTag(`down`) && !player.hasTag(`isRiding`) ){
+			world.scoreboard.getObjective(`lockon`).setScore(player,0);
+			player.setDynamicProperty(`missileTarget`,undefined);
 			player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"translate\":\"script.gvcv5:${Ammo}.name\"},{\"text\":\" ${maxAmmo-usedGun-damage}/${maxAmmo} ${getInventoryItem(player, Ammo)}\"}]}`)
 		}
 		if( damage >= maxAmmo ){

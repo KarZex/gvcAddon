@@ -43,6 +43,15 @@
 			   "sounds/sound_heri"
 		   ]
 	   },
+		"sound.gvcv5.car": {
+         "__use_legacy_max_distance" : true,
+         "category" : "player",
+         "max_distance" : 48.0,
+         "min_distance" : null,
+		   "sounds": [
+			   "sounds/sound_car"
+		   ]
+	   },
 		"sound.alert1": {
 			"category": "player",
 			"sounds": [

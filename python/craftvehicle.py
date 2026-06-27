@@ -130,6 +130,10 @@ for row in csv_reader:
             f_path = open("tool/vehicle/t34.json","r")
             entity_json = json.load(f_path)
 
+        if( v_type == "ship" ):
+            f_path = open("tool/vehicle/cruiser.json","r")
+            entity_json = json.load(f_path)
+
         if( v_type == "set" ):
             f_path = open("tool/vehicle/20mmaa.json","r")
             entity_json = json.load(f_path)

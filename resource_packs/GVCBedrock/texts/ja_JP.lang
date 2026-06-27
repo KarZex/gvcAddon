@@ -499,6 +499,31 @@ entity.vehicle:ah1z.name=AH-1Z
 item.spawn_egg.entity.vehicle:ah1z.name=AH-1Z
 tile.gvcv5:spawn_vehicle_ah1z.name=AH-1Z
 item.vehicle:ah1z_spawn_egg=AH-1Z
+entity.vehicle:tow2.name=TOW2
+item.spawn_egg.entity.vehicle:tow2.name=TOW2
+tile.gvcv5:spawn_vehicle_tow2.name=TOW2
+item.vehicle:tow2_spawn_egg=TOW2
+entity.vehicle:cruiser.name=クルーザー船
+item.spawn_egg.entity.vehicle:cruiser.name=クルーザー船
+tile.gvcv5:spawn_vehicle_cruiser.name=クルーザー船
+item.vehicle:cruiser_spawn_egg=クルーザー船
+entity.vehicle:rcb90.name=RCB90
+item.spawn_egg.entity.vehicle:rcb90.name=RCB90
+tile.gvcv5:spawn_vehicle_rcb90.name=RCB90
+item.vehicle:rcb90_spawn_egg=RCB90
+entity.vehicle:rhib.name=RHIBボート
+item.spawn_egg.entity.vehicle:rhib.name=RHIBボート
+tile.gvcv5:spawn_vehicle_rhib.name=RHIBボート
+item.vehicle:rhib_spawn_egg=RHIBボート
+entity.vehicle:pr1204.name=河川砲艇
+item.spawn_egg.entity.vehicle:pr1204.name=河川砲艇
+tile.gvcv5:spawn_vehicle_pr1204.name=河川砲艇
+item.vehicle:pr1204_spawn_egg=河川砲艇
+entity.vehicle:hamina.name=ミサイル艇
+item.spawn_egg.entity.vehicle:hamina.name=ミサイル艇
+tile.gvcv5:spawn_vehicle_hamina.name=ミサイル艇
+item.vehicle:hamina_spawn_egg=ミサイル艇
+
 
 ### Tile name ###
 tile.gvcv5:good1.name=死体

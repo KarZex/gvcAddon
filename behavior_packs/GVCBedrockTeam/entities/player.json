@@ -8797,7 +8797,14 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:23mmmcair"
+              "spawn_entity": "fire:23mmmcairr"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:23mmmcairl"
             }
           ]
         }
@@ -8810,7 +8817,14 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:20mmmcaird"
+              "spawn_entity": "fire:20mmmcairdr"
+            },
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:20mmmcairdl"
             }
           ]
         }

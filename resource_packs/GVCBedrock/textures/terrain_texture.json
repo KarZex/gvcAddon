@@ -456,6 +456,24 @@
     },
     "spawn_vehicle_ah1z": {
       "textures": "textures/spawn/vehicle_ah1z"
+    },
+    "spawn_vehicle_cruiser": {
+      "textures": "textures/spawn/vehicle_cruiser"
+    },
+    "spawn_vehicle_tow2": {
+      "textures": "textures/spawn/vehicle_tow2"
+    },
+    "spawn_vehicle_rcb90": {
+      "textures": "textures/spawn/vehicle_rcb90"
+    },
+    "spawn_vehicle_rhib": {
+      "textures": "textures/spawn/vehicle_rhib"
+    },
+    "spawn_vehicle_pr1204": {
+      "textures": "textures/spawn/vehicle_pr1204"
+    },
+    "spawn_vehicle_hamina": {
+      "textures": "textures/spawn/vehicle_hamina"
     }
   }
 }

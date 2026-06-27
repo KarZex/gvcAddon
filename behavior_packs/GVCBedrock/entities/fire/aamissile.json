@@ -56,6 +56,10 @@
         "catch_fire": false,
         "anchor": 1
       },
+      "minecraft:movement": {
+        "value": 4,
+        "max": 4
+      },
       "minecraft:scale": {
         "value": 5
       },
