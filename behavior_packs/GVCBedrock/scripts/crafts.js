@@ -87,7 +87,8 @@ export const craftData = {
       { "give":"vehicle:20mmaa_spawn_egg","texture":"textures/items/vehicle/20mmaa", "count":1, "cost":[ 4, 4, 4 ] },
       { "give":"vehicle:pt76_spawn_egg","texture":"textures/items/vehicle/pt76", "count":1, "cost":[ 2, 6, 6 ] },
       { "give":"vehicle:dp28set_spawn_egg","texture":"textures/items/vehicle/dp28set", "count":1, "cost":[ 2, 2, 2 ] },
-      { "give":"vehicle:m60set_spawn_egg","texture":"textures/items/vehicle/m60set", "count":1, "cost":[ 2, 2, 2 ] }
+      { "give":"vehicle:m60set_spawn_egg","texture":"textures/items/vehicle/m60set", "count":1, "cost":[ 2, 2, 2 ] },
+      { "give":"vehicle:rhib_spawn_egg","texture":"textures/items/vehicle/rhib", "count":1, "cost":[ 2, 2, 4 ] }
     ]
   },
   "vc2": {
@@ -105,7 +106,9 @@ export const craftData = {
       { "give":"vehicle:pkmset_spawn_egg","texture":"textures/items/vehicle/pkmset", "count":1, "cost":[ 2, 2, 2 ] },
       { "give":"vehicle:pak40_spawn_egg","texture":"textures/items/vehicle/pak40", "count":1, "cost":[ 4, 4, 4 ] },
       { "give":"vehicle:flak18_spawn_egg","texture":"textures/items/vehicle/flak18", "count":1, "cost":[ 8, 8, 8 ] },
-      { "give":"vehicle:zu23_spawn_egg","texture":"textures/items/vehicle/zu23", "count":1, "cost":[ 4, 4, 4 ] }
+      { "give":"vehicle:zu23_spawn_egg","texture":"textures/items/vehicle/zu23", "count":1, "cost":[ 4, 4, 4 ] },
+      { "give":"vehicle:cruiser_spawn_egg","texture":"textures/items/vehicle/cruiser", "count":1, "cost":[ 9, 9, 16 ] },
+      { "give":"vehicle:pr1204_spawn_egg","texture":"textures/items/vehicle/pr1204", "count":1, "cost":[ 48, 64, 64 ] }
     ]
   },
   "vc3": {
@@ -122,7 +125,9 @@ export const craftData = {
       { "give":"vehicle:su27_spawn_egg","texture":"textures/items/vehicle/su27", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:f16_spawn_egg","texture":"textures/items/vehicle/f16", "count":1, "cost":[ 32, 16, 32 ] },
       { "give":"vehicle:f117_spawn_egg","texture":"textures/items/vehicle/f117", "count":1, "cost":[ 48, 32, 48 ] },
-      { "give":"vehicle:vads_spawn_egg","texture":"textures/items/vehicle/vads", "count":1, "cost":[ 4, 4, 4 ] }
+      { "give":"vehicle:vads_spawn_egg","texture":"textures/items/vehicle/vads", "count":1, "cost":[ 4, 4, 4 ] },
+      { "give":"vehicle:rcb90_spawn_egg","texture":"textures/items/vehicle/rcb90", "count":1, "cost":[ 16, 16, 32 ] },
+      { "give":"vehicle:hamina_spawn_egg","texture":"textures/items/vehicle/hamina", "count":1, "cost":[ 64, 64, 64 ] }
     ]
   }
 };
