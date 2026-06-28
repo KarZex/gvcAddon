@@ -57,6 +57,12 @@ for row in csv_reader:
             gun_wallbreak = True
         else:
             gun_wallbreak = False
+            
+
+        if(row[26] == "T"):
+            gun_break_block = True
+        else:
+            gun_break_block = False
 
 
         if(gun_ammo == "zex:556m"):
@@ -1197,6 +1203,8 @@ for row in csv_reader2:
             gun_sound_true = "missile"
         elif( gun_sound == "heavycannonbullet" ):
             gun_sound_true = "heavycannon"
+        elif( gun_sound == "cannonbullet" ):
+            gun_sound_true = "cannon"
 
         if( "D" in gun_offset  ):
             spawn_entity = { 

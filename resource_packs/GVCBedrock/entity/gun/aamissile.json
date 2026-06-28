@@ -1,17 +1,25 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "fire:aamissile",
       "materials": {
-        "default": "spider"
+        "default": "entity_emissive_alpha"
       },
       "textures": {
-        "default": "textures/bullet"
+        "default": "textures/aamissile"
       },
       "geometry": {
-        "default": "geometry.bullet"
+        "default": "geometry.aamissile"
       },
+    "scripts": {
+      "animate": [ 
+					"look_at_target"
+      ]
+    },
+    "animations": {
+        "look_at_target": "animation.missile.move"
+    },
       "render_controllers": [
         "controller.render.default"
       ]

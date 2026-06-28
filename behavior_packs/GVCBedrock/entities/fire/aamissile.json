@@ -61,7 +61,7 @@
         "max": 4
       },
       "minecraft:scale": {
-        "value": 5
+        "value": 1
       },
       "minecraft:physics": {}
     },

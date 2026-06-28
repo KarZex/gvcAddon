@@ -146,7 +146,7 @@ function findTargetInCone(player,entityOption,allies) {
         if (angle <= DETECTION_ANGLE) {
 			const riders = entity.getComponent(EntityComponentTypes.Rideable).getRiders();
 			if( riders.length > 0  ){
-				print(`${riders[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies()} vs ${allies} `)
+				//print(`${riders[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies()} vs ${allies} `)
 				if( !riders[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().some( v => allies.includes(v) ) ){
 					closestTarget = entity;
 				}
@@ -769,19 +769,23 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		if( player.typeId == "minecraft:player" ){
 			const selectedItemSlot = player.selectedSlotIndex;
 			const attack = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`gattack`];
+			const turnRad = Number(vehicleData[`${vehicle.typeId.replace("vehicle:","")}`]["turn"]);
 			
 			//print(`jdt:${this_v} d.y:${d.y} v_dt:${v_dt}`); 
 			//print(`${vehicle.dimension.getBlock({ x:vehicle.location.x,y:vehicle.location.y-1,z:vehicle.location.z }).typeId}`)
 			if( vehicle.dimension.getBlock(vehicle.location).isLiquid || vehicle.dimension.getBlock(vehicle.location).isWaterlogged){
 
-				vehicle.setRotation({ x:0,y:vehicle.getRotation().y-5*player.inputInfo.getMovementVector().x })
+				vehicle.setRotation({ x:0,y:vehicle.getRotation().y-turnRad*player.inputInfo.getMovementVector().x })
 
 				const r = vehicle.getRotation().y + 90;
-				const Vi =  player.inputInfo.getMovementVector().y;
+				let Vi =  player.inputInfo.getMovementVector().y;
 				const speed = vehicle.getComponent(EntityComponentTypes.Movement).defaultValue;
 				//print(`${r}`);
 
 				vehicle.clearVelocity();
+				if( Vi < 0 ){
+					Vi = Vi/4;
+				}
 
 				vehicle.applyImpulse({
 					x: Math.cos(r*Math.PI/180) * Vi * speed,

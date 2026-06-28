@@ -6849,7 +6849,7 @@
           ]
         }
       },
-      "fire:37mm": {
+      "fire:37mmd": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -6857,7 +6857,7 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:37mm"
+              "spawn_entity": "fire:37mmd"
             }
           ]
         }
@@ -6875,7 +6875,7 @@
           ]
         }
       },
-      "fire:57mm": {
+      "fire:57mmd": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -6883,7 +6883,7 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:57mm"
+              "spawn_entity": "fire:57mmd"
             }
           ]
         }
@@ -7548,6 +7548,58 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:76mmrocketdl"
+            }
+          ]
+        }
+      },
+      "fire:mamissile": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:mamissile"
+            }
+          ]
+        }
+      },
+      "fire:asmissile": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:asmissile"
+            }
+          ]
+        }
+      },
+      "fire:37mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:37mm"
+            }
+          ]
+        }
+      },
+      "fire:57mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:57mm"
             }
           ]
         }
@@ -8348,10 +8400,10 @@
           ]
         }
       },
-      "fire:37mm": {
+      "fire:37mmd": {
         "add": {
           "component_groups": [
-            "fire:37mm"
+            "fire:37mmd"
           ]
         }
       },
@@ -8362,10 +8414,10 @@
           ]
         }
       },
-      "fire:57mm": {
+      "fire:57mmd": {
         "add": {
           "component_groups": [
-            "fire:57mm"
+            "fire:57mmd"
           ]
         }
       },
@@ -8667,6 +8719,34 @@
         "add": {
           "component_groups": [
             "fire:76mmrocketd"
+          ]
+        }
+      },
+      "fire:mamissile": {
+        "add": {
+          "component_groups": [
+            "fire:mamissile"
+          ]
+        }
+      },
+      "fire:asmissile": {
+        "add": {
+          "component_groups": [
+            "fire:asmissile"
+          ]
+        }
+      },
+      "fire:37mm": {
+        "add": {
+          "component_groups": [
+            "fire:37mm"
+          ]
+        }
+      },
+      "fire:57mm": {
+        "add": {
+          "component_groups": [
+            "fire:57mm"
           ]
         }
       }

@@ -1,7 +1,7 @@
 gvcv5.vmg.name=7.62mmMG
-gvcv5.37mm.name=37mmCannon
+gvcv5.37mmd.name=37mmCannon
 gvcv5.47mm.name=47mmCannon
-gvcv5.57mm.name=57mmCannon
+gvcv5.57mmd.name=57mmCannon
 gvcv5.76mm.name=76mm-HE Cannon
 gvcv5.85mm.name=85mm-AP Cannon
 gvcv5.88mm.name=88mmCannon
@@ -45,3 +45,7 @@ gvcv5.bombiii.name=bombii
 gvcv5.37mmrocketkatyusya.name=37mmRocket
 gvcv5.flare.name=Flare
 gvcv5.76mmrocketd.name=76mmrocketx2
+gvcv5.mamissile.name=ManualMissile
+gvcv5.asmissile.name=ASMissile
+gvcv5.37mm.name=37mmCannon
+gvcv5.57mm.name=57mmCannon

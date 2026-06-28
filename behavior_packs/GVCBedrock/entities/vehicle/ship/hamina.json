@@ -24,7 +24,7 @@
             0,
             255
           ],
-          "default": 0
+          "default": 3
         }
       }
     },
@@ -306,7 +306,7 @@
       "minecraft:balloonable": {},
       "minecraft:collision_box": {
         "width": 8.0,
-        "height": 6.0
+        "height": 4.0
       },
       "minecraft:damage_sensor": {
         "triggers": [
@@ -317,6 +317,10 @@
           },
           {
             "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "cause": "override",
             "deals_damage": false
           }
         ]

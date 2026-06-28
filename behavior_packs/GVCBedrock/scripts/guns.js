@@ -985,7 +985,7 @@ export const gunData = {
     "damageType": "override",
     "ammoType": "zex:762m"
   },
-  "37mm": {
+  "37mmd": {
     "damage": 20,
     "sound": "tank",
     "damageIgnoreDef": 3.0,
@@ -999,7 +999,7 @@ export const gunData = {
     "damageType": "entityExplosion",
     "ammoType": "zex:s47m"
   },
-  "57mm": {
+  "57mmd": {
     "damage": 20,
     "sound": "tank",
     "damageIgnoreDef": 3.0,
@@ -1438,5 +1438,33 @@ export const gunData = {
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s76m"
+  },
+  "mamissile": {
+    "damage": 150,
+    "sound": "missile",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
+  },
+  "asmissile": {
+    "damage": 100,
+    "sound": "missile",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
+  },
+  "37mm": {
+    "damage": 50,
+    "sound": "cannon",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
+  },
+  "57mm": {
+    "damage": 120,
+    "sound": "cannon",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s57m"
   }
 };

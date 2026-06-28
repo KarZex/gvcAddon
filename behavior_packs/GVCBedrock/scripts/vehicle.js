@@ -867,9 +867,9 @@ export const vehicleData = {
   "cruiser": {
     "type": "ship",
     "speed": 0.6,
-    "Weapon1": "20mmmc",
-    "Weapon1_cool": 4,
-    "Weapon1_ammo": 30,
+    "Weapon1": "37mm",
+    "Weapon1_cool": 20,
+    "Weapon1_ammo": 10,
     "Weapon2": "7.62mmmgs",
     "Weapon2_cool": 1,
     "Weapon2_ammo": 30,
@@ -879,7 +879,7 @@ export const vehicleData = {
     "Weapon4": "",
     "Weapon4_cool": 0,
     "Weapon4_ammo": 0,
-    "turn": 0,
+    "turn": 3,
     "gattack": 0
   },
   "rcb90": {
@@ -897,7 +897,7 @@ export const vehicleData = {
     "Weapon4": "",
     "Weapon4_cool": 0,
     "Weapon4_ammo": 0,
-    "turn": 0,
+    "turn": 5,
     "gattack": 0
   },
   "rhib": {
@@ -915,7 +915,7 @@ export const vehicleData = {
     "Weapon4": "",
     "Weapon4_cool": 0,
     "Weapon4_ammo": 0,
-    "turn": 0,
+    "turn": 5,
     "gattack": 0
   },
   "pr1204": {
@@ -933,25 +933,25 @@ export const vehicleData = {
     "Weapon4": "",
     "Weapon4_cool": 0,
     "Weapon4_ammo": 0,
-    "turn": 0,
+    "turn": 1,
     "gattack": 0
   },
   "hamina": {
     "type": "ship",
     "speed": 0.5,
-    "Weapon1": "76mm",
+    "Weapon1": "57mm",
     "Weapon1_cool": 30,
     "Weapon1_ammo": 1,
     "Weapon2": "23mmmc",
     "Weapon2_cool": 2,
     "Weapon2_ammo": 30,
-    "Weapon3": "agmissile",
-    "Weapon3_cool": 50,
-    "Weapon3_ammo": 2,
+    "Weapon3": "asmissile",
+    "Weapon3_cool": 10,
+    "Weapon3_ammo": 4,
     "Weapon4": "agmissile",
     "Weapon4_cool": 50,
     "Weapon4_ammo": 2,
-    "turn": 0,
+    "turn": 1,
     "gattack": 0
   }
 };

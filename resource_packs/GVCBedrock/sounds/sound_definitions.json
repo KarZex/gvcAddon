@@ -102,6 +102,14 @@
 				"sounds/fire_supu"
 			]
 		},
+		"fire.cannon": {
+			"category": "player",
+			"max_distance": 64,
+			"min_distance": 32,
+			"sounds": [
+				"sounds/fire_cannon"
+			]
+		},
 		"fire.hmg": {
 			"category": "player",
 			"max_distance": 64,

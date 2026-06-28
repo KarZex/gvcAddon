@@ -4,7 +4,7 @@ import { gunData } from "./guns";
 import { gunAttach } from "./gunAttach"
 import { craftData } from "./crafts";
 import { raidData } from "./raid";
-import { absVector3,getVector3E,isMoving,turning2 } from "./usefulFunction"
+import { absVector3,getVector3E,isMoving,turning2, Vector3Add } from "./usefulFunction"
 import "./compornents";
 import "./vehicleMain";
 import { attachmentData } from "./attach";
@@ -764,6 +764,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
 			const V = player.getViewDirection();
 			missile.clearVelocity();
+
 			missile.applyImpulse( { 
 				x: V.x * 2.5,
 				y: V.y * 2.5,
@@ -771,6 +772,63 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			} )
 
 		}
+	}
+	else if( e.id == "zex:mamissile"){
+		const missile = e.sourceEntity;
+		const player = missile.getComponent("projectile").owner;
+		const V_m = missile.getVelocity();
+		const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
+		const V = player.getViewDirection();
+		missile.clearVelocity();
+		//const E = player.getEntitiesFromViewDirection({ ignoreBlockCollision:false,includePassableBlocks:false,includeLiquidBlocks:true  });
+		const P0 = missile.location;
+		let Pi = missile.location;
+		// const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
+		// const excludeList = [ "player","playerp","mod","mob" ];
+		// const allies = intFamily.filter(char => !excludeList.includes(char));
+		// for( const et of E ){
+		// 	if( et.entity.getComponent(EntityComponentTypes.Rideable) != undefined ){
+		// 		if( et.entity.getComponent(EntityComponentTypes.Rideable).getRiders() > 0 ){
+		// 			if( et.entity.getComponent(EntityComponentTypes.Rideable).getRiders()[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().some( v => allies.includes(v) ) ){
+		// 				E.push(et);
+		// 			}
+		// 		}
+		// 	}
+		// }
+		if( missile.getDynamicProperty(`age`) == undefined ){
+			missile.setDynamicProperty(`age`,0);
+		}
+		else if( missile.getDynamicProperty(`age`) <= 20 ){
+			missile.setDynamicProperty(`age`,1+missile.getDynamicProperty(`age`));
+		}
+		const age = missile.getDynamicProperty(`age`);
+		// if( E.length > 0 ){
+		// 	Pi = E[0].entity.location;
+		// 	missile.lookAt(Pi);
+		// }
+		// else{
+			const B = player.getBlockFromViewDirection( );
+			if( B != undefined ){
+				Pi = B.block.location;
+				//missile.lookAt(Pi);
+			}
+			else{
+				Pi = Vector3Add(P0,V);
+				//missile.lookAt(Pi);
+			}
+		//}
+		const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
+		const dx = (Pi.x - P0.x) / ri;
+		const dy = (Pi.y - P0.y) / ri;
+		const dz = (Pi.z - P0.z) / ri;
+
+		const abs_v = 1.3;
+		missile.clearVelocity();
+		missile.applyImpulse( { 
+			x: dx * abs_v,
+			y: dy * abs_v + ( 20 - age ) * 0.4,
+			z: dz * abs_v
+		} )
 	}
 	else if( e.id == "zex:horming"){
 		const missile = e.sourceEntity;

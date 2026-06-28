@@ -15,6 +15,17 @@
 					}
 				}
 			}
+		},
+		"animation.missile.move": {
+			"loop": true,
+			"animation_length": 0.05,
+			"bones": {
+				"body" : {
+					"position" : [ 0.0, 0.0, 0.0 ],
+					"rotation" : [ "query.target_x_rotation", "query.target_y_rotation", 0.0 ],
+					"scale" : 1.0
+				}
+			}
 		}
 	}
 }

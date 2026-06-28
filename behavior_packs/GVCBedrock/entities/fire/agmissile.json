@@ -57,7 +57,7 @@
         "anchor": 1
       },
       "minecraft:scale": {
-        "value": 5
+        "value": 1
       },
       "minecraft:movement": {
         "value": 2,
@@ -80,7 +80,7 @@
           "fuse_length": 0,
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
-          "power": 1,
+          "power": 3,
           "breaks_blocks": false
         }
       }
