@@ -8989,7 +8989,7 @@
           ]
         }
       },
-      "fire:asmissile": {
+      "fire:ssmissile": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -8997,7 +8997,7 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:asmissile"
+              "spawn_entity": "fire:ssmissile"
             }
           ]
         }
@@ -9024,6 +9024,19 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:57mm"
+            }
+          ]
+        }
+      },
+      "fire:76mmap": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:76mmap"
             }
           ]
         }
@@ -10338,10 +10351,10 @@
           ]
         }
       },
-      "fire:asmissile": {
+      "fire:ssmissile": {
         "add": {
           "component_groups": [
-            "fire:asmissile"
+            "fire:ssmissile"
           ]
         }
       },
@@ -10356,6 +10369,13 @@
         "add": {
           "component_groups": [
             "fire:57mm"
+          ]
+        }
+      },
+      "fire:76mmap": {
+        "add": {
+          "component_groups": [
+            "fire:76mmap"
           ]
         }
       }

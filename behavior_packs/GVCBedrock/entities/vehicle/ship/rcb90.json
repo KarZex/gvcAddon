@@ -56,18 +56,41 @@
       },
       "gvcv5:vehicle_lock": {
         "minecraft:rideable": {
-          "seat_count": 1,
+          "seat_count": 4,
           "family_types": [
             "player"
           ],
           "interact_text": "action.interact.ride.horse",
-          "seats": {
-            "position": [
-              0,
-              3,
-              -2
-            ]
-          }
+          "seats": [
+            {
+              "position": [
+                0,
+                2.6,
+                -2.5
+              ]
+            },
+            {
+              "position": [
+                1.2,
+                0.8,
+                -5.3
+              ]
+            },
+            {
+              "position": [
+                -1.2,
+                0.8,
+                -5.3
+              ]
+            },
+            {
+              "position": [
+                0,
+                0.8,
+                -6
+              ]
+            }
+          ]
         },
         "minecraft:interact": {
           "interactions": [
@@ -158,18 +181,41 @@
         }
       },
       "minecraft:rideable": {
-        "seat_count": 1,
+        "seat_count": 4,
         "family_types": [
           "player"
         ],
         "interact_text": "action.interact.ride.horse",
-        "seats": {
-          "position": [
-            0,
-            3,
-            -2
-          ]
-        }
+        "seats": [
+          {
+            "position": [
+              0,
+              2.6,
+              -2.5
+            ]
+          },
+          {
+            "position": [
+              1.2,
+              0.8,
+              -5.3
+            ]
+          },
+          {
+            "position": [
+              -1.2,
+              0.8,
+              -5.3
+            ]
+          },
+          {
+            "position": [
+              0,
+              0.8,
+              -6
+            ]
+          }
+        ]
       },
       "minecraft:interact": {
         "interactions": [

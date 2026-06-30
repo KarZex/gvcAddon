@@ -110,7 +110,7 @@ execute if entity @e[r=7,type=vehicle:ah6] run event entity @s[scores={weaponii=
 execute if entity @e[r=7,type=vehicle:ah6] run scoreboard players add @s[scores={weaponii=..1}] weaponii 1
 
 execute if entity @e[r=7,type=vehicle:ah6] run scoreboard players set @s weaponii_max 1
-execute if entity @e[r=7,type=vehicle:ah6] run scoreboard players set @s weaponii_cool 51
+execute if entity @e[r=7,type=vehicle:ah6] run scoreboard players set @s weaponii_cool 101
 
 execute if entity @e[r=7,type=vehicle:ka50] run event entity @s[scores={weaponii=..16}] fire:76mmrocket
 
@@ -124,7 +124,7 @@ execute if entity @e[r=7,type=vehicle:ka60] run event entity @s[scores={weaponii
 execute if entity @e[r=7,type=vehicle:ka60] run scoreboard players add @s[scores={weaponii=..1}] weaponii 1
 
 execute if entity @e[r=7,type=vehicle:ka60] run scoreboard players set @s weaponii_max 1
-execute if entity @e[r=7,type=vehicle:ka60] run scoreboard players set @s weaponii_cool 51
+execute if entity @e[r=7,type=vehicle:ka60] run scoreboard players set @s weaponii_cool 101
 
 execute if entity @e[r=7,type=vehicle:mi24d] run event entity @s[scores={weaponii=..8}] fire:76mmrocket
 
@@ -166,7 +166,7 @@ execute if entity @e[r=7,type=vehicle:f117] run event entity @s[scores={weaponii
 execute if entity @e[r=7,type=vehicle:f117] run scoreboard players add @s[scores={weaponii=..1}] weaponii 1
 
 execute if entity @e[r=7,type=vehicle:f117] run scoreboard players set @s weaponii_max 1
-execute if entity @e[r=7,type=vehicle:f117] run scoreboard players set @s weaponii_cool 51
+execute if entity @e[r=7,type=vehicle:f117] run scoreboard players set @s weaponii_cool 101
 
 execute if entity @e[r=7,type=vehicle:il2] run event entity @s[scores={weaponii=..2}] fire:bomb
 
@@ -202,9 +202,9 @@ execute if entity @e[r=7,type=vehicle:pr1204] run scoreboard players add @s[scor
 execute if entity @e[r=7,type=vehicle:pr1204] run scoreboard players set @s weaponii_max 30
 execute if entity @e[r=7,type=vehicle:pr1204] run scoreboard players set @s weaponii_cool 3
 
-execute if entity @e[r=7,type=vehicle:hamina] run event entity @s[scores={weaponii=..30}] fire:23mmmc
+execute if entity @e[r=7,type=vehicle:hamina] run event entity @s[scores={weaponii=..4}] fire:ssmissile
 
-execute if entity @e[r=7,type=vehicle:hamina] run scoreboard players add @s[scores={weaponii=..30}] weaponii 1
+execute if entity @e[r=7,type=vehicle:hamina] run scoreboard players add @s[scores={weaponii=..4}] weaponii 1
 
-execute if entity @e[r=7,type=vehicle:hamina] run scoreboard players set @s weaponii_max 30
-execute if entity @e[r=7,type=vehicle:hamina] run scoreboard players set @s weaponii_cool 3
+execute if entity @e[r=7,type=vehicle:hamina] run scoreboard players set @s weaponii_max 4
+execute if entity @e[r=7,type=vehicle:hamina] run scoreboard players set @s weaponii_cool 11

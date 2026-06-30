@@ -495,6 +495,10 @@ tile.gvcv5:spawn_vehicle_st1_pmc.name=ST1
 item.vehicle:st1_pmc_spawn_egg=ST1
 
 ### From V5-5.1 (GVCBedrock Addon V5.0) Jul 5th 2026
+entity.vehicle:zex_cluiser.name=テクニカルトラック
+item.spawn_egg.entity.vehicle:zex_cluiser.name=テクニカルトラック
+tile.gvcv5:spawn_vehicle_zex_cluiser.name=テクニカルトラック
+item.vehicle:zex_cluiser_spawn_egg=テクニカルトラック
 entity.vehicle:ah1z.name=AH-1Z
 item.spawn_egg.entity.vehicle:ah1z.name=AH-1Z
 tile.gvcv5:spawn_vehicle_ah1z.name=AH-1Z
@@ -827,18 +831,26 @@ script.gvcv5.downableOn.name=ダウンをON
 script.gvcv5.downableOff.name=ダウンをOFF
 script.gvcv5.howToVechile.name=ビークル
 script.gvcv5.howToVechileDesc0.name=ホットバーで武装を選択
-script.gvcv5.howToVechileDesc1.name=発射: :_input_key.jump:  OR 「機関銃」アイテムを持って:_input_key.use:
+script.gvcv5.howToVechileDesc1.name=発射: :_input_key.jump:  OR 「主砲」アイテムを持って:_input_key.use:
 
 script.gvcv5.howToAir.name=航空機
 script.gvcv5.howToAirDesc0.name=ホットバーで武装を選択
 script.gvcv5.howToAirDesc1.name=視点を変更し、進行方向を調整
-script.gvcv5.howToAirDesc2.name=発射: :_input_key.jump:  OR 「機関銃」アイテムを持って:_input_key.use:
+script.gvcv5.howToAirDesc2.name=発射: :_input_key.jump:  OR 「主砲」アイテムを持って:_input_key.use:
 
 script.gvcv5.howToHeli.name=ヘリコプター
 script.gvcv5.howToHeliDesc0.name=ホットバーで武装を選択
-script.gvcv5.howToHeliDesc1.name=発射: :_input_key.jump:  OR 「機関銃」アイテムを持って:_input_key.use:
-script.gvcv5.howToHeliDesc2.name=:_input_key.forward:で上昇、:_input_key.back:で下降
-script.gvcv5.howToHeliDesc3.name=上を向くと後ろに進み、下を向くと前に進む
+script.gvcv5.howToHeliDesc1.name=発射: :_input_key.jump:  OR 「主砲」アイテムを持って:_input_key.use:
+script.gvcv5.howToHeliDesc2.name=水平を向いて:_input_key.forward:で上昇、:_input_key.back:で下降
+script.gvcv5.howToHeliDesc3.name=下を向いて:_input_key.forward:で加速、:_input_key.back:で減速
+script.gvcv5.howToHeliDesc4.name=:_input_key.left:, :_input_key.right:で横移動
+script.gvcv5.howToHeliDesc5.name=上を向くと後ろに進み、下を向くと前に進む
+
+script.gvcv5.howToShip.name=船舶
+script.gvcv5.howToShipDesc0.name=ホットバーで武装を選択
+script.gvcv5.howToShipDesc1.name=発射: :_input_key.jump:  OR 「主砲」アイテムを持って:_input_key.use:
+script.gvcv5.howToShipDesc2.name=:_input_key.forward:で前進、:_input_key.back:で後退
+script.gvcv5.howToShipDesc3.name=:_input_key.left:, :_input_key.right:で回転
 
 script.gvcv5.howToVechileDesc2.name=浮上(ヘリ):  :_input_key.jump:
 script.gvcv5.howToVechileDesc3.name=主砲発射:  :_input_key.attack: OR 主砲を持って:_input_key.use:
@@ -852,7 +864,7 @@ script.gvcv5.phone_howToTeam1Desc.name=情報端末は, チームの作戦を手
 script.gvcv5.phone_howToTeam2.name=テレポートについて
 script.gvcv5.phone_howToTeam2Desc.name=情報端末を使うことでチームにいるプレイヤーにテレポートできる。自分とは異なるチームの情報端末を使えば、敵チームのプレイヤーにテレポートすることも可能だ。
 script.gvcv5.phone_howToTeam3.name=テレポートブロックについて
-script.gvcv5.phone_howToTeam3Desc.name=鉄ブロックx4,染料x1で作成可能。情報端末を持ってテレポートブロックにクリックすることで、座標を登録し、いつでもテレポートできるようにする。1つの情報端末に5つまで場所を登録できる。
+script.gvcv5.phone_howToTeam3Desc.name=鉄ブロックx4,染料x1で作成可能。情報端末を持ってテレポートブロックにクリックすることで、座標を登録し、いつでもテレポートできるようにする。1つの情報端末に9つまで場所を登録できる。
 script.gvcv5.phone_howToTeam4.name=同盟軍について
 script.gvcv5.phone_howToTeam4Desc.name=同盟軍や同盟軍の旗に:_input_key.use:することで、染色できる。染色された同盟軍は、他のチームの同盟軍やプレイヤーを攻撃する。
 script.gvcv5.select_team.name=チームに加入

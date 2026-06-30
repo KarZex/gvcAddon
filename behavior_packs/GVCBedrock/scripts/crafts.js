@@ -75,6 +75,7 @@ export const craftData = {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
       { "give":"vehicle:m113_spawn_egg","texture":"textures/items/vehicle/m113", "count":1, "cost":[ 3, 6, 3 ] },
+      { "give":"vehicle:zex_cluiser_spawn_egg","texture":"textures/items/vehicle/zex_cluiser", "count":1, "cost":[ 2, 6, 2 ] },
       { "give":"vehicle:btr60_spawn_egg","texture":"textures/items/vehicle/btr60", "count":1, "cost":[ 3, 6, 6 ] },
       { "give":"vehicle:r22_spawn_egg","texture":"textures/items/vehicle/r22", "count":1, "cost":[ 1, 1, 8 ] },
       { "give":"vehicle:ah6_spawn_egg","texture":"textures/items/vehicle/ah6", "count":1, "cost":[ 3, 3, 16 ] },

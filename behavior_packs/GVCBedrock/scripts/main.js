@@ -7,6 +7,8 @@ import { raidData } from "./raid";
 import { absVector3,getVector3E,isMoving,turning2, Vector3Add } from "./usefulFunction"
 import "./compornents";
 import "./vehicleMain";
+import "./team";
+import "./teamCompornents";
 import { attachmentData } from "./attach";
 /*
 world.afterEvents.entityHurt.subscribe( e => {
@@ -152,8 +154,10 @@ function findTargetInCone(player,entityOption) {
 
         // 角度が ±π/6 の範囲内か判定
         if (angle <= DETECTION_ANGLE) {
-			if( entity.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
-				closestTarget = entity;
+			if( (!world.scoreboard.getObjective(`maxsubcool`).hasParticipant(entity) || world.scoreboard.getObjective(`maxsubcool`).getScore(entity) <= 0 ) ){
+				if( entity.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+					closestTarget = entity;
+				}
 			}
         }
     }
@@ -583,7 +587,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			def = 999;
 		}
 		try{
-			if(world.scoreboard.getObjective(`maxsubcool`).getScore(vict) > 0){
+			if(world.scoreboard.getObjective(`maxsubcool`).getScore(vict) > 0 && vict.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`tank`)){
 				vict.dimension.playSound(`random.anvil_land`,vict.location);
 				def = 999;
 			}
@@ -597,7 +601,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			if( e.source.typeId == "minecraft:player" ){
 				e.dimension.playSound(`note.bell`,e.source.location,{ volume:1, pitch:2 });
 			}
-			if(  vict.typeId == "minecraft:player" ){
+			if(  vict.typeId == "minecraft:player" && equipmentComp.getEquipment(EquipmentSlot.Head) != undefined  ){
 				def = def + (1.8*setArmorValue(equipmentComp.getEquipmentSlot(EquipmentSlot.Head).typeId)); //head armor effect
 			}
 			e.source.setDynamicProperty(`gvcv5:headshot`,1);
@@ -741,6 +745,12 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 				const P0 = missile.location;
 				const Pi = targeta.location;
 				targeta.runCommand(`tag @s add MissileAlert`);
+				if( targeta.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+					const p = targeta.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+					if( p.typeId == "minecraft:player" ){
+						p.addTag("MissileAlert")
+					}
+				}
 
 
 				const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );

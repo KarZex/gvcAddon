@@ -1104,6 +1104,10 @@
                             },
                             {
                                 "weight": 1,
+                                "trigger": "vehicle:zex_cluiser"
+                            },
+                            {
+                                "weight": 1,
                                 "trigger": "vehicle:btr60"
                             },
                             {
@@ -1169,6 +1173,10 @@
                             {
                                 "weight": 10,
                                 "trigger": "dp28"
+                            },
+                            {
+                                "weight": 1,
+                                "trigger": "vehicle:zex_cluiser"
                             },
                             {
                                 "weight": 1,

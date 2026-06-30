@@ -145,10 +145,12 @@ function findTargetInCone(player,entityOption,allies) {
         // 角度が ±π/6 の範囲内か判定
         if (angle <= DETECTION_ANGLE) {
 			const riders = entity.getComponent(EntityComponentTypes.Rideable).getRiders();
-			if( riders.length > 0  ){
-				//print(`${riders[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies()} vs ${allies} `)
-				if( !riders[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().some( v => allies.includes(v) ) ){
-					closestTarget = entity;
+			if( (!world.scoreboard.getObjective(`maxsubcool`).hasParticipant(entity) || world.scoreboard.getObjective(`maxsubcool`).getScore(entity) <= 0 ) ){
+				if( riders.length > 0  ){
+					//print(`${riders[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies()} vs ${allies} `)
+					if( !riders[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().some( v => allies.includes(v) ) ){
+						closestTarget = entity;
+					}
 				}
 			}
         }
@@ -659,8 +661,8 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 						}
 					}
 					else if( weapon == `flare` ){
-						world.scoreboard.getObjective(`maxsubcool`).setScore(player,40);
-						world.scoreboard.getObjective(`maxsubcool`).setScore(vehicle,40);
+						world.scoreboard.getObjective(`maxsubcool`).setScore(player,100);
+						world.scoreboard.getObjective(`maxsubcool`).setScore(vehicle,100);
 						player.triggerEvent(`fire:${weapon}`);
 						bulletSpawn = true;
 					}

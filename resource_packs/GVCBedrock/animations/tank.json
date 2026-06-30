@@ -26,6 +26,9 @@
 				},
 				"gun3": {
 					"rotation": [0, "q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				},
+				"gun4": {
+					"rotation": [0, "-q.rider_head_y_rotation(0) + query.body_y_rotation", 0]
 				}
 			}
 		},

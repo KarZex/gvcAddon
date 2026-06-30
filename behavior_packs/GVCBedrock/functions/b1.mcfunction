@@ -3,9 +3,7 @@ effect @s[tag=!ride] instant_health 1 255 true
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:aifv] run event entity @s 25mmmc
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:zex_cluiser_pkm] run event entity @s 7.62mmmg
-
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:zex_cluiser_20mmmc] run event entity @s 20mmmc
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:zex_cluiser] run event entity @s 7.62mmmg
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:lav25] run event entity @s 25mmmc
 
@@ -97,10 +95,10 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:st1_pmc] run event entity
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:cruiser] run event entity @s 37mm
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:rcb90] run event entity @s 20mmmcair
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:rcb90] run event entity @s 30mmmc
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:rhib] run event entity @s 7.62mmmg
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pr1204] run event entity @s 76mm
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pr1204] run event entity @s 76mmap
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:hamina] run event entity @s 57mm

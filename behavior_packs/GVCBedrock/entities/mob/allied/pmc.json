@@ -1915,7 +1915,7 @@
           "def": "fire:mamissile"
         }
       },
-      "asmissile": {
+      "ssmissile": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
@@ -1927,7 +1927,7 @@
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:asmissile"
+          "def": "fire:ssmissile"
         }
       },
       "37mm": {
@@ -1958,6 +1958,21 @@
         },
         "minecraft:shooter": {
           "def": "fire:57mm"
+        }
+      },
+      "76mmap": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 3.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:76mmap"
         }
       }
     },
@@ -4395,10 +4410,10 @@
           ]
         }
       },
-      "asmissile": {
+      "ssmissile": {
         "add": {
           "component_groups": [
-            "asmissile"
+            "ssmissile"
           ]
         }
       },
@@ -4416,6 +4431,13 @@
           ]
         }
       },
+      "76mmap": {
+        "add": {
+          "component_groups": [
+            "76mmap"
+          ]
+        }
+      },
       "vehicle:aifv": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:aifv no_ride_change summon_enemy"
@@ -4424,16 +4446,6 @@
       "vehicle:zex_cluiser": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:zex_cluiser no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:zex_cluiser_pkm": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:zex_cluiser_pkm no_ride_change summon_enemy"
-        }
-      },
-      "vehicle:zex_cluiser_20mmmc": {
-        "queue_command": {
-          "command": "ride @s summon_ride vehicle:zex_cluiser_20mmmc no_ride_change summon_enemy"
         }
       },
       "vehicle:lav25": {
