@@ -576,6 +576,12 @@
     },
     "wall_light_wg": {
       "textures": "textures/blocks/wall_light_wg"
+    },
+    "light_block_g_side": {
+      "textures": "textures/blocks/light_block_g_side"
+    },
+    "light_block_g_top": {
+      "textures": "textures/blocks/light_block_g_top"
     }
   }
 }

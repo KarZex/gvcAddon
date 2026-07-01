@@ -1297,6 +1297,9 @@
     },
     "wall_light_wg_item": {
       "textures": "textures/items/block/wall_light_wg"
+    },
+    "light_block_g_item": {
+      "textures": "textures/items/block/light_block_g"
     }
   }
 }
