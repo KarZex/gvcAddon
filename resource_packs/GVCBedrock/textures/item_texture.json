@@ -1177,6 +1177,54 @@
     },
     "hamina": {
       "textures": "textures/items/vehicle/hamina"
+    },
+    "gunrack_rsi_item": {
+      "textures": "textures/items/block/gunrack_rsi"
+    },
+    "gunrack_rsi_gun_item": {
+      "textures": "textures/items/block/gunrack_rsi_gun"
+    },
+    "gunrack_rsw_item": {
+      "textures": "textures/items/block/gunrack_rsw"
+    },
+    "gunrack_rsw_gun_item": {
+      "textures": "textures/items/block/gunrack_rsw_gun"
+    },
+    "gunrack_hsi_item": {
+      "textures": "textures/items/block/gunrack_hsi"
+    },
+    "gunrack_hsi_gun_item": {
+      "textures": "textures/items/block/gunrack_hsi_gun"
+    },
+    "gunrack_rti2_item": {
+      "textures": "textures/items/block/gunrack_rti2"
+    },
+    "gunrack_rti2_gun_item": {
+      "textures": "textures/items/block/gunrack_rti2_gun"
+    },
+    "12gpack_gc_item": {
+      "textures": "textures/items/block/12gpack_gc"
+    },
+    "9mmpack_gc_item": {
+      "textures": "textures/items/block/9mmpack_gc"
+    },
+    "223pack_gc_item": {
+      "textures": "textures/items/block/223pack_gc"
+    },
+    "308pack_gc_item": {
+      "textures": "textures/items/block/308pack_gc"
+    },
+    "40mmgr_ammo_gc_item": {
+      "textures": "textures/items/block/40mmgr_ammo_gc"
+    },
+    "ammobox1_item": {
+      "textures": "textures/items/block/ammobox1"
+    },
+    "rpg_ammobox1_item": {
+      "textures": "textures/items/block/rpg_ammobox1"
+    },
+    "rpg_ammobox2_item": {
+      "textures": "textures/items/block/rpg_ammobox2"
     }
   }
 }

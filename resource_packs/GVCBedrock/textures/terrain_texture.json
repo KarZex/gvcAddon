@@ -474,6 +474,42 @@
     },
     "spawn_vehicle_hamina": {
       "textures": "textures/spawn/vehicle_hamina"
+    },
+    "gunrack_rsi": {
+      "textures": "textures/blocks/gunrack_rsi"
+    },
+    "gunrack_rsw": {
+      "textures": "textures/blocks/gunrack_rsw"
+    },
+    "gunrack_hsi": {
+      "textures": "textures/blocks/gunrack_hsi"
+    },
+    "gunrack_rti": {
+      "textures": "textures/blocks/gunrack_rti"
+    },
+    "12gpack_gc": {
+      "textures": "textures/blocks/12gpack_gc"
+    },
+    "9mmpack_gc": {
+      "textures": "textures/blocks/9mmpack_gc"
+    },
+    "223pack_gc": {
+      "textures": "textures/blocks/223pack_gc"
+    },
+    "308pack_gc": {
+      "textures": "textures/blocks/308pack_gc"
+    },
+    "40mmgr_ammo_gc": {
+      "textures": "textures/blocks/40mmgr_ammo_gc"
+    },
+    "ammobox1": {
+      "textures": "textures/blocks/ammobox1"
+    },
+    "rpg_ammobox1": {
+      "textures": "textures/blocks/rpg_ammobox1"
+    },
+    "rpg_ammobox2": {
+      "textures": "textures/blocks/rpg_ammobox2"
     }
   }
 }
