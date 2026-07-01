@@ -1225,6 +1225,78 @@
     },
     "rpg_ammobox2_item": {
       "textures": "textures/items/block/rpg_ammobox2"
+    },
+    "artibox1_item": {
+      "textures": "textures/items/block/artibox1"
+    },
+    "artibox2_item": {
+      "textures": "textures/items/block/artibox2"
+    },
+    "barrel_drum1_item": {
+      "textures": "textures/items/block/barrel_drum1"
+    },
+    "barrel_drum2_item": {
+      "textures": "textures/items/block/barrel_drum2"
+    },
+    "barrel_drum3_item": {
+      "textures": "textures/items/block/barrel_drum3"
+    },
+    "burn_barrel_item": {
+      "textures": "textures/items/block/burn_barrel"
+    },
+    "medbag_gc_item": {
+      "textures": "textures/items/block/medbag_gc"
+    },
+    "sandbag_a1_item": {
+      "textures": "textures/items/block/sandbag_a1"
+    },
+    "sandbag_a2_item": {
+      "textures": "textures/items/block/sandbag_a2"
+    },
+    "sandbag_b1_item": {
+      "textures": "textures/items/block/sandbag_b1"
+    },
+    "sandbag_b2_item": {
+      "textures": "textures/items/block/sandbag_b2"
+    },
+    "barbed1_gc_item": {
+      "textures": "textures/items/block/barbed1_gc"
+    },
+    "barbed2_gc_item": {
+      "textures": "textures/items/block/barbed2_gc"
+    },
+    "jerrycan1_item": {
+      "textures": "textures/items/block/jerrycan1"
+    },
+    "m72_box_item": {
+      "textures": "textures/items/block/m72_box"
+    },
+    "man_target_item": {
+      "textures": "textures/items/block/man_target"
+    },
+    "rack_g1_d_item": {
+      "textures": "textures/items/block/rack_g1_d"
+    },
+    "rack_g1_u_item": {
+      "textures": "textures/items/block/rack_g1_u"
+    },
+    "rack_g2_u_item": {
+      "textures": "textures/items/block/rack_g2_u"
+    },
+    "rpg_box_item": {
+      "textures": "textures/items/block/rpg_box"
+    },
+    "sincgars_item": {
+      "textures": "textures/items/block/sincgars"
+    },
+    "wall_light_gg_item": {
+      "textures": "textures/items/block/wall_light_gg"
+    },
+    "wall_light_rg_item": {
+      "textures": "textures/items/block/wall_light_rg"
+    },
+    "wall_light_wg_item": {
+      "textures": "textures/items/block/wall_light_wg"
     }
   }
 }

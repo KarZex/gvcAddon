@@ -510,6 +510,72 @@
     },
     "rpg_ammobox2": {
       "textures": "textures/blocks/rpg_ammobox2"
+    },
+    "artibox1": {
+      "textures": "textures/blocks/artibox1"
+    },
+    "artibox2": {
+      "textures": "textures/blocks/artibox2"
+    },
+    "barrel_drum1": {
+      "textures": "textures/blocks/barrel_drum1"
+    },
+    "barrel_drum2": {
+      "textures": "textures/blocks/barrel_drum2"
+    },
+    "barrel_drum3": {
+      "textures": "textures/blocks/barrel_drum3"
+    },
+    "burn_barrel": {
+      "textures": "textures/blocks/burn_barrel"
+    },
+    "medbag_gc": {
+      "textures": "textures/blocks/medbag_gc"
+    },
+    "sandbag_a1": {
+      "textures": "textures/blocks/sandbag_a1"
+    },
+    "sandbag_a2": {
+      "textures": "textures/blocks/sandbag_a2"
+    },
+    "sandbag_b1": {
+      "textures": "textures/blocks/sandbag_b1"
+    },
+    "sandbag_b2": {
+      "textures": "textures/blocks/sandbag_b2"
+    },
+    "barbed1_gc": {
+      "textures": "textures/blocks/barbed1_gc"
+    },
+    "barbed2_gc": {
+      "textures": "textures/blocks/barbed2_gc"
+    },
+    "jerrycan1": {
+      "textures": "textures/blocks/jerrycan1"
+    },
+    "m72_box": {
+      "textures": "textures/blocks/m72_box"
+    },
+    "man_target": {
+      "textures": "textures/blocks/man_target"
+    },
+    "rack_g1": {
+      "textures": "textures/blocks/rack_g1"
+    },
+    "rpg_box": {
+      "textures": "textures/blocks/rpg_box"
+    },
+    "sincgars": {
+      "textures": "textures/blocks/sincgars"
+    },
+    "wall_light_gg": {
+      "textures": "textures/blocks/wall_light_gg"
+    },
+    "wall_light_rg": {
+      "textures": "textures/blocks/wall_light_rg"
+    },
+    "wall_light_wg": {
+      "textures": "textures/blocks/wall_light_wg"
     }
   }
 }

@@ -1,0 +1,36 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.sandbag_a1",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 6,
+				"visible_bounds_height": 14,
+				"visible_bounds_offset": [0, 2, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 90, 0],
+					"cubes": [
+						{
+							"origin": [-8, 0, -8],
+							"size": [11, 16, 16],
+							"uv": {
+								"north": {"uv": [10, 16], "uv_size": [11, 16]},
+								"east": {"uv": [16, 0], "uv_size": [16, 16]},
+								"south": {"uv": [10, 16], "uv_size": [11, 16]},
+								"west": {"uv": [16, 0], "uv_size": [16, 16]},
+								"up": {"uv": [16, 11], "uv_size": [-16, -11], "uv_rotation": 90},
+								"down": {"uv": [16, 11], "uv_size": [-16, -11]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
