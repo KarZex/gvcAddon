@@ -78,6 +78,16 @@
           }
         }
       },
+      "melee": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 3,
+          "track_target": true,
+          "speed_multiplier": 1.25
+        },
+        "minecraft:attack": {
+          "damage": 1
+        }
+      },
       "despawn": {
         "minecraft:instant_despawn": {}
       },
@@ -2441,13 +2451,13 @@
         "def": "minecraft:arrow"
       },
       "minecraft:behavior.find_mount": {
-        "priority": 1,
+        "priority": 6,
         "within_radius": 16,
         "start_delay": 15,
         "max_failed_attempts": 20
       },
       "minecraft:behavior.ranged_attack": {
-        "priority": 0,
+        "priority": 4,
         "attack_interval_min": 1.0,
         "attack_interval_max": 3.0,
         "attack_radius": 15.0
@@ -2531,6 +2541,13 @@
         "add": {
           "component_groups": [
             "timer"
+          ]
+        }
+      },
+      "melee": {
+        "add": {
+          "component_groups": [
+            "melee"
           ]
         }
       },
