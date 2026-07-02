@@ -34,7 +34,6 @@ item.spawn_egg.entity.gvcv5:gb2.name=ベテランゲリラ-強襲
 item.spawn_egg.entity.gvcv5:gb3.name=ベテランゲリラ-スナイパー
 item.spawn_egg.entity.gvcv5:gb4.name=ベテランゲリラ-火炎放射
 item.spawn_egg.entity.gvcv5:gb5.name=ベテランゲリラ-ドローン誘導
-item.spawn_egg.entity.gvcv5:gb6.name=ベテランゲリラ-対戦車ライフル
 
 ### From V4-1 (GVCReversion Addon V1.0) Dec 26th 2021
 item.spawn_egg.entity.zex:stand.name=スタンド
@@ -75,6 +74,9 @@ entity.gvcv5:char2c.name=BOSS char2C
 entity.gvcv5:unks.name=所属不明兵士
 entity.gvcv5:cv.name=BOSS CV
 entity.gvcv5:jamming.name=ジャミング発生装置
+
+## From V5-5 (GVCBedrock Addon V5.0) Jan 1st 2026
+item.spawn_egg.entity.gvcv5:gb6.name=ベテランゲリラ-対戦車ライフル
 
 ## ww3
 entity.gvcv5:prc_soldier.name=中国軍兵士
@@ -255,7 +257,7 @@ item.gun:fgm148=FGM-148
 item.gun:fim92=FIM-92
 item.gun:qbz95=95式自動歩槍
 
-## From V5-5 (GVCBedrock Addon V5.0)
+## From V5-5 (GVCBedrock Addon V5.0) Jan 1st 2026
 item.gun:stg44=StG44
 item.gun:lewis=ルイス軽機関銃
 item.gun:ptrd=PTRD
@@ -457,7 +459,7 @@ item.spawn_egg.entity.vehicle:f117.name=F-117
 tile.gvcv5:spawn_vehicle_f117.name=F-117
 item.vehicle:f117_spawn_egg=F-117
 
-### From V5-5 (GVCBedrock Addon V5.0) 
+### From V5-5 (GVCBedrock Addon V5.0) Jan 1st 2026
 entity.vehicle:lav25aa.name=LAV25自走対空砲
 item.spawn_egg.entity.vehicle:lav25aa.name=LAV25自走対空砲
 tile.gvcv5:spawn_vehicle_lav25aa.name=LAV25自走対空砲
@@ -494,7 +496,7 @@ item.spawn_egg.entity.vehicle:st1_pmc.name=ST1
 tile.gvcv5:spawn_vehicle_st1_pmc.name=ST1
 item.vehicle:st1_pmc_spawn_egg=ST1
 
-### From V5-5.1 (GVCBedrock Addon V5.0) Jul 5th 2026
+### From V5-5.1 (GVCBedrock Addon V5.0) Jun 28th 2026
 entity.vehicle:zex_cluiser.name=テクニカルトラック
 item.spawn_egg.entity.vehicle:zex_cluiser.name=テクニカルトラック
 tile.gvcv5:spawn_vehicle_zex_cluiser.name=テクニカルトラック
@@ -552,6 +554,69 @@ tile.gvcv5:radio_big.name=大型ラジオ
 tile.gvcv5:t_wall.name=壁1
 tile.gvcv5:t_wall2.name=壁2
 tile.gvcv5:toughbook.name=タフブックPC
+
+## new blocks
+tile.gvcv5:gunrack_hsi.name=ガンラック_ハンドガン用
+tile.gvcv5:gunrack_rsi.name=ガンラック_ライフル用金属製
+tile.gvcv5:gunrack_rsw.name=ガンラック_ライフル用木製
+tile.gvcv5:gunrack_hsi_gun.name=ガンラック_ハンドガン用
+tile.gvcv5:gunrack_rsi_gun.name=ガンラック_ライフル用金属製
+tile.gvcv5:gunrack_rsw_gun.name=ガンラック_ライフル用木製
+tile.gvcv5:ammobox1.name=弾薬箱
+tile.gvcv5:artibox1.name=砲弾箱
+tile.gvcv5:artibox2.name=弾薬
+tile.gvcv5:artibox3.name=榴弾箱
+tile.gvcv5:barrel_drum1.name=ドラム缶1
+tile.gvcv5:barrel_drum2.name=ドラム缶2
+tile.gvcv5:barrel_drum3.name=ドラム缶3
+tile.gvcv5:cadaver_g.name=ゲリラの死体
+tile.gvcv5:hesco.name=HESCO
+tile.gvcv5:jerrycan1.name=ジェリカン
+tile.gvcv5:missile_rack1.name=ミサイルラック
+tile.gvcv5:9mmpack_gc.name=弾薬箱_9mmHG弾
+tile.gvcv5:45pack_gc.name=弾薬箱_.45Cal弾
+tile.gvcv5:223pack_gc.name=弾薬箱_.22Cal弾
+tile.gvcv5:308pack_gc.name=弾薬箱_.30Cal弾
+tile.gvcv5:50bmgpack_gc.name=弾薬箱_.50Cal弾
+tile.gvcv5:12gpack_gc.name=弾薬箱_12ゲージ弾
+tile.gvcv5:40mmgr_ammo_gc.name=弾薬箱_40mm擲弾
+tile.gvcv5:grenade_box_gc.name=弾薬箱_手榴弾
+tile.gvcv5:rpg_ammobox1.name=弾薬箱_76mmロケット弾
+tile.gvcv5:rpg_ammobox2.name=弾薬箱_9mmHG
+tile.gvcv5:ammo_mass.name=銃弾の山
+tile.gvcv5:m18_claymore.name=M18クレイモア
+tile.gvcv5:m72_box.name=M72
+tile.gvcv5:rpg_box.name=RPG-7
+tile.gvcv5:medbag_gc.name=メディックバッグ
+tile.gvcv5:monitor1.name=モニター
+tile.gvcv5:man_target.name=標的
+tile.gvcv5:old_radio.name=旧式ラジオ
+tile.gvcv5:sincgars.name=通信機
+tile.gvcv5:burn_barrel.name=燃えているドラム缶
+tile.gvcv5:at_obstacles.name=対戦車障害物
+tile.gvcv5:barbed1_gc.name=有刺鉄線
+tile.gvcv5:barbed2_gc.name=有刺鉄線
+tile.gvcv5:fire_exti_gc.name=消火器
+tile.gvcv5:mil_cont1_gc.name=軍用コンテナ1
+tile.gvcv5:mil_cont2_gc.name=軍用コンテナ2
+tile.gvcv5:sandbag_a1_gc.name=土嚢_縦小
+tile.gvcv5:sandbag_a2_gc.name=土嚢_横小
+tile.gvcv5:sandbag_b1_gc.name=土嚢
+tile.gvcv5:sandbag_b2_gc.name=土嚢_ハーフ
+tile.gvcv5:t_wall1_gc.name=壁1
+tile.gvcv5:t_wall2_gc.name=壁1
+tile.gvcv5:wolcott.name=墜落したヘリ
+tile.gvcv5:ghostlight.name=不可視光源
+tile.gvcv5:ghostlight_tile.name=可視光源
+tile.gvcv5:gvcv5_scaffold.name=足場
+tile.gvcv5:light_block_g.name=照明
+tile.gvcv5:wall_light_gg.name=ウォールライト_緑
+tile.gvcv5:wall_light_rg.name=ウォールライト_赤
+tile.gvcv5:wall_light_wg.name=ウォールライト_白
+tile.gvcv5:rack_g1_d.name=ウォールラック_下
+tile.gvcv5:rack_g1_u.name=ウォールラック1_上
+tile.gvcv5:rack_g2_u.name=ウォールラック2_上
+
 tile.gvcv5:spawn_red.name=テレポートブロック 赤チーム用
 tile.gvcv5:spawn_blue.name=テレポートブロック 青チーム用
 tile.gvcv5:spawn_green.name=テレポートブロック 緑チーム用
@@ -905,6 +970,68 @@ item.gvcv5:gc3_item=銃製造機Tier3
 item.gvcv5:vc1_item=ビークル製造機Tier1
 item.gvcv5:vc2_item=ビークル製造機Tier2
 item.gvcv5:vc3_item=ビークル製造機Tier3
+
+## new blocks
+item.gvcv5:gunrack_hsi_item=ガンラック_ハンドガン用
+item.gvcv5:gunrack_rsi_item=ガンラック_ライフル用金属製
+item.gvcv5:gunrack_rsw_item=ガンラック_ライフル用木製
+item.gvcv5:gunrack_hsi_gun_item=ガンラック_ハンドガン用
+item.gvcv5:gunrack_rsi_gun_item=ガンラック_ライフル用金属製
+item.gvcv5:gunrack_rsw_gun_item=ガンラック_ライフル用木製
+item.gvcv5:ammobox1_item=弾薬箱
+item.gvcv5:artibox1_item=砲弾箱
+item.gvcv5:artibox2_item=弾薬
+item.gvcv5:artibox3_item=榴弾箱
+item.gvcv5:barrel_drum1_item=ドラム缶1
+item.gvcv5:barrel_drum2_item=ドラム缶2
+item.gvcv5:barrel_drum3_item=ドラム缶3
+item.gvcv5:cadaver_g_item=ゲリラの死体
+item.gvcv5:hesco_item=HESCO
+item.gvcv5:jerrycan1_item=ジェリカン
+item.gvcv5:missile_rack1_item=ミサイルラック
+item.gvcv5:9mmpack_gc_item=弾薬箱_9mmHG弾
+item.gvcv5:45pack_gc_item=弾薬箱_.45Cal弾
+item.gvcv5:223pack_gc_item=弾薬箱_.22Cal弾
+item.gvcv5:308pack_gc_item=弾薬箱_.30Cal弾
+item.gvcv5:50bmgpack_gc_item=弾薬箱_.50Cal弾
+item.gvcv5:12gpack_gc_item=弾薬箱_12ゲージ弾
+item.gvcv5:40mmgr_ammo_gc_item=弾薬箱_40mm擲弾
+item.gvcv5:grenade_box_gc_item=弾薬箱_手榴弾
+item.gvcv5:rpg_ammobox1_item=弾薬箱_76mmロケット弾
+item.gvcv5:rpg_ammobox2_item=弾薬箱_9mmHG
+item.gvcv5:ammo_mass_item=銃弾の山
+item.gvcv5:m18_claymore_item=M18クレイモア
+item.gvcv5:m72_box_item=M72
+item.gvcv5:rpg_box_item=RPG-7
+item.gvcv5:medbag_gc_item=メディックバッグ
+item.gvcv5:monitor1_item=モニター
+item.gvcv5:man_target_item=標的
+item.gvcv5:old_radio_item=旧式ラジオ
+item.gvcv5:sincgars_item=通信機
+item.gvcv5:burn_barrel_item=燃えているドラム缶
+item.gvcv5:at_obstacles_item=対戦車障害物
+item.gvcv5:barbed1_gc_item=有刺鉄線
+item.gvcv5:barbed2_gc_item=有刺鉄線
+item.gvcv5:fire_exti_gc_item=消火器
+item.gvcv5:mil_cont1_gc_item=軍用コンテナ1
+item.gvcv5:mil_cont2_gc_item=軍用コンテナ2
+item.gvcv5:sandbag_a1_gc_item=土嚢_縦小
+item.gvcv5:sandbag_a2_gc_item=土嚢_横小
+item.gvcv5:sandbag_b1_gc_item=土嚢
+item.gvcv5:sandbag_b2_gc_item=土嚢_ハーフ
+item.gvcv5:t_wall1_gc_item=壁1
+item.gvcv5:t_wall2_gc_item=壁1
+item.gvcv5:wolcott_item=墜落したヘリ
+item.gvcv5:ghostlight_item=不可視光源
+item.gvcv5:ghostlight_item_item=可視光源
+item.gvcv5:gvcv5_scaffold_item=足場
+item.gvcv5:light_block_g_item=照明
+item.gvcv5:wall_light_gg_item=ウォールライト_緑
+item.gvcv5:wall_light_rg_item=ウォールライト_赤
+item.gvcv5:wall_light_wg_item=ウォールライト_白
+item.gvcv5:rack_g1_d_item=ウォールラック_下
+item.gvcv5:rack_g1_u_item=ウォールラック1_上
+item.gvcv5:rack_g2_u_item=ウォールラック2_上
 
 item.gvcv5:flame=火炎手榴弾
 item.gvcv5:fragment=破片手榴弾

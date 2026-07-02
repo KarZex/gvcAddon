@@ -585,6 +585,12 @@
     },
     "light_block_g_bottom": {
       "textures": "textures/blocks/light_block_g_bottom"
+    },
+    "spawn_addon_ga_pow": {
+      "textures": "textures/spawn/addon_ga_pow"
+    },
+    "spawn_addon_gb6": {
+      "textures": "textures/spawn/addon_gb6"
     }
   }
 }

@@ -170,6 +170,14 @@ function gvcv5MineEvent( event ){
     }
 }
 
+function gvcv5ExplosionEvent( event ){
+    const block = event.block;
+    const location = block.location;
+    block.dimension.runCommand(`particle minecraft:large_explosion ${location.x} ${location.y} ${location.z}`);
+    block.dimension.runCommand(`playsound random.explode @a ${location.x} ${location.y} ${location.z}`);
+    block.dimension.setBlockType(location,`minecraft:air`);
+}
+
 function gvcv5Phone( event ){
     event.source.runCommand(`function noteamphone`);
 }
@@ -268,6 +276,7 @@ system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:gasevent`,{onStepOn: gvcv5GasEvent,onPlayerBreak: gvcv5GasEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:mineevent`,{onStepOn: gvcv5MineEvent,onPlayerBreak: gvcv5MineEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:attach_table`,{onPlayerInteract: gvcv5Attachtable});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:explosion`,{onBreak: gvcv5ExplosionEvent});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:phone`,{onUse: gvcv5Phone});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:orderflag`,{onUse: gvcv5UseFlag});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:mtype`,{onUse: gvcv5UseMtype});
