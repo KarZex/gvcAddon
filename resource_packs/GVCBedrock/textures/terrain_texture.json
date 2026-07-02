@@ -591,6 +591,9 @@
     },
     "spawn_addon_gb6": {
       "textures": "textures/spawn/addon_gb6"
+    },
+    "cadaver_g": {
+      "textures": "textures/blocks/cadaver_g"
     }
   }
 }

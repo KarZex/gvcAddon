@@ -1300,6 +1300,9 @@
     },
     "light_block_g_item": {
       "textures": "textures/items/block/light_block_g"
+    },
+    "cadaver_g_item": {
+      "textures": "textures/items/block/cadaver_g"
     }
   }
 }
