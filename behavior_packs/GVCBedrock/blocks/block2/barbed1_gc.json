@@ -26,7 +26,7 @@
                 "size": [16, 16, 16]
             },
             "minecraft:collision_box": false,
-            "minecraft:friction": 0.9,
+            "minecraft:friction": 0.0,
 			"minecraft:loot": "loot_tables/blocks/barbed1_gc.json",
             "minecraft:light_dampening": 0,
             "minecraft:map_color": "#00ff00"

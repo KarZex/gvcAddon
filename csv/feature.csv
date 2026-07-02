@@ -49,7 +49,7 @@ name,blockname(java),id,old_id,x•ûŒü‚Ì’·‚³,z•ûŒü‚Ì’·‚³,[‚³,Šm—¦,Šø,‘D‚©‚Ç‚¤‚©,
 ƒ_ƒ“ƒWƒ‡ƒ“_ŠMù–å,gvcr2_block_building_triumphal_arch,triumphal_arch,dl10,105,105,10,0.02,L,F,summon gvcv5:char2c ~~1~,all,;overworld,F;ocean,F;river,,,,,,,,,,,
 ƒ_ƒ“ƒWƒ‡ƒ“_‹ŒíŠÍ,gvcr2_block_building_battleship,battleship,dl11,,,,,,,,,,,,,,,,,,,,,,
 ƒ_ƒ“ƒWƒ‡ƒ“_‹­P—g—¤ŠÍ,gvcr2_block_building_cv,cv,dl12,128,64,2,0.02,Lnf,T,,any,;ocean,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,
+ƒ_ƒ“ƒWƒ‡ƒ“_ƒXƒ‰ƒ€ŠX,gvcr2_block_building_slum,slum,d15,128,128,2,0.05,L,F,,any,;savanna,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,
 execute if entity @p[r=30] run function flag/,,,,,,,,,,,,,,,,,,,,,,,,,
