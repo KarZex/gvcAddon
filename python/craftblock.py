@@ -28,6 +28,17 @@ for root, dirs, files in os.walk(block_directory):
                     item_json["texture_data"][f"{block_icon}_item"] = {"textures": f"textures/items/block/{block_icon}"}
 
                 block_textures = data["minecraft:block"]["components"]["minecraft:material_instances"]
+
+                # Loot table
+                if not os.path.isfile(f"behavior_packs/GVCBedrock/loot_tables/blocks/{block_icon}.json"):
+                    with open("tool/block_loot.json", "r", encoding="utf-8") as lf:
+                        loot = json.load(lf)
+
+                    loot["pools"][0]["entries"][0]["name"] = f"{block_id}_item"
+                    output_path = os.path.join("behavior_packs/GVCBedrock/loot_tables/blocks/", f"{block_icon}.json")
+                    with open(output_path, "w", encoding='utf-8') as loot_file:
+                        json.dump(loot, loot_file, indent=2)
+
                 #process_material_instances(block_textures)
                 for item in block_textures:
                     print(block_textures[f"{item}"]["texture"])

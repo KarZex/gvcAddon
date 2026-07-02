@@ -22,8 +22,8 @@
             },
             "minecraft:geometry": "geometry.rpg_box",
             "minecraft:selection_box": {
-                "origin": [-8, 0, -3],
-                "size": [16, 16, 11]
+                "origin": [-8, 0, -8],
+                "size": [16, 16, 16]
             },
             "minecraft:collision_box": false,
 			"minecraft:loot": "loot_tables/blocks/rpg_box.json",

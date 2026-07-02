@@ -582,6 +582,9 @@
     },
     "light_block_g_top": {
       "textures": "textures/blocks/light_block_g_top"
+    },
+    "light_block_g_bottom": {
+      "textures": "textures/blocks/light_block_g_bottom"
     }
   }
 }

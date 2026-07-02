@@ -22,13 +22,14 @@
             },
             "minecraft:geometry": "geometry.wall_light",
             "minecraft:selection_box": {
-                "origin": [-8, 0, -3],
-                "size": [16, 16, 11]
+                "origin": [-8, 0, -8],
+                "size": [16, 16, 16]
             },
             "minecraft:collision_box": false,
             "minecraft:friction": 0.9,
 			"minecraft:loot": "loot_tables/blocks/wall_light_gg.json",
             "minecraft:light_dampening": 0,
+            "minecraft:light_emission": 15,
             "minecraft:map_color": "#00ff00"
         },
         "permutations": [

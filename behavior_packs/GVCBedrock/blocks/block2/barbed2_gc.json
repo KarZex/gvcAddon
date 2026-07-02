@@ -22,8 +22,8 @@
             },
             "minecraft:geometry": "geometry.barbed2_gc",
             "minecraft:selection_box": {
-                "origin": [-8, 0, -3],
-                "size": [16, 16, 11]
+                "origin": [-8, 0, -8],
+                "size": [16, 16, 16]
             },
             "minecraft:collision_box": false,
             "minecraft:friction": 0.9,

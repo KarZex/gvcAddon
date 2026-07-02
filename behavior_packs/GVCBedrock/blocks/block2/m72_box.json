@@ -22,8 +22,8 @@
             },
             "minecraft:geometry": "geometry.m72_box",
             "minecraft:selection_box": {
-                "origin": [-8, 0, -3],
-                "size": [16, 16, 11]
+                "origin": [-8, 0, -8],
+                "size": [16, 16, 16]
             },
             "minecraft:collision_box": false,
 			"minecraft:loot": "loot_tables/blocks/m72_box.json",

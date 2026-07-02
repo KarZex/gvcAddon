@@ -23,7 +23,7 @@
                     "render_method": "opaque"
                 },
                 "down": {
-                    "texture": "light_block_g_top",
+                    "texture": "light_block_g_bottom",
                     "render_method": "opaque"
                 }
             },
