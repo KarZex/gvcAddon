@@ -47,3 +47,4 @@ tile.gvcv5:building_reichstag.name=ダンジョン_ライヒスターク
 tile.gvcv5:building_desertcity.name=ダンジョン_砂漠都市
 tile.gvcv5:building_triumphal_arch.name=ダンジョン_凱旋門
 tile.gvcv5:building_cv.name=ダンジョン_強襲揚陸艦
+tile.gvcv5:building_slum.name=ダンジョン_スラム街

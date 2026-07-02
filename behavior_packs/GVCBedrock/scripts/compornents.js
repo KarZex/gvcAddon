@@ -8,7 +8,7 @@ function gvcv5SpawnEvent( event ){
             const spawnLocation = event.block.location;
             if( spawn.includes(`addon`) ) {
                 spawn = spawn.replace(`gvcv5:spawn_addon_`,`gvcv5:`);
-                /*
+                
                 const aboveBlock = spawnBlock.above();
                 if( aboveBlock.typeId == `minecraft:chest` ){
                     try{
@@ -24,22 +24,27 @@ function gvcv5SpawnEvent( event ){
                             spawner.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${mainHand}`);
                         }
                         try{
-                            const armorHead = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(1).getItem().typeId;
+                            const Offhand = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(1).getItem().typeId;
+                            spawner.runCommand(`replaceitem entity @s slot.weapon.offhand 0 ${Offhand}`);
+                        }
+                        catch{}
+                        try{
+                            const armorHead = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(2).getItem().typeId;
                             spawner.runCommand(`replaceitem entity @s slot.armor.head 0 ${armorHead}`);
                         }
                         catch{}
                         try{
-                            const armorChest = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(2).getItem().typeId;
+                            const armorChest = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(3).getItem().typeId;
                             spawner.runCommand(`replaceitem entity @s slot.armor.chest 0 ${armorChest}`);
                         }
                         catch{}
                         try{
-                            const armorLegs = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(3).getItem().typeId;
+                            const armorLegs = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(4).getItem().typeId;
                             spawner.runCommand(`replaceitem entity @s slot.armor.legs 0 ${armorLegs}`);
                         }
                         catch{}
                         try{
-                            const armorFeet = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(4).getItem().typeId;
+                            const armorFeet = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(5).getItem().typeId;
                             spawner.runCommand(`replaceitem entity @s slot.armor.feet 0 ${armorFeet}`);
                         }
                         catch{}
@@ -51,7 +56,7 @@ function gvcv5SpawnEvent( event ){
                     const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`minecraft:spawned_from_block`});
                     spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
                 }
-                */
+                
                 const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`minecraft:spawned_from_block`});
                 spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
             }
