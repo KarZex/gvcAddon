@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:9k35",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/9k35"
+      },
+      "geometry": {
+        "default": "geometry.9k35"
+      },
+      "animations": {
+        "look_at_target": "animation.tankaim9k35"
+      },
+      "scripts": {
+        "animate": [
+					{
+						"look_at_target": "query.has_rider"
+					}
+        ]
+      },
+      "spawn_egg":{
+      "texture":"9k35",
+      "texture_index":0
+      },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

@@ -594,6 +594,9 @@
     },
     "cadaver_g": {
       "textures": "textures/blocks/cadaver_g"
+    },
+    "spawn_vehicle_9k35": {
+      "textures": "textures/spawn/vehicle_9k35"
     }
   }
 }

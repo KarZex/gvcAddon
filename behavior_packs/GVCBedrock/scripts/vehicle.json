@@ -179,6 +179,24 @@
     "turn": 0,
     "gattack": 7
   },
+  "9k35": {
+    "type": "apc",
+    "speed": 0.2,
+    "Weapon1": "aamissile",
+    "Weapon1_cool": 10,
+    "Weapon1_ammo": 4,
+    "Weapon2": "",
+    "Weapon2_cool": 0,
+    "Weapon2_ammo": 0,
+    "Weapon3": "",
+    "Weapon3_cool": 0,
+    "Weapon3_ammo": 0,
+    "Weapon4": "",
+    "Weapon4_cool": 0,
+    "Weapon4_ammo": 0,
+    "turn": 0,
+    "gattack": 7
+  },
   "panzer": {
     "type": "tank",
     "speed": 0.25,

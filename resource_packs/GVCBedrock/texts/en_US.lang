@@ -697,6 +697,24 @@ script.gvcv5.howToVechileDesc0.name=Machine gun fire:  :_input_key.jump: OR Hold
 script.gvcv5.howToVechileDesc1.name=(However, when riding a helicopter,  :_input_key.jump:  cannot be used to fire the machine gun)
 script.gvcv5.howToVechileDesc2.name=Ascend (helicopter):  :_input_key.jump:
 script.gvcv5.howToVechileDesc3.name=Fire main cannon:  :_input_key.attack: OR Hold main cannon:_input_key.use:
+script.gvcv5.howToAir.name=Aircraft
+script.gvcv5.howToAirDesc0.name=Select armament in the hotbar
+script.gvcv5.howToAirDesc1.name=Change viewpoint and adjust direction
+script.gvcv5.howToAirDesc2.name=Fire: :_input_key.jump:  OR hold "Main Gun" item and :_input_key.use:
+
+script.gvcv5.howToHeli.name=Helicopter
+script.gvcv5.howToHeliDesc0.name=Select armament in the hotbar
+script.gvcv5.howToHeliDesc1.name=Fire: :_input_key.jump:  OR hold "Main Gun" item and :_input_key.use:
+script.gvcv5.howToHeliDesc2.name=Look horizontal and press :_input_key.forward: to ascend, :_input_key.back: to descend
+script.gvcv5.howToHeliDesc3.name=Look down and press :_input_key.forward: to accelerate, :_input_key.back: to decelerate
+script.gvcv5.howToHeliDesc4.name=Strafe with :_input_key.left:, :_input_key.right:
+script.gvcv5.howToHeliDesc5.name=Look up to move backward, look down to move forward
+
+script.gvcv5.howToShip.name=Ship
+script.gvcv5.howToShipDesc0.name=Select armament in the hotbar
+script.gvcv5.howToShipDesc1.name=Fire: :_input_key.jump:  OR hold "Main Gun" item and :_input_key.use:
+script.gvcv5.howToShipDesc2.name=Press :_input_key.forward: to move forward, :_input_key.back: to move backward
+script.gvcv5.howToShipDesc3.name=Rotate with :_input_key.left:, :_input_key.right:
 script.gvcv5.phone_down.name=About Down Status    #
 script.gvcv5.phone_down0.name=When you join a team, even if your HP reaches 0, you will not die, but will instead enter a down status.
 script.gvcv5.phone_down1.name=You can revive downed teammates by pressing _input_key.attack:.
@@ -999,6 +1017,7 @@ gvcv5.37mmrocketkatyusya.name=37mmRocket
 gvcv5.flare.name=Flare
 gvcv5.76mmrocketd.name=76mmrocketx2
 gvcv5.mamissile.name=ManualMissile
+
 gvcv5.asmissile.name=ASMissile
 gvcv5.ssmissile.name=SSMissile
 gvcv5.37mm.name=37mmCannon

@@ -615,7 +615,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
 					}
 					else{
-						user.sendMessage({ translate: `script.gvcv5.invaid_password.name`});
+						//user.sendMessage({ translate: `script.gvcv5.invaid_password.name`});
+						user.sendMessage({ text: `${phone.getDynamicProperty("password")}`});
+						user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
 					}
 				}
 			},)
@@ -874,10 +876,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 							if( result.selection < phoneArray.length ){
 								const targetLocation = phoneArray[result.selection].location;
 								const targetDimension = phoneArray[result.selection].dimension;
-								tpWithDelay(user, targetLocation, targetDimension, 100);
+								user.teleport(targetLocation,{ dimension:targetDimension });
 								if( !user.hasTag(`${userFamily}`) ){
 									user.sendMessage({ translate: `script.gvcv5.phoneAbuse.name` }); //warning
-									user.runCommand(`clear @s zex:phone_${userFamily} 0 1`);
+									//user.runCommand(`clear @s zex:phone_${userFamily} 0 1`);
 								}
 							}
 							else{

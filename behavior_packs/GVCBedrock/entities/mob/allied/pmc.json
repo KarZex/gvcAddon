@@ -4488,6 +4488,11 @@
           "command": "ride @s summon_ride vehicle:bmp3 no_ride_change summon_enemy"
         }
       },
+      "vehicle:9k35": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:9k35 no_ride_change summon_enemy"
+        }
+      },
       "vehicle:panzer": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:panzer no_ride_change summon_enemy"
