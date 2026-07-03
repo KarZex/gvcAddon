@@ -16,11 +16,11 @@ with open(data, "r", encoding="utf-8") as f:
     f.close()
 
 with open(ver, "r", encoding="utf-8") as f:
-    ver = [int(x) for x in f.read().strip().split(",")]
+    version = [int(x) for x in f.read().strip().split(",")]
     f.close()
 
 with open(ver, "w", encoding="utf-8") as f:
-    f.write(f"{ver[0]},{ver[1]},{ver[2]+1}")
+    f.write(f"{version[0]},{version[1]},{version[2]+1}")
     f.close()
 
 behavior = "behavior_packs/GVCBedrockWTeam/manifest.json"
@@ -38,7 +38,7 @@ resource_uuid = "d42cc0e1-be19-4810-823c-5980db3291ac"
 with open(behavior, "r",encoding="utf-8") as f:
     behavior_manifest = json.load(f)
     behavior_manifest["header"]["name"] = name + " (Team)"
-    behavior_manifest["header"]["version"] = ver
+    behavior_manifest["header"]["version"] = version
     behavior_manifest["header"]["description"] = description
     behavior_manifest["header"]["min_engine_version"] = min_engine_version
     behavior_manifest["header"]["uuid"] = behavior_uuid
@@ -48,7 +48,7 @@ with open(behavior, "r",encoding="utf-8") as f:
 
     behavior_manifest["dependencies"].append({
         "uuid": resource_uuid,
-        "version": ver
+        "version": version
     })
 
 with open(behavior, "w") as f:
@@ -57,7 +57,7 @@ with open(behavior, "w") as f:
 with open(resource, "r",encoding="utf-8") as f:
     resource_manifest = json.load(f)
     resource_manifest["header"]["name"] = name
-    resource_manifest["header"]["version"] = ver
+    resource_manifest["header"]["version"] = version
     resource_manifest["header"]["description"] = description
     resource_manifest["header"]["min_engine_version"] = min_engine_version
     resource_manifest["header"]["uuid"] = resource_uuid
@@ -66,7 +66,7 @@ with open(resource, "r",encoding="utf-8") as f:
 
     resource_manifest["dependencies"].append({
         "uuid": behavior_uuid,
-        "version": ver
+        "version": version
     })
 
 with open(resource, "w") as f:
