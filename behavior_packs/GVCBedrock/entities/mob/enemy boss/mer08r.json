@@ -1,0 +1,242 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gvcv5:mer08r",
+      "spawn_category": "monster",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "component_groups": {
+      "rocket": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 0,
+          "burst_shots": 4,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "target_in_sight_time":0,
+          "attack_radius": 32.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_rpg"
+        },
+        "minecraft:skin_id": {
+          "value": 2
+        },
+        "minecraft:timer": {
+          "time": 1.6,
+          "time_down_event": { "event": "gun" }
+	      }
+      },
+      "gun": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 0,
+          "burst_shots": 4,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 0.5,
+          "attack_interval_max": 0.5,
+          "attack_radius": 32.0
+        },
+        "minecraft:skin_id": {
+          "value": 1
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_xm8"
+        },
+        "minecraft:timer": {
+          "time": 4,
+          "time_down_event": { "event": "rocket" }
+        }
+      }
+	},
+  
+    "components": {
+     "minecraft:boss": {
+        "name": "BOSS MER08R",
+        "should_darken_sky": false,
+        "hud_range": 100
+      },     
+      "minecraft:nameable": {},
+      "minecraft:type_family": {
+        "family": [
+          "mob",
+          "monster"
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 32.0,
+        
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "player" },
+                { "test": "is_family", "subject": "other", "value": "playerp" },
+                { "test": "is_family", "subject": "other", "value": "irongolem" },
+                { "test": "is_family", "subject": "other", "value": "snowgolem" },
+                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+              ]
+            },
+            "max_dist": 100
+          },
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "villager" },
+                { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+              ]
+            },
+            "max_dist": 100
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "guerrilla"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "cause": "all",
+            "deals_damage": true,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "gvcv5:spawn_loot",
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 2.0
+      },
+      "minecraft:behavior.circle_around_anchor": {
+        "priority": 3,
+        "radius_change": 1.0,
+        "radius_adjustment_chance": 0.004,
+        "height_adjustment_chance": 0.002857,
+        "goal_radius": 1.0,
+        "angle_change": 15.0,
+        "radius_range": [ 5.0, 15.0 ],
+        "height_offset_range": [ -1, 1.0 ],
+        "height_above_target_range": [ 10.0, 15.0 ]
+      },
+      "minecraft:health": {
+        "value": 360,
+        "max": 360
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:scale": {
+        "value": 1.2
+      },
+      "minecraft:movement": {
+        "value": 0.8
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+     
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:movement.glide": {
+        "start_speed": 0.6,
+        "speed_when_turning": 0.8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 4
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 10,
+        "speed_multiplier": 0.9
+      },
+      "minecraft:follow_range": {
+        "value": 100
+      }
+    },
+    "events": {
+      "gvcv5:spawn_loot": {
+        "queue_command": {
+          "command":[
+            "structure load bosschest2 ~~~"
+          ]
+        }
+      },
+      "minecraft:spawned_from_block": {
+        "add": {
+          "component_groups": [
+            "gun"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "gun"
+          ]
+        }
+      },
+      "gun": {
+         "remove": {
+           "component_groups": [
+            "rocket"
+           ]
+         },
+         "add": {
+           "component_groups": [
+             "gun"
+           ]
+         }
+       },
+       "rocket": {
+         "remove": {
+           "component_groups": [
+            "gun"
+           ]
+         },
+         "add": {
+           "component_groups": [
+             "rocket"
+           ]
+         }
+       }
+    }
+  }
+}

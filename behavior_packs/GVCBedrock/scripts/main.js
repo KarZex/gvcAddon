@@ -8,6 +8,7 @@ import { absVector3,getVector3E,isMoving,turning2, Vector3Add } from "./usefulFu
 import "./compornents";
 import "./vehicleMain";
 import "./team";
+import "./enemy"
 import "./teamCompornents";
 import { attachmentData } from "./attach";
 /*
@@ -817,15 +818,25 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		// 	missile.lookAt(Pi);
 		// }
 		// else{
-			const B = player.getBlockFromViewDirection( );
-			if( B != undefined ){
-				Pi = B.block.location;
-				//missile.lookAt(Pi);
+			if( player.getDynamicProperty(`gvcv5:missilelocation`) != undefined ){
+				Pi = player.getDynamicProperty(`gvcv5:missilelocation`);
+			}
+			else if( player.typeId == "minecraft:player" ){
+				const B = player.getBlockFromViewDirection( );
+				if( B != undefined ){
+					Pi = B.block.location;
+					//missile.lookAt(Pi);
+				}
+				else{
+					Pi = Vector3Add(P0,V);
+					//missile.lookAt(Pi);
+				}
+
 			}
 			else{
-				Pi = Vector3Add(P0,V);
-				//missile.lookAt(Pi);
+				missile.remove();
 			}
+
 		//}
 		const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
 		const dx = (Pi.x - P0.x) / ri;

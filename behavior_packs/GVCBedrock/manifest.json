@@ -11,14 +11,14 @@
     {
       "description": "Data Module",
       "type": "data",
-      "uuid": "00efc514-2ca5-48c3-b6df-744fe30b8060",
+      "uuid": "4904b529-a212-43b8-a8ed-ce3ce1cc3dcf",
       "version": [1, 0, 0]
     },
     {
       "description": "Script API Module",
       "language": "javascript",
       "type": "script",
-      "uuid": "17e27cf1-f75c-4d4e-b243-2fa1b8d0c0c6",
+      "uuid": "78184760-e92b-4b31-92b2-7a56e2cd77da",
       "version": [2, 0, 0],
       "entry": "scripts/main.js"
     }
