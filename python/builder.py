@@ -4,13 +4,23 @@ import sys
 import ast
 
 data = "manifest.json"
+ver = "ver.txt"
+
 with open(data, "r", encoding="utf-8") as f:
     manifest = json.load(f)
     name = manifest["header"]["name"]
-    ver = manifest["header"]["version"]
+    #ver = manifest["header"]["version"]
     description = manifest["header"]["description"]
     min_engine_version = manifest["header"]["min_engine_version"]
 
+    f.close()
+
+with open(ver, "r", encoding="utf-8") as f:
+    ver = [int(x) for x in f.read().strip().split(",")]
+    f.close()
+
+with open(ver, "w", encoding="utf-8") as f:
+    f.write(f"{ver[0]},{ver[1]},{ver[2]+1}")
     f.close()
 
 behavior = "behavior_packs/GVCBedrockWTeam/manifest.json"
@@ -22,8 +32,8 @@ def generate_uuid():
 
 
 
-behavior_uuid = generate_uuid()
-resource_uuid = generate_uuid()
+behavior_uuid = "e16363f8-875a-4102-b476-eb9e505b9e27"
+resource_uuid = "d42cc0e1-be19-4810-823c-5980db3291ac"
 
 with open(behavior, "r",encoding="utf-8") as f:
     behavior_manifest = json.load(f)
@@ -33,8 +43,8 @@ with open(behavior, "r",encoding="utf-8") as f:
     behavior_manifest["header"]["min_engine_version"] = min_engine_version
     behavior_manifest["header"]["uuid"] = behavior_uuid
 
-    behavior_manifest["modules"][0]["uuid"] = generate_uuid()
-    behavior_manifest["modules"][1]["uuid"] = generate_uuid()
+    behavior_manifest["modules"][0]["uuid"] = "4904b529-a212-43b8-a8ed-ce3ce1cc3dcf"
+    behavior_manifest["modules"][1]["uuid"] = "78184760-e92b-4b31-92b2-7a56e2cd77da"
 
     behavior_manifest["dependencies"].append({
         "uuid": resource_uuid,
@@ -48,7 +58,7 @@ with open(resource, "r",encoding="utf-8") as f:
     resource_manifest = json.load(f)
     resource_manifest["header"]["name"] = name
     resource_manifest["header"]["version"] = ver
-    behavior_manifest["header"]["description"] = description
+    resource_manifest["header"]["description"] = description
     resource_manifest["header"]["min_engine_version"] = min_engine_version
     resource_manifest["header"]["uuid"] = resource_uuid
 
