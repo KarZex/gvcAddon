@@ -1306,6 +1306,9 @@
     },
     "9k35": {
       "textures": "textures/items/vehicle/9k35"
+    },
+    "mer03kblock_item": {
+      "textures": "textures/items/mer03k"
     }
   }
 }

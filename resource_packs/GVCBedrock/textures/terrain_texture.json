@@ -597,6 +597,9 @@
     },
     "spawn_vehicle_9k35": {
       "textures": "textures/spawn/vehicle_9k35"
+    },
+    "mer03kblock": {
+      "textures": "textures/blocks/mer03kblock"
     }
   }
 }

@@ -1,9 +1,6 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.merg08.root": {
-			"loop": true
-		},
 		"animation.merg08.walk": {
 			"loop": true,
 			"animation_length": 1,
@@ -71,6 +68,52 @@
 				}
 			}
 		},
+		"animation.merg08.rocket": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [15.50409, -14.47751, -3.96713]
+				},
+				"bone25": {
+					"rotation": [0, 0, 0]
+				},
+				"leftArm": {
+					"rotation": [-74.6822, 18.85304, 9.02517]
+				},
+				"left2": {
+					"rotation": [-25, 0, 0]
+				},
+				"rightArm": {
+					"rotation": [-46.17343, 45.17616, 27.12436]
+				},
+				"right2": {
+					"rotation": [-77.5, 0, 0]
+				},
+				"leftLeg": {
+					"rotation": [-15, 0, 0]
+				},
+				"rightLeg": {
+					"rotation": [-30, 0, 0]
+				},
+				"rightL2": {
+					"rotation": [62.5, 0, 0]
+				},
+				"leftL2": {
+					"rotation": [30, 0, 0]
+				},
+				"rightL3": {
+					"rotation": [-30, 0, 0],
+					"position": [0, -1.05424, -0.67162]
+				},
+				"leftL3": {
+					"rotation": [-15, 0, 0],
+					"position": [0, -0.48296, -0.12941]
+				}
+			}
+		},
+		"animation.merg08.root": {
+			"loop": true
+		},
 		"animation.merg08b.gun": {
 			"loop": true,
 			"bones": {
@@ -122,7 +165,7 @@
 				}
 			}
 		},
-		"animation.merg08.rocket": {
+		"animation.mer03k.gun": {
 			"loop": true,
 			"bones": {
 				"body": {
@@ -132,16 +175,16 @@
 					"rotation": [0, 0, 0]
 				},
 				"leftArm": {
-					"rotation": [-74.6822, 18.85304, 9.02517]
+					"rotation": [-73.31778, -29.438, -4.41146]
 				},
 				"left2": {
-					"rotation": [-25, 0, 0]
+					"rotation": [-6.15516, 4.29344, 34.76902]
 				},
 				"rightArm": {
-					"rotation": [-46.17343, 45.17616, 27.12436]
+					"rotation": [-60, 12.5, 0]
 				},
 				"right2": {
-					"rotation": [-77.5, 0, 0]
+					"rotation": [-41.23454, -12.53413, 16.68991]
 				},
 				"leftLeg": {
 					"rotation": [-15, 0, 0]
@@ -162,6 +205,25 @@
 				"leftL3": {
 					"rotation": [-15, 0, 0],
 					"position": [0, -0.48296, -0.12941]
+				},
+				"bone30": {
+					"rotation": [0, 0, 80],
+					"position": [-4.27721, 5.25349, -0.52684]
+				},
+				"bone39": {
+					"rotation": [0, 0, -30],
+					"position": [6.07856, 1.18597, 1.28244]
+				},
+				"waist": {
+					"rotation": [0, 10, 0]
+				},
+				"bone35": {
+					"rotation": [0, 0, -35],
+					"position": [3.43014, 5.17687, 1.56017]
+				},
+				"guncube": {
+					"rotation": [39.5686, 6.4087, -7.6926],
+					"position": [-9.58411, -6.44319, -10.37449]
 				}
 			}
 		}

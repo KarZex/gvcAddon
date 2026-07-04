@@ -1,0 +1,210 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gvcv5:mer03k",
+      "spawn_category": "monster",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "component_groups": {
+      "tel": {
+        "minecraft:teleport":{
+            "dark_teleport_chance": 1,
+            "light_teleport_chance": 1,
+            "max_random_teleport_time": 2,
+            "min_random_teleport_time": 2,
+            "random_teleport_cube": [32, 16, 32],
+            "random_teleports": false,
+            "target_distance": 16,
+            "target_teleport_chance": 1
+        },
+        "minecraft:timer": {
+          "time": 0.05,
+          "time_down_event": { "event": "gun" }
+	      }
+      },
+      "gun": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 10,
+          "burst_interval": 0.1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1,
+          "attack_interval_max": 3,
+          "attack_radius": 40.0
+        },
+        "minecraft:skin_id": {
+          "value": 1
+        },
+        "minecraft:shooter": {
+          "def": "fire:ads_mp40"
+        }
+      }
+	},
+  
+    "components": {
+      "minecraft:nameable": {},
+      "minecraft:type_family": {
+        "family": [
+          "mob",
+          "monster"
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 32.0,
+        
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "player" },
+                { "test": "is_family", "subject": "other", "value": "playerp" },
+                { "test": "is_family", "subject": "other", "value": "irongolem" },
+                { "test": "is_family", "subject": "other", "value": "snowgolem" },
+                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+              ]
+            },
+            "max_dist": 100
+          },
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "villager" },
+                { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+              ]
+            },
+            "max_dist": 100
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "guerrilla"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "cause": "all",
+            "deals_damage": true,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "gvcv5:spawn_loot",
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 2.0
+      },
+      "minecraft:health": {
+        "value": 100,
+        "max": 100
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:scale": {
+        "value": 1.0
+      },
+      "minecraft:movement": {
+        "value": 0.38
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:physics": {},
+     
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:behavior.random_look_around": {
+        "priority": 4
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 10,
+        "speed_multiplier": 0.9
+      },
+      "minecraft:follow_range": {
+        "value": 100
+      }
+    },
+    "events": {
+      "gvcv5:spawn_loot": {
+        "queue_command": {
+          "command":[
+            "structure load bosschest6 ~~~"
+          ]
+        }
+      },
+      "minecraft:spawned_from_block": {
+        "add": {
+          "component_groups": [
+            "gun"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "gun"
+          ]
+        }
+      },
+      "gun": {
+         "remove": {
+           "component_groups": [
+            "tel"
+           ]
+         },
+         "add": {
+           "component_groups": [
+             "gun"
+           ]
+         }
+       },
+       "tel": {
+         "remove": {
+           "component_groups": [
+            "gun"
+           ]
+         },
+         "add": {
+           "component_groups": [
+             "tel"
+           ]
+         }
+       }
+    }
+  }
+}
