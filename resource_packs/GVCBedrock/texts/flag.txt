@@ -38,5 +38,7 @@ entity.gvcv5:flag_desertcity_ca.name=˜b“¯–¿ŒR‹’“__»”™“ss
 entity.gvcv5:flag_desertcity_ga.name=˜8ƒQƒŠƒ‰‹’“__»”™“ss
 entity.gvcv5:flag_triumphal_arch_ca.name=˜b“¯–¿ŒR‹’“__ŠMù–å
 entity.gvcv5:flag_triumphal_arch_ga.name=˜8ƒQƒŠƒ‰‹’“__ŠMù–å
+entity.gvcv5:flag_flaktower_ca.name=˜b“¯–¿ŒR‹’“__‚Ë–C“ƒ
+entity.gvcv5:flag_flaktower_ga.name=˜8ƒQƒŠƒ‰‹’“__‚Ë–C“ƒ
 entity.gvcv5:flag_slum_ca.name=˜b“¯–¿ŒR‹’“__ƒXƒ‰ƒ€ŠX
 entity.gvcv5:flag_slum_ga.name=˜8ƒQƒŠƒ‰‹’“__ƒXƒ‰ƒ€ŠX

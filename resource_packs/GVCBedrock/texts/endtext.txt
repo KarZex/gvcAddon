@@ -48,8 +48,8 @@ tile.gvcv5:structure_end_desertcity.name=ダンジョン_砂漠都市
 tile.gvcv5:structure_end_triumphal_arch.name=ダンジョン_凱旋門
 tile.gvcv5:structure_end_battleship.name=ダンジョン_旧戦艦
 tile.gvcv5:structure_end_cv.name=ダンジョン_強襲揚陸艦
+tile.gvcv5:structure_end_flaktower.name=ダンジョン_高射砲塔
 tile.gvcv5:structure_end_slum.name=ダンジョン_スラム街
-tile.gvcv5:structure_end_.name=
 tile.gvcv5:structure_end_.name=
 tile.gvcv5:structure_end_.name=execute if entity @p[r=30] run function flag/
 tile.gvcv5:structure_end_.name=

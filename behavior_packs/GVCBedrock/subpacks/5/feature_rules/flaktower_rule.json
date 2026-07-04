@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "gvcv5:triumphal_arch_rule",
-      "places_feature": "gvcv5:triumphal_arch"
+      "identifier": "gvcv5:flaktower_rule",
+      "places_feature": "gvcv5:flaktower"
     },
     "conditions": {
       "placement_pass": "surface_pass",
@@ -41,7 +41,7 @@
     },
     "distribution": {
       "iterations": 1,
-      "scatter_chance": 0.02,
+      "scatter_chance": 0.2,
       "x": {
         "distribution": "uniform",
         "extent": [
