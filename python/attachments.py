@@ -277,6 +277,82 @@ for root, dirs, files in os.walk(attach_directory):
                         }
                         
 
+                    elif( "@" in sights ):
+                        print(sights)
+                        sights = sights.replace("@","")
+                        if( sights != "" ):
+                            sight_number = int(int(sights))
+                        else:
+                            sight_number = 0
+                        render = "controller.render.armor"
+                        if( can_offhand(gun_id) ):
+                            render = "controller.render.gun"
+
+                        if( sight_number > 0 ):
+                            data["minecraft:attachable"]["description"]["animations"]["ads"] = "animation.mosin.ads"
+                            data["minecraft:attachable"]["description"]["render_controllers"] = [
+                                {"{}".format(render):"query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && (!query.is_sneaking || !c.is_first_person)".format(gun_id)},
+                                { "controller.render.scope2": "query.is_sneaking && c.is_first_person" }
+                            ]
+                        else:   
+                            data["minecraft:attachable"]["description"]["render_controllers"] = [
+                                {"{}".format(render):"query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}')".format(gun_id)},
+                            ]
+                        mainhand = {
+                            "pre_animation": [
+                                "v.main_hand = c.item_slot == 'main_hand';"
+                            ],
+                            "animate": [
+                                {
+                                    "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
+                                },
+                                {
+                                    "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+                                },
+                                {
+                                    "third": "v.main_hand && !c.is_first_person"
+                                }
+                            ]
+                        }
+                        offhand = {
+                            "pre_animation": [
+                                "v.main_hand = c.item_slot == 'main_hand';",
+                                "v.off_hand = c.item_slot == 'off_hand';"
+                            ],
+                            "animate": [
+                                {
+                                    "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
+                                },
+                                {
+                                    "first_off": "(v.off_hand && c.is_first_person) && !query.is_sneaking"
+                                },
+                                {
+                                    "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+                                },
+                                {
+                                    "third": "v.main_hand && !c.is_first_person"
+                                },
+                                {
+                                    "third_off": "v.off_hand && !c.is_first_person"
+                                }
+                            ]
+                        }
+                        if can_offhand(gun_id):
+                            data["minecraft:attachable"]["description"]["scripts"] = offhand
+                        else:
+                            data["minecraft:attachable"]["description"]["scripts"] = mainhand
+                        try:
+                            del data["minecraft:attachable"]["description"]["animations"]["ads_scope"]
+                            del data["minecraft:attachable"]["description"]["animations"]["ads_sight"]
+                        except:
+                            print("Already not exist")
+                            
+                        gun_attach_json["{}".format(gun_id)] = {
+                            "sights": sight_number
+                        }
+                        
+                        
+
                     else:
                         print(sights)
                         if( sights != "" ):

@@ -66,6 +66,12 @@
               "awm_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:awm') && (variable.attack_time > 0.0)"
             },
             {
+              "compoundbow": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:compoundbow') && query.is_using_item"
+            },
+            {
+              "compoundbow_reload": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:compoundbow') && (variable.attack_time > 0.0)"
+            },
+            {
               "dp28": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:dp28') && query.is_using_item"
             },
             {
@@ -714,6 +720,36 @@
           "transitions": [
             {
               "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 29 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
+            }
+          ]
+        },
+        "compoundbow_reload": {
+          "on_entry": [
+            "/execute as @s[tag=!reload,tag=!down] run scriptevent gvcv5:reload compoundbow"
+          ],
+          "transitions": [
+            {
+              "default": "(variable.attack_time <= 0.0)"
+            }
+          ]
+        },
+        "compoundbow": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunUse compoundbow"
+          ],
+          "transitions": [
+            {
+              "compoundbow_after": "(!query.is_using_item)"
+            }
+          ]
+        },
+        "compoundbow_after": {
+          "on_entry": [
+            "/scriptevent gvcv5:gunapply"
+          ],
+          "transitions": [
+            {
+              "default": "variable.cooltime = (variable.cooltime ?? 0);variable.cooltime = variable.cooltime < 14 ? variable.cooltime + 1:0;return variable.cooltime == 0;"
             }
           ]
         },

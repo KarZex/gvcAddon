@@ -4,6 +4,7 @@ item.gun:ak47=˜aAK-47˜r
 item.gun:ak102=˜bAK102˜r
 item.gun:an94=˜bAKS-74M˜r
 item.gun:awm=˜bAWM˜r
+item.gun:compoundbow=˜ccompoundbow˜r
 item.gun:dp28=˜bDP-28˜r
 item.gun:famas=˜6MGL140˜r
 item.gun:fgm148=˜6FGM148˜r

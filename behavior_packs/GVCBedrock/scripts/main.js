@@ -495,7 +495,12 @@ world.afterEvents.entitySpawn.subscribe( async e => {
 				else if( !player.getDynamicProperty(`lastFire`)){
 					player.setDynamicProperty(`lastFire`,true)
 					const gunName = getGunProjectlie(projectile.typeId);
-					projectile.dimension.playSound(`fire.${gunData[`${gunName}`][`sound`]}`,projectile.location,{ volume:128 });	
+					if( gunData[`${gunName}`][`sound`] == "arrow" ){
+						projectile.dimension.playSound(`random.bow`,projectile.location,{ volume:128 });	
+					}
+					else{
+						projectile.dimension.playSound(`fire.${gunData[`${gunName}`][`sound`]}`,projectile.location,{ volume:128 });	
+					}	
 					await system.waitTicks(1);
 					player.setDynamicProperty(`lastFire`,false);
 				}
@@ -654,6 +659,15 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			vict.addEffect("slowness", 200,{ amplifier: 10 });
 			vict.addEffect("blindness", 200,{ amplifier: 1 });
 			vict.addEffect("weakness", 200,{ amplifier: 255 });
+		}
+		else if( owner.getProperty(`zex:bullet`) == 7 && !owner.hasTag("isRiding") ){
+			damage = damage * (1 - def);
+			vict.addEffect("fatal_poison", 100,{ amplifier: 1 });
+		}
+		else if( owner.getProperty(`zex:bullet`) == 8 && !owner.hasTag("isRiding") ){
+			damage = damage * (1 - def);
+			vict.dimension.createExplosion(vict.location,2,{ source:owner,breaksBlocks:true })
+			vict.addEffect("fatal_poison", 100,{ amplifier: 1 });
 		}
 		else{
 			damage = damage * (1 - def);

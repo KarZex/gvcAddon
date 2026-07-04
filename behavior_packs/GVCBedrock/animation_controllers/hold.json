@@ -27,6 +27,9 @@
               "awm": "query.get_equipped_item_name == 'awm'"
             },
             {
+              "compoundbow": "query.get_equipped_item_name == 'compoundbow'"
+            },
+            {
               "dp28": "query.get_equipped_item_name == 'dp28'"
             },
             {
@@ -253,6 +256,16 @@
         "awm": {
           "on_entry": [
             "/function hold/awmh"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        },
+        "compoundbow": {
+          "on_entry": [
+            "/function hold/compoundbowh"
           ],
           "transitions": [
             {

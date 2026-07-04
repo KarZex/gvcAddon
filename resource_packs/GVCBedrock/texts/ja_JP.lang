@@ -263,6 +263,10 @@ item.gun:lewis=ルイス軽機関銃
 item.gun:ptrd=PTRD
 item.gun:m14=M14
 
+
+### From V5-6 (GVCBedrock Addon V6.0) Jun 24th 2026
+item.gun:compoundbow=コンパウンドボウ
+
 ### Attachments
 tile.gvcv5:attach_table.name=アタッチメント台
 script.gvcv5.attachment_table.name=アタッチメント台
@@ -303,7 +307,7 @@ script.gvcv5:zex:1270m.name=§c.50Cal§r
 script.gvcv5:zex:rocketm.name=§276mmRocket§r
 script.gvcv5:zex:missilem.name=§576mmMissile§r
 script.gvcv5:zex:40m.name=§e40mmGrenade§r
-script.gvcv5:zex:12m.name=§412Gauge§r
+script.gvcv5:minecraft:arrow.name=§8Arrow§r
 
 ### Vehicle name ###
 ### History

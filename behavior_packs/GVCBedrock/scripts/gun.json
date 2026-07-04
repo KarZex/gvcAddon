@@ -127,6 +127,19 @@
     "bullet": "zex:762m",
     "damageType": "override"
   },
+  "compoundbow": {
+    "damage": 20,
+    "damageIgnoreDef": 3,
+    "recoil": 1.6,
+    "sound": "arrow",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 20,
+    "bullet": "minecraft:arrow",
+    "damageType": "entityExplosion"
+  },
   "dp28": {
     "damage": 8,
     "damageIgnoreDef": 0,

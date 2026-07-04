@@ -1309,6 +1309,24 @@
     },
     "mer03kblock_item": {
       "textures": "textures/items/mer03k"
+    },
+    "mer03k": {
+      "textures": "textures/items/mer03k"
+    },
+    "mer08b": {
+      "textures": "textures/items/mer08b"
+    },
+    "mer08r": {
+      "textures": "textures/items/mer08r"
+    },
+    "psarrow": {
+      "textures": "textures/items/attachment/psarrow"
+    },
+    "exarrow": {
+      "textures": "textures/items/attachment/exarrow"
+    },
+    "compoundbow": {
+      "textures": "textures/items/gun/compoundbow"
     }
   }
 }

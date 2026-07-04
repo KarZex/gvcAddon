@@ -648,6 +648,24 @@
           "table": "loot_tables/gun/awm.json"
         }
       },
+      "compoundbow": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 3,
+          "burst_shots": 1,
+          "burst_interval": 0.8,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 4.0,
+          "attack_interval_max": 4.0,
+          "attack_radius": 20.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:compoundbow"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/gun/compoundbow.json"
+        }
+      },
       "dp28": {
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
@@ -3104,6 +3122,13 @@
         "add": {
           "component_groups": [
             "awm"
+          ]
+        }
+      },
+      "compoundbow": {
+        "add": {
+          "component_groups": [
+            "compoundbow"
           ]
         }
       },

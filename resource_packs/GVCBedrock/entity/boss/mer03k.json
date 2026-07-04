@@ -13,7 +13,7 @@
         "default": "geometry.mer03k"
 			},
 	  "spawn_egg":{
-	  "texture":"mergb",
+	  "texture":"mer03k",
 	  "texture_index":0
 	  },
 			"scripts": {

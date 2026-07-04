@@ -85,6 +85,13 @@ function gvcv5EndBlockEvent( event ){
     }
 }
 
+function gvcv5MER03kBlockEvent( event ){
+    if( world.gameRules.commandBlocksEnabled ){
+        event.block.dimension.spawnEntity(`gvcv5:mer03k`,event.block.location);
+        event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
+    }
+}
+
 function gvcv5BuildingBlockEvent( event ){
     if( world.gameRules.commandBlocksEnabled ){
         let building = event.block.typeId.replace(`gvcv5:building_`,``);
@@ -280,6 +287,7 @@ async function setUp(){
 
 system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawn`,{onPlace: gvcv5SpawnEvent});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:mer03kspawn`,{onPlace: gvcv5MER03kBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:end_block`,{onPlace: gvcv5EndBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,{onPlace: gvcv5BuildingBlockEvent});
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:lootblock`,{onPlace: gvcv5LootBlockEvent});

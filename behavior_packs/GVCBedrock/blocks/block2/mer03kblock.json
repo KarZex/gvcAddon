@@ -20,6 +20,9 @@
 					"ambient_occlusion": false
                 }
             },
+            "minecraft:custom_components": [
+                "gvcv5:mer03kspawn"
+            ],
             "minecraft:geometry": "geometry.mer03kblock",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],

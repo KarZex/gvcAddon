@@ -5,6 +5,7 @@ AK-47,ak47,30,zex:762m,7,6,2,60,1,0,0,0,F,akbullet,1,override,1,2,Kar Zex,2,F,,2
 AK102,ak102,30,zex:556m,7,7,1.5,60,1,0,0,0,F,akbullet,1,override,1,1.5,Kar Zex,3,F,,3,3,,ar,F
 AKS-74M,an94,30,zex:556m,6,8,1.5,60,1,0,0,0,F,akbullet,1,override,1,1.5,Kar Zex,3,F,,3,3,,ar,F
 AWM,awm,5,zex:762m,25,16,0.75,80,30,0,0,0,F,srbullet,1,override,0,2,‚¢‚Ê‚¦ƒ‚ƒ“,3,F,,3,3,,sr,F
+compoundbow,compoundbow,1,minecraft:arrow,20,5,0,20,15,0,0,0,F,arrowbullet,1,entityExplosion,0,1.6,kusnek,4,F,,16,6,,sr,F
 DP-28,dp28,47,zex:762m,8,6,4,100,1,0,2,0,F,lmgbullet,1,override,1,2.5,Kar Zex,5,F,,5,3,,lmg,F
 MGL140,famas,6,zex:40m,30,0.5,2,80,19,2,1,0,F,gbullet,1,entityExplosion,0,4,kusnek,4,F,,4,5,,gre,F
 FGM148,fgm148,1,zex:missilem,50,5,2,60,2,1,2,0,F,missilebullet,1,entityExplosion,0,2,Kar Zex,4,T,H,4,5,,rpg,F

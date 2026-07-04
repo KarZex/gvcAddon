@@ -233,7 +233,7 @@
         "queue_command": {
           "command": [
             "summon gvcv5:flag_flaktower_ca ~~1~",
-            "summon gvcv5:mer08r ~-20~10~"
+            "summon gvcv5:mer08b ~~~"
           ]
         }
       },

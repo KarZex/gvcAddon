@@ -74,6 +74,8 @@ scoreboard objectives add an94 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s an94 30
 scoreboard objectives add awm dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s awm 5
+scoreboard objectives add compoundbow dummy
+execute as @a[tag=!startedv5] run scoreboard players set @s compoundbow 1
 scoreboard objectives add dp28 dummy
 execute as @a[tag=!startedv5] run scoreboard players set @s dp28 47
 scoreboard objectives add famas dummy

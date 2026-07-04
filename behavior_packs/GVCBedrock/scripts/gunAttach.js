@@ -134,10 +134,7 @@ export const gunAttach = {
     "burrel": 0,
     "grip": 0,
     "light": 0,
-    "bullet": [
-      7,
-      8
-    ]
+    "bullet": 0
   },
   "fgm148": {
     "sights": 1,
@@ -490,10 +487,7 @@ export const gunAttach = {
     "burrel": 0,
     "grip": 0,
     "light": 0,
-    "bullet": [
-      7,
-      8
-    ]
+    "bullet": 0
   },
   "m82": {
     "sights": 1,
@@ -791,9 +785,6 @@ export const gunAttach = {
     "burrel": 0,
     "grip": 0,
     "light": 0,
-    "bullet": [
-      7,
-      8
-    ]
+    "bullet": 0
   }
 };

@@ -31,8 +31,8 @@ export const attachmentData = {
     "bullet_srag",
     "bullet_frag",
     "bullet_db",
-    "bullet_gas",
-    "bullet_emp"
+    "psarrow",
+    "exarrow"
   ],
   "attachTypes": [
     "sights",

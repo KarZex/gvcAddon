@@ -318,7 +318,7 @@
         "queue_command": {
           "command": [
             "summon gvcv5:flag_red ~~5~",
-            "summon gvcv5:mer08r ~-20~10~"
+            "summon gvcv5:mer08b ~~~"
           ]
         }
       },
@@ -326,7 +326,7 @@
         "queue_command": {
           "command": [
             "summon gvcv5:flag_blue ~~5~",
-            "summon gvcv5:mer08r ~-20~10~"
+            "summon gvcv5:mer08b ~~~"
           ]
         }
       },
@@ -334,7 +334,7 @@
         "queue_command": {
           "command": [
             "summon gvcv5:flag_green ~~5~",
-            "summon gvcv5:mer08r ~-20~10~"
+            "summon gvcv5:mer08b ~~~"
           ]
         }
       },
@@ -342,7 +342,7 @@
         "queue_command": {
           "command": [
             "summon gvcv5:flag_yellow ~~5~",
-            "summon gvcv5:mer08r ~-20~10~"
+            "summon gvcv5:mer08b ~~~"
           ]
         }
       },
@@ -350,7 +350,7 @@
         "queue_command": {
           "command": [
             "summon gvcv5:flag_flaktower_ca ~~1~",
-            "summon gvcv5:mer08r ~-20~10~"
+            "summon gvcv5:mer08b ~~~"
           ]
         }
       },

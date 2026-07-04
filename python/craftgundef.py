@@ -132,6 +132,8 @@ for row in csv_reader:
             gun_sound_true = "air"
         elif( gun_sound == "missilebullet" ):
             gun_sound_true = "missile"
+        elif( gun_sound == "arrowbullet" ):
+            gun_sound_true = "arrow"
 
         #Gundata fot JS
         gundata_json["{}".format(gun_id)] = { 
