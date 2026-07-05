@@ -99,8 +99,8 @@ const gvcv5MER03kBlockCommponent = {
 	onPlace(e,p){
 		const block = e.block;
         if( world.gameRules.commandBlocksEnabled ){
-            block.dimension.spawnEntity(`gvcv5:mer03k`,event.block.location);
-            block.dimension.setBlockType(event.block.location,`minecraft:air`);
+            block.dimension.spawnEntity(`gvcv5:mer03k`,block.location);
+            block.dimension.setBlockType(block.location,`minecraft:air`);
         }
 	}
 }
@@ -123,17 +123,30 @@ const gvcv5BuildingBlockCommponent = {
             }catch{}
             world.tickingAreaManager.createTickingArea(`${building}`,{ dimension:block.dimension,from:block.location,to:{ x:block.location.x+size[0],y:block.location.y,z:block.location.z+size[2] } });
             await system.waitTicks(5);
+            for( let i = 0; i < size[1]; i++ ){
+                block.dimension.runCommand(`execute positioned ${block.location.x} ${block.location.y} ${block.location.z} run fill ~~-${i}~ ~${Math.min(64,size[0])}~-${i}~${Math.min(64,size[2])} air`);
+            }
+            Math.min([64,size[0]])
             world.structureManager.place(building,block.dimension,buildingLocation,{waterlogged:false})
             if( size[0] > 64 ){
                 await system.waitTicks(5);
+                for( let i = 0; i < size[1]; i++ ){
+                    block.dimension.runCommand(`execute positioned ${block.location.x+64} ${block.location.y} ${block.location.z} run fill ~~-${i}~ ~${Math.min(64,size[0]-64)}~-${i}~${Math.min(64,size[2])} air`);
+                }
                 world.structureManager.place(`${building}_x64`,block.dimension,Vector3Add(buildingLocation,{ x:64,y:0,z:0 }),{waterlogged:false})
             }
             if( size[2] > 64 ){
                 await system.waitTicks(5);
+                for( let i = 0; i < size[1]; i++ ){
+                    block.dimension.runCommand(`execute positioned ${block.location.x} ${block.location.y} ${block.location.z+64} run fill ~~-${i}~ ~${Math.min(64,size[0])}~-${i}~${Math.min(64,size[2]-64)} air`);
+                }
                 world.structureManager.place(`${building}_z64`,block.dimension,Vector3Add(buildingLocation,{ x:0,y:0,z:64 }),{waterlogged:false})
             }
             if( size[0] > 64 && size[2] > 64 ){
                 await system.waitTicks(5);
+                for( let i = 0; i < size[1]; i++ ){
+                    block.dimension.runCommand(`execute positioned ${block.location.x+64} ${block.location.y} ${block.location.z+64} run fill ~~-${i}~ ~${Math.min(64,size[0]-64)}~-${i}~${Math.min(64,size[2]-64)} air`);
+                }
                 world.structureManager.place(`${building}_x64z64`,block.dimension,Vector3Add(buildingLocation,{ x:64,y:0,z:64 }),{waterlogged:false})
             }
             //await system.waitTicks(105);

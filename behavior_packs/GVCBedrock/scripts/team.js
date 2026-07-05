@@ -191,6 +191,26 @@ system.runInterval( () => {
 	}
 },40 );
 
+//Frequently used events
+world.beforeEvents.entityHurt.subscribe( e => {
+	const attacker = e.damageSource.damagingEntity;
+	const victim = e.hurtEntity;
+	const excludeList = [ "player","playerp","mod","mob","allied_soldier" ];
+	const attackerFamily = attacker.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
+	const victimFamily = victim.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
+
+	if( attackerFamily.some(v => victimFamily.includes(v)) ){
+		e.cancel = true;
+	}
+	else{
+		
+	}
+
+
+
+
+} )
+
 system.afterEvents.scriptEventReceive.subscribe( e => {
 	if( e.id === "gvcv5:TeamList" ){
 		let itemRawText = []
