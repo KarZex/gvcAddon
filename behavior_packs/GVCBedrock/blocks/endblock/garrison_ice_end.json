@@ -28,9 +28,9 @@
           16
         ]
       },
-      "minecraft:custom_components": [
-        "gvcv5:end_block"
-      ],
+      "gvcv5:end_block": {
+        "building": "garrison_ice"
+      },
       "minecraft:light_emission": 15,
       "minecraft:light_dampening": 0,
       "minecraft:map_color": "#00ff00"

@@ -167,15 +167,15 @@ for row in csv_reader:
                                 data["minecraft:attachable"]["description"]["geometry"]["none".format(attach_id)] = "geometry.sniperscope"
                                 print(attach)
                                 #tex
-                                if( not "{}".format(attach_id) in data["minecraft:attachable"]["description"]["textures"] and str(attach_number) in attach and "[" in attach ):
+                                if( not "{}".format(attach_id) in data["minecraft:attachable"]["description"]["textures"] and str(attach_number) in attach and ("@" in attach or "[" in attach) ):
                                     data["minecraft:attachable"]["description"]["textures"]["{}".format(attach_id)] = "textures/models/{}.png".format(attach_id)
-                                elif( "{}".format(attach_id) in data["minecraft:attachable"]["description"]["textures"] and not (str(attach_number) in attach and "[" in attach) ):
+                                elif( "{}".format(attach_id) in data["minecraft:attachable"]["description"]["textures"] and not (str(attach_number) in attach and ("@" in attach or "[" in attach)) ):
                                     del data["minecraft:attachable"]["description"]["textures"]["{}".format(attach_id)]
 
                                 #geo
-                                if( not "{}".format(attach_id) in data["minecraft:attachable"]["description"]["geometry"] and str(attach_number) in attach and "[" in attach):
+                                if( not "{}".format(attach_id) in data["minecraft:attachable"]["description"]["geometry"] and str(attach_number) in attach and ("@" in attach or "[" in attach) ):
                                     data["minecraft:attachable"]["description"]["geometry"]["{}".format(attach_id)] = "geometry.{}".format(attach_id)
-                                elif( "{}".format(attach_id) in data["minecraft:attachable"]["description"]["geometry"] and not (str(attach_number) in attach and "[" in attach) ):
+                                elif( "{}".format(attach_id) in data["minecraft:attachable"]["description"]["geometry"] and not (str(attach_number) in attach and ("@" in attach or "[" in attach)) ):
                                     del data["minecraft:attachable"]["description"]["geometry"]["{}".format(attach_id)]
 
                                 #scope
@@ -278,75 +278,54 @@ for root, dirs, files in os.walk(attach_directory):
                         
 
                     elif( "@" in sights ):
-                        print(sights)
                         sights = sights.replace("@","")
                         if( sights != "" ):
                             sight_number = int(int(sights))
                         else:
                             sight_number = 0
-                        render = "controller.render.armor"
-                        if( can_offhand(gun_id) ):
-                            render = "controller.render.gun"
+                        def_ani = get_sights_def_ani(gun_id)
+                        ads_ani = get_sights_ads_ani(gun_id)
+                        data["minecraft:attachable"]["description"]["animations"]["ads_scope"] = "animation.mosin.ads"
+                        data["minecraft:attachable"]["description"]["animations"]["ads_sight"] = "{}".format(ads_ani)
+                        if( def_ani != "" ):
+                            data["minecraft:attachable"]["description"]["animations"]["def_sight"] = "{}".format(def_ani)
+                        for ani in data["minecraft:attachable"]["description"]["scripts"]["animate"]:
+                            if( "ads" in ani ):
+                                ani["ads"] = "query.property('zex:sights') == 0 && !query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
+                            if( "ads_scope" in ani ):
+                                del ani["ads_scope"]
+                            if( "ads_sight" in ani ):
+                                del ani["ads_sight"]
+                            if( "def_sight" in ani ):
+                                del ani["def_sight"]
+                        
+                        data["minecraft:attachable"]["description"]["scripts"]["animate"] = [item for item in data["minecraft:attachable"]["description"]["scripts"]["animate"] if item != {}]
+                        
+                        if( def_ani != "" ):
+                            data["minecraft:attachable"]["description"]["scripts"]["animate"].append({
+                                "def_sight": "query.property('zex:sights') != 0"
+                            })
+                        data["minecraft:attachable"]["description"]["scripts"]["animate"].append({
+                            "ads_scope": "query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
+                        })
+                        data["minecraft:attachable"]["description"]["scripts"]["animate"].append({
+                            "ads_sight": "query.property('zex:sights') != 0 && !query.property('zex:is_scoping') && (v.main_hand && c.is_first_person) && query.is_sneaking"
+                        })
 
-                        if( sight_number > 0 ):
-                            data["minecraft:attachable"]["description"]["animations"]["ads"] = "animation.mosin.ads"
-                            data["minecraft:attachable"]["description"]["render_controllers"] = [
-                                {"{}".format(render):"query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && (!query.is_sneaking || !c.is_first_person)".format(gun_id)},
-                                { "controller.render.scope2": "query.is_sneaking && c.is_first_person" }
-                            ]
-                        else:   
-                            data["minecraft:attachable"]["description"]["render_controllers"] = [
-                                {"{}".format(render):"query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}')".format(gun_id)},
-                            ]
-                        mainhand = {
-                            "pre_animation": [
-                                "v.main_hand = c.item_slot == 'main_hand';"
-                            ],
-                            "animate": [
-                                {
-                                    "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
-                                },
-                                {
-                                    "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
-                                },
-                                {
-                                    "third": "v.main_hand && !c.is_first_person"
-                                }
-                            ]
-                        }
-                        offhand = {
-                            "pre_animation": [
-                                "v.main_hand = c.item_slot == 'main_hand';",
-                                "v.off_hand = c.item_slot == 'off_hand';"
-                            ],
-                            "animate": [
-                                {
-                                    "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
-                                },
-                                {
-                                    "first_off": "(v.off_hand && c.is_first_person) && !query.is_sneaking"
-                                },
-                                {
-                                    "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
-                                },
-                                {
-                                    "third": "v.main_hand && !c.is_first_person"
-                                },
-                                {
-                                    "third_off": "v.off_hand && !c.is_first_person"
-                                }
-                            ]
-                        }
                         if can_offhand(gun_id):
-                            data["minecraft:attachable"]["description"]["scripts"] = offhand
+                            data["minecraft:attachable"]["description"]["render_controllers"] = [
+                                { "controller.render.gun":"query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:{}') && (!query.property('zex:is_scoping') || !c.is_first_person)".format(gun_id)},
+                                { "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person" }
+                            ]
                         else:
-                            data["minecraft:attachable"]["description"]["scripts"] = mainhand
-                        try:
-                            del data["minecraft:attachable"]["description"]["animations"]["ads_scope"]
-                            del data["minecraft:attachable"]["description"]["animations"]["ads_sight"]
-                        except:
-                            print("Already not exist")
-                            
+                            data["minecraft:attachable"]["description"]["render_controllers"] = [
+                                { "controller.render.armor":"(!query.property('zex:is_scoping') || !c.is_first_person)"},
+                                { "controller.render.scope": "query.property('zex:is_scoping') && c.is_first_person" }
+                            ]
+                        attach_type = "sights"
+                        render = { "controller.render.{0}".format(attach_type):"query.property('zex:{0}') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))".format(attach_type) }
+                        data["minecraft:attachable"]["description"]["render_controllers"].append(render)
+
                         gun_attach_json["{}".format(gun_id)] = {
                             "sights": sight_number
                         }

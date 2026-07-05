@@ -203,7 +203,7 @@
       "gvcv5:spawn_loot": {
         "queue_command": {
           "command":[
-            "structure load bosschest2 ~~~"
+            "structure load bosschest15 ~~~"
           ]
         }
       },

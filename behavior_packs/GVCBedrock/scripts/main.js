@@ -666,8 +666,8 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		}
 		else if( owner.getProperty(`zex:bullet`) == 8 && !owner.hasTag("isRiding") ){
 			damage = damage * (1 - def);
-			vict.dimension.createExplosion(vict.location,2,{ source:owner,breaksBlocks:true })
-			vict.addEffect("fatal_poison", 100,{ amplifier: 1 });
+			vict.dimension.createExplosion(vict.location,2,{ source:owner,breaksBlocks:false })
+			//vict.addEffect("fatal_poison", 100,{ amplifier: 1 });
 		}
 		else{
 			damage = damage * (1 - def);
@@ -725,6 +725,13 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 			else if( projectile.typeId == `gre:airstrike2` ){ airstrike( projectile,2,team ); }
 			else if( projectile.typeId == `gre:airstrike3` ){ airstrike( projectile,3,team ); }
 			else if( projectile.typeId == `gre:hauneb_beam` ){ haunebBeam( projectile,3,team ); }
+		}
+	}
+	else if( projectile.typeId.includes(`compoundbow`) ){
+		const owner = projectile.getComponent(`projectile`).owner
+		if( owner.getProperty(`zex:bullet`) == 8 && !owner.hasTag("isRiding") ){
+			projectile.dimension.createExplosion(projectile.location,2,{ source:owner,breaksBlocks:false })
+			//vict.addEffect("fatal_poison", 100,{ amplifier: 1 });
 		}
 	}
 })

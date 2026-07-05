@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.20",
+    "format_version": "1.21.90",
     "minecraft:block": {
         "description": {
             "identifier": "gvcv5:beacon",
@@ -20,13 +20,22 @@
 					"ambient_occlusion": false
                 }
             },
+            "minecraft:destructible_by_explosion":{
+                "explosion_resistance": 1200
+            },
+            "minecraft:destructible_by_mining":{
+                "seconds_to_destroy": 1.5
+            },
+            "tag:minecraft:is_axe_item_destructible":{},
             "minecraft:geometry": "geometry.beacon",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],
                 "size": [16, 16, 16]
             },
 			"minecraft:loot": "loot_tables/empty.json",
-            "minecraft:custom_components": ["gvcv5:spawner"],
+            "gvcv5:spawner": {
+                "type": "gvcv5:ga"
+            },
             "minecraft:light_dampening": 0,
             "minecraft:map_color": "#00ff00"
         },

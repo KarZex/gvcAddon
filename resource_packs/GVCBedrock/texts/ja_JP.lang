@@ -38,11 +38,17 @@ item.spawn_egg.entity.gvcv5:gb5.name=ベテランゲリラ-ドローン誘導
 ### From V4-1 (GVCReversion Addon V1.0) Dec 26th 2021
 item.spawn_egg.entity.zex:stand.name=スタンド
 item.spawn_egg.entity.gvcv5:st1.name=BOSS ST1
-item.spawn_egg.entity.gvcv5:merg08.name=BOSS MERG08
+item.spawn_egg.entity.gvcv5:merg08.name=BOSS MER08
+item.spawn_egg.entity.gvcv5:mer08r.name=BOSS MER08R
+item.spawn_egg.entity.gvcv5:mer08b.name=BOSS MER08B
+item.spawn_egg.entity.gvcv5:mer03k.name=BOSS MER03K
 item.spawn_egg.entity.gvcv5:merg08b.name=BOSS MERG08SN
 entity.gvcv5:st1.name=BOSS ST1
 entity.gvcv5:merg08.name=BOSS MERG08
 entity.gvcv5:merg08b.name=BOSS MERG08SN
+entity.gvcv5:mer08r.name=BOSS MER08R
+entity.gvcv5:mer08b.name=BOSS MER08B
+entity.gvcv5:mer03k.name=BOSS MER03K
 
 ### From V4-3 (GVCReversion Addon V3.0) Mar 28th 2022
 entity.gvcv5:gc1.name=エリートゲリラ
@@ -134,6 +140,7 @@ item.gvcv5:ghilliesuit_helmet=ギリースーツ_頭
 item.gvcv5:ghilliesuit_leggings=ギリースーツ_ズボン
 item.gvcv5:ghilliesuit_chestplate=ギリースーツ_体
 
+item.gvcv5:stealth_cam=ステルス迷彩
 item.zex:icerod=フロストロッド
 item.zex:icepowder=フロストパウダー
 item.zex:icecharge=フロストチャージ
@@ -296,6 +303,8 @@ item.zex:bullet_at=アタッチメント_麻酔弾
 item.zex:bullet_srag=アタッチメント_スラグ弾
 item.zex:bullet_frag=アタッチメント_フラグ弾
 item.zex:bullet_db=アタッチメント_ドラゴンブレス弾
+item.zex:exarrow=アタッチメント_コンパウンドボウ専用爆発矢
+item.zex:psarrow=アタッチメント_コンパウンドボウ専用毒矢
 
 ### Ammo name ###
 script.gvcv5:zex:12m.name=§412Gauge§r
@@ -307,7 +316,7 @@ script.gvcv5:zex:1270m.name=§c.50Cal§r
 script.gvcv5:zex:rocketm.name=§276mmRocket§r
 script.gvcv5:zex:missilem.name=§576mmMissile§r
 script.gvcv5:zex:40m.name=§e40mmGrenade§r
-script.gvcv5:minecraft:arrow.name=§8Arrow§r
+script.gvcv5:minecraft:arrow.name=§aArrow§r
 
 ### Vehicle name ###
 ### History

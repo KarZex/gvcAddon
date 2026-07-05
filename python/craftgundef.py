@@ -150,7 +150,7 @@ for row in csv_reader:
             "damageType": "{}".format(gun_damage_type) 
         }
         if( "P" in gun_special ):
-            gundata_json["{}l".format(gun_id)] = { 
+            gundata_json["{}l".format(gun_id)] = {
                 "damage": gun_damage,
                 "damageIgnoreDef":gun_ignore,
                 "sound": gun_sound_true,

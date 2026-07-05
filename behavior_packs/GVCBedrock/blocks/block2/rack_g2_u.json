@@ -20,6 +20,13 @@
 					"ambient_occlusion": false
                 }
             },
+            "minecraft:destructible_by_explosion":{
+                "explosion_resistance": 1200
+            },
+            "minecraft:destructible_by_mining":{
+                "seconds_to_destroy": 0
+            },
+            "tag:minecraft:is_pickaxe_item_destructible":{},
             "minecraft:geometry": "geometry.rack_g2_u",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],

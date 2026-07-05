@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.20",
+    "format_version": "1.21.90",
     "minecraft:block": {
         "description": {
             "identifier": "gvcv5:jerrycan1",
@@ -19,6 +19,19 @@
                     "render_method": "alpha_test",
 					"ambient_occlusion": false
                 }
+            },
+            "minecraft:destructible_by_explosion":{
+                "explosion_resistance": 1200
+            },
+            "minecraft:destructible_by_mining":{
+                "seconds_to_destroy": 0
+            },
+            "tag:minecraft:is_pickaxe_item_destructible":{},
+            "gvcv5:expoevent": {
+                "range": 1,
+                "is_gas": false,
+                "fire": true,
+                "break_block": true
             },
             "minecraft:geometry": "geometry.jerrycan1",
             "minecraft:selection_box": {

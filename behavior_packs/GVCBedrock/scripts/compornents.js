@@ -1,201 +1,304 @@
-import { world, EquipmentSlot, system } from "@minecraft/server";
+import { world, EquipmentSlot, system, EntityComponentTypes } from "@minecraft/server";
+import { Vector3Add } from "./usefulFunction"
 
-async function gvcv5SpawnEvent( event ){
-    if( world.gameRules.commandBlocksEnabled ){
-        if( world.getDynamicProperty(`gvcv5:doSpawnFromBlock`)){
-            let spawn = event.block.typeId;
-            const spawnBlock = event.block;
-            const spawnLocation = event.block.location;
-            if( spawn.includes(`addon`) ) {
-                spawn = spawn.replace(`gvcv5:spawn_addon_`,`gvcv5:`);
-                
-                
-                const aboveBlock = spawnBlock.above();
-                if( aboveBlock.typeId == `minecraft:chest` ){
-                    let spawner
-                    try{
+
+const gvcv5SpawnCommponent = {
+	onPlace(e,p){
+		const block = e.block;
+		const params = p.params;
+		const spawn = params.spawn_mob;
+		const chestload = params.chest_load;
+        const spawnLocation = block.location;
+        if( world.gameRules.commandBlocksEnabled ){
+            const aboveBlock = block.above();
+            if( world.getDynamicProperty(`gvcv5:doSpawnFromBlock`) ){
+                if( chestload ) {
+                    if( aboveBlock.typeId == `minecraft:chest` ){
+                        let spawner
                         try{
-                            const mainHand = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(0).getItem().typeId;
-                            if( mainHand.includes(`gun:`) ){
-                                spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`${mainHand.replace(`gun:`,``)}`});
-                                spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
-                                world.sendMessage(`${mainHand}`)
+                            try{
+                                const mainHand = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(0).getItem().typeId;
+                                if( mainHand.includes(`gun:`) ){
+                                    spawner =  block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`${mainHand.replace(`gun:`,``)}`});
+                                    spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
+                                    //world.sendMessage(`${mainHand}`)
+                                }
+                                else{
+                                    spawner =  block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`melee`});
+                                    spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
+                                    spawner.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${mainHand}`);
+                                }
+                            }catch{}
+                            try{
+                                const Offhand = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(1).getItem().typeId;
+                                spawner.runCommand(`replaceitem entity @s slot.weapon.offhand 0 ${Offhand}`);
                             }
-                            else{
-                                spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`melee`});
-                                spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
-                                spawner.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${mainHand}`);
+                            catch{}
+                            try{
+                                const armorHead = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(2).getItem().typeId;
+                                spawner.runCommand(`replaceitem entity @s slot.armor.head 0 ${armorHead}`);
                             }
+                            catch{}
+                            try{
+                                const armorChest = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(3).getItem().typeId;
+                                spawner.runCommand(`replaceitem entity @s slot.armor.chest 0 ${armorChest}`);
+                            }
+                            catch{}
+                            try{
+                                const armorLegs = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(4).getItem().typeId;
+                                spawner.runCommand(`replaceitem entity @s slot.armor.legs 0 ${armorLegs}`);
+                            }
+                            catch{}
+                            try{
+                                const armorFeet = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(5).getItem().typeId;
+                                spawner.runCommand(`replaceitem entity @s slot.armor.feet 0 ${armorFeet}`);
+                            }
+                            catch{}
+                            
+                        }
+                        catch{}
+                        try{
+                            aboveBlock.getComponent(`minecraft:inventory`).container.clearAll()
                         }catch{}
-                        try{
-                            const Offhand = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(1).getItem().typeId;
-                            spawner.runCommand(`replaceitem entity @s slot.weapon.offhand 0 ${Offhand}`);
-                        }
-                        catch{}
-                        try{
-                            const armorHead = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(2).getItem().typeId;
-                            spawner.runCommand(`replaceitem entity @s slot.armor.head 0 ${armorHead}`);
-                        }
-                        catch{}
-                        try{
-                            const armorChest = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(3).getItem().typeId;
-                            spawner.runCommand(`replaceitem entity @s slot.armor.chest 0 ${armorChest}`);
-                        }
-                        catch{}
-                        try{
-                            const armorLegs = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(4).getItem().typeId;
-                            spawner.runCommand(`replaceitem entity @s slot.armor.legs 0 ${armorLegs}`);
-                        }
-                        catch{}
-                        try{
-                            const armorFeet = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(5).getItem().typeId;
-                            spawner.runCommand(`replaceitem entity @s slot.armor.feet 0 ${armorFeet}`);
-                        }
-                        catch{}
-                        
+                        aboveBlock.dimension.setBlockType(aboveBlock.location,`minecraft:air`);
                     }
-                    catch{}
-                    try{
-                        aboveBlock.getComponent(`minecraft:inventory`).container.clearAll()
-                    }catch{}
+                    else{
+                        const spawner =  block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`minecraft:spawned_from_block`});
+                        spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
+                    }
+                    
+                    //const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`minecraft:spawned_from_block`});
+                    //spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
                     aboveBlock.dimension.setBlockType(aboveBlock.location,`minecraft:air`);
                 }
                 else{
-                    const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`minecraft:spawned_from_block`});
-                    spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
+                    block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z }).teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
                 }
-                
-                //const spawner =  event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`minecraft:spawned_from_block`});
-                //spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
             }
-            else if( spawn.includes(`vehicle`) ) {
-                spawn = spawn.replace(`gvcv5:spawn_vehicle_`,`vehicle:`); 
-                event.block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z }).teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
+            block.dimension.setBlockType(block.location,`minecraft:air`);
+        }
+
+	}
+}
+
+
+const gvcv5EndBlockCommponent = {
+	onPlace(e,p){
+		const block = e.block;
+		const params = p.params;
+        const building = p.params.building;
+        if( world.gameRules.commandBlocksEnabled ){
+            block.dimension.runCommand(`tickingarea remove ${building}`);
+            block.dimension.setBlockType(block.location,`minecraft:air`);
+
+        }
+	}
+}
+
+const gvcv5MER03kBlockCommponent = {
+	onPlace(e,p){
+		const block = e.block;
+        if( world.gameRules.commandBlocksEnabled ){
+            block.dimension.spawnEntity(`gvcv5:mer03k`,event.block.location);
+            block.dimension.setBlockType(event.block.location,`minecraft:air`);
+        }
+	}
+}
+
+const gvcv5BuildingBlockCommponent = {
+	async onPlace(e,p){
+		const block = e.block;
+		const params = p.params;
+        const building = p.params.building;
+        const size = p.params.size;
+        if( world.gameRules.commandBlocksEnabled ){
+            const buildingLocation = {
+                x:block.location.x,
+                y:block.location.y - size[1],
+                z:block.location.z
+            }
+            print(`${world.tickingAreaManager.hasCapacity( {dimension:block.dimension,from:block.location,to:{ x:block.location.x+size[0],y:block.location.y,z:block.location.z+size[2] }} )}`)
+            try{
+                world.tickingAreaManager.removeTickingArea(`${building}`);
+            }catch{}
+            world.tickingAreaManager.createTickingArea(`${building}`,{ dimension:block.dimension,from:block.location,to:{ x:block.location.x+size[0],y:block.location.y,z:block.location.z+size[2] } });
+            await system.waitTicks(5);
+            world.structureManager.place(building,block.dimension,buildingLocation,{waterlogged:false})
+            if( size[0] > 64 ){
+                await system.waitTicks(5);
+                world.structureManager.place(`${building}_x64`,block.dimension,Vector3Add(buildingLocation,{ x:64,y:0,z:0 }),{waterlogged:false})
+            }
+            if( size[2] > 64 ){
+                await system.waitTicks(5);
+                world.structureManager.place(`${building}_z64`,block.dimension,Vector3Add(buildingLocation,{ x:0,y:0,z:64 }),{waterlogged:false})
+            }
+            if( size[0] > 64 && size[2] > 64 ){
+                await system.waitTicks(5);
+                world.structureManager.place(`${building}_x64z64`,block.dimension,Vector3Add(buildingLocation,{ x:64,y:0,z:64 }),{waterlogged:false})
+            }
+            //await system.waitTicks(105);
+            //world.tickingAreaManager.removeTickingArea(`${building}Generate`);
+            //block.dimension.setBlockType(block.location,`minecraft:air`);
+        }
+	}
+}
+
+
+const gvcv5LootBlockCommponent = {
+	onPlace(e,p){
+		const block = e.block;
+		const params = p.params;
+        const type = p.params.type;
+        if( world.gameRules.commandBlocksEnabled ){
+            const buildingLocation = block.location;
+            const face = block.permutation.getState('minecraft:cardinal_direction');
+            if( face == `north` ){
+                block.dimension.runCommand(`setblock ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} chest [\"minecraft:cardinal_direction\"=\"south\"]`);
+            }
+            else if( face == `south` ){
+                block.dimension.runCommand(`setblock ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} chest [\"minecraft:cardinal_direction\"=\"north\"]`);
+            }
+            else if( face == `west` ){
+                block.dimension.runCommand(`setblock ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} chest [\"minecraft:cardinal_direction\"=\"east\"]`);
+            }
+            else if( face == `east` ){
+                block.dimension.runCommand(`setblock ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} chest [\"minecraft:cardinal_direction\"=\"west\"]`);
+            }
+            if( type != `l0` ){
+                block.dimension.runCommand(`loot insert ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} loot ${type}`);
             }
         }
-        event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
-    }
+	}
 }
 
-function gvcv5EndBlockEvent( event ){
-    if( world.gameRules.commandBlocksEnabled ){
-        let building = event.block.typeId.replace(`gvcv5:structure_end_`,``);
-        event.block.dimension.runCommand(`tickingarea remove ${building}`);
-        event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
-    }
-}
-
-function gvcv5MER03kBlockEvent( event ){
-    if( world.gameRules.commandBlocksEnabled ){
-        event.block.dimension.spawnEntity(`gvcv5:mer03k`,event.block.location);
-        event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
-    }
-}
-
-function gvcv5BuildingBlockEvent( event ){
-    if( world.gameRules.commandBlocksEnabled ){
-        let building = event.block.typeId.replace(`gvcv5:building_`,``);
-        const buildingLocation = event.block.location;
-        event.block.dimension.runCommand(`execute positioned ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} run function structure/${building}`);
-        event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
-    }
-}
-
-function gvcv5LootBlockEvent( event ){
-    if( world.gameRules.commandBlocksEnabled ){
-        const type = event.block.typeId.replace(`gvcv5:`,``);
-        const buildingLocation = event.block.location;
-        const face = event.block.permutation.getState('minecraft:cardinal_direction');
-        if( face == `north` ){
-            event.block.dimension.runCommand(`setblock ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} chest [\"minecraft:cardinal_direction\"=\"south\"]`);
+const gvcv5SpawnerCommponent = {
+	onRandomTick(e,p){
+		const block = e.block;
+		const params = p.params;
+        const type = p.params.type;
+        const spawnLocation = block.location;
+        if( world.gameRules.commandBlocksEnabled ){
+            block.dimension.spawnEntity(type,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 }).triggerEvent(`minecraft:spawned_from_spawner`);
+            block.dimension.spawnEntity(type,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z }).triggerEvent(`minecraft:spawned_from_spawner`);
+            block.dimension.spawnEntity(type,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z-1 }).triggerEvent(`minecraft:spawned_from_spawner`);
         }
-        else if( face == `south` ){
-            event.block.dimension.runCommand(`setblock ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} chest [\"minecraft:cardinal_direction\"=\"north\"]`);
+	},
+	onStepOn(e,p){
+		const block = e.block;
+		const entity = e.entity;
+        const IsFire = Boolean(entity.typeId.includes(`fire`));
+        const spawnLocation = {
+            x:block.location.x + 0.5,
+            y:block.location.y,
+            z:block.location.z + 0.5
         }
-        else if( face == `west` ){
-            event.block.dimension.runCommand(`setblock ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} chest [\"minecraft:cardinal_direction\"=\"east\"]`);
+        if( world.gameRules.commandBlocksEnabled && IsFire ){
+            block.dimension.spawnParticle(`minecraft:large_explosion`,spawnLocation);
+            block.dimension.playSound(`random.explode`,spawnLocation,{ volume:16 });
+            block.dimension.setBlockType(block.location,`minecraft:air`);
         }
-        else if( face == `east` ){
-            event.block.dimension.runCommand(`setblock ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} chest [\"minecraft:cardinal_direction\"=\"west\"]`);
-        }
-        if( type != `l0` ){
-            event.block.dimension.runCommand(`loot insert ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} loot ${type}`);
-        }
-    }
+	}
 }
 
-function gvcv5SpawnerEvent( event ){
-    if( world.getDynamicProperty(`gvcv5:doSpawnFromBeacon`)){
-        let spawn = event.block.typeId;
-        const spawnLocation = event.block.location;
-        if ( spawn.includes(`so`) ){
-            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 }).triggerEvent(`minecraft:spawned_from_spawner`);
-            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z }).triggerEvent(`minecraft:spawned_from_spawner`);
-            event.block.dimension.spawnEntity(`gvcv5:ca`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z-1 }).triggerEvent(`minecraft:spawned_from_spawner`);
+const gvcv5UseCommandCommponent = {
+	onPlayerInteract(e,p){
+		const player = e.player;
+		const params = p.params;
+        const type = p.params.type;
+        player.runCommand(`${type}`);
+	}
+}
+
+// function gvcv5Scaffold( event ) {
+//     const L = event.block.location;
+//     event.block.dimension.runCommand(`fill ${L.x-16} ${L.y-16} ${L.z-16} ${L.x+15} ${L.y+15} ${L.z+15} air replace gvcv5:gvcv5_scaffold`)
+//     event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
+// }
+
+const gvcv5BlockExpoCommponent = {
+	onStepOn(e,p){
+		const block = e.block;
+		const entity = e.entity;
+        const IsFire = Boolean(entity.typeId.includes(`fire`));
+		const params = p.params;
+        const range = p.params.range;
+        const isGas = p.params.is_gas;
+        const fire = p.params.fire;
+        const breakBlock = p.params.break_block;
+        if( world.gameRules.commandBlocksEnabled && IsFire ){
+            const spawnLocation = {
+                x:block.location.x + 0.5,
+                y:block.location.y,
+                z:block.location.z + 0.5
+            }
+            block.dimension.setBlockType(block.location,`minecraft:air`);
+            if( isGas ){
+                block.dimension.runCommand(`structure load poison ${spawnLocation.x} ${spawnLocation.y} ${spawnLocation.z}`);
+            }
+            else{
+                world.getDimension(block.dimension.id).createExplosion(spawnLocation,range,{causesFire:fire,breaksBlocks:breakBlock})
+            }
         }
-        else {
-            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 }).triggerEvent(`minecraft:spawned_from_spawner`);
-            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z }).triggerEvent(`minecraft:spawned_from_spawner`);
-            event.block.dimension.spawnEntity(`gvcv5:ga`,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z-1 }).triggerEvent(`minecraft:spawned_from_spawner`);
+	},
+	onBreak(e,p){
+		const block = e.block;
+		const params = p.params;
+        const range = p.params.range;
+        const isGas = p.params.is_gas;
+        const fire = p.params.fire;
+        const breakBlock = p.params.break_block;
+        if( world.gameRules.commandBlocksEnabled ){
+            const spawnLocation = {
+                x:block.location.x + 0.5,
+                y:block.location.y,
+                z:block.location.z + 0.5
+            }
+            block.dimension.setBlockType(block.location,`minecraft:air`);
+            if( isGas ){
+                block.dimension.runCommand(`structure load poison ${spawnLocation.x} ${spawnLocation.y} ${spawnLocation.z}`);
+            }
+            else{
+                world.getDimension(block.dimension.id).createExplosion(spawnLocation,range,{causesFire:fire,breaksBlocks:breakBlock})
+            }
         }
-    }
+	}
 }
 
-function gvcv5UseCrafter( event ){
-    const type = event.block.typeId.replace(`gvcv5:`,``);
-    const player = event.player;
-    player.runCommand(`scriptevent gvcv5:craft ${type}`);
-}
-function gvcv5Attachtable( event ){
-    const player = event.player;
-    player.runCommand(`scriptevent gvcv5:attach_table`);
-}
-
-
-function gvcv5Scaffold( event ) {
-    const L = event.block.location;
-    event.block.dimension.runCommand(`fill ${L.x-16} ${L.y-16} ${L.z-16} ${L.x+15} ${L.y+15} ${L.z+15} air replace gvcv5:gvcv5_scaffold`)
-    event.block.dimension.setBlockType(event.block.location,`minecraft:air`);
-}
-
-function gvcv5GasEvent( event ){
-    if( world.gameRules.commandBlocksEnabled ){
-        const buildingLocation = event.block.location;
-        event.block.dimension.runCommand(`structure load poison ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z}`);
-    }
-}
-
-function gvcv5BreakBlockEvent( event ){
-    if( world.gameRules.commandBlocksEnabled ){
-        const spawnLocation = event.block.location;
-        event.block.dimension.runCommand(`particle minecraft:large_explosion ${spawnLocation.x} ${spawnLocation.y} ${spawnLocation.z}`);
-        event.block.dimension.runCommand(`playsound random.explode @a ${spawnLocation.x} ${spawnLocation.y} ${spawnLocation.z}`);
-        event.block.dimension.setBlockType(spawnLocation,`minecraft:air`);
-    }
-}
-
-function gvcv5MineEvent( event ){
-    if( world.gameRules.commandBlocksEnabled ){
-        const type = event.block.typeId.replace(`gvcv5:`,``);
-        const entity = event.entity;
-        const spawnLocation = event.block.location;
-        if( entity.typeId.includes(`vehicle`) && type == `minet` ){
-            event.block.dimension.spawnEntity(`addon:minet`,spawnLocation);
-            event.block.dimension.setBlockType(spawnLocation,`minecraft:air`);
+const gvcv5MineCommponent = {
+	onStepOn(e,p){
+		const block = e.block;
+		const entity = e.entity;
+        const IsEntity = Boolean(entity.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`player`) || entity.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`mob`) );
+        const Istank = Boolean(entity.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`vehicle`) );
+		const params = p.params;
+        const antiTank = p.params.anti_tank;
+        const breakBlock = p.params.break_block;
+        if( world.gameRules.commandBlocksEnabled ){
+            const spawnLocation = {
+                x:block.location.x + 0.5,
+                y:block.location.y,
+                z:block.location.z + 0.5
+            }
+            if( antiTank && Istank ){
+                block.dimension.spawnEntity(`addon:minet`,spawnLocation);
+                block.dimension.setBlockType(spawnLocation,`minecraft:air`);
+            }
+            else if( !antiTank && IsEntity ){
+                block.dimension.spawnEntity(`addon:mineh`,spawnLocation);
+                block.dimension.setBlockType(spawnLocation,`minecraft:air`);
+            }
         }
-        else if( type == `mine` ){
-            event.block.dimension.spawnEntity(`addon:mineh`,spawnLocation);
-            event.block.dimension.setBlockType(spawnLocation,`minecraft:air`);
-        }
-    }
+	}
 }
 
-function gvcv5ExplosionEvent( event ){
-    const block = event.block;
-    const location = block.location;
-    block.dimension.runCommand(`particle minecraft:large_explosion ${location.x} ${location.y} ${location.z}`);
-    block.dimension.runCommand(`playsound random.explode @a ${location.x} ${location.y} ${location.z}`);
-    block.dimension.setBlockType(location,`minecraft:air`);
+
+const gvcv5ItemCommandCommponent = {
+	onUse(e,p){
+		const block = e.block;
+		const user = e.source;
+        const type = p.params.type;
+        user.runCommand(`function noteamphone`);
+	}
 }
 
 function gvcv5Phone( event ){
@@ -209,16 +312,32 @@ function gvcv5UseMtype( event ){
     event.source.runCommand(`function mtype`);
 }
 
-function gvcv5UseAidKit( event ){
-    event.source.addEffect("regeneration",14,{ amplifier: 4 })
+
+const gvcv5UseAidKitCommponent = {
+	onConsume(e,p){
+		const block = e.block;
+		const user = e.source;
+        user.addEffect("regeneration",14,{ amplifier: 4 })
+	}
 }
-function gvcv5UseAidKitii( event ){
-    event.source.addEffect("regeneration",14,{ amplifier: 12 })
+
+const gvcv5UseAidKitiiCommponent = {
+	onConsume(e,p){
+		const block = e.block;
+		const user = e.source;
+        user.addEffect("regeneration",14,{ amplifier: 12 })
+	}
 }
-function gvcv5UseSelfRise( event ){
-    event.source.addEffect("regeneration",14,{ amplifier: 12 })
-    event.source.runCommand(`event entity @s gvcv5:remove_down_true`);
+
+const gvcv5UseSelfRiseCommponent = {
+	onConsume(e,p){
+		const block = e.block;
+		const user = e.source;
+        user.addEffect("regeneration",14,{ amplifier: 12 });
+        user.runCommand(`event entity @s gvcv5:remove_down_true`);
+	}
 }
+
 async function setUp(){
     await system.waitTicks(100);
     if( world.getDynamicProperty("gvcv5:playerDamage") == undefined ){
@@ -286,24 +405,24 @@ async function setUp(){
 
 
 system.beforeEvents.startup.subscribe( e => {
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawn`,{onPlace: gvcv5SpawnEvent});
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:mer03kspawn`,{onPlace: gvcv5MER03kBlockEvent});
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:end_block`,{onPlace: gvcv5EndBlockEvent});
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,{onPlace: gvcv5BuildingBlockEvent});
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:lootblock`,{onPlace: gvcv5LootBlockEvent});
-    e.blockComponentRegistry.registerCustomComponent("gvcv5:scaffold",{onPlayerBreak: gvcv5Scaffold})
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawner`,{onRandomTick: gvcv5SpawnerEvent,onStepOn:gvcv5BreakBlockEvent});
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:crafter`,{onPlayerInteract: gvcv5UseCrafter});
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:gasevent`,{onStepOn: gvcv5GasEvent,onPlayerBreak: gvcv5GasEvent});
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:mineevent`,{onStepOn: gvcv5MineEvent,onPlayerBreak: gvcv5MineEvent});
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:attach_table`,{onPlayerInteract: gvcv5Attachtable});
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:explosion`,{onBreak: gvcv5ExplosionEvent});
-    e.itemComponentRegistry.registerCustomComponent(`gvcv5:phone`,{onUse: gvcv5Phone});
-    e.itemComponentRegistry.registerCustomComponent(`gvcv5:orderflag`,{onUse: gvcv5UseFlag});
-    e.itemComponentRegistry.registerCustomComponent(`gvcv5:mtype`,{onUse: gvcv5UseMtype});
-    e.itemComponentRegistry.registerCustomComponent(`gvcv5:aid`,{onConsume: gvcv5UseAidKit});
-    e.itemComponentRegistry.registerCustomComponent(`gvcv5:aid2`,{onConsume: gvcv5UseAidKitii});
-    e.itemComponentRegistry.registerCustomComponent(`gvcv5:selfkit`,{onConsume: gvcv5UseSelfRise});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawn`,gvcv5SpawnCommponent);
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:mer03kspawn`,gvcv5MER03kBlockCommponent);
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:end_block`,gvcv5EndBlockCommponent);
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,gvcv5BuildingBlockCommponent);
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:lootblock`,gvcv5LootBlockCommponent);
+    //e.blockComponentRegistry.registerCustomComponent("gvcv5:scaffold",{onPlayerBreak: gvcv5Scaffold})
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawner`,gvcv5SpawnerCommponent);
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:crafter`,gvcv5UseCommandCommponent);
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:expoevent`,gvcv5BlockExpoCommponent);
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:mineevent`,gvcv5MineCommponent);
+    //e.blockComponentRegistry.registerCustomComponent(`gvcv5:attach_table`,{onPlayerInteract: gvcv5Attachtable});
+    //e.blockComponentRegistry.registerCustomComponent(`gvcv5:explosion`,{onBreak: gvcv5ExplosionEvent});
+    e.itemComponentRegistry.registerCustomComponent(`gvcv5:phone`,gvcv5ItemCommandCommponent);
+    //e.itemComponentRegistry.registerCustomComponent(`gvcv5:orderflag`,{onUse: gvcv5UseFlag});
+    //e.itemComponentRegistry.registerCustomComponent(`gvcv5:mtype`,{onUse: gvcv5UseMtype});
+    e.itemComponentRegistry.registerCustomComponent(`gvcv5:aid`,gvcv5UseAidKitCommponent);
+    e.itemComponentRegistry.registerCustomComponent(`gvcv5:aid2`,gvcv5UseAidKitiiCommponent);
+    e.itemComponentRegistry.registerCustomComponent(`gvcv5:selfkit`,gvcv5UseSelfRiseCommponent);
 });
 
 world.afterEvents.worldLoad.subscribe( async e => {

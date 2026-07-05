@@ -23,6 +23,9 @@ execute as @e[tag=raid] run function raid/zombietarget
 gamemode a @a[m=s,scores={antiMining=1..}]
 execute as @a[m=a,scores={antiMining=1..}] run function antiMining
 
+effect @a[hasitem={item=gvcv5:stealth_cam,location=slot.armor.head}] invisibility 1 6 true
+
+
 #function sounds
 
 execute as @a[scores={printDamage=-5..}] run scriptevent gvcv5:printDamage

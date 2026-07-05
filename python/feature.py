@@ -18,6 +18,7 @@ for row in csv_reader:
         with open("tool/structure_end.json","r") as f:
             structure_end_json = json.load(f)
             structure_end_json["minecraft:block"]["description"]["identifier"] = "gvcv5:structure_end_{}".format(row[2])
+            structure_end_json["minecraft:block"]["components"]["gvcv5:end_block"]["building"] = "{}".format(row[2])
             
 
         with open("behavior_packs/GVCBedrock/blocks/endblock/{}_end.json".format(row[2]),"w") as f:
@@ -34,12 +35,12 @@ for row in csv_reader:
         structure_is_ship = row[9]
         text += "tile.gvcv5:building_{0}.name={1}\n".format(structure_id,row[0])
         with open("behavior_packs/GVCBedrock/functions/structure/{}.mcfunction".format(structure_id),"w") as f:
-            f.write("execute if score {3} building matches 1 run tickingarea add ~~~ ~{0}~63~{1} {2} true\n".format(structure_loadx+16,structure_loadz+16,structure_id,structure_flag_type))
-            f.write("execute if score {4} building matches 1 run structure load {3} ~~-{1}~\n".format(structure_loadx,structure_loady,structure_loadz,structure_id,structure_flag_type))
-            if( structure_loadx > 64 ): f.write("execute if score {4} building matches 1 run structure load {3}_x64 ~64~-{1}~\n".format(structure_loadx,structure_loady,structure_loadz,structure_id,structure_flag_type))
-            if( structure_loadz > 64 ): f.write("execute if score {4} building matches 1 run structure load {3}_z64 ~~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,structure_id,structure_flag_type))
-            if( structure_loadx > 64 and structure_loadz > 64 ): f.write("execute if score {4} building matches 1 run structure load {3}_x64z64 ~64~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,structure_id,structure_flag_type))
-            f.write("fill ~~~ ~~~ minecraft:air\n")
+            # f.write("execute if score {3} building matches 1 run tickingarea add ~~~ ~{0}~63~{1} {2} true\n".format(structure_loadx+16,structure_loadz+16,structure_id,structure_flag_type))
+            # f.write("execute if score {4} building matches 1 run structure load {3} ~~-{1}~\n".format(structure_loadx,structure_loady,structure_loadz,structure_id,structure_flag_type))
+            # if( structure_loadx > 64 ): f.write("execute if score {4} building matches 1 run structure load {3}_x64 ~64~-{1}~\n".format(structure_loadx,structure_loady,structure_loadz,structure_id,structure_flag_type))
+            # if( structure_loadz > 64 ): f.write("execute if score {4} building matches 1 run structure load {3}_z64 ~~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,structure_id,structure_flag_type))
+            # if( structure_loadx > 64 and structure_loadz > 64 ): f.write("execute if score {4} building matches 1 run structure load {3}_x64z64 ~64~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,structure_id,structure_flag_type))
+            f.write("setblock ~~~ gvcv5:building_{}\n".format(structure_id))
             
         with open("tool/feature.json","r") as f:
             feature_json = json.load(f)
@@ -89,6 +90,8 @@ for row in csv_reader:
         with open("tool/structure_block.json","r") as f:
             structure_block_json = json.load(f)
             structure_block_json["minecraft:block"]["description"]["identifier"] = "gvcv5:building_{}".format(structure_id)
+            structure_block_json["minecraft:block"]["components"]["gvcv5:building"]["building"] = "{}".format(structure_id)
+            structure_block_json["minecraft:block"]["components"]["gvcv5:building"]["size"] = [  structure_loadx, structure_loady, structure_loadz ]
             
 
         with open("behavior_packs/GVCBedrock/blocks/buildings/{}.json".format(structure_id),"w") as f:

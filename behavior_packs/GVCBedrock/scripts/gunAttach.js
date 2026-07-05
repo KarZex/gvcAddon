@@ -122,6 +122,16 @@ export const gunAttach = {
       2
     ]
   },
+  "compoundbow": {
+    "sights": 3,
+    "burrel": 0,
+    "grip": 0,
+    "light": 0,
+    "bullet": [
+      7,
+      8
+    ]
+  },
   "dp28": {
     "sights": 0,
     "burrel": 0,

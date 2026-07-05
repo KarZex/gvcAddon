@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.60",
+    "format_version": "1.21.90",
     "minecraft:block": {
         "description": {
             "identifier": "gvcv5:gc3",
@@ -20,10 +20,16 @@
 					"ambient_occlusion": false
                 }
             },
-			"minecraft:destructible_by_mining":{
-				"seconds_to_destroy": 2.5
-			},
-            "minecraft:custom_components": ["gvcv5:crafter"],
+            "minecraft:destructible_by_explosion":{
+                "explosion_resistance": 1200
+            },
+            "minecraft:destructible_by_mining":{
+                "seconds_to_destroy": 2.5
+            },
+            "tag:minecraft:is_pickaxe_item_destructible":{},
+            "gvcv5:crafter": {
+                "type":"scriptevent gvcv5:craft gc3"
+            },
             "minecraft:geometry": "geometry.gc3",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],

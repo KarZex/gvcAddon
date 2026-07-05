@@ -180,7 +180,7 @@
       "gvcv5:spawn_loot": {
         "queue_command": {
           "command":[
-            "structure load bosschest6 ~~~"
+            "structure load bosschest13 ~~~"
           ]
         }
       },

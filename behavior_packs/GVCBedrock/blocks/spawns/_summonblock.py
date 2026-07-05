@@ -12,7 +12,8 @@ with open("_summon.txt","r") as f:
         print(e_id)
         block_json = json.load(open("_spawn.json","r"))
         block_json["minecraft:block"]["description"]["identifier"] = "gvcv5:spawn_{}".format(e_id.replace(":","_"))
-        block_json["minecraft:block"]["components"]["minecraft:material_instances"]["*"]["texture"] = "spawn_{}".format(e_id.replace(":","_"))
+        block_json["minecraft:block"]["components"]["gvcv5:spawn"]["spawn_mob"] = e_id.replace("addon","gvcv5")
+        block_json["minecraft:block"]["components"]["gvcv5:spawn"]["chest_load"] = bool(mode == "r")
         block_json["minecraft:block"]["components"]["minecraft:material_instances"]["*"]["texture"] = "spawn_{}".format(e_id.replace(":","_"))
         block_json["minecraft:block"]["components"]["minecraft:loot"] = "loot_tables/empty.json"
 

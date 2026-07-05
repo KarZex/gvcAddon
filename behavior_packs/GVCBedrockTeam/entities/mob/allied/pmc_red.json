@@ -94,13 +94,37 @@
         "minecraft:movement": {
           "value": 0.25
         },
-        "minecraft:behavior.tempt": {
+        "minecraft:behavior.follow_mob": {
           "priority": 0,
+          "search_range": 16,
+          "stop_distance": 1,
           "speed_multiplier": 1.2,
-          "within_radius": 16,
-          "items": [
-            "zex:commandradio"
-          ]
+          "use_home_position_restriction": false,
+          "preferred_actor_type": "player",
+          "filters": {
+            "all_of": [
+              {
+                "test": "is_underwater",
+                "subject": "other",
+                "value": false
+              },
+              {
+                "test": "is_baby",
+                "subject": "other",
+                "value": false
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "redteam"
+              }
+            ]
+          }
         },
         "minecraft:variant": {
           "value": 3

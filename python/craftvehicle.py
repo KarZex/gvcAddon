@@ -107,6 +107,8 @@ for row in csv_reader:
         ## Block spawn_vehicle_lav25
         block_json = json.load(open("tool/_spawn.json","r"))
         block_json["minecraft:block"]["description"]["identifier"] = "gvcv5:spawn_vehicle_{}".format(v_id.replace(":","_"))
+        block_json["minecraft:block"]["components"]["gvcv5:spawn"]["spawn_mob"] = f"vehicle:{v_id}"
+        block_json["minecraft:block"]["components"]["gvcv5:spawn"]["chest_load"] = False
         block_json["minecraft:block"]["components"]["minecraft:material_instances"]["*"]["texture"] = "spawn_vehicle_{}".format(v_id.replace(":","_"))
         block_json["minecraft:block"]["components"]["minecraft:material_instances"]["*"]["texture"] = "spawn_vehicle_{}".format(v_id.replace(":","_"))
         block_json["minecraft:block"]["components"]["minecraft:loot"] = "loot_tables/empty.json"

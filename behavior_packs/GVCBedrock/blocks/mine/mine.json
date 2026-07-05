@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.60",
+    "format_version": "1.21.90",
     "minecraft:block": {
         "description": {
             "identifier": "gvcv5:mine",
@@ -23,7 +23,9 @@
 			"minecraft:destructible_by_mining":{
 				"seconds_to_destroy": 5
 			},
-            "minecraft:custom_components": ["gvcv5:mineevent"],
+            "gvcv5:mineevent": {
+                "anti_tank":false
+            },
             "minecraft:geometry": "geometry.mineh",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],

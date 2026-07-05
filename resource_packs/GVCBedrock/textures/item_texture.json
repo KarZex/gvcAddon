@@ -116,8 +116,8 @@
     "famas": {
       "textures": "textures/items/gun/famas"
     },
-    "famasm": {
-      "textures": "textures/items/famas"
+    "stealth_cam": {
+      "textures": "textures/items/armor/stealth_cam"
     },
     "fire": {
       "textures": "textures/items/gun/fire"
