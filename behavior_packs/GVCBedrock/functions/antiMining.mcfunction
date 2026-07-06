@@ -1,2 +1,1 @@
-scoreboard players remove @s[m=a,scores={antiMining=1..}] antiMining 1
-gamemode s @s[m=a,scores={antiMining=0}]
+scoreboard players remove @s[scores={antiMining=1..}] antiMining 1

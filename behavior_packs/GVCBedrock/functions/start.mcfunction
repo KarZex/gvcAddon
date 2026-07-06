@@ -1,9 +1,6 @@
 execute as @a[tag=reload] run function reload
 
 execute as @a[tag=onDeath] run function death
-execute as @a[scores={mcool=1..}] run function mcool
-execute as @a[scores={mcooli=1..}] run function mcooli
-execute as @a[scores={mcoolii=1..}] run function mcoolii
 
 
 #execute as @a run function weaponi_cool
@@ -16,12 +13,12 @@ scoreboard players remove @e[scores={maxsubcool=1..}] maxsubcool 1
 execute at @e[type=fire:flare] run kill @e[r=60,type=fire:aamissile]
 
 execute as @a[tag=!startedv5] run function gunstart
-execute as @a[tag=down] run function down
-execute as @a[tag=rise] run function rise
+execute as @a[tag=down] run function down/down_main
+execute as @a[tag=rise] run function down/become_rise
 execute as @e[tag=raid] run function raid/zombietarget
 
-gamemode a @a[m=s,scores={antiMining=1..}]
-execute as @a[m=a,scores={antiMining=1..}] run function antiMining
+#gamemode a @a[m=s,scores={antiMining=1..}]
+execute as @a[scores={antiMining=1..}] run function antiMining
 
 effect @a[hasitem={item=gvcv5:stealth_cam,location=slot.armor.head}] invisibility 1 6 true
 

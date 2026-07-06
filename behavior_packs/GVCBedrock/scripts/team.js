@@ -1,6 +1,9 @@
 import { world, system, EquipmentSlot, EntityComponentTypes  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import "./teamCompornents";
+
+const Teams = [ "red","blue","green","yellow" ];
+
 function gvcv5GetTime() {
     const time = world.getAbsoluteTime();
     let day = Math.floor(time / 24000); // 1日 = 24000ティック
@@ -94,58 +97,6 @@ function gvcv5RemoveTeamList( user,team ){
 		world.setDynamicProperty(`${team}list`,`${world.getDynamicProperty(`${team}list`).replace(`\n${user.nameTag}`,"")}`);
 	}
 }
-
-world.afterEvents.playerSpawn.subscribe( e => {
-	const p = e.player;
-	const redJail = world.getDynamicProperty(`redJail`); 
-	const blueJail = world.getDynamicProperty(`blueJail`); 
-	const greenJail = world.getDynamicProperty(`greenJail`);
-	const yellowJail = world.getDynamicProperty(`yellowJail`);
-
-	if( ( p.hasTag(`downedbyred`) || p.hasTag(`redSub`) ) && world.getDynamicProperty(`teamJail`) ){
-		p.teleport(redJail);
-		if(  p.hasTag(`downedbyred`) ){
-			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
-			p.addTag(`redSub`);
-			p.addTag(`onDeath`);
-			p.runCommand(`give @s rotten_flesh 4`);
-		}
-	}
-
-	else if(( p.hasTag(`downedbyblue`) || p.hasTag(`blueSub`) ) && world.getDynamicProperty(`teamJail`) ){
-		p.teleport(blueJail);
-		if(  p.hasTag(`downedbyblue`) ){
-			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
-			p.addTag(`blueSub`);
-			p.addTag(`onDeath`);
-			p.runCommand(`give @s rotten_flesh 4`);
-		}
-	}
-	else if( (p.hasTag(`downedbygreen`) || p.hasTag(`greenSub`)) && world.getDynamicProperty(`teamJail`) ){
-		p.teleport(greenJail);
-		if(  p.hasTag(`downedbygreen`) ){
-			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
-			p.addTag(`greenSub`);
-			p.addTag(`onDeath`);
-			p.runCommand(`give @s rotten_flesh 4`);
-		}
-	}
-	else if( (p.hasTag(`downedbyyellow`) || p.hasTag(`yellowSub`)) && world.getDynamicProperty(`teamJail`) ){
-		p.teleport(yellowJail);
-		if(  p.hasTag(`downedbyyellow`) ){
-			world.scoreboard.getObjective("DeathTime").setScore(p,24000);
-			p.addTag(`yellowSub`);
-			p.addTag(`onDeath`);
-			p.runCommand(`give @s rotten_flesh 4`);
-		}
-	}
-	p.runCommand(`inputpermission set @s movement enabled`);
-	p.removeTag(`downedbyred`);
-	p.removeTag(`downedbyblue`);
-	p.removeTag(`downedbygreen`);
-	p.removeTag(`downedbyyellow`);
-} )
-
 // world.beforeEvents.playerLeave.subscribe( e => {
 // 	if( e.player.hasTag(`onDeath`) ){
 // 		e.player.setDynamicProperty(`cTime`,world.getAbsoluteTime());
@@ -191,25 +142,122 @@ system.runInterval( () => {
 	}
 },40 );
 
+//player Revive 
+world.afterEvents.entityHitEntity.subscribe( e => {
+	const attacker = e.damagingEntity;
+	const victim = e.hitEntity;
+	const excludeList = [ "player","playerp","mod","mob","allied_soldier" ];
+	const attackerFamily = attacker.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
+	const victimFamily = victim.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
+	const attackerTeams = attackerFamily.filter(char => char.includes(`team`));
+	const victimTeams = victimFamily.filter(char => char.includes(`team`));
+	if( attacker.typeId == "minecraft:player" && victim.typeId == "minecraft:player" ){
+		if( victim.hasTag(`down`) && !attacker.hasTag(`down`) && attackerTeams.some(team => victimTeams.includes(team)) ){
+			attacker.runCommand(`function down/revive_attacker`);
+			victim.runCommand(`function down/revive_victim`);
+		}
+	}
+})
+
+//on downed antiMining is scored to 999999 to prevent mining, but if the player is revived, it should be set back to 1. This is handled in the revive_victim.mcfunction file.
+world.beforeEvents.itemUse.subscribe( e => {
+	const player = e.source;
+	if( player.hasTag(`down`) ){
+		e.cancel = true;
+	}
+})
+
+world.beforeEvents.playerBreakBlock.subscribe( e => {
+	const player = e.player;
+	if( world.scoreboard.getObjective(`antiMining`).getScore(player) > 0 ){
+		e.cancel = true;
+	}
+})
+
+world.beforeEvents.playerInteractWithBlock.subscribe( e => {
+	const player = e.player;
+	if( world.scoreboard.getObjective(`antiMining`).getScore(player) > 0 ){
+		e.cancel = true;
+	}
+})
+
 //Frequently used events
 world.beforeEvents.entityHurt.subscribe( e => {
 	const attacker = e.damageSource.damagingEntity;
 	const victim = e.hurtEntity;
-	const excludeList = [ "player","playerp","mod","mob","allied_soldier" ];
-	const attackerFamily = attacker.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
-	const victimFamily = victim.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
-
-	if( attackerFamily.some(v => victimFamily.includes(v)) ){
-		e.cancel = true;
-	}
-	else{
+	if( victim.typeId == "minecraft:player" ){
+		const excludeList = [ "player","playerp","mod","mob","allied_soldier" ];
+		const attackerFamily = attacker.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
+		const victimFamily = victim.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
+		const attackerTeams = attackerFamily.filter(char => char.includes(`team`));
+		const victimTeams = victimFamily.filter(char => char.includes(`team`));
+		//print(`attackerTeams = ${attackerTeams}, victimTeams = ${victimTeams}`);
+		// Cancel damage if the attacker is on the same team as the victim or if the attacker has no team
+		if( attackerFamily.includes(`noteam`) ){
+			e.cancel = true;
+		}
+		// Cancel damage if the attacker and victim are on the same team
+		else if( attackerTeams.some( team => victimTeams.includes(team)) ){
+			e.cancel = true;
+		}
+		else{
+			//add scoreboard for team kill
+			if( attackerTeams.length > 0 && !attackerTeams.includes(`noteam`) && !victim.hasTag(`down`) ){
+				//if the victim's health is greater than the damage dealt, it means the victim is not downed yet
+				if( victim.getComponent(EntityComponentTypes.Health).currentValue > e.damage ){
+					// world.scoreboard.getObjective("damaging").setScore(victim,30);
+					// victim.addTag(`damagedBy${attackerTeams[0]}`);
+				}
+				//down
+				else{
+					if( !victim.hasTag(`nodownable`) ){
+						e.cancel = true;
+						if( attackerTeams.length > 0 && !attackerTeams.includes(`noteam`)  ){
+							system.runTimeout( () => {
+								world.sendMessage([{text: `${victim.nameTag}`},{ translate: `script.gvcv5.downed_by.name`},{text: `${attacker.nameTag}`}]);
+								victim.addTag(`downedby${attackerTeams[0].replace(`team`,``)}`);
+							})
+						}
+						system.runTimeout( () => {
+							victim.runCommand(`function down/start_down`);
+							victim.addEffect(`instant_health`,20,2,{ showParticles: false });
+						})
+						
+					}
+				}
+			}
+		}
 		
 	}
-
-
-
-
 } )
+
+world.afterEvents.entityDie.subscribe( e => {
+	const player = e.deadEntity;
+	if( player.typeId == "minecraft:player" && player.hasTag(`down`) ){
+		player.runCommand(`function down/end_down`);
+	}
+})
+
+
+world.afterEvents.playerSpawn.subscribe( e => {
+	const p = e.player;
+
+	for( const team of Teams ){
+		const teamJail = world.getDynamicProperty(`${team}Jail`);
+		if( teamJail != undefined && world.getDynamicProperty(`teamJail`) && p.hasTag(`downedby${team}`) || p.hasTag(`${team}Sub`) ){
+			p.teleport(teamJail);
+			if( p.hasTag(`downedby${team}`) ){
+				world.scoreboard.getObjective("DeathTime").setScore(p,24000);
+				p.addTag(`${team}Sub`);
+				p.addTag(`onDeath`);
+				p.runCommand(`give @s rotten_flesh 4`);
+			}
+		}
+		p.removeTag(`downedby${team}`);
+	}
+	p.runCommand(`inputpermission set @s movement enabled`);
+} )
+
 
 system.afterEvents.scriptEventReceive.subscribe( e => {
 	if( e.id === "gvcv5:TeamList" ){

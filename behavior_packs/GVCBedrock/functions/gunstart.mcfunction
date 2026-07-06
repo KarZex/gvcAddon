@@ -22,6 +22,7 @@ scoreboard objectives add antiMining dummy
 scoreboard objectives add mtype dummy
 scoreboard objectives add maxsubcool dummy
 scoreboard objectives add printDamage dummy
+scoreboard objectives add damaging dummy
 
 scoreboard objectives add DeathTime dummy
 scoreboard objectives add rise dummy
