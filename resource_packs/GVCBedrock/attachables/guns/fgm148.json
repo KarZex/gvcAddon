@@ -2,7 +2,7 @@
     "format_version": "1.21.20",
     "minecraft:attachable": {
         "description": {
-            "identifier": "gun:fgm148",
+            "identifier": "gun:fgm148.player",
             "materials": {
                 "default": "iron_golem",
                 "scope": "entity_alphablend",
@@ -51,7 +51,10 @@
                 {
                     "controller.render.scope2": "query.is_sneaking && c.is_first_person"
                 }
-            ]
+            ],
+            "item": {
+                "gun:fgm148": "query.owner_identifier == 'minecraft:player'"
+            }
         }
     }
 }

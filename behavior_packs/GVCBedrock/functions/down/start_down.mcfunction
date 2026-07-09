@@ -2,7 +2,7 @@
 
 effect @s instant_health 1 255 true
 effect @s resistance 4 255 true
-effect @s wither 99999 1 true
+#effect @s wither 99999 1 true
 playsound sound.player.down @s
 tag @s add down
 inputpermission set @s jump disabled

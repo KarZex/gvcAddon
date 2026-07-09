@@ -600,6 +600,15 @@
     },
     "mer03kblock": {
       "textures": "textures/blocks/mer03kblock"
+    },
+    "spawn_vehicle_mk45": {
+      "textures": "textures/spawn/vehicle_mk45"
+    },
+    "spawn_vehicle_ak130": {
+      "textures": "textures/spawn/vehicle_ak130"
+    },
+    "spawn_vehicle_mk15": {
+      "textures": "textures/spawn/vehicle_mk15"
     }
   }
 }

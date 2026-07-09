@@ -2,7 +2,7 @@
     "format_version": "1.16.100",
     "minecraft:attachable": {
         "description": {
-            "identifier": "gun:m1911",
+            "identifier": "gun:m1911.player",
             "materials": {
                 "default": "iron_golem",
                 "enchanted": "armor_enchanted",
@@ -57,7 +57,10 @@
                 {
                     "controller.render.gun": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m1911')"
                 }
-            ]
+            ],
+            "item": {
+                "gun:m1911": "query.owner_identifier == 'minecraft:player'"
+            }
         }
     }
 }

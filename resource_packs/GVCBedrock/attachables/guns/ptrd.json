@@ -2,7 +2,7 @@
     "format_version": "1.16.100",
     "minecraft:attachable": {
         "description": {
-            "identifier": "gun:ptrd",
+            "identifier": "gun:ptrd.player",
             "materials": {
                 "default": "iron_golem",
                 "enchanted": "armor_enchanted",
@@ -47,7 +47,10 @@
                 {
                     "controller.render.armor": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ptrd')"
                 }
-            ]
+            ],
+            "item": {
+                "gun:ptrd": "query.owner_identifier == 'minecraft:player'"
+            }
         }
     }
 }

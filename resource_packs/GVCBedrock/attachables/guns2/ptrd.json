@@ -1,0 +1,53 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "gun:ptrd",
+            "materials": {
+                "default": "iron_golem",
+                "enchanted": "armor_enchanted",
+                "scope": "entity_alphablend"
+            },
+            "textures": {
+                "enchanted": "textures/misc/enchanted_item_glint",
+                "default": "textures/models/ptrd.png",
+                "none": "textures/models/leemk4.png",
+                "scope6x_scope": "textures/models/scope2.png",
+                "scope2x": "textures/models/leemk4.png",
+                "scope2x_scope": "textures/models/scope.png"
+            },
+            "geometry": {
+                "default": "geometry.ptrd",
+                "none": "geometry.sniperscope",
+                "scope": "geometry.scope",
+                "scope2x": "geometry.scope2x"
+            },
+            "animations": {
+                "first": "animation.ptrd.first",
+                "ads": "animation.ak47.ads2",
+                "third": "animation.ptrd.third"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "v.main_hand = c.item_slot == 'main_hand';"
+                ],
+                "animate": [
+                    {
+                        "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
+                    },
+                    {
+                        "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+                    },
+                    {
+                        "third": "v.main_hand && !c.is_first_person"
+                    }
+                ]
+            },
+            "render_controllers": [
+                {
+                    "controller.render.armor": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:ptrd')"
+                }
+            ]
+        }
+    }
+}

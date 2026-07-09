@@ -1,4 +1,4 @@
-import { world, system, EquipmentSlot, EntityComponentTypes  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes, DamagedByEntityCondition, EntityDamageCause  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import "./teamCompornents";
 
@@ -142,6 +142,19 @@ system.runInterval( () => {
 	}
 },40 );
 
+//Down Damage
+system.runInterval( () => {
+	const players = world.getAllPlayers();
+	for( const player of players ){
+		if( player.hasTag(`down`) && !player.hasTag(`rise`) && world.getEntity(`${player.getDynamicProperty(`killer`)}`) != undefined ){
+			player.applyDamage(1,{ damagingEntity:world.getEntity(`${player.getDynamicProperty(`killer`)}`),cause:EntityDamageCause.magic });
+		}
+		else if( player.hasTag(`down`) && !player.hasTag(`rise`) && world.getEntity(`${player.getDynamicProperty(`killer`)}`) == undefined ){
+			player.applyDamage(1,{ cause:EntityDamageCause.magic });
+		}
+	}
+},20 );
+
 //player Revive 
 world.afterEvents.entityHitEntity.subscribe( e => {
 	const attacker = e.damagingEntity;
@@ -155,6 +168,7 @@ world.afterEvents.entityHitEntity.subscribe( e => {
 		if( victim.hasTag(`down`) && !attacker.hasTag(`down`) && attackerTeams.some(team => victimTeams.includes(team)) ){
 			attacker.runCommand(`function down/revive_attacker`);
 			victim.runCommand(`function down/revive_victim`);
+			victim.setDynamicProperty(`killer`,undefined)
 		}
 	}
 })
@@ -183,15 +197,34 @@ world.beforeEvents.playerInteractWithBlock.subscribe( e => {
 
 //Frequently used events
 world.beforeEvents.entityHurt.subscribe( e => {
-	const attacker = e.damageSource.damagingEntity;
+	let attacker = e.damageSource.damagingEntity;
 	const victim = e.hurtEntity;
 	if( victim.typeId == "minecraft:player" ){
+	print(`dmg:${e.damage}`);
+	}
+	if( victim.typeId == "minecraft:player" && attacker != undefined ){
+		//print(`dmg:${e.damage}`)
+		if( e.damage < 0 ){
+			e.cancel;
+		}
+		
+		if( victim.hasTag(`down`) && attacker.typeId != "minecraft:player" ){
+			e.cancel = true;
+			return;
+		}
+		try{
+			if( attacker.getComponent(EntityComponentTypes.Projectile).owner != undefined ){
+				attacker = e.damageSource.damagingEntity.getComponent(EntityComponentTypes.Projectile).owner
+			}
+		}
+		catch{}
 		const excludeList = [ "player","playerp","mod","mob","allied_soldier" ];
+		print(attacker.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies())
 		const attackerFamily = attacker.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
 		const victimFamily = victim.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
 		const attackerTeams = attackerFamily.filter(char => char.includes(`team`));
 		const victimTeams = victimFamily.filter(char => char.includes(`team`));
-		//print(`attackerTeams = ${attackerTeams}, victimTeams = ${victimTeams}`);
+		print(`attackerTeams = ${attackerTeams}, victimTeams = ${victimTeams}`);
 		// Cancel damage if the attacker is on the same team as the victim or if the attacker has no team
 		if( attackerFamily.includes(`noteam`) ){
 			e.cancel = true;
@@ -212,9 +245,17 @@ world.beforeEvents.entityHurt.subscribe( e => {
 				else{
 					if( !victim.hasTag(`nodownable`) ){
 						e.cancel = true;
+						victim.setDynamicProperty(`killer`,attacker.id);
 						if( attackerTeams.length > 0 && !attackerTeams.includes(`noteam`)  ){
 							system.runTimeout( () => {
-								world.sendMessage([{text: `${victim.nameTag}`},{ translate: `script.gvcv5.downed_by.name`},{text: `${attacker.nameTag}`}]);
+								if( attacker.typeId == "minecraft:player" ){
+									world.sendMessage([
+										{text: `${victim.nameTag}`},
+										{ translate: `script.gvcv5.downed_by.name`},
+										{text: `${attacker.nameTag}`},
+										{ translate: `script.gvcv5.downed_by2.name`}
+									]);
+								}
 								victim.addTag(`downedby${attackerTeams[0].replace(`team`,``)}`);
 							})
 						}
@@ -227,7 +268,6 @@ world.beforeEvents.entityHurt.subscribe( e => {
 				}
 			}
 		}
-		
 	}
 } )
 

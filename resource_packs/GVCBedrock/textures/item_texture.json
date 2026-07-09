@@ -1327,6 +1327,15 @@
     },
     "compoundbow": {
       "textures": "textures/items/gun/compoundbow"
+    },
+    "mk45": {
+      "textures": "textures/items/vehicle/mk45"
+    },
+    "ak130": {
+      "textures": "textures/items/vehicle/ak130"
+    },
+    "mk15": {
+      "textures": "textures/items/vehicle/mk15"
     }
   }
 }

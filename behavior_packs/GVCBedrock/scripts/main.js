@@ -694,8 +694,6 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		
 
 		try{
-			e.projectile.teleport(vict.location);
-			e.projectile.triggerEvent("minecraft:explode");
 			e.projectile.remove();
 		}
 		catch( error ){

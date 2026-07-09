@@ -2,7 +2,7 @@
     "format_version": "1.16.100",
     "minecraft:attachable": {
         "description": {
-            "identifier": "gun:mosin",
+            "identifier": "gun:mosin.player",
             "materials": {
                 "default": "iron_golem",
                 "scope": "entity_alphablend",
@@ -51,7 +51,10 @@
                 {
                     "controller.render.scope2": "query.is_sneaking && c.is_first_person"
                 }
-            ]
+            ],
+            "item": {
+                "gun:mosin": "query.owner_identifier == 'minecraft:player'"
+            }
         }
     }
 }

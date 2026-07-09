@@ -7505,6 +7505,32 @@
             }
           ]
         }
+      },
+      "fire:127mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:127mm"
+            }
+          ]
+        }
+      },
+      "fire:130mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:130mm"
+            }
+          ]
+        }
       }
     },
     "components": {
@@ -8678,6 +8704,20 @@
         "add": {
           "component_groups": [
             "fire:76mmap"
+          ]
+        }
+      },
+      "fire:127mm": {
+        "add": {
+          "component_groups": [
+            "fire:127mm"
+          ]
+        }
+      },
+      "fire:130mm": {
+        "add": {
+          "component_groups": [
+            "fire:130mm"
           ]
         }
       }

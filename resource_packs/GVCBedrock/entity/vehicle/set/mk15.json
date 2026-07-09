@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:mk15",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/entity/mk15"
+			},
+			"geometry": {
+        "default": "geometry.mk15"
+			},
+	  "spawn_egg":{
+	  "texture":"mk15",
+	  "texture_index":0
+	  },
+			"scripts": {
+				"animate": [ 
+					"float"
+				]
+			},
+			"animations": {
+				"float": "animation.ak130.def"
+			},
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

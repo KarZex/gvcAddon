@@ -1,4 +1,4 @@
-import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause, InputButton, ButtonState, LiquidType  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause, InputButton, ButtonState, LiquidType, InputPermissionCategory  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 import { vehicleData } from "./vehicle";
@@ -369,6 +369,12 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		const airCraft = e.sourceEntity;
         const Hasrider = Boolean(airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0] != undefined)
 		if( Hasrider ){
+
+			if( airCraft.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`plate`) ){
+				for( const rider of  vehicle.getComponent(EntityComponentTypes.Rideable).getRiders() ){
+					rider.addEffect(`resistance`,20,{ amplifier:255,showParticles:false });
+				}
+			}
 			const maxSpeed = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
 			const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
             if( player.typeId == "minecraft:player" ){
@@ -448,176 +454,6 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
                         ]}
                     `);
                 }
-            }
-            else if( !player.hasTag(`has_target`) ){
-                player.setDynamicProperty(`PreY`,undefined);
-                let v = airCraft.getVelocity();
-                let abs_v = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
-                let r = getVector3E(v);
-                if( absVector3(v) < 0.01 ){
-                    v = airCraft.getViewDirection();
-                    r = v;
-                }
-                const turnRad = Number(vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["turn"]) * Math.PI / 180;
-                if( airCraft.getDynamicProperty(`gvcww2:Origin`) == undefined ){
-                    airCraft.setDynamicProperty(`gvcww2:Origin`,airCraft.location);
-                }
-                let P_0 = airCraft.getDynamicProperty(`gvcww2:Origin`);
-                const P = airCraft.location;
-                if( player.getDynamicProperty(`targetId`) != undefined ){
-                    try{
-                        P_0 = player.getDynamicProperty(`targetlocation`)
-                    }catch{}
-                    
-                }
-                if(player.getDynamicProperty(`gvcww2:PreFlydirection`) == undefined ){
-                    player.setDynamicProperty(`gvcww2:PreFlydirection`,player.getViewDirection());
-                }
-
-                if( DistanceVector3(P_0,P) <= 36 ){
-                    let d = player.getViewDirection();
-                    const r = player.getDynamicProperty(`gvcww2:PreFlydirection`);
-                    d = turning2(d,r,Math.PI/36);
-                    const underBlocksRatio = getUnderBlocksTo(airCraft.dimension,P,24,`minecraft:air`);
-                    if( underBlocksRatio < 1 ){
-                        d.y = 1-underBlocksRatio;
-                    }
-                    //rotate.y = setTruedeg(rotate.y);
-                    abs_v = absVector3(d) * airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
-                    airCraft.clearVelocity();
-                    player.setDynamicProperty(`gvcww2:PreFlydirection`,d)
-                    airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
-                }
-                else if( DistanceVector3(P_0,P) > 36 ){
-                    player.setDynamicProperty(`gvcww2:rotatey`,undefined)
-                    const r = player.getDynamicProperty(`gvcww2:PreFlydirection`);
-                    const P_target = Vector3Sub(P,P_0);
-                    const P_target_E = getVector3E(P_target);
-                    let d = turning2(P_target_E,r,Math.PI/36);
-                    const underBlocksRatio = getUnderBlocksTo(airCraft.dimension,P,24,`minecraft:air`);
-                    if( underBlocksRatio < 1 ){
-                        d.y = 1-underBlocksRatio;
-                    }
-                    //rotate.y = setTruedeg(rotate.y);
-                    abs_v = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue / absVector3(d);
-                    player.lookAt(Vector3Add(player.location,d));
-                    airCraft.lookAt(Vector3Add(player.location,d));
-                    player.setDynamicProperty(`gvcww2:PreFlydirection`,d)
-                    airCraft.clearVelocity();
-                    airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
-                }
-
-                //search target
-                const target1 = player.dimension.getEntities({ excludeGameModes:["Spectator","Creative"],type:`player`,families:getEnemies(player),closest:1,location:player.location,maxDistance:120 });
-                const target2 = player.dimension.getEntities({ excludeTypes:[`player`],families:getEnemies(player),closest:1,location:player.location,maxDistance:120 });
-                const target = target1.concat(target2)[0];
-                if( target != undefined ){
-                    //print(`Find target! ${target.id}`)
-                    player.applyDamage(1,{ cause:EntityDamageCause.entityAttack,damagingEntity:target });
-                    player.setDynamicProperty(`targetId`,target.id);
-                    player.setDynamicProperty(`targetlocation`,target.location)
-                }
-                
-
-            }
-            else if( player.hasTag(`has_target`) ){
-                let v = airCraft.getVelocity();
-                let abs_v = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
-                let r = {
-                    x:v.x/abs_v,
-                    y:v.y/abs_v,
-                    z:v.z/abs_v
-                }
-                if( absVector3(v) < 0.01 ){
-                    v = player.getViewDirection();
-                    r = v;
-                }
-                const turnRad = Number(vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["turn"]) * Math.PI / 180;
-                const P = airCraft.location;
-                
-                if(player.getDynamicProperty(`gvcww2:PreFlydirection`) == undefined ){
-                    player.setDynamicProperty(`gvcww2:PreFlydirection`,player.getViewDirection());
-                }
-
-                if( player.getDynamicProperty(`targetId`) != undefined ){
-                    const target = world.getEntity(player.getDynamicProperty(`targetId`));
-                    if( target != undefined ){
-                        player.setDynamicProperty(`targetlocation`,target.location)
-                        const P_0 = target.location;
-                        const P_target = Vector3Sub(P,P_0);
-                        const P_target_E = getVector3E(P_target);
-                        const H = Math.sqrt(P_0.x*P_0.x + P_0.z*P_0.z);
-                        
-                        if( DistanceVector3in2dim(P_0,P) <= 24 && !player.getDynamicProperty(`gvcww2:attackend`) ){
-                            const r = player.getDynamicProperty(`gvcww2:PreFlydirection`);
-                            const b = airCraft.getViewDirection();
-                            let d = turning2(P_target_E,r,turnRad);
-                            if( DistanceVector3in2dim(P_0,P) < 12 ){
-                                player.setDynamicProperty(`gvcww2:attackend`,true);
-                            }
-                            
-                            const underBlocksRatio = getUnderBlocksTo(airCraft.dimension,P,12,`minecraft:air`);
-                            if( underBlocksRatio < 1 ){
-                                d.y = 1-underBlocksRatio;
-                            }
-                            //rotate.y = setTruedeg(rotate.y);
-                            airCraft.clearVelocity();
-                            player.lookAt(P_0);
-                            airCraft.lookAt(P_0);
-                            player.setDynamicProperty(`gvcww2:PreFlydirection`,d)
-                            const abs_v_xz = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue * 0.5 / absVector2(d);
-                            const abs_v_y = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue * 0.5;
-                            airCraft.applyImpulse({x:d.x*abs_v_xz,y:d.y*abs_v_y,z:d.z*abs_v_xz});
-                        }
-                        else if( DistanceVector3in2dim(P_0,P) > 24 && !player.getDynamicProperty(`gvcww2:attackend`) ){
-                            const b = airCraft.getViewDirection();
-                            let thita;
-                            let d = turning2(P_target_E,r,turnRad/3);
-                            const underBlocksRatio = getUnderBlocksTo(airCraft.dimension,P,12,`minecraft:air`);
-                            if( underBlocksRatio < 1 ){
-                                d.y = 1-underBlocksRatio;
-                            }
-                            //rotate.y = setTruedeg(rotate.y);
-                            abs_v = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
-                            player.lookAt(Vector3Add(player.location,d));
-                            airCraft.lookAt(Vector3Add(player.location,d));
-                            player.setDynamicProperty(`gvcww2:PreFlydirection`,d)
-                            airCraft.clearVelocity();
-                            airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
-                        }
-                        else if( player.getDynamicProperty(`gvcww2:attackend`) ){
-                            const r = getVector2E(player.getDynamicProperty(`gvcww2:PreFlydirection`));
-                            let d = getVector2E(r);
-                            d = turning2(d,r,Math.PI/36);
-                            const underBlocksRatio = getUnderBlocksTo(airCraft.dimension,P,24,`minecraft:air`);
-                            if( underBlocksRatio < 1 ){
-                                d.y = 1-underBlocksRatio;
-                            }
-                            //rotate.y = setTruedeg(rotate.y);
-                            abs_v = absVector3(d) * airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
-                            airCraft.clearVelocity();
-                            player.lookAt(Vector3Add(player.location,d));
-                            airCraft.lookAt(Vector3Add(player.location,d));
-                            player.setDynamicProperty(`gvcww2:PreFlydirection`,d)
-                            airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
-                            if( DistanceVector3in2dim(P_0,P) > 36 ){
-                                player.setDynamicProperty(`gvcww2:attackend`,false);
-                            }
-                        }
-                    }
-                }
-                else{
-                    //search target
-                    const target1 = player.dimension.getEntities({ excludeGameModes:["Spectator","Creative"],type:`player`,families:getEnemies(player),closest:1,location:player.location,maxDistance:120 });
-                    const target2 = player.dimension.getEntities({ excludeTypes:[`player`],families:getEnemies(player),closest:1,location:player.location,maxDistance:120 });
-                    const target = target1.concat(target2)[0];
-                    if( target != undefined ){
-                        //print(`Find target! ${target.id}`)
-                        player.applyDamage(1,{ cause:EntityDamageCause.entityAttack,damagingEntity:target });
-                        player.setDynamicProperty(`targetId`,target.id);
-                    }
-                }
-
             }
 		}
 	
@@ -728,6 +564,59 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			}
 		}
 	}
+	else if( e.id == "zex:vstart"){
+		const entity = e.sourceEntity;
+		const vehicle = entity.getComponent(EntityComponentTypes.Riding).entityRidingOn;
+
+		if( entity.id == vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0].id ){
+
+			if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`plate`) ){
+				entity.addEffect(`resistance`,9999999,{ amplifier:255,showParticles:false });
+			}
+			
+			if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`TofAA`) ){
+				entity.addTag(`air`);
+			}
+
+			if( entity.typeId == `minecraft:player` ){
+				entity.addTag(`isRiding`);
+				if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`tank`) ){
+					entity.inputPermissions.setPermissionCategory(InputPermissionCategory.MoveLeft,false);
+					entity.inputPermissions.setPermissionCategory(InputPermissionCategory.MoveRight,false);
+				}
+			}
+
+			else{
+				entity.triggerEvent(`${vehicleData[`${vehicle.typeId.split(`:`)[1]}`][`Weapon1`]}`);
+				entity.addTag(`ride`);
+			}
+		}
+	}
+	else if( e.id == "zex:vend"){
+		const entity = e.sourceEntity;
+		entity.removeEffect(`resistance`);
+		if( entity.typeId == `minecraft:player` ){
+			entity.removeTag(`isRiding`);
+			entity.inputPermissions.setPermissionCategory(InputPermissionCategory.MoveLeft,true);
+			entity.inputPermissions.setPermissionCategory(InputPermissionCategory.MoveRight,true);
+		}
+		else{
+			entity.triggerEvent(`gvcv5:set_have_gun_nt`);
+			entity.removeTag(`ride`);
+		}
+
+		if( entity.hasTag(`air`) ){
+			try{
+				if(entity.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Chest).getItem() == undefined){
+					const para = new ItemStack(`gvcv5:parachute`,1);
+					entity.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Chest).setItem(para);
+				}
+			}catch{}
+		}
+
+
+		entity.removeTag(`air`);
+	}
 	else if( e.id == "zex:vtext"){
 		const vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
@@ -767,6 +656,12 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 	else if( e.id == "zex:vship"){
 		const vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+
+		if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`plate`) ){
+			for( const rider of  vehicle.getComponent(EntityComponentTypes.Rideable).getRiders() ){
+				rider.addEffect(`resistance`,20,{ amplifier:255,showParticles:false });
+			}
+		}
 		//world.sendMessage(`§aSelected Slot Index: ${selectedItemSlot}`);
 		if( player.typeId == "minecraft:player" ){
 			const selectedItemSlot = player.selectedSlotIndex;
@@ -824,6 +719,13 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 	else if( e.id == "zex:vheri"){
 		const vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+
+		if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`plate`) ){
+			for( const rider of  vehicle.getComponent(EntityComponentTypes.Rideable).getRiders() ){
+				rider.addEffect(`resistance`,20,{ amplifier:255,showParticles:false });
+			}
+		}
+
 		if( player.typeId == "minecraft:player" ){
 			const selectedItemSlot = player.selectedSlotIndex;
 			const HP = vehicle.getComponent(EntityComponentTypes.Health).currentValue;

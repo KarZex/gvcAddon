@@ -32,16 +32,16 @@ hmg,hmg,8,4,0,2,0,F,hmgbullet,override,,1,zex:762m,0
 7.62mmMG,7.62mmmg,4,4,0,1,0,F,mgiibullet,override,,1,zex:762m,0
 12.7mmHMGx4,12.7mmmg,6,12,0,1,0,F,hmgbullet,override,Q,1,zex:1270m,0.5
 14.5mmHMGx4,14.5mmhmg,6,12,0,2,0,F,hmgbullet,override,Q,1,zex:1450m,0.5
-20mmMC,20mmmc,10,4,0,1,0,F,hmgbullet,override,,1,zex:20mmc,1
-20mmMC,20mmmcheri,10,4,0,1,0,F,mgiibullet,override,,1,zex:20mmc,1
-23mmmc,23mmmc,12,4,0,2,0,F,mgiibullet,entityExplosion,,1,zex:20mmc,1
-25mmmc,25mmmc,20,4,0,9,0,F,hmgiibullet,entityExplosion,,1,zex:20mmc,1
+20mmMC,20mmmc,10,64,0,1,0,F,hmgbullet,override,,1,zex:20mmc,1
+20mmMC,20mmmcheri,10,64,0,1,0,F,mgiibullet,override,,1,zex:20mmc,1
+23mmmc,23mmmc,12,64,0,2,0,F,mgiibullet,entityExplosion,,1,zex:20mmc,1
+25mmmc,25mmmc,20,64,0,9,0,F,hmgiibullet,entityExplosion,,1,zex:20mmc,1
 30mmmc,30mmmc,30,4,0,2,1,F,hmgiibullet,entityExplosion,,1,zex:20mmc,2
-23mmMCx2,23mmmcair,4,4,0,1,0,F,airbullet,override,D,4,zex:20mmc,1
-20mmMCx2,20mmmcaird,12,12,0,1,0,F,airbullet,override,D,4,zex:20mmc,1
-20mmMCx4,20mmmcairw,12,12,0,1,0,F,airbullet,override,Qw,4,zex:20mmc,1
-30mmMC,30mmmcair,12,12,0,1,0,F,airbullet,override,,1,zex:20mmc,1
-20mmMC,20mmmcair,12,12,0,1,0,F,airbullet,override,,4,zex:20mmc,1
+23mmMCx2,23mmmcair,4,64,0,1,0,F,airbullet,override,D,4,zex:20mmc,1
+20mmMCx2,20mmmcaird,12,64,0,1,0,F,airbullet,override,D,4,zex:20mmc,1
+20mmMCx4,20mmmcairw,12,64,0,1,0,F,airbullet,override,Qw,4,zex:20mmc,1
+30mmMC,30mmmcair,12,64,0,1,0,F,airbullet,override,,1,zex:20mmc,1
+20mmMC,20mmmcair,12,64,0,1,0,F,airbullet,override,,4,zex:20mmc,1
 bombii,bombiii,100,2,0,100,4,F,missilebullet,entityExplosion,HMM,1,zex:sbombm,0
 37mmRocket,37mmrocketkatyusya,35,4,0,20,3,F,rpgbullet,entityExplosion,H,2,zex:s37m,2
 Flare,flare,0,0,0,20,3,F,rpgbullet,entityExplosion,H,2,zex:s37m,2
@@ -51,3 +51,5 @@ SSMissile,ssmissile,100,4,0,100,3,F,missilebullet,entityExplosion,H,4,zex:20mmc,
 37mmCannon,37mm,50,4,0,20,1,T,cannonbullet,entityExplosion,,2,zex:s37m,3
 57mmCannon,57mm,120,4,0,60,1,T,cannonbullet,entityExplosion,,4,zex:s57m,3
 76mm-AP Cannon,76mmap,80,4,0,60,1,T,tankbullet,entityExplosion,,4,zex:s76m,3
+127mmCannon,127mm,200,4,0,60,3,T,cannonbullet,entityExplosion,,4,zex:s57m,3
+130mmCannon,130mm,200,4,0,60,3,T,cannonbullet,entityExplosion,,4,zex:s57m,3

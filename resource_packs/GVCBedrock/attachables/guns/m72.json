@@ -2,7 +2,7 @@
     "format_version": "1.16.100",
     "minecraft:attachable": {
         "description": {
-            "identifier": "gun:m72",
+            "identifier": "gun:m72.player",
             "materials": {
                 "default": "iron_golem",
                 "enchanted": "armor_enchanted",
@@ -47,7 +47,10 @@
                 {
                     "controller.render.armor": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:m72')"
                 }
-            ]
+            ],
+            "item": {
+                "gun:m72": "query.owner_identifier == 'minecraft:player'"
+            }
         }
     }
 }

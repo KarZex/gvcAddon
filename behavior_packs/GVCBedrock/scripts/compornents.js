@@ -72,7 +72,8 @@ const gvcv5SpawnCommponent = {
                     aboveBlock.dimension.setBlockType(aboveBlock.location,`minecraft:air`);
                 }
                 else{
-                    block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z }).teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
+                    const spawner =  block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`minecraft:spawned_from_block`});
+                    spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
                 }
             }
             block.dimension.setBlockType(block.location,`minecraft:air`);

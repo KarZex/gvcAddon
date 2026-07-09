@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:ak130",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+        "default": "textures/entity/ak130"
+			},
+			"geometry": {
+        "default": "geometry.ak130"
+			},
+	  "spawn_egg":{
+	  "texture":"ak130",
+	  "texture_index":0
+	  },
+			"scripts": {
+				"animate": [ 
+					"float"
+				]
+			},
+			"animations": {
+				"float": "animation.ak130.def"
+			},
+      "render_controllers": [ "controller.render.iron_golem" ]
+		}
+	}
+}

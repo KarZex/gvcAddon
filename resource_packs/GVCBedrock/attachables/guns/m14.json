@@ -2,7 +2,7 @@
     "format_version": "1.16.100",
     "minecraft:attachable": {
         "description": {
-            "identifier": "gun:m14",
+            "identifier": "gun:m14.player",
             "materials": {
                 "default": "iron_golem",
                 "enchanted": "armor_enchanted",
@@ -68,7 +68,10 @@
                 {
                     "controller.render.sights": "query.property('zex:sights') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
                 }
-            ]
+            ],
+            "item": {
+                "gun:m14": "query.owner_identifier == 'minecraft:player'"
+            }
         }
     }
 }

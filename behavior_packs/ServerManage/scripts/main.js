@@ -2,8 +2,7 @@ import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInit
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 
 const blacklist = [
-	"takerumincra123",
-	"kid0116"
+	"takerumincra123"
 ];
 
 const whitelist = [
@@ -11,7 +10,8 @@ const whitelist = [
 	  "KarZex7700XT", 
 	  "KUROMU1019", 
 	  "MAGINASU", 
-	  "Houndsyuyuy"
+	  "Houndsyuyuy", 
+	  "kid0116"
 ];
 
 const ChatMuteList = [

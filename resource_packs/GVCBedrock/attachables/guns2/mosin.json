@@ -1,0 +1,45 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "gun:mosin",
+			"materials": {
+				"default": "entity_alphablend",
+				"scope": "entity_alphablend"
+			},
+			"textures": {
+				"default": "textures/models/mosin.png",
+				"scope": "textures/models/scope.png"
+			},
+			"geometry": {
+				"default": "geometry.mosin",//create by KUROMU1019. thanks
+				"scope": "geometry.scope"
+			},
+			"animations": {
+				"first": "animation.ak47.first2",
+				"ads": "animation.mosin.ads",
+				"third": "animation.item.third2"
+			},
+			"scripts": {
+				"pre_animation": [
+					"v.main_hand = c.item_slot == 'main_hand';"
+				],
+				"animate": [
+					{
+						"first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
+					},
+					{
+						"ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+					},
+					{
+						"third": "v.main_hand && !c.is_first_person"
+					}
+				]
+			},
+			"render_controllers": [
+				{"controller.render.default":"!query.is_sneaking || !c.is_first_person"},
+				{ "controller.render.scope": "query.is_sneaking && c.is_first_person" }
+			]
+		}
+	}
+} 

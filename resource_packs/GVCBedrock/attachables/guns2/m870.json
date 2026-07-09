@@ -1,0 +1,41 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "gun:m870",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/models/m870.png"
+      },
+      "geometry": {
+        "default": "geometry.m870"
+      },
+      "animations": {
+        "first": "animation.m870.first",
+        "ads": "animation.m16a4.ads",
+        "third": "animation.item.third2"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.main_hand = c.item_slot == 'main_hand';"
+        ],
+        "animate": [
+          {
+            "first": "(v.main_hand && c.is_first_person) && !query.is_sneaking"
+          },
+          {
+            "ads": "(v.main_hand && c.is_first_person) && query.is_sneaking"
+          },
+          {
+            "third": "v.main_hand && !c.is_first_person"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

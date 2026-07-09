@@ -1,0 +1,41 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:block": {
+    "description": {
+      "identifier": "gvcv5:spawn_vehicle_ak130",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "spawn_vehicle_ak130",
+          "render_method": "alpha_test",
+          "ambient_occlusion": false
+        }
+      },
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:selection_box": {
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          16,
+          16
+        ]
+      },
+      "gvcv5:spawn": {
+        "spawn_mob": "vehicle:ak130",
+        "chest_load": false
+      },
+      "minecraft:light_emission": 15,
+      "minecraft:light_dampening": 0,
+      "minecraft:map_color": "#00ff00",
+      "minecraft:loot": "loot_tables/empty.json"
+    }
+  }
+}

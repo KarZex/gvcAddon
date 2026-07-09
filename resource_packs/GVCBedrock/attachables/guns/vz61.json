@@ -2,7 +2,7 @@
     "format_version": "1.16.100",
     "minecraft:attachable": {
         "description": {
-            "identifier": "gun:vz61",
+            "identifier": "gun:vz61.player",
             "materials": {
                 "default": "iron_golem",
                 "enchanted": "armor_enchanted",
@@ -47,7 +47,10 @@
                 {
                     "controller.render.armor": "query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:vz61')"
                 }
-            ]
+            ],
+            "item": {
+                "gun:vz61": "query.owner_identifier == 'minecraft:player'"
+            }
         }
     }
 }

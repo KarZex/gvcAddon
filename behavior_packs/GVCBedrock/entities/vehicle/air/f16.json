@@ -158,7 +158,8 @@
         "family": [
           "vehicle",
           "air",
-          "TofAA"
+          "TofAA",
+          "plate"
         ]
       },
       "minecraft:fire_immune": {},

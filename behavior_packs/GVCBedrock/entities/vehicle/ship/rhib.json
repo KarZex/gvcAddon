@@ -330,7 +330,8 @@
           "vehicle",
           "playerfire",
           "tank",
-          "ship"
+          "ship",
+          "plate"
         ]
       },
       "minecraft:fire_immune": {},

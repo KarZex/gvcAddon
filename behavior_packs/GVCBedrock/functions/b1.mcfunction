@@ -79,6 +79,12 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pkmset] run event entity 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:tow2] run event entity @s agmissile
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mk45] run event entity @s 127mm
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ak130] run event entity @s 130mm
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mk15] run event entity @s 20mmmcair
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mig17] run event entity @s 23mmmcair
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su27] run event entity @s 20mmmcaird

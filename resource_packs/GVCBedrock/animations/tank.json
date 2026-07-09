@@ -1,6 +1,28 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.mk45.def": {
+			"loop": true,
+			"bones": {
+				"gun2": {
+					"rotation": [0, "0", "-Math.min(30, Math.max(-90,query.rider_head_x_rotation(0)))"]
+				},
+				"gun": {
+					"rotation": [0, "360 + q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				}
+			}
+		},
+		"animation.ak130.def": {
+			"loop": true,
+			"bones": {
+				"gun2": {
+					"rotation": ["-Math.min(30, Math.max(-90,query.rider_head_x_rotation(0)))", "0", 0]
+				},
+				"gun": {
+					"rotation": [0, "360 + q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				}
+			}
+		},
 		"animation.tank": {
 			"loop": true,
 			"bones": {

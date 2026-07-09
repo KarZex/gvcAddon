@@ -1450,13 +1450,13 @@ for row in csv_reader2:
         if( "D" in gun_offset or "Q" in gun_offset ):
             spawn_entity = {
                 "minecraft:behavior.ranged_attack": {
-                    "priority": 3,
-                    "burst_shots": 1,
-                    "burst_interval": 0,
+                    "priority": 1,
+                    "burst_shots": int(50/gun_interval)+1,
+                    "burst_interval": attack_interval,
                     "charge_charged_trigger": 0.0,
                     "charge_shoot_trigger": 0.0,
-                    "attack_interval_min": attack_interval,
-                    "attack_interval_max": attack_interval,
+                    "attack_interval_min": 5,
+                    "attack_interval_max": 10,
                     "attack_radius": 120.0
                 },
                 "minecraft:shooter": {
@@ -1466,13 +1466,13 @@ for row in csv_reader2:
         else:
             spawn_entity = {
                 "minecraft:behavior.ranged_attack": {
-                    "priority": 3,
-                    "burst_shots": 1,
-                    "burst_interval": 0,
+                    "priority": 1,
+                    "burst_shots": int(50/gun_interval)+1,
+                    "burst_interval": attack_interval,
                     "charge_charged_trigger": 0.0,
                     "charge_shoot_trigger": 0.0,
-                    "attack_interval_min": attack_interval,
-                    "attack_interval_max": attack_interval,
+                    "attack_interval_min": 5,
+                    "attack_interval_max": 10,
                     "attack_radius": 120.0
                 },
                 "minecraft:shooter": {

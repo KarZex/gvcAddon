@@ -24,7 +24,7 @@
             0,
             255
           ],
-          "default": 0
+          "default": 2
         }
       }
     },
@@ -249,8 +249,7 @@
       "minecraft:type_family": {
         "family": [
           "vehicle",
-          "playerfire",
-          "plate"
+          "playerfire"
         ]
       },
       "minecraft:fire_immune": {},
@@ -295,6 +294,10 @@
           },
           {
             "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "cause": "override",
             "deals_damage": false
           }
         ]

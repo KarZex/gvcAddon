@@ -158,7 +158,7 @@ for row in csv_reader:
                         with open(file_path, 'r', encoding='utf-8') as f:
                             try:
                                 data = json.load(f)
-                                gun_id = data["minecraft:attachable"]["description"]["identifier"].split(":")[1]
+                                gun_id = data["minecraft:attachable"]["description"]["identifier"].split(":")[1].replace(".player","")
                                 attach = get_attachment(gun_id,attach_types,attach_type)
                                 data["minecraft:attachable"]["description"]["materials"]["default"] = "iron_golem"
                                 data["minecraft:attachable"]["description"]["textures"]["enchanted"] = "textures/misc/enchanted_item_glint"
@@ -226,7 +226,12 @@ for root, dirs, files in os.walk(attach_directory):
             with open(file_path, 'r', encoding='utf-8') as f:
                 try:
                     data = json.load(f)
-                    gun_id = data["minecraft:attachable"]["description"]["identifier"].split(":")[1]
+                    
+                    gun_id = data["minecraft:attachable"]["description"]["identifier"].split(":")[1].replace(".player","")
+                    data["minecraft:attachable"]["description"]["identifier"] = f"gun:{gun_id}.player"
+                    data["minecraft:attachable"]["description"]["item"] = {
+				        f"gun:{gun_id}": "query.owner_identifier == 'minecraft:player'"
+			        }
                     sights = get_sights(gun_id)
                     if( "[" in sights ):
                         def_ani = get_sights_def_ani(gun_id)

@@ -2,7 +2,7 @@
     "format_version": "1.16.100",
     "minecraft:attachable": {
         "description": {
-            "identifier": "gun:glock17",
+            "identifier": "gun:glock17.player",
             "materials": {
                 "default": "iron_golem",
                 "enchanted": "armor_enchanted",
@@ -101,7 +101,10 @@
                 {
                     "controller.render.light": "query.property('zex:light') != 0 && v.main_hand && ((!query.property('zex:is_scoping') || !c.is_first_person))"
                 }
-            ]
+            ],
+            "item": {
+                "gun:glock17": "query.owner_identifier == 'minecraft:player'"
+            }
         }
     }
 }

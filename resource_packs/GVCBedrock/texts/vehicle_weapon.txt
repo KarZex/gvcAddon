@@ -50,3 +50,5 @@ gvcv5.ssmissile.name=SSMissile
 gvcv5.37mm.name=37mmCannon
 gvcv5.57mm.name=57mmCannon
 gvcv5.76mmap.name=76mm-AP Cannon
+gvcv5.127mm.name=127mmCannon
+gvcv5.130mm.name=130mmCannon
