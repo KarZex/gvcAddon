@@ -1,15 +1,24 @@
-import { world, EquipmentSlot, system, EntityComponentTypes } from "@minecraft/server";
+import { world, EquipmentSlot, system, EntityComponentTypes ,BlockComponentTypes} from "@minecraft/server";
 import { Vector3Add } from "./usefulFunction"
 
 
 const gvcv5SpawnCommponent = {
-	onPlace(e,p){
+	onTick(e,p){
 		const block = e.block;
 		const params = p.params;
 		const spawn = params.spawn_mob;
 		const chestload = params.chest_load;
         const spawnLocation = block.location;
         if( world.gameRules.commandBlocksEnabled ){
+            try{
+                if( block.dimension.getPlayers( { location:spawnLocation,maxDistance:32 } ) < 1 ){
+                    
+                    return
+                }
+
+            }catch{ print(`error`); return }
+            
+            
             const aboveBlock = block.above();
             if( world.getDynamicProperty(`gvcv5:doSpawnFromBlock`) ){
                 if( chestload ) {
@@ -18,15 +27,19 @@ const gvcv5SpawnCommponent = {
                         try{
                             try{
                                 const mainHand = aboveBlock.getComponent(`minecraft:inventory`).container.getSlot(0).getItem().typeId;
+                                //world.sendMessage(`${mainHand}`);
+                                
                                 if( mainHand.includes(`gun:`) ){
                                     spawner =  block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`${mainHand.replace(`gun:`,``)}`});
                                     spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
-                                    //world.sendMessage(`${mainHand}`)
+                                    spawner.addTag(`special`)
+                                    //world.sendMessage(`${mainHand.replace(`gun:`,``)}`)
                                 }
                                 else{
                                     spawner =  block.dimension.spawnEntity(spawn,{ x:spawnLocation.x, y:spawnLocation.y, z:spawnLocation.z },{ spawnEvent:`melee`});
                                     spawner.teleport({ x:spawnLocation.x+0.5, y:spawnLocation.y, z:spawnLocation.z+0.5 });
                                     spawner.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${mainHand}`);
+                                    spawner.addTag(`special`)
                                 }
                             }catch{}
                             try{
@@ -118,33 +131,51 @@ const gvcv5BuildingBlockCommponent = {
                 y:block.location.y - size[1],
                 z:block.location.z
             }
-            print(`${world.tickingAreaManager.hasCapacity( {dimension:block.dimension,from:block.location,to:{ x:block.location.x+size[0],y:block.location.y,z:block.location.z+size[2] }} )}`)
+            print(`${world.tickingAreaManager.hasCapacity( {dimension:block.dimension,from:block.location,to:{ x:block.location.x+Math.min(64,size[0]),y:block.location.y,z:block.location.z+Math.min(64,size[2]) }} )}`)
             try{
                 world.tickingAreaManager.removeTickingArea(`${building}`);
             }catch{}
-            world.tickingAreaManager.createTickingArea(`${building}`,{ dimension:block.dimension,from:block.location,to:{ x:block.location.x+size[0],y:block.location.y,z:block.location.z+size[2] } });
+            //world.tickingAreaManager.createTickingArea(`${building}`,{ dimension:block.dimension,from:block.location,to:{ x:block.location.x+Math.min(64,size[0]),y:block.location.y,z:block.location.z+Math.min(64,size[2]) } });
             await system.waitTicks(5);
             for( let i = 0; i < size[1]; i++ ){
                 block.dimension.runCommand(`execute positioned ${block.location.x} ${block.location.y} ${block.location.z} run fill ~~-${i}~ ~${Math.min(64,size[0])}~-${i}~${Math.min(64,size[2])} air`);
             }
-            Math.min([64,size[0]])
+            Math.min(64,size[0])
             world.structureManager.place(building,block.dimension,buildingLocation,{waterlogged:false})
             if( size[0] > 64 ){
-                await system.waitTicks(5);
+                await system.waitTicks(20);
+                //world.tickingAreaManager.removeTickingArea(`${building}`);
+                await system.waitTicks(1);
+                //world.tickingAreaManager.createTickingArea(`${building}`,{ dimension:block.dimension,from:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }),to:{ x:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).x+Math.min(64,size[0]-64),y:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).y,z:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).z+Math.min(64,size[2]) } });
+                await system.waitTicks(4);
                 for( let i = 0; i < size[1]; i++ ){
                     block.dimension.runCommand(`execute positioned ${block.location.x+64} ${block.location.y} ${block.location.z} run fill ~~-${i}~ ~${Math.min(64,size[0]-64)}~-${i}~${Math.min(64,size[2])} air`);
                 }
                 world.structureManager.place(`${building}_x64`,block.dimension,Vector3Add(buildingLocation,{ x:64,y:0,z:0 }),{waterlogged:false})
             }
             if( size[2] > 64 ){
-                await system.waitTicks(5);
+                await system.waitTicks(20);
+               // world.tickingAreaManager.removeTickingArea(`${building}`);
+                await system.waitTicks(1);
+                //world.tickingAreaManager.createTickingArea(`${building}`,{ dimension:block.dimension,from:Vector3Add(buildingLocation,{ x:0,y:0,z:64 }),to:{ x:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).x+Math.min(64,size[0]),y:block.location.y,z:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).z+Math.min(64,size[2]-64) } });
+                await system.waitTicks(4);
                 for( let i = 0; i < size[1]; i++ ){
                     block.dimension.runCommand(`execute positioned ${block.location.x} ${block.location.y} ${block.location.z+64} run fill ~~-${i}~ ~${Math.min(64,size[0])}~-${i}~${Math.min(64,size[2]-64)} air`);
                 }
                 world.structureManager.place(`${building}_z64`,block.dimension,Vector3Add(buildingLocation,{ x:0,y:0,z:64 }),{waterlogged:false})
             }
             if( size[0] > 64 && size[2] > 64 ){
-                await system.waitTicks(5);
+                await system.waitTicks(20);
+                //world.tickingAreaManager.removeTickingArea(`${building}`);
+                await system.waitTicks(1);
+                // world.tickingAreaManager.createTickingArea(`${building}`,{ 
+                //         dimension:block.dimension,
+                //         from:Vector3Add(buildingLocation,{ x:64,y:0,z:64 }),
+                //         to:{ x:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).x+Math.min(64,size[0]-64),
+                //              y:block.location.y,
+                //              z:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).z+Math.min(64,size[2]-64) 
+                // } });
+                await system.waitTicks(4);
                 for( let i = 0; i < size[1]; i++ ){
                     block.dimension.runCommand(`execute positioned ${block.location.x+64} ${block.location.y} ${block.location.z+64} run fill ~~-${i}~ ~${Math.min(64,size[0]-64)}~-${i}~${Math.min(64,size[2]-64)} air`);
                 }
@@ -159,7 +190,7 @@ const gvcv5BuildingBlockCommponent = {
 
 
 const gvcv5LootBlockCommponent = {
-	onPlace(e,p){
+	async onTick(e,p){
 		const block = e.block;
 		const params = p.params;
         const type = p.params.type;
@@ -179,14 +210,39 @@ const gvcv5LootBlockCommponent = {
                 block.dimension.runCommand(`setblock ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} chest [\"minecraft:cardinal_direction\"=\"west\"]`);
             }
             if( type != `l0` ){
-                block.dimension.runCommand(`loot insert ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} loot ${type}`);
+                await system.waitTicks(1);
+                block.dimension.runCommand(`loot replace block ${buildingLocation.x} ${buildingLocation.y} ${buildingLocation.z} slot.container 0 loot ${type}`);
+                const container = block.getComponent(BlockComponentTypes.Inventory).container;
+                const max = container.size;
+                let c = 0;
+                while( true ){
+                    const item = container.getSlot(c).hasItem();
+                    if( item && c < max ){
+                        c++;
+                    }
+                    else{
+                        break
+                    }
+                }
+                for( let i = 0; i < c; i++ ){
+                    const transItem = container.getSlot(i).getItem();
+                    let targetSlot = 0;
+                    while( true ){
+                        targetSlot = Math.floor( Math.random() * max );
+                        const item = container.getSlot(targetSlot).hasItem();
+                        if( !item ){
+                            break;
+                        }
+                    }
+                    container.moveItem(i,targetSlot,container);
+                }
             }
         }
 	}
 }
 
 const gvcv5SpawnerCommponent = {
-	onRandomTick(e,p){
+	onTick(e,p){
 		const block = e.block;
 		const params = p.params;
         const type = p.params.type;
@@ -329,7 +385,6 @@ function gvcv5UseMtype( event ){
 
 const gvcv5UseAidKitCommponent = {
 	onConsume(e,p){
-		const block = e.block;
 		const user = e.source;
         user.addEffect("regeneration",14,{ amplifier: 4 })
 	}
@@ -337,7 +392,6 @@ const gvcv5UseAidKitCommponent = {
 
 const gvcv5UseAidKitiiCommponent = {
 	onConsume(e,p){
-		const block = e.block;
 		const user = e.source;
         user.addEffect("regeneration",14,{ amplifier: 12 })
 	}
@@ -345,10 +399,10 @@ const gvcv5UseAidKitiiCommponent = {
 
 const gvcv5UseSelfRiseCommponent = {
 	onConsume(e,p){
-		const block = e.block;
 		const user = e.source;
-        user.addEffect("regeneration",14,{ amplifier: 12 });
-        user.runCommand(`event entity @s gvcv5:remove_down_true`);
+        user.runCommand(`function down/revive_victim`);
+        user.setDynamicProperty(`killer`,undefined);
+        user.setDynamicProperty(`downedBy`,undefined);
 	}
 }
 

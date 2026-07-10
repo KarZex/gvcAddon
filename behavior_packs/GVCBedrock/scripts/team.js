@@ -146,10 +146,10 @@ system.runInterval( () => {
 system.runInterval( () => {
 	const players = world.getAllPlayers();
 	for( const player of players ){
-		if( player.hasTag(`down`) && !player.hasTag(`rise`) && world.getEntity(`${player.getDynamicProperty(`killer`)}`) != undefined ){
-			player.applyDamage(1,{ damagingEntity:world.getEntity(`${player.getDynamicProperty(`killer`)}`),cause:EntityDamageCause.magic });
+		if( player.hasTag(`down`) && !player.hasTag(`rise`) && world.getPlayers({name:`${player.getDynamicProperty(`killer`)}`}).length > 0 ){
+			player.applyDamage(1,{ damagingEntity:world.getPlayers({name:`${player.getDynamicProperty(`killer`)}`})[0],cause:EntityDamageCause.magic });
 		}
-		else if( player.hasTag(`down`) && !player.hasTag(`rise`) && world.getEntity(`${player.getDynamicProperty(`killer`)}`) == undefined ){
+		else if( player.hasTag(`down`) && !player.hasTag(`rise`) ){
 			player.applyDamage(1,{ cause:EntityDamageCause.magic });
 		}
 	}
@@ -168,7 +168,8 @@ world.afterEvents.entityHitEntity.subscribe( e => {
 		if( victim.hasTag(`down`) && !attacker.hasTag(`down`) && attackerTeams.some(team => victimTeams.includes(team)) ){
 			attacker.runCommand(`function down/revive_attacker`);
 			victim.runCommand(`function down/revive_victim`);
-			victim.setDynamicProperty(`killer`,undefined)
+			victim.setDynamicProperty(`killer`,undefined);
+			victim.setDynamicProperty(`downedBy`,undefined);
 		}
 	}
 })
@@ -177,7 +178,9 @@ world.afterEvents.entityHitEntity.subscribe( e => {
 world.beforeEvents.itemUse.subscribe( e => {
 	const player = e.source;
 	if( player.hasTag(`down`) ){
-		e.cancel = true;
+		if( e.itemStack.typeId != "zex:selfkit" ){
+			e.cancel = true;
+		}
 	}
 })
 
@@ -199,18 +202,29 @@ world.beforeEvents.playerInteractWithBlock.subscribe( e => {
 world.beforeEvents.entityHurt.subscribe( e => {
 	let attacker = e.damageSource.damagingEntity;
 	const victim = e.hurtEntity;
+	//down
 	if( victim.typeId == "minecraft:player" ){
-	print(`dmg:${e.damage}`);
+		//add scoreboard for team kill
+		if( !victim.hasTag(`down`) ){
+			//if the victim's health is greater than the damage dealt, it means the victim is not downed yet
+			//down
+			if( !victim.hasTag(`nodownable`) && victim.getComponent(EntityComponentTypes.Health).currentValue < e.damage ){
+				e.cancel = true;
+				system.runTimeout( () => {
+					victim.addTag(`down`);
+					victim.runCommand(`function down/start_down`);
+					victim.addEffect(`instant_health`,20,{ amplifier:2, showParticles: false });
+				})
+				
+			}
+		}
+		//print(`dmg:${e.damage}`);
 	}
 	if( victim.typeId == "minecraft:player" && attacker != undefined ){
+		print(`downedBy:${victim.getDynamicProperty(`downedBy`)}`)
 		//print(`dmg:${e.damage}`)
 		if( e.damage < 0 ){
 			e.cancel;
-		}
-		
-		if( victim.hasTag(`down`) && attacker.typeId != "minecraft:player" ){
-			e.cancel = true;
-			return;
 		}
 		try{
 			if( attacker.getComponent(EntityComponentTypes.Projectile).owner != undefined ){
@@ -219,54 +233,40 @@ world.beforeEvents.entityHurt.subscribe( e => {
 		}
 		catch{}
 		const excludeList = [ "player","playerp","mod","mob","allied_soldier" ];
-		print(attacker.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies())
+		//print(attacker.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies())
 		const attackerFamily = attacker.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
 		const victimFamily = victim.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
 		const attackerTeams = attackerFamily.filter(char => char.includes(`team`));
 		const victimTeams = victimFamily.filter(char => char.includes(`team`));
-		print(`attackerTeams = ${attackerTeams}, victimTeams = ${victimTeams}`);
+		//print(`attackerTeams = ${attackerTeams}, victimTeams = ${victimTeams}`);
 		// Cancel damage if the attacker is on the same team as the victim or if the attacker has no team
+		if( victim.hasTag(`down`) && attackerTeams.length > 0 && !attackerTeams.includes(`noteam`) && victim.getDynamicProperty(`downedBy`) == undefined  ){
+			system.runTimeout( () => {
+				if( attacker.typeId == "minecraft:player" ){
+					victim.setDynamicProperty(`killer`,attacker.name);
+					world.sendMessage([
+						{text: `${victim.nameTag}`},
+						{ translate: `script.gvcv5.downed_by.name`},
+						{text: `${attacker.nameTag}`},
+						{ translate: `script.gvcv5.downed_by2.name`}
+					]);
+				}
+				print(`downedBy:${attackerTeams[0].replace(`team`,``)}`)
+				victim.setDynamicProperty(`downedBy`,`${attackerTeams[0].replace(`team`,``)}`);
+			})
+		}
+		
+		if( victim.hasTag(`down`) && attacker.typeId != "minecraft:player" ){
+			e.cancel = true;
+			return;
+		}
+
 		if( attackerFamily.includes(`noteam`) ){
 			e.cancel = true;
 		}
 		// Cancel damage if the attacker and victim are on the same team
 		else if( attackerTeams.some( team => victimTeams.includes(team)) ){
 			e.cancel = true;
-		}
-		else{
-			//add scoreboard for team kill
-			if( attackerTeams.length > 0 && !attackerTeams.includes(`noteam`) && !victim.hasTag(`down`) ){
-				//if the victim's health is greater than the damage dealt, it means the victim is not downed yet
-				if( victim.getComponent(EntityComponentTypes.Health).currentValue > e.damage ){
-					// world.scoreboard.getObjective("damaging").setScore(victim,30);
-					// victim.addTag(`damagedBy${attackerTeams[0]}`);
-				}
-				//down
-				else{
-					if( !victim.hasTag(`nodownable`) ){
-						e.cancel = true;
-						victim.setDynamicProperty(`killer`,attacker.id);
-						if( attackerTeams.length > 0 && !attackerTeams.includes(`noteam`)  ){
-							system.runTimeout( () => {
-								if( attacker.typeId == "minecraft:player" ){
-									world.sendMessage([
-										{text: `${victim.nameTag}`},
-										{ translate: `script.gvcv5.downed_by.name`},
-										{text: `${attacker.nameTag}`},
-										{ translate: `script.gvcv5.downed_by2.name`}
-									]);
-								}
-								victim.addTag(`downedby${attackerTeams[0].replace(`team`,``)}`);
-							})
-						}
-						system.runTimeout( () => {
-							victim.runCommand(`function down/start_down`);
-							victim.addEffect(`instant_health`,20,2,{ showParticles: false });
-						})
-						
-					}
-				}
-			}
 		}
 	}
 } )
@@ -275,6 +275,8 @@ world.afterEvents.entityDie.subscribe( e => {
 	const player = e.deadEntity;
 	if( player.typeId == "minecraft:player" && player.hasTag(`down`) ){
 		player.runCommand(`function down/end_down`);
+		player.setDynamicProperty(`killer`,undefined);
+		//player.setDynamicProperty(`downedBy`,undefined);
 	}
 })
 
@@ -284,13 +286,14 @@ world.afterEvents.playerSpawn.subscribe( e => {
 
 	for( const team of Teams ){
 		const teamJail = world.getDynamicProperty(`${team}Jail`);
-		if( teamJail != undefined && world.getDynamicProperty(`teamJail`) && p.hasTag(`downedby${team}`) || p.hasTag(`${team}Sub`) ){
+		if( teamJail != undefined && world.getDynamicProperty(`teamJail`) && p.getDynamicProperty(`downedBy`) == team || p.hasTag(`${team}Sub`) ){
 			p.teleport(teamJail);
-			if( p.hasTag(`downedby${team}`) ){
+			if( p.getDynamicProperty(`downedBy`) == team ){
 				world.scoreboard.getObjective("DeathTime").setScore(p,24000);
 				p.addTag(`${team}Sub`);
 				p.addTag(`onDeath`);
 				p.runCommand(`give @s rotten_flesh 4`);
+				p.setDynamicProperty(`downedBy`,undefined);
 			}
 		}
 		p.removeTag(`downedby${team}`);
@@ -775,7 +778,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				else if( world.getDynamicProperty(`${userFamily}_slot${result.selection}`) != undefined ){
 					let location = world.getDynamicProperty(`${userFamily}_slot${result.selection}`);
 					let dimension = world.getDimension(world.getDynamicProperty(`${userFamily}_slot${result.selection}_dimension`));
-					tpWithDelay(user, location, dimension, 100);
+					user.teleport(location,{ dimension:dimension });
 				}
 			}
 		},)
@@ -1211,11 +1214,11 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			form.textField(`Blue team Password`, `${world.getDynamicProperty(`bluePass`)}`,{defaultValue:`${world.getDynamicProperty(`bluePass`)}`,tooltip:`Current is ${world.getDynamicProperty(`bluePass`)}`});
 			form.textField(`Green team Password`, `${world.getDynamicProperty(`greenPass`)}`,{defaultValue:`${world.getDynamicProperty(`greenPass`)}`,tooltip:`Current is ${world.getDynamicProperty(`greenPass`)}`});
 			form.textField(`Yellow team Password`, `${world.getDynamicProperty(`yellowPass`)}`,{defaultValue:`${world.getDynamicProperty(`yellowPass`)}`,tooltip:`Current is ${world.getDynamicProperty(`yellowPass`)}`});
-			form.toggle(`Delete Red Team`, false);
-			form.toggle(`Delete Blue Team`, false);
-			form.toggle(`Delete Green Team`, false);
-			form.toggle(`Delete Yellow Team`, false);
-			form.toggle(`Team Jail`, world.getDynamicProperty(`teamJail`));
+			form.toggle(`Delete Red Team`, {defaultValue:false});
+			form.toggle(`Delete Blue Team`, {defaultValue:false});
+			form.toggle(`Delete Green Team`, {defaultValue:false});
+			form.toggle(`Delete Yellow Team`, {defaultValue:false});
+			form.toggle(`Team Jail`, {defaultValue:world.getDynamicProperty(`teamJail`)});
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
 					if( world.getDynamicProperty(`redPass`) != result.formValues[0] && result.formValues[0] != `undefined` ){

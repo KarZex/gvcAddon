@@ -39,7 +39,7 @@
           "catch_fire": true
         },
         "power": 0.03,
-        "gravity": 0.01,
+        "gravity": 0,
         "inertia": 1.5,
         "uncertainty_base": 7.5,
         "uncertainty_multiplier": 0,

@@ -24,12 +24,12 @@
         },
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
-          "burst_shots": 5,
-          "burst_interval": 0.8,
+          "burst_shots": 2,
+          "burst_interval": 0.05,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
-          "attack_interval_min": 5.0,
-          "attack_interval_max": 5.0,
+          "attack_interval_min": 0.25,
+          "attack_interval_max": 0.25,
           "attack_radius": 30.0
         },
         "minecraft:shooter": {
@@ -132,11 +132,16 @@
 
     "events": {
       "minecraft:spawned_from_block": {
+        "queue_command": {
+          "command":[
+            "replaceitem entity @s slot.weapon.offhand 0 gun:tt33"
+          ]
+        }
       },
       "minecraft:entity_spawned": {
-        "add": {
-          "component_groups": [
-            "D"
+        "queue_command": {
+          "command":[
+            "replaceitem entity @s slot.weapon.offhand 0 gun:tt33"
           ]
         }
       },

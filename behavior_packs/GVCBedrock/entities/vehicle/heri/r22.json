@@ -209,7 +209,8 @@
         "family": [
           "vehicle",
           "heri",
-          "TofAA"
+          "TofAA",
+          "plate"
         ]
       },
       "minecraft:fire_immune": {},

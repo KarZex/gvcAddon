@@ -766,22 +766,23 @@ for row in csv_reader:
                 gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:{}".format(gun_id)
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
-                if(gun_ammo == "zex:556m"):
-                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
-                elif(gun_ammo == "zex:762m"):
-                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.02
-                elif(gun_ammo == "zex:mm9"):
-                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.005
-                elif(gun_ammo == "zex:btm"):
-                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
-                elif(gun_ammo == "zex:1270m"):
-                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
-                elif(gun_ammo == "zex:rocketm"):
-                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
-                elif(gun_ammo == "zex:12m"):
-                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
-                elif(gun_ammo == "zex:40m"):
-                    gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
+                gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                # if(gun_ammo == "zex:556m"):
+                #     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
+                # elif(gun_ammo == "zex:762m"):
+                #     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.02
+                # elif(gun_ammo == "zex:mm9"):
+                #     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.005
+                # elif(gun_ammo == "zex:btm"):
+                #     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                # elif(gun_ammo == "zex:1270m"):
+                #     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
+                # elif(gun_ammo == "zex:rocketm"):
+                #     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
+                # elif(gun_ammo == "zex:12m"):
+                #     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
+                # elif(gun_ammo == "zex:40m"):
+                #     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
                 #gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ -0.2,0,-0.5 ]
                 if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
                 gun_entity["minecraft:entity"]["events"] = {}

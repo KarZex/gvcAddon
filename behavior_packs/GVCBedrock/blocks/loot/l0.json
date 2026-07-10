@@ -23,6 +23,10 @@
             "gvcv5:lootblock":{
                 "type":"l0"
             },
+            "minecraft:tick": {
+                "looping": true,
+                "interval_range": [ 1, 1 ]
+            },
             "minecraft:geometry": "geometry.loot",
             "minecraft:selection_box": {
                 "origin": [-8, 0, -8],

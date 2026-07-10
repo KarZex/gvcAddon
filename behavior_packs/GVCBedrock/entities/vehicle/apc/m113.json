@@ -273,7 +273,8 @@
           "vehicle",
           "playerfire",
           "plate",
-          "tank"
+          "tank",
+          "land"
         ]
       },
       "minecraft:fire_immune": {},

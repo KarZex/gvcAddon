@@ -283,9 +283,9 @@ function Weapon( player,vehicle,selectedItemSlot ){
 }
 
 system.runInterval( () => {
-	const overTanks = world.getDimension(`minecraft:overworld`).getEntities({families:[`plate`]});
-	const netherTanks = world.getDimension(`minecraft:nether`).getEntities({families:[`plate`]});
-	const endTanks = world.getDimension(`minecraft:the_end`).getEntities({families:[`plate`]});
+	const overTanks = world.getDimension(`minecraft:overworld`).getEntities({families:[`land`]});
+	const netherTanks = world.getDimension(`minecraft:nether`).getEntities({families:[`land`]});
+	const endTanks = world.getDimension(`minecraft:the_end`).getEntities({families:[`land`]});
 	for( let t of overTanks ){
 		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 && isMoving(t) ){
 			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.tank`,t.location,{ volume:8 })
@@ -369,12 +369,6 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		const airCraft = e.sourceEntity;
         const Hasrider = Boolean(airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0] != undefined)
 		if( Hasrider ){
-
-			if( airCraft.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`plate`) ){
-				for( const rider of  vehicle.getComponent(EntityComponentTypes.Rideable).getRiders() ){
-					rider.addEffect(`resistance`,20,{ amplifier:255,showParticles:false });
-				}
-			}
 			const maxSpeed = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
 			const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
             if( player.typeId == "minecraft:player" ){
@@ -656,12 +650,6 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 	else if( e.id == "zex:vship"){
 		const vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
-
-		if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`plate`) ){
-			for( const rider of  vehicle.getComponent(EntityComponentTypes.Rideable).getRiders() ){
-				rider.addEffect(`resistance`,20,{ amplifier:255,showParticles:false });
-			}
-		}
 		//world.sendMessage(`§aSelected Slot Index: ${selectedItemSlot}`);
 		if( player.typeId == "minecraft:player" ){
 			const selectedItemSlot = player.selectedSlotIndex;
@@ -719,12 +707,6 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 	else if( e.id == "zex:vheri"){
 		const vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
-
-		if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`plate`) ){
-			for( const rider of  vehicle.getComponent(EntityComponentTypes.Rideable).getRiders() ){
-				rider.addEffect(`resistance`,20,{ amplifier:255,showParticles:false });
-			}
-		}
 
 		if( player.typeId == "minecraft:player" ){
 			const selectedItemSlot = player.selectedSlotIndex;

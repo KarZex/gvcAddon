@@ -44,7 +44,7 @@
           }
         },
         "power": 1.8,
-        "gravity": 0.01,
+        "gravity": 0,
         "inertia": 1.5,
         "uncertainty_base": 6.25,
         "uncertainty_multiplier": 0,

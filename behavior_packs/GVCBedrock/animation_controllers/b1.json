@@ -6,14 +6,14 @@
         "default": {
           "transitions": [
             { "riding": "query.is_riding" }
-          ],
-          "on_entry": [
-            "/scriptevent zex:vend"
           ]
         },
         "riding": {
           "on_entry": [
             "/scriptevent zex:vstart"
+          ],
+          "on_exit": [
+            "/scriptevent zex:vend"
           ],
           "transitions": [
             {"default":"!query.is_riding"}
