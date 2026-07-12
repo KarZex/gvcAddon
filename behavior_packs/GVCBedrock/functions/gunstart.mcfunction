@@ -29,6 +29,8 @@ scoreboard objectives add rise dummy
 scoreboard objectives add out dummy
 scoreboard objectives add building dummy
 scoreboard objectives add lockon dummy
+scoreboard objectives add ALLFlags dummy
+#ALLFlags
 #initialize
 execute as @s[tag=!startedv5] run scoreboard players set @s weapon1_cool 20
 execute as @s[tag=!startedv5] run scoreboard players set @s weapon1 0

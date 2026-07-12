@@ -1,1 +1,2 @@
-setblock ~~~ gvcv5:building_camp_sn
+execute if score S building matches 1 run tickingarea add ~~~ ~~~ camp_sn true
+execute if score S building matches 1 run setblock ~~~ gvcv5:building_camp_sn

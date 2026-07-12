@@ -735,6 +735,8 @@ script.gvcv5.phone_howToTeam3.name=About Teleportation Blocks
 script.gvcv5.phone_howToTeam3Desc.name=Can be created with 4 iron blocks and 1 dye. By clicking on the teleport block while holding the information terminal, you can register coordinates and teleport there at any time. Up to 5 locations can be registered per information terminal.
 script.gvcv5.phone_howToTeam4.name=About allied forces
 script.gvcv5.phone_howToTeam4Desc.name=By using :_input_key.use: on allied forces or their flags, you can dye them. Dyed allied forces will attack other teams' allied forces and players.
+script.gvcv5.phone_howToTeam5.name=About the attack-and-defense battle
+script.gvcv5.phone_howToTeam5Desc.name=Hold the "base item" and use :_input_key.use: on your team flag to strengthen it. When the team flag is strengthened, the surrounding area becomes a safe zone and automatically kills enemy mobs and other teams. If the leader or sub-leader attacks an enemy team's flag, the safe zone is temporarily disabled and the flag can be captured in the attack-and-defense battle.
 script.gvcv5.select_team.name=Join a team
 script.gvcv5.phone_noteam.name=Information terminal
 script.gvcv5.phone_howTo.name=View guide
@@ -1030,4 +1032,70 @@ gvcv5.ssmissile.name=SSMissile
 gvcv5.37mm.name=37mmCannon
 gvcv5.57mm.name=57mmCannon
 gvcv5.76mmap.name=76mm-AP Cannon
+
+gvcv5:flag_blue_main_base=§9Blue Team Base_Main Base
+gvcv5:flag_red_main_base=§cRed Team Base_Main Base
+gvcv5:flag_green_main_base=§aGreen Team Base_Main Base
+gvcv5:flag_yellow_main_base=§eYellow Team Base_Main Base
+script.gvcv5:cant_place_boss_flag.name=§cThere is a base within 360 blocks:§r
+
+script.gvcv5:red_team.name=§cRed Team§r
+script.gvcv5:blue_team.name=§9Blue Team§r
+script.gvcv5:green_team.name=§aGreen Team§r
+script.gvcv5:yellow_team.name=§eYellow Team§r
+
+gvcv5:cant_break.name=You can no longer place/break.
+gvcv5:can_break.name=You can now place/break.
+script.gvcv5.downed_by.name=was
+script.gvcv5.downed_by2.name=was downed by
+
+script.gvcv5.red_boss_warning=§cNear the Red Team base!
+script.gvcv5.blue_boss_warning=§9Near the Blue Team base!
+script.gvcv5.green_boss_warning=§aNear the Green Team base!
+script.gvcv5.yellow_boss_warning=§eNear the Yellow Team base!
+
+script.gvcv5.phone_attack.name=Attack the enemy team's flag
+script.gvcv5.defenced.name=has
+script.gvcv5.defenced2.name=successfully defended the flag from attack
+script.gvcv5.occupied.name=captured the flag
+script.gvcv5.flagAttackFlag.name=への攻撃開始まで...
+script.gvcv5.flagAttackFlagStart0.name=による
+script.gvcv5.flagAttackFlagStart1.name=への攻撃が開始されました!
+script.gvcv5.flagAttackFlagNow.name=への攻撃終了まで...
+script.gvcv5:dup_flag.name=§cすでに拠点が設置されています
+script.gvcv5.flag_destroyed.name=拠点が破壊されました
+
+script.gvcv5:redteam2.name=§c赤チーム§rの
+script.gvcv5:blueteam2.name=§9青チーム§rの
+script.gvcv5:greenteam2.name=§a緑チーム§rの
+script.gvcv5:yellowteam2.name=§e黄チーム§rの
+
+item.zex:bossflag=拠点化アイテム
+item.zex:bossflag_desc=このアイテムでチーム旗を拠点化できます。拠点化すると、拠点の周辺60ブロック以内は安全地帯となり、他のチームのプレイヤーは拠点に入ることができなくなります。
+script.gvcv5:boss_flag.name=拠点設定
+script.gvcv5:boss_name.name=拠点の名前を設定
+script.gvcv5:boss_kill.name=拠点を破壊
+script.gvcv5:boss_end.name=終了
+script.gvcv5.boss_kill_body.name=拠点を破壊すると、拠点の旗が消滅し、拠点の所有権がなくなります。拠点を破壊する場合は、チームリーダーに相談してから行ってください。
+
+script.gvcv5.phone_progress.name=ミッション
+script.gvcv5.phone_progress_c.name=進行度:
+script.gvcv5.phone_progress_0.name=MISSION1
+script.gvcv5.phone_progress_0_main.name=-ゲリラを排除せよ-
+script.gvcv5.phone_progress_0_sub.name=各地で目撃されているゲリラを排除せよ。ゲリラは各拠点や夜間に出現する。
+script.gvcv5.phone_progress_1.name=MISSION2
+script.gvcv5.phone_progress_1_main.name=-ゲリラスポナーを破壊せよ-
+script.gvcv5.phone_progress_1_sub.name=ゲリラを呼び寄せるビーコンを破壊せよ。ビーコンは直接破壊するか爆風で破壊出来る。
+script.gvcv5.phone_progress_2.name=MISSION3
+script.gvcv5.phone_progress_2_main.name=-ベテランゲリラを排除せよ-
+script.gvcv5.phone_progress_2_sub.name=装備を着たベテランゲリラを排除せよ。ベテランゲリラは各拠点や夜間に出現する。通常のゲリラと比べて手強い相手だ。
+script.gvcv5.phone_progress_3.name=MISSION4
+script.gvcv5.phone_progress_3_main.name=-中規模拠点を攻略せよ-
+script.gvcv5.phone_progress_3_sub.name=ゲリラが占拠している拠点を攻撃せよ。旗にダメージを与え、倒せば占領出来る。
+script.gvcv5.phone_progress_4.name=MISSION5
+script.gvcv5.phone_progress_4_main.name=-ゲリラ戦車を破壊せよ-
+script.gvcv5.phone_progress_4_sub.name=ゲリラが使用している旧式戦車を破壊せよ。戦車には銃弾は効かない、ロケットを叩き込め。
+script.gvcv5.phone_progress_5.name=MISSION6
+script.gvcv5.phone_progress_5_main.name=-大規模拠点を攻略せよ-
+script.gvcv5.phone_progress_5_sub.name=ゲリラが潜んでいる大規模拠点を攻略せよ。未確認の兵器も確認されている、注意せよ。
 

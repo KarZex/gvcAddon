@@ -31,6 +31,13 @@
       "gvcv5:end_block": {
         "building": "depot_de"
       },
+      "minecraft:tick": {
+        "looping": true,
+        "interval_range": [
+          1,
+          2
+        ]
+      },
       "minecraft:light_emission": 15,
       "minecraft:light_dampening": 0,
       "minecraft:map_color": "#00ff00"

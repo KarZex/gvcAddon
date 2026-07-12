@@ -11,35 +11,6 @@ export const tankImmuneEntities = [
     `xp_orb`
 ]
 
-function getEnemies( player ){
-    if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`SOVteam`) ){
-        return [ `axis_soldier` ];
-    }
-    else if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`GERteam`) ){
-        return [ `allied_soldier` ];
-    }
-    else if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`USAteam`) ){
-        return [ `axis_soldier` ];
-    }
-    else if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`JAPteam`) ){
-        return [ `allied_soldier` ];
-    }
-    else if( player.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`ENGteam`) ){
-        return [ `axis_soldier` ];
-    }
-}
-
-function getInventoryItem(player,typeId){
-	let c = 0
-	for(let j = 0; j < 36; j++){
-		let Haditem = player.getComponent("inventory").container.getItem(j);
-		if( Haditem != undefined && Haditem.typeId == typeId ){
-			c += player.getComponent("inventory").container.getItem(j).amount;
-		}
-	}
-	return c;
-}
-
 function airCraftlader( player ){
 	const V = player.getViewDirection();
 	const P0 = player.location;

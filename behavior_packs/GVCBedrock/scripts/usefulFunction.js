@@ -1,7 +1,19 @@
 import { world, system, Entity,ItemComponentTypes,EntityComponentTypes,EquipmentSlot  } from "@minecraft/server";
-
+const Teams = [
+    `red`,
+    `blue`,
+    `green`,
+    `yellow`
+]
 
 //world.getEntity(`a`).getVelocity()
+
+export function getTeam( entity ){
+	const excludeList = [ "player","playerp","mod","mob","allied_soldier" ];
+    const entityFamily = entity.getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().filter(char => !excludeList.includes(char));
+    const entityTeams = entityFamily.filter(char => char.includes(`team`));
+    return entityTeams[0];
+}
 
 export function getEntityName( entity ){
     if( entity.nameTag == undefined || entity.nameTag == `` ){

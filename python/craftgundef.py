@@ -168,8 +168,7 @@ for row in csv_reader:
                 "entities": [
                     {
                         "filters": [
-                            {"test":"has_tag","operator":"!=","value":"scope"},
-                            { "test": "int_property", "domain": "zex:light","operator": "==", "value": 0 }
+                            {"test":"has_tag","operator":"!=","value":"scope"}
                         ],
                         "max_wait_time": 0,
                         "min_wait_time": 0,
@@ -179,30 +178,7 @@ for row in csv_reader:
                     },
                     {
                         "filters": [
-                            {"test":"has_tag","operator":"!=","value":"scope"},
-                            { "test": "int_property", "domain": "zex:light","operator": "!=", "value": 0 }
-                        ],
-                        "max_wait_time": 0,
-                        "min_wait_time": 0,
-                        "num_to_spawn": gun_bullet_num,
-                        "single_use": True,
-                        "spawn_entity": "fire:adsh_{}".format(gun_id)
-                    },
-                    {
-                        "filters": [
-                            { "test":"has_tag","operator":"==","value":"scope" },
-                            { "test": "int_property", "domain": "zex:sights","operator": "==", "value": 0 }
-                        ],
-                        "max_wait_time": 0,
-                        "min_wait_time": 0,
-                        "num_to_spawn": gun_bullet_num,
-                        "single_use": True,
-                        "spawn_entity": "fire:adsh_{}".format(gun_id)
-                    },
-                    {
-                        "filters": [
-                            { "test":"has_tag","operator":"==","value":"scope" },
-                            { "test": "int_property", "domain": "zex:sights","operator": "!=", "value": 0 }
+                            { "test":"has_tag","operator":"==","value":"scope" }
                         ],
                         "max_wait_time": 0,
                         "min_wait_time": 0,
@@ -244,8 +220,7 @@ for row in csv_reader:
                     "entities": [
                         {
                             "filters": [
-                                {"test":"has_tag","operator":"!=","value":"scope"},
-                                { "test": "int_property", "domain": "zex:light","operator": "==", "value": 0 }
+                                {"test":"has_tag","operator":"!=","value":"scope"}
                             ],
                             "max_wait_time": 0,
                             "min_wait_time": 0,
@@ -255,30 +230,7 @@ for row in csv_reader:
                         },
                         {
                             "filters": [
-                                {"test":"has_tag","operator":"!=","value":"scope"},
-                                { "test": "int_property", "domain": "zex:light","operator": "!=", "value": 0 }
-                            ],
-                            "max_wait_time": 0,
-                            "min_wait_time": 0,
-                            "num_to_spawn": 1,
-                            "single_use": True,
-                            "spawn_entity": "fire:adsh_{}_frag".format(gun_id)
-                        },
-                        {
-                            "filters": [
-                                { "test":"has_tag","operator":"==","value":"scope" },
-                                { "test": "int_property", "domain": "zex:sights","operator": "==", "value": 0 }
-                            ],
-                            "max_wait_time": 0,
-                            "min_wait_time": 0,
-                            "num_to_spawn": 1,
-                            "single_use": True,
-                            "spawn_entity": "fire:adsh_{}_frag".format(gun_id)
-                        },
-                        {
-                            "filters": [
-                                { "test":"has_tag","operator":"==","value":"scope" },
-                                { "test": "int_property", "domain": "zex:sights","operator": "!=", "value": 0 }
+                                { "test":"has_tag","operator":"==","value":"scope" }
                             ],
                             "max_wait_time": 0,
                             "min_wait_time": 0,
@@ -319,8 +271,7 @@ for row in csv_reader:
                     "entities": [
                         {
                             "filters": [
-                                {"test":"has_tag","operator":"!=","value":"scope"},
-                                { "test": "int_property", "domain": "zex:light","operator": "==", "value": 0 }
+                                {"test":"has_tag","operator":"!=","value":"scope"}
                             ],
                             "max_wait_time": 0,
                             "min_wait_time": 0,
@@ -330,30 +281,7 @@ for row in csv_reader:
                         },
                         {
                             "filters": [
-                                {"test":"has_tag","operator":"!=","value":"scope"},
-                                { "test": "int_property", "domain": "zex:light","operator": "!=", "value": 0 }
-                            ],
-                            "max_wait_time": 0,
-                            "min_wait_time": 0,
-                            "num_to_spawn": 1,
-                            "single_use": True,
-                            "spawn_entity": "fire:adsh_{}_srag".format(gun_id)
-                        },
-                        {
-                            "filters": [
-                                { "test":"has_tag","operator":"==","value":"scope" },
-                                { "test": "int_property", "domain": "zex:sights","operator": "==", "value": 0 }
-                            ],
-                            "max_wait_time": 0,
-                            "min_wait_time": 0,
-                            "num_to_spawn": 1,
-                            "single_use": True,
-                            "spawn_entity": "fire:adsh_{}_srag".format(gun_id)
-                        },
-                        {
-                            "filters": [
-                                { "test":"has_tag","operator":"==","value":"scope" },
-                                { "test": "int_property", "domain": "zex:sights","operator": "!=", "value": 0 }
+                                { "test":"has_tag","operator":"==","value":"scope" }
                             ],
                             "max_wait_time": 0,
                             "min_wait_time": 0,
@@ -394,8 +322,7 @@ for row in csv_reader:
                     "entities": [
                         {
                             "filters": [
-                                {"test":"has_tag","operator":"!=","value":"scope"},
-                                { "test": "int_property", "domain": "zex:light","operator": "==", "value": 0 }
+                                {"test":"has_tag","operator":"!=","value":"scope"}
                             ],
                             "max_wait_time": 0,
                             "min_wait_time": 0,
@@ -405,30 +332,7 @@ for row in csv_reader:
                         },
                         {
                             "filters": [
-                                {"test":"has_tag","operator":"!=","value":"scope"},
-                                { "test": "int_property", "domain": "zex:light","operator": "!=", "value": 0 }
-                            ],
-                            "max_wait_time": 0,
-                            "min_wait_time": 0,
-                            "num_to_spawn": 16,
-                            "single_use": True,
-                            "spawn_entity": "fire:adsh_{}_db".format(gun_id)
-                        },
-                        {
-                            "filters": [
-                                { "test":"has_tag","operator":"==","value":"scope" },
-                                { "test": "int_property", "domain": "zex:sights","operator": "==", "value": 0 }
-                            ],
-                            "max_wait_time": 0,
-                            "min_wait_time": 0,
-                            "num_to_spawn": 16,
-                            "single_use": True,
-                            "spawn_entity": "fire:adsh_{}_db".format(gun_id)
-                        },
-                        {
-                            "filters": [
-                                { "test":"has_tag","operator":"==","value":"scope" },
-                                { "test": "int_property", "domain": "zex:sights","operator": "!=", "value": 0 }
+                                { "test":"has_tag","operator":"==","value":"scope" }
                             ],
                             "max_wait_time": 0,
                             "min_wait_time": 0,
@@ -456,8 +360,7 @@ for row in csv_reader:
                     "entities": [
                         {
                             "filters": [
-                                {"test":"has_tag","operator":"!=","value":"scope"},
-                                { "test": "int_property", "domain": "zex:light","operator": "==", "value": 0 }
+                                {"test":"has_tag","operator":"!=","value":"scope"}
                             ],
                             "max_wait_time": 0,
                             "min_wait_time": 0,
@@ -467,30 +370,7 @@ for row in csv_reader:
                         },
                         {
                             "filters": [
-                                {"test":"has_tag","operator":"!=","value":"scope"},
-                                { "test": "int_property", "domain": "zex:light","operator": "!=", "value": 0 }
-                            ],
-                            "max_wait_time": 0,
-                            "min_wait_time": 0,
-                            "num_to_spawn": gun_bullet_num,
-                            "single_use": True,
-                            "spawn_entity": "fire:adsh_{}l".format(gun_id)
-                        },
-                        {
-                            "filters": [
-                                { "test":"has_tag","operator":"==","value":"scope" },
-                                { "test": "int_property", "domain": "zex:sights","operator": "==", "value": 0 }
-                            ],
-                            "max_wait_time": 0,
-                            "min_wait_time": 0,
-                            "num_to_spawn": gun_bullet_num,
-                            "single_use": True,
-                            "spawn_entity": "fire:adsh_{}l".format(gun_id)
-                        },
-                        {
-                            "filters": [
-                                { "test":"has_tag","operator":"==","value":"scope" },
-                                { "test": "int_property", "domain": "zex:sights","operator": "!=", "value": 0 }
+                                { "test":"has_tag","operator":"==","value":"scope" }
                             ],
                             "max_wait_time": 0,
                             "min_wait_time": 0,
@@ -822,10 +702,10 @@ for row in csv_reader:
                 gun_entity_srag["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}_srag".format(gun_id)
                 json.dump(gun_entity_srag,f,indent=2)
 
-            with open("behavior_packs/GVCBedrock/entities/fire/scoped2/{}_srag.json".format(gun_id),"w") as f:
-                gun_entity_srag["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
-                gun_entity_srag["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}_srag".format(gun_id)
-                json.dump(gun_entity_srag,f,indent=2)
+            # with open("behavior_packs/GVCBedrock/entities/fire/scoped2/{}_srag.json".format(gun_id),"w") as f:
+            #     gun_entity_srag["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
+            #     gun_entity_srag["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}_srag".format(gun_id)
+            #     json.dump(gun_entity_srag,f,indent=2)
 
             
             with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"r") as f:
@@ -846,10 +726,10 @@ for row in csv_reader:
                 gun_entity_db["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}_db".format(gun_id)
                 json.dump(gun_entity_db,f,indent=2)
 
-            with open("behavior_packs/GVCBedrock/entities/fire/scoped2/{}_db.json".format(gun_id),"w") as f:
-                gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 4
-                gun_entity_db["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}_db".format(gun_id)
-                json.dump(gun_entity_db,f,indent=2)
+            # with open("behavior_packs/GVCBedrock/entities/fire/scoped2/{}_db.json".format(gun_id),"w") as f:
+            #     gun_entity_db["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 4
+            #     gun_entity_db["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}_db".format(gun_id)
+            #     json.dump(gun_entity_db,f,indent=2)
 
             with open("behavior_packs/GVCBedrock/entities/fire/{}.json".format(gun_id),"r") as f:
                 gun_entity_base = json.load(f)
@@ -865,10 +745,10 @@ for row in csv_reader:
                 gun_entity_frag["minecraft:entity"]["description"]["identifier"] = "fire:ads_{}_frag".format(gun_id)
                 json.dump(gun_entity_frag,f,indent=2)
 
-            with open("behavior_packs/GVCBedrock/entities/fire/scoped2/{}_frag.json".format(gun_id),"w") as f:
-                gun_entity_frag["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
-                gun_entity_frag["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}_frag".format(gun_id)
-                json.dump(gun_entity_frag,f,indent=2)
+            # with open("behavior_packs/GVCBedrock/entities/fire/scoped2/{}_frag.json".format(gun_id),"w") as f:
+            #     gun_entity_frag["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
+            #     gun_entity_frag["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}_frag".format(gun_id)
+            #     json.dump(gun_entity_frag,f,indent=2)
             
         if ( "P" in gun_special ):
             with open("behavior_packs/GVCBedrock/entities/fire/{}l.json".format(gun_id),"w") as f:
@@ -891,18 +771,18 @@ for row in csv_reader:
                 #gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ 0.2,0,-0.5 ]
                 json.dump(gun_entity,f,indent=2)
 
-        with open("behavior_packs/GVCBedrock/entities/fire/scoped2/adsh_{}.json".format(gun_id),"w") as f:
-            gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}".format(gun_id)
-            #gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ -0.2,0,-0.5 ]
-            if gun_bullet_num > 1: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 4
-            else: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
-            json.dump(gun_entity,f,indent=2)
+        # with open("behavior_packs/GVCBedrock/entities/fire/scoped2/adsh_{}.json".format(gun_id),"w") as f:
+        #     gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}".format(gun_id)
+        #     #gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ -0.2,0,-0.5 ]
+        #     if gun_bullet_num > 1: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 4
+        #     else: gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 2
+        #     json.dump(gun_entity,f,indent=2)
 
-        if ( "P" in gun_special ):
-            with open("behavior_packs/GVCBedrock/entities/fire/scoped2/adsh_{}l.json".format(gun_id),"w") as f:
-                gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}l".format(gun_id)
-                #gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ 0.2,0,-0.5 ]
-                json.dump(gun_entity,f,indent=2)
+        # if ( "P" in gun_special ):
+        #     with open("behavior_packs/GVCBedrock/entities/fire/scoped2/adsh_{}l.json".format(gun_id),"w") as f:
+        #         gun_entity["minecraft:entity"]["description"]["identifier"] = "fire:adsh_{}l".format(gun_id)
+        #         #gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ 0.2,0,-0.5 ]
+        #         json.dump(gun_entity,f,indent=2)
 
 
             
@@ -1063,9 +943,9 @@ for row in csv_reader:
             gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:ads_{}".format(gun_id)
             json.dump(gun_entity,f,indent=2)
 
-        with open("resource_packs/GVCBedrock/entity/gun/s2/{}.json".format(gun_id),"w") as f:
-            gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:adsh_{}".format(gun_id)
-            json.dump(gun_entity,f,indent=2)
+        # with open("resource_packs/GVCBedrock/entity/gun/s2/{}.json".format(gun_id),"w") as f:
+        #     gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:adsh_{}".format(gun_id)
+        #     json.dump(gun_entity,f,indent=2)
 
         if( "P" in gun_special ):
             with open("resource_packs/GVCBedrock/entity/gun/{}l.json".format(gun_id),"w") as f:
@@ -1076,9 +956,9 @@ for row in csv_reader:
                 gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:ads_{}l".format(gun_id)
                 json.dump(gun_entity,f,indent=2)
 
-            with open("resource_packs/GVCBedrock/entity/gun/s2/{}l.json".format(gun_id),"w") as f:
-                gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:adsh_{}l".format(gun_id)
-                json.dump(gun_entity,f,indent=2)
+            # with open("resource_packs/GVCBedrock/entity/gun/s2/{}l.json".format(gun_id),"w") as f:
+            #     gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:adsh_{}l".format(gun_id)
+            #     json.dump(gun_entity,f,indent=2)
 
         if( "Sga" in gun_special ):
             with open("resource_packs/GVCBedrock/entity/gun/{}_frag.json".format(gun_id),"w") as f:
@@ -1089,9 +969,9 @@ for row in csv_reader:
                 gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:ads_{}_frag".format(gun_id)
                 json.dump(gun_entity,f,indent=2)
 
-            with open("resource_packs/GVCBedrock/entity/gun/s2/{}_frag.json".format(gun_id),"w") as f:
-                gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:adsh_{}_frag".format(gun_id)
-                json.dump(gun_entity,f,indent=2)
+            # with open("resource_packs/GVCBedrock/entity/gun/s2/{}_frag.json".format(gun_id),"w") as f:
+            #     gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:adsh_{}_frag".format(gun_id)
+            #     json.dump(gun_entity,f,indent=2)
 
             with open("resource_packs/GVCBedrock/entity/gun/{}_srag.json".format(gun_id),"w") as f:
                 gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}_srag".format(gun_id)
@@ -1101,9 +981,9 @@ for row in csv_reader:
                 gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:ads_{}_srag".format(gun_id)
                 json.dump(gun_entity,f,indent=2)
 
-            with open("resource_packs/GVCBedrock/entity/gun/s2/{}_srag.json".format(gun_id),"w") as f:
-                gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:adsh_{}_srag".format(gun_id)
-                json.dump(gun_entity,f,indent=2)
+            # with open("resource_packs/GVCBedrock/entity/gun/s2/{}_srag.json".format(gun_id),"w") as f:
+            #     gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:adsh_{}_srag".format(gun_id)
+            #     json.dump(gun_entity,f,indent=2)
 
             with open("resource_packs/GVCBedrock/entity/gun/{}_db.json".format(gun_id),"w") as f:
                 gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:{}_db".format(gun_id)
@@ -1113,9 +993,9 @@ for row in csv_reader:
                 gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:ads_{}_db".format(gun_id)
                 json.dump(gun_entity,f,indent=2)
 
-            with open("resource_packs/GVCBedrock/entity/gun/s2/{}_db.json".format(gun_id),"w") as f:
-                gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:adsh_{}_db".format(gun_id)
-                json.dump(gun_entity,f,indent=2)
+            # with open("resource_packs/GVCBedrock/entity/gun/s2/{}_db.json".format(gun_id),"w") as f:
+            #     gun_entity["minecraft:client_entity"]["description"]["identifier"] = "fire:adsh_{}_db".format(gun_id)
+            #     json.dump(gun_entity,f,indent=2)
 
         with open("resource_packs/GVCBedrock/render_controllers/first_person.json","r") as f:
             gun_entity = json.load(f)

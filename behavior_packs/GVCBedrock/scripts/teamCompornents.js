@@ -39,6 +39,9 @@ async function setUp(){
     if( world.getDynamicProperty(`teamJail`) == undefined ){
         world.setDynamicProperty("teamJail",false);
     }
+    if( world.getDynamicProperty(`gvcv5:isBossFlag`) == undefined ){
+        world.setDynamicProperty("gvcv5:isBossFlag",true);
+    }
     await system.waitTicks(1);
 }
 

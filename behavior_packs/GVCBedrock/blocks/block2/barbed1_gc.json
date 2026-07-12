@@ -26,6 +26,7 @@
             "minecraft:destructible_by_mining":{
                 "seconds_to_destroy": 0
             },
+            "gvcv5:barbed" : {},
             "tag:minecraft:is_pickaxe_item_destructible":{},
             "minecraft:geometry": "geometry.barbed1_gc",
             "minecraft:selection_box": {

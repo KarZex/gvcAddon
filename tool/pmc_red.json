@@ -260,6 +260,10 @@
                 "width": 0.5,
                 "height": 1.8
             },
+            "minecraft:floats_in_liquid": {},
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
             "minecraft:variant": {
                 "value": 0
             },

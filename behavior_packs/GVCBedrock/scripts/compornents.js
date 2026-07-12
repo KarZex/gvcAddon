@@ -1,5 +1,6 @@
 import { world, EquipmentSlot, system, EntityComponentTypes ,BlockComponentTypes} from "@minecraft/server";
 import { Vector3Add } from "./usefulFunction"
+import { levelup } from "./main";
 
 
 const gvcv5SpawnCommponent = {
@@ -97,7 +98,7 @@ const gvcv5SpawnCommponent = {
 
 
 const gvcv5EndBlockCommponent = {
-	onPlace(e,p){
+	onTick(e,p){
 		const block = e.block;
 		const params = p.params;
         const building = p.params.building;
@@ -109,8 +110,16 @@ const gvcv5EndBlockCommponent = {
 	}
 }
 
+const gvcv5BarbedCommponent = {
+    onStepOn(e,p){
+        const block = e.block;
+        const entity = e.entity;
+        entity.addEffect(`slowless`,5);
+    }
+}
+
 const gvcv5MER03kBlockCommponent = {
-	onPlace(e,p){
+	onTick(e,p){
 		const block = e.block;
         if( world.gameRules.commandBlocksEnabled ){
             block.dimension.spawnEntity(`gvcv5:mer03k`,block.location);
@@ -137,37 +146,37 @@ const gvcv5BuildingBlockCommponent = {
             }catch{}
             //world.tickingAreaManager.createTickingArea(`${building}`,{ dimension:block.dimension,from:block.location,to:{ x:block.location.x+Math.min(64,size[0]),y:block.location.y,z:block.location.z+Math.min(64,size[2]) } });
             await system.waitTicks(5);
-            for( let i = 0; i < size[1]; i++ ){
-                block.dimension.runCommand(`execute positioned ${block.location.x} ${block.location.y} ${block.location.z} run fill ~~-${i}~ ~${Math.min(64,size[0])}~-${i}~${Math.min(64,size[2])} air`);
-            }
+            // for( let i = 0; i < size[1]; i++ ){
+            //     block.dimension.runCommand(`execute positioned ${block.location.x} ${block.location.y} ${block.location.z} run fill ~~-${i}~ ~${Math.min(64,size[0])}~-${i}~${Math.min(64,size[2])} air`);
+            // }
             Math.min(64,size[0])
             world.structureManager.place(building,block.dimension,buildingLocation,{waterlogged:false})
             if( size[0] > 64 ){
-                await system.waitTicks(20);
+                //await system.waitTicks(20);
                 //world.tickingAreaManager.removeTickingArea(`${building}`);
-                await system.waitTicks(1);
+               // await system.waitTicks(1);
                 //world.tickingAreaManager.createTickingArea(`${building}`,{ dimension:block.dimension,from:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }),to:{ x:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).x+Math.min(64,size[0]-64),y:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).y,z:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).z+Math.min(64,size[2]) } });
                 await system.waitTicks(4);
-                for( let i = 0; i < size[1]; i++ ){
-                    block.dimension.runCommand(`execute positioned ${block.location.x+64} ${block.location.y} ${block.location.z} run fill ~~-${i}~ ~${Math.min(64,size[0]-64)}~-${i}~${Math.min(64,size[2])} air`);
-                }
+                // for( let i = 0; i < size[1]; i++ ){
+                //     block.dimension.runCommand(`execute positioned ${block.location.x+64} ${block.location.y} ${block.location.z} run fill ~~-${i}~ ~${Math.min(64,size[0]-64)}~-${i}~${Math.min(64,size[2])} air`);
+                // }
                 world.structureManager.place(`${building}_x64`,block.dimension,Vector3Add(buildingLocation,{ x:64,y:0,z:0 }),{waterlogged:false})
             }
             if( size[2] > 64 ){
-                await system.waitTicks(20);
+                //await system.waitTicks(20);
                // world.tickingAreaManager.removeTickingArea(`${building}`);
-                await system.waitTicks(1);
+                //await system.waitTicks(1);
                 //world.tickingAreaManager.createTickingArea(`${building}`,{ dimension:block.dimension,from:Vector3Add(buildingLocation,{ x:0,y:0,z:64 }),to:{ x:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).x+Math.min(64,size[0]),y:block.location.y,z:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).z+Math.min(64,size[2]-64) } });
                 await system.waitTicks(4);
-                for( let i = 0; i < size[1]; i++ ){
-                    block.dimension.runCommand(`execute positioned ${block.location.x} ${block.location.y} ${block.location.z+64} run fill ~~-${i}~ ~${Math.min(64,size[0])}~-${i}~${Math.min(64,size[2]-64)} air`);
-                }
+                // for( let i = 0; i < size[1]; i++ ){
+                //     block.dimension.runCommand(`execute positioned ${block.location.x} ${block.location.y} ${block.location.z+64} run fill ~~-${i}~ ~${Math.min(64,size[0])}~-${i}~${Math.min(64,size[2]-64)} air`);
+                // }
                 world.structureManager.place(`${building}_z64`,block.dimension,Vector3Add(buildingLocation,{ x:0,y:0,z:64 }),{waterlogged:false})
             }
             if( size[0] > 64 && size[2] > 64 ){
-                await system.waitTicks(20);
+                //await system.waitTicks(20);
                 //world.tickingAreaManager.removeTickingArea(`${building}`);
-                await system.waitTicks(1);
+                //await system.waitTicks(1);
                 // world.tickingAreaManager.createTickingArea(`${building}`,{ 
                 //         dimension:block.dimension,
                 //         from:Vector3Add(buildingLocation,{ x:64,y:0,z:64 }),
@@ -176,9 +185,9 @@ const gvcv5BuildingBlockCommponent = {
                 //              z:Vector3Add(buildingLocation,{ x:64,y:0,z:0 }).z+Math.min(64,size[2]-64) 
                 // } });
                 await system.waitTicks(4);
-                for( let i = 0; i < size[1]; i++ ){
-                    block.dimension.runCommand(`execute positioned ${block.location.x+64} ${block.location.y} ${block.location.z+64} run fill ~~-${i}~ ~${Math.min(64,size[0]-64)}~-${i}~${Math.min(64,size[2]-64)} air`);
-                }
+                // for( let i = 0; i < size[1]; i++ ){
+                //     block.dimension.runCommand(`execute positioned ${block.location.x+64} ${block.location.y} ${block.location.z+64} run fill ~~-${i}~ ~${Math.min(64,size[0]-64)}~-${i}~${Math.min(64,size[2]-64)} air`);
+                // }
                 world.structureManager.place(`${building}_x64z64`,block.dimension,Vector3Add(buildingLocation,{ x:64,y:0,z:64 }),{waterlogged:false})
             }
             //await system.waitTicks(105);
@@ -247,6 +256,13 @@ const gvcv5SpawnerCommponent = {
 		const params = p.params;
         const type = p.params.type;
         const spawnLocation = block.location;
+        try{
+            if( block.dimension.getPlayers( { location:spawnLocation,maxDistance:16 } ) < 1 ){
+                
+                return
+            }
+
+        }catch{ print(`error`); return }
         if( world.gameRules.commandBlocksEnabled ){
             block.dimension.spawnEntity(type,{ x:spawnLocation.x+1, y:spawnLocation.y, z:spawnLocation.z+1 }).triggerEvent(`minecraft:spawned_from_spawner`);
             block.dimension.spawnEntity(type,{ x:spawnLocation.x-1, y:spawnLocation.y, z:spawnLocation.z }).triggerEvent(`minecraft:spawned_from_spawner`);
@@ -266,6 +282,9 @@ const gvcv5SpawnerCommponent = {
             block.dimension.spawnParticle(`minecraft:large_explosion`,spawnLocation);
             block.dimension.playSound(`random.explode`,spawnLocation,{ volume:16 });
             block.dimension.setBlockType(block.location,`minecraft:air`);
+            if( world.getDynamicProperty(`gvcv5:progress`) < 2 ){
+                levelup(2);
+            }
         }
 	}
 }
@@ -424,14 +443,18 @@ async function setUp(){
         world.setDynamicProperty("gvcv5:nodiein1hit",false);
     }
     
+    if( world.getDynamicProperty("gvcv5:buildingSpawnD") == undefined ){
+        world.setDynamicProperty("gvcv5:buildingSpawnD",true);
+    }
+
     if( world.getDynamicProperty("gvcv5:buildingSpawnS") == undefined ){
         world.setDynamicProperty("gvcv5:buildingSpawnS",true);
     }
     if( world.getDynamicProperty("gvcv5:buildingSpawnM") == undefined ){
-        world.setDynamicProperty("gvcv5:buildingSpawnM",true);
+        world.setDynamicProperty("gvcv5:buildingSpawnM",false);
     }
     if( world.getDynamicProperty("gvcv5:buildingSpawnL") == undefined ){
-        world.setDynamicProperty("gvcv5:buildingSpawnL",true);
+        world.setDynamicProperty("gvcv5:buildingSpawnL",false);
     }
     if( world.getDynamicProperty("gvcv5:buildingSpawnA") == undefined ){
         world.setDynamicProperty("gvcv5:buildingSpawnA",true);
@@ -458,6 +481,9 @@ async function setUp(){
     if( world.getDynamicProperty("gvcv5:airCraftWithItem") == undefined ){
         world.setDynamicProperty("gvcv5:airCraftWithItem",false);
     }
+    if( world.getDynamicProperty("gvcv5:progress") == undefined ){
+        world.setDynamicProperty("gvcv5:progress",0);
+    }
     await system.waitTicks(1);
     const buildingS = Number(world.getDynamicProperty(`gvcv5:buildingSpawnS`))
     const buildingM = Number(world.getDynamicProperty(`gvcv5:buildingSpawnM`))
@@ -483,7 +509,7 @@ system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:crafter`,gvcv5UseCommandCommponent);
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:expoevent`,gvcv5BlockExpoCommponent);
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:mineevent`,gvcv5MineCommponent);
-    //e.blockComponentRegistry.registerCustomComponent(`gvcv5:attach_table`,{onPlayerInteract: gvcv5Attachtable});
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:barbed`,gvcv5BarbedCommponent);
     //e.blockComponentRegistry.registerCustomComponent(`gvcv5:explosion`,{onBreak: gvcv5ExplosionEvent});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:phone`,gvcv5ItemCommandCommponent);
     //e.itemComponentRegistry.registerCustomComponent(`gvcv5:orderflag`,{onUse: gvcv5UseFlag});

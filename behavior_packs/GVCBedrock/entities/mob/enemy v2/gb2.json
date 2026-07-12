@@ -145,7 +145,7 @@
         "table": "loot_tables/entities/ga.json"
       },
       "minecraft:movement": {
-        "value": 0.2
+        "value": 0.3
       },
       "minecraft:knockback_resistance": {
        "value": 1.0

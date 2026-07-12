@@ -140,8 +140,8 @@
     "hauneb_beam": {
       "textures": "textures/items/hauneb_beam"
     },
-    "k98m": {
-      "textures": "textures/items/k98"
+    "bossflag": {
+      "textures": "textures/items/bossflag"
     },
     "lewis": {
       "textures": "textures/items/gun/lewis"

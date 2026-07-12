@@ -40,7 +40,8 @@ for row in csv_reader:
             # if( structure_loadx > 64 ): f.write("execute if score {4} building matches 1 run structure load {3}_x64 ~64~-{1}~\n".format(structure_loadx,structure_loady,structure_loadz,structure_id,structure_flag_type))
             # if( structure_loadz > 64 ): f.write("execute if score {4} building matches 1 run structure load {3}_z64 ~~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,structure_id,structure_flag_type))
             # if( structure_loadx > 64 and structure_loadz > 64 ): f.write("execute if score {4} building matches 1 run structure load {3}_x64z64 ~64~-{1}~64\n".format(structure_loadx,structure_loady,structure_loadz,structure_id,structure_flag_type))
-            f.write("setblock ~~~ gvcv5:building_{}\n".format(structure_id))
+            f.write("execute if score {1} building matches 1 run tickingarea add ~~~ ~~~ {0} true\n".format(structure_id,structure_flag_type))
+            f.write("execute if score {1} building matches 1 run setblock ~~~ gvcv5:building_{0}\n".format(structure_id,structure_flag_type))
             
         with open("tool/feature.json","r") as f:
             feature_json = json.load(f)

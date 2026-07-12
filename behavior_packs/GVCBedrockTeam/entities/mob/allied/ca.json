@@ -2560,6 +2560,10 @@
         "value": 48,
         "max": 48
       },
+      "minecraft:floats_in_liquid": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
       "minecraft:collision_box": {
         "width": 0.5,
         "height": 1.8
@@ -2777,86 +2781,31 @@
       "minecraft:conditional_bandwidth_optimization": {}
     },
     "events": {
-      "gvcv5:set_have_gun": {
-        "randomize": [
-          {
-            "weight": 20,
-            "trigger": "m16a1"
-          },
-          {
-            "weight": 10,
-            "trigger": "m4"
-          },
-          {
-            "weight": 10,
-            "trigger": "m72"
-          },
-          {
-            "weight": 10,
-            "trigger": "m14"
-          },
-          {
-            "weight": 10,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 10,
-            "trigger": "m60"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m113"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m41"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:m60a1"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:ah1s"
-          },
-          {
-            "weight": 1,
-            "trigger": "vehicle:ah6"
-          }
-        ]
-      },
       "gvcv5:set_have_gun_nt": {
-        "randomize": [
-          {
-            "weight": 2,
-            "trigger": "m16a1"
-          },
-          {
-            "weight": 1,
-            "trigger": "m4"
-          },
-          {
-            "weight": 1,
-            "trigger": "m72"
-          },
-          {
-            "weight": 1,
-            "trigger": "m110"
-          },
-          {
-            "weight": 1,
-            "trigger": "mp5"
-          },
-          {
-            "weight": 1,
-            "trigger": "m60"
-          }
-        ]
+        "queue_command": {
+          "command": [
+            "ride @s stop_riding",
+            "scriptevent gvcv5:enemy_spawn ca false"
+          ]
+        }
+      },
+      "gvcv5:set_have_gun": {
+        "queue_command": {
+          "command": [
+            "scriptevent gvcv5:enemy_spawn ca true"
+          ]
+        }
       },
       "gvcv5:become_redteam": {
         "add": {
           "component_groups": [
             "redteam"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "ride @s stop_riding",
+            "scriptevent gvcv5:enemy_spawn ca_red true"
           ]
         }
       },
@@ -2865,6 +2814,12 @@
           "component_groups": [
             "blueteam"
           ]
+        },
+        "queue_command": {
+          "command": [
+            "ride @s stop_riding",
+            "scriptevent gvcv5:enemy_spawn ca_blue true"
+          ]
         }
       },
       "gvcv5:become_greenteam": {
@@ -2872,12 +2827,24 @@
           "component_groups": [
             "greenteam"
           ]
+        },
+        "queue_command": {
+          "command": [
+            "ride @s stop_riding",
+            "scriptevent gvcv5:enemy_spawn ca_green true"
+          ]
         }
       },
       "gvcv5:become_yellowteam": {
         "add": {
           "component_groups": [
             "yellowteam"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "ride @s stop_riding",
+            "scriptevent gvcv5:enemy_spawn ca_yellow true"
           ]
         }
       },

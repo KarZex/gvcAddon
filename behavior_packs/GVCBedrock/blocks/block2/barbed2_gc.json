@@ -32,6 +32,7 @@
                 "origin": [-8, 0, -8],
                 "size": [16, 16, 16]
             },
+            "gvcv5:barbed" : {},
             "minecraft:collision_box": false,
             "minecraft:friction": 0.0,
 			"minecraft:loot": "loot_tables/blocks/barbed2_gc.json",

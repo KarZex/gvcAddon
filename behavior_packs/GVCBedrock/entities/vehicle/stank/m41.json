@@ -290,7 +290,8 @@
           "playerfire",
           "plate",
           "tank",
-          "land"
+          "land",
+          "etank"
         ]
       },
       "minecraft:fire_immune": {},

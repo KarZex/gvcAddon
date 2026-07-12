@@ -12,13 +12,17 @@ execute as @a run scriptevent zex:playerNoRide
 scoreboard players remove @e[scores={maxsubcool=1..}] maxsubcool 1
 execute at @e[type=fire:flare] run kill @e[r=60,type=fire:aamissile]
 
+execute if score Prepare ALLFlags matches 1.. run scoreboard players remove Prepare ALLFlags 1
+execute if score Battle ALLFlags matches -99.. run function battle
+
 execute as @a[tag=!startedv5] run function gunstart
 execute as @a[tag=down] run function down/down_main
 execute as @a[tag=rise] run function down/become_rise
 execute as @e[tag=raid] run function raid/zombietarget
 
-#gamemode a @a[m=s,scores={antiMining=1..}]
-execute as @a[scores={antiMining=1..}] run function antiMining
+tellraw @a[scores={antiMining=1..},tag=!antiMining] {"rawtext":[{"translate":"gvcv5:cant_break.name"}]}
+tag @a[scores={antiMining=1..}] add antiMining
+execute as @a[tag=antiMining] run function antiMining
 
 effect @a[hasitem={item=gvcv5:stealth_cam,location=slot.armor.head}] invisibility 1 6 true
 

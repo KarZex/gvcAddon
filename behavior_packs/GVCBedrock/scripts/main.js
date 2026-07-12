@@ -25,6 +25,23 @@ export const tankImmuneEntities = [
     `xp_orb`
 ]
 
+export function levelup(progress){
+	world.sendMessage(`progress is now Level ${progress}`);
+	world.setDynamicProperty("gvcv5:progress",progress);
+	if( world.getDynamicProperty(`gvcv5:buildingSpawnD`) ){
+		if( progress > 1 && !world.getDynamicProperty(`gvcv5:buildingSpawnM`) ){
+			world.setDynamicProperty(`gvcv5:buildingSpawnM`,true);
+			world.scoreboard.getObjective(`building`).setScore(`M`,1);
+			world.sendMessage(`Medium Building Spawn is now true`);
+		}
+		if( progress > 3 && !world.getDynamicProperty(`gvcv5:buildingSpawnL`) ){
+			world.setDynamicProperty(`gvcv5:buildingSpawnL`,true);
+			world.scoreboard.getObjective(`building`).setScore(`L`,1);
+			world.sendMessage(`Large Building Spawn is now true`);
+		}
+	}
+}
+
 const headshotTypes = [
 	//2m height entities like player(humanoid)
 	`minecraft:player`,
@@ -169,6 +186,38 @@ function findTargetInCone(player,entityOption) {
 world.afterEvents.playerSpawn.subscribe( e => {
 	const player = e.player;
 	player.setDynamicProperty(`gvcv5:gunUsed`,0)
+} )
+
+world.afterEvents.entitySpawn.subscribe( e => {
+	const entity = e.entity;
+	try{
+		if( entity.typeId.includes(`gvcv5:gb`) && world.getDynamicProperty(`gvcv5:progress`) < 2 ){
+			entity.remove()
+		}
+
+	}catch{}
+} )
+
+world.afterEvents.entityDie.subscribe( e => {
+	const killer = e.damageSource.damagingEntity;
+	const victim = e.deadEntity;
+	if( world.getDynamicProperty(`gvcv5:progress`) < 1 && victim.typeId == "gvcv5:ga" && killer.typeId == "minecraft:player" ){
+		levelup(1);
+	}
+	if( world.getDynamicProperty(`gvcv5:progress`) < 3 && victim.typeId.includes(`gb`) && killer.typeId == "minecraft:player" ){
+		levelup(3);
+	}
+	if( world.getDynamicProperty(`gvcv5:progress`) < 4 && victim.typeId.includes(`gvcv5:flag_`) && victim.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`monster`) ){
+		levelup(4);
+	}
+	try{
+		if( world.getDynamicProperty(`gvcv5:progress`) < 5 && victim.getComponent(EntityComponentTypes.Rideable).getRiders()[0].typeId == `gvcv5:ga` && victim.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`etank`) && killer.typeId == "minecraft:player" ){
+			levelup(5);
+		}
+	}catch{}
+	if( world.getDynamicProperty(`gvcv5:progress`) < 6 && victim.typeId.includes(`gvcv5:flag_`) && victim.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`flag_large`) ){
+		levelup(6);
+	}
 } )
 
 function printDamage(player,damage,victim){
@@ -975,6 +1024,14 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		e.sourceEntity.runCommand(`scoreboard players set L building ${buildingL}`);
 		e.sourceEntity.runCommand(`scoreboard players set A building ${buildingA}`);
 	}
+
+	else if( e.id == "zex:test" ){
+		const player = e.sourceEntity;
+		const itemSlot = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
+		itemSlot.setLore([ 
+			`§r§7このアイテムでチーム旗を拠点化できます。`,
+			`§r§7This item can be used to make \nteam flags into safe zones.` ])
+	}
 	else if (e.id === "gvcv5:gunUse"){
 		//tag=!reload,tag=!down
 		const player = e.sourceEntity;
@@ -1599,31 +1656,36 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		else if( e.message == `building`){
 			const form = new ModalFormData();
 			form.title(`Building Settings`);
+			form.toggle(`Building on Progress`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnD`),tooltip:`Building on Progress`});
 			form.toggle(`Small Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnS`),tooltip:`Small Building Spawn`});
 			form.toggle(`Medium Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnM`),tooltip:`Medium Building Spawn`});
 			form.toggle(`Large Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnL`),tooltip:`Large Building Spawn`});
 			form.toggle(`Allies Building Spawn`, {defaultValue: world.getDynamicProperty(`gvcv5:buildingSpawnA`),tooltip:`Allies Building Spawn`});
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
-					if( world.getDynamicProperty(`gvcv5:buildingSpawnS`) != Boolean(result.formValues[0]) ){
-						world.setDynamicProperty(`gvcv5:buildingSpawnS`,Boolean(result.formValues[0]));
-						world.scoreboard.getObjective(`building`).setScore(`S`,Number(result.formValues[0]));
-						world.sendMessage(`Small Building Spawn is now ${result.formValues[0]}`);
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnD`) != Boolean(result.formValues[0]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnD`,Boolean(result.formValues[0]));
+						world.sendMessage(`Building on Progress is now ${result.formValues[0]}`);
 					}
-					if( world.getDynamicProperty(`gvcv5:buildingSpawnM`) != Boolean(result.formValues[1]) ){
-						world.setDynamicProperty(`gvcv5:buildingSpawnM`,Boolean(result.formValues[1]));
-						world.scoreboard.getObjective(`building`).setScore(`M`,Number(result.formValues[1]));
-						world.sendMessage(`Medium Building Spawn is now ${result.formValues[1]}`);
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnS`) != Boolean(result.formValues[1]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnS`,Boolean(result.formValues[1]));
+						world.scoreboard.getObjective(`building`).setScore(`S`,Number(result.formValues[1]));
+						world.sendMessage(`Small Building Spawn is now ${result.formValues[1]}`);
 					}
-					if( world.getDynamicProperty(`gvcv5:buildingSpawnL`) != Boolean(result.formValues[2]) ){
-						world.setDynamicProperty(`gvcv5:buildingSpawnL`,Boolean(result.formValues[2]));
-						world.scoreboard.getObjective(`building`).setScore(`L`,Number(result.formValues[2]));
-						world.sendMessage(`Large Building Spawn is now ${result.formValues[2]}`);
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnM`) != Boolean(result.formValues[2]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnM`,Boolean(result.formValues[2]));
+						world.scoreboard.getObjective(`building`).setScore(`M`,Number(result.formValues[2]));
+						world.sendMessage(`Medium Building Spawn is now ${result.formValues[2]}`);
 					}
-					if( world.getDynamicProperty(`gvcv5:buildingSpawnA`) != Boolean(result.formValues[3]) ){
-						world.setDynamicProperty(`gvcv5:buildingSpawnA`,Boolean(result.formValues[3]));
-						world.scoreboard.getObjective(`building`).setScore(`A`,Number(result.formValues[3]));
-						world.sendMessage(`Allies Building Spawn is now ${result.formValues[3]}`);
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnL`) != Boolean(result.formValues[3]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnL`,Boolean(result.formValues[3]));
+						world.scoreboard.getObjective(`building`).setScore(`L`,Number(result.formValues[3]));
+						world.sendMessage(`Large Building Spawn is now ${result.formValues[3]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:buildingSpawnA`) != Boolean(result.formValues[4]) ){
+						world.setDynamicProperty(`gvcv5:buildingSpawnA`,Boolean(result.formValues[4]));
+						world.scoreboard.getObjective(`building`).setScore(`A`,Number(result.formValues[4]));
+						world.sendMessage(`Allies Building Spawn is now ${result.formValues[4]}`);
 					}
 				}
 			} )
