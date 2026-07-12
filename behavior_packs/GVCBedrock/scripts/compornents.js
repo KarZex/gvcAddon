@@ -511,7 +511,6 @@ system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:mineevent`,gvcv5MineCommponent);
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:barbed`,gvcv5BarbedCommponent);
     //e.blockComponentRegistry.registerCustomComponent(`gvcv5:explosion`,{onBreak: gvcv5ExplosionEvent});
-    e.itemComponentRegistry.registerCustomComponent(`gvcv5:phone`,gvcv5ItemCommandCommponent);
     //e.itemComponentRegistry.registerCustomComponent(`gvcv5:orderflag`,{onUse: gvcv5UseFlag});
     //e.itemComponentRegistry.registerCustomComponent(`gvcv5:mtype`,{onUse: gvcv5UseMtype});
     e.itemComponentRegistry.registerCustomComponent(`gvcv5:aid`,gvcv5UseAidKitCommponent);
