@@ -1277,7 +1277,12 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		}
 		form.show(user).then( result => {
 			if ( !result.canceled ){
+			print(`${user.dimension.getPlayers({ excludeFamilies:[`noteam`,`${getTeam(user)}`],location:user.location,maxDistance:128 }).length}`)
 				if( result.selection == 0 ){ // teleport to player
+					if( user.dimension.getPlayers({ excludeFamilies:[`noteam`,`${getTeam(user)}`],location:user.location,maxDistance:128 }).length > 0 ){
+						user.sendMessage({ rawtext:[ { translate: `script.gvcv5:no_teleport.name` } ] });
+						return;
+					}
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_tp.name`);
 					for( const myAlly of world.getAllPlayers() ){
@@ -1304,7 +1309,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 								user.teleport(targetLocation,{ dimension:targetDimension });
 								if( !user.hasTag(`${userFamily}`) ){
 									user.sendMessage({ translate: `script.gvcv5.phoneAbuse.name` }); //warning
-									//user.runCommand(`clear @s zex:phone_${userFamily} 0 1`);
+									user.runCommand(`clear @s zex:phone_${userFamily} 0 1`);
 								}
 							}
 							else{
@@ -1314,10 +1319,22 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					} )
 				}
 				else if( result.selection == 1 ){ // teleport to block
-					user.runCommand(`scriptevent gvcv5:phone_tp_block ${userFamily}`);
+					if( user.dimension.getPlayers({ excludeFamilies:[`noteam`,`${getTeam(user)}`],location:user.location,maxDistance:128 }).length > 0 ){
+						user.sendMessage({ rawtext:[ { translate: `script.gvcv5:no_teleport.name` } ] });
+						return;
+					}
+					else{
+						user.runCommand(`scriptevent gvcv5:phone_tp_block ${userFamily}`);
+					}
 				}
 				else if( result.selection == 2 ){ // teleport to Team Base
-					user.runCommand(`scriptevent gvcv5:phone_tp_teamblock ${userFamily}`);
+					if( user.dimension.getPlayers({ excludeFamilies:[`noteam`,`${getTeam(user)}`],location:user.location,maxDistance:128 }).length > 0 ){
+						user.sendMessage({ rawtext:[ { translate: `script.gvcv5:no_teleport.name` } ] });
+						return;
+					}
+					else{
+						user.runCommand(`scriptevent gvcv5:phone_tp_teamblock ${userFamily}`);
+					}
 				}
 				else if( result.selection == 3 ){ // team chat
 					user.runCommand(`scriptevent gvcv5:phone_teamChat ${userFamily}`);

@@ -412,11 +412,11 @@
         },
         "queue_command": {
           "command": [
-            "tellraw @s {\"rawtext\":[{\"text\":\"Vehicle Lock\"}]}",
+            "tellraw @a[r=6] {\"rawtext\":[{\"text\":\"Vehicle Lock\"}]}",
             "ride @e[r=6,family=allied_soldier] stop_riding",
             "tag @s add vehicle_lock"
           ],
-          "target": "other"
+          "target": "self"
         }
       }
     }

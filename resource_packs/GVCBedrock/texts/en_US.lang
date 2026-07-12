@@ -1091,6 +1091,7 @@ script.gvcv5.yellow_boss_warning=§eNear the Yellow Team base!
 script.gvcv5.flagAttackFlagNow.name=Until the attack on... ends...
 script.gvcv5:dup_flag.name=§cA base has already been established.
 script.gvcv5.flag_destroyed.name=The base has been destroyed.
+script.gvcv5:no_teleport.name=§cYou cannot teleport because a player from another team is within 128 blocks!
 
 script.gvcv5:redteam2.name=§cRed Team §r's
 script.gvcv5:blueteam2.name=§9Blue Team §r's

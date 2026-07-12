@@ -1245,6 +1245,7 @@ script.gvcv5.flagAttackFlagStart1.name=への攻撃が開始されました!
 script.gvcv5.flagAttackFlagNow.name=への攻撃終了まで...
 script.gvcv5:dup_flag.name=§cすでに拠点が設置されています
 script.gvcv5.flag_destroyed.name=拠点が破壊されました
+script.gvcv5:no_teleport.name=§c128ブロック以内に別チームのプレイヤーがいるため、テレポートできません!
 
 script.gvcv5:redteam2.name=§c赤チーム§rの
 script.gvcv5:blueteam2.name=§9青チーム§rの

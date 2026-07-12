@@ -102,6 +102,7 @@ export const craftData = {
       { "give":"vehicle:mi24d_spawn_egg","texture":"textures/items/vehicle/mi24d", "count":1, "cost":[ 9, 9, 24 ] },
       { "give":"vehicle:lav25_spawn_egg","texture":"textures/items/vehicle/lav25", "count":1, "cost":[ 9, 9, 24 ] },
       { "give":"vehicle:lav25aa_spawn_egg","texture":"textures/items/vehicle/lav25aa", "count":1, "cost":[ 9, 9, 24 ] },
+      { "give":"vehicle:9k35_spawn_egg","texture":"textures/items/vehicle/9k35", "count":1, "cost":[ 12, 12, 12 ] },
       { "give":"vehicle:m60a1_spawn_egg","texture":"textures/items/vehicle/m60a1", "count":1, "cost":[ 9, 18, 12 ] },
       { "give":"vehicle:t55_spawn_egg","texture":"textures/items/vehicle/t55", "count":1, "cost":[ 9, 16, 9 ] },
       { "give":"vehicle:pkmset_spawn_egg","texture":"textures/items/vehicle/pkmset", "count":1, "cost":[ 2, 2, 2 ] },
@@ -115,6 +116,7 @@ export const craftData = {
   "vc3": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
+      { "give":"vehicle:bmp3_spawn_egg","texture":"textures/items/vehicle/bmp3", "count":1, "cost":[ 16, 16, 16 ] },
       { "give":"vehicle:m1126_spawn_egg","texture":"textures/items/vehicle/m1126", "count":1, "cost":[ 12, 12, 12 ] },
       { "give":"vehicle:m1128_spawn_egg","texture":"textures/items/vehicle/m1128", "count":1, "cost":[ 12, 12, 12 ] },
       { "give":"vehicle:ka50_spawn_egg","texture":"textures/items/vehicle/ka50", "count":1, "cost":[ 18, 18, 48 ] },
@@ -128,7 +130,10 @@ export const craftData = {
       { "give":"vehicle:f117_spawn_egg","texture":"textures/items/vehicle/f117", "count":1, "cost":[ 48, 32, 48 ] },
       { "give":"vehicle:vads_spawn_egg","texture":"textures/items/vehicle/vads", "count":1, "cost":[ 4, 4, 4 ] },
       { "give":"vehicle:rcb90_spawn_egg","texture":"textures/items/vehicle/rcb90", "count":1, "cost":[ 16, 16, 32 ] },
-      { "give":"vehicle:hamina_spawn_egg","texture":"textures/items/vehicle/hamina", "count":1, "cost":[ 64, 64, 64 ] }
+      { "give":"vehicle:hamina_spawn_egg","texture":"textures/items/vehicle/hamina", "count":1, "cost":[ 64, 64, 64 ] },
+      { "give":"vehicle:mk45_spawn_egg","texture":"textures/items/vehicle/mk45", "count":1, "cost":[ 8, 16, 8 ] },
+      { "give":"vehicle:ak130_spawn_egg","texture":"textures/items/vehicle/ak130", "count":1, "cost":[ 8, 16, 8 ] },
+      { "give":"vehicle:mk15_spawn_egg","texture":"textures/items/vehicle/mk15", "count":1, "cost":[ 8, 16, 8 ] }
     ]
   }
 };
