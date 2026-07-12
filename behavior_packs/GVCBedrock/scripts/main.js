@@ -799,30 +799,30 @@ system.runInterval( () => {
 		p.removeTag(`MissileLockon`);
 	}
 },10)
-system.runInterval( () => {
-	const G = world.getDimension(`overworld`).getEntities({type : `gvcv5:ga`});
-	if( G.length > 50 ){
-		let  i = 0;
-		while ( true ){
-			if( i > G.length-1 || i > 50 ){
-				break
-			}
+// system.runInterval( () => {
+// 	const G = world.getDimension(`overworld`).getEntities({type : `gvcv5:ga`});
+// 	if( G.length > 50 ){
+// 		let  i = 0;
+// 		while ( true ){
+// 			if( i > G.length-1 || i > 50 ){
+// 				break
+// 			}
 
-			if( G[i].hasTag(`special`) ){
-				i++;
-				continue
-			}
-			try{
-				if( G[i].getComponent(EntityComponentTypes.Riding).entityRidingOn != undefined ){
-					i++;
-					continue
-				}
-			}catch{}
-			G[i].remove();
-			i++;
-		}
-	}
-},200)
+// 			if( G[i].hasTag(`special`) ){
+// 				i++;
+// 				continue
+// 			}
+// 			try{
+// 				if( G[i].getComponent(EntityComponentTypes.Riding).entityRidingOn != undefined ){
+// 					i++;
+// 					continue
+// 				}
+// 			}catch{}
+// 			G[i].remove();
+// 			i++;
+// 		}
+// 	}
+// },200)
 
 system.afterEvents.scriptEventReceive.subscribe( async  e => {
 	if( e.id == "zex:aamissile"){
