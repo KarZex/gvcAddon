@@ -37,7 +37,7 @@ resource_uuid = "d42cc0e1-be19-4810-823c-5980db3291ac"
 
 with open(behavior, "r",encoding="utf-8") as f:
     behavior_manifest = json.load(f)
-    behavior_manifest["header"]["name"] = name + " (Team)"
+    behavior_manifest["header"]["name"] = name
     behavior_manifest["header"]["version"] = version
     behavior_manifest["header"]["description"] = description
     behavior_manifest["header"]["min_engine_version"] = min_engine_version
