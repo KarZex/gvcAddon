@@ -1027,10 +1027,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 
 	else if( e.id == "zex:test" ){
 		const player = e.sourceEntity;
-		const itemSlot = player.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand);
-		itemSlot.setLore([ 
-			`§r§7このアイテムでチーム旗を拠点化できます。`,
-			`§r§7This item can be used to make \nteam flags into safe zones.` ])
+		
 	}
 	else if (e.id === "gvcv5:gunUse"){
 		//tag=!reload,tag=!down

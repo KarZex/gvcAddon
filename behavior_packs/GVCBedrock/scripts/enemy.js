@@ -139,7 +139,8 @@ const caRedGuns = [
 		`g3a3`,
 		`pkm`,
 		`rpg`,
-		`svd`
+		`svd`,
+		`vz61`
 	],
 	[
 		`vehicle:t72`,
@@ -155,7 +156,8 @@ const caBlueGuns = [
 		`m4a1`,
 		`m249`,
 		`m72`,
-		`m110`
+		`m110`,
+		`m10`
 	],
 	[
 		`vehicle:m1_abrams`,
@@ -171,7 +173,8 @@ const caGreenGuns = [
 		`an94`,
 		`pkm`,
 		`rpg`,
-		`svd`
+		`svd`,
+		`vz61`
 	],
 	[
 		`vehicle:t72`,
@@ -187,7 +190,8 @@ const caYellowGuns = [
 		`g3a3`,
 		`m249`,
 		`m72`,
-		`m110`
+		`m110`,
+		`mp5`
 	],
 	[
 		`vehicle:m1_abrams`,
@@ -235,16 +239,19 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		let type = e.message.split(` `)[0];
 		let vehicle = e.message.split(` `)[1];
 		let weapons;
-		if( type.includes(`ga`) ){
-			type = `${type}${world.getDynamicProperty("gvcv5:progress")}`;
-		}
-		if( Math.random() < 0.05 && MOBGUNS[`${type}`].length > 1 && vehicle == `true` ){
-			weapons = MOBGUNS[`${type}`][1];
-		}
-		else{
-			weapons = MOBGUNS[`${type}`][0];
-		}
-		await system.waitTicks(2);
-		e.sourceEntity.triggerEvent(`${weapons[ Math.floor(Math.random() * weapons.length ) ]}`)
+		try{
+			if( type.includes(`ga`) ){
+				type = `${type}${world.getDynamicProperty("gvcv5:progress")}`;
+			}
+			if( Math.random() < 0.05 && MOBGUNS[`${type}`].length > 1 && vehicle == `true` ){
+				weapons = MOBGUNS[`${type}`][1];
+			}
+			else{
+				weapons = MOBGUNS[`${type}`][0];
+			}
+			await system.waitTicks(2);
+			e.sourceEntity.triggerEvent(`${weapons[ Math.floor(Math.random() * weapons.length ) ]}`)
+
+		}catch{}
 	}
 } )

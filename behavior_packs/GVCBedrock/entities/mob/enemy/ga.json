@@ -634,7 +634,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 1.55,
+          "burst_interval": 2.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -652,7 +652,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 0.8,
+          "burst_interval": 1.8,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 4.0,
@@ -688,7 +688,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 1.0,
+          "burst_interval": 2.0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -706,7 +706,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 0.15000000000000002,
+          "burst_interval": 1.15,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 6.0,
@@ -724,7 +724,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 0.15000000000000002,
+          "burst_interval": 1.15,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 6.0,
@@ -778,7 +778,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.1,
+          "burst_interval": 1.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -832,7 +832,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 1.55,
+          "burst_interval": 2.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -904,7 +904,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.1,
+          "burst_interval": 1.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -940,7 +940,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.1,
+          "burst_interval": 1.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1012,7 +1012,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 1.55,
+          "burst_interval": 2.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 7.0,
@@ -1030,7 +1030,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 1.55,
+          "burst_interval": 2.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 6.0,
@@ -1048,7 +1048,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 2.55,
+          "burst_interval": 3.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1066,7 +1066,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.1,
+          "burst_interval": 1.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1084,7 +1084,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.25,
+          "burst_interval": 1.25,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1120,7 +1120,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 0,
+          "burst_interval": 1.5,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1138,7 +1138,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 0,
+          "burst_interval": 1.5,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1156,7 +1156,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 0,
+          "burst_interval": 1.15,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1174,7 +1174,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.1,
+          "burst_interval": 1.1,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1228,7 +1228,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 1.55,
+          "burst_interval": 2.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1300,7 +1300,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 1.55,
+          "burst_interval": 2.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 7.0,
@@ -1354,7 +1354,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 2.0,
+          "burst_interval": 3.0,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 4.5,
@@ -1390,7 +1390,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 1,
-          "burst_interval": 1.55,
+          "burst_interval": 2.55,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 7.0,
@@ -1480,7 +1480,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.4,
+          "burst_interval": 1.4,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1498,7 +1498,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.25,
+          "burst_interval": 1.25,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
@@ -1552,7 +1552,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 3,
           "burst_shots": 10,
-          "burst_interval": 0.5,
+          "burst_interval": 1.5,
           "charge_charged_trigger": 0.0,
           "charge_shoot_trigger": 0.0,
           "attack_interval_min": 3.0,
