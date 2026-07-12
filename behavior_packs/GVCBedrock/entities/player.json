@@ -3738,7 +3738,7 @@
           ]
         }
       },
-      "fire:76mmap": {
+      "fire:76mmhe": {
         "minecraft:spawn_entity": {
           "entities": [
             {
@@ -3746,7 +3746,7 @@
               "min_wait_time": 0,
               "num_to_spawn": 1,
               "single_use": true,
-              "spawn_entity": "fire:76mmap"
+              "spawn_entity": "fire:76mmhe"
             }
           ]
         }
@@ -3773,6 +3773,32 @@
               "num_to_spawn": 1,
               "single_use": true,
               "spawn_entity": "fire:130mm"
+            }
+          ]
+        }
+      },
+      "fire:105mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:105mm"
+            }
+          ]
+        }
+      },
+      "fire:125mm": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:125mm"
             }
           ]
         }
@@ -4930,10 +4956,10 @@
           ]
         }
       },
-      "fire:76mmap": {
+      "fire:76mmhe": {
         "add": {
           "component_groups": [
-            "fire:76mmap"
+            "fire:76mmhe"
           ]
         }
       },
@@ -4948,6 +4974,20 @@
         "add": {
           "component_groups": [
             "fire:130mm"
+          ]
+        }
+      },
+      "fire:105mm": {
+        "add": {
+          "component_groups": [
+            "fire:105mm"
+          ]
+        }
+      },
+      "fire:125mm": {
+        "add": {
+          "component_groups": [
+            "fire:125mm"
           ]
         }
       }

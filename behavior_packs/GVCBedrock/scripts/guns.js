@@ -1020,7 +1020,7 @@ export const gunData = {
     "ammoType": "zex:s57m"
   },
   "76mm": {
-    "damage": 20,
+    "damage": 50,
     "sound": "tank",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
@@ -1480,25 +1480,39 @@ export const gunData = {
     "damageType": "entityExplosion",
     "ammoType": "zex:s57m"
   },
-  "76mmap": {
-    "damage": 80,
+  "76mmhe": {
+    "damage": 20,
     "sound": "tank",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s76m"
   },
   "127mm": {
-    "damage": 200,
+    "damage": 140,
     "sound": "cannon",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s57m"
   },
   "130mm": {
-    "damage": 200,
+    "damage": 140,
     "sound": "cannon",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s57m"
+  },
+  "105mm": {
+    "damage": 20,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "125mm": {
+    "damage": 80,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
   }
 };

@@ -154,6 +154,7 @@ for row in csv_reader:
         entity_json["minecraft:entity"]["description"]["identifier"] = "vehicle:{}".format(v_id)
         entity_json["minecraft:entity"]["components"]["minecraft:boss"]["name"] = "entity.vehicle:{}.name".format(v_id)
         entity_json["minecraft:entity"]["components"]["minecraft:interact"]["interactions"][2]["spawn_items"]["table"] = "loot_tables/entities/{}.json".format(v_id)
+        entity_json["minecraft:entity"]["component_groups"]["gvcv5:vehicle_lock"]["minecraft:interact"]["interactions"][1]["spawn_items"]["table"] = "loot_tables/entities/{}.json".format(v_id)
         entity_json["minecraft:entity"]["components"]["minecraft:type_family"]["family"] = v_family
 
         entity_json["minecraft:entity"]["components"]["minecraft:rideable"]["seat_count"] = v_menber

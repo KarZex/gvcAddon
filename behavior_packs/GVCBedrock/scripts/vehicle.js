@@ -579,7 +579,7 @@ export const vehicleData = {
   "pak40": {
     "type": "set",
     "speed": 0.0,
-    "Weapon1": "105mm",
+    "Weapon1": "105mmap",
     "Weapon1_cool": 50,
     "Weapon1_ammo": 1,
     "Weapon2": "",
@@ -957,9 +957,9 @@ export const vehicleData = {
   "pr1204": {
     "type": "ship",
     "speed": 0.5,
-    "Weapon1": "76mmap",
-    "Weapon1_cool": 30,
-    "Weapon1_ammo": 1,
+    "Weapon1": "76mmhe",
+    "Weapon1_cool": 10,
+    "Weapon1_ammo": 2,
     "Weapon2": "23mmmc",
     "Weapon2_cool": 2,
     "Weapon2_ammo": 30,

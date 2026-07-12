@@ -335,6 +335,12 @@ system.runInterval( () => {
 	}
 },5)
 
+world.afterEvents.playerInteractWithEntity.subscribe( e => {
+	if( e.target.typeId.includes(`vehicle:`) && !e.target.hasTag(`vehicle_lock`) ){
+		e.target.triggerEvent(`vehicle_lock`);
+	}
+} )
+
 system.afterEvents.scriptEventReceive.subscribe( async e => {
 	if( e.id == "zex:air"){
 		const airCraft = e.sourceEntity;

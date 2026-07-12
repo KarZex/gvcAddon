@@ -1876,7 +1876,7 @@
           "def": "fire:57mm"
         }
       },
-      "76mmap": {
+      "76mmhe": {
         "minecraft:behavior.ranged_attack": {
           "priority": 1,
           "burst_shots": 1,
@@ -1888,7 +1888,7 @@
           "attack_radius": 120.0
         },
         "minecraft:shooter": {
-          "def": "fire:76mmap"
+          "def": "fire:76mmhe"
         }
       },
       "127mm": {
@@ -1919,6 +1919,36 @@
         },
         "minecraft:shooter": {
           "def": "fire:130mm"
+        }
+      },
+      "105mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "burst_shots": 1,
+          "burst_interval": 5.0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5,
+          "attack_interval_max": 10,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:105mm"
+        }
+      },
+      "125mm": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "burst_shots": 1,
+          "burst_interval": 5.0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5,
+          "attack_interval_max": 10,
+          "attack_radius": 120.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:125mm"
         }
       }
     },
@@ -3068,10 +3098,10 @@
           ]
         }
       },
-      "76mmap": {
+      "76mmhe": {
         "add": {
           "component_groups": [
-            "76mmap"
+            "76mmhe"
           ]
         }
       },
@@ -3086,6 +3116,20 @@
         "add": {
           "component_groups": [
             "130mm"
+          ]
+        }
+      },
+      "105mm": {
+        "add": {
+          "component_groups": [
+            "105mm"
+          ]
+        }
+      },
+      "125mm": {
+        "add": {
+          "component_groups": [
+            "125mm"
           ]
         }
       },

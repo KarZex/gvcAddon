@@ -65,7 +65,7 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:20mmaa] run event entity 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:flak18] run event entity @s 125mm
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pak40] run event entity @s 105mm
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pak40] run event entity @s 105mmap
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:zu23] run event entity @s 23mmmc
 
@@ -107,6 +107,6 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:rcb90] run event entity @
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:rhib] run event entity @s 7.62mmmg
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pr1204] run event entity @s 76mmap
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pr1204] run event entity @s 76mmhe
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:hamina] run event entity @s 57mm

@@ -124,7 +124,7 @@
             {
               "hurt_item": 1,
               "spawn_items": {
-                "table": "loot_tables/entities/fv101.json"
+                "table": "loot_tables/entities/hamina.json"
               },
               "play_sounds": "enderchest.open",
               "interact_text": "action.gvc.item",
