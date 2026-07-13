@@ -1,7 +1,7 @@
 import { EntityDamageCause } from "@minecraft/server";
 export const attachmentData = {
   "sights": [
-    "undefined",
+    "none",
     "scope6x",
     "acog",
     "coyote",
@@ -9,22 +9,22 @@ export const attachmentData = {
     "dotsight"
   ],
   "burrel": [
-    "undefined",
+    "none",
     "suppressor"
   ],
   "grip": [
-    "undefined",
+    "none",
     "grip",
     "gripod",
     "bipod",
     "anglegrip"
   ],
   "light": [
-    "undefined",
+    "none",
     "lasersight"
   ],
   "bullet": [
-    "undefined",
+    "none",
     "bullet_hp",
     "bullet_ap",
     "bullet_at",

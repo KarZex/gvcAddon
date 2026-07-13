@@ -127,7 +127,7 @@ for row in csv_reader:
 
         if( not attach_type in attach_types  ):
             attach_types.append(attach_type)
-            attachdata_json["{}".format(attach_type)] = [ "undefined" ]
+            attachdata_json["{}".format(attach_type)] = [ "none" ]
 
         attachdata_json["{}".format(attach_type)].append(attach_id)
         

@@ -2834,7 +2834,6 @@
         },
         "queue_command": {
           "command": [
-            "ride @s stop_riding",
             "scriptevent gvcv5:enemy_spawn ca_red true"
           ]
         }
@@ -2847,7 +2846,6 @@
         },
         "queue_command": {
           "command": [
-            "ride @s stop_riding",
             "scriptevent gvcv5:enemy_spawn ca_blue true"
           ]
         }
@@ -2860,7 +2858,6 @@
         },
         "queue_command": {
           "command": [
-            "ride @s stop_riding",
             "scriptevent gvcv5:enemy_spawn ca_green true"
           ]
         }
@@ -2873,7 +2870,6 @@
         },
         "queue_command": {
           "command": [
-            "ride @s stop_riding",
             "scriptevent gvcv5:enemy_spawn ca_yellow true"
           ]
         }

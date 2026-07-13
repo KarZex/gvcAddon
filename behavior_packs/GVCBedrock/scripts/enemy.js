@@ -135,8 +135,8 @@ const gaGunsLv6 = [
 //Red team soldier 
 const caRedGuns = [
 	[
-		`qbz95`,
-		`g3a3`,
+		`ak12`,
+		`an94`,
 		`pkm`,
 		`rpg`,
 		`svd`,
@@ -169,8 +169,8 @@ const caBlueGuns = [
 //Green team soldier 
 const caGreenGuns = [
 	[
-		`ak12`,
 		`an94`,
+		`g3a3`,
 		`pkm`,
 		`rpg`,
 		`svd`,
