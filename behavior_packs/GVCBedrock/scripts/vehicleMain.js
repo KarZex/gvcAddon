@@ -615,9 +615,9 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				]}`
 			);
 		}
-		else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
-			vehicle.remove();
-		}
+		// else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
+		// 	vehicle.remove();
+		// }
 		else if( player.hasTag(`cantriding`) && vehicle.hasTag(`is_enemy`) ){
 			vehicle.remove();
 			player.removeTag(`cantriding`);
@@ -784,9 +784,9 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				]}
 			`);
 		}
-		else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
-			vehicle.remove();
-		}
+		// else if( player.hasTag(`raid`) && vehicle.hasTag(`is_enemy`) ){
+		// 	vehicle.remove();
+		// }
 		else if( player.hasTag(`cantriding`) && vehicle.hasTag(`is_enemy`) ){
 			vehicle.remove();
 			player.removeTag(`cantriding`);
