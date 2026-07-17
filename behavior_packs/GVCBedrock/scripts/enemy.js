@@ -313,7 +313,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 	}
 } )
 
-
+/*
 system.runInterval( () => {
 	const Heri = world.getDimension(`minecraft:overworld`).getEntities({ families:[ `heri` ] });
 	const Air = world.getDimension(`minecraft:overworld`).getEntities({ families:[ `air` ] });
@@ -574,3 +574,4 @@ system.runInterval( () => {
 		}
 	}
 },1)
+*/
