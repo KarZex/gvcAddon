@@ -1028,9 +1028,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
 					}
 					else{
-						//user.sendMessage({ translate: `script.gvcv5.invaid_password.name`});
-						user.sendMessage({ text: `${phone.getDynamicProperty("password")}`});
-						user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
+						user.sendMessage({ translate: `script.gvcv5.invaid_password.name`});
+						//user.sendMessage({ text: `${phone.getDynamicProperty("password")}`});
+						//user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
 					}
 				}
 			},)
