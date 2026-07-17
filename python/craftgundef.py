@@ -1340,7 +1340,7 @@ for row in csv_reader2:
                     "charge_shoot_trigger": 0.0,
                     "attack_interval_min": 5,
                     "attack_interval_max": 10,
-                    "attack_radius": 120.0
+                    "attack_radius": 125.0
                 },
                 "minecraft:shooter": {
                     "def": "fire:{}l".format(gun_id)
@@ -1356,7 +1356,7 @@ for row in csv_reader2:
                     "charge_shoot_trigger": 0.0,
                     "attack_interval_min": 5,
                     "attack_interval_max": 10,
-                    "attack_radius": 120.0
+                    "attack_radius": 125.0
                 },
                 "minecraft:shooter": {
                     "def": "fire:{}".format(gun_id)

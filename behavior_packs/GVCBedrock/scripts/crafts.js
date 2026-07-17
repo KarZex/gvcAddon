@@ -120,6 +120,7 @@ export const craftData = {
       { "give":"vehicle:m1126_spawn_egg","texture":"textures/items/vehicle/m1126", "count":1, "cost":[ 12, 12, 12 ] },
       { "give":"vehicle:m1128_spawn_egg","texture":"textures/items/vehicle/m1128", "count":1, "cost":[ 12, 12, 12 ] },
       { "give":"vehicle:ka50_spawn_egg","texture":"textures/items/vehicle/ka50", "count":1, "cost":[ 18, 18, 48 ] },
+      { "give":"vehicle:ah1z_spawn_egg","texture":"textures/items/vehicle/ah1z", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:ka60_spawn_egg","texture":"textures/items/vehicle/ka60", "count":1, "cost":[ 9, 24, 24 ] },
       { "give":"vehicle:m1a2_spawn_egg","texture":"textures/items/vehicle/m1a2", "count":1, "cost":[ 48, 64, 48 ] },
       { "give":"vehicle:m1_abrams_spawn_egg","texture":"textures/items/vehicle/m1_abrams", "count":1, "cost":[ 16, 64, 32 ] },

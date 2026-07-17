@@ -1,0 +1,61 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "zex:ship",  
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+	"component_groups": {
+
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "inanimate", "spawns" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1.975
+      },
+	  "minecraft:despawn": {},
+      "minecraft:health": {
+        "value": 6,
+        "max": 6
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/empty.json"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:persistent": {
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command":[
+            "scriptevent gvcv5:shipspawn",
+            "kill @s"
+          ]
+        }
+      }
+    }
+  }
+}

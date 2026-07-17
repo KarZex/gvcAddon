@@ -538,12 +538,11 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 	else if( e.id == "zex:vstart"){
 		const entity = e.sourceEntity;
 		const vehicle = entity.getComponent(EntityComponentTypes.Riding).entityRidingOn;
+		if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`plate`) ){
+			entity.addEffect(`resistance`,9999999,{ amplifier:255,showParticles:false });
+		}
 
 		if( entity.id == vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0].id ){
-
-			if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`plate`) ){
-				entity.addEffect(`resistance`,9999999,{ amplifier:255,showParticles:false });
-			}
 			
 			if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`TofAA`) ){
 				entity.addTag(`air`);

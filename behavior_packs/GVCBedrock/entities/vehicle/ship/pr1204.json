@@ -344,6 +344,7 @@
       },
       "minecraft:navigation.walk": {
         "is_amphibious": true,
+        "can_path_over_water": true,
         "avoid_water": true
       },
       "minecraft:movement.basic": {},

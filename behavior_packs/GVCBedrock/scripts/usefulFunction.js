@@ -117,12 +117,16 @@ export function isMoving(user){
 export function getUnderBlocksTo(dimension,location,under,type){
     dimension.getBlock(location)
     for( let i = 0; i < under; i++ ){
+        //print(i)
         const Target = {
             x:location.x,
             y:location.y-i,
             z:location.z
         }
-        if( dimension.getBlock(Target).typeId == type ){
+        if( dimension.getBlock(Target) == undefined ){
+            continue
+        }
+        else if( dimension.getBlock(Target).typeId == type ){
             continue
         }
         else{

@@ -156,9 +156,12 @@
                     "is_amphibious": true,
                     "can_path_over_water": true,
                     "can_break_doors": true,
+                    "can_pass_doors": true,
                     "can_swim": true,
                     "can_walk": true,
                     "avoid_sun": false
+                },
+                "minecraft:annotation.break_door": {
                 },
                 "minecraft:underwater_movement": {
                     "value": 0.2
@@ -653,14 +656,14 @@
                 "avoid_water": true
             },
             "minecraft:movement.basic": {},
-            "minecraft:behavior.float": {
-                "priority": 0
-            },
             "minecraft:jump.static": {},
             "minecraft:can_climb": {},
             "minecraft:nameable": {},
             "minecraft:shooter": {
                 "def": "minecraft:arrow"
+            },
+           "minecraft:behavior.float": {
+                "priority": 0
             },
             "minecraft:behavior.find_mount": {
                 "priority": 6,
