@@ -184,7 +184,10 @@
       "minecraft:rideable": {
         "seat_count": 4,
         "family_types": [
-          "player"
+          "guerrilla",
+          "allied_soldier",
+          "player",
+          "unks"
         ],
         "interact_text": "action.interact.ride.horse",
         "seats": [
@@ -328,6 +331,12 @@
         "suffocate_time": 0,
         "breathes_air": true,
         "breathes_water": true
+      },
+      "minecraft:behavior.mount_pathing": {
+        "priority": 1,
+        "speed_multiplier": 1.5,
+        "target_dist": 0.0,
+        "track_target": true
       },
       "minecraft:health": {
         "value": 1000,

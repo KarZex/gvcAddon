@@ -383,10 +383,10 @@ world.beforeEvents.entityHurt.subscribe( e => {
 				return;
 			}
 
-			else if( getTeam(attacker) == `noteam` ){
-				e.cancel = true;
-				return;
-			}
+			// else if( getTeam(attacker) == `noteam` ){
+			// 	e.cancel = true;
+			// 	return;
+			// }
 			// Cancel damage if the attacker and victim are on the same team
 			else if( getTeam(attacker) == getTeam(victim) ){
 				e.cancel = true;

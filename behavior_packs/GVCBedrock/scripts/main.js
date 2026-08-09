@@ -319,6 +319,7 @@ function setArmorValue( itemName ){
 	else if( itemName.includes("droneguided") ){ return 0.15 }
 	else if( itemName.includes("copper") ){ return 0.25 }
 	else if( itemName.includes("netherite") ){ return 0.25 }
+	else if( itemName.includes("samurai") ){ return 0.225 }
 	else { return 0 }
 }
 function summonAirbone(projectile,location,Radius,Height,Sigma,team ){

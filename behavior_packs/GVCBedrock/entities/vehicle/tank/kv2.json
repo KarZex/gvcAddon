@@ -295,6 +295,12 @@
       "minecraft:movement": {
         "value": 0.1
       },
+      "minecraft:behavior.mount_pathing": {
+        "priority": 1,
+        "speed_multiplier": 1.5,
+        "target_dist": 0.0,
+        "track_target": true
+      },
       "minecraft:knockback_resistance": {
         "value": 1.0
       },
