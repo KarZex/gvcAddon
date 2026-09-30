@@ -2288,6 +2288,21 @@
           "def": "fire:mamissile"
         }
       },
+      "aammissile": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "burst_shots": 1,
+          "burst_interval": 5.0,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 5,
+          "attack_interval_max": 10,
+          "attack_radius": 125.0
+        },
+        "minecraft:shooter": {
+          "def": "fire:aammissile"
+        }
+      },
       "ssmissile": {
         "minecraft:behavior.ranged_attack": {
           "priority": 1,
@@ -3579,6 +3594,13 @@
         "add": {
           "component_groups": [
             "mamissile"
+          ]
+        }
+      },
+      "aammissile": {
+        "add": {
+          "component_groups": [
+            "aammissile"
           ]
         }
       },

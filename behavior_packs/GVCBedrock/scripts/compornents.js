@@ -1,4 +1,4 @@
-import { world, EquipmentSlot, system, EntityComponentTypes ,BlockComponentTypes} from "@minecraft/server";
+import { world, EquipmentSlot, system, EntityComponentTypes ,BlockComponentTypes, EntityDamageCause, EffectType, EffectTypes} from "@minecraft/server";
 import { Vector3Add } from "./usefulFunction"
 import { levelup } from "./main";
 
@@ -111,10 +111,15 @@ const gvcv5EndBlockCommponent = {
 }
 
 const gvcv5BarbedCommponent = {
-    onStepOn(e,p){
+    onTick(e,p){
         const block = e.block;
-        const entity = e.entity;
-        entity.addEffect(`slowless`,5);
+        //const entity = e.entity;
+        const entities = block.dimension.getEntitiesAtBlockLocation(block.location);
+        for( const entity of entities ){
+            entity.addEffect("slowness",5,{ amplifier:2 });
+            entity.addEffect("slow_falling",5,{ amplifier:2 });
+            entity.applyDamage(4,{ cause: EntityDamageCause.thorns });
+        }
     }
 }
 

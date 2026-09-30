@@ -12,13 +12,13 @@ const caGuns = [
 		`mp5`,
 		`m72`,
 		`m60`
-	],
-	[
-		`vehicle:m113`,
-		`vehicle:m60a1`,
-		//`vehicle:ah1s`,
-		//`vehicle:ah6`
-	]
+	]//,
+	// [
+	// 	`vehicle:m113`,
+	// 	`vehicle:m60a1`,
+	// 	//`vehicle:ah1s`,
+	// 	//`vehicle:ah6`
+	// ]
 ]
 
 //Guerrilla soldier
@@ -141,12 +141,12 @@ const caRedGuns = [
 		`rpg`,
 		`svd`,
 		`vz61`
-	],
-	[
-		`vehicle:t72`,
-		`vehicle:bmp3`,
-		//`vehicle:mi24d`
-	]
+	]//,
+	// [
+	// 	`vehicle:t72`,
+	// 	`vehicle:bmp3`,
+	// 	//`vehicle:mi24d`
+	// ]
 ]
 
 //Blue team soldier 
@@ -158,12 +158,12 @@ const caBlueGuns = [
 		`m72`,
 		`m110`,
 		`m10`
-	],
-	[
-		`vehicle:m1_abrams`,
-		`vehicle:lav25`,
-		//`vehicle:ah1s`
-	]
+	]//,
+	// [
+	// 	`vehicle:m1_abrams`,
+	// 	`vehicle:lav25`,
+	// 	//`vehicle:ah1s`
+	// ]
 ]
 
 //Green team soldier 
@@ -175,12 +175,12 @@ const caGreenGuns = [
 		`rpg`,
 		`svd`,
 		`vz61`
-	],
-	[
-		`vehicle:t72`,
-		`vehicle:bmp3`,
-		//`vehicle:mi24d`
-	]
+	]//,
+	// [
+	// 	`vehicle:t72`,
+	// 	`vehicle:bmp3`,
+	// 	//`vehicle:mi24d`
+	// ]
 ]
 
 //Yellow team soldier
@@ -192,12 +192,12 @@ const caYellowGuns = [
 		`m72`,
 		`m110`,
 		`mp5`
-	],
-	[
-		`vehicle:m1_abrams`,
-		`vehicle:lav25`,
-		//`vehicle:ah1s`
-	]
+	]//,
+	// [
+	// 	`vehicle:m1_abrams`,
+	// 	`vehicle:lav25`,
+	// 	//`vehicle:ah1s`
+	// ]
 ]
 
 const MOBGUNS = {

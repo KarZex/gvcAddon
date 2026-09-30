@@ -1065,6 +1065,7 @@ gvcv5.130mm.name=130mmCannon
 gvcv5.105mm.name=105mm Cannon
 gvcv5.125mm.name=125mm Cannon
 gvcv5.tankg.name=Active Defense
+gvcv5.aammissile.name=AutoAAMissile
 
 
 gvcv5:flag_blue_main_base=§9Blue Team Base_Main Base

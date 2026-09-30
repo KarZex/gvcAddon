@@ -4,7 +4,7 @@ import { gunData } from "./guns";
 import { gunAttach } from "./gunAttach"
 import { craftData } from "./crafts";
 import { raidData } from "./raid";
-import { absVector3,getVector3E,isMoving,turning2, Vector3Add } from "./usefulFunction"
+import { absVector3,getTeam,getVector3E,isMoving,turning2, Vector3Add } from "./usefulFunction"
 import "./compornents";
 import "./vehicleMain";
 import "./team";
@@ -943,6 +943,83 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			y: dy * abs_v + ( 20 - age ) * 0.4,
 			z: dz * abs_v
 		} )
+	}
+	else if( e.id == "zex:maamissile"){
+		const missile = e.sourceEntity;
+		const player = missile.getComponent("projectile").owner;
+		const V_m = missile.getVelocity();
+		const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
+		const V = player.getViewDirection();
+		missile.clearVelocity();
+		//const E = player.getEntitiesFromViewDirection({ ignoreBlockCollision:false,includePassableBlocks:false,includeLiquidBlocks:true  });
+		const P0 = missile.location;
+		//print(missile.getDynamicProperty(`targetId`))
+		let targetFound = missile.getDynamicProperty(`targetId`) != undefined;
+		if( !targetFound ){
+			const E = missile.dimension.getEntities({ families:[ "TofAA" ],location:missile.location,maxDistance:96 });
+			//print(`${E.length}`);
+			if( E.length > 0 ){
+				const et = E[0];
+				if( et.getComponent(EntityComponentTypes.Rideable) != undefined && (!world.scoreboard.getObjective(`maxsubcool`).hasParticipant(et) || world.scoreboard.getObjective(`maxsubcool`).getScore(et) <= 0 ) ){
+					//print(et.typeId);
+					if( et.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+							//print(et.typeId);
+						const targetRider = et.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+						if( targetRider && getTeam( player ) != getTeam( targetRider ) ){
+							targetFound = true;
+							missile.setDynamicProperty(`targetId`,et.id);
+							targetRider.addTag(`MissileAlert`);
+							//print(missile.getDynamicProperty(`targetId`));
+							//print(et.typeId);
+							
+						}
+					}
+				}
+			}
+		}
+		if( missile.getDynamicProperty(`age`) == undefined ){
+			missile.setDynamicProperty(`age`,0);
+		}
+		else if( missile.getDynamicProperty(`age`) <= 20 ){
+			missile.setDynamicProperty(`age`,1+missile.getDynamicProperty(`age`));
+		}
+		const age = missile.getDynamicProperty(`age`);
+
+		// if( E.length > 0 ){
+		// 	Pi = E[0].entity.location;
+		// 	missile.lookAt(Pi);
+		// }
+		// else{
+
+		//}
+		if( targetFound ){
+			const Pi = world.getEntity(missile.getDynamicProperty(`targetId`)).location;
+			try{
+				world.getEntity(missile.getDynamicProperty(`targetId`)).getComponent(EntityComponentTypes.Rideable).getRiders()[0].addTag(`MissileAlert`)
+			}catch{}
+			//print(Pi.x)
+			const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + ( Pi.y - P0.y ) * ( Pi.y - P0.y ) + ( Pi.z - P0.z ) * ( Pi.z - P0.z ) );
+			const dx = (Pi.x - P0.x) / ri;
+			const dy = (Pi.y - P0.y) / ri;
+			const dz = (Pi.z - P0.z) / ri;
+
+			const abs_v = 4;
+			missile.clearVelocity();
+			missile.applyImpulse( { 
+				x: dx * abs_v,
+				y: dy * abs_v + ( 20 - age ) * 0.4,
+				z: dz * abs_v
+			} )
+		}
+		else{
+			const abs_v = 4;
+			missile.clearVelocity();
+			missile.applyImpulse( { 
+				x: 0,
+				y: abs_v,
+				z: 0
+			} )
+		}
 	}
 	else if( e.id == "zex:horming"){
 		const missile = e.sourceEntity;

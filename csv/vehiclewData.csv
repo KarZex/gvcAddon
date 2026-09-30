@@ -47,6 +47,7 @@ bombii,bombiii,100,2,0,100,4,F,missilebullet,entityExplosion,HMM,1,zex:sbombm,0
 Flare,flare,0,0,0,20,3,F,rpgbullet,entityExplosion,H,2,zex:s37m,2
 76mmrocketx2,76mmrocketd,60,4,0,20,3,F,rpgbullet,entityExplosion,D,4,zex:s76m,3
 ManualMissile,mamissile,150,4,0,100,3,F,missilebullet,entityExplosion,H,4,zex:20mmc,3
+ManualMissile,aammissile,100,4,0,100,3,F,missilebullet,entityExplosion,H,4,zex:20mmc,3
 SSMissile,ssmissile,100,4,0,100,3,F,missilebullet,entityExplosion,H,4,zex:20mmc,3
 37mmCannon,37mm,50,4,0,20,1,T,cannonbullet,entityExplosion,,2,zex:s37m,3
 57mmCannon,57mm,120,4,0,60,1,T,cannonbullet,entityExplosion,,4,zex:s57m,3

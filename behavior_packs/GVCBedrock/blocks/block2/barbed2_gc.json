@@ -32,6 +32,10 @@
                 "origin": [-8, 0, -8],
                 "size": [16, 16, 16]
             },
+            "minecraft:tick": {
+                "looping": true,
+                "interval_range": [ 0, 1 ]
+            },
             "gvcv5:barbed" : {},
             "minecraft:collision_box": false,
             "minecraft:friction": 0.0,

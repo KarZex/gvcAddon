@@ -3502,6 +3502,19 @@
           ]
         }
       },
+      "fire:aammissile": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:aammissile"
+            }
+          ]
+        }
+      },
       "fire:ssmissile": {
         "minecraft:spawn_entity": {
           "entities": [
@@ -4750,6 +4763,13 @@
         "add": {
           "component_groups": [
             "fire:mamissile"
+          ]
+        }
+      },
+      "fire:aammissile": {
+        "add": {
+          "component_groups": [
+            "fire:aammissile"
           ]
         }
       },

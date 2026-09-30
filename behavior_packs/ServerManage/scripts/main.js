@@ -1,4 +1,4 @@
-import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause, InputButton, ButtonState  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 
 const blacklist = [
@@ -42,6 +42,13 @@ system.runInterval(() => {
 			const speed = Math.sqrt( velocity.x**2 + velocity.y**2 + velocity.z**2 );
 			const speedKmh = (speed * 20).toFixed(2);
 			player.runCommand(`title @s actionbar §aSpeed: §e${speedKmh} m/s`);
+			// if( player.inputInfo.getButtonState(InputButton.Jump) == ButtonState.Pressed ){
+			// 	player.applyKnockback({ x:0,z:0 },1);
+			// }
+			if( player.inputInfo.getButtonState(InputButton.Sneak) == ButtonState.Pressed ){
+				//player.applyKnockback({ x:0,z:0 },-20);
+				//player.teleport({ x:player.location.x,y:player.location.y-100000,z:player.location.z })
+			}
 		}
 	}
 }, 1);

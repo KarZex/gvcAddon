@@ -1190,6 +1190,8 @@ script.gvcv5.execution.name=銃殺する対象を選択
 script.gvcv5.jail.name=独房に転送する対象を選択
 script.gvcv5.phone_execution.name=銃殺
 script.gvcv5.phone_jail.name=独房に転送
+tile.gvcv5:building_jailii.name=刑務所
+tile.gvcv5:spawnpoint.name=スポーン地点
 
 script.gvcv5.downedbyred.name=は§c赤チーム§rによってダウンしました
 script.gvcv5.downedbyblue.name=は§9青チーム§rによってダウンしました

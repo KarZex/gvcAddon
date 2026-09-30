@@ -984,7 +984,7 @@ export const vehicleData = {
     "Weapon3": "agmissile",
     "Weapon3_cool": 50,
     "Weapon3_ammo": 2,
-    "Weapon4": "aamissile",
+    "Weapon4": "aammissile",
     "Weapon4_cool": 10,
     "Weapon4_ammo": 8,
     "turn": 1,

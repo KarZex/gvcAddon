@@ -40,6 +40,26 @@
           ]
         }
       }
+    },
+    "controller.animation.mama": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/scriptevent zex:maamissile"
+          ],
+          "transitions": [
+            { "ride": "1.0" }
+          ]
+        },
+        "ride":{
+          "on_entry": [
+            "/scriptevent zex:maamissile"
+          ],
+          "transitions": [
+            { "default": "1.0" }
+          ]
+        }
+      }
     }
   }
 }

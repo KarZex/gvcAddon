@@ -34,6 +34,16 @@ async function tpWithDelay( user, location,dimension, delay){
 	user.teleport(location, { dimension: dimension });
 }
 
+function writeLog(text){
+	const logFile = world.getDynamicProperty("worldLog");
+	if( logFile == undefined ){
+		world.setDynamicProperty("worldLog",`gvcv5_log_start\n`);
+	}
+	else{
+		world.setDynamicProperty("worldLog",`${logFile}${text}\n`);
+	}
+}
+
 function gvcv5becomeTeam( user,team ){
 	if( world.getDynamicProperty(`${team}Leader`) == undefined ){
 		if( world.getDynamicProperty(`${team}Pass`) != undefined ){
@@ -74,7 +84,7 @@ function gvcv5CreateTeam( user,team ){
 	world.setDynamicProperty(`${team}Leader`,`${user.name}`);
 	user.addTag(`${team}Leader`);
 	if( world.getDynamicProperty(`teamJail`) ){
-		user.runCommand(`give @s gvcv5:building_${team}jail_b`)
+		user.runCommand(`give @s gvcv5:building_jailii`);
 	}
 }
 function gvcv5RemoveTeam( team ){
@@ -193,6 +203,7 @@ system.runInterval( () => {
 	for( const player of players ){
 		if( player.hasTag(`down`) && !player.hasTag(`rise`) && world.getPlayers({name:`${player.getDynamicProperty(`killer`)}`}).length > 0 ){
 			player.applyDamage(1,{ damagingEntity:world.getPlayers({name:`${player.getDynamicProperty(`killer`)}`})[0],cause:EntityDamageCause.magic });
+			player.applyKnockback({ x:0, z:0 },0);
 		}
 		else if( player.hasTag(`down`) && !player.hasTag(`rise`) ){
 			player.applyDamage(1,{ cause:EntityDamageCause.magic });
@@ -380,16 +391,19 @@ world.beforeEvents.entityHurt.subscribe( e => {
 			catch{}
 			if( victim.hasTag(`down`) && attacker.typeId != "minecraft:player" ){
 				e.cancel = true;
+				print(`a`)
 				return;
 			}
 
-			// else if( getTeam(attacker) == `noteam` ){
-			// 	e.cancel = true;
-			// 	return;
-			// }
-			// Cancel damage if the attacker and victim are on the same team
-			else if( getTeam(attacker) == getTeam(victim) ){
+			else if( getTeam(attacker) == `noteam` && getTeam(victim) != `noteam` ){
 				e.cancel = true;
+				print(`b`)
+				return;
+			}
+			// Cancel damage if the attacker and victim are on the same team
+			else if( getTeam(attacker) == getTeam(victim) && getTeam(victim) != `noteam`  ){
+				e.cancel = true;
+				print(`c`)
 				return;
 			}
 		}
@@ -439,6 +453,7 @@ world.afterEvents.entityDie.subscribe( e => {
 		player.runCommand(`function down/end_down`);
 		player.setDynamicProperty(`killer`,undefined);
 		//player.setDynamicProperty(`downedBy`,undefined);
+		writeLog(`playerDie:${player.nameTag}(${player.id})`);
 	}
 	else if( player.typeId.includes(`_main_base`) ){
 		const team = getTeam(player).replace(`team`,``);
@@ -460,13 +475,16 @@ world.afterEvents.entityDie.subscribe( e => {
 
 world.afterEvents.playerSpawn.subscribe( e => {
 	const p = e.player;
+	writeLog(`playerSpawn:${p.nameTag}(${p.id})`);
 
 	for( const team of Teams ){
 		const teamJail = world.getDynamicProperty(`${team}Jail`);
 		if( teamJail != undefined && world.getDynamicProperty(`teamJail`) && p.getDynamicProperty(`downedBy`) == team || p.hasTag(`${team}Sub`) ){
 			p.teleport(teamJail);
 			if( p.getDynamicProperty(`downedBy`) == team ){
-				world.scoreboard.getObjective("DeathTime").setScore(p,24000);
+				if( !p.hasTag(`${team}Sub`) ){
+					world.scoreboard.getObjective("DeathTime").setScore(p,24000);
+				}
 				p.addTag(`${team}Sub`);
 				p.addTag(`onDeath`);
 				p.runCommand(`give @s rotten_flesh 4`);
@@ -1107,6 +1125,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						phone.setDynamicProperty(`slot${result.selection}`,user.location);
 						phone.setDynamicProperty(`slot${result.selection}_dimension`,user.dimension.id);
 						phone.setDynamicProperty(`slot${result.selection}_name`,locateName);
+						writeLog(`${user.nameTag} updated teleport location "${locateName}" at ${gvcv5GetTime()}`);
 					}
 				},)
 			}
@@ -1216,6 +1235,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
 				}
 				if( result.selection == 2 ){
+					writeLog(`${user.nameTag} cleared team chat at ${gvcv5GetTime()}`);
+					writeLog(`Cleared chat: ${world.getDynamicProperty(`${userFamily}chat`)}`);
 					world.setDynamicProperty(`${userFamily}chat`,``)
 				}
 			}
@@ -1224,6 +1245,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 	else if( e.id == "gvcv5:phone_unlocked" ){
 		const userFamily = e.message;
 		const user = e.sourceEntity;
+		if( world.getDynamicProperty(`worldLog`) == undefined ){
+			world.setDynamicProperty(`worldLog`,`gvcv5_log_start\n`);
+
+		}
 		if( !user.hasTag(`${userFamily}`) ){
 			let itemRawText = []
 			const userLocationStr = `X:${Math.floor(user.location.x)} Y:${Math.floor(user.location.y)} Z:${Math.floor(user.location.z)}`
@@ -1307,6 +1332,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 								const targetLocation = phoneArray[result.selection].location;
 								const targetDimension = phoneArray[result.selection].dimension;
 								user.teleport(targetLocation,{ dimension:targetDimension });
+								writeLog(`${user.nameTag} teleported to ${phoneArray[result.selection].nameTag} at ${gvcv5GetTime()}`);
 								if( !user.hasTag(`${userFamily}`) ){
 									user.sendMessage({ translate: `script.gvcv5.phoneAbuse.name` }); //warning
 									user.runCommand(`clear @s zex:phone_${userFamily} 0 1`);
@@ -1340,6 +1366,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					user.runCommand(`scriptevent gvcv5:phone_teamChat ${userFamily}`);
 				}
 				else if( result.selection == 4 ){ //menber list
+					if( world.getDynamicProperty(`${userFamily}Jail`) == undefined ){
+						user.runCommand(`give @s gvcv5:building_jailii`);
+						return;
+					}
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_menber_list.name`);
 					for( const myAlly of world.getPlayers({ tags:[ `${userFamily}Sub` ] }) ){
@@ -1385,7 +1415,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					},)
 				}
 				else if( result.selection == 6 ){ //leave team
+					user.sendMessage(`You Cant use this structure `);
+					return;
 					const form = new ActionFormData();
+
 					form.title(`script.gvcv5.phone_leave.name`);
 					form.body(`script.gvcv5.leave_team_body.name`);
 					form.button(`script.gvcv5.phone_accept.name`);
@@ -1596,6 +1629,12 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				}
 			} )
 		}
-
+		else if( e.message == `showLog` ){
+			const form = new ActionFormData();
+			form.title(`Log`);
+			form.body(`${world.getDynamicProperty(`worldLog`)}`);
+			form.button(`script.gvcv5.phone_back.name`);
+			form.show(e.sourceEntity);
+		}
 	}
 },)

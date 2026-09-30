@@ -83,8 +83,8 @@ function findTargetInCone(player,entityOption,allies) {
 
     // 周囲のエンティティを全取得（負荷軽減のため次元ベースで距離制限をかける）
     
-	//const entities = player.dimension.getEntities(entityOption)
-	const entities = world.getDimension("overworld").getEntities(entityOption)
+	const entities = player.dimension.getEntities(entityOption)
+	//const entities = world.getDimension("overworld").getEntities(entityOption)
 
     let closestTarget = null;
 

@@ -2,18 +2,28 @@
 [
 	
 	{
-		"pack_id" : "e361ee35-895b-40c6-b69c-815b443578a8",
-		"subpack" : "default",
-		"version" : [ 1, 1, 0 ]
+		"pack_id" : "33530fcd-9d09-b79e-ee8a-7d850cfd52ed",
+		"version" : [ 1, 0, 6 ]
 	},
 	
 	{
-		"pack_id" : "9f86bcbb-775e-42d6-a463-e6a0d39b9879",
+		"pack_id" : "8f76919c-a78c-42a2-be53-9ffabed044b4",
+		"version" : [ 1, 0, 0 ]
+	},
+	
+	{
+		"pack_id" : "f13f6b76-527d-4748-95a1-aa3cff212103",
+		"subpack" : "full",
 		"version" : [ 1, 0, 0 ]
 	},
 	
 	{
 		"pack_id" : "947fee76-6c2c-4d83-9afa-eefdb78c8509",
 		"version" : [ 1, 21, 101 ]
+	},
+	
+	{
+		"pack_id" : "9f86bcbb-775e-42d6-a463-e6a0d39b9879",
+		"version" : [ 1, 0, 0 ]
 	}
 ]
