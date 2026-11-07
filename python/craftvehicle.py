@@ -66,10 +66,11 @@ for row in csv_reader:
         #inventory item
         v_inventory = row[31] 
         v_camera = int(row[32])
-        v_turn = int(row[33])
+        v_turn = float(row[33])
 
         v_family = ast.literal_eval(row[34])
         v_engname = row[35]
+        v_eject_cool = int(row[36])
 
 
         ##DATA START
@@ -90,7 +91,8 @@ for row in csv_reader:
             "Weapon4_cool": v_weapon4_cool,
             "Weapon4_ammo": v_weapon4_ammo,
             "turn": v_turn,
-            "gattack": v_gattack
+            "gattack": v_gattack,
+            "coolTime": v_eject_cool
         }
 
         text += "entity.vehicle:{0}.name={1}\n".format(v_id,v_name)

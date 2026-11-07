@@ -1283,3 +1283,6 @@ script.gvcv5.phone_progress_5.name=MISSION6
 script.gvcv5.phone_progress_5_main.name=-大規模拠点を攻略せよ-
 script.gvcv5.phone_progress_5_sub.name=ゲリラが潜んでいる大規模拠点を攻略せよ。未確認の兵器も確認されている、注意せよ。
 
+
+script.gvcv5.vehiclecool1.name=乗り物のクールタイム 残り
+script.gvcv5.vehiclecool2.name=秒

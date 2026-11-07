@@ -1146,7 +1146,7 @@ export const gunData = {
     "ammoType": "zex:s76m"
   },
   "agmissile": {
-    "damage": 120,
+    "damage": 100,
     "sound": "missile",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
@@ -1318,14 +1318,14 @@ export const gunData = {
   "25mmmc": {
     "damage": 20,
     "sound": "hmgii",
-    "damageIgnoreDef": 1.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:20mmc"
   },
   "30mmmc": {
-    "damage": 30,
+    "damage": 20,
     "sound": "hmgii",
-    "damageIgnoreDef": 2.0,
+    "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:20mmc"
   },
@@ -1399,10 +1399,10 @@ export const gunData = {
     "ammoType": "zex:20mmc"
   },
   "30mmmcair": {
-    "damage": 12,
+    "damage": 15,
     "sound": "air",
-    "damageIgnoreDef": 1.0,
-    "damageType": "override",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
     "ammoType": "zex:20mmc"
   },
   "20mmmcair": {
@@ -1420,7 +1420,7 @@ export const gunData = {
     "ammoType": "zex:sbombm"
   },
   "37mmrocketkatyusya": {
-    "damage": 35,
+    "damage": 30,
     "sound": "p90",
     "damageIgnoreDef": 2.0,
     "damageType": "entityExplosion",
@@ -1453,14 +1453,14 @@ export const gunData = {
     "ammoType": "zex:s76m"
   },
   "mamissile": {
-    "damage": 150,
+    "damage": 50,
     "sound": "missile",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:20mmc"
   },
   "aammissile": {
-    "damage": 100,
+    "damage": 50,
     "sound": "missile",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
@@ -1474,14 +1474,14 @@ export const gunData = {
     "ammoType": "zex:20mmc"
   },
   "37mm": {
-    "damage": 50,
+    "damage": 30,
     "sound": "cannon",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s37m"
   },
   "57mm": {
-    "damage": 120,
+    "damage": 160,
     "sound": "cannon",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",

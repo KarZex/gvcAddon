@@ -31,7 +31,7 @@
 						"flying": "!query.is_on_ground"
 					},
 					{
-						"fly": "query.has_rider && query.is_moving"
+						"fly": "query.has_rider && !query.is_on_ground"
 					}
 				]
 			},

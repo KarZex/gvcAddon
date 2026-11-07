@@ -27,6 +27,41 @@
         }
       }
     },
+    "controller.animation.helivehicle": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "chk_ride": "query.has_rider" }
+          ],
+          "on_entry": [
+            "/tag @s remove has.rider"
+          ]
+        },
+        "chk_ride": {
+          "transitions": [
+            { "max": "query.has_rider" },
+            { "default": "!query.has_rider" }
+          ],
+          "on_entry": [
+            "/scriptevent zex:chkride"
+          ]
+        },
+        "max": {
+          "transitions": [
+            { "default": "!query.has_rider" }
+          ],
+          "on_entry": [
+            "/tag @s add has.rider",
+            "/execute as @s[family=heri] run effect @s slow_falling 99999 1 true"
+          ],
+          "on_exit": [
+            "/tag @s remove has.rider",
+            "/execute as @s[family=heri] run effect @s slow_falling 0 0 true",
+            "/execute as @s[family=heri] run effect @s levitation 0 0 true"
+          ]
+        }
+      }
+    },
     "controller.animation.vtext": {
       "states": {
         "default": {

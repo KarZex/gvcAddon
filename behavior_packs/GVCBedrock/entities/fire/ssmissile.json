@@ -36,7 +36,7 @@
       "minecraft:projectile": {
         "on_hit": {
           "impact_damage": {
-            "damage": 50,
+            "damage": 0,
             "knockback": false
           },
           "stick_in_ground": {},

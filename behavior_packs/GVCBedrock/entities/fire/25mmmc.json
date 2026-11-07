@@ -21,9 +21,6 @@
         "power": 0,
         "causes_fire": false
       },
-      "minecraft:despawn": {
-        "despawn_from_distance": {}
-      },
       "minecraft:collision_box": {
         "width": 0.25,
         "height": 0.25
@@ -34,7 +31,14 @@
             "damage": 0,
             "knockback": false
           },
-          "stick_in_ground": {}
+          "stick_in_ground": {},
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          }
         },
         "power": 12.8,
         "gravity": 0,
@@ -61,7 +65,7 @@
           "fuse_length": 0,
           "destroy_affected_by_griefing": true,
           "fuse_lit": true,
-          "power": 0,
+          "power": 1,
           "breaks_blocks": false
         }
       }

@@ -486,10 +486,14 @@ async function setUp(){
     if( world.getDynamicProperty("gvcv5:airCraftWithItem") == undefined ){
         world.setDynamicProperty("gvcv5:airCraftWithItem",false);
     }
+    if( world.getDynamicProperty("gvcv5:vehicleCoolTime") == undefined ){
+        world.setDynamicProperty("gvcv5:vehicleCoolTime",false);
+    }
     if( world.getDynamicProperty("gvcv5:progress") == undefined ){
         world.setDynamicProperty("gvcv5:progress",0);
     }
     await system.waitTicks(1);
+    world.getDimension(`overworld`).runCommand(`function gunstart`);
     const buildingS = Number(world.getDynamicProperty(`gvcv5:buildingSpawnS`))
     const buildingM = Number(world.getDynamicProperty(`gvcv5:buildingSpawnM`))
     const buildingL = Number(world.getDynamicProperty(`gvcv5:buildingSpawnL`))
@@ -510,7 +514,7 @@ system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,gvcv5BuildingBlockCommponent);
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:lootblock`,gvcv5LootBlockCommponent);
     //e.blockComponentRegistry.registerCustomComponent("gvcv5:scaffold",{onPlayerBreak: gvcv5Scaffold})
-    e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawner`,gvcv5SpawnerCommponent);
+    ///e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawner`,gvcv5SpawnerCommponent);
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:crafter`,gvcv5UseCommandCommponent);
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:expoevent`,gvcv5BlockExpoCommponent);
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:mineevent`,gvcv5MineCommponent);

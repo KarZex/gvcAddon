@@ -144,26 +144,37 @@ export function setTruedeg( thita ){
     return Math.atan2(target_sin,target_cos) * 180 / Math.PI
 }
 
+function clampAngleDifference(theta1, theta0,R) {
+  const limit = R; // π/12
+
+  // 2πの周期性を考慮して -π ～ π の範囲の角度差を計算
+  let diff = (theta1 - theta0) % (2 * Math.PI);
+  if (diff > Math.PI) diff -= 2 * Math.PI;
+  if (diff < -Math.PI) diff += 2 * Math.PI;
+
+  // 差の絶対値が π/12 を超えていれば制限
+  if (Math.abs(diff) > limit) {
+    return theta0 + Math.sign(diff) * limit;
+  }
+
+  return theta1;
+}
+
 export function turning( V_1,V_0,thita ){
-    let d = V_1;
-    if( Math.asin(d.x) > Math.asin(V_0.x) + thita ){
-        d.x = V_0.x + Math.sin(thita);
+    let V_1_xz = Math.atan2(V_1.z,V_1.x);
+    let V_0_xz = Math.atan2(V_0.z,V_0.x);
+    
+    //print(`V1${V_1_xz * 180 / Math.PI}\n`);
+    //print(`V0${V_0_xz * 180 / Math.PI}\n`);
+    //print(`thita${thita * 180 / Math.PI}\n`)
+    const xz = clampAngleDifference(V_1_xz,V_0_xz,thita);
+    let y = clampAngleDifference(Math.asin(V_1.y),Math.asin(V_0.y),thita);
+    let d = {
+        x: Math.cos(y) * Math.cos(xz),
+        y: Math.sin(y),
+        z: Math.cos(y) * Math.sin(xz)
     }
-    if( Math.asin(d.x) < Math.asin(V_0.x) - thita ){
-        d.x = V_0.x - Math.sin(thita);
-    }
-    if( Math.asin(d.y) > Math.asin(V_0.y) + thita ){
-        d.y = V_0.y + Math.sin(thita);
-    }
-    if( Math.asin(d.y) < Math.asin(V_0.y) - thita ){
-        d.y = V_0.y - Math.sin(thita);
-    }
-    if( Math.asin(d.z) > Math.asin(V_0.z) + thita ){
-        d.z = V_0.z + Math.sin(thita);
-    }
-    if( Math.asin(d.z) < Math.asin(V_0.z) - thita ){
-        d.z = V_0.z - Math.sin(thita);
-    }
+    //print(`${xz * 180 / Math.PI}`);
     return d;
 
 }

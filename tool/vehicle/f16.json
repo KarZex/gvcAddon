@@ -22,6 +22,15 @@
                 255
             ],
             "default": 0
+        },
+        "zex:rotatey": {
+            "client_sync": true,
+            "type": "float",
+            "range": [
+                -90.0,
+                90.0
+            ],
+            "default": 0.0
         }
       }
     },
@@ -296,6 +305,20 @@
           {
             "cause": "fall",
             "deals_damage": false
+          },
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding_self",
+                    "value": true
+                  }
+                ]
+              }
+            }
           }
        ]
       },                        

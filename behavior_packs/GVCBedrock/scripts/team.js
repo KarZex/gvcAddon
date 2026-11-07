@@ -210,6 +210,21 @@ system.runInterval( () => {
 			player.applyKnockback({ x:0, z:0 },0);
 		}
 	}
+	if ( world.getDynamicProperty(`gvcv5:worldLimit`) ){
+		const over = world.getDynamicProperty(`gvcv5:worldLimitO`);
+		const nether = world.getDynamicProperty(`gvcv5:worldLimitN`);
+		const end = world.getDynamicProperty(`gvcv5:worldLimitE`);
+		if( world.getAbsoluteTime() < 0 ){
+			world.getDimension(`minecraft:overworld`).runCommand(`tag @a[x=-${over/2},y=-64,z=-${over/2},dx=${over/2},dy=384,dz=${over},tag=red] add noout`);
+			world.getDimension(`minecraft:overworld`).runCommand(`tag @a[x=0,y=-64,z=-${over/2},dx=${over/2},dy=384,dz=${over},tag=blue] add noout`);
+		}
+		else{
+			world.getDimension(`minecraft:overworld`).runCommand(`tag @a[x=-${over/2},y=-64,z=-${over/2},dx=${over},dy=384,dz=${over}] add noout`);
+		}
+		world.getDimension(`minecraft:overworld`).runCommand(`function out/over`);
+		world.getDimension(`minecraft:nether`).runCommand(`tag @a[x=-${nether/2},y=0,z=-${nether/2},dx=${nether},dy=128,dz=${nether}] add noout`);
+		world.getDimension(`the_end`).runCommand(`tag @a[x=0,y=0,z=0,r=512] add noout`);
+	}
 	if( world.getDynamicProperty("gvcv5:isBossFlag") ){
 		for( const team of Teams ){
 			for( const d of worldDimensions ){

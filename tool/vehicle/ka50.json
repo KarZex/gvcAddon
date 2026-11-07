@@ -10,7 +10,7 @@
 	    "animate": [ "walk","heri" ]
 	  },
 	  "animations": {
-	    "walk": "controller.animation.vehicle",
+	    "walk": "controller.animation.helivehicle",
 	    "heri": "controller.animation.vheri"
 	  },
       "properties": {
@@ -321,6 +321,20 @@
           {
             "cause": "fall",
             "deals_damage": false
+          },
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding_self",
+                    "value": true
+                  }
+                ]
+              }
+            }
           }
        ]
       },                        

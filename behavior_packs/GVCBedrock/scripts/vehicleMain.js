@@ -1,8 +1,8 @@
-import { world, system, EquipmentSlot, EntityComponentTypes,GameMode, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause, InputButton, ButtonState, LiquidType, InputPermissionCategory  } from "@minecraft/server";
+import { world, system, EquipmentSlot, EntityComponentTypes,ItemStack, EntityInitializationCause, ItemComponent, ItemComponentTypes, TicksPerSecond, EffectType, EffectTypes, EntityDamageCause, InputButton, ButtonState, LiquidType, InputPermissionCategory  } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { gunData } from "./guns";
 import { vehicleData } from "./vehicle";
-import { absVector2,getVector2E,getEntityName,absVector3,Vector2Sub,isMoving,DistanceVector3,getUnderBlocksTo,Vector3Sub,getVector3E,Vector3Add,turning,turning2,DistanceVector3in2dim} from "./usefulFunction"
+import { absVector2,getVector2E,getEntityName,absVector3,Vector2Sub,isMoving,DistanceVector3,getUnderBlocksTo,Vector3Sub,getVector3E,Vector3Add,turning,getTeam} from "./usefulFunction"
 
 export const tankImmuneEntities = [
     `armor_stand`,
@@ -11,10 +11,25 @@ export const tankImmuneEntities = [
     `xp_orb`
 ]
 
-function airCraftlader( player ){
+function addCircleDeg( deg, thita ){
+	let T = deg + thita + 180;
+	//print(T)
+	if( T >= 360 ){
+		T = T - 360;
+	}
+	else if( T <= 0 ){
+		T = T + 360;
+	}
+	//print(`${T},${deg + thita + 180}`)
+	return T
+}
+
+function airCraftlader( player,thita ){
+	let thita2 = thita;
 	const V = player.getViewDirection();
 	const P0 = player.location;
-	const d0 = Math.atan2(V.z, V.x);
+	const d0 = thita * Math.PI/180;
+	//world.sendMessage(`${thita2}`)
 	let team = `noteam`;
 	let print = [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ];
 	if( player.hasTag(`red`) ){ team = `red`; }
@@ -72,7 +87,7 @@ function airCraftlader( player ){
 			print[j] = `§4`;
 		}
 	}
-	return `{"text":"${print[0]}|${print[1]}|${print[2]}|${print[3]}|${print[4]}|${print[5]}|${print[6]}|${print[7]}|${print[8]}|${print[9]}| ${print[10]}${Math.floor(-180*d0/Math.PI)} ${print[11]}|${print[12]}|${print[13]}|${print[14]}|${print[15]}|${print[16]}|${print[17]}|${print[18]}|${print[19]}|${print[20]}|\n"}`;
+	return `{"text":"${print[0]}|${print[1]}|${print[2]}|${print[3]}|${print[4]}|${print[5]}|${print[6]}|${print[7]}|${print[8]}|${print[9]}| ${print[10]}${Math.round(addCircleDeg(thita2,0))} ${print[11]}|${print[12]}|${print[13]}|${print[14]}|${print[15]}|${print[16]}|${print[17]}|${print[18]}|${print[19]}|${print[20]}|\n"}`;
 }
 
 // 視線方向のコーン（円錐）範囲内のターゲットを探す
@@ -169,7 +184,7 @@ function Weapon( player,vehicle,selectedItemSlot ){
 			const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
 			const excludeList = [ "player","playerp","mod","mob" ];
 			const allies = intFamily.filter(char => !excludeList.includes(char));
-			const target = findTargetInCone(player,{families:["TofAA"],location:player.location,maxDistance:128},allies);
+			const target = findTargetInCone(player,{families:["TofAA"],location:player.location,maxDistance:320},allies);
 			if( target != null ){
 				//maxsubcool
 				if( world.scoreboard.getObjective(`lockon`).getScore(player) < 20 ){
@@ -349,28 +364,37 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			const maxSpeed = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
 			const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
             if( player.typeId == "minecraft:player" ){
+
                 let v = airCraft.getVelocity();
                 let abs_v = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
                 const turnRad = Number(vehicleData[`${airCraft.typeId.replace("vehicle:","")}`]["turn"]) * Math.PI / 180;
                 const HP = airCraft.getComponent(EntityComponentTypes.Health).currentValue;
                 const HPMax = airCraft.getComponent(EntityComponentTypes.Health).defaultValue;
 				const selectedItemSlot = player.selectedSlotIndex;
-                let r = {
-                    x:v.x/abs_v,
-                    y:v.y/abs_v,
-                    z:v.z/abs_v
-                }
-                if( abs_v > maxSpeed ){
-                    abs_v = maxSpeed
-                }
 
-                if( abs_v < 0.1 ){
+				//abs_v = maxSpeed;
+				if( abs_v > maxSpeed){
+					abs_v = maxSpeed;
+				}
+
+                if( abs_v < 0.05 ){
                     abs_v = 0
+					airCraft.setDynamicProperty(`preV`,undefined);
                 }
                 else{
                     let d = player.getViewDirection();
-                    airCraft.clearVelocity();
-                    d = turning(d,r,turnRad);
+					if( airCraft.getDynamicProperty(`preV`) == undefined ){
+						airCraft.setDynamicProperty(`preV`,d);
+					}
+					const r = airCraft.getDynamicProperty(`preV`);
+                    //turning(d,r,turnRad);
+					if( !player.hasTag(`nowanp`) ){
+						d = turning(d,r,turnRad);
+					}
+					else{
+						d = r;
+					}
+
                     if( world.getDynamicProperty(`gvcv5:worldLimit`) && airCraft.dimension.id == `minecraft:overworld` ){
                         
                         if( airCraft.location.x > world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.x > 0 ){
@@ -378,12 +402,6 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
                         }
                         if( airCraft.location.x < -world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.x < 0 ){
                             d.x = 0;
-                        }
-                        if( airCraft.location.y > 320 && d.y > 0 ){
-                            d.y = 0;
-                        }
-                        if( airCraft.location.y < -64 && d.y < 0 ){
-                            d.y = 0;
                         }
                         if( airCraft.location.z > world.getDynamicProperty(`gvcv5:worldLimitO`)/2 && d.z > 0 ){
                             d.z = 0;
@@ -414,16 +432,78 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
                         }
 
                     }
+                    airCraft.clearVelocity();
+					airCraft.setRotation({ x:Math.asin(d.y) * 180 / Math.PI ,y:-180 * Math.atan2(d.x,d.z) / Math.PI });
+					airCraft.setProperty(`zex:rotatey`,Math.asin(d.y) * 180 / Math.PI);
+					//print(`${Math.asin(d.y) * 180 / Math.PI}`)
+					// w key to accelerate
+					// if( world.scoreboard.getObjective(`ak12`).getScore(airCraft) < 0 && !airCraft.hasTag(`BoostCoolTime`) ){
+					// 	airCraft.addTag(`BoostCoolTime`);
+					// }
+
+
+					// if( player.inputInfo.getMovementVector().y > 0 && !airCraft.hasTag(`BoostCoolTime`) ){
+					// 	abs_v += player.inputInfo.getMovementVector().y * 0.1;
+					// 	world.scoreboard.getObjective(`ak12`).addScore(airCraft,-5);
+					// 	if( abs_v > maxSpeed *  2 ){
+					// 		abs_v = maxSpeed * 2;
+					// 	}
+					// }
+					// // s key to decelerate
+					// else if( player.inputInfo.getMovementVector().y < 0 && !airCraft.hasTag(`BoostCoolTime`) ){
+					// 	abs_v += player.inputInfo.getMovementVector().y * 0.1;
+					// 	world.scoreboard.getObjective(`ak12`).addScore(airCraft,-5);
+					// 	if( abs_v < 0.1 ){
+					// 		abs_v = 0.1;
+					// 	}
+					// }
+					// else{
+					// 	if( world.scoreboard.getObjective(`ak12`).getScore(airCraft) < 100 ){
+					// 		world.scoreboard.getObjective(`ak12`).addScore(airCraft,1);
+					// 	}
+					// 	if( world.scoreboard.getObjective(`ak12`).getScore(airCraft) == 100 ){
+					// 		airCraft.removeTag(`BoostCoolTime`);
+					// 	}
+					// }
+					if( airCraft.location.y > 315 && d.y > 0 ){
+						d.y = 0;
+					}
+					if( airCraft.location.y < -64 && d.y < 0 ){
+						d.y = 0;
+					}
                     airCraft.applyImpulse({x:d.x*abs_v,y:d.y*abs_v,z:d.z*abs_v});
+					airCraft.setDynamicProperty(`preV`,d);
 					player.runCommand(`scriptevent zex:playerVreload`);
+					// let BoostCoolTime = `${Math.floor(world.scoreboard.getObjective(`ak12`).getScore(airCraft)/20)}`
+					// if( airCraft.hasTag(`BoostCoolTime`) ){
+					// 	BoostCoolTime = `§cCOOL:${100-world.scoreboard.getObjective(`ak12`).getScore(airCraft)}`
+					// }
+					const particleLocation = {
+						x: airCraft.location.x - d.x * abs_v * 6,
+						y: airCraft.location.y + 3 - d.y * abs_v * 6,
+						z: airCraft.location.z - d.z * abs_v * 6
+					}
+					//print(`${airCraft.location.x} ${particleLocation.x}`)
+					airCraft.dimension.spawnParticle(`zex:${getTeam(player).replace(`team`,``)}_strike`,particleLocation);
+
                     player.runCommand(`
                         titleraw @s[tag=!reload,tag=!down] 
-                        actionbar {"rawtext":[${airCraftlader(player)},
+                        actionbar {"rawtext":[${airCraftlader(player,-180 * Math.atan2(d.x,d.z) / Math.PI)},
+						{"text":"§f§rzex.gvc.vV:${Math.floor(Math.asin(d.y) * 180 / Math.PI)}\n"},
                         {"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
-                        {"text":"HP: ${vehicleHp(HP,HPMax)}"},
+						{"text":"HP: ${vehicleHp(HP,HPMax)}"},
                         ${Weapon(player,airCraft,selectedItemSlot)}
                         ]}
                     `);
+					try{
+						const particleLocation = {
+							x: airCraft.location.x - d.x * abs_v * 6,
+							y: airCraft.location.y + 3 - d.y * abs_v * 6,
+							z: airCraft.location.z - d.z * abs_v * 6
+						}
+						//print(`${airCraft.location.x} ${particleLocation.x}`)
+						airCraft.dimension.spawnParticle(`zex:${getTeam(player).replace(`team`,``)}_strike`,particleLocation);
+					}catch{}
                 }
             }
 		}
@@ -538,6 +618,12 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 	else if( e.id == "zex:vstart"){
 		const entity = e.sourceEntity;
 		const vehicle = entity.getComponent(EntityComponentTypes.Riding).entityRidingOn;
+		if( getTeam(vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0]) != getTeam(entity) ){
+			entity.runCommand(`ride @s stop_riding`);
+			return;
+		}
+
+
 		if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`plate`) ){
 			entity.addEffect(`resistance`,9999999,{ amplifier:255,showParticles:false });
 		}
@@ -554,6 +640,17 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 					entity.inputPermissions.setPermissionCategory(InputPermissionCategory.MoveLeft,false);
 					entity.inputPermissions.setPermissionCategory(InputPermissionCategory.MoveRight,false);
 				}
+				if( world.getDynamicProperty("gvcv5:vehicleCoolTime")  ){
+					if( world.scoreboard.getObjective(`vehicle_cool`).getScore(entity) > 0 ){
+						entity.runCommand(`ride @s stop_riding`);
+						entity.sendMessage({ rawtext:[ { translate: `script.gvcv5.vehiclecool1.name` },{ text: `${Math.floor(world.scoreboard.getObjective(`vehicle_cool`).getScore(entity)/20)}` },{ translate: `script.gvcv5.vehiclecool2.name` } ] })
+						return;
+					}
+					else{
+						const CoolTime = vehicleData[`${vehicle.typeId.split(`:`)[1]}`][`coolTime`];
+						entity.setDynamicProperty(`CoolTime`,CoolTime);
+					}
+				}
 			}
 
 			else{
@@ -561,6 +658,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				entity.addTag(`ride`);
 			}
 		}
+
 	}
 	else if( e.id == "zex:vend"){
 		const entity = e.sourceEntity;
@@ -574,14 +672,20 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			entity.triggerEvent(`gvcv5:set_have_gun_nt`);
 			entity.removeTag(`ride`);
 		}
+			//print(`${entity.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Chest).hasItem()}`)
 
 		if( entity.hasTag(`air`) ){
+			//print(`${entity.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Chest).hasItem()}`)
 			try{
-				if(entity.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Chest).getItem() == undefined){
+				if(entity.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Chest).hasItem() == false){
 					const para = new ItemStack(`gvcv5:parachute`,1);
 					entity.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Chest).setItem(para);
 				}
 			}catch{}
+		}
+
+		if( world.getDynamicProperty("gvcv5:vehicleCoolTime") && entity.typeId == `minecraft:player`&& world.scoreboard.getObjective(`vehicle_cool`).getScore(entity) <= 0  ){
+			world.scoreboard.getObjective(`vehicle_cool`).setScore(entity,entity.getDynamicProperty(`CoolTime`)*20)
 		}
 
 
@@ -594,7 +698,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		if( player.typeId == "minecraft:player" ){
 			const selectedItemSlot = player.selectedSlotIndex;
 			const attack = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`gattack`];
-			const V = vehicle.dimension.getEntities({maxDistance:3,location:vehicle.location,excludeTypes:tankImmuneEntities,excludeNames:[`${player.nameTag}`],excludeFamilies:[`bullet`,`vehicle`]});
+			const V = vehicle.dimension.getEntities({maxDistance:3,location:vehicle.location,excludeTypes:tankImmuneEntities,excludeNames:[`${player.nameTag}`],excludeFamilies:[`bullet`,`vehicle`,`${getTeam(player)}`]});
 			if( V.length > 0 ){
 				for( let vict of V ){
 					vict.applyDamage(attack,{damagingEntity:player,cause:EntityDamageCause.entityAttack});
@@ -631,6 +735,12 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			const selectedItemSlot = player.selectedSlotIndex;
 			const attack = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`gattack`];
 			const turnRad = Number(vehicleData[`${vehicle.typeId.replace("vehicle:","")}`]["turn"]);
+			const V = vehicle.dimension.getEntities({maxDistance:5,location:vehicle.location,excludeTypes:tankImmuneEntities,excludeNames:[`${player.nameTag}`],excludeFamilies:[`bullet`,`vehicle`,`${getTeam(player)}`]});
+			if( V.length > 0 ){
+				for( let vict of V ){
+					vict.applyDamage(attack,{damagingEntity:player,cause:EntityDamageCause.entityAttack});
+				}
+			}
 			
 			//print(`jdt:${this_v} d.y:${d.y} v_dt:${v_dt}`); 
 			//print(`${vehicle.dimension.getBlock({ x:vehicle.location.x,y:vehicle.location.y-1,z:vehicle.location.z }).typeId}`)
@@ -777,7 +887,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			player.runCommand(`scriptevent zex:playerVreload`);
 			player.runCommand(`
 				titleraw @s[tag=!reload,tag=!down] 
-				actionbar {"rawtext":[${airCraftlader(player)},
+				actionbar {"rawtext":[${airCraftlader(player,vehicle.getRotation().y)},
 				{"text":"§f§rzex.gvc.v${Math.round(abs_v*20*100)/100}m/s\n"},
 				{"text":"HP: ${vehicleHp(HP,HPMax)}"},
 				${Weapon(player,vehicle,selectedItemSlot)}

@@ -15,7 +15,7 @@
               "mtype": "query.is_riding && (variable.attack_time > 0.0)"
             },
             {
-              "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:tank') && query.is_using_item"
+              "mgg_1": "query.is_riding && query.is_item_name_any('slot.weapon.mainhand', 0, 'gun:mgg') && query.is_using_item"
             },
             {
               "mgj_1": "query.is_riding && query.is_jumping && query.get_equipped_item_name != 'mgg'"

@@ -25,6 +25,15 @@
             255
           ],
           "default": 1
+        },
+        "zex:rotatey": {
+          "client_sync": true,
+          "type": "float",
+          "range": [
+            -90.0,
+            90.0
+          ],
+          "default": 0.0
         }
       }
     },
@@ -47,7 +56,7 @@
               2.5,
               0
             ],
-            "third_person_camera_radius": 24
+            "third_person_camera_radius": 28
           }
         },
         "minecraft:interact": {
@@ -151,7 +160,7 @@
             2.5,
             0
           ],
-          "third_person_camera_radius": 24
+          "third_person_camera_radius": 28
         }
       },
       "minecraft:type_family": {
@@ -274,7 +283,7 @@
         "value": 1.0
       },
       "minecraft:movement": {
-        "value": 2.0
+        "value": 2.5
       },
       "minecraft:knockback_resistance": {
         "value": 1.0
@@ -300,6 +309,20 @@
           {
             "cause": "fall",
             "deals_damage": false
+          },
+          {
+            "cause": "all",
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding_self",
+                    "value": true
+                  }
+                ]
+              }
+            }
           }
         ]
       },

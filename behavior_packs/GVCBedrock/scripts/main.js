@@ -603,6 +603,17 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		let damageType = gunData[`${gunName}`][`damageType`];
 		let damageIgnoreDef = gunData[`${gunName}`][`damageIgnoreDef`];
 		const equipmentComp = vict.getComponent(EntityComponentTypes.Equippable)
+		try{
+			if( owner && owner.getComponent(EntityComponentTypes.Riding).isValid ){
+				if(owner.getComponent(EntityComponentTypes.Riding).entityRidingOn != undefined){
+					if(  owner.getComponent(EntityComponentTypes.Riding).entityRidingOn.id == vict.id  ){
+												return;
+					}
+				}
+
+			}
+
+		}catch{}
 
 		if(  owner.getProperty(`zex:bullet`) == 2  ){
 			damageType = EntityDamageCause.entityExplosion;
@@ -740,6 +751,8 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 		if( damageType == EntityDamageCause.entityExplosion || damageIgnoreDef >= 1 ){
 			e.source.dimension.spawnEntity(e.projectile.typeId,vict.location,{ spawnEvent:`minecraft:explode` });
 		}
+		e.source.dimension.spawnEntity(e.projectile.typeId,vict.location,{ spawnEvent:`minecraft:explode` });
+			e.projectile.remove();
 			
 		
 
@@ -781,6 +794,9 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 			projectile.dimension.createExplosion(projectile.location,2,{ source:owner,breaksBlocks:false })
 			//vict.addEffect("fatal_poison", 100,{ amplifier: 1 });
 		}
+	}
+	else if( projectile.typeId.includes("missile")){
+		projectile.remove()
 	}
 })
 
@@ -1795,6 +1811,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			form.textField(`World Limit N`,`${world.getDynamicProperty(`gvcv5:worldLimitN`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:worldLimitN`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:worldLimitN`)}`});
 			form.textField(`World Limit E`,`${world.getDynamicProperty(`gvcv5:worldLimitE`)}`, {defaultValue: `${world.getDynamicProperty(`gvcv5:worldLimitE`)}`,tooltip:`Current is ${world.getDynamicProperty(`gvcv5:worldLimitE`)}`});
 			form.toggle(`Disable AirCraft With Item`, {defaultValue: world.getDynamicProperty(`gvcv5:airCraftWithItem`),tooltip:`Disable AirCraft With Item`});
+			form.toggle(`vehicle Cool Time`, {defaultValue: world.getDynamicProperty(`gvcv5:vehicleCoolTime`),tooltip:`vehicle Cool Time`});
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
 					if( world.getDynamicProperty(`gvcv5:worldLimit`) != Boolean(result.formValues[0]) ){
@@ -1813,9 +1830,13 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 						world.setDynamicProperty(`gvcv5:worldLimitE`,Number(result.formValues[3]));
 						world.sendMessage(`World Limit E is now ${result.formValues[3]}`);
 					}
-					if( world.getDynamicProperty(`gvcv5:airCraftWithItem`) != Boolean(result.formValues[0]) ){
-						world.setDynamicProperty(`gvcv5:airCraftWithItem`,Boolean(result.formValues[0]));
-						world.sendMessage(`Disable AirCraft With Item is now ${result.formValues[0]}`);
+					if( world.getDynamicProperty(`gvcv5:airCraftWithItem`) != Boolean(result.formValues[4]) ){
+						world.setDynamicProperty(`gvcv5:airCraftWithItem`,Boolean(result.formValues[4]));
+						world.sendMessage(`Disable AirCraft With Item is now ${result.formValues[4]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:vehicleCoolTime`) != Boolean(result.formValues[5]) ){
+						world.setDynamicProperty(`gvcv5:vehicleCoolTime`,Boolean(result.formValues[5]));
+						world.sendMessage(`vehicle Cool Time is now ${result.formValues[5]}`);
 					}
 				}
 			} )

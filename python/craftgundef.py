@@ -627,6 +627,8 @@ for row in csv_reader:
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["offset"] = [ -0.4,-0.4,0 ]
                 gun_entity["minecraft:entity"]["components"]["minecraft:movement"]["value"] = gun_power * 0.2
+                if( "Fs" not in gun_special ):
+                    gun_entity["minecraft:entity"]["components"]["minecraft:despawn"] =  { "despawn_from_distance": {} }
     
                 if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
                 gun_entity["minecraft:entity"]["events"] = {}
@@ -647,6 +649,8 @@ for row in csv_reader:
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                if( "Fs" in gun_special ): 
+                    del gun_entity["minecraft:entity"]["components"]["minecraft:despawn"]
                 # if(gun_ammo == "zex:556m"):
                 #     gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0.01
                 # elif(gun_ammo == "zex:762m"):
@@ -1258,6 +1262,8 @@ for row in csv_reader2:
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["power"] = gun_power * 0.2
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["uncertainty_base"] = gun_aim * 5
                 gun_entity["minecraft:entity"]["components"]["minecraft:projectile"]["gravity"] = 0
+                if( "Fs" in gun_offset ): 
+                    del gun_entity["minecraft:entity"]["components"]["minecraft:despawn"]
                 if gun_sound != "": gun_entity["minecraft:entity"]["components"]["minecraft:type_family"]["family"].append(gun_sound)
                 gun_entity["minecraft:entity"]["events"] = {}
                 gun_entity["minecraft:entity"]["events"]["minecraft:explode"] = { "add": { "component_groups": ["minecraft:exploding"] } }

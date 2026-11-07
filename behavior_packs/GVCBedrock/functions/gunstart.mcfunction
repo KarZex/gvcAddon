@@ -24,6 +24,8 @@ scoreboard objectives add maxsubcool dummy
 scoreboard objectives add printDamage dummy
 scoreboard objectives add damaging dummy
 
+scoreboard objectives add vehicle_cool dummy
+
 scoreboard objectives add DeathTime dummy
 scoreboard objectives add rise dummy
 scoreboard objectives add out dummy

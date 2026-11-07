@@ -10,7 +10,9 @@ execute as @a[tag=onDeath] run function death
 execute as @a run scriptevent zex:chkattack
 execute as @a run scriptevent zex:playerNoRide
 scoreboard players remove @e[scores={maxsubcool=1..}] maxsubcool 1
+scoreboard players remove @e[scores={vehicle_cool=1..}] vehicle_cool 1
 execute at @e[type=fire:flare] run kill @e[r=60,type=fire:aamissile]
+execute at @e[type=fire:flare] run kill @e[r=60,type=fire:aammissile]
 
 execute if score Prepare ALLFlags matches 1.. run scoreboard players remove Prepare ALLFlags 1
 execute if score Battle ALLFlags matches -99.. run function battle
