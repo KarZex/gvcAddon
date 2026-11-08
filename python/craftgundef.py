@@ -22,6 +22,13 @@ ga_json = json.load(open("tool/ga.json","r"))
 ca_json = json.load(open("tool/ca.json","r"))
 pmc_json = json.load(open("tool/pmc.json","r"))
 
+gunguide_json = {
+    "gun_types":{
+
+    }
+}
+
+
 #aasdasd
 for row in csv_reader:
 
@@ -63,6 +70,13 @@ for row in csv_reader:
             gun_break_block = True
         else:
             gun_break_block = False
+
+        gun_type = row[25]
+        if( not f"{gun_type}" in gunguide_json["gun_types"]  ):
+            gunguide_json["gun_types"][f"{gun_type}"] = [ f"{gun_id}" ]
+        else:
+            gunguide_json["gun_types"][f"{gun_type}"].append(f"{gun_id}")
+
 
 
         if(gun_ammo == "zex:556m"):
@@ -161,6 +175,26 @@ for row in csv_reader:
                 "bullet": "{}".format(gun_ammo),
                 "damageType": "{}".format(gun_damage_type) 
             }
+
+        
+
+            
+        gunguide_json["{}".format(gun_id)] = { 
+            "damage": gun_damage,
+            "damageIgnoreDef":gun_ignore,
+            "interval":gun_interval,
+            "bomb":gun_bomb,
+            "aim":gun_aim,
+            "shotgun":gun_bullet_num,
+            "fullauto":gun_fullauto,
+            "recoil":gun_recoil,
+            "slowness": gun_slow,
+            "speed": gun_power * 0.2,
+            "maxGunAmmo": gun_maxammo,
+            "reloadTime": gun_reload,
+            "bullet": "{}".format(gun_ammo),
+            "damageType": "{}".format(gun_damage_type) 
+        }
 
         #player
         spawn_entity = { 
@@ -1481,8 +1515,18 @@ with open("behavior_packs/GVCBedrock/scripts/gun.json","r") as f:
 with open("behavior_packs/GVCBedrock/scripts/guns.js","w") as f:
     f.write(export)
 
+#gunguide_json
 
+with open("behavior_packs/GVCBedrock/scripts/gunguide.json","w") as f:
+    json.dump(gunguide_json,f,indent=2)
 
+with open("behavior_packs/GVCBedrock/scripts/gunguide.json","r") as f:
+    export = "import { EntityDamageCause } from \"@minecraft/server\";\nexport const gunGuide = " 
+    export += f.read()
+    export += ";"
+    
+with open("behavior_packs/GVCBedrock/scripts/gunguide.js","w") as f:
+    f.write(export)
 
 a_func += "tag @a[tag=!startedv5] add startedv5\n"
 with open("behavior_packs/GVCBedrock/functions/gunstart.mcfunction","w") as f:

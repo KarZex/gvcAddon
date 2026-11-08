@@ -1287,23 +1287,44 @@ script.gvcv5.phone_progress_5_sub.name=ゲリラが潜んでいる大規模拠�
 script.gvcv5.vehiclecool1.name=乗り物のクールタイム 残り
 script.gvcv5.vehiclecool2.name=秒
 
-script.gvcv5:gun_type.hg.name=ハンドガン
+
+
+
+script.gvcv5:gun_type.sg.name=ショットガン
 script.gvcv5:gun_type.ar.name=アサルトライフル
 script.gvcv5:gun_type.sr.name=スナイパーライフル
-script.gvcv5:gun_type.mr.name=マークスマンライフル
-script.gvcv5:gun_type.sg.name=ショットガン
-script.gvcv5:gun_type.smg.name=サブマシンガン
+script.gvcv5:gun_type.ms.name=マークスマンライフル
 script.gvcv5:gun_type.lmg.name=ライトマシンガン
+script.gvcv5:gun_type.gre.name=グレネードランチャー
+script.gvcv5:gun_type.at.name=対物
+script.gvcv5:gun_type.hg.name=ハンドガン
+script.gvcv5:gun_type.smg.name=サブマシンガン
 script.gvcv5:gun_type.rpg.name=ロケットランチャー
-script.gvcv5:gun_type.antitank.name=対物ライフル
-script.gvcv5:gun_type.missile.name=ミサイル
+
+script.gvcv5:gun_spec.damage.name=基本ダメージ:
+script.gvcv5:gun_spec.basedps.name=基本DPS:
+script.gvcv5:gun_spec.interval.name=発射間隔(Ticks):
+script.gvcv5:gun_spec.bomb.name=着弾時の爆発力:
+script.gvcv5:gun_spec.damageIgnoreDef.name=貫徹値:
+script.gvcv5:gun_spec.recoil.name=反動:
+script.gvcv5:gun_spec.slowness.name=移動速度低下:
+script.gvcv5:gun_spec.speed.name=弾速:
+script.gvcv5:gun_spec.maxGunAmmo.name=マガジン弾数:
+script.gvcv5:gun_spec.aim.name=腰撃ち時精度:
+script.gvcv5:gun_spec.reloadTime.name=リロード時間(Ticks):
+script.gvcv5:gun_spec.bullet.name=使用弾薬:
+script.gvcv5:gun_spec.damageType.name=無敵時間無視:
+script.gvcv5:gun_spec.fullauto.name=フルオート可能:
+script.gvcv5:gun_spec.desc.name=説明:
+script.gvcv5:gun_spec.get.name=入手方法:
 
 
 script.gvcv5:vehicle_type.gun.name=固定機銃
 script.gvcv5:vehicle_type.artillery.name=野戦砲
 script.gvcv5:vehicle_type.artillery_aa.name=対空砲
-script.gvcv5:vehicle_type..name=
+script.gvcv5:vehicle_type..name=a
 script.gvcv5:vehicle_type.light_tank.name=軽戦車
 script.gvcv5:vehicle_type.medium_tank.name=中戦車
 script.gvcv5:vehicle_type.heavy_tank.name=重戦車
 script.gvcv5:vehicle_type.mbt.name=主力戦車
+

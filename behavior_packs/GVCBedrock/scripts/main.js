@@ -8,8 +8,9 @@ import { absVector3,getTeam,getVector3E,isMoving,turning2, Vector3Add } from "./
 import "./compornents";
 import "./vehicleMain";
 import "./team";
-import "./enemy"
+import "./enemy";
 import "./teamCompornents";
+import "./guide";
 import { attachmentData } from "./attach";
 /*
 world.afterEvents.entityHurt.subscribe( e => {
