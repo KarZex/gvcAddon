@@ -8,10 +8,12 @@
       "is_summonable": true,
       "scripts": {
         "animate": [
+          "targeting",
           "walk"
         ]
       },
       "animations": {
+        "targeting": "controller.animation.targeting",
         "walk": "controller.animation.riderb1"
       },
       "properties": {
@@ -241,6 +243,120 @@
         },
         "minecraft:shooter": {
           "def": "fire:hauneb"
+        }
+      },
+      "hamina_sub": {
+        "minecraft:type_family": {
+          "family": [
+            "pmc",
+            "player",
+            "greenteam",
+            "allied_soldier",
+            "mob"
+          ]
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "greenteam"
+                  },
+                  {
+                    "test": "has_tag",
+                    "operator": "!=",
+                    "subject": "other",
+                    "value": "greenSub"
+                  }
+                ]
+              },
+              "max_dist": 160
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "allied_soldier"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "greenteam"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "noteam"
+                  }
+                ]
+              },
+              "max_dist": 160
+            },
+            {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "monster"
+                  }
+                ]
+              },
+              "max_dist": 160
+            }
+          ]
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "burst_shots": 100,
+          "burst_interval": 0.2,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.0,
+          "attack_interval_min": 1,
+          "attack_interval_max": 1,
+          "attack_radius": 125.0
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "despawning"
+            }
+          ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:shooter": {
+          "def": "fire:25mmmc"
         }
       },
       "aa12": {
@@ -4047,6 +4163,13 @@
         "queue_command": {
           "command": [
             "effect @s invisibility 99999 1 true"
+          ]
+        }
+      },
+      "hamina_sub": {
+        "add": {
+          "component_groups": [
+            "hamina_sub"
           ]
         }
       },

@@ -1286,3 +1286,24 @@ script.gvcv5.phone_progress_5_sub.name=ゲリラが潜んでいる大規模拠�
 
 script.gvcv5.vehiclecool1.name=乗り物のクールタイム 残り
 script.gvcv5.vehiclecool2.name=秒
+
+script.gvcv5:gun_type.hg.name=ハンドガン
+script.gvcv5:gun_type.ar.name=アサルトライフル
+script.gvcv5:gun_type.sr.name=スナイパーライフル
+script.gvcv5:gun_type.mr.name=マークスマンライフル
+script.gvcv5:gun_type.sg.name=ショットガン
+script.gvcv5:gun_type.smg.name=サブマシンガン
+script.gvcv5:gun_type.lmg.name=ライトマシンガン
+script.gvcv5:gun_type.rpg.name=ロケットランチャー
+script.gvcv5:gun_type.antitank.name=対物ライフル
+script.gvcv5:gun_type.missile.name=ミサイル
+
+
+script.gvcv5:vehicle_type.gun.name=固定機銃
+script.gvcv5:vehicle_type.artillery.name=野戦砲
+script.gvcv5:vehicle_type.artillery_aa.name=対空砲
+script.gvcv5:vehicle_type..name=
+script.gvcv5:vehicle_type.light_tank.name=軽戦車
+script.gvcv5:vehicle_type.medium_tank.name=中戦車
+script.gvcv5:vehicle_type.heavy_tank.name=重戦車
+script.gvcv5:vehicle_type.mbt.name=主力戦車

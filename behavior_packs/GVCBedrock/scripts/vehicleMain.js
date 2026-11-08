@@ -289,63 +289,18 @@ system.runInterval( () => {
 	}
 },16)
 system.runInterval( () => {
-	const overAirs = world.getDimension(`minecraft:overworld`).getEntities({families:[`air`]});
-	const netherAirs = world.getDimension(`minecraft:nether`).getEntities({families:[`air`]});
-	const endAirs = world.getDimension(`minecraft:the_end`).getEntities({families:[`air`]});
-	for( let t of overAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
-			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.air`,t.location,{ volume:3 })
+	const playerRiders = world.getAllPlayers();
+	for( const player of  playerRiders ){
+		if( player.getComponent(EntityComponentTypes.Riding) == undefined ){ continue; }
+		const R = player.getComponent(EntityComponentTypes.Riding).entityRidingOn;
+		if( R.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`heri`) && isMoving(R) ){
+			player.playSound(`sound.gvcv5.heri`,{ volume:3 })
 		}
-	}
-	for( let t of netherAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0  ){
-			world.getDimension(`minecraft:nether`).playSound(`sound.gvcv5.air`,t.location,{ volume:3 })
+		else if( R.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`air`) && isMoving(R) ){
+			player.playSound(`sound.gvcv5.air`,{ volume:3 })
 		}
-	}
-	for( let t of endAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0  ){
-			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.air`,t.location,{ volume:3 })
-		}
-	}
-},5)
-system.runInterval( () => {
-	const overAirs = world.getDimension(`minecraft:overworld`).getEntities({families:[`heri`]});
-	const netherAirs = world.getDimension(`minecraft:nether`).getEntities({families:[`heri`]});
-	const endAirs = world.getDimension(`minecraft:the_end`).getEntities({families:[`heri`]});
-	for( let t of overAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
-			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.heri`,t.location,{ volume:3 })
-		}
-	}
-	for( let t of netherAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0  ){
-			world.getDimension(`minecraft:nether`).playSound(`sound.gvcv5.heri`,t.location,{ volume:3 })
-		}
-	}
-	for( let t of endAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
-			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.heri`,t.location,{ volume:3 })
-		}
-	}
-},5)
-
-system.runInterval( () => {
-	const overAirs = world.getDimension(`minecraft:overworld`).getEntities({families:[`ship`]});
-	const netherAirs = world.getDimension(`minecraft:nether`).getEntities({families:[`ship`]});
-	const endAirs = world.getDimension(`minecraft:the_end`).getEntities({families:[`ship`]});
-	for( let t of overAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
-			world.getDimension(`minecraft:overworld`).playSound(`sound.gvcv5.car`,t.location,{ volume:3 })
-		}
-	}
-	for( let t of netherAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0  ){
-			world.getDimension(`minecraft:nether`).playSound(`sound.gvcv5.car`,t.location,{ volume:3 })
-		}
-	}
-	for( let t of endAirs ){
-		if( t.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
-			world.getDimension(`minecraft:the_end`).playSound(`sound.gvcv5.car`,t.location,{ volume:3 })
+		else if( R.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`ship`) && isMoving(R) ){
+			player.playSound(`sound.gvcv5.car`,{ volume:3 })
 		}
 	}
 },5)
@@ -628,6 +583,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			entity.addEffect(`resistance`,9999999,{ amplifier:255,showParticles:false });
 		}
 
+
 		if( entity.id == vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0].id ){
 			
 			if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`TofAA`) ){
@@ -636,6 +592,24 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 
 			if( entity.typeId == `minecraft:player` ){
 				entity.addTag(`isRiding`);
+				if( vehicle.typeId == `vehicle:hamina` && entity.id == vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0].id ){
+					for( let i = 0; i < 2; i++ ){
+						let riding
+						if( getTeam(entity) != "noteam" ){
+							riding = entity.dimension.spawnEntity(`gvcv5:pmc_${getTeam(entity).replace(`team`,``)}`,entity.location,{ spawnEvent:`hamina_sub` })
+							riding.addEffect(`resistance`,9999999,{ amplifier:255,showParticles:false });
+						}
+						else{
+							riding = entity.dimension.spawnEntity(`gvcv5:pmc`,entity.location,{ spawnEvent:`hamina_sub` })
+							riding.addEffect(`resistance`,9999999,{ amplifier:255,showParticles:false });
+						}
+						riding.addTag(`${entity.id}_hamina_gunner`);
+						riding.triggerEvent(`hamina_sub`);
+						vehicle.getComponent(EntityComponentTypes.Rideable).addRider(riding);
+						riding.triggerEvent(`hamina_sub`);
+					}
+					entity.setDynamicProperty(`hamina`,vehicle.id)
+				}
 				if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`tank`) ){
 					entity.inputPermissions.setPermissionCategory(InputPermissionCategory.MoveLeft,false);
 					entity.inputPermissions.setPermissionCategory(InputPermissionCategory.MoveRight,false);
@@ -667,6 +641,13 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			entity.removeTag(`isRiding`);
 			entity.inputPermissions.setPermissionCategory(InputPermissionCategory.MoveLeft,true);
 			entity.inputPermissions.setPermissionCategory(InputPermissionCategory.MoveRight,true);
+			if( entity.getDynamicProperty(`hamina`) != undefined ){
+				const riders = entity.dimension.getEntities({tags:[`${entity.id}_hamina_gunner`]});
+				for( const rider of riders ){
+					rider.remove()
+				}
+				entity.setDynamicProperty(`hamina`,undefined)
+			}
 		}
 		else{
 			entity.triggerEvent(`gvcv5:set_have_gun_nt`);
@@ -788,6 +769,25 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		else if( player.hasTag(`cantriding`) && vehicle.hasTag(`is_enemy`) ){
 			vehicle.remove();
 			player.removeTag(`cantriding`);
+		}
+		else if( player.typeId != "minecraft:player" ){
+			if( player.hasTag(`has_target`) ){
+				let Vi = 1;
+				const speed = vehicle.getComponent(EntityComponentTypes.Movement).defaultValue;
+				vehicle.setRotation({ x:0,y:player.getRotation().y - 90 })
+				//print(`${player.getRotation().y}`)
+				const r = player.getRotation().y + 90;
+				if( absVector3(vehicle.getVelocity()) < speed / 10 ){
+					player.setRotation({ x:0,y:player.getRotation().y - 30 })
+				}
+				vehicle.clearVelocity();
+				vehicle.applyImpulse({
+					x: Math.cos(r*Math.PI/180) * Vi * speed,
+					y:0,
+					z: Math.sin(r*Math.PI/180) * Vi * speed
+				})
+			}
+
 		}
 	}
 	else if( e.id == "zex:vheri"){

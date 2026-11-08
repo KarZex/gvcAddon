@@ -24,7 +24,7 @@
             0,
             255
           ],
-          "default": 3
+          "default": 2
         }
       }
     },
@@ -338,8 +338,8 @@
         "track_target": true
       },
       "minecraft:health": {
-        "value": 800,
-        "max": 800
+        "value": 400,
+        "max": 400
       },
       "minecraft:scale": {
         "value": 1.0

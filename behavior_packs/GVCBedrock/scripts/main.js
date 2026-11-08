@@ -796,7 +796,7 @@ world.afterEvents.projectileHitBlock.subscribe( e => {
 		}
 	}
 	else if( projectile.typeId.includes("missile")){
-		projectile.remove()
+		projectile.triggerEvent(`minecraft:explode`)
 	}
 })
 
@@ -896,30 +896,28 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 	else if( e.id == "zex:mamissile"){
 		const missile = e.sourceEntity;
 		const player = missile.getComponent("projectile").owner;
-		const V_m = missile.getVelocity();
-		const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
 		const V = player.getViewDirection();
-		missile.clearVelocity();
-		//const E = player.getEntitiesFromViewDirection({ ignoreBlockCollision:false,includePassableBlocks:false,includeLiquidBlocks:true  });
 		const P0 = missile.location;
 		let Pi = missile.location;
-		// const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
-		// const excludeList = [ "player","playerp","mod","mob" ];
-		// const allies = intFamily.filter(char => !excludeList.includes(char));
-		// for( const et of E ){
-		// 	if( et.entity.getComponent(EntityComponentTypes.Rideable) != undefined ){
-		// 		if( et.entity.getComponent(EntityComponentTypes.Rideable).getRiders() > 0 ){
-		// 			if( et.entity.getComponent(EntityComponentTypes.Rideable).getRiders()[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().some( v => allies.includes(v) ) ){
-		// 				E.push(et);
-		// 			}
-		// 		}
-		// 	}
-		// }
+		missile.clearVelocity();
 		if( missile.getDynamicProperty(`age`) == undefined ){
 			missile.setDynamicProperty(`age`,0);
 		}
 		else if( missile.getDynamicProperty(`age`) <= 20 ){
 			missile.setDynamicProperty(`age`,1+missile.getDynamicProperty(`age`));
+			const E = player.getEntitiesFromViewDirection({ ignoreBlockCollision:false,includePassableBlocks:false,includeLiquidBlocks:true  });
+			for( const et of E ){
+				if( et.entity.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`vehicle`) ){
+					if( et.entity.getComponent(EntityComponentTypes.Rideable).getRiders().length > 0 ){
+						if( getTeam(et.entity.getComponent(EntityComponentTypes.Rideable).getRiders()[0]) != getTeam(player) ){
+							missile.setDynamicProperty(`gvcv5:target`,et.entity.id)
+						}
+					}
+				}
+				else{
+					continue;
+				}
+			}
 		}
 		const age = missile.getDynamicProperty(`age`);
 		// if( E.length > 0 ){
@@ -929,6 +927,12 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		// else{
 			if( player.getDynamicProperty(`gvcv5:missilelocation`) != undefined ){
 				Pi = player.getDynamicProperty(`gvcv5:missilelocation`);
+			}
+			else if( missile.getDynamicProperty(`gvcv5:target`) != undefined ){
+				if( world.getEntity(missile.getDynamicProperty(`gvcv5:target`)) == undefined ){
+					missile.remove();
+				}
+				Pi = world.getEntity(missile.getDynamicProperty(`gvcv5:target`)).location;
 			}
 			else if( player.typeId == "minecraft:player" ){
 				const B = player.getBlockFromViewDirection( );

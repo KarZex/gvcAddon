@@ -110,6 +110,14 @@
 				"sounds/fire_cannon"
 			]
 		},
+		"fire.rifle3": {
+			"category": "player",
+			"max_distance": 64,
+			"min_distance": 32,
+			"sounds": [
+				"sounds/fire_rifle3"
+			]
+		},
 		"fire.hmg": {
 			"category": "player",
 			"max_distance": 64,

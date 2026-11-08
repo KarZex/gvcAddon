@@ -33,6 +33,26 @@
         }
       }
     },
+    "controller.animation.targeting": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "target": "query.has_target" }
+          ]
+        },
+        "target": {
+          "on_entry": [
+            "/tag @s add has_target"
+          ],
+          "on_exit": [
+            "/tag @s remove has_target"
+          ],
+          "transitions": [
+            {"default":"!query.has_target"}
+          ]
+        }
+      }
+    },
     "controller.animation.riderunks": {
       "states": {
         "default": {

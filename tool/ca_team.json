@@ -9,11 +9,13 @@
             "scripts": {
                 "animate": [
                     "walk",
+                    "targeting",
                     "para"
                 ]
             },
             "animations": {
                 "walk": "controller.animation.riderb1",
+                "targeting": "controller.animation.targeting",
                 "para": "controller.animation.para"
             },
             "properties": {
@@ -715,6 +717,44 @@
                             "max_dist": 42
                         }
                     ]
+                }
+            },
+            "hamina_main": {
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 3,
+                    "burst_shots": 16,
+                    "burst_interval": 0.1,
+                    "charge_charged_trigger": 0.0,
+                    "charge_shoot_trigger": 0.0,
+                    "attack_interval_min": 0.1,
+                    "attack_interval_max": 0.1,
+                    "attack_radius": 160.0
+                },
+                "minecraft:environment_sensor": {
+                    "triggers": [
+                        {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "is_riding",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "despawning"
+                        }
+                    ]
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "all",
+                            "deals_damage": false
+                        }
+                    ]
+                },
+                "minecraft:shooter": {
+                    "def": "fire:hauneb"
                 }
             }
         },

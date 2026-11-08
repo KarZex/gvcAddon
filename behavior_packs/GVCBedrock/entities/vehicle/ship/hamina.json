@@ -56,7 +56,7 @@
       },
       "gvcv5:vehicle_lock": {
         "minecraft:rideable": {
-          "seat_count": 4,
+          "seat_count": 6,
           "family_types": [
             "player"
           ],
@@ -69,6 +69,20 @@
                 2.5
               ],
               "third_person_camera_radius": 20
+            },
+            {
+              "position": [
+                0,
+                2.4,
+                4.4
+              ]
+            },
+            {
+              "position": [
+                0,
+                1.4,
+                -11.7
+              ]
             },
             {
               "position": [
@@ -182,7 +196,7 @@
         }
       },
       "minecraft:rideable": {
-        "seat_count": 4,
+        "seat_count": 6,
         "family_types": [
           "guerrilla",
           "allied_soldier",
@@ -198,6 +212,20 @@
               2.5
             ],
             "third_person_camera_radius": 20
+          },
+          {
+            "position": [
+              0,
+              2.4,
+              4.4
+            ]
+          },
+          {
+            "position": [
+              0,
+              1.4,
+              -11.7
+            ]
           },
           {
             "position": [

@@ -8,10 +8,12 @@
       "is_summonable": true,
       "scripts": {
         "animate": [
+          "targeting",
           "walk"
         ]
       },
       "animations": {
+        "targeting": "controller.animation.targeting",
         "walk": "controller.animation.riderb1"
       },
       "properties": {

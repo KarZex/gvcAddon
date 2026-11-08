@@ -11,7 +11,7 @@
         "default": "geometry.hamina"
       },
       "animations": {
-        "look_at_target": "animation.shipaim",
+        "look_at_target": "animation.missileshipaim",
 				"fly": "animation.heri.fly3",
 				"fly2": "animation.heri.fly4"
       },
