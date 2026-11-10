@@ -746,6 +746,7 @@ script.gvcv5.howToHeliDesc2.name=Look horizontal and press :_input_key.forward: 
 script.gvcv5.howToHeliDesc3.name=Look down and press :_input_key.forward: to accelerate, :_input_key.back: to decelerate
 script.gvcv5.howToHeliDesc4.name=Strafe with :_input_key.left:, :_input_key.right:
 script.gvcv5.howToHeliDesc5.name=Look up to move backward, look down to move forward
+script.gvcv5.battleInfo.name=Battle info: def is the defense rate; armor and resistance effects increase it, reducing damage taken. Damage is generally "base weapon power × target multiplier × (1 - def)". A headshot lowers def and increases damage, while a shot to the feet raises def and reduces damage. damageIgnoreDef is the penetration value; a vehicle takes no damage if its armor value is higher than this value.
 
 script.gvcv5.howToShip.name=Ship
 script.gvcv5.howToShipDesc0.name=Select armament in the hotbar
@@ -1127,4 +1128,3 @@ script.gvcv5.phone_progress_4_sub.name=Destroy the outdated tanks being used by 
 script.gvcv5.phone_progress_5.name=MISSION6
 script.gvcv5.phone_progress_5_main.name=-Conquer the Large-Scale Base-
 script.gvcv5.phone_progress_5_sub.name=Capture the large base where guerrillas are hiding. Unidentified weapons have been spotted—proceed with caution.
-

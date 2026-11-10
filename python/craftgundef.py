@@ -71,11 +71,18 @@ for row in csv_reader:
         else:
             gun_break_block = False
 
+
         gun_type = row[25]
+        Rare = "common"
+        if( row[23] == "2" ): Rare = "uncommon"
+        if( row[23] == "3" ): Rare = "rare"
+        if( row[23] == "4" ): Rare = "epic"
+        if( row[23] == "5" ): Rare = "legendary"
+        if( row[23] == "6" ): Rare = "mythic"
         if( not f"{gun_type}" in gunguide_json["gun_types"]  ):
-            gunguide_json["gun_types"][f"{gun_type}"] = [ f"{gun_id}" ]
+            gunguide_json["gun_types"][f"{gun_type}"] = [ { "name": gun_id, "rarelity": Rare } ]
         else:
-            gunguide_json["gun_types"][f"{gun_type}"].append(f"{gun_id}")
+            gunguide_json["gun_types"][f"{gun_type}"].append({ "name": gun_id, "rarelity": Rare })
 
 
 

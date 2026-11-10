@@ -694,12 +694,12 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
 		const form = new ActionFormData();
 		form.title(`.debug Home Menu`);
-		form.button(`script.gvcv5.howToGun.name`,`textures/ui/phone/ak47`);
-		form.button(`script.gvcv5.howToVechile.name`,`textures/ui/phone/t34`);
-		form.button(`script.gvcv5.howToAir.name`,`textures/ui/phone/f16`);
-		form.button(`script.gvcv5.howToHeli.name`,`textures/ui/phone/ah6`);
-		form.button(`script.gvcv5.howToShip.name`,`textures/ui/phone/cruiser`);
-		form.button(`script.gvcv5.phone_howToTeam.name`,`textures/ui/phone/missing_item`);
+		form.button(`script.gvcv5.guide.name`,`textures/ui/phone/missing_item`);
+		// form.button(`script.gvcv5.howToVechile.name`,`textures/ui/phone/t34`);
+		// form.button(`script.gvcv5.howToAir.name`,`textures/ui/phone/f16`);
+		// form.button(`script.gvcv5.howToHeli.name`,`textures/ui/phone/ah6`);
+		// form.button(`script.gvcv5.howToShip.name`,`textures/ui/phone/cruiser`);
+		// form.button(`script.gvcv5.phone_howToTeam.name`,`textures/ui/phone/missing_item`);
 		form.button(`script.gvcv5.phone_teamList.name`,`textures/ui/phone/icon_multiplayer`);
 		form.button(`script.gvcv5.phone_progress.name`,`textures/ui/phone/icon_map`);
 		form.button(`script.gvcv5.phone_noteam_setting.name`,`textures/ui/phone/settings_glyph_color_2x`);
@@ -710,113 +710,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			if (!r.canceled) {
 				// Gun
 				if( r.selection == 0 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.howToGun.name`);
-					let itemRawText = []
-					itemRawText.push({ translate: `script.gvcv5.howToGunDesc0.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToGunDesc1.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToGunDesc2.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToGunDesc3.name` });
-					itemRawText.push({ text: `\n\n` });
-					form.body({ rawtext: itemRawText});
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
-						}
-					} )
-				}
-				// Vechile
-				else if( r.selection == 1 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.howToVechile.name`);
-					let itemRawText = []
-					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc0.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToVechileDesc1.name` });
-					itemRawText.push({ text: `\n\n` });
-					form.body({ rawtext: itemRawText});
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
-						}
-					} )
-				}
-				// Air
-				else if( r.selection == 2 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.howToAir.name`);
-					let itemRawText = []
-					itemRawText.push({ translate: `script.gvcv5.howToAirDesc0.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToAirDesc1.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToAirDesc2.name` });
-					itemRawText.push({ text: `\n\n` });
-					form.body({ rawtext: itemRawText});
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
-						}
-					} )
-				}
-				// Heli
-				else if( r.selection == 3 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.howToHeli.name`);
-					let itemRawText = []
-					itemRawText.push({ translate: `script.gvcv5.howToHeliDesc0.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToHeliDesc1.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToHeliDesc2.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToHeliDesc3.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToHeliDesc4.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToHeliDesc5.name` });
-					itemRawText.push({ text: `\n\n` });
-					form.body({ rawtext: itemRawText});
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
-						}
-					} )
-				}
-				// Ship
-				else if( r.selection == 4 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.howToShip.name`);
-					let itemRawText = []
-					itemRawText.push({ translate: `script.gvcv5.howToShipDesc0.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToShipDesc1.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToShipDesc2.name` });
-					itemRawText.push({ text: `\n\n` });
-					itemRawText.push({ translate: `script.gvcv5.howToShipDesc3.name` });
-					itemRawText.push({ text: `\n\n` });
-					form.body({ rawtext: itemRawText});
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
-						}
-					} )
-				}
-				// Team
-				else if( r.selection == 5 ){
-					user.runCommand(`scriptevent gvcv5:phone_howToTeam ${team}`);
+					user.runCommand(`scriptevent gvcv5:phone_guide`);
 				}
 				// Team List
-				else if( r.selection == 6 ){
+				else if( r.selection == 1 ){
 					const form = new ActionFormData();
 					form.title(`script.gvcv5.phone_teamList.name`);
 					let itemRawText = []
@@ -844,11 +741,11 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					} )
 				}
 				// Progress
-				else if( r.selection == 7 ){
+				else if( r.selection == 2 ){
 					user.runCommand(`scriptevent gvcv5:phone_progress ${team}`);
 				}
 				// Settings
-				else if( r.selection == 8 ){
+				else if( r.selection == 3 ){
 					const form = new ModalFormData();
 					const user = e.sourceEntity;
 					form.title(`script.gvcv5.phone_noteam_setting.name`);
@@ -894,84 +791,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					} )
 				}
 				// Select Team
-				else if( r.selection == 9 ){
-					user.runCommand(`scriptevent gvcv5:phone_noteam_selectteam`);
-				}
-			}
-		},)
-	}
-	else if( e.id == "gvcv5:phone_howToTeam" && !e.sourceEntity.hasTag(`down`) ){
-		const user = e.sourceEntity;
-		const team = e.message;
-		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
-		const form = new ActionFormData();
-		form.title(`script.gvcv5.phone_howToTeam.name`);
-		form.body(`script.gvcv5.phone_howToTeamDesc.name`);
-		form.button(`script.gvcv5.phone_howToTeam1.name`);
-		form.button(`script.gvcv5.phone_howToTeam2.name`);
-		form.button(`script.gvcv5.phone_howTo_team.name`);
-		form.button(`script.gvcv5.phone_howToTeam4.name`);
-		form.button(`script.gvcv5.phone_howToTeam5.name`);
-		form.button(`script.gvcv5.phone_back.name`);
-		form.show(user).then( r => {
-			if (!r.canceled) {
-				if( r.selection == 0 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.phone_howToTeam1.name`);
-					form.body(`script.gvcv5.phone_howToTeam1Desc.name`);
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							user.runCommand(`scriptevent gvcv5:phone_howToTeam ${team}`);
-						}
-					} )
-				}
-				else if( r.selection == 1 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.phone_howToTeam2.name`);
-					form.body(`script.gvcv5.phone_howToTeam2Desc.name`);
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							user.runCommand(`scriptevent gvcv5:phone_howToTeam ${team}`);
-						}
-					} )
-				}
-				else if( r.selection == 2 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.phone_howTo_team.name`);
-					form.body(`script.gvcv5.phone_howToTeam3Desc.name`);
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							user.runCommand(`scriptevent gvcv5:phone_howToTeam ${team}`);
-						}
-					} )
-				}
-				else if( r.selection == 3 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.phone_howToTeam4.name`);
-					form.body(`script.gvcv5.phone_howToTeam4Desc.name`);
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							user.runCommand(`scriptevent gvcv5:phone_howToTeam ${team}`);
-						}
-					} )
-				}
 				else if( r.selection == 4 ){
-					const form = new ActionFormData();
-					form.title(`script.gvcv5.phone_howToTeam5.name`);
-					form.body(`script.gvcv5.phone_howToTeam5Desc.name`);
-					form.button(`script.gvcv5.phone_back.name`);
-					form.show(user).then( result => {
-						if ( !result.canceled ){
-							user.runCommand(`scriptevent gvcv5:phone_howToTeam ${team}`);
-						}
-					} )
-				}
-				else if( r.selection == 5 ){
-					user.runCommand(`scriptevent gvcv5:phone_noteam ${team}`);
+					user.runCommand(`scriptevent gvcv5:phone_noteam_selectteam`);
 				}
 			}
 		},)

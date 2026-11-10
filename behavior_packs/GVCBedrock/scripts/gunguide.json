@@ -1,81 +1,252 @@
 {
   "gun_types": {
     "sg": [
-      "aa12",
-      "m590",
-      "m870",
-      "m1014",
-      "saiga12"
+      {
+        "name": "aa12",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "m590",
+        "rarelity": "rare"
+      },
+      {
+        "name": "m870",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "m1014",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "saiga12",
+        "rarelity": "rare"
+      }
     ],
     "ar": [
-      "ak12",
-      "ak47",
-      "ak102",
-      "an94",
-      "g36",
-      "g3a3",
-      "hk416",
-      "m4",
-      "m4a1",
-      "m16a1",
-      "m16a4",
-      "qbz95",
-      "scar",
-      "stg44"
+      {
+        "name": "ak12",
+        "rarelity": "epic"
+      },
+      {
+        "name": "ak47",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "ak102",
+        "rarelity": "rare"
+      },
+      {
+        "name": "an94",
+        "rarelity": "rare"
+      },
+      {
+        "name": "g36",
+        "rarelity": "epic"
+      },
+      {
+        "name": "g3a3",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "hk416",
+        "rarelity": "epic"
+      },
+      {
+        "name": "m4",
+        "rarelity": "rare"
+      },
+      {
+        "name": "m4a1",
+        "rarelity": "rare"
+      },
+      {
+        "name": "m16a1",
+        "rarelity": "common"
+      },
+      {
+        "name": "m16a4",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "qbz95",
+        "rarelity": "epic"
+      },
+      {
+        "name": "scar",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "stg44",
+        "rarelity": "epic"
+      }
     ],
     "sr": [
-      "awm",
-      "mosin"
+      {
+        "name": "awm",
+        "rarelity": "rare"
+      },
+      {
+        "name": "mosin",
+        "rarelity": "uncommon"
+      }
     ],
     "ms": [
-      "compoundbow",
-      "m14",
-      "m110",
-      "svd"
+      {
+        "name": "compoundbow",
+        "rarelity": "mythic"
+      },
+      {
+        "name": "m14",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "m110",
+        "rarelity": "rare"
+      },
+      {
+        "name": "svd",
+        "rarelity": "rare"
+      }
     ],
     "lmg": [
-      "dp28",
-      "lewis",
-      "m60",
-      "m249",
-      "mg36",
-      "mg42",
-      "pkm",
-      "rpk"
+      {
+        "name": "dp28",
+        "rarelity": "rare"
+      },
+      {
+        "name": "lewis",
+        "rarelity": "epic"
+      },
+      {
+        "name": "m60",
+        "rarelity": "common"
+      },
+      {
+        "name": "m249",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "mg36",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "mg42",
+        "rarelity": "mythic"
+      },
+      {
+        "name": "pkm",
+        "rarelity": "epic"
+      },
+      {
+        "name": "rpk",
+        "rarelity": "uncommon"
+      }
     ],
     "gre": [
-      "famas",
-      "m79",
-      "xm8"
+      {
+        "name": "famas",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "m79",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "xm8",
+        "rarelity": "mythic"
+      }
     ],
     "at": [
-      "fgm148",
-      "fim92",
-      "lazer",
-      "m82",
-      "ptrd"
+      {
+        "name": "fgm148",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "fim92",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "lazer",
+        "rarelity": "mythic"
+      },
+      {
+        "name": "m82",
+        "rarelity": "mythic"
+      },
+      {
+        "name": "ptrd",
+        "rarelity": "epic"
+      }
     ],
     "hg": [
-      "glock17",
-      "glock18",
-      "m9",
-      "m1911",
-      "tt33"
+      {
+        "name": "glock17",
+        "rarelity": "common"
+      },
+      {
+        "name": "glock18",
+        "rarelity": "epic"
+      },
+      {
+        "name": "m9",
+        "rarelity": "common"
+      },
+      {
+        "name": "m1911",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "tt33",
+        "rarelity": "epic"
+      }
     ],
     "smg": [
-      "m10",
-      "mp5",
-      "mp7",
-      "mp40",
-      "ppsh",
-      "uzi",
-      "vz61"
+      {
+        "name": "m10",
+        "rarelity": "rare"
+      },
+      {
+        "name": "mp5",
+        "rarelity": "rare"
+      },
+      {
+        "name": "mp7",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "mp40",
+        "rarelity": "common"
+      },
+      {
+        "name": "ppsh",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "uzi",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "vz61",
+        "rarelity": "rare"
+      }
     ],
     "rpg": [
-      "m72",
-      "m202",
-      "p90",
-      "rpg"
+      {
+        "name": "m72",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "m202",
+        "rarelity": "mythic"
+      },
+      {
+        "name": "p90",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "rpg",
+        "rarelity": "epic"
+      }
     ]
   },
   "aa12": {

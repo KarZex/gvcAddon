@@ -1289,42 +1289,148 @@ script.gvcv5.vehiclecool2.name=秒
 
 
 
+script.gvcv5.guide.name=ガイド
+script.gvcv5.how_to_gun.name=銃の使い方
+script.gvcv5.show_guns.name=銃の一覧
+script.gvcv5.show_attachs.name=アタッチメントの一覧
+script.gvcv5.show_gren.name=手榴弾の一覧
+script.gvcv5.show_fight.name=戦闘について
 
 script.gvcv5:gun_type.sg.name=ショットガン
+script.gvcv5:gun_type.sg_desc.name=拡散する弾を発射する。近距離での威力が高い。
 script.gvcv5:gun_type.ar.name=アサルトライフル
+script.gvcv5:gun_type.ar_desc.name=連射可能なライフル。中距離での威力が高い。
 script.gvcv5:gun_type.sr.name=スナイパーライフル
+script.gvcv5:gun_type.sr_desc.name=高威力の弾を発射する。連射はできないが、一発の威力が高い。遠距離向け。
 script.gvcv5:gun_type.ms.name=マークスマンライフル
+script.gvcv5:gun_type.ms_desc.name=中距離向けのライフル。スナイパーライフルより連射が可能。
 script.gvcv5:gun_type.lmg.name=ライトマシンガン
+script.gvcv5:gun_type.lmg_desc.name=連射可能なマシンガン。弾数が多く、威力は高い代わりに取り回しが悪い。
 script.gvcv5:gun_type.gre.name=グレネードランチャー
+script.gvcv5:gun_type.gre_desc.name=爆発する弾を発射する。対人に有効。
 script.gvcv5:gun_type.at.name=対物
+script.gvcv5:gun_type.at_desc.name=対物用の武器。ビークルに有効。
 script.gvcv5:gun_type.hg.name=ハンドガン
+script.gvcv5:gun_type.hg_desc.name=片手で扱える拳銃。威力は低いが、取り回しが良い。オフハンドに持つことで、二丁拳銃として使用可能。
 script.gvcv5:gun_type.smg.name=サブマシンガン
+script.gvcv5:gun_type.smg_desc.name=連射可能な小型の銃。威力は低いが、連射速度が高く、DPSが高い。近距離向け。
 script.gvcv5:gun_type.rpg.name=ロケットランチャー
+script.gvcv5:gun_type.rpg_desc.name=ロケット弾を発射する。威力は高いが、連射はできない。戦車や装甲車に有効。
 
+script.gvcv5:rarelity_desc.name=レアリティは、銃の希少性を表す。レアリティが高いほど、性能が高く、アタッチメントの種類も多い。§7コモン§r<§aアンコモン§r<§9レア§r<§dエピック§r<§6レジェンド§r<§cミシック§rの順に希少性が高い。
+script.gvcv5:rarelity.name=レア度:
+script.gvcv5:rarelity_common.name=§8コモン§r
+script.gvcv5:rarelity_uncommon.name=§aアンコモン§r
+script.gvcv5:rarelity_rare.name=§9レア§r
+script.gvcv5:rarelity_epic.name=§dエピック§r
+script.gvcv5:rarelity_legendary.name=§6レジェンド§r
+script.gvcv5:rarelity_mythic.name=§cミシック§r
+
+script.gvcv5:gun_spec.power.name=ダメージ性能
 script.gvcv5:gun_spec.damage.name=基本ダメージ:
+script.gvcv5:gun_spec.damage_desc.name=弾が当たった時のダメージ量。銃のエンチャントやアタッチメント、被弾部位、防具によって変化する。
 script.gvcv5:gun_spec.basedps.name=基本DPS:
+script.gvcv5:gun_spec.basedps_desc.name=基本DPSは、1秒あたりのダメージ量。基本ダメージと発射間隔から計算される。
 script.gvcv5:gun_spec.interval.name=発射間隔(Ticks):
+script.gvcv5:gun_spec.interval_desc.name=発射間隔は、1発撃つのにかかる時間。小さいほど高速で連射できる。
 script.gvcv5:gun_spec.bomb.name=着弾時の爆発力:
+script.gvcv5:gun_spec.bomb_desc.name=グレネードランチャーやロケットランチャーなど、爆発する弾は、着弾時に周囲にダメージを与える。
 script.gvcv5:gun_spec.damageIgnoreDef.name=貫徹値:
+script.gvcv5:gun_spec.damageIgnoreDef_desc.name=貫徹値は、ビークルの装甲を貫通する能力。貫徹値が装甲値より低い場合、ダメージを与えることができない。
+
+script.gvcv5:gun_spec.use.name=取り回し性能
 script.gvcv5:gun_spec.recoil.name=反動:
+script.gvcv5:gun_spec.recoil_desc.name=射撃時の反動の大きさ。反動が大きいほど、照準が大きくぶれる。アタッチメントで反動を抑えることができる。§cマイクラのグラフィック設定で、「手ぶれ」をOFFにすると、反動がなくなる。§r
 script.gvcv5:gun_spec.slowness.name=移動速度低下:
+script.gvcv5:gun_spec.slowness_desc.name=手に持った時に付く鈍化エフェクトの強さ。
 script.gvcv5:gun_spec.speed.name=弾速:
+script.gvcv5:gun_spec.speed_desc.name=射撃時の弾の速度。
 script.gvcv5:gun_spec.maxGunAmmo.name=マガジン弾数:
+script.gvcv5:gun_spec.maxGunAmmo_desc.name=マガジンに入る弾の数。マガジンが空になると、リロードする必要がある。
 script.gvcv5:gun_spec.aim.name=腰撃ち時精度:
+script.gvcv5:gun_spec.aim_desc.name=腰撃ち時の精度。数値が大きいほど、弾が散らばる。
 script.gvcv5:gun_spec.reloadTime.name=リロード時間(Ticks):
+script.gvcv5:gun_spec.reloadTime_desc.name=リロードにかかる時間。マガジンが空になった時に、リロードする必要がある。
 script.gvcv5:gun_spec.bullet.name=使用弾薬:
+script.gvcv5:gun_spec.bullet_desc.name=使用する弾薬の種類。弾薬は、銃の種類によって異なる。
 script.gvcv5:gun_spec.damageType.name=無敵時間無視:
+script.gvcv5:gun_spec.damageType_desc.name=プレイヤーがダメージを受けた後に付く無敵時間を無視するかどうか
 script.gvcv5:gun_spec.fullauto.name=フルオート可能:
+script.gvcv5:gun_spec.fullauto_desc.name=射撃ボタンを押し続けることで、連射できるかどうか
 script.gvcv5:gun_spec.desc.name=説明:
+script.gvcv5:gun_spec.desc_desc.name=銃の説明。銃の性能や特徴が書かれている。
 script.gvcv5:gun_spec.get.name=入手方法:
+script.gvcv5:gun_spec.get_desc.name=銃の入手方法。クラフトやドロップなど、入手方法が書かれている。
+
+script.gvcv5:gun_ak47_desc.name=ゲリラがよく使用する旧式アサルトライフル。簡単に入手でき、序盤から終盤まで活躍できる。
+script.gvcv5:gun_m16a1_desc.name=初期物資として支給されるアサルトライフル。序盤では活躍できるが、終盤では性能不足となる。
+script.gvcv5:gun_ak47_get.name=銃製造機Lv1( エメラルドx2, 鉄インゴットx3, レッドストーンx1 )
+script.gvcv5:gun_m16a1_get.name=銃製造機Lv1( エメラルドx2, 鉄インゴットx3, レッドストーンx1 )
 
 
-script.gvcv5:vehicle_type.gun.name=固定機銃
-script.gvcv5:vehicle_type.artillery.name=野戦砲
-script.gvcv5:vehicle_type.artillery_aa.name=対空砲
-script.gvcv5:vehicle_type..name=a
-script.gvcv5:vehicle_type.light_tank.name=軽戦車
-script.gvcv5:vehicle_type.medium_tank.name=中戦車
-script.gvcv5:vehicle_type.heavy_tank.name=重戦車
-script.gvcv5:vehicle_type.mbt.name=主力戦車
+script.gvcv5:vehicle_type.car.name=車両
+script.gvcv5:vehicle_subtype.truck.name=トラック
+script.gvcv5:vehicle_subtype.apc.name=装甲兵員輸送車
+script.gvcv5:vehicle_subtype.ifv.name=歩兵戦闘車
+script.gvcv5:vehicle_subtype.self_propelled_gun.name=自走砲
+script.gvcv5:vehicle_subtype.self_propelled_aa.name=自走対空砲
+script.gvcv5:vehicle_subtype.amphibious.name=水陸両用歩兵戦闘車
+script.gvcv5:vehicle_subtype.self_propelled_aa_amphibious.name=水陸両用自走対空砲
 
+script.gvcv5:vehicle_type.tank.name=戦車
+script.gvcv5:vehicle_subtype.light_tank.name=軽戦車
+script.gvcv5:vehicle_subtype.medium_tank.name=中戦車
+script.gvcv5:vehicle_subtype.heavy_tank.name=重戦車
+script.gvcv5:vehicle_subtype.mbt.name=主力戦車
+script.gvcv5:vehicle_subtype.light_tank_amphibious.name=水陸両用軽戦車
+
+script.gvcv5:vehicle_type.set.name=固定
+script.gvcv5:vehicle_subtype.gun.name=固定機銃
+script.gvcv5:vehicle_subtype.artillery.name=野戦砲
+script.gvcv5:vehicle_subtype.artillery_aa.name=対空砲
+script.gvcv5:vehicle_subtype.cannon.name=固定砲台
+
+script.gvcv5:vehicle_type.heli.name=ヘリコプター
+script.gvcv5:vehicle_subtype.attack_heli.name=攻撃ヘリ
+script.gvcv5:vehicle_subtype.transport_heli.name=輸送ヘリ
+script.gvcv5:vehicle_subtype.spy_heli.name=偵察ヘリ
+
+script.gvcv5:vehicle_type.plane.name=航空機
+script.gvcv5:vehicle_subtype.fighter_plane.name=戦闘機
+script.gvcv5:vehicle_subtype.stealth_fighter_plane.name=ステルス戦闘機
+script.gvcv5:vehicle_subtype.multirole_plane.name=マルチロール機
+script.gvcv5:vehicle_subtype.attack_plane.name=攻撃機
+script.gvcv5:vehicle_subtype.bomber_plane.name=爆撃機
+script.gvcv5:vehicle_subtype.stealth_bomber_plane.name=ステルス爆撃機
+
+script.gvcv5:vehicle_type.ship.name=船舶
+script.gvcv5:vehicle_subtype.patrol_boat.name=哨戒艇
+script.gvcv5:vehicle_subtype.rhib.name=複合艇
+script.gvcv5:vehicle_subtype.assault_boat.name=高速戦闘艇
+script.gvcv5:vehicle_subtype.landing_craft.name=上陸用舟艇
+script.gvcv5:vehicle_subtype.submarine.name=潜水艦
+
+script.gvcv5:vehicle_aifv_desc.name=25mm機関砲を搭載した歩兵戦闘車。装甲は薄いが、機動力が高く、対人戦に向いている。
+script.gvcv5:vehicle_aifv_get.name=ビークル製造機Lv2で入手
+script.gvcv5:vehicle_t34_desc.name=ゲリラがよく使用する旧式戦車。性能は全戦車の中でも低いが、それでも歩兵とって脅威となる。
+script.gvcv5:vehicle_t34_get.name=ビークル製造機Lv1で入手
+script.gvcv5:vehicle_t55_desc.name=進行度が進むと出現する主力戦車。装甲は厚く、対人戦では脅威となる。ゲリラが使用する。
+script.gvcv5:vehicle_t55_get.name=ビークル製造機Lv2で入手
+script.gvcv5:vehicle_t72_desc.name=進行度が最大レベルになると出現する主力戦車。HP、火力ともに高い。
+script.gvcv5:vehicle_t72_get.name=ビークル製造機Lv3で入手
+script.gvcv5:vehicle_m113_desc.name=装甲兵員輸送車。装甲は薄いが、機動力が高く、対人戦に向いている.
+
+script.gvcv5.battleInfo0.name=エンティティに被弾すると、最初に弾の貫徹値と装甲値を比較し、§c貫徹値が装甲値以上となる場合のみ§rダメージが発生する。
+script.gvcv5.battleInfo1.name=§6貫徹値§rは、砲弾やロケットランチャーなど、装甲を貫通する能力を表す値で、§b装甲値§rは、ビークルの装甲の厚さを表す値である。
+script.gvcv5.battleInfo2.name=貫徹値が装甲値を上回った場合、ダメージ量は「武器の威力 x (1 - 軽減率)」で決まる。
+script.gvcv5.battleInfo3.name=軽減率は、防具や被弾部位によって変化する。
+script.gvcv5.battleInfo4.name=頭、胸、脚、足の4つに防具を装備することで、銃弾のダメージを軽減することができる。1部位あたりの防具による銃弾軽減率は、以下の通りとなる。どの部位に装備しても軽減率は変わらない。
+script.gvcv5.battleInfo5.name=§2皮、ギリースーツ: 1部位あたり5%§r
+script.gvcv5.battleInfo6.name=§8チェーン装備: 1部位あたり10%§r
+script.gvcv5.battleInfo7.name=§7鉄装備: 1部位あたり15%§r
+script.gvcv5.battleInfo8.name=§fプラスチック装備: 1部位あたり20%§r
+script.gvcv5.battleInfo9.name=§9ダイヤ装備: 1部位あたり22.5%§r
+script.gvcv5.battleInfo10.name=§6ネザライト装備: 1部位あたり25%§r
+script.gvcv5:battleInfo11.name=防具の軽減率は、4部位装備することで最大100%まで軽減することができる。
+script.gvcv5:battleInfo12.name=また、§cヘッドショット§rを受けると、軽減率は-50%される。また、足に被弾すると、軽減率は+25%される。
+script.gvcv5:battleInfo13.name=軽減率が0%を下回った場合、受けるダメージは増加する。

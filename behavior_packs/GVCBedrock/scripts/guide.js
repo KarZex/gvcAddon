@@ -116,7 +116,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			form.button(`script.gvcv5.back.name`);
 			form.show(user).then( result => {
 				if ( !result.canceled ){
-					if( result.selection != GUN_TYPES.len ){
+					if( result.selection != GUN_TYPES.length ){
 						print(`${GUN_TYPES[result.selection]}`)
 						user.runCommand(`scriptevent gvcv5:guide_show_gun ${GUN_TYPES[result.selection]}`);
 					}
@@ -135,13 +135,19 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			form.title(`script.gvcv5.guide_show_gun.name`);
 			const target_guns = gunGuide["gun_types"][`${message}`];
 			for( const gun of target_guns ){
-				form.button(`item.gun:${gun}`,`textures/items/gun/${gun}`);
+				let itemRawText = [];
+				print(`${gun[`name`]}`)
+				itemRawText.push({ translate: `item.gun:${gun[`name`]}` });
+				itemRawText.push({ text: `\n` });	
+				itemRawText.push({ translate: `script.gvcv5:rarelity.name` });
+				itemRawText.push({ translate: `script.gvcv5:rarelity_${gun[`rarelity`]}.name` });
+				form.button({ rawtext: itemRawText },`textures/items/gun/${gun[`name`]}`);
 			}
 			form.button(`script.gvcv5.back.name`);
 			form.show(user).then( result => {
 				if ( !result.canceled ){
-					if( result.selection != target_guns.len ){
-						user.runCommand(`scriptevent gvcv5:guide_show_gun ${target_guns[result.selection]}`);
+					if( result.selection != target_guns.length ){
+						user.runCommand(`scriptevent gvcv5:guide_show_gun ${target_guns[result.selection][`name`]}`);
 					}
 					else{
 						user.runCommand(`scriptevent gvcv5:guide_gun 2`);
@@ -156,6 +162,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			form.title(`item.gun:${gun}`);
 			const gunData = gunGuide[`${gun}`]
 			let itemRawText = [];
+			itemRawText.push({ translate: `script.gvcv5:gun_spec.desc.name` });
+			itemRawText.push({ translate: `script.gvcv5:gun_spec.${gun}_desc.name` });
+			itemRawText.push({ text: `\n\n` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.damage.name` });
 			if( gunData[`shotgun`] > 1 ){
 				itemRawText.push({ text: `${gunData[`damage`]} x ${gunData[`shotgun`]}\n` });
@@ -163,7 +172,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			else{
 				itemRawText.push({ text: `${gunData[`damage`]}\n` });
 			}
-			itemRawText.push({ text: `script.gvcv5:gun_spec.basedps.name` });
+			itemRawText.push({ translate: `script.gvcv5:gun_spec.basedps.name` });
 			itemRawText.push({ text: `${(20 / (gunData[`interval`] + 1)) * gunData[`damage`] * gunData[`shotgun`]}\n` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.damageIgnoreDef.name` });
 			itemRawText.push({ text: `${gunData[`damageIgnoreDef`]}\n` });
@@ -190,8 +199,6 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			itemRawText.push({ text: `${Boolean(gunData[`damageType`])}\n` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.get.name` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.${gun}_get.name` });
-			itemRawText.push({ translate: `script.gvcv5:gun_spec.desc.name` });
-			itemRawText.push({ translate: `script.gvcv5:gun_spec.${gun}_desc.name` });
 			form.body({ rawtext: itemRawText });
 			form.button(`script.gvcv5.back.name`);
 			form.show(user).then( result => {
