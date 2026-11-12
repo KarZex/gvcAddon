@@ -931,6 +931,25 @@ export const vehicleData = {
     "gattack": 0,
     "coolTime": 120
   },
+  "yak23": {
+    "type": "air",
+    "speed": 1.5,
+    "Weapon1": "20mmmcaird",
+    "Weapon1_cool": 1,
+    "Weapon1_ammo": 30,
+    "Weapon2": "",
+    "Weapon2_cool": 20,
+    "Weapon2_ammo": 0,
+    "Weapon3": "",
+    "Weapon3_cool": 0,
+    "Weapon3_ammo": 0,
+    "Weapon4": "",
+    "Weapon4_cool": 0,
+    "Weapon4_ammo": 0,
+    "turn": 1.0,
+    "gattack": 0,
+    "coolTime": 120
+  },
   "st1_pmc": {
     "type": "tank",
     "speed": 0.2,

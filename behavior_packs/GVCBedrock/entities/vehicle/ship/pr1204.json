@@ -65,10 +65,10 @@
             {
               "position": [
                 0,
-                2,
+                2.4,
                 2
               ],
-              "third_person_camera_radius": 20
+              "third_person_camera_radius": 24
             },
             {
               "position": [
@@ -193,10 +193,10 @@
           {
             "position": [
               0,
-              2,
+              2.4,
               2
             ],
-            "third_person_camera_radius": 20
+            "third_person_camera_radius": 24
           },
           {
             "position": [

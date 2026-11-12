@@ -609,6 +609,9 @@
     },
     "spawn_vehicle_mk15": {
       "textures": "textures/spawn/vehicle_mk15"
+    },
+    "spawn_vehicle_yak23": {
+      "textures": "textures/spawn/vehicle_yak23"
     }
   }
 }

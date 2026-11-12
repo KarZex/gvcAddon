@@ -334,6 +334,13 @@ execute if entity @e[r=7,type=vehicle:il2] run scoreboard players add @s[scores=
 execute if entity @e[r=7,type=vehicle:il2] run scoreboard players set @s weaponi_max 30
 execute if entity @e[r=7,type=vehicle:il2] run scoreboard players set @s weaponi_cool 2
 
+execute if entity @e[r=7,type=vehicle:yak23] run event entity @s[scores={weaponi=..30}] fire:20mmmcaird
+
+execute if entity @e[r=7,type=vehicle:yak23] run scoreboard players add @s[scores={weaponi=..30}] weaponi 1
+
+execute if entity @e[r=7,type=vehicle:yak23] run scoreboard players set @s weaponi_max 30
+execute if entity @e[r=7,type=vehicle:yak23] run scoreboard players set @s weaponi_cool 2
+
 execute if entity @e[r=7,type=vehicle:st1_pmc] run event entity @s[scores={weaponi=..1}] fire:152mm
 
 execute if entity @e[r=7,type=vehicle:st1_pmc] run scoreboard players add @s[scores={weaponi=..1}] weaponi 1

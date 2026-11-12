@@ -3400,6 +3400,11 @@
           "command": "ride @s summon_ride vehicle:il2 no_ride_change summon_enemy"
         }
       },
+      "vehicle:yak23": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:yak23 no_ride_change summon_enemy"
+        }
+      },
       "vehicle:st1_pmc": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:st1_pmc no_ride_change summon_enemy"

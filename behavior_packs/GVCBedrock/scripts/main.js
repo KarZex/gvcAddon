@@ -30,7 +30,7 @@ export function levelup(progress){
 	world.sendMessage(`progress is now Level ${progress}`);
 	world.setDynamicProperty("gvcv5:progress",progress);
 	if( world.getDynamicProperty(`gvcv5:buildingSpawnD`) ){
-		if( progress > 1 && !world.getDynamicProperty(`gvcv5:buildingSpawnM`) ){
+		if( progress > 0 && !world.getDynamicProperty(`gvcv5:buildingSpawnM`) ){
 			world.setDynamicProperty(`gvcv5:buildingSpawnM`,true);
 			world.scoreboard.getObjective(`building`).setScore(`M`,1);
 			world.sendMessage(`Medium Building Spawn is now true`);

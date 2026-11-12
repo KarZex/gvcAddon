@@ -1336,6 +1336,9 @@
     },
     "mk15": {
       "textures": "textures/items/vehicle/mk15"
+    },
+    "yak23": {
+      "textures": "textures/items/vehicle/yak23"
     }
   }
 }
