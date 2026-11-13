@@ -565,6 +565,32 @@ item.spawn_egg.entity.vehicle:mk15.name=Mk15CIWS
 tile.gvcv5:spawn_vehicle_mk15.name=Mk15CIWS
 item.vehicle:mk15_spawn_egg=Mk15CIWS
 
+### From V5-7 (GVCBedrock Addon V7.0) Jan 1st 2027
+entity.vehicle:yak23.name=Yak-23
+item.spawn_egg.entity.vehicle:yak23.name=Yak-23
+tile.gvcv5:spawn_vehicle_yak23.name=Yak-23
+item.vehicle:yak23_spawn_egg=Yak-23
+entity.vehicle:il28.name=Il-28
+item.spawn_egg.entity.vehicle:il28.name=Il-28
+tile.gvcv5:spawn_vehicle_il28.name=Il-28
+item.vehicle:il28_spawn_egg=Il-28
+entity.vehicle:f22.name=F-22
+item.spawn_egg.entity.vehicle:f22.name=F-22
+tile.gvcv5:spawn_vehicle_f22.name=F-22
+item.vehicle:f22_spawn_egg=F-22
+entity.vehicle:su57.name=Su-57
+item.spawn_egg.entity.vehicle:su57.name=Su-57
+tile.gvcv5:spawn_vehicle_su57.name=Su-57
+item.vehicle:su57_spawn_egg=Su-57
+entity.vehicle:a6.name=A-6
+item.spawn_egg.entity.vehicle:a6.name=A-6
+tile.gvcv5:spawn_vehicle_a6.name=A-6
+item.vehicle:a6_spawn_egg=A-
+entity.vehicle:fa18.name=F/A-18
+item.spawn_egg.entity.vehicle:fa18.name=F/A-18
+tile.gvcv5:spawn_vehicle_fa18.name=F/A-18
+item.vehicle:fa18_spawn_egg=F/A-18
+
 
 ### Tile name ###
 tile.gvcv5:good1.name=死体

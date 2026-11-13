@@ -612,6 +612,21 @@
     },
     "spawn_vehicle_yak23": {
       "textures": "textures/spawn/vehicle_yak23"
+    },
+    "spawn_vehicle_il28": {
+      "textures": "textures/spawn/vehicle_il28"
+    },
+    "spawn_vehicle_f22": {
+      "textures": "textures/spawn/vehicle_f22"
+    },
+    "spawn_vehicle_su57": {
+      "textures": "textures/spawn/vehicle_su57"
+    },
+    "spawn_vehicle_a6": {
+      "textures": "textures/spawn/vehicle_a6"
+    },
+    "spawn_vehicle_fa18": {
+      "textures": "textures/spawn/vehicle_fa18"
     }
   }
 }

@@ -17,7 +17,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "zex_cluiser": {
     "type": "apc",
@@ -36,7 +37,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 60
+    "coolTime": 60,
+    "stalth": 1
   },
   "lav25": {
     "type": "apc",
@@ -55,7 +57,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 180
+    "coolTime": 180,
+    "stalth": 1
   },
   "lav25aa": {
     "type": "apc",
@@ -74,7 +77,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 180
+    "coolTime": 180,
+    "stalth": 1
   },
   "m113": {
     "type": "apc",
@@ -93,7 +97,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "m113aa": {
     "type": "apc",
@@ -112,7 +117,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "m1126": {
     "type": "apc",
@@ -131,7 +137,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "m1128": {
     "type": "apc",
@@ -150,7 +157,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "btr60": {
     "type": "apc",
@@ -169,7 +177,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "bmp3": {
     "type": "apc",
@@ -188,7 +197,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 180
+    "coolTime": 180,
+    "stalth": 1
   },
   "9k35": {
     "type": "apc",
@@ -207,7 +217,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 180
+    "coolTime": 180,
+    "stalth": 1
   },
   "panzer": {
     "type": "tank",
@@ -226,7 +237,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 1.0,
     "gattack": 0,
-    "coolTime": 240
+    "coolTime": 240,
+    "stalth": 1
   },
   "kv2": {
     "type": "tank",
@@ -245,7 +257,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 20,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "m1_abrams": {
     "type": "tank",
@@ -264,7 +277,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 20,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "m1a2": {
     "type": "tank",
@@ -283,7 +297,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 20,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "m41": {
     "type": "stank",
@@ -302,7 +317,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 240
+    "coolTime": 240,
+    "stalth": 1
   },
   "fv101": {
     "type": "stank",
@@ -321,7 +337,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 240
+    "coolTime": 240,
+    "stalth": 1
   },
   "m60a1": {
     "type": "tank",
@@ -340,7 +357,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 14,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "pt76": {
     "type": "stank",
@@ -359,7 +377,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 240
+    "coolTime": 240,
+    "stalth": 1
   },
   "t34": {
     "type": "tank",
@@ -378,7 +397,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "t55": {
     "type": "tank",
@@ -397,7 +417,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 14,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "t72": {
     "type": "tank",
@@ -416,7 +437,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 18,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "r22": {
     "type": "heri",
@@ -435,7 +457,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "ah1s": {
     "type": "heri",
@@ -454,7 +477,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 240
+    "coolTime": 240,
+    "stalth": 1
   },
   "ah1z": {
     "type": "heri",
@@ -473,7 +497,8 @@ export const vehicleData = {
     "Weapon4_ammo": 1,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "ah6": {
     "type": "heri",
@@ -492,7 +517,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "g_heri": {
     "type": "heri",
@@ -511,7 +537,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "ka50": {
     "type": "heri",
@@ -530,7 +557,8 @@ export const vehicleData = {
     "Weapon4_ammo": 1,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "ka60": {
     "type": "heri",
@@ -549,7 +577,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "mi24d": {
     "type": "heri",
@@ -568,7 +597,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "20mmaa": {
     "type": "set",
@@ -587,7 +617,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 1
+    "coolTime": 1,
+    "stalth": 1
   },
   "flak18": {
     "type": "set",
@@ -606,7 +637,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 1
+    "coolTime": 1,
+    "stalth": 1
   },
   "pak40": {
     "type": "set",
@@ -625,7 +657,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 1
+    "coolTime": 1,
+    "stalth": 1
   },
   "zu23": {
     "type": "set",
@@ -644,7 +677,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 1
+    "coolTime": 1,
+    "stalth": 1
   },
   "vads": {
     "type": "set",
@@ -663,7 +697,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 1
+    "coolTime": 1,
+    "stalth": 1
   },
   "dp28set": {
     "type": "set",
@@ -682,7 +717,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 1
+    "coolTime": 1,
+    "stalth": 1
   },
   "m60set": {
     "type": "set",
@@ -701,7 +737,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 1
+    "coolTime": 1,
+    "stalth": 1
   },
   "pkmset": {
     "type": "set",
@@ -720,7 +757,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 1
+    "coolTime": 1,
+    "stalth": 1
   },
   "tow2": {
     "type": "set",
@@ -739,7 +777,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 1
+    "coolTime": 1,
+    "stalth": 1
   },
   "mk45": {
     "type": "set",
@@ -758,7 +797,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "ak130": {
     "type": "set",
@@ -777,7 +817,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "mk15": {
     "type": "set",
@@ -796,7 +837,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 0,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "mig17": {
     "type": "air",
@@ -815,11 +857,32 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 2.0,
     "gattack": 0,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
+  },
+  "f22": {
+    "type": "air",
+    "speed": 2.0,
+    "Weapon1": "20mmmcair",
+    "Weapon1_cool": 0,
+    "Weapon1_ammo": 60,
+    "Weapon2": "aamissile",
+    "Weapon2_cool": 100,
+    "Weapon2_ammo": 4,
+    "Weapon3": "flare",
+    "Weapon3_cool": 200,
+    "Weapon3_ammo": 1,
+    "Weapon4": "",
+    "Weapon4_cool": 200,
+    "Weapon4_ammo": 1,
+    "turn": 3.0,
+    "gattack": 0,
+    "coolTime": 300,
+    "stalth": 0.25
   },
   "su27": {
     "type": "air",
-    "speed": 2.5,
+    "speed": 2.0,
     "Weapon1": "20mmmcaird",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 60,
@@ -834,7 +897,28 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 3.0,
     "gattack": 0,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
+  },
+  "su57": {
+    "type": "air",
+    "speed": 2.0,
+    "Weapon1": "20mmmcaird",
+    "Weapon1_cool": 0,
+    "Weapon1_ammo": 60,
+    "Weapon2": "aamissile",
+    "Weapon2_cool": 100,
+    "Weapon2_ammo": 4,
+    "Weapon3": "flare",
+    "Weapon3_cool": 200,
+    "Weapon3_ammo": 1,
+    "Weapon4": "",
+    "Weapon4_cool": 0,
+    "Weapon4_ammo": 0,
+    "turn": 3.0,
+    "gattack": 0,
+    "coolTime": 300,
+    "stalth": 0.33
   },
   "f16": {
     "type": "air",
@@ -853,7 +937,48 @@ export const vehicleData = {
     "Weapon4_ammo": 1,
     "turn": 3.0,
     "gattack": 0,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
+  },
+  "fa18": {
+    "type": "air",
+    "speed": 2.0,
+    "Weapon1": "20mmmcair",
+    "Weapon1_cool": 0,
+    "Weapon1_ammo": 60,
+    "Weapon2": "aamissile",
+    "Weapon2_cool": 100,
+    "Weapon2_ammo": 4,
+    "Weapon3": "agmissile",
+    "Weapon3_cool": 50,
+    "Weapon3_ammo": 2,
+    "Weapon4": "flare",
+    "Weapon4_cool": 200,
+    "Weapon4_ammo": 1,
+    "turn": 3.0,
+    "gattack": 0,
+    "coolTime": 300,
+    "stalth": 1
+  },
+  "a6": {
+    "type": "air",
+    "speed": 1.25,
+    "Weapon1": "30mmmcair",
+    "Weapon1_cool": 0,
+    "Weapon1_ammo": 60,
+    "Weapon2": "bomb",
+    "Weapon2_cool": 10,
+    "Weapon2_ammo": 6,
+    "Weapon3": "flare",
+    "Weapon3_cool": 200,
+    "Weapon3_ammo": 1,
+    "Weapon4": "",
+    "Weapon4_cool": 0,
+    "Weapon4_ammo": 0,
+    "turn": 1.5,
+    "gattack": 0,
+    "coolTime": 300,
+    "stalth": 1
   },
   "su25": {
     "type": "air",
@@ -872,7 +997,8 @@ export const vehicleData = {
     "Weapon4_ammo": 2,
     "turn": 2.0,
     "gattack": 0,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "f117": {
     "type": "air",
@@ -891,7 +1017,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 2.0,
     "gattack": 0,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 0.5
   },
   "yak9": {
     "type": "air",
@@ -910,7 +1037,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 1.0,
     "gattack": 0,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "il2": {
     "type": "air",
@@ -929,7 +1057,8 @@ export const vehicleData = {
     "Weapon4_ammo": 8,
     "turn": 1.0,
     "gattack": 0,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
   },
   "yak23": {
     "type": "air",
@@ -948,7 +1077,28 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 1.0,
     "gattack": 0,
-    "coolTime": 120
+    "coolTime": 120,
+    "stalth": 1
+  },
+  "il28": {
+    "type": "air",
+    "speed": 1.2,
+    "Weapon1": "bomb",
+    "Weapon1_cool": 10,
+    "Weapon1_ammo": 2,
+    "Weapon2": "",
+    "Weapon2_cool": 20,
+    "Weapon2_ammo": 0,
+    "Weapon3": "",
+    "Weapon3_cool": 0,
+    "Weapon3_ammo": 0,
+    "Weapon4": "",
+    "Weapon4_cool": 0,
+    "Weapon4_ammo": 8,
+    "turn": 1.0,
+    "gattack": 0,
+    "coolTime": 120,
+    "stalth": 1
   },
   "st1_pmc": {
     "type": "tank",
@@ -967,7 +1117,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 0.0,
     "gattack": 7,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "cruiser": {
     "type": "ship",
@@ -986,7 +1137,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 3.0,
     "gattack": 10,
-    "coolTime": 180
+    "coolTime": 180,
+    "stalth": 1
   },
   "rcb90": {
     "type": "ship",
@@ -1005,7 +1157,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 5.0,
     "gattack": 10,
-    "coolTime": 180
+    "coolTime": 180,
+    "stalth": 1
   },
   "rhib": {
     "type": "ship",
@@ -1024,7 +1177,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 5.0,
     "gattack": 1,
-    "coolTime": 1
+    "coolTime": 1,
+    "stalth": 1
   },
   "pr1204": {
     "type": "ship",
@@ -1043,7 +1197,8 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 1.0,
     "gattack": 20,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   },
   "hamina": {
     "type": "ship",
@@ -1062,6 +1217,7 @@ export const vehicleData = {
     "Weapon4_ammo": 0,
     "turn": 1.0,
     "gattack": 20,
-    "coolTime": 300
+    "coolTime": 300,
+    "stalth": 1
   }
 };

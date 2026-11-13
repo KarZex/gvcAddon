@@ -1339,6 +1339,21 @@
     },
     "yak23": {
       "textures": "textures/items/vehicle/yak23"
+    },
+    "il28": {
+      "textures": "textures/items/vehicle/il28"
+    },
+    "f22": {
+      "textures": "textures/items/vehicle/f22"
+    },
+    "su57": {
+      "textures": "textures/items/vehicle/su57"
+    },
+    "a6": {
+      "textures": "textures/items/vehicle/a6"
+    },
+    "fa18": {
+      "textures": "textures/items/vehicle/fa18"
     }
   }
 }

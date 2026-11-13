@@ -3370,14 +3370,34 @@
           "command": "ride @s summon_ride vehicle:mig17 no_ride_change summon_enemy"
         }
       },
+      "vehicle:f22": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:f22 no_ride_change summon_enemy"
+        }
+      },
       "vehicle:su27": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:su27 no_ride_change summon_enemy"
         }
       },
+      "vehicle:su57": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:su57 no_ride_change summon_enemy"
+        }
+      },
       "vehicle:f16": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:f16 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:fa18": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:fa18 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:a6": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:a6 no_ride_change summon_enemy"
         }
       },
       "vehicle:su25": {
@@ -3403,6 +3423,11 @@
       "vehicle:yak23": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:yak23 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:il28": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:il28 no_ride_change summon_enemy"
         }
       },
       "vehicle:st1_pmc": {

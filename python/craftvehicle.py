@@ -71,6 +71,12 @@ for row in csv_reader:
         v_family = ast.literal_eval(row[34])
         v_engname = row[35]
         v_eject_cool = int(row[36])
+        v_stalth = 1
+        if( row[37] == "" ):
+            v_stalth = 1
+        else:
+            v_stalth = float(row[37])
+
 
 
         ##DATA START
@@ -92,7 +98,8 @@ for row in csv_reader:
             "Weapon4_ammo": v_weapon4_ammo,
             "turn": v_turn,
             "gattack": v_gattack,
-            "coolTime": v_eject_cool
+            "coolTime": v_eject_cool,
+            "stalth": v_stalth
         }
 
         text += "entity.vehicle:{0}.name={1}\n".format(v_id,v_name)

@@ -30,21 +30,19 @@ function airCraftlader( player,thita ){
 	const P0 = player.location;
 	const d0 = thita * Math.PI/180;
 	//world.sendMessage(`${thita2}`)
-	let team = `noteam`;
+	let team = getTeam(player);
 	let print = [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ];
-	if( player.hasTag(`red`) ){ team = `red`; }
-	else if( player.hasTag(`blue`) ){ team = `blue`; }
-	else if( player.hasTag(`green`) ){ team = `green`; }
-	else if( player.hasTag(`yellow`) ){ team = `yellow`; }
 	const allPlayers = world.getAllPlayers();
 	for( let i of allPlayers ){
 		const Pi = i.location;
-		if( i.hasTag(`${team}`) || i.nameTag == player.nameTag || (!i.hasTag(`air`) && !i.hasTag(`heri`) )){
+		const stalth = i.getDynamicProperty(`stalth`);
+		if(  getTeam(i) == team || i.nameTag == player.nameTag || (!i.hasTag(`air`) && !i.hasTag(`heri`) )){
 			continue;
 		}
 		const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + (Pi.z - P0.z) * (Pi.z - P0.z) );
 		const adi = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri);
 		const di = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri) - d0;
+		if( ri > 2048 * stalth ){ continue; }
 		for( let j = 0; j < 21; j++ ){
 			if( - Math.PI/2 + j * Math.PI / 21 <= di && di < - Math.PI/2 + (j + 1) * Math.PI / 21 ){
 				if( 1024 <= ri && ri < 2048  && print[j] < 1 ){
@@ -114,6 +112,9 @@ function findTargetInCone(player,entityOption,allies) {
 
         const distance = Math.sqrt(toEntity.x ** 2 + toEntity.y ** 2 + toEntity.z ** 2);
         if (distance === 0 ) continue;
+		// ステルス値を取得
+		const stalth = vehicleData[`${entity.typeId.replace("vehicle:","")}`][`stalth`];
+		if( distance > entityOption.maxDistance * (stalth) ){ continue; }
 
         // ターゲットへの方向ベクトルを正規化
         const toEntityProj = {
@@ -121,6 +122,7 @@ function findTargetInCone(player,entityOption,allies) {
             y: toEntity.y / distance,
             z: toEntity.z / distance
         };
+
 
         // 視線ベクトルとターゲットへのベクトルの内積を計算 (cosθ)
         const dotProduct = (viewDir.x * toEntityProj.x) + (viewDir.y * toEntityProj.y) + (viewDir.z * toEntityProj.z);
@@ -134,7 +136,7 @@ function findTargetInCone(player,entityOption,allies) {
 			if( (!world.scoreboard.getObjective(`maxsubcool`).hasParticipant(entity) || world.scoreboard.getObjective(`maxsubcool`).getScore(entity) <= 0 ) ){
 				if( riders.length > 0  ){
 					//print(`${riders[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies()} vs ${allies} `)
-					if( !riders[0].getComponent(EntityComponentTypes.TypeFamily).getTypeFamilies().some( v => allies.includes(v) ) ){
+					if( getTeam(riders[0]) != getTeam(player) ){
 						closestTarget = entity;
 					}
 				}
@@ -316,7 +318,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		const airCraft = e.sourceEntity;
         const Hasrider = Boolean(airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0] != undefined)
 		if( Hasrider ){
-			const maxSpeed = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue;
+			const maxSpeed = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue * 2;
 			const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
             if( player.typeId == "minecraft:player" ){
 
@@ -583,12 +585,18 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 			entity.addEffect(`resistance`,9999999,{ amplifier:255,showParticles:false });
 		}
 
+		if( vehicleData[`${vehicle.typeId.split(`:`)[1]}`][`stalth`] < 1 ){
+			entity.addEffect(`invisibility`,9999999,{ amplifier:255,showParticles:false });
+			entity.setDynamicProperty(`stalth`,vehicleData[`${vehicle.typeId.split(`:`)[1]}`][`stalth`]);
+		}
+
 
 		if( entity.id == vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0].id ){
 			
 			if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`TofAA`) ){
 				entity.addTag(`air`);
 			}
+
 
 			if( entity.typeId == `minecraft:player` ){
 				entity.addTag(`isRiding`);
@@ -637,6 +645,8 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 	else if( e.id == "zex:vend"){
 		const entity = e.sourceEntity;
 		entity.removeEffect(`resistance`);
+		entity.removeEffect(`invisibility`);
+		entity.setDynamicProperty(`stalth`,undefined);
 		if( entity.typeId == `minecraft:player` ){
 			entity.removeTag(`isRiding`);
 			entity.inputPermissions.setPermissionCategory(InputPermissionCategory.MoveLeft,true);
