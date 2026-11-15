@@ -20,6 +20,7 @@ world.afterEvents.entityHurt.subscribe( e => {
 
 const airbone_tank = [
 	`vehicle:fv101_spawn_egg`,
+	`vehicle:m551_spawn_egg`,
 	`vehicle:m41`
 ]
 
@@ -223,7 +224,7 @@ world.afterEvents.entityItemDrop.subscribe( async e => {
 		else if( airbone_tank.includes(bonename) ){
 			const spawn = entity.dimension.spawnEntity(`gvcv5:ca`,entity.location,{ spawnEvent:`gvcv5:become_${getTeam(entity)}` });
 			spawn.triggerEvent(`gvcv5:become_${getTeam(entity)}`);
-			spawn.runCommand(`ride @s summon_ride vehicle:fv101 reassign_rides minecraft:spawned_from_air`);
+			spawn.runCommand(`ride @s summon_ride ${bonename.replace(`_spawn_egg`,``)} reassign_rides minecraft:spawned_from_air`);
 			item.remove()
 
 		}

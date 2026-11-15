@@ -440,6 +440,26 @@ export const vehicleData = {
     "coolTime": 300,
     "stalth": 1
   },
+  "m551": {
+    "type": "stank",
+    "speed": 0.2,
+    "Weapon1": "152mms",
+    "Weapon1_cool": 100,
+    "Weapon1_ammo": 1,
+    "Weapon2": "vmg",
+    "Weapon2_cool": 1,
+    "Weapon2_ammo": 30,
+    "Weapon3": "tankg",
+    "Weapon3_cool": 150,
+    "Weapon3_ammo": 1,
+    "Weapon4": "",
+    "Weapon4_cool": 0,
+    "Weapon4_ammo": 0,
+    "turn": 0.0,
+    "gattack": 7,
+    "coolTime": 240,
+    "stalth": 1
+  },
   "r22": {
     "type": "heri",
     "speed": 0.5,

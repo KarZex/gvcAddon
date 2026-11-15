@@ -13,6 +13,7 @@ export const tankImmuneEntities = [
 
 const airbone_tank = [
 	`vehicle:fv101_spawn_egg`,
+	`vehicle:m551_spawn_egg`,
 	`vehicle:m41`
 ]
 function addCircleDeg( deg, thita ){

@@ -1360,6 +1360,9 @@
     },
     "c130": {
       "textures": "textures/items/vehicle/c130"
+    },
+    "m551": {
+      "textures": "textures/items/vehicle/m551"
     }
   }
 }

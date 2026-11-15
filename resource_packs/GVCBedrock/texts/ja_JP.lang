@@ -590,6 +590,18 @@ entity.vehicle:fa18.name=F/A-18
 item.spawn_egg.entity.vehicle:fa18.name=F/A-18
 tile.gvcv5:spawn_vehicle_fa18.name=F/A-18
 item.vehicle:fa18_spawn_egg=F/A-18
+entity.vehicle:a10.name=A-10
+item.spawn_egg.entity.vehicle:a10.name=A-10
+tile.gvcv5:spawn_vehicle_a10.name=A-10
+item.vehicle:a10_spawn_egg=A-10
+entity.vehicle:c130.name=C130
+item.spawn_egg.entity.vehicle:c130.name=C130
+tile.gvcv5:spawn_vehicle_c130.name=C130
+item.vehicle:c130_spawn_egg=C130
+entity.vehicle:m551.name=M551
+item.spawn_egg.entity.vehicle:m551.name=M551
+tile.gvcv5:spawn_vehicle_m551.name=M551
+item.vehicle:m551_spawn_egg=M551
 
 
 ### Tile name ###

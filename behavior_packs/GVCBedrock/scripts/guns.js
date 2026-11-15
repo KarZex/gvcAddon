@@ -1521,5 +1521,12 @@ export const gunData = {
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
     "ammoType": "zex:s105m"
+  },
+  "152mms": {
+    "damage": 50,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s152m"
   }
 };

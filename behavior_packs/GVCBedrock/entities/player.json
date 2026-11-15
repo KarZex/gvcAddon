@@ -3815,6 +3815,19 @@
             }
           ]
         }
+      },
+      "fire:152mms": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "fire:152mms"
+            }
+          ]
+        }
       }
     },
     "components": {
@@ -5008,6 +5021,13 @@
         "add": {
           "component_groups": [
             "fire:125mm"
+          ]
+        }
+      },
+      "fire:152mms": {
+        "add": {
+          "component_groups": [
+            "fire:152mms"
           ]
         }
       }

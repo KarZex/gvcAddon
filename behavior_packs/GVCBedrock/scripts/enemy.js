@@ -133,6 +133,7 @@ const gaGunsLv6 = [
 ]
 
 //Red team soldier 
+//Russia 
 const caRedGuns = [
 	[
 		`ak12`,
@@ -150,6 +151,7 @@ const caRedGuns = [
 ]
 
 //Blue team soldier 
+//USA
 const caBlueGuns = [
 	[
 		`m16a4`,
@@ -167,6 +169,7 @@ const caBlueGuns = [
 ]
 
 //Green team soldier 
+//Iran
 const caGreenGuns = [
 	[
 		`an94`,
@@ -184,6 +187,7 @@ const caGreenGuns = [
 ]
 
 //Yellow team soldier
+//Europe
 const caYellowGuns = [
 	[
 		`g36`,

@@ -55,3 +55,4 @@ gvcv5.127mm.name=127mmCannon
 gvcv5.130mm.name=130mmCannon
 gvcv5.105mm.name=105mm Cannon
 gvcv5.125mm.name=125mm Cannon
+gvcv5.152mms.name=152mmCannon

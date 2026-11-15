@@ -633,6 +633,9 @@
     },
     "spawn_vehicle_c130": {
       "textures": "textures/spawn/vehicle_c130"
+    },
+    "spawn_vehicle_m551": {
+      "textures": "textures/spawn/vehicle_m551"
     }
   }
 }

@@ -56,3 +56,4 @@ SSMissile,ssmissile,100,4,0,100,3,F,missilebullet,entityExplosion,H,4,zex:20mmc,
 130mmCannon,130mm,140,4,0,60,3,T,cannonbullet,entityExplosion,,4,zex:s57m,3
 105mm Cannon,105mm,20,4,0,100,1,F,tankbullet,entityExplosion,,6,zex:s105m,3
 125mm Cannon,125mm,80,4,0,100,1,F,tankbullet,entityExplosion,,6,zex:s105m,3
+152mmCannon,152mms,50,4,0,160,3,T,tankbullet,entityExplosion,,6,zex:s152m,3
