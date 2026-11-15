@@ -627,6 +627,12 @@
     },
     "spawn_vehicle_fa18": {
       "textures": "textures/spawn/vehicle_fa18"
+    },
+    "spawn_vehicle_a10": {
+      "textures": "textures/spawn/vehicle_a10"
+    },
+    "spawn_vehicle_c130": {
+      "textures": "textures/spawn/vehicle_c130"
     }
   }
 }

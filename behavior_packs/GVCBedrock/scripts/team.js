@@ -516,6 +516,10 @@ world.afterEvents.playerSpawn.subscribe( e => {
 
 
 system.afterEvents.scriptEventReceive.subscribe( e => {
+	if( e.id == "gvcv5:changename" ){
+		const player = e.sourceEntity;
+		player.nameTag = e.message;
+	}
 	if( e.id === "gvcv5:TeamList" ){
 		let itemRawText = []
 		for( const Ally of world.getPlayers({ families: [ "red" ] }) ){

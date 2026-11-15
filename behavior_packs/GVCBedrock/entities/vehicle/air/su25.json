@@ -53,8 +53,8 @@
           "seats": {
             "position": [
               0,
-              0.75,
-              -0.25
+              0.8,
+              -0.4
             ],
             "third_person_camera_radius": 28
           }
@@ -157,8 +157,8 @@
         "seats": {
           "position": [
             0,
-            0.75,
-            -0.25
+            0.8,
+            -0.4
           ],
           "third_person_camera_radius": 28
         }

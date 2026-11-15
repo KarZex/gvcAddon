@@ -18,6 +18,10 @@ world.afterEvents.entityHurt.subscribe( e => {
 } )
 */
 
+const airbone_tank = [
+	`vehicle:fv101_spawn_egg`,
+	`vehicle:m41`
+]
 
 export const tankImmuneEntities = [
     `armor_stand`,
@@ -197,6 +201,33 @@ world.afterEvents.entitySpawn.subscribe( e => {
 		}
 
 	}catch{}
+} )
+
+world.afterEvents.entityItemDrop.subscribe( async e => {
+	const entity = e.entity;
+	if( entity.typeId == `minecraft:player` && entity.hasTag(`airboneT`) ){
+		const item = e.items[0];
+		const bonename = item.getComponent(EntityComponentTypes.Item).itemStack.typeId;
+		if( bonename == `gvcv5:ca_spawn_egg`  ){
+			const spawn = entity.dimension.spawnEntity(`${bonename.replace(`_spawn_egg`,``)}`,entity.location,{ spawnEvent:`minecraft:spawned_from_air` });
+			spawn.triggerEvent(`gvcv5:become_${getTeam(entity)}`);
+			spawn.triggerEvent(`minecraft:spawned_from_air`);
+			item.remove()
+		}
+		else if( bonename == `gvcv5:pmc_spawn_egg` ){
+			const spawn = entity.dimension.spawnEntity(`${bonename.replace(`_spawn_egg`,``)}_${getTeam(entity).replace(`team`,``)}`,entity.location,{ spawnEvent:`minecraft:spawned_from_air` });
+			spawn.triggerEvent(`minecraft:spawned_from_air`);
+			item.remove()
+
+		}
+		else if( airbone_tank.includes(bonename) ){
+			const spawn = entity.dimension.spawnEntity(`gvcv5:ca`,entity.location,{ spawnEvent:`gvcv5:become_${getTeam(entity)}` });
+			spawn.triggerEvent(`gvcv5:become_${getTeam(entity)}`);
+			spawn.runCommand(`ride @s summon_ride vehicle:fv101 reassign_rides minecraft:spawned_from_air`);
+			item.remove()
+
+		}
+	}
 } )
 
 world.afterEvents.entityDie.subscribe( e => {

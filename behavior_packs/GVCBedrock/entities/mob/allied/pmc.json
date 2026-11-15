@@ -9,12 +9,14 @@
       "scripts": {
         "animate": [
           "targeting",
-          "walk"
+          "walk",
+          "para"
         ]
       },
       "animations": {
         "targeting": "controller.animation.targeting",
-        "walk": "controller.animation.riderb1"
+        "walk": "controller.animation.riderb1",
+        "para": "controller.animation.para"
       },
       "properties": {
         "zex:is_scoping": {
@@ -3649,6 +3651,17 @@
           ]
         }
       },
+      "minecraft:spawned_from_air": {
+        "sequence": [
+          {
+            "queue_command": {
+              "command": [
+                "replaceitem entity @s slot.armor.chest 0 gvcv5:parachute"
+              ]
+            }
+          }
+        ]
+      },
       "gvcv5:become_redteam": {
         "add": {
           "component_groups": [
@@ -4844,6 +4857,11 @@
           "command": "ride @s summon_ride vehicle:a6 no_ride_change summon_enemy"
         }
       },
+      "vehicle:a10": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:a10 no_ride_change summon_enemy"
+        }
+      },
       "vehicle:su25": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:su25 no_ride_change summon_enemy"
@@ -4872,6 +4890,11 @@
       "vehicle:il28": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:il28 no_ride_change summon_enemy"
+        }
+      },
+      "vehicle:c130": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:c130 no_ride_change summon_enemy"
         }
       },
       "vehicle:st1_pmc": {

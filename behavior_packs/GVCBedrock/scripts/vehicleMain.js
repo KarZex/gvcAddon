@@ -11,6 +11,10 @@ export const tankImmuneEntities = [
     `xp_orb`
 ]
 
+const airbone_tank = [
+	`vehicle:fv101_spawn_egg`,
+	`vehicle:m41`
+]
 function addCircleDeg( deg, thita ){
 	let T = deg + thita + 180;
 	//print(T)
@@ -318,7 +322,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		const airCraft = e.sourceEntity;
         const Hasrider = Boolean(airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0] != undefined)
 		if( Hasrider ){
-			const maxSpeed = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue * 2;
+			const maxSpeed = airCraft.getComponent(EntityComponentTypes.Movement).defaultValue * 1;
 			const player = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
             if( player.typeId == "minecraft:player" ){
 
@@ -584,6 +588,9 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`plate`) ){
 			entity.addEffect(`resistance`,9999999,{ amplifier:255,showParticles:false });
 		}
+		if( vehicle.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`airboneT`) ){
+			entity.addTag(`airboneT`);
+		}
 
 		if( vehicleData[`${vehicle.typeId.split(`:`)[1]}`][`stalth`] < 1 ){
 			entity.addEffect(`invisibility`,9999999,{ amplifier:255,showParticles:false });
@@ -658,6 +665,14 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				}
 				entity.setDynamicProperty(`hamina`,undefined)
 			}
+			if( entity.hasTag(`airboneT`) && entity.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand).hasItem() ){
+				const id = entity.getComponent(EntityComponentTypes.Equippable).getEquipmentSlot(EquipmentSlot.Mainhand).getItem().typeId;
+				print(`${id}`)
+				if( airbone_tank.includes(id) ){
+					entity.runCommand(`ride @s summon_ride ${id.replace(`_spawn_egg`,``)} reassign_rides minecraft:spawned_from_air`);
+					entity.runCommand(`clear @s ${id} 0 1`)
+				}
+			}
 		}
 		else{
 			entity.triggerEvent(`gvcv5:set_have_gun_nt`);
@@ -681,6 +696,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 
 
 		entity.removeTag(`air`);
+		entity.removeTag(`airboneT`);
 	}
 	else if( e.id == "zex:vtext"){
 		const vehicle = e.sourceEntity;

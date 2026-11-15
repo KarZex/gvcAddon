@@ -9,12 +9,14 @@
       "scripts": {
         "animate": [
           "targeting",
-          "walk"
+          "walk",
+          "para"
         ]
       },
       "animations": {
         "targeting": "controller.animation.targeting",
-        "walk": "controller.animation.riderb1"
+        "walk": "controller.animation.riderb1",
+        "para": "controller.animation.para"
       },
       "properties": {
         "zex:is_scoping": {
@@ -4235,6 +4237,17 @@
             "default"
           ]
         }
+      },
+      "minecraft:spawned_from_air": {
+        "sequence": [
+          {
+            "queue_command": {
+              "command": [
+                "replaceitem entity @s slot.armor.chest 0 gvcv5:parachute"
+              ]
+            }
+          }
+        ]
       },
       "gvcv5:order": {
         "sequence": [

@@ -1354,6 +1354,12 @@
     },
     "fa18": {
       "textures": "textures/items/vehicle/fa18"
+    },
+    "a10": {
+      "textures": "textures/items/vehicle/a10"
+    },
+    "c130": {
+      "textures": "textures/items/vehicle/c130"
     }
   }
 }

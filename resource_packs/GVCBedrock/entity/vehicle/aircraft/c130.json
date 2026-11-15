@@ -1,0 +1,48 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:c130",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+				"default": "textures/entity/c130"
+			},
+			"geometry": {
+				"default": "geometry.c130"
+			},
+			"animations": {
+				"fly": "animation.airc130",
+				"flying": "animation.flyingc130",
+				"fly2": "animation.flyingc130_p"
+			},
+			"scripts": {
+				"pre_animation": [
+					"v.rotation = q.body_y_rotation - q.rider_head_y_rotation(0);",
+					"v.applyRotation = v.rotation;",
+					"(v.rotation > 180) ? { v.applyRotation = v.rotation - 360; };",
+					"(v.rotation < -180) ? { v.applyRotation = v.rotation + 360; };"
+				],
+				"animate": [
+					{
+						"flying": "!query.is_on_ground"
+					},
+					{
+						"fly": "query.has_rider && !query.is_on_ground"
+					},
+					{
+						"fly2": "query.has_rider"
+					}
+				]
+			},
+			"spawn_egg": {
+				"texture": "c130",
+				"texture_index": 0
+			},
+			"render_controllers": [
+				"controller.render.iron_golem"
+			]
+		}
+	}
+}

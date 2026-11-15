@@ -99,6 +99,8 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:fa18] run event entity @s
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:a6] run event entity @s 30mmmcair
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:a10] run event entity @s 30mmmcair
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:su25] run event entity @s 30mmmcair
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:f117] run event entity @s bombii
@@ -110,6 +112,8 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:il2] run event entity @s 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak23] run event entity @s 20mmmcaird
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:il28] run event entity @s bomb
+
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:c130] run event entity @s flare
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:st1_pmc] run event entity @s 152mm
 
