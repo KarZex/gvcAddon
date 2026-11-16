@@ -2,10 +2,12 @@ import { world, system, EquipmentSlot, EntityComponentTypes, DamagedByEntityCond
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { absVector2, getTeam,DistanceVector3in2dim } from "./usefulFunction"
 import { gunGuide } from "./gunguide";
+import { vehicleData } from "./vehicle";
 
 const Teams = [ "red","blue","green","yellow" ];
 const worldDimensions = [ `overworld`, `nether`, `the_end` ];
 const GUN_TYPES = Object.keys(gunGuide.gun_types);
+const V_TYPES = Object.keys(vehicleData.v_types);
 //1 day
 const CoolTime = 24000;
 function gvcv5GetTime() {
@@ -64,7 +66,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				}
 				// Vechile
 				else if( r.selection == 1 ){
-					user.runCommand(`scriptevent gvcv5:guide_vechile ${team}`);
+					user.runCommand(`scriptevent gvcv5:guide_vechile 0`);
 				}
 			}
 		},)
@@ -125,6 +127,143 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					}
 				}
 			} )
+		}
+	}
+	else if( e.id == "guide_vechile" && !e.sourceEntity.hasTag(`down`) ){
+		const number = e.message;
+		if( number == `0` ){
+			const user = e.sourceEntity;
+			const form = new ActionFormData();
+			form.title(`script.gvcv5.guide_vechile.name`);
+			form.body(`script.gvcv5.guide_vechile_desc.name`);
+			form.button(`script.gvcv5.how_to_vechile.name`);
+			form.button(`script.gvcv5.show_vechile.name`);
+			form.button(`script.gvcv5.back.name`);
+			form.show(user).then( result => {
+				if ( !result.canceled ){
+					if( result.selection != 5 ){
+						user.runCommand(`scriptevent gvcv5:guide_vechile ${result.selection+1}`);
+					}
+					else{
+						user.runCommand(`scriptevent gvcv5:phone_guide`);
+					}
+				}
+			} )
+		}
+		else if( number == `1` ){
+			const user = e.sourceEntity;
+			const form = new ActionFormData();
+			form.title(`script.gvcv5.how_to_vechile.name`);
+			form.body({ rawtext: createDesc(`howToGunDesc`,4) });
+			form.button(`script.gvcv5.back.name`);
+			form.show(user).then( result => {
+				if ( !result.canceled ){
+					user.runCommand(`scriptevent gvcv5:guide_gun 0`);
+				}
+			} )
+		}
+		else if( number == `2` ){
+			const user = e.sourceEntity;
+			const form = new ActionFormData();
+			form.title(`script.gvcv5.show_vechile.name`);
+			for( const vType of V_TYPES ){
+				form.button(`script.gvcv5:vehicle_type.${vType}.name`);
+			}
+			form.button(`script.gvcv5.back.name`);
+			form.show(user).then( result => {
+				if ( !result.canceled ){
+					if( result.selection != V_TYPES.length ){
+						//print(`${V_TYPES[result.selection]}`)
+						user.runCommand(`scriptevent gvcv5:guide_show_v ${V_TYPES[result.selection]}`);
+					}
+					else{
+						user.runCommand(`scriptevent gvcv5:guide_vechile 0`);
+					}
+				}
+			} )
+		}
+	}
+	else if( e.id == "gvcv5:guide_show_v" && !e.sourceEntity.hasTag(`down`) ){
+		const message = e.message;
+		const user = e.sourceEntity;
+		if( message in vehicleData["v_types"] ){
+			const form = new ActionFormData();
+			form.title(`script.gvcv5.guide_show_gun.name`);
+			const target_vs = gunGuide["v_types"][`${message}`];
+			for( const v of target_vs ){
+				let itemRawText = [];
+				//print(`${gun[`name`]}`)
+				itemRawText.push({ translate: `item.gun:${v[`name`]}` });
+				itemRawText.push({ text: `\n` });	
+				itemRawText.push({ translate: `script.gvcv5:rarelity.name` });
+				itemRawText.push({ translate: `script.gvcv5:rarelity_${v[`rarelity`]}.name` });
+				form.button({ rawtext: itemRawText },`textures/items/gun/${v[`name`]}`);
+			}
+			form.button(`script.gvcv5.back.name`);
+			form.show(user).then( result => {
+				if ( !result.canceled ){
+					if( result.selection != target_vs.length ){
+						user.runCommand(`scriptevent gvcv5:guide_show_gun ${target_vs[result.selection][`name`]}`);
+					}
+					else{
+						user.runCommand(`scriptevent gvcv5:guide_vechile 2`);
+					}
+				}
+			} )
+
+		}
+		else if( message in gunGuide ){
+			const form = new ActionFormData();
+			const v = message;
+			form.title(`entity.vehicle:${v}.name`);
+			const vData = vehicleData[`${v}`]
+			let itemRawText = [];
+			itemRawText.push({ translate: `script.gvcv5:v_spec.desc.name` });
+			itemRawText.push({ translate: `script.gvcv5:v_spec.${v}_desc.name` });
+			//v_subtype
+			itemRawText.push({ translate: `script.gvcv5:v_spec.v_subtype.name` });
+			itemRawText.push({ translate: `script.gvcv5:vehicle_subtype.${vData[`v_subtype`]}.name` });
+			itemRawText.push({ text: `\n` });
+			itemRawText.push({ translate: `script.gvcv5:v_spec.v_health.name` });
+			itemRawText.push({ text: `${vData[`health`]}` });
+			itemRawText.push({ text: `\n` });
+			itemRawText.push({ translate: `script.gvcv5:v_spec.v_speed.name` });
+			itemRawText.push({ text: `${vData[`speed`] * 20} (m/s)` });
+			itemRawText.push({ text: `\n` });
+			itemRawText.push({ translate: `script.gvcv5:v_spec.member.name` });
+			itemRawText.push({ text: `${vData[`member`]}` });
+			itemRawText.push({ text: `\n` });
+			itemRawText.push({ translate: `script.gvcv5:v_spec.v_antibullet.name` });
+			itemRawText.push({ text: `${vData[`v_antibullet`]}` });
+			itemRawText.push({ text: `\n` });
+			itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapon1.name` });
+			itemRawText.push({ translate: `gvcv5.${vData[`Weapon1`]}.name` });
+			itemRawText.push({ text: `\n` });
+			itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapon2.name` });
+			itemRawText.push({ translate: `gvcv5.${vData[`Weapon2`]}.name` });
+			itemRawText.push({ text: `\n` });
+			itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapon3.name` });
+			itemRawText.push({ translate: `gvcv5.${vData[`Weapon3`]}.name` });
+			itemRawText.push({ text: `\n` });
+			itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapon4.name` });
+			itemRawText.push({ translate: `gvcv5.${vData[`Weapon4`]}.name` });
+			itemRawText.push({ text: `\n` });
+			if( vData[`stalth`] < 1 ){
+				itemRawText.push({ translate: `script.gvcv5:v_spec.stalth.name` });
+				itemRawText.push({ translate: `gvcv5.${vData[`stalth`]}.name` });
+				itemRawText.push({ text: `\n` });
+			}
+
+
+			itemRawText.push({ text: `\n\n` });
+			form.body({ rawtext: itemRawText });
+			form.button(`script.gvcv5.back.name`);
+			form.show(user).then( result => {
+				if ( !result.canceled ){
+					user.runCommand(`scriptevent gvcv5:guide_gun 2`);
+				}
+			} )
+
 		}
 	}
 	else if( e.id == "gvcv5:guide_show_gun" && !e.sourceEntity.hasTag(`down`) ){

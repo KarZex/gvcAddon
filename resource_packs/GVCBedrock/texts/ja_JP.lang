@@ -1470,3 +1470,5 @@ script.gvcv5.battleInfo10.name=§8ネザライト装備: 1部位あたり25%§r
 script.gvcv5:battleInfo11.name=防具の軽減率は、4部位装備することで最大100%まで軽減することができる。
 script.gvcv5:battleInfo12.name=また、§cヘッドショット§rを受けると、軽減率は-50%される。また、足に被弾すると、軽減率は+25%される。
 script.gvcv5:battleInfo13.name=軽減率が0%を下回った場合、受けるダメージは増加する。
+
+script.gvcv5:v_spec.t34_desc.name=ゲリラがよく使用する旧式戦車。性能は全戦車の中でも低いが、それでも歩兵とって脅威となる。

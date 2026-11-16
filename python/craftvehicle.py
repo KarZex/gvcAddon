@@ -10,7 +10,11 @@ row_count = 0
 text = ""
 eng_text = ""
 
-vehicledata_json = {}
+vehicledata_json = {
+    "v_types":{
+
+    }
+}
 v_weapon1_func = "tag @s add weaponiattack\n"
 v_weapon2_func = "tag @s add weaponiiattack\n"
 v_weapon3_func = "tag @s add weaponiiiattack\n"
@@ -84,6 +88,15 @@ for row in csv_reader:
         if( row[39] == "4" ): v_rare = "epic"
         if( row[39] == "5" ): v_rare = "legendary"
         if( row[39] == "6" ): v_rare = "mythic"
+
+        v_maintype = v_type
+        if( v_maintype == "stank" ):
+            v_maintype = "tank"
+
+        if( not f"{v_maintype}" in vehicledata_json["v_types"]  ):
+            vehicledata_json["v_types"][f"{v_maintype}"] = [ { "name": v_id, "rarelity": v_rare } ]
+        else:
+            vehicledata_json["v_types"][f"{v_maintype}"].append({ "name": v_id, "rarelity": v_rare })
 
 
 

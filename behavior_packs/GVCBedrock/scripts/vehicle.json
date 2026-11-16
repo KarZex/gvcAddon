@@ -1,4 +1,274 @@
 {
+  "v_types": {
+    "apc": [
+      {
+        "name": "aifv",
+        "rarelity": "rare"
+      },
+      {
+        "name": "zex_cluiser",
+        "rarelity": "common"
+      },
+      {
+        "name": "lav25",
+        "rarelity": "epic"
+      },
+      {
+        "name": "lav25aa",
+        "rarelity": "epic"
+      },
+      {
+        "name": "m113",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "m113aa",
+        "rarelity": "rare"
+      },
+      {
+        "name": "m1126",
+        "rarelity": "epic"
+      },
+      {
+        "name": "m1128",
+        "rarelity": "epic"
+      },
+      {
+        "name": "btr60",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "bmp3",
+        "rarelity": "epic"
+      },
+      {
+        "name": "9k35",
+        "rarelity": "epic"
+      }
+    ],
+    "tank": [
+      {
+        "name": "panzer",
+        "rarelity": "common"
+      },
+      {
+        "name": "kv2",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "m1_abrams",
+        "rarelity": "epic"
+      },
+      {
+        "name": "m1a2",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "m41",
+        "rarelity": "common"
+      },
+      {
+        "name": "fv101",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "m60a1",
+        "rarelity": "rare"
+      },
+      {
+        "name": "pt76",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "t34",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "t55",
+        "rarelity": "rare"
+      },
+      {
+        "name": "t72",
+        "rarelity": "epic"
+      },
+      {
+        "name": "m551",
+        "rarelity": "epic"
+      },
+      {
+        "name": "st1_pmc",
+        "rarelity": "mythic"
+      }
+    ],
+    "heri": [
+      {
+        "name": "r22",
+        "rarelity": "common"
+      },
+      {
+        "name": "ah1s",
+        "rarelity": "rare"
+      },
+      {
+        "name": "ah1z",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "ah6",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "g_heri",
+        "rarelity": "common"
+      },
+      {
+        "name": "ka50",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "ka60",
+        "rarelity": "epic"
+      },
+      {
+        "name": "mi24d",
+        "rarelity": "rare"
+      }
+    ],
+    "set": [
+      {
+        "name": "20mmaa",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "flak18",
+        "rarelity": "common"
+      },
+      {
+        "name": "pak40",
+        "rarelity": "common"
+      },
+      {
+        "name": "zu23",
+        "rarelity": "rare"
+      },
+      {
+        "name": "vads",
+        "rarelity": "epic"
+      },
+      {
+        "name": "dp28set",
+        "rarelity": "common"
+      },
+      {
+        "name": "m60set",
+        "rarelity": "common"
+      },
+      {
+        "name": "pkmset",
+        "rarelity": "common"
+      },
+      {
+        "name": "tow2",
+        "rarelity": "rare"
+      },
+      {
+        "name": "mk45",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "ak130",
+        "rarelity": "epic"
+      },
+      {
+        "name": "mk15",
+        "rarelity": "legendary"
+      }
+    ],
+    "air": [
+      {
+        "name": "mig17",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "f22",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "su27",
+        "rarelity": "rare"
+      },
+      {
+        "name": "su57",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "f16",
+        "rarelity": "rare"
+      },
+      {
+        "name": "fa18",
+        "rarelity": "epic"
+      },
+      {
+        "name": "a6",
+        "rarelity": "rare"
+      },
+      {
+        "name": "a10",
+        "rarelity": "epic"
+      },
+      {
+        "name": "su25",
+        "rarelity": "epic"
+      },
+      {
+        "name": "f117",
+        "rarelity": "legendary"
+      },
+      {
+        "name": "yak9",
+        "rarelity": "common"
+      },
+      {
+        "name": "il2",
+        "rarelity": "common"
+      },
+      {
+        "name": "yak23",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "il28",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "c130",
+        "rarelity": "legendary"
+      }
+    ],
+    "ship": [
+      {
+        "name": "cruiser",
+        "rarelity": "rare"
+      },
+      {
+        "name": "rcb90",
+        "rarelity": "epic"
+      },
+      {
+        "name": "rhib",
+        "rarelity": "common"
+      },
+      {
+        "name": "pr1204",
+        "rarelity": "rare"
+      },
+      {
+        "name": "hamina",
+        "rarelity": "legendary"
+      }
+    ]
+  },
   "aifv": {
     "type": "apc",
     "health": 160,
