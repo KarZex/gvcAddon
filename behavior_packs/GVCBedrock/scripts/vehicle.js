@@ -2,7 +2,11 @@ import { EntityDamageCause } from "@minecraft/server";
 export const vehicleData = {
   "aifv": {
     "type": "apc",
+    "health": 160,
     "speed": 0.3,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "25mmmc",
     "Weapon1_cool": 9,
     "Weapon1_ammo": 10,
@@ -18,11 +22,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "ifv",
+    "v_rare": "rare"
   },
   "zex_cluiser": {
     "type": "apc",
+    "health": 100,
     "speed": 0.3,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "7.62mmmg",
     "Weapon1_cool": 1,
     "Weapon1_ammo": 30,
@@ -38,11 +48,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 60,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "truck",
+    "v_rare": "common"
   },
   "lav25": {
     "type": "apc",
+    "health": 120,
     "speed": 0.3,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "25mmmc",
     "Weapon1_cool": 9,
     "Weapon1_ammo": 20,
@@ -58,11 +74,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 180,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "ifv",
+    "v_rare": "epic"
   },
   "lav25aa": {
     "type": "apc",
+    "health": 120,
     "speed": 0.3,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "20mmmcair",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 30,
@@ -78,11 +100,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 180,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "spgaa",
+    "v_rare": "epic"
   },
   "m113": {
     "type": "apc",
+    "health": 100,
     "speed": 0.3,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "hmg",
     "Weapon1_cool": 2,
     "Weapon1_ammo": 30,
@@ -98,11 +126,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "apc",
+    "v_rare": "uncommon"
   },
   "m113aa": {
     "type": "apc",
+    "health": 120,
     "speed": 0.3,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "20mmmcair",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 30,
@@ -118,11 +152,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "spgaa",
+    "v_rare": "rare"
   },
   "m1126": {
     "type": "apc",
+    "health": 200,
     "speed": 0.2,
+    "member": 6,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "hmg",
     "Weapon1_cool": 2,
     "Weapon1_ammo": 30,
@@ -138,11 +178,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "apc",
+    "v_rare": "epic"
   },
   "m1128": {
     "type": "apc",
+    "health": 200,
     "speed": 0.2,
+    "member": 6,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "105mmap",
     "Weapon1_cool": 50,
     "Weapon1_ammo": 1,
@@ -158,11 +204,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "spg",
+    "v_rare": "epic"
   },
   "btr60": {
     "type": "apc",
+    "health": 100,
     "speed": 0.3,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "14.5mmhmg",
     "Weapon1_cool": 2,
     "Weapon1_ammo": 30,
@@ -178,11 +230,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "apc",
+    "v_rare": "uncommon"
   },
   "bmp3": {
     "type": "apc",
+    "health": 160,
     "speed": 0.3,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "100mm",
     "Weapon1_cool": 30,
     "Weapon1_ammo": 1,
@@ -198,11 +256,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 180,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "ifv",
+    "v_rare": "epic"
   },
   "9k35": {
     "type": "apc",
+    "health": 200,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "aamissile",
     "Weapon1_cool": 10,
     "Weapon1_ammo": 4,
@@ -218,11 +282,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 180,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "spgaa",
+    "v_rare": "epic"
   },
   "panzer": {
     "type": "tank",
+    "health": 100,
     "speed": 0.25,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 1.0,
     "Weapon1": "76mm",
     "Weapon1_cool": 60,
     "Weapon1_ammo": 1,
@@ -238,11 +308,17 @@ export const vehicleData = {
     "turn": 1.0,
     "gattack": 0,
     "coolTime": 240,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "medium_tank",
+    "v_rare": "common"
   },
   "kv2": {
     "type": "tank",
+    "health": 500,
     "speed": 0.1,
+    "member": 1,
+    "v_antibullet": 3,
+    "v_turn": 0.0,
     "Weapon1": "152mm",
     "Weapon1_cool": 160,
     "Weapon1_ammo": 1,
@@ -258,11 +334,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 20,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "heavy_tank",
+    "v_rare": "uncommon"
   },
   "m1_abrams": {
     "type": "tank",
+    "health": 400,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 3,
+    "v_turn": 0.0,
     "Weapon1": "120mmheat",
     "Weapon1_cool": 60,
     "Weapon1_ammo": 1,
@@ -278,11 +360,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 20,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "mbt",
+    "v_rare": "epic"
   },
   "m1a2": {
     "type": "tank",
+    "health": 400,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 3,
+    "v_turn": 0.0,
     "Weapon1": "120mmapfsds",
     "Weapon1_cool": 60,
     "Weapon1_ammo": 1,
@@ -298,11 +386,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 20,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "mbt",
+    "v_rare": "legendary"
   },
   "m41": {
     "type": "stank",
+    "health": 160,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "85mm",
     "Weapon1_cool": 30,
     "Weapon1_ammo": 1,
@@ -318,11 +412,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 240,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "light_tank",
+    "v_rare": "common"
   },
   "fv101": {
     "type": "stank",
+    "health": 120,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "76mm",
     "Weapon1_cool": 30,
     "Weapon1_ammo": 1,
@@ -338,11 +438,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 240,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "light_tank",
+    "v_rare": "uncommon"
   },
   "m60a1": {
     "type": "tank",
+    "health": 200,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 3,
+    "v_turn": 0.0,
     "Weapon1": "105mmhe",
     "Weapon1_cool": 60,
     "Weapon1_ammo": 1,
@@ -358,11 +464,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 14,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "mbt",
+    "v_rare": "rare"
   },
   "pt76": {
     "type": "stank",
+    "health": 100,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "76mm",
     "Weapon1_cool": 30,
     "Weapon1_ammo": 1,
@@ -378,11 +490,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 240,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "light_tank",
+    "v_rare": "uncommon"
   },
   "t34": {
     "type": "tank",
+    "health": 120,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 3,
+    "v_turn": 0.0,
     "Weapon1": "85mm",
     "Weapon1_cool": 50,
     "Weapon1_ammo": 1,
@@ -398,11 +516,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "medium_tank",
+    "v_rare": "uncommon"
   },
   "t55": {
     "type": "tank",
+    "health": 200,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 3,
+    "v_turn": 0.0,
     "Weapon1": "100mm",
     "Weapon1_cool": 70,
     "Weapon1_ammo": 1,
@@ -418,11 +542,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 14,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "mbt",
+    "v_rare": "rare"
   },
   "t72": {
     "type": "tank",
+    "health": 400,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 3,
+    "v_turn": 0.0,
     "Weapon1": "125mmheat",
     "Weapon1_cool": 90,
     "Weapon1_ammo": 1,
@@ -438,11 +568,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 18,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "mbt",
+    "v_rare": "epic"
   },
   "m551": {
     "type": "stank",
+    "health": 200,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "152mms",
     "Weapon1_cool": 100,
     "Weapon1_ammo": 1,
@@ -458,11 +594,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 240,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "light_tank",
+    "v_rare": "epic"
   },
   "r22": {
     "type": "heri",
+    "health": 50,
     "speed": 0.5,
+    "member": 2,
+    "v_antibullet": 1,
+    "v_turn": 0.0,
     "Weapon1": "7.62mmmgs",
     "Weapon1_cool": 1,
     "Weapon1_ammo": 30,
@@ -478,11 +620,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "spy_heli",
+    "v_rare": "common"
   },
   "ah1s": {
     "type": "heri",
+    "health": 200,
     "speed": 1.0,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 0.0,
     "Weapon1": "76mmrocket",
     "Weapon1_cool": 5,
     "Weapon1_ammo": 4,
@@ -498,11 +646,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 240,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "attack_heli",
+    "v_rare": "rare"
   },
   "ah1z": {
     "type": "heri",
+    "health": 300,
     "speed": 1.0,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 0.0,
     "Weapon1": "76mmrocket",
     "Weapon1_cool": 5,
     "Weapon1_ammo": 16,
@@ -518,11 +672,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "attack_heli",
+    "v_rare": "legendary"
   },
   "ah6": {
     "type": "heri",
+    "health": 80,
     "speed": 1.0,
+    "member": 4,
+    "v_antibullet": 1,
+    "v_turn": 0.0,
     "Weapon1": "7.62mmmgs",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 30,
@@ -538,11 +698,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "spy_heli",
+    "v_rare": "uncommon"
   },
   "g_heri": {
     "type": "heri",
+    "health": 100,
     "speed": 0.5,
+    "member": 4,
+    "v_antibullet": 1,
+    "v_turn": 0.0,
     "Weapon1": "vmg",
     "Weapon1_cool": 1,
     "Weapon1_ammo": 30,
@@ -558,11 +724,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "transport_heli",
+    "v_rare": "common"
   },
   "ka50": {
     "type": "heri",
+    "health": 400,
     "speed": 0.7,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 0.0,
     "Weapon1": "76mmrocket",
     "Weapon1_cool": 5,
     "Weapon1_ammo": 16,
@@ -578,11 +750,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "attack_heli",
+    "v_rare": "legendary"
   },
   "ka60": {
     "type": "heri",
+    "health": 400,
     "speed": 0.7,
+    "member": 6,
+    "v_antibullet": 1,
+    "v_turn": 0.0,
     "Weapon1": "vmg",
     "Weapon1_cool": 1,
     "Weapon1_ammo": 30,
@@ -598,11 +776,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "transport_heli",
+    "v_rare": "epic"
   },
   "mi24d": {
     "type": "heri",
+    "health": 400,
     "speed": 0.6,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 0.0,
     "Weapon1": "76mmrocket",
     "Weapon1_cool": 5,
     "Weapon1_ammo": 8,
@@ -618,11 +802,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "attack_heli",
+    "v_rare": "rare"
   },
   "20mmaa": {
     "type": "set",
+    "health": 50,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "20mmmc",
     "Weapon1_cool": 4,
     "Weapon1_ammo": 30,
@@ -638,11 +828,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 1,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "artillery_aa",
+    "v_rare": "uncommon"
   },
   "flak18": {
     "type": "set",
+    "health": 50,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "125mm",
     "Weapon1_cool": 60,
     "Weapon1_ammo": 1,
@@ -658,11 +854,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 1,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "artillery",
+    "v_rare": "common"
   },
   "pak40": {
     "type": "set",
+    "health": 50,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "105mmap",
     "Weapon1_cool": 50,
     "Weapon1_ammo": 1,
@@ -678,11 +880,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 1,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "artillery",
+    "v_rare": "common"
   },
   "zu23": {
     "type": "set",
+    "health": 50,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "23mmmc",
     "Weapon1_cool": 2,
     "Weapon1_ammo": 30,
@@ -698,11 +906,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 1,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "artillery_aa",
+    "v_rare": "rare"
   },
   "vads": {
     "type": "set",
+    "health": 50,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "20mmmcair",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 30,
@@ -718,11 +932,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 1,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "artillery_aa",
+    "v_rare": "epic"
   },
   "dp28set": {
     "type": "set",
+    "health": 50,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "7.62mmmg",
     "Weapon1_cool": 1,
     "Weapon1_ammo": 30,
@@ -738,11 +958,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 1,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "gun",
+    "v_rare": "common"
   },
   "m60set": {
     "type": "set",
+    "health": 50,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "7.62mmmg",
     "Weapon1_cool": 1,
     "Weapon1_ammo": 30,
@@ -758,11 +984,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 1,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "gun",
+    "v_rare": "common"
   },
   "pkmset": {
     "type": "set",
+    "health": 50,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "7.62mmmg",
     "Weapon1_cool": 1,
     "Weapon1_ammo": 30,
@@ -778,11 +1010,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 1,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "gun",
+    "v_rare": "common"
   },
   "tow2": {
     "type": "set",
+    "health": 200,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "agmissile",
     "Weapon1_cool": 50,
     "Weapon1_ammo": 2,
@@ -798,11 +1036,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 1,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "cannon",
+    "v_rare": "rare"
   },
   "mk45": {
     "type": "set",
+    "health": 60,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "127mm",
     "Weapon1_cool": 20,
     "Weapon1_ammo": 6,
@@ -818,11 +1062,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "cannon",
+    "v_rare": "legendary"
   },
   "ak130": {
     "type": "set",
+    "health": 60,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "130mm",
     "Weapon1_cool": 30,
     "Weapon1_ammo": 2,
@@ -838,11 +1088,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "cannon",
+    "v_rare": "epic"
   },
   "mk15": {
     "type": "set",
+    "health": 60,
     "speed": 0.0,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
     "Weapon1": "20mmmcair",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 300,
@@ -858,11 +1114,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 0,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "artillery_aa",
+    "v_rare": "legendary"
   },
   "mig17": {
     "type": "air",
+    "health": 200,
     "speed": 1.5,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 2.0,
     "Weapon1": "23mmmcair",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 30,
@@ -878,11 +1140,17 @@ export const vehicleData = {
     "turn": 2.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "fighter",
+    "v_rare": "uncommon"
   },
   "f22": {
     "type": "air",
+    "health": 500,
     "speed": 2.0,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 3.0,
     "Weapon1": "20mmmcair",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 60,
@@ -898,11 +1166,17 @@ export const vehicleData = {
     "turn": 3.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 0.25
+    "stalth": 0.25,
+    "v_subtype": "stealth_fighter",
+    "v_rare": "legendary"
   },
   "su27": {
     "type": "air",
+    "health": 400,
     "speed": 2.0,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 3.0,
     "Weapon1": "20mmmcaird",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 60,
@@ -918,11 +1192,17 @@ export const vehicleData = {
     "turn": 3.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "fighter",
+    "v_rare": "rare"
   },
   "su57": {
     "type": "air",
+    "health": 400,
     "speed": 2.0,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 3.0,
     "Weapon1": "20mmmcaird",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 60,
@@ -938,11 +1218,17 @@ export const vehicleData = {
     "turn": 3.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 0.33
+    "stalth": 0.33,
+    "v_subtype": "stealth_fighter",
+    "v_rare": "legendary"
   },
   "f16": {
     "type": "air",
+    "health": 400,
     "speed": 2.0,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 3.0,
     "Weapon1": "20mmmcair",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 60,
@@ -958,11 +1244,17 @@ export const vehicleData = {
     "turn": 3.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "fighter",
+    "v_rare": "rare"
   },
   "fa18": {
     "type": "air",
+    "health": 400,
     "speed": 2.0,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 3.0,
     "Weapon1": "20mmmcair",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 60,
@@ -978,11 +1270,17 @@ export const vehicleData = {
     "turn": 3.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "fighter",
+    "v_rare": "epic"
   },
   "a6": {
     "type": "air",
+    "health": 300,
     "speed": 1.25,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 1.5,
     "Weapon1": "30mmmcair",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 60,
@@ -998,11 +1296,17 @@ export const vehicleData = {
     "turn": 1.5,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "attacker",
+    "v_rare": "rare"
   },
   "a10": {
     "type": "air",
+    "health": 400,
     "speed": 1.5,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 1.5,
     "Weapon1": "30mmmcair",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 60,
@@ -1018,11 +1322,17 @@ export const vehicleData = {
     "turn": 1.5,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "attacker",
+    "v_rare": "epic"
   },
   "su25": {
     "type": "air",
+    "health": 400,
     "speed": 1.5,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 2.0,
     "Weapon1": "30mmmcair",
     "Weapon1_cool": 0,
     "Weapon1_ammo": 60,
@@ -1038,11 +1348,17 @@ export const vehicleData = {
     "turn": 2.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "attacker",
+    "v_rare": "epic"
   },
   "f117": {
     "type": "air",
+    "health": 400,
     "speed": 1.5,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 2.0,
     "Weapon1": "bombii",
     "Weapon1_cool": 10,
     "Weapon1_ammo": 16,
@@ -1058,11 +1374,17 @@ export const vehicleData = {
     "turn": 2.0,
     "gattack": 0,
     "coolTime": 300,
-    "stalth": 0.5
+    "stalth": 0.5,
+    "v_subtype": "stealth_bomber",
+    "v_rare": "legendary"
   },
   "yak9": {
     "type": "air",
+    "health": 100,
     "speed": 1.0,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 1.0,
     "Weapon1": "20mmmcaird",
     "Weapon1_cool": 1,
     "Weapon1_ammo": 30,
@@ -1078,11 +1400,17 @@ export const vehicleData = {
     "turn": 1.0,
     "gattack": 0,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "fighter",
+    "v_rare": "common"
   },
   "il2": {
     "type": "air",
+    "health": 100,
     "speed": 0.6,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 1.0,
     "Weapon1": "20mmmcaird",
     "Weapon1_cool": 1,
     "Weapon1_ammo": 30,
@@ -1098,11 +1426,17 @@ export const vehicleData = {
     "turn": 1.0,
     "gattack": 0,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "attacker",
+    "v_rare": "common"
   },
   "yak23": {
     "type": "air",
+    "health": 120,
     "speed": 1.5,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 1.0,
     "Weapon1": "20mmmcaird",
     "Weapon1_cool": 1,
     "Weapon1_ammo": 30,
@@ -1118,11 +1452,17 @@ export const vehicleData = {
     "turn": 1.0,
     "gattack": 0,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "fighter",
+    "v_rare": "uncommon"
   },
   "il28": {
     "type": "air",
+    "health": 160,
     "speed": 1.2,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 1.0,
     "Weapon1": "bomb",
     "Weapon1_cool": 10,
     "Weapon1_ammo": 2,
@@ -1138,11 +1478,17 @@ export const vehicleData = {
     "turn": 1.0,
     "gattack": 0,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "attacker",
+    "v_rare": "uncommon"
   },
   "c130": {
     "type": "air",
+    "health": 500,
     "speed": 1.0,
+    "member": 6,
+    "v_antibullet": 1,
+    "v_turn": 1.0,
     "Weapon1": "flare",
     "Weapon1_cool": 200,
     "Weapon1_ammo": 1,
@@ -1158,11 +1504,17 @@ export const vehicleData = {
     "turn": 1.0,
     "gattack": 0,
     "coolTime": 120,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "transport_plane",
+    "v_rare": "legendary"
   },
   "st1_pmc": {
     "type": "tank",
+    "health": 1000,
     "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 3,
+    "v_turn": 0.0,
     "Weapon1": "152mm",
     "Weapon1_cool": 160,
     "Weapon1_ammo": 1,
@@ -1178,11 +1530,17 @@ export const vehicleData = {
     "turn": 0.0,
     "gattack": 7,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "robotank",
+    "v_rare": "mythic"
   },
   "cruiser": {
     "type": "ship",
+    "health": 200,
     "speed": 0.6,
+    "member": 4,
+    "v_antibullet": 1,
+    "v_turn": 3.0,
     "Weapon1": "37mm",
     "Weapon1_cool": 20,
     "Weapon1_ammo": 10,
@@ -1198,11 +1556,17 @@ export const vehicleData = {
     "turn": 3.0,
     "gattack": 10,
     "coolTime": 180,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "assault_boat",
+    "v_rare": "rare"
   },
   "rcb90": {
     "type": "ship",
+    "health": 300,
     "speed": 0.8,
+    "member": 4,
+    "v_antibullet": 2,
+    "v_turn": 5.0,
     "Weapon1": "30mmmc",
     "Weapon1_cool": 10,
     "Weapon1_ammo": 30,
@@ -1218,11 +1582,17 @@ export const vehicleData = {
     "turn": 5.0,
     "gattack": 10,
     "coolTime": 180,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "assault_boat",
+    "v_rare": "epic"
   },
   "rhib": {
     "type": "ship",
+    "health": 100,
     "speed": 0.6,
+    "member": 5,
+    "v_antibullet": 0,
+    "v_turn": 5.0,
     "Weapon1": "7.62mmmg",
     "Weapon1_cool": 1,
     "Weapon1_ammo": 30,
@@ -1238,11 +1608,17 @@ export const vehicleData = {
     "turn": 5.0,
     "gattack": 1,
     "coolTime": 1,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "rhib",
+    "v_rare": "common"
   },
   "pr1204": {
     "type": "ship",
+    "health": 400,
     "speed": 0.5,
+    "member": 4,
+    "v_antibullet": 2,
+    "v_turn": 1.0,
     "Weapon1": "76mm",
     "Weapon1_cool": 30,
     "Weapon1_ammo": 1,
@@ -1258,11 +1634,17 @@ export const vehicleData = {
     "turn": 1.0,
     "gattack": 20,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "patrol_boat",
+    "v_rare": "rare"
   },
   "hamina": {
     "type": "ship",
+    "health": 1000,
     "speed": 0.5,
+    "member": 6,
+    "v_antibullet": 3,
+    "v_turn": 1.0,
     "Weapon1": "57mm",
     "Weapon1_cool": 30,
     "Weapon1_ammo": 1,
@@ -1278,6 +1660,8 @@ export const vehicleData = {
     "turn": 1.0,
     "gattack": 20,
     "coolTime": 300,
-    "stalth": 1
+    "stalth": 1,
+    "v_subtype": "patrol_boat",
+    "v_rare": "legendary"
   }
 };

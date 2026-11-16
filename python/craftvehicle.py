@@ -77,13 +77,25 @@ for row in csv_reader:
         else:
             v_stalth = float(row[37])
 
+        v_subtype = row[38]
+        v_rare = "common"
+        if( row[39] == "2" ): v_rare = "uncommon"
+        if( row[39] == "3" ): v_rare = "rare"
+        if( row[39] == "4" ): v_rare = "epic"
+        if( row[39] == "5" ): v_rare = "legendary"
+        if( row[39] == "6" ): v_rare = "mythic"
+
 
 
         ##DATA START
 
         vehicledata_json["{}".format(v_id)] = { 
             "type": v_type,
+            "health" : v_health,
             "speed": v_speed,
+            "member" : v_menber,
+            "v_antibullet" : v_antibullet,
+            "v_turn" : v_turn,
             "Weapon1": v_weapon1,
             "Weapon1_cool": v_weapon1_cool,
             "Weapon1_ammo": v_weapon1_ammo,
@@ -99,7 +111,9 @@ for row in csv_reader:
             "turn": v_turn,
             "gattack": v_gattack,
             "coolTime": v_eject_cool,
-            "stalth": v_stalth
+            "stalth": v_stalth,
+            "v_subtype": v_subtype,
+            "v_rare": v_rare
         }
 
         text += "entity.vehicle:{0}.name={1}\n".format(v_id,v_name)

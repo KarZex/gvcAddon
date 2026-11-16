@@ -1325,8 +1325,6 @@ script.gvcv5.phone_progress_5_sub.name=ゲリラが潜んでいる大規模拠�
 script.gvcv5.vehiclecool1.name=乗り物のクールタイム 残り
 script.gvcv5.vehiclecool2.name=秒
 
-
-
 script.gvcv5.guide.name=ガイド
 script.gvcv5.how_to_gun.name=銃の使い方
 script.gvcv5.show_guns.name=銃の一覧
@@ -1410,10 +1408,8 @@ script.gvcv5:vehicle_type.car.name=車両
 script.gvcv5:vehicle_subtype.truck.name=トラック
 script.gvcv5:vehicle_subtype.apc.name=装甲兵員輸送車
 script.gvcv5:vehicle_subtype.ifv.name=歩兵戦闘車
-script.gvcv5:vehicle_subtype.self_propelled_gun.name=自走砲
-script.gvcv5:vehicle_subtype.self_propelled_aa.name=自走対空砲
-script.gvcv5:vehicle_subtype.amphibious.name=水陸両用歩兵戦闘車
-script.gvcv5:vehicle_subtype.self_propelled_aa_amphibious.name=水陸両用自走対空砲
+script.gvcv5:vehicle_subtype.spg.name=自走砲
+script.gvcv5:vehicle_subtype.spgaa.name=自走対空砲
 
 script.gvcv5:vehicle_type.tank.name=戦車
 script.gvcv5:vehicle_subtype.light_tank.name=軽戦車
@@ -1421,6 +1417,7 @@ script.gvcv5:vehicle_subtype.medium_tank.name=中戦車
 script.gvcv5:vehicle_subtype.heavy_tank.name=重戦車
 script.gvcv5:vehicle_subtype.mbt.name=主力戦車
 script.gvcv5:vehicle_subtype.light_tank_amphibious.name=水陸両用軽戦車
+script.gvcv5:vehicle_subtype.robotank.name=歩行戦車
 
 script.gvcv5:vehicle_type.set.name=固定
 script.gvcv5:vehicle_subtype.gun.name=固定機銃
@@ -1434,12 +1431,13 @@ script.gvcv5:vehicle_subtype.transport_heli.name=輸送ヘリ
 script.gvcv5:vehicle_subtype.spy_heli.name=偵察ヘリ
 
 script.gvcv5:vehicle_type.plane.name=航空機
-script.gvcv5:vehicle_subtype.fighter_plane.name=戦闘機
-script.gvcv5:vehicle_subtype.stealth_fighter_plane.name=ステルス戦闘機
-script.gvcv5:vehicle_subtype.multirole_plane.name=マルチロール機
-script.gvcv5:vehicle_subtype.attack_plane.name=攻撃機
-script.gvcv5:vehicle_subtype.bomber_plane.name=爆撃機
-script.gvcv5:vehicle_subtype.stealth_bomber_plane.name=ステルス爆撃機
+script.gvcv5:vehicle_subtype.fighter.name=戦闘機
+script.gvcv5:vehicle_subtype.stealth_fighter.name=ステルス戦闘機
+script.gvcv5:vehicle_subtype.multirole.name=マルチロール機
+script.gvcv5:vehicle_subtype.attacker.name=攻撃機
+script.gvcv5:vehicle_subtype.bomber.name=爆撃機
+script.gvcv5:vehicle_subtype.transport_plane.name=輸送機
+script.gvcv5:vehicle_subtype.stealth_bomber.name=ステルス爆撃機
 
 script.gvcv5:vehicle_type.ship.name=船舶
 script.gvcv5:vehicle_subtype.patrol_boat.name=哨戒艇
