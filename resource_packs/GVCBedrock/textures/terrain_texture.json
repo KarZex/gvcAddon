@@ -636,6 +636,12 @@
     },
     "spawn_vehicle_m551": {
       "textures": "textures/spawn/vehicle_m551"
+    },
+    "spawn_vehicle_zsu23": {
+      "textures": "textures/spawn/vehicle_zsu23"
+    },
+    "spawn_vehicle_2k22": {
+      "textures": "textures/spawn/vehicle_2k22"
     }
   }
 }

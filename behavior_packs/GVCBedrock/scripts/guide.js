@@ -129,7 +129,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			} )
 		}
 	}
-	else if( e.id == "guide_vechile" && !e.sourceEntity.hasTag(`down`) ){
+	else if( e.id == "gvcv5:guide_vechile" && !e.sourceEntity.hasTag(`down`) ){
 		const number = e.message;
 		if( number == `0` ){
 			const user = e.sourceEntity;
@@ -158,7 +158,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			form.button(`script.gvcv5.back.name`);
 			form.show(user).then( result => {
 				if ( !result.canceled ){
-					user.runCommand(`scriptevent gvcv5:guide_gun 0`);
+					user.runCommand(`scriptevent gvcv5:guide_vechile 0`);
 				}
 			} )
 		}
@@ -189,21 +189,21 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		if( message in vehicleData["v_types"] ){
 			const form = new ActionFormData();
 			form.title(`script.gvcv5.guide_show_gun.name`);
-			const target_vs = gunGuide["v_types"][`${message}`];
+			const target_vs = vehicleData["v_types"][`${message}`];
 			for( const v of target_vs ){
 				let itemRawText = [];
 				//print(`${gun[`name`]}`)
-				itemRawText.push({ translate: `item.gun:${v[`name`]}` });
+				itemRawText.push({ translate: `entity.vehicle:${v[`name`]}.name` });
 				itemRawText.push({ text: `\n` });	
 				itemRawText.push({ translate: `script.gvcv5:rarelity.name` });
 				itemRawText.push({ translate: `script.gvcv5:rarelity_${v[`rarelity`]}.name` });
-				form.button({ rawtext: itemRawText },`textures/items/gun/${v[`name`]}`);
+				form.button({ rawtext: itemRawText },`textures/items/vehicle/${v[`name`]}`);
 			}
 			form.button(`script.gvcv5.back.name`);
 			form.show(user).then( result => {
 				if ( !result.canceled ){
 					if( result.selection != target_vs.length ){
-						user.runCommand(`scriptevent gvcv5:guide_show_gun ${target_vs[result.selection][`name`]}`);
+						user.runCommand(`scriptevent gvcv5:guide_show_v ${target_vs[result.selection][`name`]}`);
 					}
 					else{
 						user.runCommand(`scriptevent gvcv5:guide_vechile 2`);
@@ -212,7 +212,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			} )
 
 		}
-		else if( message in gunGuide ){
+		else if( message in vehicleData ){
 			const form = new ActionFormData();
 			const v = message;
 			form.title(`entity.vehicle:${v}.name`);
@@ -260,7 +260,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			form.button(`script.gvcv5.back.name`);
 			form.show(user).then( result => {
 				if ( !result.canceled ){
-					user.runCommand(`scriptevent gvcv5:guide_gun 2`);
+					user.runCommand(`scriptevent gvcv5:guide_vechile 2`);
 				}
 			} )
 

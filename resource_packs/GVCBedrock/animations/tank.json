@@ -279,6 +279,28 @@
 				}
 			}
 		},
+		"animation.apcgunaim2k22": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [0, "360 + q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				},
+				"gun": {
+					"rotation": ["Math.clamp(q.rider_head_x_rotation(0),-45,15)", 0, 0]
+				}
+			}
+		},
+		"animation.apcgunaimzsu23": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [0, "360 + q.rider_head_y_rotation(0) - query.body_y_rotation", 0]
+				},
+				"gun": {
+					"rotation": ["Math.clamp(q.rider_head_x_rotation(0),-60,15)", 0, 0]
+				}
+			}
+		},
 		"animation.land.yak9": {
 			"loop": true,
 			"bones": {

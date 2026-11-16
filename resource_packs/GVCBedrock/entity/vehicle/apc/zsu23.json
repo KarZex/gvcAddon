@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:zsu23",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/zsu23"
+      },
+      "geometry": {
+        "default": "geometry.zsu23"
+      },
+      "animations": {
+        "look_at_target": "animation.apcgunaimzsu23"
+      },
+      "scripts": {
+        "animate": [
+					{
+						"look_at_target": "query.has_rider"
+					}
+        ]
+      },
+      "spawn_egg":{
+      "texture":"zsu23",
+      "texture_index":0
+      },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

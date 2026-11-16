@@ -1363,6 +1363,12 @@
     },
     "m551": {
       "textures": "textures/items/vehicle/m551"
+    },
+    "zsu23": {
+      "textures": "textures/items/vehicle/zsu23"
+    },
+    "2k22": {
+      "textures": "textures/items/vehicle/2k22"
     }
   }
 }

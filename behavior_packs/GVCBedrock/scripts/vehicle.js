@@ -45,6 +45,14 @@ export const vehicleData = {
       {
         "name": "9k35",
         "rarelity": "epic"
+      },
+      {
+        "name": "zsu23",
+        "rarelity": "uncommon"
+      },
+      {
+        "name": "2k22",
+        "rarelity": "uncommon"
       }
     ],
     "tank": [
@@ -250,7 +258,7 @@ export const vehicleData = {
     "ship": [
       {
         "name": "cruiser",
-        "rarelity": "rare"
+        "rarelity": "uncommon"
       },
       {
         "name": "rcb90",
@@ -555,6 +563,58 @@ export const vehicleData = {
     "stalth": 1,
     "v_subtype": "spgaa",
     "v_rare": "epic"
+  },
+  "zsu23": {
+    "type": "apc",
+    "health": 120,
+    "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
+    "Weapon1": "23mmmc",
+    "Weapon1_cool": 3,
+    "Weapon1_ammo": 30,
+    "Weapon2": "",
+    "Weapon2_cool": 100,
+    "Weapon2_ammo": 4,
+    "Weapon3": "",
+    "Weapon3_cool": 0,
+    "Weapon3_ammo": 0,
+    "Weapon4": "",
+    "Weapon4_cool": 0,
+    "Weapon4_ammo": 0,
+    "turn": 0.0,
+    "gattack": 7,
+    "coolTime": 180,
+    "stalth": 1,
+    "v_subtype": "spgaa",
+    "v_rare": "uncommon"
+  },
+  "2k22": {
+    "type": "apc",
+    "health": 200,
+    "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 2,
+    "v_turn": 0.0,
+    "Weapon1": "30mmmcair",
+    "Weapon1_cool": 0,
+    "Weapon1_ammo": 60,
+    "Weapon2": "aamissile",
+    "Weapon2_cool": 100,
+    "Weapon2_ammo": 4,
+    "Weapon3": "",
+    "Weapon3_cool": 0,
+    "Weapon3_ammo": 0,
+    "Weapon4": "",
+    "Weapon4_cool": 0,
+    "Weapon4_ammo": 0,
+    "turn": 0.0,
+    "gattack": 7,
+    "coolTime": 180,
+    "stalth": 1,
+    "v_subtype": "spgaa",
+    "v_rare": "uncommon"
   },
   "panzer": {
     "type": "tank",
@@ -1828,7 +1888,7 @@ export const vehicleData = {
     "coolTime": 180,
     "stalth": 1,
     "v_subtype": "assault_boat",
-    "v_rare": "rare"
+    "v_rare": "uncommon"
   },
   "rcb90": {
     "type": "ship",
