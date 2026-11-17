@@ -3,7 +3,9 @@ import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { absVector2, getTeam,DistanceVector3in2dim } from "./usefulFunction"
 import { gunGuide } from "./gunguide";
 import { vehicleData } from "./vehicle";
-import { gunData } from "./guns"
+import { gunData } from "./guns";
+import { attachmentData } from "./attach";
+import { gunAttach } from "./gunAttach";
 
 const Teams = [ "red","blue","green","yellow" ];
 const worldDimensions = [ `overworld`, `nether`, `the_end` ];
@@ -129,6 +131,65 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				}
 			} )
 		}
+		else if( number == `3` ){
+			const user = e.sourceEntity;
+			const form = new ActionFormData();
+			form.title(`script.gvcv5.show_attachs.name`);
+			const Attachmenttypes = attachmentData[`attachTypes`];
+			for( const i of Attachmenttypes ){
+				form.button(`script.gvcv5.${i}.name`);
+			}
+			form.button(`script.gvcv5.back.name`);
+			form.show(user).then( result => {
+				if ( !result.canceled ){
+					if( result.selection != Attachmenttypes.length ){
+						const form2 = new ActionFormData();
+						const attachmentType = attachmentData[`attachTypes`][result.selection]
+						form2.title(`script.gvcv5.${attachmentType}.name`);
+						for( let j = 1; j < attachmentData[`${attachmentType}`].length; j++  ){
+							form2.button(`item.zex:${attachmentData[`${attachmentType}`][j]}`,`textures/items/attachment/${attachmentData[`${attachmentType}`][j]}`);
+						}
+						form.button(`script.gvcv5.back.name`);
+						form2.show(user).then( result2 => {
+							if ( !result2.canceled ){
+								if( result2.selection != attachmentData[`${attachmentType}`].length ){
+									const form3 = new ActionFormData();
+									const attachment = attachmentData[`${attachmentType}`][result2.selection+1]
+									form3.title(`item.zex:${attachment}`);
+									form3.body(`script.zex:${attachment}.desc`)
+									form3.button(`script.gvcv5.back.name`);
+									form3.show(user).then( result3 => {
+										if ( !result3.canceled ){
+											user.runCommand(`scriptevent gvcv5:guide_gun 3`);
+										}
+									} )
+
+								}
+								else{
+									user.runCommand(`scriptevent gvcv5:guide_gun 3`);
+								}
+							}
+						} )
+
+					}
+					else{
+						user.runCommand(`scriptevent gvcv5:guide_gun 0`);
+					}
+				}
+			} )
+		}
+		else if( number == `5` ){
+			const user = e.sourceEntity;
+			const form = new ActionFormData();
+			form.title(`script.gvcv5.show_fight.name`);
+			form.body({ rawtext: createDesc(`battleInfo`,13) });
+			form.button(`script.gvcv5.back.name`);
+			form.show(user).then( result => {
+				if ( !result.canceled ){
+					user.runCommand(`scriptevent gvcv5:guide_gun 0`);
+				}
+			} )
+		}
 	}
 	else if( e.id == "gvcv5:guide_vechile" && !e.sourceEntity.hasTag(`down`) ){
 		const number = e.message;
@@ -155,11 +216,30 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const user = e.sourceEntity;
 			const form = new ActionFormData();
 			form.title(`script.gvcv5.how_to_vechile.name`);
-			form.body({ rawtext: createDesc(`howToGunDesc`,4) });
+			const howTVtx = [ `howToVechileDesc`,`howToAirDesc`,`howToHeliDesc`,`howToShipDesc` ];
+			
+			form.button(`script.gvcv5:vehicle_type.common.name`);
+			form.button(`script.gvcv5:vehicle_type.heri.name`);
+			form.button(`script.gvcv5:vehicle_type.air.name`);
+			form.button(`script.gvcv5:vehicle_type.ship.name`);
+
 			form.button(`script.gvcv5.back.name`);
 			form.show(user).then( result => {
 				if ( !result.canceled ){
-					user.runCommand(`scriptevent gvcv5:guide_vechile 0`);
+					if( result.selection != 4 ){
+						const form2 = new ActionFormData();
+						form2.title(`script.gvcv5.how_to_gun.name`);
+						form2.body({ rawtext: createDesc(`howToGunV${howTVtx[result.selection]}`,6) });
+						form2.button(`script.gvcv5.back.name`);
+						form2.show(user).then( result => {
+							if ( !result.canceled ){
+								user.runCommand(`scriptevent gvcv5:guide_vechile 1`);
+							}
+						} )
+					}
+					else{
+						user.runCommand(`scriptevent gvcv5:guide_vechile 0`);
+					}
 				}
 			} )
 		}

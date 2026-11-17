@@ -36,7 +36,7 @@ item.spawn_egg.entity.gvcv5:gb4.name=ベテランゲリラ-火炎放射
 item.spawn_egg.entity.gvcv5:gb5.name=ベテランゲリラ-ドローン誘導
 
 ### From V4-1 (GVCReversion Addon V1.0) Dec 26th 2021
-item.spawn_egg.entity.zex:stand.name=スタンド
+item.spawn_egg.entity.zex:stand.name=スタンド §4Deleted
 item.spawn_egg.entity.gvcv5:st1.name=BOSS ST1
 item.spawn_egg.entity.gvcv5:merg08.name=BOSS MER08
 item.spawn_egg.entity.gvcv5:mer08r.name=BOSS MER08R
@@ -358,7 +358,6 @@ entity.vehicle:pak40.name=対戦車砲Pak40
 item.spawn_egg.entity.vehicle:pak40.name=対戦車砲Pak40
 tile.gvcv5:spawn_vehicle_pak40.name=対戦車砲Pak40
 item.vehicle:pak40_spawn_egg=対戦車砲Pak40
-
 entity.vehicle:ah1s.name=AH-1S
 item.spawn_egg.entity.vehicle:ah1s.name=AH-1S
 tile.gvcv5:spawn_vehicle_ah1s.name=AH-1S
@@ -992,11 +991,20 @@ script.gvcv5.downableOff.name=ダウンをOFF
 script.gvcv5.howToVechile.name=ビークル
 script.gvcv5.howToVechileDesc0.name=ホットバーで武装を選択
 script.gvcv5.howToVechileDesc1.name=発射: :_input_key.jump:  OR 「主砲」アイテムを持って:_input_key.use:
+script.gvcv5.howToVechileDesc2.name=
+script.gvcv5.howToVechileDesc3.name=
+script.gvcv5.howToVechileDesc4.name=
+script.gvcv5.howToVechileDesc5.name=
+script.gvcv5.howToVechileDesc6.name=
 
 script.gvcv5.howToAir.name=航空機
 script.gvcv5.howToAirDesc0.name=ホットバーで武装を選択
 script.gvcv5.howToAirDesc1.name=視点を変更し、進行方向を調整
 script.gvcv5.howToAirDesc2.name=発射: :_input_key.jump:  OR 「主砲」アイテムを持って:_input_key.use:
+script.gvcv5.howToAirDesc3.name=
+script.gvcv5.howToAirDesc4.name=
+script.gvcv5.howToAirDesc5.name=
+script.gvcv5.howToAirDesc6.name=
 
 script.gvcv5.howToHeli.name=ヘリコプター
 script.gvcv5.howToHeliDesc0.name=ホットバーで武装を選択
@@ -1005,15 +1013,19 @@ script.gvcv5.howToHeliDesc2.name=水平を向いて:_input_key.forward:で上昇
 script.gvcv5.howToHeliDesc3.name=下を向いて:_input_key.forward:で加速、:_input_key.back:で減速
 script.gvcv5.howToHeliDesc4.name=:_input_key.left:, :_input_key.right:で横移動
 script.gvcv5.howToHeliDesc5.name=上を向くと後ろに進み、下を向くと前に進む
+script.gvcv5.howToHeliDesc6.name=
 
 script.gvcv5.howToShip.name=船舶
 script.gvcv5.howToShipDesc0.name=ホットバーで武装を選択
 script.gvcv5.howToShipDesc1.name=発射: :_input_key.jump:  OR 「主砲」アイテムを持って:_input_key.use:
 script.gvcv5.howToShipDesc2.name=:_input_key.forward:で前進、:_input_key.back:で後退
 script.gvcv5.howToShipDesc3.name=:_input_key.left:, :_input_key.right:で回転
+script.gvcv5.howToShipDesc4.name=
+script.gvcv5.howToShipDesc5.name=
+script.gvcv5.howToShipDesc6.name=
 
-script.gvcv5.howToVechileDesc2.name=浮上(ヘリ):  :_input_key.jump:
-script.gvcv5.howToVechileDesc3.name=主砲発射:  :_input_key.attack: OR 主砲を持って:_input_key.use:
+## script.gvcv5.howToVechileDesc2.name=浮上(ヘリ):  :_input_key.jump:
+## script.gvcv5.howToVechileDesc3.name=主砲発射:  :_input_key.attack: OR 主砲を持って:_input_key.use:
 script.gvcv5.phone_down.name=ダウン状態について
 script.gvcv5.phone_down0.name=チームに入ると、HPが0になっても死亡にはならず、ダウン状態になる。
 script.gvcv5.phone_down1.name=ダウン状態の味方に:_input_key.attack:することで、蘇生できる。
@@ -1412,6 +1424,25 @@ script.gvcv5:gun_m16a1_desc.name=初期物資として支給されるアサル�
 script.gvcv5:gun_ak47_get.name=銃製造機Lv1( エメラルドx2, 鉄インゴットx3, レッドストーンx1 )
 script.gvcv5:gun_m16a1_get.name=銃製造機Lv1( エメラルドx2, 鉄インゴットx3, レッドストーンx1 )
 
+script.zex:scope6x.desc=スニークすることでズームする。ズーム時の視野は30。
+script.zex:acog.desc=スニークすることでズームする。ズーム時の視野は45。
+script.zex:coyote.desc=スニークすることでズームする。ズーム時の視野は60。
+script.zex:horo.desc=スニークすることでズームする。ズーム時の視野は60。
+script.zex:dotsight.desc=スニークすることでズームする。ズーム時の視野は60。
+script.zex:suppressor.desc=銃声の音を小さくする
+script.zex:grip.desc=銃の反動を-5抑える
+script.zex:gripod.desc=銃の反動を-10抑える
+script.zex:bipod.desc=銃の反動を-15抑える
+script.zex:anglegrip.desc=銃の反動を-20抑える
+script.zex:lasersight.desc=腰撃ちがしやすくなる
+script.zex:bullet_hp.desc=ダメージが2倍になる代わりに、防具による弾耐性の影響を強く受けるようになる。
+script.zex:bullet_ap.desc=装甲車にもダメージが与えられるよおうになる代わりに、無敵時間の影響を受けるようになる
+script.zex:bullet_at.desc=ダメージが与えられなくなる代わりに、敵の動きを止めることができる。また、ゲリラに麻酔弾を撃ち、フルトン回収システムを使うことで、ゲリラ捕虜を入手できる。ゲリラ捕虜は、弾を与えることで、同盟軍兵士に、エメラルドを与えることで、PMC兵士に変化する。
+script.zex:bullet_srag.desc=ショットガン専用アタッチメント。拡散しなくなる代わりに、1発の高威力の弾を発射する
+script.zex:bullet_frag.desc=ショットガン専用アタッチメント。拡散しなくなる代わりに、1発の爆発する弾を発射する
+script.zex:bullet_db.desc=ショットガン専用アタッチメント。炎をまとった弾を発射する。飛距離が短くなる代わりに、装甲を貫通できる。
+script.zex:exarrow.desc=コンパウンドボウ専用アタッチメント。着弾地点が爆発するようになる。
+script.zex:psarrow.desc=コンパウンドボウ専用アタッチメント。毒のエフェクトを与える。
 
 script.gvcv5:vehicle_type.apc.name=車両
 script.gvcv5:vehicle_subtype.truck.name=トラック
@@ -1483,6 +1514,8 @@ script.gvcv5:battleInfo13.name=軽減率が0%を下回った場合、受ける�
 script.gvcv5.guide_vechile.name=ビークル
 script.gvcv5.guide_vechile_desc.name=このアドオンには、機銃や戦車、航空機まで様々なビークルがある。
 script.gvcv5.how_to_vechile.name=操作方法
+script.gvcv5:vehicle_type.common.name=乗り物全般
+
 script.gvcv5.show_vechile.name=ビークル一覧
 script.gvcv5:v_spec.desc.name=説明:
 script.gvcv5:v_spec.v_subtype.name=種類:
@@ -1495,5 +1528,7 @@ script.gvcv5:v_spec.v_weapon1.name=武装1:
 script.gvcv5:v_spec.v_weapon2.name=武装2:
 script.gvcv5:v_spec.v_weapon3.name=武装3:
 script.gvcv5:v_spec.v_weapon4.name=武装4:
+script.gvcv5:v_spec.stalth.name=ステルス値
 
 script.gvcv5:v_spec.t34_desc.name=ゲリラがよく使用する旧式戦車。性能は全戦車の中でも低いが、それでも歩兵とって脅威となる。
+
