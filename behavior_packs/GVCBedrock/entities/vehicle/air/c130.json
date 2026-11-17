@@ -188,6 +188,8 @@
       "minecraft:rideable": {
         "seat_count": 6,
         "family_types": [
+          "guerrilla",
+          "allied_soldier",
           "player"
         ],
         "interact_text": "action.interact.ride.horse",

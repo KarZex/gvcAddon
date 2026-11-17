@@ -1,0 +1,37 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "V4のGVC Libなどは使用しないでください\n試験的ゲームプレイは何もしなくていいです\n作者:Kar Zex\nモデル提供者\nkusnek:MGL140,Mosin-Nagant,PPSh-41,TT33\nいぬえモン:AWM\nぁ椅子:Glock17,Glock18c\nMihono Bourbon:M9,MG42\nプチネコ:Panzerfaust,M79.Mi-24d\n",
+    "name": "§l§gGVCBedrock Addon Beta AI",
+    "min_engine_version": [1, 21, 90 ],
+    "uuid": "d877d8aa-ed11-42bc-bbc2-9e8680a5df6c",
+    "version": [1, 21, 90]
+  },
+  "modules": [
+    {
+      "description": "Data Module",
+      "type": "data",
+      "uuid": "08d84a97-45a6-42cb-a1bc-f7f3d2b14e68",
+      "version": [1, 0, 0]
+    },
+    {
+      "description": "Script API Module",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "2aadb9bb-4914-4d6e-acb4-b6b3ccc4a9a5",
+      "version": [2, 0, 0],
+      "entry": "scripts/gvcbeta.js"
+    }
+  ],
+  "capabilities": ["script_eval"],
+  "dependencies": [
+      {
+          "module_name": "@minecraft/server",
+          "version": "2.12.0-beta"
+      },
+      {
+          "module_name": "@minecraft/server-ui",
+          "version": "2.0.0"
+      }
+  ]
+}

@@ -1,0 +1,1532 @@
+import { EntityDamageCause } from "@minecraft/server";
+export const gunData = {
+  "fire": {
+    "damage": 1,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "fire:hauneb": {
+    "damage": 60,
+    "damageType": "entityExplosion"
+  },
+  "aa12": {
+    "damage": 2,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 24,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "aa12_frag": {
+    "damage": 3.6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 24,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "aa12_srag": {
+    "damage": 28,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 24,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "aa12_db": {
+    "damage": 1.5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 24,
+    "reloadTime": 100,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "ak12": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "r1",
+    "slowness": 0,
+    "speed": 1.6,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "ak47": {
+    "damage": 7,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "r1",
+    "slowness": 0,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "ak102": {
+    "damage": 7,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "r1",
+    "slowness": 0,
+    "speed": 1.4000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "an94": {
+    "damage": 6,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "r1",
+    "slowness": 0,
+    "speed": 1.6,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "awm": {
+    "damage": 25,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 3.2,
+    "fireOnReload": false,
+    "maxGunAmmo": 5,
+    "reloadTime": 80,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "compoundbow": {
+    "damage": 20,
+    "damageIgnoreDef": 3,
+    "recoil": 1.6,
+    "sound": "arrow",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 20,
+    "bullet": "minecraft:arrow",
+    "damageType": "entityExplosion"
+  },
+  "dp28": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "recoil": 2.5,
+    "sound": "lmg",
+    "slowness": 2,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 47,
+    "reloadTime": 100,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "famas": {
+    "damage": 30,
+    "damageIgnoreDef": 3,
+    "recoil": 4.0,
+    "sound": "famas",
+    "slowness": 1,
+    "speed": 0.1,
+    "fireOnReload": false,
+    "maxGunAmmo": 6,
+    "reloadTime": 80,
+    "bullet": "zex:40m",
+    "damageType": "entityExplosion"
+  },
+  "fgm148": {
+    "damage": 50,
+    "damageIgnoreDef": 3,
+    "recoil": 2.0,
+    "sound": "missile",
+    "slowness": 2,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 60,
+    "bullet": "zex:missilem",
+    "damageType": "entityExplosion"
+  },
+  "fim92": {
+    "damage": 30,
+    "damageIgnoreDef": 3,
+    "recoil": 2.0,
+    "sound": "missile",
+    "slowness": 2,
+    "speed": 6.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 60,
+    "bullet": "zex:missilem",
+    "damageType": "entityExplosion"
+  },
+  "g36": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "r3",
+    "slowness": 0,
+    "speed": 1.6,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "g3a3": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "recoil": 3.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 20,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "glock17": {
+    "damage": 6,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "hg",
+    "slowness": 0,
+    "speed": 0.68,
+    "fireOnReload": true,
+    "maxGunAmmo": 20,
+    "reloadTime": 30,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "glock17l": {
+    "damage": 6,
+    "damageIgnoreDef": 0,
+    "sound": "hg",
+    "speed": 0.68,
+    "fireOnReload": true,
+    "maxGunAmmo": 20,
+    "reloadTime": 30,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "glock18": {
+    "damage": 4,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "hg",
+    "slowness": 0,
+    "speed": 0.68,
+    "fireOnReload": false,
+    "maxGunAmmo": 20,
+    "reloadTime": 30,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "hk416": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "r3",
+    "slowness": 0,
+    "speed": 1.4000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 50,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "lazer": {
+    "damage": 100,
+    "damageIgnoreDef": 3,
+    "recoil": 1.0,
+    "sound": "rail",
+    "slowness": 1,
+    "speed": 4.4,
+    "fireOnReload": false,
+    "maxGunAmmo": 5,
+    "reloadTime": 100,
+    "bullet": "zex:1270m",
+    "damageType": "entityExplosion"
+  },
+  "lewis": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "recoil": 2.5,
+    "sound": "mg2",
+    "slowness": 2,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 47,
+    "reloadTime": 100,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "m4": {
+    "damage": 7,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "r3",
+    "slowness": 0,
+    "speed": 1.4000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 50,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "m4a1": {
+    "damage": 7,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "r3",
+    "slowness": 0,
+    "speed": 1.4000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 50,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "m9": {
+    "damage": 5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "hg",
+    "slowness": 0,
+    "speed": 0.68,
+    "fireOnReload": true,
+    "maxGunAmmo": 16,
+    "reloadTime": 30,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "m9l": {
+    "damage": 5,
+    "damageIgnoreDef": 0,
+    "sound": "hg",
+    "speed": 0.68,
+    "fireOnReload": true,
+    "maxGunAmmo": 16,
+    "reloadTime": 30,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "m10": {
+    "damage": 4,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "hg",
+    "slowness": 0,
+    "speed": 0.68,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 40,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "m14": {
+    "damage": 12,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 2.4000000000000004,
+    "fireOnReload": false,
+    "maxGunAmmo": 10,
+    "reloadTime": 60,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "m16a1": {
+    "damage": 5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "r3",
+    "slowness": 0,
+    "speed": 1.6,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "m16a4": {
+    "damage": 9,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "r3",
+    "slowness": 0,
+    "speed": 1.8,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "m60": {
+    "damage": 6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "lmg",
+    "slowness": 2,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 100,
+    "reloadTime": 120,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "m72": {
+    "damage": 40,
+    "damageIgnoreDef": 3,
+    "recoil": 2.0,
+    "sound": "p90",
+    "slowness": 1,
+    "speed": 0.32000000000000006,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 80,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
+  "m79": {
+    "damage": 30,
+    "damageIgnoreDef": 3,
+    "recoil": 4.0,
+    "sound": "famas",
+    "slowness": 0,
+    "speed": 0.1,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 60,
+    "bullet": "zex:40m",
+    "damageType": "entityExplosion"
+  },
+  "m82": {
+    "damage": 50,
+    "damageIgnoreDef": 3,
+    "recoil": 4.0,
+    "sound": "m82",
+    "slowness": 1,
+    "speed": 4.4,
+    "fireOnReload": false,
+    "maxGunAmmo": 10,
+    "reloadTime": 80,
+    "bullet": "zex:1270m",
+    "damageType": "entityExplosion"
+  },
+  "m110": {
+    "damage": 12,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 2.4000000000000004,
+    "fireOnReload": false,
+    "maxGunAmmo": 20,
+    "reloadTime": 80,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "m202": {
+    "damage": 30,
+    "damageIgnoreDef": 3,
+    "recoil": 2.0,
+    "sound": "p90",
+    "slowness": 2,
+    "speed": 1.8,
+    "fireOnReload": false,
+    "maxGunAmmo": 4,
+    "reloadTime": 100,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
+  "m249": {
+    "damage": 10,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "lmg",
+    "slowness": 2,
+    "speed": 1.6,
+    "fireOnReload": false,
+    "maxGunAmmo": 100,
+    "reloadTime": 120,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "m590": {
+    "damage": 2,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m590_frag": {
+    "damage": 3.6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m590_srag": {
+    "damage": 28,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m590_db": {
+    "damage": 1.5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m870": {
+    "damage": 2,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 4,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m870_frag": {
+    "damage": 3.6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 4,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m870_srag": {
+    "damage": 28,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 4,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m870_db": {
+    "damage": 1.5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 4,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m1014": {
+    "damage": 2,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m1014_frag": {
+    "damage": 3.6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m1014_srag": {
+    "damage": 28,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m1014_db": {
+    "damage": 1.5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.0,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 80,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "m1911": {
+    "damage": 6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "hg",
+    "slowness": 0,
+    "speed": 0.48,
+    "fireOnReload": true,
+    "maxGunAmmo": 8,
+    "reloadTime": 30,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "m1911l": {
+    "damage": 6,
+    "damageIgnoreDef": 0,
+    "sound": "hg",
+    "speed": 0.48,
+    "fireOnReload": true,
+    "maxGunAmmo": 8,
+    "reloadTime": 30,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "mg36": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "r3",
+    "slowness": 0,
+    "speed": 1.6,
+    "fireOnReload": false,
+    "maxGunAmmo": 100,
+    "reloadTime": 120,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "mg42": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "recoil": 2.5,
+    "sound": "sg",
+    "slowness": 3,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 75,
+    "reloadTime": 120,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "mosin": {
+    "damage": 20,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 3.2,
+    "fireOnReload": false,
+    "maxGunAmmo": 5,
+    "reloadTime": 60,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "mp5": {
+    "damage": 4,
+    "damageIgnoreDef": 0,
+    "recoil": 1.0,
+    "sound": "hg",
+    "slowness": 0,
+    "speed": 0.7200000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "mp7": {
+    "damage": 4,
+    "damageIgnoreDef": 0,
+    "recoil": 1.25,
+    "sound": "hg",
+    "slowness": 0,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 40,
+    "reloadTime": 35,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "mp40": {
+    "damage": 4,
+    "damageIgnoreDef": 0,
+    "recoil": 1.75,
+    "sound": "hg",
+    "slowness": 0,
+    "speed": 0.7200000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 20,
+    "reloadTime": 35,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "p90": {
+    "damage": 20,
+    "damageIgnoreDef": 3,
+    "recoil": 1.6,
+    "sound": "p90",
+    "slowness": 1,
+    "speed": 1.8,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 80,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
+  "pkm": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "recoil": 3.0,
+    "sound": "lmg",
+    "slowness": 0,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 100,
+    "reloadTime": 120,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "ppsh": {
+    "damage": 5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "hg",
+    "slowness": 0,
+    "speed": 0.7200000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 72,
+    "reloadTime": 45,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "ptrd": {
+    "damage": 50,
+    "damageIgnoreDef": 3,
+    "recoil": 5.0,
+    "sound": "m82",
+    "slowness": 0,
+    "speed": 3.2,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 30,
+    "bullet": "zex:1270m",
+    "damageType": "entityExplosion"
+  },
+  "qbz95": {
+    "damage": 8,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "r1",
+    "slowness": 0,
+    "speed": 1.4000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "rpg": {
+    "damage": 25,
+    "damageIgnoreDef": 3,
+    "recoil": 2.0,
+    "sound": "p90",
+    "slowness": 1,
+    "speed": 1.8,
+    "fireOnReload": false,
+    "maxGunAmmo": 1,
+    "reloadTime": 80,
+    "bullet": "zex:rocketm",
+    "damageType": "entityExplosion"
+  },
+  "rpk": {
+    "damage": 6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "r1",
+    "slowness": 0,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 100,
+    "reloadTime": 120,
+    "bullet": "zex:556m",
+    "damageType": "override"
+  },
+  "saiga12": {
+    "damage": 2,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 6,
+    "reloadTime": 60,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "saiga12_frag": {
+    "damage": 3.6,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 6,
+    "reloadTime": 60,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "saiga12_srag": {
+    "damage": 28,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 6,
+    "reloadTime": 60,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "saiga12_db": {
+    "damage": 1.5,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 6,
+    "reloadTime": 60,
+    "bullet": "zex:12m",
+    "damageType": "override"
+  },
+  "scar": {
+    "damage": 10,
+    "damageIgnoreDef": 0,
+    "recoil": 2.5,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 20,
+    "reloadTime": 60,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "stg44": {
+    "damage": 6,
+    "damageIgnoreDef": 0,
+    "recoil": 1.5,
+    "sound": "r1",
+    "slowness": 0,
+    "speed": 1.2000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 60,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "svd": {
+    "damage": 13,
+    "damageIgnoreDef": 0,
+    "recoil": 2.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 2.4000000000000004,
+    "fireOnReload": false,
+    "maxGunAmmo": 10,
+    "reloadTime": 60,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "tt33": {
+    "damage": 10,
+    "damageIgnoreDef": 0,
+    "recoil": 3.0,
+    "sound": "sg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": true,
+    "maxGunAmmo": 6,
+    "reloadTime": 50,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "tt33l": {
+    "damage": 10,
+    "damageIgnoreDef": 0,
+    "sound": "sg",
+    "speed": 0.6000000000000001,
+    "fireOnReload": true,
+    "maxGunAmmo": 6,
+    "reloadTime": 50,
+    "bullet": "zex:762m",
+    "damageType": "override"
+  },
+  "uzi": {
+    "damage": 3,
+    "damageIgnoreDef": 0,
+    "recoil": 1.0,
+    "sound": "hg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 30,
+    "reloadTime": 40,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "vz61": {
+    "damage": 4,
+    "damageIgnoreDef": 0,
+    "recoil": 0.75,
+    "sound": "hg",
+    "slowness": 0,
+    "speed": 0.6000000000000001,
+    "fireOnReload": false,
+    "maxGunAmmo": 20,
+    "reloadTime": 40,
+    "bullet": "zex:mm9",
+    "damageType": "override"
+  },
+  "xm8": {
+    "damage": 16,
+    "damageIgnoreDef": 3,
+    "recoil": 2.0,
+    "sound": "famas",
+    "slowness": 0,
+    "speed": 0.15000000000000002,
+    "fireOnReload": false,
+    "maxGunAmmo": 8,
+    "reloadTime": 80,
+    "bullet": "zex:40m",
+    "damageType": "entityExplosion"
+  },
+  "vmg": {
+    "damage": 4,
+    "sound": "mgii",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "37mmd": {
+    "damage": 20,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
+  },
+  "47mm": {
+    "damage": 20,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s47m"
+  },
+  "57mmd": {
+    "damage": 20,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s57m"
+  },
+  "76mm": {
+    "damage": 50,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s76m"
+  },
+  "85mm": {
+    "damage": 40,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s85m"
+  },
+  "88mm": {
+    "damage": 20,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s88m"
+  },
+  "100mm": {
+    "damage": 50,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "105mmap": {
+    "damage": 140,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "105mmhe": {
+    "damage": 50,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "120mmheat": {
+    "damage": 150,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "120mmapfsds": {
+    "damage": 200,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "125mmheat": {
+    "damage": 150,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "125mmapfsds": {
+    "damage": 200,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "152mm": {
+    "damage": 50,
+    "sound": "heavycannon",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s152m"
+  },
+  "20mm": {
+    "damage": 10,
+    "sound": "hmg",
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
+  },
+  "23mm": {
+    "damage": 12,
+    "sound": "hmg",
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
+  },
+  "ads_dp28": {
+    "damage": 8,
+    "sound": "mg2",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "ads_m60": {
+    "damage": 8,
+    "sound": "mg2",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "ads_pkm": {
+    "damage": 8,
+    "sound": "mg2",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "37mmrocket": {
+    "damage": 35,
+    "sound": "p90",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
+  },
+  "76mmrocket": {
+    "damage": 60,
+    "sound": "p90",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s76m"
+  },
+  "agmissile": {
+    "damage": 100,
+    "sound": "missile",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s152m"
+  },
+  "vmgiir": {
+    "damage": 8,
+    "sound": "mgii",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override"
+  },
+  "vmgiil": {
+    "damage": 8,
+    "sound": "mgii",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override"
+  },
+  "vmgii": {
+    "damage": 8,
+    "sound": "mgii",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "vmgi": {
+    "damage": 8,
+    "sound": "mgii",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "aamissile": {
+    "damage": 100,
+    "sound": "missile",
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s152m"
+  },
+  "bomb": {
+    "damage": 100,
+    "sound": "missile",
+    "damageIgnoreDef": 0.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:sbombm"
+  },
+  "bombii": {
+    "damage": 100,
+    "sound": "missile",
+    "damageIgnoreDef": 0.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:sbombm"
+  },
+  "hmg": {
+    "damage": 8,
+    "sound": "hmg",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "7.62mmmgsr": {
+    "damage": 4,
+    "sound": "mgii",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override"
+  },
+  "7.62mmmgsl": {
+    "damage": 4,
+    "sound": "mgii",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override"
+  },
+  "7.62mmmgs": {
+    "damage": 4,
+    "sound": "mgii",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "7.62mmmg": {
+    "damage": 4,
+    "sound": "mgii",
+    "damageIgnoreDef": 0.0,
+    "damageType": "override",
+    "ammoType": "zex:762m"
+  },
+  "12.7mmmgri": {
+    "damage": 6,
+    "sound": "hmg",
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "12.7mmmgli": {
+    "damage": 6,
+    "sound": "hmg",
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "12.7mmmgrii": {
+    "damage": 6,
+    "sound": "hmg",
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "12.7mmmglii": {
+    "damage": 6,
+    "sound": "hmg",
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "12.7mmmg": {
+    "damage": 6,
+    "sound": "hmg",
+    "damageIgnoreDef": 0.5,
+    "damageType": "override",
+    "ammoType": "zex:1270m"
+  },
+  "14.5mmhmgri": {
+    "damage": 6,
+    "sound": "hmg",
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "14.5mmhmgli": {
+    "damage": 6,
+    "sound": "hmg",
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "14.5mmhmgrii": {
+    "damage": 6,
+    "sound": "hmg",
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "14.5mmhmglii": {
+    "damage": 6,
+    "sound": "hmg",
+    "damageIgnoreDef": 0.5,
+    "damageType": "override"
+  },
+  "14.5mmhmg": {
+    "damage": 6,
+    "sound": "hmg",
+    "damageIgnoreDef": 0.5,
+    "damageType": "override",
+    "ammoType": "zex:1450m"
+  },
+  "20mmmc": {
+    "damage": 10,
+    "sound": "hmg",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
+  },
+  "20mmmcheri": {
+    "damage": 10,
+    "sound": "mgii",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
+  },
+  "23mmmc": {
+    "damage": 12,
+    "sound": "mgii",
+    "damageIgnoreDef": 1.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
+  },
+  "25mmmc": {
+    "damage": 20,
+    "sound": "hmgii",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
+  },
+  "30mmmc": {
+    "damage": 20,
+    "sound": "hmgii",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
+  },
+  "23mmmcairr": {
+    "damage": 4,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "23mmmcairl": {
+    "damage": 4,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "23mmmcair": {
+    "damage": 4,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
+  },
+  "20mmmcairdr": {
+    "damage": 12,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "20mmmcairdl": {
+    "damage": 12,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "20mmmcaird": {
+    "damage": 12,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
+  },
+  "20mmmcairwri": {
+    "damage": 12,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "20mmmcairwli": {
+    "damage": 12,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "20mmmcairwrii": {
+    "damage": 12,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "20mmmcairwlii": {
+    "damage": 12,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override"
+  },
+  "20mmmcairw": {
+    "damage": 12,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
+  },
+  "30mmmcair": {
+    "damage": 15,
+    "sound": "air",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
+  },
+  "20mmmcair": {
+    "damage": 12,
+    "sound": "air",
+    "damageIgnoreDef": 1.0,
+    "damageType": "override",
+    "ammoType": "zex:20mmc"
+  },
+  "bombiii": {
+    "damage": 100,
+    "sound": "missile",
+    "damageIgnoreDef": 0.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:sbombm"
+  },
+  "37mmrocketkatyusya": {
+    "damage": 30,
+    "sound": "p90",
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
+  },
+  "flare": {
+    "damage": 0,
+    "sound": "p90",
+    "damageIgnoreDef": 2.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
+  },
+  "76mmrocketdr": {
+    "damage": 60,
+    "sound": "p90",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion"
+  },
+  "76mmrocketdl": {
+    "damage": 60,
+    "sound": "p90",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion"
+  },
+  "76mmrocketd": {
+    "damage": 60,
+    "sound": "p90",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s76m"
+  },
+  "mamissile": {
+    "damage": 50,
+    "sound": "missile",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
+  },
+  "aammissile": {
+    "damage": 50,
+    "sound": "missile",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
+  },
+  "ssmissile": {
+    "damage": 100,
+    "sound": "missile",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:20mmc"
+  },
+  "37mm": {
+    "damage": 30,
+    "sound": "cannon",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s37m"
+  },
+  "57mm": {
+    "damage": 160,
+    "sound": "cannon",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s57m"
+  },
+  "76mmhe": {
+    "damage": 20,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s76m"
+  },
+  "127mm": {
+    "damage": 140,
+    "sound": "cannon",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s57m"
+  },
+  "130mm": {
+    "damage": 140,
+    "sound": "cannon",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s57m"
+  },
+  "105mm": {
+    "damage": 20,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "125mm": {
+    "damage": 80,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s105m"
+  },
+  "152mms": {
+    "damage": 50,
+    "sound": "tank",
+    "damageIgnoreDef": 3.0,
+    "damageType": "entityExplosion",
+    "ammoType": "zex:s152m"
+  }
+};
