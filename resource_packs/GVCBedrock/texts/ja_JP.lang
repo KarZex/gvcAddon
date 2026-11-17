@@ -1331,6 +1331,7 @@ script.gvcv5.show_guns.name=銃の一覧
 script.gvcv5.show_attachs.name=アタッチメントの一覧
 script.gvcv5.show_gren.name=手榴弾の一覧
 script.gvcv5.show_fight.name=戦闘について
+script.gvcv5.back.name=戻る
 
 script.gvcv5:gun_type.sg.name=ショットガン
 script.gvcv5:gun_type.sg_desc.name=拡散する弾を発射する。近距離での威力が高い。
@@ -1404,7 +1405,7 @@ script.gvcv5:gun_ak47_get.name=銃製造機Lv1( エメラルドx2, 鉄インゴ�
 script.gvcv5:gun_m16a1_get.name=銃製造機Lv1( エメラルドx2, 鉄インゴットx3, レッドストーンx1 )
 
 
-script.gvcv5:vehicle_type.car.name=車両
+script.gvcv5:vehicle_type.apc.name=車両
 script.gvcv5:vehicle_subtype.truck.name=トラック
 script.gvcv5:vehicle_subtype.apc.name=装甲兵員輸送車
 script.gvcv5:vehicle_subtype.ifv.name=歩兵戦闘車
@@ -1425,12 +1426,12 @@ script.gvcv5:vehicle_subtype.artillery.name=野戦砲
 script.gvcv5:vehicle_subtype.artillery_aa.name=対空砲
 script.gvcv5:vehicle_subtype.cannon.name=固定砲台
 
-script.gvcv5:vehicle_type.heli.name=ヘリコプター
+script.gvcv5:vehicle_type.heri.name=ヘリコプター
 script.gvcv5:vehicle_subtype.attack_heli.name=攻撃ヘリ
 script.gvcv5:vehicle_subtype.transport_heli.name=輸送ヘリ
 script.gvcv5:vehicle_subtype.spy_heli.name=偵察ヘリ
 
-script.gvcv5:vehicle_type.plane.name=航空機
+script.gvcv5:vehicle_type.air.name=航空機
 script.gvcv5:vehicle_subtype.fighter.name=戦闘機
 script.gvcv5:vehicle_subtype.stealth_fighter.name=ステルス戦闘機
 script.gvcv5:vehicle_subtype.multirole.name=マルチロール機
@@ -1470,5 +1471,21 @@ script.gvcv5.battleInfo10.name=§8ネザライト装備: 1部位あたり25%§r
 script.gvcv5:battleInfo11.name=防具の軽減率は、4部位装備することで最大100%まで軽減することができる。
 script.gvcv5:battleInfo12.name=また、§cヘッドショット§rを受けると、軽減率は-50%される。また、足に被弾すると、軽減率は+25%される。
 script.gvcv5:battleInfo13.name=軽減率が0%を下回った場合、受けるダメージは増加する。
+
+script.gvcv5.guide_vechile.name=ビークル
+script.gvcv5.guide_vechile_desc.name=このアドオンには、機銃や戦車、航空機まで様々なビークルがある。
+script.gvcv5.how_to_vechile.name=操作方法
+script.gvcv5.show_vechile.name=ビークル一覧
+script.gvcv5:v_spec.desc.name=説明:
+script.gvcv5:v_spec.v_subtype.name=種類:
+script.gvcv5:v_spec.v_health.name=体力
+script.gvcv5:v_spec.v_speed.name=最大速度
+script.gvcv5:v_spec.member.name=最大搭乗数
+script.gvcv5:v_spec.v_antibullet.name=装甲値
+script.gvcv5:v_spec.v_weapons.name=武装:  名前 / 威力 / 発射間隔 / 弾数
+script.gvcv5:v_spec.v_weapon1.name=武装1:
+script.gvcv5:v_spec.v_weapon2.name=武装2:
+script.gvcv5:v_spec.v_weapon3.name=武装3:
+script.gvcv5:v_spec.v_weapon4.name=武装4:
 
 script.gvcv5:v_spec.t34_desc.name=ゲリラがよく使用する旧式戦車。性能は全戦車の中でも低いが、それでも歩兵とって脅威となる。

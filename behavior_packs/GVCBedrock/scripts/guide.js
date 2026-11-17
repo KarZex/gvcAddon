@@ -3,6 +3,7 @@ import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { absVector2, getTeam,DistanceVector3in2dim } from "./usefulFunction"
 import { gunGuide } from "./gunguide";
 import { vehicleData } from "./vehicle";
+import { gunData } from "./guns"
 
 const Teams = [ "red","blue","green","yellow" ];
 const worldDimensions = [ `overworld`, `nether`, `the_end` ];
@@ -220,6 +221,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			let itemRawText = [];
 			itemRawText.push({ translate: `script.gvcv5:v_spec.desc.name` });
 			itemRawText.push({ translate: `script.gvcv5:v_spec.${v}_desc.name` });
+			itemRawText.push({ text: `\n` });
 			//v_subtype
 			itemRawText.push({ translate: `script.gvcv5:v_spec.v_subtype.name` });
 			itemRawText.push({ translate: `script.gvcv5:vehicle_subtype.${vData[`v_subtype`]}.name` });
@@ -236,18 +238,18 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			itemRawText.push({ translate: `script.gvcv5:v_spec.v_antibullet.name` });
 			itemRawText.push({ text: `${vData[`v_antibullet`]}` });
 			itemRawText.push({ text: `\n` });
-			itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapon1.name` });
-			itemRawText.push({ translate: `gvcv5.${vData[`Weapon1`]}.name` });
+			itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapons.name` });
 			itemRawText.push({ text: `\n` });
-			itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapon2.name` });
-			itemRawText.push({ translate: `gvcv5.${vData[`Weapon2`]}.name` });
-			itemRawText.push({ text: `\n` });
-			itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapon3.name` });
-			itemRawText.push({ translate: `gvcv5.${vData[`Weapon3`]}.name` });
-			itemRawText.push({ text: `\n` });
-			itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapon4.name` });
-			itemRawText.push({ translate: `gvcv5.${vData[`Weapon4`]}.name` });
-			itemRawText.push({ text: `\n` });
+			for( let i = 1; i < 5; i++ ){
+				itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapon${i}.name` });
+				itemRawText.push({ translate: `gvcv5.${vData[`Weapon${i}`]}.name` });
+				if( vData[`Weapon${i}`] != `` ){
+					itemRawText.push({ text: ` ${gunData[`${vData[`Weapon${i}`]}`][`damage`]} `});
+					itemRawText.push({ text: ` ${vData[`Weapon${i}_cool`]} `});
+					itemRawText.push({ text: ` ${vData[`Weapon${i}_ammo`]} `});
+				}
+				itemRawText.push({ text: `\n` });
+			}
 			if( vData[`stalth`] < 1 ){
 				itemRawText.push({ translate: `script.gvcv5:v_spec.stalth.name` });
 				itemRawText.push({ translate: `gvcv5.${vData[`stalth`]}.name` });
