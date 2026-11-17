@@ -602,6 +602,14 @@ entity.vehicle:m551.name=M551
 item.spawn_egg.entity.vehicle:m551.name=M551
 tile.gvcv5:spawn_vehicle_m551.name=M551
 item.vehicle:m551_spawn_egg=M551
+entity.vehicle:zsu23.name=ZSU-23-4
+item.spawn_egg.entity.vehicle:zsu23.name=ZSU-23-4
+tile.gvcv5:spawn_vehicle_zsu23.name=ZSU-23-4
+item.vehicle:zsu23_spawn_egg=ZSU-23-4
+entity.vehicle:2k22.name=2K22
+item.spawn_egg.entity.vehicle:2k22.name=2K22
+tile.gvcv5:spawn_vehicle_2k22.name=2K22
+item.vehicle:2k22_spawn_egg=2K22
 
 
 ### Tile name ###
