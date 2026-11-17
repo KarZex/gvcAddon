@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "vehicle:t90",
+      "materials": { "default": "iron_golem" },
+      "textures": {
+        "default": "textures/entity/t90"
+      },
+      "geometry": {
+        "default": "geometry.t90"
+      },
+      "animations": {
+        "look_at_target": "animation.tankaim"
+      },
+      "scripts": {
+        "animate": [
+					{
+						"look_at_target": "query.has_rider"
+					}
+        ]
+      },
+      "spawn_egg":{
+      "texture":"t90",
+      "texture_index":0
+      },
+      "render_controllers": [ "controller.render.iron_golem" ]
+    }
+  }
+}

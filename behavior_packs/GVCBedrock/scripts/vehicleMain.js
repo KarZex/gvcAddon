@@ -33,7 +33,7 @@ function airCraftlader( player,thita ){
 	let thita2 = thita;
 	const V = player.getViewDirection();
 	const P0 = player.location;
-	const d0 = thita * Math.PI/180;
+	const d0 = (thita * Math.PI/180);
 	//world.sendMessage(`${thita2}`)
 	let team = getTeam(player);
 	let print = [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ];
@@ -46,7 +46,7 @@ function airCraftlader( player,thita ){
 		}
 		const ri = Math.sqrt( (Pi.x - P0.x) * (Pi.x - P0.x) + (Pi.z - P0.z) * (Pi.z - P0.z) );
 		const adi = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri);
-		const di = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri) - d0;
+		const di = Math.atan2((Pi.z - P0.z)/ri, (Pi.x - P0.x)/ri) - d0 - Math.PI/2;
 		if( ri > 2048 * stalth ){ continue; }
 		for( let j = 0; j < 21; j++ ){
 			if( - Math.PI/2 + j * Math.PI / 21 <= di && di < - Math.PI/2 + (j + 1) * Math.PI / 21 ){
@@ -197,10 +197,14 @@ function Weapon( player,vehicle,selectedItemSlot ){
 				if( world.scoreboard.getObjective(`lockon`).getScore(player) < 20 ){
 					world.scoreboard.getObjective(`lockon`).addScore(player,1);
 					WeaponData = `{"text":": §eLockOn.."},{"text":"${world.scoreboard.getObjective(`lockon`).getScore(player)}§r\n"}`
+					player.spawnParticle(`zex:lockon_particle`,target.location);
+					player.playSound(`sound.lockon`);
 				}
 				else{
 					player.setDynamicProperty(`missileTarget`,target.id);
 					WeaponData = `{"text":": §6TARGET FOUND§r"},{"text":"\n"}`
+					player.spawnParticle(`zex:lockon2_particle`,target.location);
+					player.playSound(`sound.lockon2`);
 				}
 				if( target.typeId == "minecraft:player" && !target.hasTag(`MissileAlert`) ){
 					target.addTag(`MissileLockon`);
@@ -237,10 +241,14 @@ function Weapon( player,vehicle,selectedItemSlot ){
 				if( world.scoreboard.getObjective(`lockon`).getScore(player) < 20 ){
 					world.scoreboard.getObjective(`lockon`).addScore(player,1);
 					WeaponData = `{"text":": §eLockOn.."},{"text":"${world.scoreboard.getObjective(`lockon`).getScore(player)}§r\n"}`
+					player.spawnParticle(`zex:lockon_particle`,target.location);
+					player.playSound(`sound.lockon`);
 				}
 				else{
 					player.setDynamicProperty(`missileTarget`,target.id);
 					WeaponData = `{"text":": §6TARGET FOUND§r"},{"text":"\n"}`
+					player.spawnParticle(`zex:lockon2_particle`,target.location);
+					player.playSound(`sound.lockon2`);
 				}
 				if( target.typeId == "minecraft:player" && !target.hasTag(`MissileAlert`) ){
 					target.addTag(`MissileLockon`);

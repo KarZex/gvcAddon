@@ -609,6 +609,10 @@ entity.vehicle:2k22.name=2K22
 item.spawn_egg.entity.vehicle:2k22.name=2K22
 tile.gvcv5:spawn_vehicle_2k22.name=2K22
 item.vehicle:2k22_spawn_egg=2K22
+entity.vehicle:t90.name=T-90
+item.spawn_egg.entity.vehicle:t90.name=T-90
+tile.gvcv5:spawn_vehicle_t90.name=T-90
+item.vehicle:t90_spawn_egg=T-90
 
 
 ### Tile name ###

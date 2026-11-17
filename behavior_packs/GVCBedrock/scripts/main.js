@@ -213,17 +213,20 @@ world.afterEvents.entityItemDrop.subscribe( async e => {
 			const spawn = entity.dimension.spawnEntity(`${bonename.replace(`_spawn_egg`,``)}`,entity.location,{ spawnEvent:`minecraft:spawned_from_air` });
 			spawn.triggerEvent(`gvcv5:become_${getTeam(entity)}`);
 			spawn.triggerEvent(`minecraft:spawned_from_air`);
+			spawn.runCommand(`scriptevent gvcv5:enemy_spawn ca_${getTeam(entity).replace(`team`,``)}`)
 			item.remove()
 		}
 		else if( bonename == `gvcv5:pmc_spawn_egg` ){
 			const spawn = entity.dimension.spawnEntity(`${bonename.replace(`_spawn_egg`,``)}_${getTeam(entity).replace(`team`,``)}`,entity.location,{ spawnEvent:`minecraft:spawned_from_air` });
 			spawn.triggerEvent(`minecraft:spawned_from_air`);
+			spawn.runCommand(`scriptevent gvcv5:enemy_spawn ca_${getTeam(entity).replace(`team`,``)}`)
 			item.remove()
 
 		}
 		else if( airbone_tank.includes(bonename) ){
 			const spawn = entity.dimension.spawnEntity(`gvcv5:ca`,entity.location,{ spawnEvent:`gvcv5:become_${getTeam(entity)}` });
 			spawn.triggerEvent(`gvcv5:become_${getTeam(entity)}`);
+			await system.waitTicks(2);
 			spawn.runCommand(`ride @s summon_ride ${bonename.replace(`_spawn_egg`,``)} reassign_rides minecraft:spawned_from_air`);
 			item.remove()
 

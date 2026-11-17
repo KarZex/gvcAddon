@@ -101,6 +101,10 @@ export const vehicleData = {
         "rarelity": "epic"
       },
       {
+        "name": "t90",
+        "rarelity": "legendary"
+      },
+      {
         "name": "m551",
         "rarelity": "epic"
       },
@@ -696,7 +700,7 @@ export const vehicleData = {
   },
   "m1a2": {
     "type": "tank",
-    "health": 400,
+    "health": 450,
     "speed": 0.2,
     "member": 1,
     "v_antibullet": 3,
@@ -878,7 +882,7 @@ export const vehicleData = {
   },
   "t72": {
     "type": "tank",
-    "health": 400,
+    "health": 300,
     "speed": 0.2,
     "member": 1,
     "v_antibullet": 3,
@@ -901,6 +905,32 @@ export const vehicleData = {
     "stalth": 1,
     "v_subtype": "mbt",
     "v_rare": "epic"
+  },
+  "t90": {
+    "type": "tank",
+    "health": 400,
+    "speed": 0.2,
+    "member": 1,
+    "v_antibullet": 3,
+    "v_turn": 0.0,
+    "Weapon1": "120mmapfsds",
+    "Weapon1_cool": 90,
+    "Weapon1_ammo": 1,
+    "Weapon2": "vmg",
+    "Weapon2_cool": 1,
+    "Weapon2_ammo": 30,
+    "Weapon3": "tankg",
+    "Weapon3_cool": 150,
+    "Weapon3_ammo": 1,
+    "Weapon4": "",
+    "Weapon4_cool": 0,
+    "Weapon4_ammo": 0,
+    "turn": 0.0,
+    "gattack": 18,
+    "coolTime": 300,
+    "stalth": 1,
+    "v_subtype": "mbt",
+    "v_rare": "legendary"
   },
   "m551": {
     "type": "stank",

@@ -4021,6 +4021,11 @@
           "command": "ride @s summon_ride vehicle:t72 no_ride_change summon_enemy"
         }
       },
+      "vehicle:t90": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:t90 no_ride_change summon_enemy"
+        }
+      },
       "vehicle:m551": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:m551 no_ride_change summon_enemy"

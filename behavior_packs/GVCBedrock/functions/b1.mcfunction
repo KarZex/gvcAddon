@@ -49,6 +49,8 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t55] run event entity @s 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t72] run event entity @s 125mmheat
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:t90] run event entity @s 120mmapfsds
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m551] run event entity @s 152mms
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:r22] run event entity @s 7.62mmmgs

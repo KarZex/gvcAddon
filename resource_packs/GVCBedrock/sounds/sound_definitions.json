@@ -64,6 +64,18 @@
 				"sounds/sound_alert2"
 			]
 		},
+		"sound.lockon": {
+			"category": "player",
+			"sounds": [
+				"sounds/sound_lock"
+			]
+		},
+		"sound.lockon2": {
+			"category": "player",
+			"sounds": [
+				"sounds/lsp_lock"
+			]
+		},
 		"fire.missile": {
 			"category": "player",
 			"max_distance": 64,

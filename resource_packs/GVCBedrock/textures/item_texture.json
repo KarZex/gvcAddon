@@ -1369,6 +1369,9 @@
     },
     "2k22": {
       "textures": "textures/items/vehicle/2k22"
+    },
+    "t90": {
+      "textures": "textures/items/vehicle/t90"
     }
   }
 }
