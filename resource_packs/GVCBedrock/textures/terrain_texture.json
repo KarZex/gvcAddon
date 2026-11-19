@@ -645,6 +645,9 @@
     },
     "spawn_vehicle_t90": {
       "textures": "textures/spawn/vehicle_t90"
+    },
+    "spawn_vehicle_z10": {
+      "textures": "textures/spawn/vehicle_z10"
     }
   }
 }

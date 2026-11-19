@@ -1372,6 +1372,9 @@
     },
     "t90": {
       "textures": "textures/items/vehicle/t90"
+    },
+    "z10": {
+      "textures": "textures/items/vehicle/z10"
     }
   }
 }

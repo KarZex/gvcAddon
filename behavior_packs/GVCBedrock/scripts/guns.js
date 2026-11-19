@@ -1312,7 +1312,7 @@ export const gunData = {
     "damage": 12,
     "sound": "mgii",
     "damageIgnoreDef": 1.0,
-    "damageType": "entityExplosion",
+    "damageType": "override",
     "ammoType": "zex:20mmc"
   },
   "25mmmc": {

@@ -144,6 +144,10 @@
       {
         "name": "mi24d",
         "rarelity": "rare"
+      },
+      {
+        "name": "z10",
+        "rarelity": "legendary"
       }
     ],
     "set": [
@@ -1164,6 +1168,32 @@
     "stalth": 1,
     "v_subtype": "attack_heli",
     "v_rare": "rare"
+  },
+  "z10": {
+    "type": "heri",
+    "health": 320,
+    "speed": 1.2,
+    "member": 1,
+    "v_antibullet": 1,
+    "v_turn": 0.0,
+    "Weapon1": "76mmrocket",
+    "Weapon1_cool": 5,
+    "Weapon1_ammo": 8,
+    "Weapon2": "23mmmc",
+    "Weapon2_cool": 1,
+    "Weapon2_ammo": 30,
+    "Weapon3": "agmissile",
+    "Weapon3_cool": 50,
+    "Weapon3_ammo": 2,
+    "Weapon4": "flare",
+    "Weapon4_cool": 100,
+    "Weapon4_ammo": 1,
+    "turn": 0.0,
+    "gattack": 0,
+    "coolTime": 300,
+    "stalth": 1,
+    "v_subtype": "attack_heli",
+    "v_rare": "legendary"
   },
   "20mmaa": {
     "type": "set",

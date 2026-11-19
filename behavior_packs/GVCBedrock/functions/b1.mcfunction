@@ -69,6 +69,8 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:ka60] run event entity @s
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:mi24d] run event entity @s 76mmrocket
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:z10] run event entity @s 76mmrocket
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:20mmaa] run event entity @s 20mmmc
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:flak18] run event entity @s 125mm

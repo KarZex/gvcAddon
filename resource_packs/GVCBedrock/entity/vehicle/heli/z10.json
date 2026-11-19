@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "vehicle:z10",
+			"materials": {
+				"default": "iron_golem",
+				"planeglass": "entity_alphablend"
+			},
+			"textures": {
+        		"default": "textures/entity/z10",
+				"planeglass": "textures/entity/z10"
+			},
+			"geometry": {
+        		"default": "geometry.z10",
+				"planeglass": "geometry.z10_planeglass"
+			},
+			"spawn_egg":{
+			"texture":"z10",
+			"texture_index":0
+			},
+			"scripts": {
+				"animate": [ 
+					{ "look_at_target": "query.has_rider"},
+					{ "fly2l": "query.has_rider && query.property('zex:move') == -1" },
+					{ "fly2r": "query.has_rider && query.property('zex:move') == 1" },
+					{ "fly": "query.has_rider" }
+				]
+			},
+			"animations": {
+        		"look_at_target": "animation.heriix",
+				"fly2l": "animation.heri.left",
+				"fly2r": "animation.heri.right",
+				"fly": "animation.heri.fly"
+			},
+      "render_controllers": [ 
+			"controller.render.iron_golem",
+			"controller.render.planeglass"
+		]
+		}
+	}
+}

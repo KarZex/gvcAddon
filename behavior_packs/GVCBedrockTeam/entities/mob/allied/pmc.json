@@ -5009,6 +5009,11 @@
           "command": "ride @s summon_ride vehicle:mi24d no_ride_change summon_enemy"
         }
       },
+      "vehicle:z10": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:z10 no_ride_change summon_enemy"
+        }
+      },
       "vehicle:20mmaa": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:20mmaa no_ride_change summon_enemy"
