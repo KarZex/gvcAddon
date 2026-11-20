@@ -98,8 +98,8 @@
             {
               "function": "set_count",
               "count": {
-                "min": 1,
-                "max": 4
+                "min": 20,
+                "max": 32
               }
             }
           ],
@@ -112,8 +112,8 @@
             {
               "function": "set_count",
               "count": {
-                "min": 1,
-                "max": 4
+                "min": 0,
+                "max": 32
               }
             }
           ],
@@ -127,7 +127,7 @@
               "function": "set_count",
               "count": {
                 "min": 1,
-                "max": 4
+                "max": 8
               }
             }
           ],
@@ -141,7 +141,7 @@
               "function": "set_count",
               "count": {
                 "min": 1,
-                "max": 4
+                "max": 8
               }
             }
           ],

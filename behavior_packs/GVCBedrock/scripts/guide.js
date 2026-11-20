@@ -229,7 +229,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					if( result.selection != 4 ){
 						const form2 = new ActionFormData();
 						form2.title(`script.gvcv5.how_to_gun.name`);
-						form2.body({ rawtext: createDesc(`howToGunV${howTVtx[result.selection]}`,6) });
+						form2.body({ rawtext: createDesc(`${howTVtx[result.selection]}`,6) });
 						form2.button(`script.gvcv5.back.name`);
 						form2.show(user).then( result => {
 							if ( !result.canceled ){
@@ -297,7 +297,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const form = new ActionFormData();
 			const v = message;
 			form.title(`entity.vehicle:${v}.name`);
-			const vData = vehicleData[`${v}`]
+			const vData = vehicleData[`${v}`];
 			let itemRawText = [];
 			itemRawText.push({ translate: `script.gvcv5:v_spec.desc.name` });
 			itemRawText.push({ translate: `script.gvcv5:v_spec.${v}_desc.name` });
@@ -324,9 +324,17 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapon${i}.name` });
 				itemRawText.push({ translate: `gvcv5.${vData[`Weapon${i}`]}.name` });
 				if( vData[`Weapon${i}`] != `` ){
-					itemRawText.push({ text: ` ${gunData[`${vData[`Weapon${i}`]}`][`damage`]} `});
-					itemRawText.push({ text: ` ${vData[`Weapon${i}_cool`]} `});
-					itemRawText.push({ text: ` ${vData[`Weapon${i}_ammo`]} `});
+					if( vData[`Weapon${i}`] == `tankg` ){
+						itemRawText.push({ translate: `script.gvcv5:v_spec.tankg.name`});
+					}
+					else if( vData[`Weapon${i}`] == `flare` ){
+						itemRawText.push({ translate: `script.gvcv5:v_spec.flare.name`});
+					}
+					else{
+						itemRawText.push({ text: ` ${gunData[`${vData[`Weapon${i}`]}`][`damage`]} `});
+						itemRawText.push({ text: ` ${vData[`Weapon${i}_cool`]} `});
+						itemRawText.push({ text: ` ${vData[`Weapon${i}_ammo`]} `});
+					}
 				}
 				itemRawText.push({ text: `\n` });
 			}
@@ -357,7 +365,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const target_guns = gunGuide["gun_types"][`${message}`];
 			for( const gun of target_guns ){
 				let itemRawText = [];
-				print(`${gun[`name`]}`)
+				//print(`${gun[`name`]}`)
 				itemRawText.push({ translate: `item.gun:${gun[`name`]}` });
 				itemRawText.push({ text: `\n` });	
 				itemRawText.push({ translate: `script.gvcv5:rarelity.name` });

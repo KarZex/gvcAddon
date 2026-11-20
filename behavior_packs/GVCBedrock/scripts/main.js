@@ -788,7 +788,6 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			e.source.dimension.spawnEntity(e.projectile.typeId,vict.location,{ spawnEvent:`minecraft:explode` });
 		}
 		e.source.dimension.spawnEntity(e.projectile.typeId,vict.location,{ spawnEvent:`minecraft:explode` });
-			e.projectile.remove();
 			
 		
 
@@ -796,6 +795,7 @@ world.afterEvents.projectileHitEntity.subscribe( e => {
 			e.projectile.remove();
 		}
 		catch( error ){
+			return
 		}
 
 	}

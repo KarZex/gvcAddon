@@ -711,6 +711,9 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		const vehicle = e.sourceEntity;
 		const player = vehicle.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
 		//world.sendMessage(`§aSelected Slot Index: ${selectedItemSlot}`);
+		try{
+			player.typeId == "minecraft:player"
+		}catch{ return }
 		if( player.typeId == "minecraft:player" ){
 			const selectedItemSlot = player.selectedSlotIndex;
 			const attack = vehicleData[`${vehicle.typeId.replace("vehicle:","")}`][`gattack`];
