@@ -238,7 +238,7 @@ function Weapon( player,vehicle,selectedItemSlot ){
 			const target = findTargetInCone(player,{families:["tank"],location:player.location,maxDistance:128},allies);
 			if( target != null ){
 				//maxsubcool
-				if( world.scoreboard.getObjective(`lockon`).getScore(player) < 20 ){
+				if( world.scoreboard.getObjective(`lockon`).getScore(player) < 5 ){
 					world.scoreboard.getObjective(`lockon`).addScore(player,1);
 					WeaponData = `{"text":": §eLockOn.."},{"text":"${world.scoreboard.getObjective(`lockon`).getScore(player)}§r\n"}`
 					player.spawnParticle(`zex:lockon_particle`,target.location);
@@ -281,6 +281,26 @@ function Weapon( player,vehicle,selectedItemSlot ){
 		}
 	}
 	return weapontext;
+}
+
+async function fireFlare( player,V ){
+	//const playerView = player.getViewDirection();
+	const X = 2
+
+	for( let i = 0; i < 3; i++ ){
+		for( let j = 0; j < 5; j++ ){
+			const f = player.dimension.spawnEntity(`fire:flare`,{ x:player.location.x + 1 * V.z * ( 2 - j )/2,y:player.location.y-3,z:player.location.z + 1 * V.z * ( 2 - j )/2 });
+			//f.clearVelocity();
+			//f.getComponent(EntityComponentTypes.Projectile).owner = player;
+			//f.getComponent(EntityComponentTypes.Projectile).shoot({ x:playerView.z * ( 3 - j)/3 ,y:-0.5,z:playerView.x * ( 3 - j)/3 })
+			//f.clearVelocity();
+			//print(`${V.x},${V.z},${V.y}`)
+			f.applyImpulse({ x:V.z * ( 2 - j ) * X ,y:0,z:V.x * ( 2 - j ) * X });
+			player.playSound(`fire.p90`,{ volume:3 })
+		}
+		await system.waitTicks(25);
+	}
+
 }
 
 system.runInterval( () => {
@@ -511,7 +531,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 						world.scoreboard.getObjective(`maxsubcool`).setScore(vehicle,100);
 						bulletSpawn = true;
 					}
-					else if( weapon == `aamissile` || weapon == `agmissile` ){
+					else if( weapon == `aamissile` ){
 						if( player.getDynamicProperty(`missileTarget`) != undefined ){
 							player.triggerEvent(`fire:${weapon}`);
 							bulletSpawn = true;
@@ -520,7 +540,8 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 					else if( weapon == `flare` ){
 						world.scoreboard.getObjective(`maxsubcool`).setScore(player,100);
 						world.scoreboard.getObjective(`maxsubcool`).setScore(vehicle,100);
-						player.triggerEvent(`fire:${weapon}`);
+						const v = vehicle.getViewDirection();
+						fireFlare(player,v);
 						bulletSpawn = true;
 					}
 					else{

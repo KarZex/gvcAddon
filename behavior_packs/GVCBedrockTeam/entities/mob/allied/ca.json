@@ -4201,6 +4201,11 @@
           "command": "ride @s summon_ride vehicle:yak23 no_ride_change summon_enemy"
         }
       },
+      "vehicle:yak23kai": {
+        "queue_command": {
+          "command": "ride @s summon_ride vehicle:yak23kai no_ride_change summon_enemy"
+        }
+      },
       "vehicle:il28": {
         "queue_command": {
           "command": "ride @s summon_ride vehicle:il28 no_ride_change summon_enemy"

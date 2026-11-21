@@ -1179,7 +1179,7 @@ export const gunData = {
     "ammoType": "zex:762m"
   },
   "aamissile": {
-    "damage": 100,
+    "damage": 200,
     "sound": "missile",
     "damageIgnoreDef": 2.0,
     "damageType": "entityExplosion",
@@ -1460,7 +1460,7 @@ export const gunData = {
     "ammoType": "zex:20mmc"
   },
   "aammissile": {
-    "damage": 50,
+    "damage": 200,
     "sound": "missile",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",

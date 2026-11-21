@@ -1375,6 +1375,9 @@
     },
     "z10": {
       "textures": "textures/items/vehicle/z10"
+    },
+    "yak23kai": {
+      "textures": "textures/items/vehicle/yak23kai"
     }
   }
 }

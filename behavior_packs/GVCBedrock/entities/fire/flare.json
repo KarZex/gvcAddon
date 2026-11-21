@@ -5,8 +5,7 @@
       "identifier": "fire:flare",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier": "minecraft:snowball"
+      "is_experimental": false
     },
     "components": {
       "minecraft:type_family": {
@@ -16,7 +15,7 @@
         ]
       },
       "minecraft:explode": {
-        "fuse_length": 5,
+        "fuse_length": 1.5,
         "fuse_lit": true,
         "power": 0,
         "causes_fire": false
@@ -28,23 +27,9 @@
         "width": 0.25,
         "height": 0.25
       },
-      "minecraft:projectile": {
-        "on_hit": {
-          "impact_damage": {
-            "damage": 0,
-            "knockback": false
-          },
-          "stick_in_ground": {}
-        },
-        "power": 0.000001,
-        "gravity": 0.00001,
-        "inertia": 1.5,
-        "uncertainty_base": 0.0,
-        "uncertainty_multiplier": 0,
-        "catch_fire": false,
-        "anchor": 1
+      "minecraft:physics": {
+        "has_gravity": true
       },
-      "minecraft:physics": {},
       "minecraft:scale": {
         "value": 6.0
       }

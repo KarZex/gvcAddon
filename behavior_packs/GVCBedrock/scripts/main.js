@@ -916,16 +916,25 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 
 		}
 		else{
-			const V_m = missile.getVelocity();
-			const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
-			const V = player.getViewDirection();
-			missile.clearVelocity();
+			if( missile.getDynamicProperty(`missileView`) == undefined ){
+				
+				//const V_m = missile.getVelocity();
+				//const V_ma = Math.sqrt(V_m.x*V_m.x + V_m.y*V_m.y + V_m.z*V_m.z);
+				
+				const V = player.getViewDirection();
+				//missile.clearVelocity();
+				missile.setDynamicProperty(`missileView`,V);
 
-			missile.applyImpulse( { 
-				x: V.x * 2.5,
-				y: V.y * 2.5,
-				z: V.z * 2.5
-			} )
+			}
+			else{
+				missile.clearVelocity();
+				missile.applyImpulse( { 
+					x: missile.getDynamicProperty(`missileView`).x * 2,
+					y: missile.getDynamicProperty(`missileView`).y * 2,
+					z: missile.getDynamicProperty(`missileView`).z * 2
+				} )
+
+			}
 
 		}
 	}

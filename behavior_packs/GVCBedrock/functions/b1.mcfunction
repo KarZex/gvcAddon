@@ -121,6 +121,8 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:il2] run event entity @s 
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak23] run event entity @s 20mmmcaird
 
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak23kai] run event entity @s 20mmmcaird
+
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:il28] run event entity @s bomb
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:c130] run event entity @s flare

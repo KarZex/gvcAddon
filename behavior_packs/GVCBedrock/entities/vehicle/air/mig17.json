@@ -54,7 +54,7 @@
             "position": [
               0,
               1.45,
-              0.25
+              0.2
             ],
             "third_person_camera_radius": 16
           }
@@ -160,7 +160,7 @@
           "position": [
             0,
             1.45,
-            0.25
+            0.2
           ],
           "third_person_camera_radius": 16
         }

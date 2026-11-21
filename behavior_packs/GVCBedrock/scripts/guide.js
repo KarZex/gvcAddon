@@ -391,9 +391,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			form.title(`item.gun:${gun}`);
 			const gunData = gunGuide[`${gun}`]
 			let itemRawText = [];
-			itemRawText.push( { translate:`script.gvcv5:gun_spec.power.name` } );
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.desc.name` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.${gun}_desc.name` });
+			itemRawText.push({ text: `\n\n` });
+			itemRawText.push( { translate:`script.gvcv5:gun_spec.power.name` } );
 			itemRawText.push({ text: `\n\n` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.damage.name` });
 			if( gunData[`shotgun`] > 1 ){
@@ -413,6 +414,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			itemRawText.push({ text: `\n` });
 			
 			itemRawText.push( { translate:`script.gvcv5:gun_spec.use.name` } );
+			itemRawText.push({ text: `\n\n` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.speed.name` });
 			itemRawText.push({ text: `${Math.floor(100*gunData[`speed`])/100}\n` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.recoil.name` });

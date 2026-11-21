@@ -648,6 +648,9 @@
     },
     "spawn_vehicle_z10": {
       "textures": "textures/spawn/vehicle_z10"
+    },
+    "spawn_vehicle_yak23kai": {
+      "textures": "textures/spawn/vehicle_yak23kai"
     }
   }
 }

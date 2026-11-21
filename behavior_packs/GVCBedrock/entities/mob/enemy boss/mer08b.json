@@ -11,7 +11,7 @@
           "client_sync": true,
           "type": "float",
           "range": [ 0.0, 1.0 ],
-          "default": 0.9
+          "default": 0.6
         }
       }
     },
@@ -48,10 +48,6 @@
         },
         "minecraft:shooter": {
           "def": "fire:ads_compoundbow"
-        },
-        "minecraft:timer": {
-          "time": 10,
-          "time_down_event": { "event": "tel" }
         }
       }
 	},
