@@ -7,11 +7,11 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:zex_cluiser] run event en
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:lav25] run event entity @s 25mmmc
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:lav25aa] run event entity @s 20mmmcair
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:lav25aa] run event entity @s 20mmmc
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m113] run event entity @s hmg
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m113aa] run event entity @s 20mmmcair
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m113aa] run event entity @s 20mmmc
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:m1126] run event entity @s hmg
 
@@ -119,11 +119,11 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak9] run event entity @s
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:il2] run event entity @s 20mmmcaird
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak23] run event entity @s 20mmmcaird
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak23] run event entity @s 23mmmc
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak23kai] run event entity @s 20mmmcaird
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:yak23kai] run event entity @s 23mmmc
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:il28] run event entity @s bomb
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:il28] run event entity @s 23mmmc
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:c130] run event entity @s flare
 
@@ -135,6 +135,6 @@ execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:rcb90] run event entity @
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:rhib] run event entity @s 7.62mmmg
 
-execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pr1204] run event entity @s 76mm
+execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:pr1204] run event entity @s 76mmhe
 
 execute as @s[tag=!ride] if entity @e[r=4,type=vehicle:hamina] run event entity @s 57mm

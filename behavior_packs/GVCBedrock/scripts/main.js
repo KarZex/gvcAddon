@@ -1361,18 +1361,22 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 			//const intFamily = player.getComponent(`minecraft:type_family`).getTypeFamilies();
 			//const excludeList = [ "player","playerp","mod","mob" ];
 			//const allies = intFamily.filter(char => !excludeList.includes(char));
-			const target = findTargetInCone(player,{families:[ `vehicle` ],location:player.location,maxDistance:128});
+			const target = findTargetInCone(player,{families:[ `vehicle` ],location:player.location,maxDistance:256});
 			if( target != null ){
 				//maxsubcool
 				if( world.scoreboard.getObjective(`lockon`).getScore(player) < 10 ){
 					world.scoreboard.getObjective(`lockon`).addScore(player,1);
 					//WeaponData = `{"text":": §eLockOn.."},{"text":"${world.scoreboard.getObjective(`lockon`).getScore(player)}§r\n"}`
 					player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§eLockOn..\"},{\"text\":\"${world.scoreboard.getObjective(`lockon`).getScore(player)}§r\n\"}]}`);
+					player.spawnParticle(`zex:lockon_particle`,target.location);
+					player.playSound(`sound.lockon`,{ volume:14 });
 				}
 				else{
 					player.setDynamicProperty(`missileTarget`,target.id);
 					//WeaponData = `{"text":": §6TARGET FOUND§r"},{"text":"\n"}`
 					player.runCommand(`titleraw @s actionbar {\"rawtext\":[{\"text\":\"§6TARGET FOUND§r\"}]}`);
+					player.spawnParticle(`zex:lockon2_particle`,target.location);
+					player.playSound(`sound.lockon2`,{ volume:9 });
 				}
 				if( target.typeId == "minecraft:player" && !target.hasTag(`MissileAlert`) ){
 					target.addTag(`MissileLockon`);

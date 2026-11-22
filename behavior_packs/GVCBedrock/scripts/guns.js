@@ -1090,7 +1090,7 @@ export const gunData = {
     "ammoType": "zex:s105m"
   },
   "152mm": {
-    "damage": 50,
+    "damage": 90,
     "sound": "heavycannon",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",
@@ -1179,7 +1179,7 @@ export const gunData = {
     "ammoType": "zex:762m"
   },
   "aamissile": {
-    "damage": 200,
+    "damage": 50,
     "sound": "missile",
     "damageIgnoreDef": 2.0,
     "damageType": "entityExplosion",
@@ -1295,7 +1295,7 @@ export const gunData = {
     "ammoType": "zex:1450m"
   },
   "20mmmc": {
-    "damage": 10,
+    "damage": 5,
     "sound": "hmg",
     "damageIgnoreDef": 1.0,
     "damageType": "override",
@@ -1460,7 +1460,7 @@ export const gunData = {
     "ammoType": "zex:20mmc"
   },
   "aammissile": {
-    "damage": 200,
+    "damage": 50,
     "sound": "missile",
     "damageIgnoreDef": 3.0,
     "damageType": "entityExplosion",

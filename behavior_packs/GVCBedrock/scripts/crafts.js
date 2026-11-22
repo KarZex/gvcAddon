@@ -88,9 +88,10 @@ export const craftData = {
       { "give":"vehicle:t34_spawn_egg","texture":"textures/items/vehicle/t34", "count":1, "cost":[ 2, 9, 4 ] },
       { "give":"vehicle:pt76_spawn_egg","texture":"textures/items/vehicle/pt76", "count":1, "cost":[ 2, 6, 6 ] },
       { "give":"vehicle:rhib_spawn_egg","texture":"textures/items/vehicle/rhib", "count":1, "cost":[ 2, 2, 4 ] },
-      { "give":"vehicle:yak9_spawn_egg","texture":"textures/items/vehicle/yak9", "count":1, "cost":[ 6, 6, 6 ] },
-      { "give":"vehicle:il2_spawn_egg","texture":"textures/items/vehicle/il2", "count":1, "cost":[ 8, 8, 8 ] },
-      { "give":"vehicle:yak23_spawn_egg","texture":"textures/items/vehicle/yak23", "count":1, "cost":[ 9, 24, 16 ] },
+      { "give":"vehicle:yak9_spawn_egg","texture":"textures/items/vehicle/yak9", "count":1, "cost":[ 6, 6, 12 ] },
+      { "give":"vehicle:il2_spawn_egg","texture":"textures/items/vehicle/il2", "count":1, "cost":[ 8, 8, 16 ] },
+      { "give":"vehicle:yak23_spawn_egg","texture":"textures/items/vehicle/yak23", "count":1, "cost":[ 9, 9, 16 ] },
+      { "give":"vehicle:yak23kai_spawn_egg","texture":"textures/items/vehicle/yak23kai", "count":1, "cost":[ 9, 9, 32 ] },
       { "give":"vehicle:mig17_spawn_egg","texture":"textures/items/vehicle/mig17", "count":1, "cost":[ 9, 9, 24 ] }
     ]
   },
@@ -106,12 +107,14 @@ export const craftData = {
       { "give":"vehicle:mi24d_spawn_egg","texture":"textures/items/vehicle/mi24d", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:9k35_spawn_egg","texture":"textures/items/vehicle/9k35", "count":1, "cost":[ 24, 24, 24 ] },
       { "give":"vehicle:zsu23_spawn_egg","texture":"textures/items/vehicle/zsu23", "count":1, "cost":[ 18, 32, 32 ] },
+      { "give":"vehicle:fv101_spawn_egg","texture":"textures/items/vehicle/fv101", "count":1, "cost":[ 4, 12, 12 ] },
       { "give":"vehicle:m60a1_spawn_egg","texture":"textures/items/vehicle/m60a1", "count":1, "cost":[ 18, 36, 24 ] },
       { "give":"vehicle:t55_spawn_egg","texture":"textures/items/vehicle/t55", "count":1, "cost":[ 18, 32, 18 ] },
-      { "give":"vehicle:il2_spawn_egg","texture":"textures/items/vehicle/il2", "count":1, "cost":[ 8, 8, 8 ] },
+      { "give":"vehicle:il28_spawn_egg","texture":"textures/items/vehicle/il28", "count":1, "cost":[ 16, 32, 32 ] },
       { "give":"vehicle:a6_spawn_egg","texture":"textures/items/vehicle/a6", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:su27_spawn_egg","texture":"textures/items/vehicle/su27", "count":1, "cost":[ 18, 18, 48 ] },
       { "give":"vehicle:f16_spawn_egg","texture":"textures/items/vehicle/f16", "count":1, "cost":[ 32, 32, 64 ] },
+      { "give":"vehicle:fa18_spawn_egg","texture":"textures/items/vehicle/fa18", "count":1, "cost":[ 48, 48, 64 ] },
       { "give":"vehicle:cruiser_spawn_egg","texture":"textures/items/vehicle/cruiser", "count":1, "cost":[ 18, 18, 32 ] },
       { "give":"vehicle:pr1204_spawn_egg","texture":"textures/items/vehicle/pr1204", "count":1, "cost":[ 32, 64, 32 ] }
     ]
@@ -141,7 +144,6 @@ export const craftData = {
       { "give":"vehicle:su25_spawn_egg","texture":"textures/items/vehicle/su25", "count":1, "cost":[ 54, 54, 144 ] },
       { "give":"vehicle:a10_spawn_egg","texture":"textures/items/vehicle/a10", "count":1, "cost":[ 64, 144, 192 ] },
       { "give":"vehicle:f22_spawn_egg","texture":"textures/items/vehicle/f22", "count":1, "cost":[ 192, 192, 256 ] },
-      { "give":"vehicle:fa18_spawn_egg","texture":"textures/items/vehicle/fa18", "count":1, "cost":[ 64, 144, 192 ] },
       { "give":"vehicle:su57_spawn_egg","texture":"textures/items/vehicle/su57", "count":1, "cost":[ 144, 192, 144 ] },
       { "give":"vehicle:f117_spawn_egg","texture":"textures/items/vehicle/f117", "count":1, "cost":[ 192, 256, 256 ] },
       { "give":"vehicle:c130_spawn_egg","texture":"textures/items/vehicle/c130", "count":1, "cost":[ 128, 256, 128 ] },

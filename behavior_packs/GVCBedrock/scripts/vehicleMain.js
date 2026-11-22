@@ -588,7 +588,10 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 					if( score >= weaponAmmo ){
 						//world.sendMessage(`§aWeapon${i} is fully loaded! ${(weaponCool+1) * (weaponAmmo) * 2}`);
 						player.removeTag(`weapon${i}attack`);
-						world.scoreboard.getObjective(`weapon${i}_cool`).setScore(player,(weaponCool+1) * (weaponAmmo) * 2);
+						let cooltime = (weaponCool+1) * 20;
+						if( cooltime > 1200 ){ cooltime = 1200; }
+						else if( cooltime < 100 ){ cooltime = 100; }
+						world.scoreboard.getObjective(`weapon${i}_cool`).setScore(player,cooltime);
 						world.scoreboard.getObjective(`weapon${i}`).setScore(player,0);
 					}
 				}

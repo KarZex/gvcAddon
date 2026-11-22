@@ -13,7 +13,7 @@ name,id,É_ÉÅÅ[ÉW,íeë¨,ñΩíÜê∏ìx,òAéÀä‘äu(tick),îöî≠,ÉuÉçÉbÉNîjâÛ,âπ,É_ÉÅÅ[ÉWÉ^ÉCÉ
 120mm-APFSDS Cannon,120mmapfsds,200,4,0,100,2,T,tankbullet,entityExplosion,,6,zex:s105m,3
 125mm-HEAT Cannon,125mmheat,150,4,0,100,3,T,tankbullet,entityExplosion,,6,zex:s105m,3
 125mm-APFSDS Cannon,125mmapfsds,200,4,0,100,2,T,tankbullet,entityExplosion,,6,zex:s105m,3
-152mmCannon,152mm,50,4,0,160,4,T,heavycannonbullet,entityExplosion,,6,zex:s152m,3
+152mmCannon,152mm,90,4,0,160,4,T,heavycannonbullet,entityExplosion,,6,zex:s152m,3
 20mm,20mm,10,6,0,5,0,F,hmgbullet,entityExplosion,,1,zex:20mmc,2
 23mm,23mm,12,6,0,6,0,F,hmgbullet,entityExplosion,,1,zex:20mmc,2
 ads_dp28,ads_dp28,8,6,0,1,0,F,mgbullet,override,,1,zex:762m,0
@@ -24,7 +24,7 @@ ads_pkm,ads_pkm,8,6,0,1,0,F,mgbullet,override,,1,zex:762m,0
 ASMissile,agmissile,100,4,0,100,6,F,missilebullet,entityExplosion,H,1,zex:s152m,3
 vmgii,vmgii,8,6,0,1,0,F,mgiibullet,override,D,1,zex:762m,0
 vmgi,vmgi,8,6,0,1,0,F,mgiibullet,override,,1,zex:762m,0
-AAMissile,aamissile,200,2,0,100,2,F,missilebullet,entityExplosion,H,1,zex:s152m,2
+AAMissile,aamissile,50,2,0,100,2,F,missilebullet,entityExplosion,H,1,zex:s152m,2
 250kgBombx2,bomb,100,2,0,100,4,F,missilebullet,entityExplosion,HN,1,zex:sbombm,0
 250kgBombx4,bombii,100,2,0,100,4,F,missilebullet,entityExplosion,HM,1,zex:sbombm,0
 hmg,hmg,8,4,0,2,0,F,hmgbullet,override,,1,zex:762m,0
@@ -32,7 +32,7 @@ hmg,hmg,8,4,0,2,0,F,hmgbullet,override,,1,zex:762m,0
 7.62mmMG,7.62mmmg,4,4,0,1,0,F,mgiibullet,override,,1,zex:762m,0
 12.7mmHMGx4,12.7mmmg,6,12,0,1,0,F,hmgbullet,override,Q,1,zex:1270m,0.5
 14.5mmHMGx4,14.5mmhmg,6,12,0,2,0,F,hmgbullet,override,Q,1,zex:1450m,0.5
-20mmMC,20mmmc,10,64,0,1,0,F,hmgbullet,override,Fs,1,zex:20mmc,1
+20mmMC,20mmmc,5,64,0,1,0,F,hmgbullet,override,Fs,1,zex:20mmc,1
 20mmMC,20mmmcheri,10,64,0,1,0,F,mgiibullet,override,Fs,1,zex:20mmc,1
 23mmmc,23mmmc,12,64,0,2,1,F,mgiibullet,override,Fs,1,zex:20mmc,1
 25mmmc,25mmmc,20,64,0,9,1,F,hmgiibullet,entityExplosion,Fs,1,zex:20mmc,3
@@ -47,7 +47,7 @@ bombii,bombiii,100,2,0,100,4,F,missilebullet,entityExplosion,HMM,1,zex:sbombm,0
 Flare,flare,0,0,0,20,3,F,rpgbullet,entityExplosion,H,2,zex:s37m,2
 76mmrocketx2,76mmrocketd,60,4,0,20,3,F,rpgbullet,entityExplosion,D,4,zex:s76m,3
 ManualMissile,mamissile,50,4,0,100,3,F,missilebullet,entityExplosion,H,4,zex:20mmc,3
-ManualMissile,aammissile,200,4,0,100,3,F,missilebullet,entityExplosion,H,4,zex:20mmc,3
+ManualMissile,aammissile,50,4,0,100,3,F,missilebullet,entityExplosion,H,4,zex:20mmc,3
 SSMissile,ssmissile,100,4,0,100,3,F,missilebullet,entityExplosion,H,4,zex:20mmc,3
 37mmCannon,37mm,30,4,0,20,1,T,cannonbullet,entityExplosion,,2,zex:s37m,3
 57mmCannon,57mm,160,4,0,60,1,T,cannonbullet,entityExplosion,,4,zex:s57m,3
@@ -56,4 +56,4 @@ SSMissile,ssmissile,100,4,0,100,3,F,missilebullet,entityExplosion,H,4,zex:20mmc,
 130mmCannon,130mm,140,4,0,60,3,T,cannonbullet,entityExplosion,,4,zex:s57m,3
 105mm Cannon,105mm,20,4,0,100,1,F,tankbullet,entityExplosion,,6,zex:s105m,3
 125mm Cannon,125mm,80,4,0,100,1,F,tankbullet,entityExplosion,,6,zex:s105m,3
-152mmCannon,152mms,50,4,0,160,3,T,tankbullet,entityExplosion,,6,zex:s152m,3
+152mmCannon,152mms,50,4,0,160,4,T,tankbullet,entityExplosion,,6,zex:s152m,3
