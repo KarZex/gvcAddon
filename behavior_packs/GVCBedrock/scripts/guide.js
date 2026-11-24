@@ -71,6 +71,36 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				else if( r.selection == 1 ){
 					user.runCommand(`scriptevent gvcv5:guide_vechile 0`);
 				}
+				// Team
+				else if( r.selection == 2 ){
+					const form2 = new ActionFormData();
+					form2.title(`script.gvcv5.phone_howToTeam.name`);
+					form2.body(`script.gvcv5.phone_howToTeamDesc.name`);
+					for( let i = 0; i < 5; i++ ){
+						form2.button(`script.gvcv5.phone_howToTeam${i+1}.name`);
+					}
+					form2.button(`script.gvcv5.back.name`);
+					form2.show(user).then( r => {
+						if( !r.canceled ){
+							if( r.selection < 5 ){
+								const form3 = new ActionFormData();
+								form3.title(`script.gvcv5.phone_howToTeam${r.selection+1}.name`);
+								form3.body(`script.gvcv5.phone_howToTeam${r.selection+1}Desc.name`);
+								form3.button(`script.gvcv5.back.name`);
+								form3.show(user).then( r => {
+									if( !r.canceled ){
+										user.runCommand(`scriptevent gvcv5:phone_guide`);
+									}
+								} )
+
+							}
+							else{
+								user.runCommand(`scriptevent gvcv5:phone_guide`);
+
+							}
+						}
+					} )
+				}
 			}
 		},)
 	}
@@ -115,15 +145,88 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const user = e.sourceEntity;
 			const form = new ActionFormData();
 			form.title(`script.gvcv5.show_guns.name`);
+			form.button(`script.gvcv5:gun_type.gunguide.name`,`textures/ui/phone/missing_item`);
 			for( const gunType of GUN_TYPES ){
-				form.button(`script.gvcv5:gun_type.${gunType}.name`);
+				form.button(`script.gvcv5:gun_type.${gunType}.name`,`textures/ui/phone/${gunType}`);
 			}
 			form.button(`script.gvcv5.back.name`);
 			form.show(user).then( result => {
 				if ( !result.canceled ){
-					if( result.selection != GUN_TYPES.length ){
-						print(`${GUN_TYPES[result.selection]}`)
-						user.runCommand(`scriptevent gvcv5:guide_show_gun ${GUN_TYPES[result.selection]}`);
+					if( result.selection == 0 ){
+						const form2 = new ActionFormData();
+						form.title(`item.gun:${gun}`);
+						const gunData = gunGuide[`${gun}`]
+						let itemRawText = [];
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.damage.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.damage_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.basedps.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.basedps_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.damageIgnoreDef.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.damageIgnoreDef_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.bomb.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.bomb_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.interval.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.interval_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.speed.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.speed_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.recoil.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.recoil_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.slowness.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.slowness_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.maxGunAmmo.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.maxGunAmmo_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.fullauto.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.fullauto_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.reloadTime.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.reloadTime_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.bullet.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.bullet_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.damageType.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.damageType_desc.name` });
+						itemRawText.push({ text: `\n\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.get.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.get_desc.name` });
+						itemRawText.push({ text: `\n` });
+						itemRawText.push({ translate: `script.gvcv5:gun_spec.${gun}_get.name` });
+						form.body({ rawtext: itemRawText });
+						form.button(`script.gvcv5.back.name`);
+						form.show(user).then( result => {
+							if ( !result.canceled ){
+								user.runCommand(`scriptevent gvcv5:guide_gun 2`);
+							}
+						} )
+
+					}
+					if( result.selection != GUN_TYPES.length+1 ){
+						print(`${GUN_TYPES[result.selection+1]}`)
+						user.runCommand(`scriptevent gvcv5:guide_show_gun ${GUN_TYPES[result.selection+1]}`);
 					}
 					else{
 						user.runCommand(`scriptevent gvcv5:guide_gun 0`);
@@ -182,7 +285,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const user = e.sourceEntity;
 			const form = new ActionFormData();
 			form.title(`script.gvcv5.show_fight.name`);
-			form.body({ rawtext: createDesc(`battleInfo`,13) });
+			form.body({ rawtext: createDesc(`battleInfo`,14) });
 			form.button(`script.gvcv5.back.name`);
 			form.show(user).then( result => {
 				if ( !result.canceled ){
@@ -362,6 +465,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		if( message in gunGuide["gun_types"] ){
 			const form = new ActionFormData();
 			form.title(`script.gvcv5.guide_show_gun.name`);
+			form.body(`script.gvcv5:gun_type.${message}_desc.name`)
 			const target_guns = gunGuide["gun_types"][`${message}`];
 			for( const gun of target_guns ){
 				let itemRawText = [];

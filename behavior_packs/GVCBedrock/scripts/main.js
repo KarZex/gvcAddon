@@ -1576,6 +1576,7 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 		const buys = craftData[`${craftType}`][`buy`];
 		let itemRawText = []
 		let sellItemCounts = []
+		itemRawText.push({ text: `need:\n` });
 		for( let i = 0; i < sells.length; i++ ){
 			let c = 0
 			for(let j = 0; j < 36; j++){
@@ -1584,13 +1585,13 @@ system.afterEvents.scriptEventReceive.subscribe( async  e => {
 					c += player.getComponent("inventory").container.getItem(j).amount;
 				}
 			}
-			itemRawText.push({ translate: `script.gvcv5.${sells[i]}.name` });
+			itemRawText.push({ translate: `script.gvcv5.${sells[i]}_desc.name` });
 			itemRawText.push({ text: `:${c}\n` });
 			sellItemCounts.push(c);
 		}
 		form.body({ rawtext: itemRawText});
 		for(let i = 0; i < buys.length; i++){
-			let buyData = [{ text:`§l`},{ translate: `item.${buys[i]["give"]}`},{ text:`x${buys[i]["count"]}§r\nneed:`}];
+			let buyData = [{ text:`§l`},{ translate: `item.${buys[i]["give"]}`},{ text:`x${buys[i]["count"]}§r\n`}];
 			for( let j = 0; j < sells.length; j++ ){
 				if( buys[i]["cost"][j] > 0 ){
 					buyData.push({ translate: `script.gvcv5.${sells[j]}.name` });

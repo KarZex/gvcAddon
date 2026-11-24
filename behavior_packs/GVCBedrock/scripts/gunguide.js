@@ -78,7 +78,7 @@ export const gunGuide = {
       },
       {
         "name": "stg44",
-        "rarelity": "epic"
+        "rarelity": "common"
       }
     ],
     "sr": [
@@ -182,7 +182,7 @@ export const gunGuide = {
     "hg": [
       {
         "name": "glock17",
-        "rarelity": "common"
+        "rarelity": "epic"
       },
       {
         "name": "glock18",

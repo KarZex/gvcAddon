@@ -22,7 +22,7 @@
       },
       "minecraft:enchantable": {
         "slot": "bow",
-        "value": 5
+        "value": 20
       },
       "minecraft:durability": {
         "damage_chance": {

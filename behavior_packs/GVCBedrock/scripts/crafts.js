@@ -5,7 +5,7 @@ export const craftData = {
       { "give":"zex:mm9","texture":"textures/items/9m", "count":32, "cost":[ 1, 1, 0 ] },
       { "give":"zex:556m","texture":"textures/items/556m", "count":32, "cost":[ 2, 2, 0 ] },
       { "give":"zex:762m","texture":"textures/items/762m", "count":16, "cost":[ 2, 2, 0 ] },
-      { "give":"zex:1270m","texture":"textures/items/1270m", "count":8, "cost":[ 4, 4, 0 ] },
+      { "give":"zex:1270m","texture":"textures/items/127m", "count":8, "cost":[ 4, 4, 0 ] },
       { "give":"zex:12m","texture":"textures/items/12m", "count":32, "cost":[ 2, 2, 0 ] },
       { "give":"zex:40m","texture":"textures/items/40m", "count":16, "cost":[ 2, 4, 0 ] },
       { "give":"zex:rocketm","texture":"textures/items/rocketm", "count":16, "cost":[ 4, 4, 0 ] },
@@ -34,8 +34,7 @@ export const craftData = {
   "gc2": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"gun:glock17","texture":"textures/items/gun/glock17", "count":1, "cost":[ 3, 1, 1 ] },
-      { "give":"gun:glock18","texture":"textures/items/gun/glock18", "count":1, "cost":[ 3, 1, 1 ] },
+      { "give":"gun:tt33","texture":"textures/items/gun/tt33", "count":1, "cost":[ 3, 4, 1 ] },
       { "give":"gun:mp5","texture":"textures/items/gun/mp5", "count":1, "cost":[ 2, 4, 1 ] },
       { "give":"gun:an94","texture":"textures/items/gun/an94", "count":1, "cost":[ 2, 6, 1 ] },
       { "give":"gun:ak102","texture":"textures/items/gun/ak102", "count":1, "cost":[ 2, 6, 1 ] },
@@ -52,7 +51,8 @@ export const craftData = {
   "gc3": {
     "sell": [ "minecraft:emerald","minecraft:iron_ingot","minecraft:redstone" ],
     "buy":[ 
-      { "give":"gun:tt33","texture":"textures/items/gun/tt33", "count":1, "cost":[ 3, 4, 1 ] },
+      { "give":"gun:glock17","texture":"textures/items/gun/glock17", "count":1, "cost":[ 3, 1, 1 ] },
+      { "give":"gun:glock18","texture":"textures/items/gun/glock18", "count":1, "cost":[ 3, 1, 1 ] },
       { "give":"gun:g36","texture":"textures/items/gun/g36", "count":1, "cost":[ 6, 1, 6 ] },
       { "give":"gun:m16a4","texture":"textures/items/gun/m16a4", "count":1, "cost":[ 4, 6, 2 ] },
       { "give":"gun:ak12","texture":"textures/items/gun/ak12", "count":1, "cost":[ 8, 2, 6 ] },
@@ -90,9 +90,9 @@ export const craftData = {
       { "give":"vehicle:rhib_spawn_egg","texture":"textures/items/vehicle/rhib", "count":1, "cost":[ 2, 2, 4 ] },
       { "give":"vehicle:yak9_spawn_egg","texture":"textures/items/vehicle/yak9", "count":1, "cost":[ 6, 6, 12 ] },
       { "give":"vehicle:il2_spawn_egg","texture":"textures/items/vehicle/il2", "count":1, "cost":[ 8, 8, 16 ] },
-      { "give":"vehicle:yak23_spawn_egg","texture":"textures/items/vehicle/yak23", "count":1, "cost":[ 9, 9, 16 ] },
-      { "give":"vehicle:yak23kai_spawn_egg","texture":"textures/items/vehicle/yak23kai", "count":1, "cost":[ 9, 9, 32 ] },
-      { "give":"vehicle:mig17_spawn_egg","texture":"textures/items/vehicle/mig17", "count":1, "cost":[ 9, 9, 24 ] }
+      { "give":"vehicle:yak23_spawn_egg","texture":"textures/items/vehicle/yak23", "count":1, "cost":[ 16, 9, 16 ] },
+      { "give":"vehicle:yak23kai_spawn_egg","texture":"textures/items/vehicle/yak23kai", "count":1, "cost":[ 24, 9, 32 ] },
+      { "give":"vehicle:mig17_spawn_egg","texture":"textures/items/vehicle/mig17", "count":1, "cost":[ 24, 9, 24 ] }
     ]
   },
   "vc2": {

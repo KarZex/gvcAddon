@@ -16,6 +16,7 @@ item_json = json.load(open("resource_packs/GVCBedrock/textures/item_texture.json
 func = open("tool/gunstart.mcfunction","r")
 a_func = func.read()
 vehicle_weapon = ""
+gun_desc = ""
 
 player_json = json.load(open("tool/player.json","r"))
 ga_json = json.load(open("tool/ga.json","r"))
@@ -74,11 +75,25 @@ for row in csv_reader:
 
         gun_type = row[25]
         Rare = "common"
-        if( row[23] == "2" ): Rare = "uncommon"
-        if( row[23] == "3" ): Rare = "rare"
-        if( row[23] == "4" ): Rare = "epic"
-        if( row[23] == "5" ): Rare = "legendary"
-        if( row[23] == "6" ): Rare = "mythic"
+        if( row[23] == "1" ): 
+            gun_desc += f"script.gvcv5:gun_spec.{gun_id}_desc.name=低い性能の銃。序盤専用。\n"
+        if( row[23] == "2" ): 
+            Rare = "uncommon"
+            gun_desc += f"script.gvcv5:gun_spec.{gun_id}_desc.name=標準的な性能の銃。序盤から終盤まで使える。\n"
+        if( row[23] == "3" ): 
+            Rare = "rare"
+            gun_desc += f"script.gvcv5:gun_spec.{gun_id}_desc.name=標準的な性能の銃。序盤から終盤まで使える。\n"
+        if( row[23] == "4" ): 
+            Rare = "epic"
+            gun_desc += f"script.gvcv5:gun_spec.{gun_id}_desc.name=高準的な性能の銃。入手コストは高いが、性能が高い。\n"
+        if( row[23] == "5" ): 
+            Rare = "legendary"
+            gun_desc += f"script.gvcv5:gun_spec.{gun_id}_desc.name=超高性能の銃。入手コストは高いが、性能が高い。\n"
+        if( row[23] == "6" ): 
+            Rare = "mythic"
+            gun_desc += f"script.gvcv5:gun_spec.{gun_id}_desc.name=超高性能の銃。入手方法は限られている\n"
+
+
         if( not f"{gun_type}" in gunguide_json["gun_types"]  ):
             gunguide_json["gun_types"][f"{gun_type}"] = [ { "name": gun_id, "rarelity": Rare } ]
         else:
@@ -1545,3 +1560,8 @@ with open("resource_packs/GVCBedrock/texts/guns.txt","w") as f:
 
 with open("resource_packs/GVCBedrock/texts/vehicle_weapon.txt","w") as f:
     f.write(vehicle_weapon)
+
+with open("resource_packs/GVCBedrock/texts/gun_desc.txt","w") as f:
+    f.write(gun_desc)
+
+#gun_desc
