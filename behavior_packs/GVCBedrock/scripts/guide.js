@@ -56,11 +56,11 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
 		const form = new ActionFormData();
 		form.title(`.debug Home Menu`);
-		form.button(`script.gvcv5.guide_gun.name`,`textures/ui/phone/ak47`);
+		form.button(`script.gvcv5.guide_gun.name`,`textures/ui/phone/ar`);
 		form.button(`script.gvcv5.howToVechile.name`,`textures/ui/phone/t34`);
 		form.button(`script.gvcv5.phone_howToTeam.name`,`textures/ui/phone/missing_item`);
-		form.button(`script.gvcv5.phone_buildings.name`,`textures/ui/phone/missing_item`);
-		form.button(`script.gvcv5.phone_buildings.name`,`textures/ui/phone/missing_item`);
+		//form.button(`script.gvcv5.phone_buildings.name`,`textures/ui/phone/missing_item`);
+		//form.button(`script.gvcv5.phone_buildings.name`,`textures/ui/phone/missing_item`);
 		form.show(user).then( r => {
 			if (!r.canceled) {
 				// Gun
