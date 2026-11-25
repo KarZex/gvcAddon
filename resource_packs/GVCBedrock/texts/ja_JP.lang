@@ -1361,7 +1361,7 @@ script.gvcv5.phone_progress_5_sub.name=ゲリラが潜んでいる大規模拠�
 script.gvcv5.vehiclecool1.name=乗り物のクールタイム 残り
 script.gvcv5.vehiclecool2.name=秒
 
-script.gvcv5.guide.name=ガイ
+script.gvcv5.guide.name=ガイド
 script.gvcv5.guide_gun.name=銃
 script.gvcv5.how_to_gun.name=銃の使い方
 script.gvcv5.show_guns.name=銃の一覧
