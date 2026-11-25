@@ -514,7 +514,7 @@ system.beforeEvents.startup.subscribe( e => {
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:building`,gvcv5BuildingBlockCommponent);
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:lootblock`,gvcv5LootBlockCommponent);
     //e.blockComponentRegistry.registerCustomComponent("gvcv5:scaffold",{onPlayerBreak: gvcv5Scaffold})
-    ///e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawner`,gvcv5SpawnerCommponent);
+    e.blockComponentRegistry.registerCustomComponent(`gvcv5:spawner`,gvcv5SpawnerCommponent);
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:crafter`,gvcv5UseCommandCommponent);
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:expoevent`,gvcv5BlockExpoCommponent);
     e.blockComponentRegistry.registerCustomComponent(`gvcv5:mineevent`,gvcv5MineCommponent);

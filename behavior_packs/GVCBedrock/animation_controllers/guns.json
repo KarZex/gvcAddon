@@ -5,10 +5,7 @@
       "states": {
         "default": {
           "on_entry": [
-            "/tag @s remove weapon1attack",
-            "/tag @s remove weapon2attack",
-            "/tag @s remove weapon3attack",
-            "/tag @s remove weapon4attack"
+            "/tag @s remove vattacking"
           ],
           "transitions": [
             {
@@ -407,7 +404,8 @@
         },
         "mgg_1": {
           "on_entry": [
-            "/scriptevent zex:playerVfire"
+            "/scriptevent zex:playerVfire",
+            "/tag @s[tag=!vattacking] add vattacking"
           ],
           "transitions": [
             {
@@ -420,7 +418,8 @@
         },
         "mgg_2": {
           "on_entry": [
-            "/scriptevent zex:playerVfire"
+            "/scriptevent zex:playerVfire",
+            "/tag @s[tag=!vattacking] add vattacking"
           ],
           "transitions": [
             {

@@ -114,13 +114,13 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			form.button(`script.gvcv5.how_to_gun.name`);
 			form.button(`script.gvcv5.show_guns.name`);
 			form.button(`script.gvcv5.show_attachs.name`);
-			form.button(`script.gvcv5.show_gren.name`);
+			//form.button(`script.gvcv5.show_gren.name`);
 			form.button(`script.gvcv5.show_fight.name`);
 			form.button(`script.gvcv5.back.name`);
 			form.show(user).then( result => {
 				if ( !result.canceled ){
 					// Gun
-					if( result.selection != 5 ){
+					if( result.selection != 4 ){
 						user.runCommand(`scriptevent gvcv5:guide_gun ${result.selection+1}`);
 					}
 					else{
@@ -154,10 +154,8 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				if ( !result.canceled ){
 					if( result.selection == 0 ){
 						const form2 = new ActionFormData();
-						form.title(`item.gun:${gun}`);
-						const gunData = gunGuide[`${gun}`]
+						form2.title(`script.gvcv5:gun_type.gunguide.name`);
 						let itemRawText = [];
-						itemRawText.push({ text: `\n\n` });
 						itemRawText.push({ translate: `script.gvcv5:gun_spec.damage.name` });
 						itemRawText.push({ text: `\n` });
 						itemRawText.push({ translate: `script.gvcv5:gun_spec.damage_desc.name` });
@@ -209,24 +207,18 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						itemRawText.push({ translate: `script.gvcv5:gun_spec.damageType.name` });
 						itemRawText.push({ text: `\n` });
 						itemRawText.push({ translate: `script.gvcv5:gun_spec.damageType_desc.name` });
-						itemRawText.push({ text: `\n\n` });
-						itemRawText.push({ translate: `script.gvcv5:gun_spec.get.name` });
-						itemRawText.push({ text: `\n` });
-						itemRawText.push({ translate: `script.gvcv5:gun_spec.get_desc.name` });
-						itemRawText.push({ text: `\n` });
-						itemRawText.push({ translate: `script.gvcv5:gun_spec.${gun}_get.name` });
-						form.body({ rawtext: itemRawText });
-						form.button(`script.gvcv5.back.name`);
-						form.show(user).then( result => {
+						form2.body({ rawtext: itemRawText });
+						form2.button(`script.gvcv5.back.name`);
+						form2.show(user).then( result => {
 							if ( !result.canceled ){
 								user.runCommand(`scriptevent gvcv5:guide_gun 2`);
 							}
 						} )
 
 					}
-					if( result.selection != GUN_TYPES.length+1 ){
-						print(`${GUN_TYPES[result.selection+1]}`)
-						user.runCommand(`scriptevent gvcv5:guide_show_gun ${GUN_TYPES[result.selection+1]}`);
+					else if( result.selection != GUN_TYPES.length+1 ){
+						print(`${GUN_TYPES[result.selection-1]}`)
+						user.runCommand(`scriptevent gvcv5:guide_show_gun ${GUN_TYPES[result.selection-1]}`);
 					}
 					else{
 						user.runCommand(`scriptevent gvcv5:guide_gun 0`);
@@ -281,7 +273,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				}
 			} )
 		}
-		else if( number == `5` ){
+		else if( number == `4` ){
 			const user = e.sourceEntity;
 			const form = new ActionFormData();
 			form.title(`script.gvcv5.show_fight.name`);
@@ -443,7 +435,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			}
 			if( vData[`stalth`] < 1 ){
 				itemRawText.push({ translate: `script.gvcv5:v_spec.stalth.name` });
-				itemRawText.push({ translate: `gvcv5.${vData[`stalth`]}.name` });
+				itemRawText.push({ text: `${vData[`stalth`]}` });
 				itemRawText.push({ text: `\n` });
 			}
 

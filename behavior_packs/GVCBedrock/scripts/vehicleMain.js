@@ -572,7 +572,7 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 				if( world.scoreboard.getObjective(`weapon${i}_cool`).getScore(player) > 0 ){
 					world.scoreboard.getObjective(`weapon${i}_cool`).addScore(player,-1);
 				}
-				if( player.inputInfo.getButtonState(InputButton.Jump) == ButtonState.Released ){
+				if( player.inputInfo.getButtonState(InputButton.Jump) == ButtonState.Released && !player.hasTag(`vattacking`) ){
 					player.removeTag(`weapon${i}attack`);
 				}
 				if( !player.hasTag(`weapon${i}attack`) && world.scoreboard.getObjective(`weapon${i}`).getScore(player) > 0 ){
