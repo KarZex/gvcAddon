@@ -231,6 +231,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			const form = new ActionFormData();
 			form.title(`script.gvcv5.show_attachs.name`);
 			const Attachmenttypes = attachmentData[`attachTypes`];
+			form.body(`script.gvcv5.attachment_desc.name`);
 			for( const i of Attachmenttypes ){
 				form.button(`script.gvcv5.${i}.name`);
 			}
@@ -417,6 +418,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			itemRawText.push({ text: `\n` });
 			for( let i = 1; i < 5; i++ ){
 				itemRawText.push({ translate: `script.gvcv5:v_spec.v_weapon${i}.name` });
+				itemRawText.push({ text: `§e`});
 				itemRawText.push({ translate: `gvcv5.${vData[`Weapon${i}`]}.name` });
 				if( vData[`Weapon${i}`] != `` ){
 					if( vData[`Weapon${i}`] == `tankg` ){
@@ -426,9 +428,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						itemRawText.push({ translate: `script.gvcv5:v_spec.flare.name`});
 					}
 					else{
-						itemRawText.push({ text: ` ${gunData[`${vData[`Weapon${i}`]}`][`damage`]} `});
-						itemRawText.push({ text: ` ${vData[`Weapon${i}_cool`]} `});
-						itemRawText.push({ text: ` ${vData[`Weapon${i}_ammo`]} `});
+						itemRawText.push({ text: ` §c${gunData[`${vData[`Weapon${i}`]}`][`damage`]} `});
+						itemRawText.push({ text: ` §b${vData[`Weapon${i}_cool`]} `});
+						itemRawText.push({ text: ` §a${vData[`Weapon${i}_ammo`]}§r `});
 					}
 				}
 				itemRawText.push({ text: `\n` });
@@ -489,7 +491,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			let itemRawText = [];
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.desc.name` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.${gun}_desc.name` });
-			itemRawText.push({ text: `\n\n` });
+			itemRawText.push({ text: `\n` });
 			itemRawText.push( { translate:`script.gvcv5:gun_spec.power.name` } );
 			itemRawText.push({ text: `\n\n` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.damage.name` });
@@ -507,10 +509,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			itemRawText.push({ text: `${gunData[`bomb`]}\n` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.interval.name` });
 			itemRawText.push({ text: `${gunData[`interval`]+1}\n` });
-			itemRawText.push({ text: `\n` });
+			itemRawText.push({ text: `\n\n` });
 			
 			itemRawText.push( { translate:`script.gvcv5:gun_spec.use.name` } );
-			itemRawText.push({ text: `\n\n` });
+			itemRawText.push({ text: `\n` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.speed.name` });
 			itemRawText.push({ text: `${Math.floor(100*gunData[`speed`])/100}\n` });
 			itemRawText.push({ translate: `script.gvcv5:gun_spec.recoil.name` });

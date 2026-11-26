@@ -1500,6 +1500,8 @@ script.gvcv5:gun_spec.ak47_get.name=銃製造機Lv1( エメラルドx2, 鉄イ�
 script.gvcv5:gun_spec.m16a1_get.name=銃製造機Lv1( エメラルドx2, 鉄インゴットx3, レッドストーンx1 )
 
 
+script.gvcv5.attachment_desc.name=このアドオンでは、銃に様々なアタッチメントを装着可能である。アタッチメントを装着するには、アタッチメント台(作業台x1、木材x8で作成可能)を使って行う。
+
 script.zex:scope6x.desc=スニークすることでズームする。ズーム時の視野は30。
 script.zex:acog.desc=スニークすることでズームする。ズーム時の視野は45。
 script.zex:coyote.desc=スニークすることでズームする。ズーム時の視野は60。
@@ -1599,7 +1601,7 @@ script.gvcv5:v_spec.v_health.name=体力:
 script.gvcv5:v_spec.v_speed.name=最大速度:
 script.gvcv5:v_spec.member.name=最大搭乗数:
 script.gvcv5:v_spec.v_antibullet.name=装甲値:
-script.gvcv5:v_spec.v_weapons.name=武装:  名前 / 威力 / 発射間隔 / 弾数
+script.gvcv5:v_spec.v_weapons.name=武装:  §e名前 §r/ §c威力 §r/ §b発射間隔 §r/ §a弾数§r
 script.gvcv5:v_spec.v_weapon1.name=武装1:
 script.gvcv5:v_spec.v_weapon2.name=武装2:
 script.gvcv5:v_spec.v_weapon3.name=武装3:

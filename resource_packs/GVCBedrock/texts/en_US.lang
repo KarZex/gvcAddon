@@ -1359,6 +1359,8 @@ script.gvcv5:gun_spec.ak47_get.name=銃製造機Lv1( エメラルドx2, 鉄イ�
 script.gvcv5:gun_spec.m16a1_get.name=銃製造機Lv1( エメラルドx2, 鉄インゴットx3, レッドストーンx1 )
 
 
+script.gvcv5.attachment_desc.name=With this add-on, you can equip various attachments to your guns. To equip an attachment, use an attachment station (which can be crafted using 1 workbench and 8 pieces of wood).
+
 script.zex:scope6x.desc=Zooming is activated by sneaking. The field of view while zoomed in is 30.
 script.zex:acog.desc=Zooming is activated by sneaking. The field of view while zoomed in is 45.
 script.zex:coyote.desc=Zooming is activated by sneaking. The field of view while zoomed in is 60.
@@ -1449,7 +1451,7 @@ script.gvcv5:v_spec.v_health.name=HP:
 script.gvcv5:v_spec.v_speed.name=Maximum Speed:
 script.gvcv5:v_spec.member.name=Maximum Passenger Capacity:
 script.gvcv5:v_spec.v_antibullet.name=Armor Value:
-script.gvcv5:v_spec.v_weapons.name=Weapons:  Name / Damage / Rate of Fire / Ammo Capacity
+script.gvcv5:v_spec.v_weapons.name=Weapons:  §eName §r/ §cDamage §r/ §bRate of Fire §r/ §aAmmo Capacity§r
 script.gvcv5:v_spec.v_weapon1.name=Weapon 1:
 script.gvcv5:v_spec.v_weapon2.name=Weapon 2:
 script.gvcv5:v_spec.v_weapon3.name=Weapon 3:
