@@ -198,7 +198,7 @@ export const gunGuide = {
       },
       {
         "name": "tt33",
-        "rarelity": "epic"
+        "rarelity": "rare"
       }
     ],
     "smg": [
@@ -242,7 +242,7 @@ export const gunGuide = {
       },
       {
         "name": "p90",
-        "rarelity": "uncommon"
+        "rarelity": "common"
       },
       {
         "name": "rpg",

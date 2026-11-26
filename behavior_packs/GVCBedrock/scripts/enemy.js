@@ -217,7 +217,6 @@ const MOBGUNS = {
 	"ca_blue":caBlueGuns,
 	"ca_green":caGreenGuns,
 	"ca_yellow":caYellowGuns
-
 }
 
 const gaShip1 = [
