@@ -1595,19 +1595,19 @@ script.gvcv5:vehicle_type.common.name=乗り物全般
 script.gvcv5.show_vechile.name=ビークル一覧
 script.gvcv5:v_spec.desc.name=説明:
 script.gvcv5:v_spec.v_subtype.name=種類:
-script.gvcv5:v_spec.v_health.name=体力
-script.gvcv5:v_spec.v_speed.name=最大速度
-script.gvcv5:v_spec.member.name=最大搭乗数
-script.gvcv5:v_spec.v_antibullet.name=装甲値
+script.gvcv5:v_spec.v_health.name=体力:
+script.gvcv5:v_spec.v_speed.name=最大速度:
+script.gvcv5:v_spec.member.name=最大搭乗数:
+script.gvcv5:v_spec.v_antibullet.name=装甲値:
 script.gvcv5:v_spec.v_weapons.name=武装:  名前 / 威力 / 発射間隔 / 弾数
 script.gvcv5:v_spec.v_weapon1.name=武装1:
 script.gvcv5:v_spec.v_weapon2.name=武装2:
 script.gvcv5:v_spec.v_weapon3.name=武装3:
 script.gvcv5:v_spec.v_weapon4.name=武装4:
-script.gvcv5:v_spec.stalth.name=ステルス値
+script.gvcv5:v_spec.stalth.name=ステルス値:
 script.gvcv5:v_spec.tankg.name= アクティブ防御システムを起動し、5秒間戦車へのダメージを無効化する。
 script.gvcv5:v_spec.flare.name= フレアを発射し、敵からのミサイルを回避する。
 
 
 script.gvcv5:v_spec.t34_desc.name=ゲリラがよく使用する旧式戦車。性能は全戦車の中でも低いが、それでも歩兵とって脅威となる。
-
+script.gvcv5:v_spec.c130_desc.name=このアドオンで最もモデルが大きい乗り物。同盟軍兵士、PMC兵士を持ち、:_input_key.drop:でアイテムドロップすると、NPC兵士を空挺降下できる。また、プレイヤーがFV101やM551などの空挺戦車を持ちながらビークルから降りると、戦車に乗った状態で空挺降下する。
