@@ -1010,6 +1010,9 @@ system.afterEvents.scriptEventReceive.subscribe( async e => {
 		if( world.getDynamicProperty(`gvcv5:airCraftWithItem`) ){
 			const airCraft = e.sourceEntity;
 			const p = airCraft.getComponent(EntityComponentTypes.Rideable).getRiders()[0];
+			if( airCraft.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`transport`) ){
+				return;
+			}
 			let noItem = true;
 			for(let i = 0; i < 36; i++){
 				let Haditem = p.getComponent("inventory").container.getItem(i);
