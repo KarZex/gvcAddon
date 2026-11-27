@@ -99,6 +99,15 @@ async function setUp(){
     if( world.getDynamicProperty(`gvcv5:isBossFlag`) == undefined ){
         world.setDynamicProperty("gvcv5:isBossFlag",true);
     }
+    if( world.getDynamicProperty(`gvcv5:TPplayer`) == undefined ){
+        world.setDynamicProperty("gvcv5:TPplayer",true);
+    }
+    if( world.getDynamicProperty(`gvcv5:TPblock`) == undefined ){
+        world.setDynamicProperty("gvcv5:TPblock",true);
+    }
+    if( world.getDynamicProperty(`gvcv5:BossFlagWScore`) == undefined ){
+        world.setDynamicProperty("gvcv5:BossFlagWScore",true);
+    }
     await system.waitTicks(1);
 }
 

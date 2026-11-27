@@ -337,6 +337,12 @@ world.afterEvents.playerInteractWithEntity.subscribe( e => {
 						world.setDynamicProperty(`${userFamily}_slot${result.selection}_dimension`,entity.dimension.id);
 						world.setDynamicProperty(`${userFamily}_slot${result.selection}_name`,locateName);
 						player.runCommand(`clear @s zex:bossflag 0 1`);
+						world.sendMessage(`${world.getDynamicProperty(`gvcv5:BossFlagWScore`)}`)
+						if( world.getDynamicProperty(`gvcv5:BossFlagWScore`) ){
+							print(`x`)
+							world.scoreboard.getObjective(`ALLFlags`).setScore(`${world.getDynamicProperty(`${userFamily}_slot${result.selection}_name`)}`,0);
+						}
+
 
 						entity.remove();
 						//Set team main base flag if flag lost, Tp block will be lost.
@@ -380,7 +386,8 @@ world.afterEvents.playerInteractWithEntity.subscribe( e => {
 				form.show(player).then( r => {
 					if (!r.canceled) {
 						if( r.selection == 0 ){
-							entity.kill();
+							//entity.kill();
+							world.sendMessage({ rawtext:[ { text:`${player.nameTag}` },{ translate:`script.gcvv5:antiname.name` } ] });
 						}
 					}
 				},)
@@ -473,6 +480,10 @@ world.afterEvents.entityDie.subscribe( e => {
 	else if( player.typeId.includes(`_main_base`) ){
 		const team = getTeam(player).replace(`team`,``);
 		const N = player.getDynamicProperty(`TPBlockSlot`);
+		if( world.getDynamicProperty(`gvcv5:BossFlagWScore`) ){
+			print(`x`);
+			world.scoreboard.getObjective(`ALLFlags`).removeParticipant(`${world.getDynamicProperty(`${team}_slot${N}_name`)}`);
+		}
 		world.setDynamicProperty(`${team}_slot${N}`,undefined);
 		world.setDynamicProperty(`${team}_slot${N}_flag`,false);
 		world.setDynamicProperty(`${team}_slot${N}_dimension`,undefined);
@@ -947,6 +958,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const user = e.sourceEntity;
 		const phone = user.getComponent("equippable").getEquipmentSlot(EquipmentSlot.Mainhand);
 		const userFamily = e.message;
+		if( !world.getDynamicProperty("gvcv5:TPblock") ){
+			user.sendMessage({ rawtext:[ { translate: `script.gvcv5:no_teleport3.name` } ] });
+			return;
+		}
 		const form = new ActionFormData();
 		let locateName = `unnamed`
 		form.title(`.debug Home Menu`);	
@@ -1148,6 +1163,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						user.sendMessage({ rawtext:[ { translate: `script.gvcv5:no_teleport.name` } ] });
 						return;
 					}
+					else if( !world.getDynamicProperty("gvcv5:TPplayer") ){
+						user.sendMessage({ rawtext:[ { translate: `script.gvcv5:no_teleport2.name` } ] });
+						return;
+					}
 					const form_tp = new ActionFormData();
 					form_tp.title(`script.gvcv5.phone_tp.name`);
 					for( const myAlly of world.getAllPlayers() ){
@@ -1187,6 +1206,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				else if( result.selection == 1 ){ // teleport to block
 					if( user.dimension.getPlayers({ excludeFamilies:[`noteam`,`${getTeam(user)}`],location:user.location,maxDistance:128 }).length > 0 ){
 						user.sendMessage({ rawtext:[ { translate: `script.gvcv5:no_teleport.name` } ] });
+						return;
+					}
+					else if( !world.getDynamicProperty("gvcv5:TPblock") ){
+						user.sendMessage({ rawtext:[ { translate: `script.gvcv5:no_teleport3.name` } ] });
 						return;
 					}
 					else{
@@ -1428,6 +1451,9 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 			form.toggle(`Delete Yellow Team`, {defaultValue:false});
 			form.toggle(`Team Jail`, {defaultValue:world.getDynamicProperty(`teamJail`)});
 			form.toggle(`Boss Flag`, {defaultValue:world.getDynamicProperty("gvcv5:isBossFlag")});
+			form.toggle(`enable teleport player`,{defaultValue:world.getDynamicProperty("gvcv5:TPplayer")});
+			form.toggle(`enable teleport block`,{defaultValue:world.getDynamicProperty("gvcv5:TPblock")});
+			form.toggle(`BossFlag with Score`,{defaultValue:world.getDynamicProperty("gvcv5:BossFlagWScore")});
 			form.show(e.sourceEntity).then( result => {
 				if ( !result.canceled ){
 					if( world.getDynamicProperty(`redPass`) != result.formValues[0] && result.formValues[0] != `undefined` ){
@@ -1465,6 +1491,18 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 					if( world.getDynamicProperty(`gvcv5:isBossFlag`) != result.formValues[9] ){
 						world.setDynamicProperty(`gvcv5:isBossFlag`,result.formValues[9]);
 						e.sourceEntity.sendMessage(`Boss Flag is now ${result.formValues[9]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:TPplayer`) != result.formValues[10] ){
+						world.setDynamicProperty(`gvcv5:TPplayer`,result.formValues[10]);
+						e.sourceEntity.sendMessage(`TP player is now ${result.formValues[10]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:TPblock`) != result.formValues[11] ){
+						world.setDynamicProperty(`gvcv5:TPblock`,result.formValues[11]);
+						e.sourceEntity.sendMessage(`TP block is now ${result.formValues[11]}`);
+					}
+					if( world.getDynamicProperty(`gvcv5:BossFlagWScore`) != result.formValues[12] ){
+						world.setDynamicProperty(`gvcv5:BossFlagWScore`,result.formValues[12]);
+						e.sourceEntity.sendMessage(`BossFlagWScore is now ${result.formValues[12]}`);
 					}
 				}
 			} )

@@ -1544,6 +1544,7 @@ script.gvcv5:vehicle_subtype.artillery_aa.name=対空砲
 script.gvcv5:vehicle_subtype.cannon.name=固定砲台
 
 script.gvcv5:vehicle_type.heri.name=ヘリコプター
+script.gvcv5:vehicle_type.heri_desc.name=ヘリコプターは、上空から攻撃、偵察ができる。対ゲリラ拠点には非常に有効となる。
 script.gvcv5:vehicle_subtype.attack_heli.name=攻撃ヘリ
 script.gvcv5:vehicle_subtype.transport_heli.name=輸送ヘリ
 script.gvcv5:vehicle_subtype.spy_heli.name=偵察ヘリ
@@ -1613,3 +1614,7 @@ script.gvcv5:v_spec.flare.name= フレアを発射し、敵からのミサイル
 
 script.gvcv5:v_spec.t34_desc.name=ゲリラがよく使用する旧式戦車。性能は全戦車の中でも低いが、それでも歩兵とって脅威となる。
 script.gvcv5:v_spec.c130_desc.name=このアドオンで最もモデルが大きい乗り物。同盟軍兵士、PMC兵士を持ち、:_input_key.drop:でアイテムドロップすると、NPC兵士を空挺降下できる。また、プレイヤーがFV101やM551などの空挺戦車を持ちながらビークルから降りると、戦車に乗った状態で空挺降下する。
+
+script.gvcv5:no_teleport2.name=§cプレイヤーへのテレポートは無効化されています!
+script.gvcv5:no_teleport3.name=§cテレポートブロックは無効化されています!
+script.gcvv5:antiname.name=は拠点を破壊し荒そうとしました!
