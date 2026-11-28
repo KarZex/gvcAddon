@@ -466,4 +466,4 @@ execute if entity @e[r=7,type=vehicle:hamina] run event entity @s[scores={weapon
 execute if entity @e[r=7,type=vehicle:hamina] run scoreboard players add @s[scores={weaponi=..5}] weaponi 1
 
 execute if entity @e[r=7,type=vehicle:hamina] run scoreboard players set @s weaponi_max 5
-execute if entity @e[r=7,type=vehicle:hamina] run scoreboard players set @s weaponi_cool 31
+execute if entity @e[r=7,type=vehicle:hamina] run scoreboard players set @s weaponi_cool 21

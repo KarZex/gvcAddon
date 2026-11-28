@@ -243,6 +243,7 @@
         "family": [
           "vehicle",
           "air",
+          "transport",
           "airboneT",
           "TofAA",
           "plate"

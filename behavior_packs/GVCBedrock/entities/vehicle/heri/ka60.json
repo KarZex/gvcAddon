@@ -265,6 +265,7 @@
       "minecraft:type_family": {
         "family": [
           "vehicle",
+          "transport",
           "heri",
           "TofAA",
           "plate"

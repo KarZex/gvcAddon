@@ -270,7 +270,7 @@
           ]
         },
         "minecraft:shooter": {
-          "def": "fire:25mmmc"
+          "def": "fire:hmg"
         }
       },
       "aa12": {

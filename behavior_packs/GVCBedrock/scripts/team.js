@@ -531,6 +531,26 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const player = e.sourceEntity;
 		player.nameTag = e.message;
 	}
+	else if( e.id === `zex:flagItem` ){
+		const user = e.sourceEntity;
+		const dimension = user.dimension;
+		const location = user.location;
+		const flag = e.message;
+		const Ctime = world.getAbsoluteTime();
+		if( world.getDynamicProperty(`${flag}`) == undefined ){
+			world.setDynamicProperty(`${flag}`,Ctime-6000);
+		}
+		const oldTime = world.getDynamicProperty(`${flag}`);
+		const get = Ctime - oldTime;
+		if( get >= 6000 ){
+			dimension.runCommand(`loot spawn ${location.x} ${location.y} ${location.z} loot "boss/${flag}"`)
+			world.setDynamicProperty(`${flag}`,oldTime+6000);
+		}
+		else{
+			user.sendMessage(`wait ${Math.floor((6000 - get)/20)}s`);
+		}
+
+	}
 	if( e.id === "gvcv5:TeamList" ){
 		let itemRawText = []
 		for( const Ally of world.getPlayers({ families: [ "red" ] }) ){
@@ -611,6 +631,29 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 				targets[result.selection].runCommand(`inputpermission set @s movement disabled`);
 			}
 		})
+	}
+	else if( e.id == "gvcv5:sendTeamChat" ){
+		const user = e.sourceEntity;
+		const messege = e.message.split(" ")[1];
+		const userFamily = e.message.split(" ")[0];
+		let text = world.getDynamicProperty(`${userFamily}chat`);
+		text += `[${user.nameTag}]:${messege} ${gvcv5GetTime()}\n`;
+		const newText = `[${user.nameTag}]:${messege} ${gvcv5GetTime()}\n`;
+		world.setDynamicProperty(`${userFamily}chat`,text);
+		for( const myAlly of world.getAllPlayers() ){
+			if( myAlly.getComponent(EntityComponentTypes.TypeFamily).hasTypeFamily(`${userFamily}team`) ){
+				myAlly.sendMessage({ rawtext: [{ translate: `script.gvcv5.newMessage_${userFamily}.name` },{ text: `${newText}` }] });
+				break;
+			}
+			for(let i = 0; i < 36; i++){
+				let Haditem = myAlly.getComponent("inventory").container.getItem(i);
+				if( Haditem != undefined && Haditem.typeId === `zex:phone_${userFamily}` ){
+					myAlly.sendMessage({ rawtext: [{ translate: `script.gvcv5.newMessage_${userFamily}.name` },{ text: `${newText}` }] });
+					break;
+				}
+			}
+		}
+
 	}
 	else if( e.id === `zex:jail` ){
 		const user = e.sourceEntity;
@@ -1055,7 +1098,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		const form = new ActionFormData();
 		let text = world.getDynamicProperty(`${userFamily}chat`);
 		form.title(`script.gvcv5.phone_teamChat.name`);
-		form.button(`script.gvcv5.phone_sendmessage.name`);
+		//form.button(`script.gvcv5.phone_sendmessage.name`);
 		form.button(`script.gvcv5.phone_back.name`);
 		if( user.name == world.getDynamicProperty(`${userFamily}Leader`) || user.hasTag(`${userFamily}Leader`)  ){
 			form.button(`script.gvcv5.phone_delete_chat.name`);
@@ -1063,7 +1106,7 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 		form.body(`${text}`);
 		form.show(user).then( result => {
 			if ( !result.canceled ){
-				if( result.selection == 0 ){
+				if( result.selection == -1 ){
 					const form = new ModalFormData()
 					form.title(`script.gvcv5.phone_sendmessage.name`)
 					form.textField(`script.gvcv5.input_message.name`,``);
@@ -1086,10 +1129,10 @@ system.afterEvents.scriptEventReceive.subscribe( e => {
 						}
 					},)
 				}
-				if( result.selection == 1 ){
+				if( result.selection == 0 ){
 					user.runCommand(`scriptevent gvcv5:phone_unlocked ${userFamily}`);
 				}
-				if( result.selection == 2 ){
+				if( result.selection == 1 ){
 					writeLog(`${user.nameTag} cleared team chat at ${gvcv5GetTime()}`);
 					writeLog(`Cleared chat: ${world.getDynamicProperty(`${userFamily}chat`)}`);
 					world.setDynamicProperty(`${userFamily}chat`,``)

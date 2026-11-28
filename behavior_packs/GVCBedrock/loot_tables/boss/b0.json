@@ -22,7 +22,7 @@
           {
             "type": "item",
             "name": "minecraft:spawn_egg",
-            "weight": 1,
+            "weight": 2,
             "functions": [
               {
                 "function": "set_actor_id",
@@ -42,7 +42,7 @@
             "functions": [
               {
                 "function": "set_actor_id",
-                "id": "vehicle:su25"
+                "id": "vehicle:a10"
               }
             ]
           }
